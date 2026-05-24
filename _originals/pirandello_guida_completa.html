@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pirandello — Guida completa per la maturità</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --carta:#f4ecd8;
+  --carta-2:#ede2c6;
+  --carta-scura:#e3d4b0;
+  --ink:#1a1612;
+  --ink2:#3a3128;
+  --red:#7a1f1f;
+  --red-dark:#5a1414;
+  --red-light:#a83a3a;
+  --gold:#b88a3e;
+  --green:#4a6b3a;
+  --green-light:#e8f0dc;
+  --green-dark:#2d4a22;
+  --gray:#8a7d6a;
+  --sh:0 2px 12px rgba(26,22,18,.08);
+  --sh-lg:0 8px 32px rgba(26,22,18,.15);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Manrope',sans-serif;background:var(--carta);background-image:radial-gradient(at 20% 10%,rgba(184,138,62,.06) 0%,transparent 50%),radial-gradient(at 80% 90%,rgba(122,31,31,.04) 0%,transparent 50%);color:var(--ink);line-height:1.65;font-size:16px;min-height:100vh;}
+
+.prog-wrap{position:fixed;top:0;left:0;right:0;height:5px;background:rgba(122,31,31,.1);z-index:1000;}
+.prog-bar{height:100%;background:linear-gradient(90deg,var(--red-dark),var(--red),var(--gold));width:0%;transition:width .1s linear;box-shadow:0 0 6px rgba(122,31,31,.35);}
+
+.nav{position:sticky;top:5px;z-index:99;background:var(--ink);border-bottom:2px solid var(--red);}
+.nav-inner{display:flex;overflow-x:auto;scrollbar-width:none;max-width:960px;margin:0 auto;padding:0 12px;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-btn{background:none;border:none;color:rgba(244,236,216,.5);font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.05em;padding:.85rem 1.1rem;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s;}
+.nav-btn:hover{color:var(--carta);}
+.nav-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+.container{max-width:960px;margin:0 auto;padding:40px 20px 100px;}
+.section{display:none;}
+.section.active{display:block;}
+
+.hero{text-align:center;padding:64px 20px 48px;border-bottom:1px solid rgba(26,22,18,.15);margin-bottom:48px;position:relative;}
+.hero::before{content:'';position:absolute;top:22px;left:50%;transform:translateX(-50%);width:50px;height:1px;background:var(--red);}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:16px;}
+h1.title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,7vw,4.8rem);font-weight:600;line-height:1;color:var(--ink);margin-bottom:12px;letter-spacing:-.02em;}
+h1.title em{font-style:italic;color:var(--red);}
+.subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.4rem);color:var(--ink2);}
+
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:600;line-height:1.1;color:var(--ink);letter-spacing:-.01em;margin-bottom:20px;}
+h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;margin:32px 0 14px;color:var(--ink);}
+h4{font-family:'Manrope',sans-serif;font-size:.9rem;font-weight:700;margin:20px 0 8px;color:var(--red-dark);text-transform:uppercase;letter-spacing:.06em;}
+p{margin-bottom:14px;}
+strong{font-weight:700;}
+em{font-style:italic;}
+ul,ol{padding-left:22px;margin-bottom:14px;}
+li{margin-bottom:5px;}
+
+.section-header{margin-bottom:36px;padding-bottom:16px;border-bottom:2px solid var(--red);}
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+
+.box{border-radius:4px;padding:20px 22px;margin:22px 0;position:relative;}
+.box-def{background:#fdf6e3;border-left:4px solid var(--gold);}
+.box-def h4{margin-top:0;color:var(--gold);}
+.box-key{background:#fbeaea;border-left:4px solid var(--red);}
+.box-key h4{margin-top:0;color:var(--red);}
+.box-note{background:#f0ece2;border-left:4px solid var(--ink2);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.1rem;}
+.box-quote{background:var(--ink);color:var(--carta);padding:24px;border-radius:4px;margin:24px 0;font-family:'Cormorant Garamond',serif;font-size:1.2rem;line-height:1.5;position:relative;}
+.box-quote::before{content:'"';position:absolute;top:-10px;left:16px;font-size:5rem;color:var(--red-light);font-family:'Cormorant Garamond',serif;line-height:1;}
+.box-quote .label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--red-light);margin-top:14px;display:block;}
+
+.timeline{position:relative;padding-left:32px;margin:30px 0;}
+.timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--red),var(--gold),var(--red));}
+.tl-item{position:relative;padding-bottom:22px;}
+.tl-item::before{content:'';position:absolute;left:-29px;top:8px;width:12px;height:12px;background:var(--carta);border:3px solid var(--red);border-radius:50%;}
+.tl-year{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--red);display:block;margin-bottom:3px;}
+.tl-content{font-size:15px;}
+.tl-content strong{display:block;margin-bottom:2px;}
+
+.pillole{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 20px;}
+.pillola{background:var(--red-dark);color:var(--carta);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;font-family:'Manrope',sans-serif;}
+.pillola.gold{background:var(--gold);}
+.pillola.green{background:var(--green-dark);}
+
+.poesia-wrap{background:var(--carta-2);border-radius:6px;padding:24px;margin:24px 0;box-shadow:var(--sh);border:1px solid rgba(26,22,18,.08);}
+.poesia-titolo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;font-style:italic;color:var(--red-dark);margin-bottom:4px;}
+.poesia-meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:20px;}
+
+.versi-table{width:100%;border-collapse:collapse;margin:18px 0;background:var(--carta);border-radius:4px;overflow:hidden;box-shadow:0 1px 4px rgba(26,22,18,.06);}
+.versi-table th{background:var(--ink);color:var(--carta);padding:10px 14px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:500;}
+.versi-table td{padding:10px 14px;border-bottom:1px solid rgba(26,22,18,.06);vertical-align:top;font-size:14px;line-height:1.5;}
+.versi-table td:first-child{font-family:'Cormorant Garamond',serif;font-size:16px;width:50%;color:var(--ink);border-right:1px solid rgba(26,22,18,.06);}
+.versi-table td:last-child{color:var(--ink2);font-style:italic;}
+.versi-table tr:last-child td{border-bottom:none;}
+
+.analisi-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px;}
+.analisi-block{background:var(--carta);padding:16px 18px;border-radius:4px;border-left:3px solid var(--red);}
+.analisi-block h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:600;}
+.analisi-block p,.analisi-block li{font-size:14px;}
+.analisi-block ul{padding-left:18px;margin-top:4px;}
+.analisi-block li{margin-bottom:4px;}
+
+.opera-card{background:var(--carta-2);padding:18px 20px;border-radius:4px;border-left:4px solid var(--gold);margin-bottom:16px;}
+.opera-card .anno{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.15em;font-weight:600;margin-bottom:4px;}
+.opera-card h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:var(--ink);margin:0 0 8px;text-transform:none;letter-spacing:0;}
+.opera-card p{font-size:14px;margin:4px 0;}
+
+.confronto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0;}
+.confronto-card{background:var(--carta-2);padding:14px;border-radius:4px;border-top:3px solid var(--ink2);}
+.confronto-card.uno{border-top-color:#2d5a87;}
+.confronto-card.due{border-top-color:var(--red);}
+.confronto-card.tre{border-top-color:var(--green-dark);}
+.confronto-card h6{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:8px;}
+.confronto-card.uno h6{color:#2d5a87;}
+.confronto-card.due h6{color:var(--red);}
+.confronto-card.tre h6{color:var(--green-dark);}
+.confronto-card p{font-size:13px;line-height:1.55;margin:0;}
+.confronto-tema{background:var(--carta-2);padding:12px 16px;border-radius:4px;margin-bottom:8px;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--red);border-left:3px solid var(--red);grid-column:1/-1;}
+
+.quiz-block{background:var(--green-light);border:2px solid var(--green);border-radius:6px;padding:22px 24px;margin:40px 0;position:relative;}
+.quiz-label{position:absolute;top:-12px;left:20px;background:var(--green);color:white;padding:4px 12px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;font-weight:600;}
+.quiz-block h3{margin-top:6px;margin-bottom:16px;color:var(--green-dark);font-size:1.3rem;}
+.quiz-q{background:white;padding:16px 18px;border-radius:4px;margin-bottom:14px;border:1px solid rgba(45,74,34,.15);}
+.quiz-q p.q{font-weight:600;margin-bottom:12px;color:var(--ink);}
+.quiz-opts{display:flex;flex-direction:column;gap:8px;}
+.qopt{background:var(--carta);padding:10px 14px;border-radius:4px;cursor:pointer;border:1px solid transparent;transition:all .2s;font-size:14px;text-align:left;font-family:inherit;width:100%;color:var(--ink);}
+.qopt:hover{background:white;border-color:var(--green);}
+.qopt.correct{background:#d4e9c5;border-color:var(--green);color:var(--green-dark);font-weight:600;}
+.qopt.wrong{background:#f5d4d4;border-color:var(--red);color:var(--red-dark);}
+.qopt:disabled{cursor:default;}
+.qfb{margin-top:10px;padding:10px 12px;border-radius:4px;font-size:13px;display:none;}
+.qfb.show{display:block;}
+.qfb.ok{background:#d4e9c5;color:var(--green-dark);}
+.qfb.ko{background:#f5d4d4;color:var(--red-dark);}
+
+.quiz-finale{background:var(--ink);color:var(--carta);padding:50px 30px;border-radius:8px;margin:40px 0;box-shadow:var(--sh-lg);}
+.quiz-finale .quiz-label{background:var(--red);color:white;}
+.quiz-finale h2{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:600;margin-bottom:8px;color:var(--carta);}
+.quiz-finale .sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--carta-scura);margin-bottom:30px;font-size:1.05rem;}
+.quiz-finale .quiz-q{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--carta);}
+.quiz-finale .quiz-q p.q{color:var(--carta);}
+.quiz-finale .qopt{background:rgba(255,255,255,.08);color:var(--carta);border:1px solid rgba(255,255,255,.1);}
+.quiz-finale .qopt:hover{background:rgba(255,255,255,.15);border-color:var(--red-light);}
+.quiz-finale .qopt.correct{background:rgba(74,107,58,.4);border-color:var(--green);color:#c5e0b0;}
+.quiz-finale .qopt.wrong{background:rgba(168,58,58,.3);border-color:var(--red-light);color:#f0c0c0;}
+.risultato{display:none;text-align:center;padding:30px 20px;background:rgba(255,255,255,.05);border-radius:6px;margin-top:30px;}
+.risultato.show{display:block;}
+.punteggio{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:8px;}
+.punteggio-tot{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--carta-scura);margin-bottom:16px;}
+.messaggio-fin{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--carta);line-height:1.5;}
+
+.divider{width:60px;height:1px;background:var(--red);margin:40px auto;}
+.footer-quote{text-align:center;margin-top:40px;padding-top:30px;border-top:1px solid rgba(26,22,18,.15);font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gray);font-size:14px;}
+
+@media(max-width:720px){
+  .container{padding:24px 16px 60px;}
+  .confronto-grid{grid-template-columns:1fr;}
+  .confronto-tema{grid-column:1;}
+  .versi-table td{padding:8px 10px;font-size:13px;}
+  .versi-table td:first-child{font-size:14px;}
+}
+
+
+
+/* ── SECTION INNER ── */
+.section-inner{max-width:960px;margin:0 auto;padding:0;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,2.7rem);font-weight:600;color:var(--ink);margin-bottom:6px;}
+.section-sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gray);font-size:15px;margin-bottom:24px;}
+.section-rule{height:2px;background:var(--red);margin-bottom:28px;}
+
+/* ── GRID SYSTEMS ── */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0;}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0;}
+.grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:20px 0;}
+@media(max-width:750px){.grid-3,.grid-2,.grid-auto{grid-template-columns:1fr;}.span2{grid-column:span 1;}}
+
+/* ── CARDS ── */
+.card{background:var(--carta-2);border:1px solid rgba(26,22,18,.1);border-radius:4px;padding:20px 22px;position:relative;transition:transform .15s,box-shadow .15s;}
+.card:hover{transform:translateY(-2px);box-shadow:var(--sh-lg);}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:4px 4px 0 0;}
+.card.c-navy{border-color:rgba(45,90,135,.25);}.card.c-navy::before{background:linear-gradient(90deg,#2d5a87,#4a7ab0);}
+.card.c-rose{border-color:rgba(122,31,31,.2);}.card.c-rose::before{background:linear-gradient(90deg,var(--red),var(--red-light));}
+.card.c-gold{border-color:rgba(184,138,62,.25);}.card.c-gold::before{background:linear-gradient(90deg,var(--gold),#d4a84e);}
+.card.c-teal{border-color:rgba(42,122,110,.2);}.card.c-teal::before{background:linear-gradient(90deg,#2a7a6e,#40a090);}
+.card.c-purple{border-color:rgba(96,64,160,.2);}.card.c-purple::before{background:linear-gradient(90deg,#6040a0,#9060d0);}
+.card-icon{font-size:22px;margin-bottom:8px;}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:4px;line-height:1.25;}
+.card-subtitle{font-style:italic;color:var(--gray);font-size:13px;margin-bottom:10px;}
+.card-body{font-size:14px;color:var(--ink2);line-height:1.65;}
+.card-body strong{color:var(--ink);font-weight:700;}
+.card-body em{color:var(--red-dark);font-style:italic;}
+.span2{grid-column:span 2;}
+
+/* ── TAGS ── */
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;}
+.tag{font-size:11px;letter-spacing:.5px;padding:3px 9px;border-radius:20px;border:1px solid currentColor;opacity:.75;font-family:'Manrope',sans-serif;font-weight:600;}
+.tag-navy{color:#2d5a87;}.tag-rose{color:var(--red);}.tag-gold{color:var(--gold);}
+.tag-teal{color:#2a7a6e;}.tag-purple{color:#6040a0;}
+
+/* ── ACCORDION (acc-trigger) ── */
+.accordion{border:1px solid rgba(26,22,18,.12);border-radius:4px;overflow:hidden;margin:20px 0;}
+.acc-trigger{width:100%;background:var(--carta-2);border:none;border-bottom:1px solid rgba(26,22,18,.1);color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;text-align:left;padding:16px 20px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:background .2s;}
+.acc-trigger:hover{background:var(--carta-scura);}
+.acc-trigger.open{background:var(--ink);color:var(--carta);}
+.acc-trigger .acc-icon{font-size:18px;flex-shrink:0;}
+.acc-trigger .acc-arrow{margin-left:auto;color:var(--gray);font-size:16px;transition:transform .3s;font-style:normal;}
+.acc-trigger.open .acc-arrow{transform:rotate(180deg);}
+.acc-body{display:none;padding:20px;background:white;border-bottom:1px solid rgba(26,22,18,.08);font-size:14px;color:var(--ink2);line-height:1.7;}
+.acc-body.open{display:block;}
+.acc-body strong{color:var(--ink);}.acc-body em{color:var(--red-dark);font-style:italic;}
+.acc-body p{margin-bottom:10px;}.acc-body p:last-child{margin-bottom:0;}
+.acc-sub{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);display:block;margin-bottom:2px;}
+
+/* ── QUOTE BLOCK ── */
+.quote-block{border-left:4px solid var(--red);padding:16px 20px;margin:20px 0;background:#fbeaea;border-radius:0 4px 4px 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--ink2);line-height:1.7;}
+.quote-block cite{display:block;margin-top:8px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-style:normal;font-family:'JetBrains Mono',monospace;color:var(--gray);}
+
+/* ── TIMELINE ── */
+.tl-year{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--red);display:block;margin-bottom:2px;}
+.tl-title{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--ink);font-size:1.05rem;margin-bottom:3px;}
+.tl-body{font-size:14px;color:var(--ink2);line-height:1.6;}
+
+/* ── COMPARE TABLE ── */
+.compare-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px;border:1px solid rgba(26,22,18,.1);}
+.compare-table th{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--carta);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;background:var(--ink);text-align:left;}
+.compare-table td{padding:9px 14px;border-bottom:1px solid rgba(26,22,18,.06);vertical-align:top;color:var(--ink2);line-height:1.5;font-size:14px;}
+.compare-table tr:hover td{background:rgba(184,138,62,.04);}
+.compare-table td:first-child{color:var(--gray);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:15px;}
+
+/* ── CONN CARDS ── */
+.conn-card{background:var(--carta-2);border:1px solid rgba(26,22,18,.1);border-radius:4px;padding:18px 20px;transition:transform .15s,box-shadow .15s;margin-bottom:12px;}
+.conn-card:hover{transform:translateY(-2px);box-shadow:var(--sh);}
+.conn-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:3px;}
+.conn-type{font-size:10px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;padding:2px 8px;border-radius:3px;display:inline-block;font-family:'JetBrains Mono',monospace;font-weight:600;}
+.conn-type.influenza{background:rgba(184,138,62,.15);color:var(--gold);}
+.conn-type.confronto{background:rgba(122,31,31,.1);color:var(--red);}
+.conn-type.eredita,.conn-type.eredità{background:rgba(42,74,34,.1);color:var(--green-dark);}
+.conn-type.parallelo{background:rgba(96,64,160,.1);color:#6040a0;}
+.conn-body{font-size:14px;color:var(--ink2);line-height:1.65;}
+.conn-body strong{color:var(--ink);}
+
+/* ── CONCEPT CENTER ── */
+.concept-center{background:var(--ink);border-radius:4px;padding:32px 28px;text-align:center;position:relative;overflow:hidden;margin-bottom:28px;box-shadow:var(--sh-lg);}
+.concept-center::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));}
+.concept-center-icon{font-size:42px;margin-bottom:12px;}
+.concept-center-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--carta);margin-bottom:4px;}
+.concept-center-sub{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--red-light);margin-bottom:14px;font-family:'JetBrains Mono',monospace;}
+.concept-center-body{font-size:15px;color:rgba(244,236,216,.85);max-width:600px;margin:0 auto;line-height:1.7;}
+
+/* ── TESTO CARD ── */
+.testo-card{background:var(--carta-2);border:1px solid rgba(26,22,18,.08);border-radius:4px;overflow:hidden;margin-bottom:16px;box-shadow:var(--sh);}
+.testo-header{padding:14px 18px;background:var(--ink);display:flex;align-items:center;gap:10px;}
+.testo-source{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,236,216,.5);margin-bottom:2px;font-family:'JetBrains Mono',monospace;}
+.testo-title{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--carta);font-size:1.1rem;}
+.testo-body{padding:16px 18px;font-size:14px;color:var(--ink2);line-height:1.7;}
+.testo-body strong{color:var(--ink);}
+.testo-body .label{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--red);margin-bottom:6px;display:block;margin-top:12px;font-family:'JetBrains Mono',monospace;font-weight:600;}
+.testo-body .label:first-child{margin-top:0;}
+
+/* ── HERO EXTRAS ── */
+.hero-dates{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gray);font-size:1.1rem;margin-bottom:10px;}
+.hero-rule{width:60px;height:1px;background:linear-gradient(90deg,var(--red),var(--gold));margin:0 auto 16px;}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink2);font-size:1.15rem;max-width:560px;margin:0 auto 10px;}
+.hero-ornament{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:16px;}
+.hero-bg{display:none;}
+
+/* ── MISC ── */
+.mat-box{background:var(--carta-2);border:1px solid rgba(26,22,18,.1);border-radius:4px;padding:20px 22px;margin:16px 0;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+.section.active{animation:fadeIn .25s ease;}
+
+
+</style>
+</head>
+<body>
+
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-sec="s-panoramica">Panoramica</button>
+    <button class="nav-btn" data-sec="s-vita">Vita</button>
+    <button class="nav-btn" data-sec="s-poetica">Poetica</button>
+    <button class="nav-btn" data-sec="s-opere">Opere</button>
+    <button class="nav-btn" data-sec="s-testi">Testi chiave</button>
+    <button class="nav-btn" data-sec="s-stile">Stile</button>
+    <button class="nav-btn" data-sec="s-collegamenti">Collegamenti</button>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="hero">
+    <div class="eyebrow">◆ Dispensa completa per l'esame ◆</div>
+    <h1 class="title">Luigi <em>Pirandello</em></h1>
+    <div class="hero-dates">1867 – 1936 &nbsp;·&nbsp; Premio Nobel 1934</div>
+    <div class="hero-rule"></div>
+    <div class="hero-tagline">«Maschere senza volto» — l'identità come finzione, la vita come forma impossibile da contenere</div>
+  </div>
+</div>
+
+<section class="section active" id="s-panoramica">
+<div class="container">
+<div class="concept-center">
+    <div class="concept-center-icon">🎭</div>
+    <div class="concept-center-title">Vita e Forma</div>
+    <div class="concept-center-sub">Il nucleo di tutta l'opera pirandelliana</div>
+    <div class="concept-center-body">
+      La <strong style="color:var(--rose2)">Vita</strong> è il flusso continuo dell'esistenza — mutevole, contraddittoria, mai uguale a sé stessa.
+      La <strong style="color:var(--gold2)">Forma</strong> è tutto ciò che cerca di fermarla: un nome, un ruolo, una maschera sociale.
+      Nessuna forma può contenere la vita. Da questa tensione irrisolvibile nasce l'intera opera di Pirandello.
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:14px">
+
+    <div class="card c-navy">
+      <div class="card-icon">📍</div>
+      <div class="card-title">Vita &amp; Contesto</div>
+      <div class="card-subtitle">Caos, 1867 — Roma, 1936</div>
+      <div class="card-body">
+        Nato a <strong>Girgenti</strong> (Agrigento), si autodefinisce «figlio del Caos».
+        Formazione a Palermo, Roma, Bonn (laurea 1891 sul dialetto girgentino).
+        Crisi domestica: moglie paranoica internata nel 1919.
+        Nobel 1934. Muore lasciando incompiuti <em>I giganti della montagna</em>.
+      </div>
+      <div class="tags"><span class="tag tag-navy">Sicilia</span><span class="tag tag-navy">Borghesia</span><span class="tag tag-navy">1934 Nobel</span></div>
+    </div>
+
+    <div class="card c-rose">
+      <div class="card-icon">🪞</div>
+      <div class="card-title">Identità e Maschera</div>
+      <div class="card-subtitle">Il sé come finzione</div>
+      <div class="card-body">
+        Sotto la maschera <strong>non c'è un «vero io»</strong>: ci sono solo altri strati di maschere.
+        Ogni persona che ci conosce costruisce di noi un'immagine parziale e diversa.
+        Siamo <em>uno, nessuno e centomila</em> contemporaneamente.
+      </div>
+      <div class="tags"><span class="tag tag-rose">Uno, nessuno e centomila</span><span class="tag tag-rose">Enrico IV</span></div>
+    </div>
+
+    <div class="card c-gold">
+      <div class="card-icon">🔍</div>
+      <div class="card-title">Relativismo conoscitivo</div>
+      <div class="card-subtitle">Non esiste la Verità, esistono le verità</div>
+      <div class="card-body">
+        Ogni conoscenza è <strong>parziale e prospettica</strong>: dipende dal punto di osservazione.
+        Nessuno può uscire da sé stesso per vedere la realtà «come è davvero».
+        Cfr. Einstein, Nietzsche, pragmatismo di James.
+      </div>
+      <div class="tags"><span class="tag tag-gold">Così è (se vi pare)</span><span class="tag tag-gold">Lanterninosofia</span></div>
+    </div>
+
+    <div class="card c-teal">
+      <div class="card-icon">😂</div>
+      <div class="card-title">Umorismo</div>
+      <div class="card-subtitle">Avvertimento → Sentimento del contrario</div>
+      <div class="card-body">
+        <strong>Comicità</strong>: rido di chi è «fuori norma» (avvertimento del contrario).<br>
+        <strong>Umorismo</strong>: capisco <em>perché</em> è fuori norma, e il riso si mescola a pietà (sentimento del contrario).
+        Non è tragedia né commedia: è uno spazio intermedio, amaro e umano.
+      </div>
+      <div class="tags"><span class="tag tag-teal">Saggio L'Umorismo (1908)</span><span class="tag tag-teal">Vecchia imbellettata</span></div>
+    </div>
+
+    <div class="card c-purple">
+      <div class="card-icon">🌀</div>
+      <div class="card-title">La Follia</div>
+      <div class="card-subtitle">Liberazione paradossale</div>
+      <div class="card-body">
+        Chi è dichiarato «pazzo» è escluso dalle convenzioni, ma per questo <strong>libero da esse</strong>.
+        In <em>Enrico IV</em> la follia è scelta consapevolmente come maschera di libertà.
+        Paradosso: la libertà fittizia si rovescia in prigione reale con l'omicidio.
+      </div>
+      <div class="tags"><span class="tag tag-purple">Enrico IV</span><span class="tag tag-purple">Il treno ha fischiato</span></div>
+    </div>
+
+    <div class="card c-navy">
+      <div class="card-icon">🧠</div>
+      <div class="card-title">Il Personaggio ragionatore</div>
+      <div class="card-subtitle">L'eroe che pensa invece di agire</div>
+      <div class="card-body">
+        I protagonisti non combattono: <strong>analizzano</strong>.
+        Smontano le certezze proprie e altrui con logica ossessiva, quasi burocratica.
+        Anticipano Kafka e Beckett. Il dialogo è autopsia verbale del sé.
+      </div>
+      <div class="tags"><span class="tag tag-navy">Mattia Pascal</span><span class="tag tag-navy">Moscarda</span><span class="tag tag-navy">Enrico IV</span></div>
+    </div>
+
+  </div>
+
+  <div class="quote-block">
+    «La vita o la si vive o la si scrive.»
+    <cite>— Il fu Mattia Pascal</cite>
+  </div>
+
+  <div class="grid-3">
+    <div class="card c-gold">
+      <div class="card-icon">🎭</div>
+      <div class="card-title">Teatro nel teatro</div>
+      <div class="card-subtitle">Il palcoscenico che si denuda</div>
+      <div class="card-body">
+        Trilogia metateatrale: <em>Sei personaggi in cerca d'autore</em> (1921), <em>Ciascuno a suo modo</em> (1924), <em>Questa sera si recita a soggetto</em> (1930).
+        La <strong>quarta parete scompare</strong>: il teatro smette di fingere di non essere teatro.
+      </div>
+      <div class="tags"><span class="tag tag-gold">Metateatro</span><span class="tag tag-gold">Rottura 4ª parete</span></div>
+    </div>
+
+    <div class="card c-teal">
+      <div class="card-icon">🔀</div>
+      <div class="card-title">Lo sdoppiamento</div>
+      <div class="card-subtitle">Due identità simultane</div>
+      <div class="card-body">
+        I protagonisti gestiscono due identità contemporaneamente o assistono alla dissoluzione del proprio sé.
+        Non è il <em>Doppelgänger</em> romantico: non ci sono due identità speculari,
+        ma la scoperta che <strong>l'identità stessa è una finzione</strong>, senza un «originale».
+      </div>
+      <div class="tags"><span class="tag tag-teal">Mattia / Adriano</span><span class="tag tag-teal">Enrico IV</span></div>
+    </div>
+
+    <div class="card c-rose">
+      <div class="card-icon">🌍</div>
+      <div class="card-title">Attualità</div>
+      <div class="card-subtitle">Pirandello oggi</div>
+      <div class="card-body">
+        Nell'epoca dei <strong>social network</strong>, tutti costruiscono la propria immagine pubblica.
+        Siamo tutti «centomila»: per il collega, per il follower, per il partner, siamo persone diverse.
+        La domanda «chi sono io per gli altri?» ha una concretezza inedita.
+      </div>
+      <div class="tags"><span class="tag tag-rose">Postmodernità</span><span class="tag tag-rose">Social media</span></div>
+    </div>
+</div>
+</section>
+<section class="section" id="s-vita">
+<div class="container">
+<div class="section-title">Vita e Formazione</div>
+  <div class="section-sub">Il «figlio del Caos» tra Sicilia, Germania e Roma</div>
+  <div class="section-rule"></div>
+
+  <div class="grid-2" style="gap:30px; margin-bottom:30px">
+    <div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-year">1867</div>
+          <div class="tl-title">Nascita a Caos, Girgenti</div>
+          <div class="tl-body">Nasce il 28 giugno in una contrada nei pressi di Agrigento. Il nome del luogo è simbolicamente significativo: Pirandello si autodefinirà «figlio del Caos», alludendo sia alla nascita sia alla natura caotica dell'esistenza umana. Famiglia borghese: il padre Stefano gestisce una <em>zolfara</em>.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1880</div>
+          <div class="tl-title">Trasferimento a Palermo</div>
+          <div class="tl-body">Frequenta il liceo, comincia a coltivare la passione per la letteratura e il teatro. Lavora per tre mesi nelle miniere paterne — esperienza che gli imprime un senso acuto della fatica e della miseria materiale.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1887–1891</div>
+          <div class="tl-title">Roma e Bonn — Formazione filosofica</div>
+          <div class="tl-body">Si trasferisce a Roma per gli studi di filologia, poi a Bonn dove si laurea con una tesi sul dialetto girgentino. Il contatto con la cultura tedesca (Hegel, Schopenhauer, romantici, nichilismo) è fondamentale per la sua visione. Incontra Capuana, che lo orienta verso la narrativa.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1894</div>
+          <div class="tl-title">Matrimonio con Antonietta Portolano</div>
+          <div class="tl-body">Matrimonio combinato per ragioni economiche. Dal 1897 la moglie comincia a manifestare disturbi psichici: una paranoia ossessiva che si acuisce negli anni. L'esperienza di vivere con una persona che costruisce una realtà alternativa sarà fondamentale per il suo relativismo conoscitivo.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1904</div>
+          <div class="tl-title">Il fu Mattia Pascal — il primo grande successo</div>
+          <div class="tl-body">Pubblicato a puntate sulla <em>Nuova Antologia</em>. Segna la svolta dalla sensibilità verista verso la riflessione sull'identità. In questo periodo Pirandello vive tra miseria economica (disastro delle zolfare) e tormento domestico, insegnando al Magistero femminile di Roma.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1919</div>
+          <div class="tl-title">Internamento della moglie</div>
+          <div class="tl-body">Antonietta Portolano viene definitivamente internata in un ospedale psichiatrico. La lunga convivenza con la sua realtà distorta ha già fornito a Pirandello la dimostrazione vivente dell'impossibilità di una verità univoca.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1921</div>
+          <div class="tl-title">Sei personaggi — Scandalo e trionfo</div>
+          <div class="tl-body">La première a Roma provoca fischi e applausi. L'opera viene presto rappresentata in tutta Europa e negli Stati Uniti, consacrando Pirandello come innovatore del teatro moderno.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1924</div>
+          <div class="tl-title">Iscrizione al PNF</div>
+          <div class="tl-body">Nell'anno dell'assassinio di Matteotti, Pirandello si iscrive al Partito Nazionale Fascista. La sua adesione nasce da delusione per il fallimento degli ideali liberali, non da una scelta ideologica profonda. Il fascismo è percepito come una forza vitale e irrazionale, non come dottrina politica.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1925</div>
+          <div class="tl-title">Teatro d'Arte di Roma</div>
+          <div class="tl-body">Fonda e dirige il Teatro d'Arte, valorizzando l'attrice Marta Abba, con cui intrattiene un rapporto sentimentale intenso ma non corrisposto.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1934</div>
+          <div class="tl-title">Premio Nobel per la Letteratura</div>
+          <div class="tl-body">Riconoscimento internazionale della sua capacità di dare forma artistica alle inquietudini della modernità.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-year">1936</div>
+          <div class="tl-title">Morte a Roma, 10 dicembre</div>
+          <div class="tl-body">Lascia incompiuti <em>I giganti della montagna</em>. Aveva chiesto di essere cremato senza cerimonie — in conformità con la sua filosofia di «spogliare» l'esistenza di ogni apparenza.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+      <div class="card c-navy" style="margin-bottom:14px">
+        <div class="card-icon">🌍</div>
+        <div class="card-title">Contesto storico-culturale</div>
+        <div class="card-subtitle">La crisi delle certezze moderne</div>
+        <div class="card-body">
+          Pirandello si forma nella crisi di fine Ottocento: il <strong>positivismo vacilla</strong> sotto i colpi di scoperte che mettono in dubbio l'uomo moderno.
+          <br><br>
+          • <strong>Freud</strong> — L'interpretazione dei sogni (1900)<br>
+          • <strong>Nietzsche</strong> — Morte di Dio, crisi dei valori<br>
+          • <strong>Einstein</strong> — Relatività, nessun punto di vista assoluto<br>
+          • <strong>Bergson</strong> — Percezione lineare del tempo in discussione<br>
+          • <strong>Binet</strong> — Molteplicità della personalità<br><br>
+          In Italia: crisi degli ideali risorgimentali, divario Nord/Sud, corruzione politica.
+        </div>
+      </div>
+
+      <div class="card c-rose" style="margin-bottom:14px">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">Rapporto col Fascismo</div>
+        <div class="card-subtitle">Un'adesione problematica</div>
+        <div class="card-body">
+          L'iscrizione al PNF (1924) nasce da <strong>delusione per il fallimento liberale</strong>, non da convinzione ideologica.
+          Il fascismo è percepito come «forza vitale e irrazionale» — quasi un'incarnazione dell'energia caotica della realtà.
+          <br><br>
+          I suoi personaggi si ribellano in modo <em>esistenziale e conoscitivo</em>, non politico. Questo spiega la coesistenza di critica feroce alla società borghese e adesione a un regime autoritario.
+        </div>
+      </div>
+
+      <div class="card c-gold">
+        <div class="card-icon">💡</div>
+        <div class="card-title">La crisi familiare come conoscenza</div>
+        <div class="card-subtitle">La moglie paranoica come specchio filosofico</div>
+        <div class="card-body">
+          Convivere per anni con Antonietta, che vedeva tradimenti inesistenti e costruiva un mondo parallelo, offre a Pirandello una <strong>dimostrazione vivente</strong> dell'impossibilità di una verità univoca.
+          <br><br>
+          <em>«Se la moglie è convinta di una realtà diversa da quella che percepisco, chi dei due ha torto?»</em>
+          <br><br>
+          La risposta pirandelliana: non esiste un punto di osservazione neutro e assoluto. La realtà è sempre filtrata dalla soggettività.
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+<section class="section" id="s-poetica">
+<div class="container">
+<div class="section-title">Poetica e Pensiero</div>
+  <div class="section-sub">I concetti fondamentali dell'universo pirandelliano</div>
+  <div class="section-rule"></div>
+
+  <!-- Vita e Forma accordion -->
+  <div class="accordion">
+    <button class="acc-trigger open" onclick="toggleAcc(this)">
+      <span class="acc-icon">🌊</span>
+      <span>Vita e Forma — Il nucleo fondamentale</span>
+      <em class="acc-arrow">▾</em>
+    </button>
+    <div class="acc-body open">
+      <p>Con <strong>«Vita»</strong> Pirandello intende la natura continua e fluida dell'esistenza: i nostri pensieri, emozioni, desideri non stanno mai fermi. Non siamo mai esattamente la stessa persona di ieri. La Vita è come un fiume: non ha una forma fissa, scorre sempre.</p>
+      <p>Con <strong>«Forma»</strong> intende tutto ciò che cerca di fermare questo flusso e dargli un'etichetta: il nostro nome, il nostro mestiere, il ruolo in famiglia, le aspettative altrui. Quando dici «sono un medico», «sono il figlio di» — stai dando una Forma alla tua vita.</p>
+      <p>Il paradosso centrale: <strong>non puoi fare a meno di una Forma</strong> — senza un nome, senza un ruolo, non esisti per la società — ma accettare una Forma significa tradire la tua vera natura, che è mobile, contraddittoria, non riducibile.</p>
+      <p>I personaggi pirandelliani sono intrappolati esattamente qui: chi crede di avere un'identità stabile si inganna; chi cerca di liberarsi da tutte le forme rischia di <em>dissolversi, di essere nessuno</em>.</p>
+      <div class="quote-block" style="margin-top:14px">
+        «È come voler fotografare un fiume: nel momento in cui scatti, l'acqua è già altrove.»
+        <cite>— parabola pirandelliana</cite>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="acc-trigger" onclick="toggleAcc(this)">
+      <span class="acc-icon">🪞</span>
+      <span>Identità e Maschera — Uno, nessuno, centomila</span>
+      <em class="acc-arrow">▾</em>
+    </button>
+    <div class="acc-body">
+      <p>La maschera è il simbolo centrale: ogni individuo porta una maschera — o più maschere — di fronte agli altri e spesso anche di fronte a sé stesso. Questa maschera è il risultato delle aspettative sociali, dei ruoli imposti dalla famiglia, dalla professione, dalla classe.</p>
+      <p>Il problema pirandelliano è però più radicale del semplice «smascheramento»: <strong>sotto la maschera non c'è un «vero io» da liberare</strong>. Ci sono solo altri strati di maschere, in una regressione senza fondo. L'identità non è una sostanza, è un processo.</p>
+      <p>Formula: <em>Uno, nessuno e centomila</em> — ogni individuo è «uno» (come crede di essere), «nessuno» (perché non esiste un sé autentico e fisso), e «centomila» (perché ogni persona che lo conosce lo vede diversamente).</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="acc-trigger" onclick="toggleAcc(this)">
+      <span class="acc-icon">🔍</span>
+      <span>Relativismo conoscitivo — Nessuna verità assoluta</span>
+      <em class="acc-arrow">▾</em>
+    </button>
+    <div class="acc-body">
+      <p>Il relativismo di Pirandello non è solo morale o psicologico: è anzitutto <strong>conoscitivo</strong>. Non esiste un punto di vista neutro e assoluto da cui giudicare la realtà: ogni conoscenza è sempre parziale, prospettica, condizionata dalla posizione di chi osserva.</p>
+      <p>Punto di riferimento: Alfred Binet e la sua riflessione sulla molteplicità della personalità — un'identità che non è unitaria ma frammentata in tanti «centri» autonomi.</p>
+      <p>Dal punto di vista epistemologico, questa posizione anticipa la fenomenologia, l'ermeneutica e il prospettivismo nietzscheano. La «verità» è sempre «la vostra» o «la mia», mai semplicemente «la verità».</p>
+      <p>Il dramma <em>Così è (se vi pare)</em>, già nel titolo, dichiara questa irrisolvibilità.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="acc-trigger" onclick="toggleAcc(this)">
+      <span class="acc-icon">😂</span>
+      <span>L'Umorismo — Avvertimento e Sentimento del contrario</span>
+      <em class="acc-arrow">▾</em>
+    </button>
+    <div class="acc-body">
+      <p>Il saggio <em>L'umorismo</em> (1908) è il manifesto teorico della poetica pirandelliana. Distingue con precisione tra <strong>comicità</strong> e <strong>umorismo</strong>.</p>
+      <p><strong>Avvertimento del contrario</strong>: la reazione immediata e istintiva alla percezione di qualcosa di incongruo. Vediamo una cosa che non corrisponde a ciò che dovrebbe essere e ridiamo. È la comicità pura.</p>
+      <p><strong>Sentimento del contrario</strong>: quando a questa reazione istintiva subentra la riflessione — quando ci chiediamo il <em>perché</em> di quella incongruità, quando immaginiamo la storia e la sofferenza che si nasconde dietro all'apparenza comica. Il riso si mescola con la pietà e la comprensione.</p>
+      <p><strong>Esempio chiave</strong>: vediamo una vecchia signora imbellettata e vestita da giovane → ridiamo (avvertimento del contrario). Ma poi riflettiamo: forse si veste così per piacere al marito che la tradisce, o per non sentirsi abbandonata dai figli. Il riso si stempera in qualcosa di più complesso, misto di tenerezza e malinconia: questo è il sentimento del contrario.</p>
+      <p>Implicazione etica: l'umorismo richiede la capacità di mettersi nei panni dell'altro, di immaginarne la sofferenza. È una forma di <strong>conoscenza empatica</strong>.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="acc-trigger" onclick="toggleAcc(this)">
+      <span class="acc-icon">🌀</span>
+      <span>La Follia — Liberazione paradossale</span>
+      <em class="acc-arrow">▾</em>
+    </button>
+    <div class="acc-body">
+      <p>In Pirandello la follia assume un ruolo ambivalente. Da un lato è una condizione tragica, l'esito disperato di chi non riesce più a reggere il peso delle maschere sociali; dall'altro è una <strong>forma paradossale di libertà</strong>, l'unico spazio in cui è possibile sfuggire alle gabbie della normalità.</p>
+      <p>Chi viene dichiarato «pazzo» è escluso dalle convenzioni sociali, ma per questo stesso motivo non è più obbligato a portarle.</p>
+      <p>In <em>Enrico IV</em> il protagonista ha la possibilità di uscire dalla follia — ha riacquistato la ragione — ma sceglie consapevolmente di rimanere nel personaggio del folle imperatore medievale, perché quella maschera gli offre una libertà che la vita «normale» non darebbe. La follia diventa così non la perdita della ragione, ma il suo <strong>esercizio più lucido</strong>.</p>
+      <p>Paradosso conclusivo: compiendo l'atto di violenza reale (l'omicidio di Belcredi), la follia fittizia diventa la sua prigione reale. La maschera che era libertà si chiude per sempre.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="acc-trigger" onclick="toggleAcc(this)">
+      <span class="acc-icon">🎭</span>
+      <span>Il Teatro — Finzione, realtà e teatro nel teatro</span>
+      <em class="acc-arrow">▾</em>
+    </button>
+    <div class="acc-body">
+      <p>Il teatro è per Pirandello lo spazio naturale in cui il contrasto tra vita e forma si manifesta nel modo più diretto. Sul palcoscenico il problema della rappresentazione è letterale: c'è un testo scritto (la forma), ci sono attori che lo interpretano (maschere), e c'è una storia di personaggi (vita) che aspira a essere rappresentata.</p>
+      <p>La formula del <strong>«teatro nel teatro»</strong> — sviluppata nella trilogia composta da <em>Sei personaggi in cerca d'autore</em> (1921), <em>Ciascuno a suo modo</em> (1924) e <em>Questa sera si recita a soggetto</em> (1930) — porta questa riflessione alle sue conseguenze più radicali.</p>
+      <p>Lo spettacolo diventa riflessione su sé stesso: gli attori recitano la parte di attori che stanno provando uno spettacolo, i personaggi irrompono nella finzione teatrale rivendicando la loro autonoma esistenza. La <strong>«quarta parete»</strong> scompare: il teatro si denuda, mostrando i propri meccanismi.</p>
+      <p>Autonomia del personaggio: una volta creato, il personaggio esiste indipendentemente dall'autore e dall'attore. Il Personaggio è «più reale» dell'attore, perché l'attore cambia sera dopo sera, mentre il Personaggio è fisso nella sua essenza. Paradossale «immortalità del personaggio».</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="acc-trigger" onclick="toggleAcc(this)">
+      <span class="acc-icon">🔀</span>
+      <span>Lo Sdoppiamento — Il doppio senza originale</span>
+      <em class="acc-arrow">▾</em>
+    </button>
+    <div class="acc-body">
+      <p>Lo sdoppiamento è un tema ricorrente: i protagonisti si trovano spesso a dover gestire due identità contemporaneamente. Mattia Pascal vive sotto due nomi e due vite; Enrico IV è simultaneamente un uomo del Novecento e un imperatore medievale; Vitangelo Moscarda assiste, quasi spettatore, alla dissoluzione del proprio sé in mille immagini altrui.</p>
+      <p>Questo tema è connesso alla tradizione del <em>Doppelgänger</em> romantico, ma Pirandello lo porta a conseguenze più radicali: <strong>non si tratta dello scontro tra due identità speculari</strong>, ma della scoperta che l'identità stessa è una finzione, che non esiste un «originale» da contrapporre a una «copia».</p>
+    </div>
+</div>
+</section>
+<section class="section" id="s-opere">
+<div class="container">
+<div class="section-title">Le Opere</div>
+  <div class="section-sub">Romanzi, teatro, novelle — un unico corpus in continua osmosi</div>
+  <div class="section-rule"></div>
+
+  <div class="grid-auto" style="margin-bottom:24px">
+
+    <div class="card c-gold">
+      <div class="card-icon">📖</div>
+      <div class="card-title">Il fu Mattia Pascal</div>
+      <div class="card-subtitle">1904 · Romanzo</div>
+      <div class="card-body">
+        Mattia finge la propria morte, si reinventa come <strong>Adriano Meis</strong>, poi scopre che vivere senza identità legale è impossibile: non può denunciare un furto senza rischiare di essere scoperto. Inscena un suicidio nel Tevere, torna al paese: la moglie si è risposata. Va a visitare la propria tomba.
+        <br><br>
+        <strong>Temi</strong>: sdoppiamento, fragilità delle maschere sociali, assurdità degli eventi come rivelazione della realtà, inconsistenza delle certezze.
+        <br><br>
+        Contiene le celebri metafore della <em>lanterninosofia</em> e dello <em>strappo nel cielo di carta</em>.
+      </div>
+      <div class="tags"><span class="tag tag-gold">Sdoppiamento</span><span class="tag tag-gold">Identità</span><span class="tag tag-gold">Lanterninosofia</span></div>
+    </div>
+
+    <div class="card c-gold">
+      <div class="card-icon">📖</div>
+      <div class="card-title">Uno, nessuno e centomila</div>
+      <div class="card-subtitle">1926 · Romanzo (iniziato 1908)</div>
+      <div class="card-body">
+        La moglie nota che il naso di <strong>Vitangelo Moscarda</strong> «pende a destra». Crisi esistenziale totale: per ogni persona che lo conosce, lui è qualcuno di diverso. La gente lo crede pazzo; viene internato. Sceglie di essere «nessuno»: rinuncia a ogni proprietà, ruolo e nome. Si ritira in un ospizio.
+        <br><br>
+        <strong>La formulazione più estrema del relativismo pirandelliano</strong>: l'identità individuale non esiste come sostanza, è solo la somma delle percezioni altrui.
+      </div>
+      <div class="tags"><span class="tag tag-gold">Relativismo</span><span class="tag tag-gold">Nichilismo</span><span class="tag tag-gold">Identità</span></div>
+    </div>
+
+    <div class="card c-teal">
+      <div class="card-icon">🎬</div>
+      <div class="card-title">Quaderni di Serafino Gubbio operatore</div>
+      <div class="card-subtitle">1916 (Si gira...) · 1925 · Romanzo</div>
+      <div class="card-body">
+        Serafino, operatore cinematografico, scrive diari filosofici mentre gira film alla Kosmograph. L'amico Simone Pau teorizza che nelle società dominate dalla macchina la parte spirituale degli uomini è diventata superflua. Il romanzo culmina in una scena di violenza: Serafino assiste impassibile — è il suo mestiere — e diventa muto per lo shock.
+        <br><br>
+        <strong>Tema</strong>: alienazione tecnologica, l'uomo ridotto a funzione meccanica. Anticipa Benjamin e Debord.
+      </div>
+      <div class="tags"><span class="tag tag-teal">Alienazione</span><span class="tag tag-teal">Cinema</span><span class="tag tag-teal">Modernità</span></div>
+    </div>
+
+    <div class="card c-rose">
+      <div class="card-icon">🎭</div>
+      <div class="card-title">Sei personaggi in cerca d'autore</div>
+      <div class="card-subtitle">1921 · Teatro</div>
+      <div class="card-body">
+        Sei Personaggi abbandonati dall'autore irrompono in una prova teatrale chiedendo di essere rappresentati. Gli attori non riescono a cogliere la loro «vita autentica». La rappresentazione non coincide mai con l'originale.
+        <br><br>
+        <strong>La quarta parete scompare.</strong> La première scandalizza Roma; diventa presto un'opera rappresentata in tutto il mondo. Fondamentale per la nascita del teatro moderno.
+      </div>
+      <div class="tags"><span class="tag tag-rose">Teatro nel teatro</span><span class="tag tag-rose">Finzione vs realtà</span><span class="tag tag-rose">Metateatro</span></div>
+    </div>
+
+    <div class="card c-rose">
+      <div class="card-icon">🎭</div>
+      <div class="card-title">Enrico IV</div>
+      <div class="card-subtitle">1922 · Tragedia</div>
+      <div class="card-body">
+        Durante una cavalcata in costume, un giovane cade e crede di essere Enrico IV di Germania. Dopo 12 anni riacquista la ragione, ma ha perso tutto. Sceglie di <strong>continuare a fingersi pazzo</strong>: la maschera della follia è la sua forma di libertà e potere. Uccide il rivale Belcredi: ora la follia è reale. Non può più togliersi la maschera.
+        <br><br>
+        La tragedia pirandelliana: la scelta libera si rovescia in prigione.
+      </div>
+      <div class="tags"><span class="tag tag-rose">Follia scelta</span><span class="tag tag-rose">Maschera liberatoria</span><span class="tag tag-rose">Tragedia</span></div>
+    </div>
+
+    <div class="card c-navy">
+      <div class="card-icon">📚</div>
+      <div class="card-title">Novelle per un anno</div>
+      <div class="card-subtitle">1922 (progetto) · 250 novelle realizzate su 365</div>
+      <div class="card-body">
+        Progetto ambizioso: 365 novelle in 24 volumi. Il grande laboratorio tematico. Oscillano tra la <strong>Sicilia</strong> (personaggi grotteschi, lessico dialettale, forza plastica) e <strong>Roma</strong> (mondo piccolo-borghese, occhio freddo e distaccato).
+        <br><br>
+        Novelle fondamentali: <em>Il treno ha fischiato</em>, <em>La patente</em>, <em>La carriola</em>, <em>La signora Frola e il signor Ponza</em>, <em>La morte addosso</em>.
+      </div>
+      <div class="tags"><span class="tag tag-navy">Grottesco</span><span class="tag tag-navy">Sicilia</span><span class="tag tag-navy">Umorismo</span></div>
+    </div>
+
+    <div class="card c-purple">
+      <div class="card-icon">🎭</div>
+      <div class="card-title">I giganti della montagna</div>
+      <div class="card-subtitle">Incompiuto, 1937 · Teatro dei miti</div>
+      <div class="card-body">
+        Ultima opera, rimasta incompiuta. Una compagnia di attori arriva alla villa di Cotrone — luogo magico ai margini del mondo — dove vivono «gli scalognati», esseri capaci di far vivere i sogni.
+        <br><br>
+        I Giganti del titolo rappresentano la <strong>forza bruta e il potere tecnologico</strong> della modernità. Messaggio: l'arte e la poesia non possono sopravvivere nel mondo dei Giganti. Anticipa le inquietudini sulla sopravvivenza dell'arte nella società di massa.
+      </div>
+      <div class="tags"><span class="tag tag-purple">Arte vs Tecnica</span><span class="tag tag-purple">Mito</span><span class="tag tag-purple">Incompiuto</span></div>
+    </div>
+
+    <div class="card c-gold">
+      <div class="card-icon">📖</div>
+      <div class="card-title">L'umorismo</div>
+      <div class="card-subtitle">1908 · Saggio teorico</div>
+      <div class="card-body">
+        Il manifesto teorico della poetica pirandelliana. Nasce dalla riflessione maturata scrivendo <em>Il fu Mattia Pascal</em>.
+        <br><br>
+        <strong>Prima parte</strong>: storico-filologica, etimologia del termine, l'umorismo come tradizione letteraria.<br>
+        <strong>Seconda parte</strong>: la distinzione fondamentale tra avvertimento e sentimento del contrario.
+        <br><br>
+        Manca ancora l'indagine sulla finzione teatrale, sviluppata nelle opere successive.
+      </div>
+      <div class="tags"><span class="tag tag-gold">Poetica</span><span class="tag tag-gold">Saggio</span><span class="tag tag-gold">Teoria</span></div>
+    </div>
+
+  </div>
+
+  <div class="quote-block">
+    «Uno, nessuno e centomila: non è una condanna, è una libertà. La più difficile delle libertà.»
+    <cite>— Pirandello</cite>
+</div>
+</section>
+<section class="section" id="s-testi">
+<div class="container">
+<div class="section-title">Testi Chiave</div>
+  <div class="section-sub">Passi fondamentali con analisi tematica e stilistica</div>
+  <div class="section-rule"></div>
+
+  <div class="grid-2" style="gap:16px">
+
+    <div class="testo-card">
+      <div class="testo-header">
+        <div>
+          <div class="testo-source">dall'Umorismo (1908)</div>
+          <div class="testo-title">La vecchia signora imbellettata</div>
+        </div>
+        <span class="pill" style="margin-left:auto">Poetica</span>
+      </div>
+      <div class="testo-body">
+        <span class="label">Contesto</span>
+        Il passo si trova nella seconda parte dell'<em>Umorismo</em>, il cuore teorico dell'opera.
+
+        <span class="label">Analisi</span>
+        Pirandello immagina una donna anziana imbellettata con cura, vestita da giovane in modo grottesco.
+        <strong>Avvertimento del contrario</strong>: la reazione immediata è il riso — percepiamo l'incongruità tra ciò che vediamo (una vecchia) e ciò che si vuole rappresentare (una giovane).
+        <strong>Sentimento del contrario</strong>: la riflessione interviene — perché si veste così? Forse per trattenere il marito che la tradisce, o per i figli che la trascurano. Al riso si mescola la comprensione, la pietà.
+
+        <span class="label">Simbolo</span>
+        La vecchia imbellettata è il simbolo perfetto della maschera sociale: cerca di indossare una forma che non corrisponde più alla sua vita. L'umorismo non la condanna: cerca di capirla.
+
+        <span class="label">Stile</span>
+        Strategia argomentativa in due tempi: prima la reazione immediata, poi la smonta con la riflessione. La struttura è didattica ma il tono non è freddo — c'è una partecipazione emotiva che incarna già il «sentimento del contrario».
+      </div>
+    </div>
+
+    <div class="testo-card">
+      <div class="testo-header">
+        <div>
+          <div class="testo-source">dal Fu Mattia Pascal (capp. centrali)</div>
+          <div class="testo-title">La Lanterninosofia</div>
+        </div>
+        <span class="pill" style="margin-left:auto">Metafora</span>
+      </div>
+      <div class="testo-body">
+        <span class="label">Contesto</span>
+        Il teosofo Anselmo Paleari — padrone di casa di Adriano Meis a Roma — fornisce alcune delle metafore più celebri dell'intera opera.
+
+        <span class="label">La metafora</span>
+        Paleari paragona ogni essere umano a un piccolo <strong>lanternino</strong> che cammina nel buio portando la propria luce: minuscola, relativa, che illumina solo il cerchio ristretto intorno a noi. Quando due lanternini si incontrano, le luci si sovrappongono e creano l'illusione di una verità condivisa; ma quando si separano, ciascuno torna nella propria oscurità.
+
+        <span class="label">Significato</span>
+        Ogni conoscenza è prospettica e limitata. Non esiste una luce assoluta che illumini tutto, solo infinite lucciole nel buio. <em>L'uomo senza Dio è solo con il suo piccolo lanternino.</em>
+
+        <span class="label">In coppia con</span>
+        Lo <strong>strappo nel cielo di carta</strong>: il burattino che interpreta Oreste — nel momento più drammatico — alza la testa e vede uno strappo nel fondale dipinto. Vede il buio vero al di là della finzione. L'uomo moderno sa che il «cielo» che lo sovrasta è solo carta dipinta, una convenzione. Il dramma non è più possibile — solo l'angoscia e l'ironia.
+      </div>
+    </div>
+
+    <div class="testo-card">
+      <div class="testo-header">
+        <div>
+          <div class="testo-source">da Novelle per un anno</div>
+          <div class="testo-title">Il treno ha fischiato</div>
+        </div>
+        <span class="pill" style="margin-left:auto">Novella</span>
+      </div>
+      <div class="testo-body">
+        <span class="label">Trama</span>
+        Belluca è un piccolo impiegato schiacciato da una vita di miseria totale: lavora fino allo sfinimento, mantiene una famiglia enorme, non ha un istante per sé. Un giorno impazzisce: rifiuta di lavorare, ripete «Il treno ha fischiato». I colleghi lo credono pazzo. Ma il collega narratore capisce: stanotte Belluca ha sentito fischiare un treno lontano — e ha ricordato che il mondo esiste.
+
+        <span class="label">Temi</span>
+        La follia come <strong>risveglio della vita soffocata dalla forma</strong>. Il fischio del treno — suono concreto, improvviso — riattiva la coscienza di esistere oltre il ruolo sociale. Il treno è simbolo del movimento, della libertà, del mondo che esiste oltre la prigione quotidiana.
+
+        <span class="label">Struttura</span>
+        Cornice narrativa: un narratore esterno racconta «la storia di un pazzo» e poi rivela di aver capito la verità. Doppia prospettiva che mette in pratica il principio dell'umorismo: il primo punto di vista è il riso, il secondo è il sentimento del contrario.
+      </div>
+    </div>
+
+    <div class="testo-card">
+      <div class="testo-header">
+        <div>
+          <div class="testo-source">da Uno, nessuno e centomila (incipit)</div>
+          <div class="testo-title">Il naso di Vitangelo Moscarda</div>
+        </div>
+        <span class="pill" style="margin-left:auto">Romanzo</span>
+      </div>
+      <div class="testo-body">
+        <span class="label">Il passo</span>
+        Le prime pagine descrivono il momento in cui la moglie Dida fa notare a Vitangelo che il suo naso «pende un pochino verso destra». Osservazione banale — quasi comica nella sua materialità. Vitangelo si guarda allo specchio e vede per la prima volta il proprio naso come lo vedono gli altri: estraneo.
+
+        <span class="label">Simbolismo</span>
+        Il naso è la parte più sporgente del viso, quella che caratterizza di più l'aspetto. Eppure Vitangelo non l'ha mai visto come gli altri lo vedono. L'episodio dice una cosa fondamentale: <strong>non possiamo mai conoscerci come ci conoscono gli altri</strong>, perché non possiamo uscire da noi stessi.
+
+        <span class="label">Tecnica stilistica</span>
+        Monologo interiore in forma di dialogo con il lettore: Vitangelo interpella direttamente chi legge, creando una complicità che rende il lettore partecipe della crisi. Il tono oscilla tra il grottesco (il naso che «pende») e il filosoficamente angoscioso.
+      </div>
+    </div>
+
+    <div class="testo-card">
+      <div class="testo-header">
+        <div>
+          <div class="testo-source">da Novelle per un anno</div>
+          <div class="testo-title">La signora Frola e il signor Ponza</div>
+        </div>
+        <span class="pill" style="margin-left:auto">Novella</span>
+      </div>
+      <div class="testo-body">
+        <span class="label">Trama e ambiguità</span>
+        In una cittadina, il signor Ponza vive con la seconda moglie. La signora Frola — madre della prima moglie — vive separata dal genero. Le voci si moltiplicano: la Frola dice che quella donna è sua figlia tenuta segregata; Ponza dice che la Frola è pazza, che la figlia è morta. Ognuno ha le sue ragioni. Alla fine la signora Ponza compare e afferma di essere <strong>sia</strong> la figlia della Frola <strong>sia</strong> la seconda moglie di Ponza: è «nessuna», è solo ciò che ciascuno ha bisogno che sia.
+
+        <span class="label">Significato</span>
+        L'irrisolvibilità dell'enigma <em>è</em> la tesi: non esiste una versione «vera» della storia. La realtà non è qualcosa di fisso e obiettivo, ma un'interpretazione soggettiva costruita secondo i propri bisogni. Poi trasformata nel dramma <em>Così è (se vi pare)</em>.
+      </div>
+    </div>
+
+    <div class="testo-card">
+      <div class="testo-header">
+        <div>
+          <div class="testo-source">da Sei personaggi in cerca d'autore</div>
+          <div class="testo-title">Lo scontro tra personaggi e attori</div>
+        </div>
+        <span class="pill" style="margin-left:auto">Teatro</span>
+      </div>
+      <div class="testo-body">
+        <span class="label">La scena</span>
+        I Personaggi assistono agli attori che cercano di interpretare la loro storia e reagiscono con orrore: la rappresentazione non coglie nulla della loro autenticità. Il Padre protesta con veemenza: gli attori possono solo imitare dall'esterno ciò che i Personaggi vivono dall'interno. La distanza tra vita autentica e finzione teatrale è incolmabile.
+
+        <span class="label">Temi</span>
+        <strong>Autonomia del personaggio</strong>: una volta creato, il personaggio ha una vita propria che nessun attore può pienamente incarnare. Il Personaggio è «più reale» dell'attore, perché l'attore cambia sera dopo sera, mentre il Personaggio è fisso nella sua essenza. Paradossale «immortalità del personaggio»: la forma fissa la vita, la vita sfugge alla forma.
+      </div>
+    </div>
+
+    <div class="testo-card">
+      <div class="testo-header">
+        <div>
+          <div class="testo-source">da Novelle per un anno</div>
+          <div class="testo-title">La carriola</div>
+        </div>
+        <span class="pill" style="margin-left:auto">Novella</span>
+      </div>
+      <div class="testo-body">
+        <span class="label">Trama</span>
+        Un avvocato affermato — rispettato, con famiglia e carriera brillante — scopre che la sua vita non gli appartiene: è una serie di ruoli imposti dietro i quali non c'è nulla. In un momento solitario, unico in cui si sente «lui», prende la cagnolina e la fa fare la carriola (la mette in posizione verticale tenendola per le zampe posteriori). Gesto assurdo, infantile, privo di senso razionale. È l'unico momento in cui si sente davvero libero.
+
+        <span class="label">Paradosso</span>
+        La «vita autentica» non si trova nei ruoli sociali brillanti, ma in un gesto insensato e privato che nessuno vede. La libertà dell'io si riduce a qualcosa di grottesco e insignificante — il che suggerisce che forse non esiste una vera libertà, solo la parentesi di un gesto inutile.
+      </div>
+    </div>
+
+    <div class="testo-card">
+      <div class="testo-header">
+        <div>
+          <div class="testo-source">da Novelle per un anno</div>
+          <div class="testo-title">La patente</div>
+        </div>
+        <span class="pill" style="margin-left:auto">Novella</span>
+      </div>
+      <div class="testo-body">
+        <span class="label">Trama</span>
+        Rosario Chiàrchiaro è convinto di essere iettatore, e tale viene considerato da tutto il paese. Esasperato, ha un'idea paradossale: si presenta in tribunale chiedendo che il giudice gli riconosca <em>ufficialmente</em> la qualifica di iettatore — una «patente» di jettatura — per sfruttare economicamente la paura altrui.
+
+        <span class="label">Analisi</span>
+        Invece di cercare di liberarsi dall'immagine che gli altri hanno di lui, Chiàrchiaro sceglie di <strong>appropriarsene, di farne strumento di sopravvivenza</strong>. La maschera imposta dalla società viene accettata, anzi rivendicata. Umorismo pirandelliano nella sua forma più amara: né vittoria né sconfitta, solo paradosso grottesco.
+      </div>
+    </div>
+</div>
+</section>
+<section class="section" id="s-stile">
+<div class="container">
+<div class="section-title">Lingua e Stile</div>
+  <div class="section-sub">Una prosa funzionale, non ornamentale — e i suoi paradossi</div>
+  <div class="section-rule"></div>
+
+  <div class="grid-2" style="margin-bottom:20px">
+
+    <div class="card c-teal">
+      <div class="card-icon">✍️</div>
+      <div class="card-title">Lingua funzionale, non estetica</div>
+      <div class="card-subtitle">«Grigia e monotona» — Benedetto Croce</div>
+      <div class="card-body">
+        Pirandello evita deliberatamente gli «effetti», le parole auliche, gli abbellimenti, le suggestioni poetiche. Croce definisce la sua prosa «grigia e monotona» — coglie un elemento reale ma lo interpreta negativamente.
+        <br><br>
+        La lingua di Pirandello è <strong>funzionale a esprimere il mondo dell'autore</strong>: uno strumento al servizio della visione. Nei testi siciliani la scrittura acquista vivacità espressiva e forza plastica; nei testi borghesi romani diventa convenzionale e mediocre — <em>deliberatamente</em>, per mimarne dall'interno la vacuità.
+      </div>
+    </div>
+
+    <div class="card c-rose">
+      <div class="card-icon">🔥</div>
+      <div class="card-title">Il «furore retorico» dei protagonisti</div>
+      <div class="card-subtitle">L'analisi ossessiva come stile</div>
+      <div class="card-body">
+        I protagonisti parlano in modo completamente diverso dalla prosa narrativa: con un <strong>«furore retorico»</strong> che li distingue nettamente dagli altri personaggi.
+        <br><br>
+        I ragionatori parlano troppo, spiegano e rispiegano le stesse cose, si perdono in analisi sempre più sottili. <em>Non è un difetto stilistico</em>: è la manifestazione diretta del loro stato interiore.
+        <br><br>
+        Il dialogo non serve allo scambio di informazioni ma all'esplorazione della coscienza: i personaggi <strong>pensano parlando</strong>, si smontano nel parlare. Funzione quasi psicanalitica: autopsia verbale del sé.
+      </div>
+    </div>
+
+    <div class="card c-navy">
+      <div class="card-icon">🔄</div>
+      <div class="card-title">L'osmosi tra le opere</div>
+      <div class="card-subtitle">Un unico corpus in continua riscrittura</div>
+      <div class="card-body">
+        Situazioni, personaggi e persino testi interi passano da un'opera all'altra: dalla novella al dramma al romanzo, in un continuo processo di riscrittura.
+        <br><br>
+        L'opera di Pirandello non è una somma di testi autonomi ma <strong>un unico grande corpus</strong>, un'unica riflessione sulla vita.
+        <br><br>
+        Esempi: <em>La morte addosso</em> → <em>L'uomo dal fiore in bocca</em>; la novella <em>La signora Frola e il signor Ponza</em> → il dramma <em>Così è (se vi pare)</em>; materiali di <em>Uno, nessuno e centomila</em> utilizzati altrove durante la lunghissima stesura.
+      </div>
+    </div>
+
+    <div class="card c-gold">
+      <div class="card-icon">😈</div>
+      <div class="card-title">Ironia e Grottesco</div>
+      <div class="card-subtitle">Il lato oscuro dell'umorismo</div>
+      <div class="card-body">
+        L'<strong>ironia</strong> è lo strumento stilistico con cui Pirandello pratica ciò che teorizza nell'Umorismo: presentare simultaneamente il lato comico e quello doloroso di una situazione. Non è la freddezza del moralista che giudica dall'alto, ma la consapevolezza amara di chi sa che le cose potrebbero sempre andare diversamente.
+        <br><br>
+        Il <strong>grottesco</strong>: la distorsione, l'esagerazione, la deformazione dei caratteri e delle situazioni. I personaggi grotteschi non sono «mostri»: sono individui in cui la pressione tra vita e forma ha prodotto una rottura visibile, quasi esteriore.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card c-purple" style="margin-bottom:20px">
+    <div class="card-icon">📊</div>
+    <div class="card-title">Le fasi della produzione pirandelliana</div>
+    <div class="card-subtitle">Un'evoluzione per strati</div>
+    <div class="card-body">
+      <strong>Fase 1 — Verismo siciliano</strong>: prime prove narrative (<em>L'esclusa</em>, <em>Il turno</em>). Influenza di Capuana. Ambientazione siciliana, osservazione diretta della realtà sociale.<br><br>
+      <strong>Fase 2 — La crisi dell'io</strong>: <em>Il fu Mattia Pascal</em> (1904), <em>L'Umorismo</em> (1908), <em>Novelle per un anno</em>. Emerge il relativismo conoscitivo, il tema dell'identità, la forma dell'umorismo.<br><br>
+      <strong>Fase 3 — Teatro della crisi</strong>: <em>Sei personaggi</em> (1921), <em>Enrico IV</em> (1922), <em>Ciascuno a suo modo</em> (1924). Il teatro diventa riflessione su sé stesso; trionfo internazionale.<br><br>
+      <strong>Fase 4 — Teatro dei miti</strong> (1930–1936): <em>I giganti della montagna</em> (incompiuto). Temi simbolici e mitologici, riflessione sulla sopravvivenza dell'arte nella modernità.
+    </div>
+  </div>
+
+  <div class="quote-block">
+    «L'identità non è una sostanza, è un processo: un continuo negoziato tra le immagini che gli altri hanno di noi e le immagini che abbiamo di noi stessi.»
+    <cite>— sintesi della poetica pirandelliana</cite>
+</div>
+</section>
+<section class="section" id="s-collegamenti">
+<div class="container">
+<div class="section-title">Collegamenti Interdisciplinari</div>
+  <div class="section-sub">Pirandello nel contesto culturale europeo del Novecento</div>
+  <div class="section-rule"></div>
+
+  <div class="grid-2" style="margin-bottom:24px">
+
+    <div class="conn-card">
+      <div class="conn-name">Sigmund Freud</div>
+      <span class="conn-type confronto">↔ confronto critico</span>
+      <div class="conn-body">
+        Entrambi vivono nella stessa crisi del soggetto ottocentesco e riflettono sulla frammentazione dell'io. Ma le loro risposte sono opposte.
+        <br><br>
+        <strong>Freud</strong>: la psiche è frammentata (Es, Io, Super-Io) ma tende all'unità. La psicoanalisi è una terapia che mira a ricostituire l'unità. Ci sono sogni, pulsioni, inconscio, relazioni edipiche.
+        <br><br>
+        <strong>Pirandello</strong>: non crede nell'unità del sé e non cerca terapia. La frammentazione dell'io non è una malattia da curare, è la <em>condizione normale</em> e insuperabile dell'essere umano moderno. Nessun sogno, nessun inconscio, nessuna sessualità come motore.
+        <br><br>
+        Punto di tangenza: Alfred Binet e la sua teoria della personalità multipla — un soggetto non unitario ma un aggregato di «stati» diversi e contraddittori.
+      </div>
+    </div>
+
+    <div class="conn-card">
+      <div class="conn-name">Friedrich Nietzsche</div>
+      <span class="conn-type influenza">↑ influenza profonda</span>
+      <div class="conn-body">
+        L'influenza di Nietzsche su Pirandello è più profonda di quanto si riconosca comunemente.
+        <br><br>
+        La critica nietzscheana alle «illusioni» su cui si fonda la cultura occidentale — la morale, la ragione, il progresso — risuona nella visione pirandelliana delle <strong>maschere sociali come convenzioni vuote</strong>.
+        <br><br>
+        Il «nichilismo» nietzscheano — la scoperta che i valori fondativi della civiltà sono senza fondamento assoluto — è il terreno filosofico su cui cresce il relativismo di Pirandello.
+        <br><br>
+        La figura del «folle» che dice la verità (il celebre passo nietzscheano sull'uomo folle che annuncia la morte di Dio) anticipa i personaggi pirandelliani che attraverso la follia vedono la realtà più chiaramente dei cosiddetti «sani».
+      </div>
+    </div>
+
+    <div class="conn-card">
+      <div class="conn-name">Albert Einstein &amp; William James</div>
+      <span class="conn-type parallelo">◈ parallelo culturale</span>
+      <div class="conn-body">
+        <strong>Einstein</strong> (Relatività, 1905): lo spazio e il tempo non sono assoluti ma dipendono dal punto di osservazione dell'osservatore. Analogia potente: l'identità dipende da chi guarda. Il relativismo fisico e quello esistenziale nascono dalla stessa crisi — non esiste un punto di vista assoluto.
+        <br><br>
+        <strong>William James</strong> (pragmatismo): la verità non è qualcosa di fisso ma dipende dalle conseguenze pratiche delle nostre credenze. L'incertezza epistemologica è il clima culturale in cui Pirandello respira.
+        <br><br>
+        Pirandello non cita questi autori direttamente, ma appartengono allo stesso zeitgeist — la crisi delle certezze del primo Novecento.
+      </div>
+    </div>
+
+    <div class="conn-card">
+      <div class="conn-name">Beckett, Kafka, Ionesco</div>
+      <span class="conn-type eredità">↓ eredità diretta</span>
+      <div class="conn-body">
+        Pirandello è il padre non riconosciuto di buona parte del teatro e della narrativa del secondo Novecento.
+        <br><br>
+        <strong>Samuel Beckett</strong>: <em>Aspettando Godot</em> è impensabile senza i <em>Sei personaggi</em>. Il personaggio intrappolato in un'attesa senza senso, il teatro che mostra il meccanismo del proprio funzionamento.
+        <br><br>
+        <strong>Franz Kafka</strong>: il personaggio intrappolato in una situazione assurda che ne analizza le logiche interne con rigore quasi burocratico, senza riuscire a cambiarla. Il ragionatore pirandelliano anticipa il personaggio kafkiano.
+        <br><br>
+        <strong>Eugène Ionesco</strong>: l'identità come ruolo vuoto, il linguaggio come non-comunicazione, il teatro dell'assurdo come smontaggio delle convenzioni.
+      </div>
+    </div>
+
+    <div class="conn-card">
+      <div class="conn-name">Ibsen, Strindberg, Čechov</div>
+      <span class="conn-type parallelo">◈ rinnovamento teatrale</span>
+      <div class="conn-body">
+        L'innovazione teatrale di Pirandello si inserisce nel grande movimento europeo di rinnovamento della scena di fine Ottocento / inizio Novecento.
+        <br><br>
+        Con Ibsen condivide la <strong>critica alla borghesia</strong> e al suo sistema di convenzioni. Con Čechov condivide l'attenzione alle piccole miserie quotidiane. Con Strindberg condivide l'interesse per i <strong>conflitti psichici</strong> e la deformazione della realtà soggettiva.
+        <br><br>
+        Ma Pirandello va oltre: porta la riflessione metateatrale a un livello che nessuno di questi autori aveva raggiunto.
+      </div>
+    </div>
+
+    <div class="conn-card">
+      <div class="conn-name">Walter Benjamin &amp; Guy Debord</div>
+      <span class="conn-type eredità">↓ anticipazione</span>
+      <div class="conn-body">
+        I <em>Quaderni di Serafino Gubbio operatore</em> (1915–1916) anticipano in modo straordinario riflessioni che il Novecento svilupperà sistematicamente.
+        <br><br>
+        <strong>Benjamin</strong> (<em>L'opera d'arte nell'epoca della sua riproducibilità tecnica</em>, 1936): la perdita dell'«aura» dell'opera d'arte nel cinema. Pirandello aveva già intuito questo nel 1915.
+        <br><br>
+        <strong>Debord</strong> (<em>La società dello spettacolo</em>, 1967): una società in cui tutto diventa immagine da guardare anziché vita da vivere. Serafino Gubbio, ridotto a funzione della macchina da presa, è il primo personaggio di questa società.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tabella comparativa Pirandello vs Svevo -->
+  <div class="card c-navy" style="margin-bottom:20px">
+    <div class="card-icon">⚖️</div>
+    <div class="card-title">Pirandello e Svevo — Confronto tra i due innovatori</div>
+    <div class="card-subtitle">I due grandi narratori della crisi dell'io italiano</div>
+    <div class="card-body" style="overflow-x:auto">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Aspetto</th>
+            <th>Pirandello</th>
+            <th>Svevo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Visione dell'io</td>
+            <td>Frammentato, molteplice, senza un «originale»</td>
+            <td>Inetto, diviso tra volontà e incapacità di agire</td>
+          </tr>
+          <tr>
+            <td>Relazione con Freud</td>
+            <td>Distante: nessun inconscio, nessuna terapia</td>
+            <td>Vicina: la coscienza di Zeno è esplicitamente psicoanalitica</td>
+          </tr>
+          <tr>
+            <td>Soluzione della crisi</td>
+            <td>Nessuna: la frammentazione è insuperabile</td>
+            <td>Ironica: Zeno «guarisce» ma la guarigione è fittizia</td>
+          </tr>
+          <tr>
+            <td>Forma narrativa</td>
+            <td>Monologo ragionante, dialogo ossessivo</td>
+            <td>Diario inattendibile, narratore inaffidabile</td>
+          </tr>
+          <tr>
+            <td>Teatro</td>
+            <td>Centrale e innovativo</td>
+            <td>Secondario</td>
+          </tr>
+          <tr>
+            <td>Contesto geografico</td>
+            <td>Sicilia, Roma — Italia borghese e provinciale</td>
+            <td>Trieste — margine della civiltà asburgica, crocevia culturale</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    «La "quarta parete" — la convenzione teatrale per cui gli attori fingono che il pubblico non esista — scompare: il teatro si denuda, mostrando i propri meccanismi.»
+    <cite>— sulla trilogia metateatrale</cite>
+</div>
+</section>
+
+<script>
+// NAV
+var navBtns = document.querySelectorAll('.nav-btn');
+var allSections = document.querySelectorAll('.section');
+
+for (var i = 0; i < navBtns.length; i++) {
+  navBtns[i].addEventListener('click', function() {
+    var id = this.dataset.sec;
+    for (var j = 0; j < navBtns.length; j++) navBtns[j].classList.remove('active');
+    this.classList.add('active');
+    for (var k = 0; k < allSections.length; k++) allSections[k].classList.remove('active');
+    var sec = document.getElementById(id);
+    if (sec) sec.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// PROGRESS BAR
+window.addEventListener('scroll', function() {
+  var h = document.documentElement, b = document.body;
+  var pct = (h.scrollTop || b.scrollTop) / ((h.scrollHeight || b.scrollHeight) - h.clientHeight) * 100;
+  var pb = document.getElementById('pb');
+  if (pb) pb.style.width = Math.min(100, Math.max(0, pct)) + '%';
+});
+
+function toggleAcc(trigger) {
+  const body = trigger.nextElementSibling;
+  const isOpen = trigger.classList.contains('open');
+  // close all in same container
+  trigger.parentElement.parentElement.querySelectorAll('.acc-trigger').forEach(t => {
+    t.classList.remove('open');
+    t.nextElementSibling.classList.remove('open');
+  });
+  if (!isOpen) {
+    trigger.classList.add('open');
+    body.classList.add('open');
+  }
+}
+</script>
+</body>
+</html>

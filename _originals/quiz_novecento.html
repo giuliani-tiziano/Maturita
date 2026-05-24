@@ -1,0 +1,2516 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saba · Ungaretti · Montale — Quiz per la Maturità</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ================================================================
+   ROOT — variabili globali di design (palette letteraria)
+   ================================================================ */
+:root {
+  --carta:      #f4ecd8;
+  --carta-2:    #ede2c6;
+  --carta-3:    #e3d4b0;
+  --ink:        #1a1612;
+  --ink2:       #3a3128;
+  --ink-light:  #5a4e3e;
+  --red:        #7a1f1f;
+  --red-dark:   #5a1414;
+  --red-light:  #a83a3a;
+  --gold:       #b88a3e;
+  --gold-light: #d4a84e;
+  --green:      #4a6b3a;
+  --green-bg:   #e8f0dc;
+  --green-dark: #2d4a22;
+  --gray:       #8a7d6a;
+  --gray-light: #c8bfb0;
+
+  /* Accenti per autore */
+  --saba-accent:   #7a1f1f;   /* bordeaux */
+  --saba-dark:     #5a1414;
+  --saba-light:    #a83a3a;
+  --ung-accent:    #2d5a87;   /* blu carso */
+  --ung-dark:      #1d4267;
+  --ung-light:     #4d7ba8;
+  --mon-accent:    #5a6b3a;   /* verde ligure */
+  --mon-dark:      #3e4a26;
+  --mon-light:     #7a8c5a;
+
+  /* Accent attivo (cambia con JS) */
+  --accent:        var(--red);
+  --accent-dark:   var(--red-dark);
+  --accent-light:  var(--red-light);
+
+  --sh:     0 2px 12px rgba(26,22,18,.08);
+  --sh-md:  0 4px 22px rgba(26,22,18,.13);
+  --sh-lg:  0 8px 42px rgba(26,22,18,.2);
+  --r:      6px;
+  --r-sm:   3px;
+  --t-f:    150ms ease;
+  --t-m:    280ms ease;
+  --t-s:    480ms cubic-bezier(.22,1,.36,1);
+}
+
+/* Temi autore — applicati a <body> */
+body.saba    { --accent: var(--saba-accent); --accent-dark: var(--saba-dark); --accent-light: var(--saba-light); }
+body.ungaretti { --accent: var(--ung-accent);  --accent-dark: var(--ung-dark);  --accent-light: var(--ung-light);  }
+body.montale { --accent: var(--mon-accent);  --accent-dark: var(--mon-dark);  --accent-light: var(--mon-light);  }
+
+/* ================================================================
+   RESET & BASE
+   ================================================================ */
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  font-family:'Manrope',sans-serif;
+  background:var(--carta);
+  background-image:
+    radial-gradient(at 15% 5%,  rgba(184,138,62,.07) 0%,transparent 50%),
+    radial-gradient(at 85% 95%, rgba(122,31,31,.05)  0%,transparent 50%);
+  color:var(--ink);
+  line-height:1.65;
+  min-height:100vh;
+  overflow-x:hidden;
+  transition:background-color var(--t-s);
+}
+/* grana carta */
+body::before {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ================================================================
+   PROGRESS BAR GLOBALE
+   ================================================================ */
+#top-progress { position:fixed; top:0; left:0; right:0; height:4px; background:rgba(0,0,0,.06); z-index:2000; }
+#top-progress-fill {
+  height:100%; width:0%;
+  background:linear-gradient(90deg,var(--accent-dark),var(--accent),var(--gold));
+  transition:width var(--t-m), background var(--t-s);
+  box-shadow:0 0 8px rgba(0,0,0,.15);
+}
+
+/* ================================================================
+   SCREENS
+   ================================================================ */
+.screen { display:none; opacity:0; transform:translateY(14px); transition:opacity var(--t-s),transform var(--t-s); }
+.screen.active  { display:flex; flex-direction:column; min-height:100vh; }
+.screen.visible { opacity:1; transform:translateY(0); }
+
+/* ================================================================
+   HOME — dashboard tre autori
+   ================================================================ */
+#screen-home {
+  align-items:center;
+  justify-content:center;
+  padding:60px 20px 80px;
+  text-align:center;
+  position:relative;
+}
+
+/* sfondo decorativo grande lettera */
+.home-bg-letter {
+  position:absolute;
+  top:30px; left:50%;
+  transform:translateX(-50%);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(140px,30vw,280px);
+  font-weight:300;
+  font-style:italic;
+  color:rgba(26,22,18,.035);
+  line-height:1;
+  user-select:none;
+  white-space:nowrap;
+  pointer-events:none;
+  letter-spacing:-.05em;
+}
+
+.home-inner { position:relative; z-index:2; max-width:1000px; width:100%; }
+
+.home-eyebrow {
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--red); margin-bottom:18px; display:block;
+}
+.home-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.8rem,8vw,5rem);
+  font-weight:600; line-height:1;
+  color:var(--ink); letter-spacing:-.03em;
+  margin-bottom:12px;
+}
+.home-title em { font-style:italic; color:var(--red); }
+.home-subtitle {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(1.05rem,2.2vw,1.3rem);
+  color:var(--ink2); max-width:580px;
+  margin:0 auto 36px;
+}
+.home-divider { width:50px; height:1px; background:var(--red); margin:0 auto 44px; }
+
+/* ---- cards autori ---- */
+.author-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-bottom:44px;
+  text-align:left;
+}
+
+.author-card {
+  background:var(--carta-2);
+  border:1.5px solid rgba(26,22,18,.1);
+  border-radius:var(--r);
+  padding:28px 24px 24px;
+  cursor:pointer;
+  transition:all var(--t-s);
+  position:relative;
+  overflow:hidden;
+  display:flex; flex-direction:column;
+}
+.author-card::before {
+  content:''; position:absolute; top:0; left:0; right:0;
+  height:4px; transition:height var(--t-m);
+}
+.author-card.saba-card::before   { background:linear-gradient(90deg,var(--saba-dark),var(--saba-accent),var(--gold)); }
+.author-card.ung-card::before    { background:linear-gradient(90deg,var(--ung-dark),var(--ung-accent),#6ca8d8); }
+.author-card.mon-card::before    { background:linear-gradient(90deg,var(--mon-dark),var(--mon-accent),#a8ba7a); }
+.author-card:hover { transform:translateY(-6px); box-shadow:var(--sh-lg); background:white; }
+.author-card:hover::before { height:6px; }
+.author-card.saba-card:hover  { border-color:var(--saba-accent); }
+.author-card.ung-card:hover   { border-color:var(--ung-accent); }
+.author-card.mon-card:hover   { border-color:var(--mon-accent); }
+
+/* numero decorativo grande */
+.card-initial {
+  position:absolute; top:14px; right:20px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:5rem; font-weight:300; font-style:italic;
+  color:rgba(26,22,18,.07); line-height:1;
+  user-select:none;
+}
+
+.card-meta {
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px; letter-spacing:.22em; text-transform:uppercase;
+  font-weight:600; margin-bottom:10px;
+}
+.saba-card .card-meta  { color:var(--saba-accent); }
+.ung-card .card-meta   { color:var(--ung-accent); }
+.mon-card .card-meta   { color:var(--mon-accent); }
+
+.card-name {
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.9rem; font-weight:600;
+  line-height:1.05; letter-spacing:-.01em;
+  color:var(--ink); margin-bottom:6px;
+}
+.card-name em { font-style:italic; }
+.card-tagline {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic; font-size:.95rem;
+  color:var(--ink-light); line-height:1.45;
+  margin-bottom:18px;
+}
+
+.card-stats {
+  display:flex; gap:18px;
+  padding:12px 0;
+  border-top:1px solid rgba(26,22,18,.08);
+  border-bottom:1px solid rgba(26,22,18,.08);
+  margin-bottom:16px;
+}
+.card-stat { display:flex; flex-direction:column; }
+.card-stat-val {
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem; font-weight:600; line-height:1;
+}
+.saba-card .card-stat-val  { color:var(--saba-accent); }
+.ung-card .card-stat-val   { color:var(--ung-accent); }
+.mon-card .card-stat-val   { color:var(--mon-accent); }
+.card-stat-lbl {
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--gray); margin-top:2px;
+}
+.card-best {
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px; color:var(--gold);
+  letter-spacing:.1em; min-height:16px;
+  margin-bottom:16px;
+}
+
+.card-cta {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--ink); color:var(--carta);
+  border:none; border-radius:var(--r);
+  padding:11px 20px;
+  font-family:'Manrope',sans-serif; font-size:13px; font-weight:700;
+  letter-spacing:.04em; cursor:pointer;
+  transition:all var(--t-m); align-self:flex-start; margin-top:auto;
+}
+.saba-card:hover .card-cta  { background:var(--saba-dark); }
+.ung-card:hover  .card-cta  { background:var(--ung-dark); }
+.mon-card:hover  .card-cta  { background:var(--mon-dark); }
+.card-cta svg { transition:transform var(--t-m); }
+.author-card:hover .card-cta svg { transform:translateX(3px); }
+
+/* ---- opzioni home ---- */
+.home-opts { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin-bottom:30px; }
+.home-opt {
+  display:flex; align-items:center; gap:12px;
+  background:var(--carta-2); border:1px solid rgba(26,22,18,.08);
+  border-radius:var(--r); padding:11px 16px;
+}
+.home-opt-label { font-size:13px; font-weight:600; color:var(--ink2); }
+.toggle {
+  width:40px; height:22px; background:var(--gray-light);
+  border-radius:100px; cursor:pointer;
+  position:relative; transition:background var(--t-m);
+  border:none; outline:none; flex-shrink:0;
+}
+.toggle.on { background:var(--red-dark); }
+.toggle::after {
+  content:''; position:absolute;
+  width:16px; height:16px; background:white;
+  border-radius:50%; top:3px; left:3px;
+  transition:left var(--t-m);
+  box-shadow:0 1px 4px rgba(0,0,0,.25);
+}
+.toggle.on::after { left:21px; }
+
+.home-quote {
+  margin-top:44px; padding-top:28px;
+  border-top:1px solid rgba(26,22,18,.1);
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic; color:var(--gray);
+  font-size:14px; line-height:1.65;
+  max-width:620px; margin-left:auto; margin-right:auto;
+}
+.home-quote cite {
+  display:block; font-family:'JetBrains Mono',monospace;
+  font-style:normal; font-size:9px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--red-light); margin-top:8px;
+}
+
+/* ================================================================
+   QUIZ HEADER — sticky
+   ================================================================ */
+.quiz-header {
+  background:var(--ink);
+  border-bottom:2px solid var(--accent);
+  transition:border-color var(--t-s);
+  position:sticky; top:4px; z-index:200;
+}
+.quiz-header-inner {
+  max-width:840px; margin:0 auto;
+  display:flex; align-items:center; gap:14px;
+  padding:11px 20px;
+}
+.btn-home-q {
+  background:none; border:none;
+  color:rgba(244,236,216,.5);
+  cursor:pointer; padding:4px 8px;
+  border-radius:var(--r-sm);
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  display:flex; align-items:center; gap:5px;
+  transition:color var(--t-f); flex-shrink:0;
+}
+.btn-home-q:hover { color:var(--carta); }
+
+.quiz-author-badge {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic; font-size:16px;
+  color:var(--gold); font-weight:600;
+  letter-spacing:-.01em; flex-shrink:0;
+}
+.quiz-counter {
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px; letter-spacing:.12em;
+  color:rgba(244,236,216,.5); white-space:nowrap; flex-shrink:0;
+}
+.quiz-counter span { color:var(--gold); font-weight:600; }
+
+.q-prog-wrap { flex:1; height:4px; background:rgba(255,255,255,.1); border-radius:100px; overflow:hidden; }
+.q-prog-fill {
+  height:100%;
+  background:linear-gradient(90deg,var(--accent),var(--gold));
+  border-radius:100px; transition:width var(--t-s);
+}
+.score-live {
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  color:rgba(244,236,216,.5); white-space:nowrap; flex-shrink:0;
+}
+.score-live span { color:var(--gold); font-weight:600; }
+
+.timer-disp {
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  font-weight:600; color:var(--carta);
+  background:rgba(122,31,31,.3); padding:4px 9px;
+  border-radius:100px; white-space:nowrap;
+  display:none; flex-shrink:0;
+}
+.timer-disp.on { display:block; }
+.timer-disp.warn { background:var(--red); color:#fff; animation:ptimer .8s infinite; }
+@keyframes ptimer { 0%,100%{opacity:1} 50%{opacity:.6} }
+
+/* ================================================================
+   QUIZ BODY
+   ================================================================ */
+.quiz-body {
+  flex:1; display:flex;
+  align-items:flex-start; justify-content:center;
+  padding:40px 20px 60px;
+}
+.q-card { width:100%; max-width:820px; }
+
+/* meta row */
+.q-meta { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
+.q-badge {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  letter-spacing:.2em; text-transform:uppercase;
+  display:inline-flex; align-items:center; gap:6px;
+  padding:5px 12px; border-radius:100px; font-weight:600;
+}
+.q-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:currentColor; flex-shrink:0; }
+.q-badge.mc   { background:#fbeaea; color:var(--red-dark); }
+.q-badge.tf   { background:#eef3e8; color:var(--green-dark); }
+.q-badge.open { background:#fdf6e3; color:#7a5a00; }
+
+.q-topic {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  letter-spacing:.15em; text-transform:uppercase;
+  color:var(--gray); background:var(--carta-2);
+  padding:4px 10px; border-radius:var(--r-sm); font-weight:600;
+}
+.q-num {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:13px; color:var(--gray); margin-bottom:10px;
+}
+.q-text {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.25rem,3vw,1.75rem);
+  font-weight:600; color:var(--ink);
+  line-height:1.4; margin-bottom:28px; letter-spacing:-.01em;
+}
+
+/* Answers */
+.answers { display:flex; flex-direction:column; gap:10px; margin-bottom:22px; }
+.ans-btn {
+  display:flex; align-items:flex-start; gap:14px;
+  background:var(--carta-2); border:1.5px solid rgba(26,22,18,.1);
+  border-radius:var(--r); padding:14px 18px;
+  cursor:pointer; text-align:left;
+  font-family:'Manrope',sans-serif; font-size:14px;
+  color:var(--ink); line-height:1.5;
+  transition:all var(--t-m); width:100%;
+}
+.ans-btn:hover:not(:disabled) { border-color:var(--accent); background:white; transform:translateX(4px); box-shadow:var(--sh); }
+.ans-btn:disabled { cursor:default; }
+.ans-letter {
+  flex-shrink:0; width:26px; height:26px;
+  border-radius:50%; background:rgba(26,22,18,.08);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  font-weight:600; color:var(--ink2); transition:all var(--t-m); margin-top:1px;
+}
+.ans-btn:hover:not(:disabled) .ans-letter { background:var(--accent); color:white; }
+.ans-btn.correct  { background:#e8f5e2; border-color:var(--green); }
+.ans-btn.correct .ans-letter { background:var(--green); color:white; }
+.ans-btn.wrong    { background:#fbeaea; border-color:var(--red); }
+.ans-btn.wrong .ans-letter { background:var(--red); color:white; }
+
+/* Feedback */
+.feedback { border-radius:var(--r); padding:14px 18px; display:none; }
+.feedback.show { display:block; }
+.feedback.ok { background:#e8f5e2; border-left:4px solid var(--green); }
+.feedback.ko { background:#fbeaea; border-left:4px solid var(--red); }
+.fb-text {
+  font-size:13px; font-weight:700; color:var(--ink); margin-bottom:6px;
+}
+.fb-icon { margin-right:5px; }
+.fb-expl {
+  font-family:'Cormorant Garamond',serif; font-size:15px;
+  color:var(--ink2); line-height:1.6; margin-top:8px;
+}
+
+/* Open question */
+.open-wrap { margin-bottom:22px; }
+.open-ta {
+  width:100%; min-height:140px;
+  background:white; border:1.5px solid rgba(26,22,18,.15);
+  border-radius:var(--r); padding:15px 18px;
+  font-family:'Manrope',sans-serif; font-size:14px;
+  color:var(--ink); line-height:1.6;
+  resize:vertical; transition:border-color var(--t-m); outline:none;
+}
+.open-ta:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(122,31,31,.08); }
+.open-ta:disabled { background:var(--carta-2); cursor:default; }
+
+.btn-reveal {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--carta-3); border:1.5px solid rgba(26,22,18,.15);
+  border-radius:var(--r); padding:10px 18px;
+  font-family:'Manrope',sans-serif; font-size:13px;
+  font-weight:600; cursor:pointer;
+  transition:all var(--t-m); color:var(--ink2); margin-top:10px;
+}
+.btn-reveal:hover { background:var(--ink); color:var(--carta); border-color:var(--ink); }
+
+.model-ans {
+  margin-top:14px; background:var(--ink);
+  border-radius:var(--r); padding:20px 22px; display:none;
+}
+.model-ans.show { display:block; animation:fadeUp var(--t-s) forwards; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+.ma-label {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--accent-light); margin-bottom:10px; font-weight:600;
+}
+.ma-text {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:1.08rem; color:var(--carta);
+  line-height:1.65; margin-bottom:16px;
+}
+.kw-row { display:flex; flex-wrap:wrap; gap:6px; }
+.kw {
+  background:rgba(184,138,62,.2); color:var(--gold-light);
+  padding:3px 10px; border-radius:100px;
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  font-weight:600; letter-spacing:.08em;
+}
+
+/* Auto-valutazione aperte */
+.self-score {
+  display:none; margin-top:14px;
+  background:var(--carta-2); border-radius:var(--r);
+  padding:14px 16px; border:1px solid rgba(26,22,18,.08);
+}
+.self-score.show { display:block; }
+.ss-label { font-size:13px; font-weight:600; color:var(--ink2); margin-bottom:10px; }
+.ss-btns  { display:flex; gap:8px; }
+.ss-btn {
+  flex:1; padding:9px; border-radius:var(--r-sm);
+  border:1.5px solid rgba(26,22,18,.12);
+  font-size:12px; font-weight:700;
+  cursor:pointer; transition:all var(--t-m);
+  font-family:'Manrope',sans-serif; background:var(--carta);
+}
+.ss-btn.bad  { color:var(--red-dark); }
+.ss-btn.good { color:var(--green-dark); }
+.ss-btn.bad:hover,  .ss-btn.bad.chosen  { background:#fbeaea; border-color:var(--red); }
+.ss-btn.good:hover, .ss-btn.good.chosen { background:#e8f5e2; border-color:var(--green); }
+
+/* Nav domande */
+.q-nav {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:26px; padding-top:22px;
+  border-top:1px solid rgba(26,22,18,.1);
+}
+.btn-nav {
+  display:inline-flex; align-items:center; gap:8px;
+  background:none; border:1.5px solid rgba(26,22,18,.15);
+  border-radius:var(--r); padding:10px 20px;
+  font-family:'Manrope',sans-serif; font-size:13px;
+  font-weight:600; cursor:pointer; color:var(--ink2); transition:all var(--t-m);
+}
+.btn-nav:hover { background:var(--carta-2); border-color:rgba(26,22,18,.25); }
+.btn-nav:disabled { opacity:.3; cursor:default; }
+.btn-nav.primary { background:var(--ink); color:var(--carta); border-color:var(--ink); }
+.btn-nav.primary:hover { background:var(--accent-dark); border-color:var(--accent-dark); }
+
+/* Mappa domande */
+.q-map-bar { background:var(--carta-2); border-top:1px solid rgba(26,22,18,.1); padding:13px 20px; }
+.q-map-inner { max-width:840px; margin:0 auto; }
+.q-map-lbl {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--gray); margin-bottom:9px;
+}
+.q-dots { display:flex; flex-wrap:wrap; gap:5px; }
+.q-dot {
+  width:27px; height:27px; border-radius:var(--r-sm);
+  border:1.5px solid rgba(26,22,18,.12);
+  background:var(--carta); font-family:'JetBrains Mono',monospace;
+  font-size:10px; font-weight:600; color:var(--gray);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; transition:all var(--t-m);
+}
+.q-dot:hover:not(.cur) { transform:scale(1.15); box-shadow:var(--sh); }
+.q-dot.cur  { background:var(--ink); color:var(--carta); border-color:var(--ink); }
+.q-dot.c    { background:var(--green-bg); border-color:var(--green); color:var(--green-dark); }
+.q-dot.w    { background:#fbeaea; border-color:var(--red); color:var(--red-dark); }
+.q-dot.o    { background:#fdf6e3; border-color:var(--gold); color:#7a5a00; }
+
+/* ================================================================
+   RESULTS SCREEN
+   ================================================================ */
+#screen-results { align-items:center; justify-content:flex-start; flex-direction:column; padding:0; }
+
+.res-hero {
+  width:100%; background:var(--ink);
+  padding:60px 20px 50px; text-align:center;
+  position:relative; overflow:hidden;
+}
+.res-hero::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(at 20% 50%,rgba(122,31,31,.3) 0%,transparent 60%),
+    radial-gradient(at 80% 50%,rgba(184,138,62,.15) 0%,transparent 60%);
+}
+.res-hero-inner { position:relative; z-index:1; }
+.res-eyebrow {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  letter-spacing:.3em; text-transform:uppercase;
+  color:var(--accent-light); margin-bottom:22px;
+}
+
+/* Ring score */
+.score-ring { width:140px; height:140px; margin:0 auto 22px; position:relative; }
+.score-ring svg { transform:rotate(-90deg); }
+.ring-bg   { fill:none; stroke:rgba(255,255,255,.08); stroke-width:8; }
+.ring-fill {
+  fill:none; stroke:var(--gold); stroke-width:8;
+  stroke-linecap:round;
+  stroke-dasharray:351.86; stroke-dashoffset:351.86;
+  transition:stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1);
+  filter:drop-shadow(0 0 6px rgba(184,138,62,.5));
+}
+.ring-txt { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.ring-score {
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem; font-weight:600; color:var(--gold); line-height:1;
+}
+.ring-total { font-family:'JetBrains Mono',monospace; font-size:12px; color:rgba(244,236,216,.4); margin-top:2px; }
+
+.res-grade {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,6vw,3.4rem); font-weight:600;
+  color:var(--carta); margin-bottom:8px;
+}
+.res-grade em { font-style:italic; color:var(--gold); }
+.res-msg {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:1.1rem; color:rgba(244,236,216,.7);
+  max-width:520px; margin:0 auto; line-height:1.6;
+}
+
+.res-body { width:100%; max-width:820px; margin:0 auto; padding:40px 20px 80px; }
+.res-breakdown { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:40px; }
+.rb-card {
+  background:var(--carta-2); border-radius:var(--r); padding:18px 14px;
+  text-align:center; box-shadow:var(--sh); border-top:3px solid var(--gray-light);
+}
+.rb-card.ok  { border-top-color:var(--green); }
+.rb-card.ko  { border-top-color:var(--red); }
+.rb-card.op  { border-top-color:var(--gold); }
+.rb-val {
+  font-family:'Cormorant Garamond',serif; font-size:2.4rem;
+  font-weight:600; line-height:1; margin-bottom:4px;
+}
+.rb-card.ok .rb-val  { color:var(--green-dark); }
+.rb-card.ko .rb-val  { color:var(--red-dark); }
+.rb-card.op .rb-val  { color:var(--gold); }
+.rb-lbl {
+  font-family:'JetBrains Mono',monospace; font-size:9px;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--gray);
+}
+
+/* Review */
+.rev-title {
+  font-family:'Cormorant Garamond',serif; font-size:1.5rem;
+  font-weight:600; color:var(--ink);
+  padding-bottom:12px; border-bottom:2px solid var(--accent);
+  margin-bottom:12px;
+}
+.rev-sub { font-size:13px; color:var(--gray); margin-bottom:18px; }
+.rev-item {
+  background:var(--carta-2); border-radius:var(--r); margin-bottom:10px;
+  overflow:hidden; border:1px solid rgba(26,22,18,.08); box-shadow:var(--sh);
+}
+.rev-head {
+  display:flex; align-items:center; gap:12px; padding:13px 16px;
+  cursor:pointer; transition:background var(--t-f);
+}
+.rev-head:hover { background:var(--carta-3); }
+.rev-st {
+  width:22px; height:22px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700; flex-shrink:0;
+}
+.rev-st.c { background:var(--green-bg); color:var(--green-dark); }
+.rev-st.w { background:#fbeaea; color:var(--red-dark); }
+.rev-st.o { background:#fdf6e3; color:#7a5a00; }
+.rev-qn { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gray); flex-shrink:0; }
+.rev-qt { font-size:13px; color:var(--ink); flex:1; font-weight:500; }
+.rev-chev { color:var(--gray); font-size:11px; transition:transform var(--t-m); flex-shrink:0; }
+.rev-item.open .rev-chev { transform:rotate(180deg); }
+.rev-body {
+  padding:0 16px 16px; display:none;
+  font-size:13px; color:var(--ink2); line-height:1.55;
+}
+.rev-item.open .rev-body { display:block; }
+.rev-correct-lbl {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  letter-spacing:.15em; text-transform:uppercase;
+  color:var(--green-dark); font-weight:600; margin:8px 0 4px;
+}
+.rev-correct-txt { font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--ink); line-height:1.55; }
+
+/* Actions risultati */
+.res-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:40px; }
+.btn-act {
+  flex:1; min-width:150px; padding:14px 20px;
+  border-radius:var(--r);
+  font-family:'Manrope',sans-serif; font-size:14px; font-weight:700;
+  cursor:pointer; transition:all var(--t-m);
+  display:flex; align-items:center; justify-content:center;
+  gap:8px; border:1.5px solid;
+}
+.btn-act.primary { background:var(--ink); color:var(--carta); border-color:var(--ink); }
+.btn-act.primary:hover { background:var(--accent-dark); border-color:var(--accent-dark); transform:translateY(-2px); box-shadow:var(--sh-md); }
+.btn-act.secondary { background:transparent; color:var(--ink2); border-color:rgba(26,22,18,.2); }
+.btn-act.secondary:hover { background:var(--carta-2); transform:translateY(-2px); }
+.best-record { margin-top:14px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--gold); letter-spacing:.12em; }
+
+.footer-q {
+  text-align:center; margin-top:50px; padding-top:28px;
+  border-top:1px solid rgba(26,22,18,.12);
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  color:var(--gray); font-size:14px; line-height:1.6;
+}
+.footer-q cite {
+  display:block; font-family:'JetBrains Mono',monospace;
+  font-style:normal; font-size:9px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--accent-light); margin-top:8px;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media(max-width:800px) {
+  .author-grid { grid-template-columns:1fr; gap:14px; }
+  .res-breakdown { grid-template-columns:1fr; }
+}
+@media(max-width:600px) {
+  .quiz-header-inner { gap:8px; padding:10px 14px; }
+  .quiz-counter,.score-live { font-size:10px; }
+  .quiz-author-badge { font-size:13px; }
+  .q-text { font-size:1.15rem; }
+  .btn-nav { padding:9px 13px; font-size:12px; }
+  .res-body { padding:22px 14px 60px; }
+  .res-actions { flex-direction:column; }
+}
+@media(max-width:420px) {
+  .quiz-author-badge { display:none; }
+}
+
+/* ================================================================
+   ANIMAZIONI ENTRY
+   ================================================================ */
+@keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.ai   { animation:fadeIn var(--t-s) forwards; }
+.d1   { animation-delay:80ms;  opacity:0; }
+.d2   { animation-delay:160ms; opacity:0; }
+.d3   { animation-delay:240ms; opacity:0; }
+.d4   { animation-delay:320ms; opacity:0; }
+.d5   { animation-delay:400ms; opacity:0; }
+</style>
+</head>
+<body>
+
+<div id="top-progress"><div id="top-progress-fill"></div></div>
+
+<!-- ================================================================
+     SCREEN 0 — HOME
+     ================================================================ -->
+<div id="screen-home" class="screen">
+  <div class="home-bg-letter">SUM</div>
+  <div class="home-inner">
+
+    <span class="eyebrow ai" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:18px;display:block">Preparazione Maturità · Letteratura Italiana del Novecento</span>
+
+    <h1 class="home-title ai d1">Saba <em>·</em> Ungaretti <em>·</em> Montale</h1>
+    <p class="home-subtitle ai d2">Tre quiz indipendenti, una sola applicazione. Scegli l'autore e la modalità, poi dimostra ciò che sai.</p>
+    <div class="home-divider ai d2" style="width:50px;height:1px;background:var(--red);margin:0 auto 44px"></div>
+
+    <!-- CARDS AUTORI -->
+    <div class="author-grid ai d3">
+
+      <!-- SABA -->
+      <div class="author-card saba-card" onclick="openAuthorPanel('saba')">
+        <span class="card-initial">S</span>
+        <div class="card-meta">Quiz · Il Canzoniere</div>
+        <div class="card-name">Umberto<br><em>Saba</em></div>
+        <div class="card-tagline">La poesia onesta, Trieste, la scissione interiore e il Canzoniere.</div>
+        <div class="card-stats">
+          <div class="card-stat"><span class="card-stat-val" id="cs-saba-total">30</span><span class="card-stat-lbl">Domande</span></div>
+          <div class="card-stat"><span class="card-stat-val">3</span><span class="card-stat-lbl">Tipologie</span></div>
+          <div class="card-stat"><span class="card-stat-val">7</span><span class="card-stat-lbl">Argomenti</span></div>
+        </div>
+        <div class="card-best" id="best-saba"></div>
+        <button class="card-cta">Scegli modalità <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+
+      <!-- UNGARETTI -->
+      <div class="author-card ung-card" onclick="openAuthorPanel('ungaretti')">
+        <span class="card-initial">U</span>
+        <div class="card-meta">Quiz · Vita d'un uomo</div>
+        <div class="card-name">Giuseppe<br><em>Ungaretti</em></div>
+        <div class="card-tagline">La parola come illuminazione, il porto sepolto, dal Carso al dolore.</div>
+        <div class="card-stats">
+          <div class="card-stat"><span class="card-stat-val" id="cs-ung-total">25</span><span class="card-stat-lbl">Domande</span></div>
+          <div class="card-stat"><span class="card-stat-val">3</span><span class="card-stat-lbl">Tipologie</span></div>
+          <div class="card-stat"><span class="card-stat-val">7</span><span class="card-stat-lbl">Poesie</span></div>
+        </div>
+        <div class="card-best" id="best-ungaretti"></div>
+        <button class="card-cta">Scegli modalità <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+
+      <!-- MONTALE -->
+      <div class="author-card mon-card" onclick="openAuthorPanel('montale')">
+        <span class="card-initial">M</span>
+        <div class="card-meta">Quiz · Il male di vivere</div>
+        <div class="card-name">Eugenio<br><em>Montale</em></div>
+        <div class="card-tagline">Il correlativo oggettivo, il muro, la divina Indifferenza e le quattro raccolte.</div>
+        <div class="card-stats">
+          <div class="card-stat"><span class="card-stat-val" id="cs-mon-total">26</span><span class="card-stat-lbl">Domande</span></div>
+          <div class="card-stat"><span class="card-stat-val">3</span><span class="card-stat-lbl">Tipologie</span></div>
+          <div class="card-stat"><span class="card-stat-val">6</span><span class="card-stat-lbl">Poesie</span></div>
+        </div>
+        <div class="card-best" id="best-montale"></div>
+        <button class="card-cta">Scegli modalità <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+
+    </div><!-- /author-grid -->
+
+    <div class="home-quote ai d5">
+      «Ho attraversata tutta la città.» · «M'illumino d'immenso.» · «Ciò che non siamo, ciò che non vogliamo.»
+      <cite>— Saba, Trieste &nbsp;·&nbsp; Ungaretti, Mattina &nbsp;·&nbsp; Montale, Non chiederci la parola</cite>
+    </div>
+
+  </div><!-- /home-inner -->
+</div><!-- /screen-home -->
+
+<!-- ================================================================
+     PANNELLO MODALE — scelta modalità per autore selezionato
+     ================================================================ -->
+<div id="mode-overlay" style="
+  display:none; position:fixed; inset:0; z-index:500;
+  background:rgba(26,22,18,.6); backdrop-filter:blur(4px);
+  align-items:center; justify-content:center; padding:20px;
+">
+  <div id="mode-panel" style="
+    background:var(--carta); border-radius:10px; padding:36px 30px;
+    max-width:560px; width:100%; box-shadow:var(--sh-lg);
+    position:relative; max-height:90vh; overflow-y:auto;
+  ">
+    <button onclick="closePanel()" style="
+      position:absolute; top:14px; right:16px;
+      background:none; border:none; font-size:20px;
+      color:var(--gray); cursor:pointer; line-height:1;
+    ">✕</button>
+
+    <div id="panel-author-label" style="
+      font-family:'JetBrains Mono',monospace; font-size:11px;
+      letter-spacing:.22em; text-transform:uppercase; font-weight:600;
+      margin-bottom:10px;
+    "></div>
+    <h2 style="
+      font-family:'Cormorant Garamond',serif; font-size:1.9rem;
+      font-weight:600; color:var(--ink); margin-bottom:22px; line-height:1.1;
+    ">Scegli la modalità</h2>
+
+    <!-- Modalità quiz -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:26px;">
+      <div class="mode-opt selected" data-mode="all" onclick="selectMode(this)">
+        <div class="mode-opt-title">📚 Completo</div>
+        <div class="mode-opt-desc">Tutte le domande, tutti gli argomenti</div>
+      </div>
+      <div class="mode-opt" data-mode="quick" onclick="selectMode(this)">
+        <div class="mode-opt-title">⚡ Rapido</div>
+        <div class="mode-opt-desc">15 domande casuali, selezione variegata</div>
+      </div>
+      <div class="mode-opt" data-mode="mc-only" onclick="selectMode(this)">
+        <div class="mode-opt-title">🔵 Solo scelta multipla</div>
+        <div class="mode-opt-desc">Solo MC e Vero/Falso</div>
+      </div>
+      <div class="mode-opt" data-mode="hard" onclick="selectMode(this)">
+        <div class="mode-opt-title">🔥 Difficile</div>
+        <div class="mode-opt-desc">Solo aperte e V/F insidiosi</div>
+      </div>
+    </div>
+
+    <!-- Timer -->
+    <div style="
+      display:flex; align-items:center; gap:14px;
+      background:var(--carta-2); border:1px solid rgba(26,22,18,.08);
+      border-radius:var(--r); padding:13px 18px; margin-bottom:26px;
+    ">
+      <span style="font-size:13px; font-weight:600; color:var(--ink2);">⏱ Timer 20 min</span>
+      <button class="toggle" id="panel-timer-toggle" onclick="togglePanelTimer()"></button>
+      <span id="panel-timer-label" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gray);letter-spacing:.1em;">disattivato</span>
+    </div>
+
+    <!-- Shuffle -->
+    <div style="
+      display:flex; align-items:center; gap:14px;
+      background:var(--carta-2); border:1px solid rgba(26,22,18,.08);
+      border-radius:var(--r); padding:13px 18px; margin-bottom:28px;
+    ">
+      <span style="font-size:13px; font-weight:600; color:var(--ink2);">🔀 Ordine casuale</span>
+      <button class="toggle on" id="panel-shuffle-toggle" onclick="togglePanelShuffle()"></button>
+    </div>
+
+    <button id="panel-start-btn" onclick="launchFromPanel()" style="
+      width:100%; display:flex; align-items:center; justify-content:center;
+      gap:10px; background:var(--ink); color:var(--carta);
+      border:none; border-radius:var(--r); padding:16px 24px;
+      font-family:'Manrope',sans-serif; font-size:15px; font-weight:700;
+      letter-spacing:.04em; cursor:pointer; transition:all var(--t-m);
+      box-shadow:var(--sh-md);
+    ">
+      Inizia il Quiz
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+
+  </div>
+</div>
+
+<!-- ================================================================
+     SCREEN 1 — QUIZ
+     ================================================================ -->
+<div id="screen-quiz" class="screen">
+  <div class="quiz-header">
+    <div class="quiz-header-inner">
+      <button class="btn-home-q" onclick="confirmExit()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Home
+      </button>
+      <div class="quiz-author-badge" id="quiz-author-label">—</div>
+      <div class="quiz-counter">Dom. <span id="qCur">1</span>/<span id="qTot">30</span></div>
+      <div class="q-prog-wrap"><div class="q-prog-fill" id="q-prog-fill"></div></div>
+      <div class="score-live">✓ <span id="score-live">0</span></div>
+      <div class="timer-disp" id="timer-disp">20:00</div>
+    </div>
+  </div>
+
+  <div class="quiz-body">
+    <div class="q-card" id="q-card"></div>
+  </div>
+
+  <div class="q-map-bar">
+    <div class="q-map-inner">
+      <div class="q-map-lbl">Mappa domande</div>
+      <div class="q-dots" id="q-dots"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================
+     SCREEN 2 — RISULTATI
+     ================================================================ -->
+<div id="screen-results" class="screen">
+  <div class="res-hero">
+    <div class="res-hero-inner">
+      <div class="res-eyebrow" id="res-eyebrow">Risultato Quiz</div>
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120" width="140" height="140">
+          <circle class="ring-bg" cx="60" cy="60" r="56"/>
+          <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="56"/>
+        </svg>
+        <div class="ring-txt">
+          <div class="ring-score" id="ring-score">0</div>
+          <div class="ring-total" id="ring-total">/30</div>
+        </div>
+      </div>
+      <div class="res-grade" id="res-grade">—</div>
+      <div class="res-msg"   id="res-msg"></div>
+    </div>
+  </div>
+
+  <div class="res-body">
+    <div class="res-breakdown">
+      <div class="rb-card ok"><div class="rb-val" id="rb-ok">0</div><div class="rb-lbl">Corrette</div></div>
+      <div class="rb-card ko"><div class="rb-val" id="rb-ko">0</div><div class="rb-lbl">Errate</div></div>
+      <div class="rb-card op"><div class="rb-val" id="rb-op">0</div><div class="rb-lbl">Aperte</div></div>
+    </div>
+
+    <div class="rev-title">Revisione risposte</div>
+    <div class="rev-sub">Clicca su ogni domanda per vedere la risposta corretta e la spiegazione</div>
+    <div id="rev-list"></div>
+
+    <div class="res-actions">
+      <button class="btn-act primary" onclick="restartQuiz()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 4v6h6M23 20v-6h-6M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+        Ricomincia
+      </button>
+      <button class="btn-act secondary" onclick="goHome()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        Scegli altro autore
+      </button>
+    </div>
+    <div class="best-record" id="best-record"></div>
+    <div class="footer-q" id="footer-q"></div>
+  </div>
+</div>
+
+<style>
+.mode-opt {
+  background:var(--carta-2); border:1.5px solid rgba(26,22,18,.1);
+  border-radius:var(--r); padding:14px 16px; cursor:pointer;
+  transition:all var(--t-m);
+}
+.mode-opt:hover { border-color:var(--accent); background:white; transform:translateY(-2px); box-shadow:var(--sh); }
+.mode-opt.selected { border-color:var(--accent-dark); background:#fbeaea; }
+.mode-opt.selected .mode-opt-title::after { content:' ✓'; color:var(--accent-dark); }
+.mode-opt-title { font-weight:700; font-size:13px; color:var(--ink); margin-bottom:3px; }
+.mode-opt-desc  { font-size:12px; color:var(--gray); line-height:1.35; }
+</style>
+<script>
+/* ================================================================
+   BANCA DOMANDE — SABA (30 domande)
+   ================================================================ */
+const QUESTIONS_SABA = [
+
+  /* ---- VITA ---- */
+  {
+    id: 1,
+    type: 'mc',
+    topic: 'Vita',
+    text: 'Perché Umberto Poli scelse lo pseudonimo «Saba»?',
+    options: [
+      'Per nascondere le sue origini triestine agli editori veneziani',
+      'In omaggio alla balia slovena (Peppa Sabaz) o perché «saba» in ebraico significa pane/nonno — richiamo alle radici materne',
+      'Era un soprannome dato dalla madre per evocare la nonviolenza',
+      'Per imitare lo stile di un poeta ebraico medioevale chiamato Saba'
+    ],
+    correct: 1,
+    explanation: 'Lo pseudonimo ha una valenza psicologica profonda: recupera il legame con la balia (Peppa Sabaz) e con l\'identità ebraica della famiglia materna.'
+  },
+  {
+    id: 2,
+    type: 'mc',
+    topic: 'Vita',
+    text: 'Qual è il trauma biografico di Saba legato alla figura paterna?',
+    options: [
+      'Il padre lo picchiava e impose il nome "Poli" contro la sua volontà',
+      'Il padre abbandonò la famiglia prima della nascita del figlio, lasciando Saba crescere senza di lui',
+      'Il padre fu arrestato per debiti e ciò portò alla rovina economica della famiglia',
+      'Il padre voleva farlo studiare medicina contro la sua vocazione poetica'
+    ],
+    correct: 1,
+    explanation: 'Ugo Edoardo Poli abbandonò la famiglia prima ancora della nascita del figlio. Questo abbandono è uno dei traumi fondativi dell\'intera poetica di Saba.'
+  },
+  {
+    id: 3,
+    type: 'tf',
+    topic: 'Vita',
+    text: 'Vero o falso: Saba iniziò la terapia psicoanalitica con Sigmund Freud a Vienna nel 1929.',
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: 'Falso. Saba iniziò la terapia con Edoardo Weiss, il principale divulgatore della psicoanalisi in Italia, non con Freud direttamente. Lo fece a Trieste nel 1929.'
+  },
+  {
+    id: 4,
+    type: 'mc',
+    topic: 'Vita',
+    text: 'Quale attività commerciale tenne Saba per gran parte della sua vita adulta?',
+    options: [
+      'Una tipografia che stampava le proprie raccolte poetiche',
+      'Una libreria antiquaria a Trieste, che divenne luogo di incontri culturali',
+      'Una scuola privata di letteratura italiana',
+      'Un giornale letterario indipendente fondato con Svevo'
+    ],
+    correct: 1,
+    explanation: 'La Libreria Antiquaria Saba a Trieste fu la sua occupazione principale, e rappresenta anche il suo legame con la cultura libraria e con la città.'
+  },
+  {
+    id: 5,
+    type: 'tf',
+    topic: 'Vita',
+    text: 'Vero o falso: Saba fu costretto a nascondersi durante la Seconda guerra mondiale a causa delle leggi razziali fasciste.',
+    options: ['Vero', 'Falso'],
+    correct: 0,
+    explanation: 'Vero. In quanto ebreo, con le leggi razziali del 1938 Saba fu costretto a nascondersi. Si rifugiò a Roma e poi a Firenze. Questa esperienza segnò profondamente la sua produzione poetica degli anni Quaranta.'
+  },
+
+  /* ---- TRIESTE ---- */
+  {
+    id: 6,
+    type: 'mc',
+    topic: 'Trieste e identità',
+    text: 'Perché Trieste è definita «città di confine» nella formazione culturale di Saba?',
+    options: [
+      'Era alla frontiera geografica tra Austria e Italia, ma soprattutto luogo di incontro tra cultura italiana, tedesca, slava ed ebraica — ambiente che favorì il contatto con la psicoanalisi',
+      'Perché era al confine tra la modernità industriale e il mondo rurale',
+      'Era una città di porto che viveva ai margini della letteratura italiana',
+      'Perché Saba si sentiva sempre straniero in una città che non lo accettava'
+    ],
+    correct: 0,
+    explanation: 'Trieste città imperiale asburgica era a contatto diretto con Vienna, epicentro della psicoanalisi freudiana. Questa posizione geografica e culturale è fondamentale per comprendere Saba.'
+  },
+  {
+    id: 7,
+    type: 'open',
+    topic: 'Testi — Trieste',
+    text: 'Nella poesia «Trieste», Saba usa l\'espressione «scontrosa grazia». Spiega di quale figura retorica si tratta e quali significati porta con sé nel contesto della lirica.',
+    modelAnswer: 'Si tratta di un ossimoro (due termini semanticamente opposti uniti in una sola espressione). "Scontrosa" evoca chiusura, ritrosia, difficoltà di accesso; "grazia" evoca bellezza e fascino. Insieme descrivono il carattere ambivalente di Trieste: una città riservata ma affascinante. L\'ossimoro funziona anche come autoritratto: Saba stesso è scontroso e appartato, eppure capace di poesia. La città diventa specchio dell\'anima del poeta.',
+    keywords: ['ossimoro', 'ambivalenza', 'autoritratto', 'specchio dell\'anima', 'scontrosa', 'grazia']
+  },
+
+  /* ---- POETICA ---- */
+  {
+    id: 8,
+    type: 'mc',
+    topic: 'Poetica',
+    text: 'Cosa intende Saba con «poesia onesta» nel saggio del 1911?',
+    options: [
+      'Una poesia che rispetti rigorosamente la metrica classica e le regole formali tradizionali',
+      'Una poesia che dica la verità senza mascherarla né amplificarla, dove il poeta è ricercatore di verità anziché letterato di professione',
+      'Una poesia di contenuto morale che insegni valori etici al lettore',
+      'Una poesia accessibile alle classi popolari attraverso un linguaggio semplificato'
+    ],
+    correct: 1,
+    explanation: 'Dal saggio «Quello che resta da fare ai poeti» (1911): la poesia deve tendere a un tipo morale che si avvicini al ricercatore di verità, non al letterato di professione.'
+  },
+  {
+    id: 9,
+    type: 'tf',
+    topic: 'Poetica',
+    text: 'Vero o falso: la struttura tipica di una lirica di Saba prevede un frammento lirico aperto, senza conclusione, sulla scia del vocianesimo.',
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: 'Falso. La struttura tipica di Saba è tripartita: spunto narrativo → descrizione → riflessione conclusiva con valore di sentenza. Si oppone deliberatamente al frammentismo vociano.'
+  },
+  {
+    id: 10,
+    type: 'mc',
+    topic: 'Poetica e stile',
+    text: 'Perché Saba in «Amai» scrive di aver amato «la più antica e difficile» delle rime — quella tra «fiore» e «amore»?',
+    options: [
+      'Perché erano le uniche rime che gli venivano spontanee, senza sforzo tecnico',
+      'Per ironia: vuole deridere i poeti che usano rime banali',
+      'Recuperarle consapevolmente, sapendo che il Novecento le rifiuta come banali, è un atto di coraggio e di verità: sono «antiche» perché vere e vissute',
+      'Perché si rifaceva esplicitamente al modello petrarchesco del Canzoniere'
+    ],
+    correct: 2,
+    explanation: `Il gesto di Saba è anti-novecentesco: in un'epoca che rifiuta le rime comuni, lui le recupera deliberatamente perché in esse riconosce la verità dell'esperienza umana.`
+  },
+  {
+    id: 11,
+    type: 'open',
+    topic: 'Poetica',
+    text: 'Spiega cosa significa per Saba la metafora della poesia come «scandaglio». In quale poesia la usi e come si collega alla psicoanalisi?',
+    modelAnswer: 'Lo scandaglio è uno strumento che si cala in mare per misurare la profondità. In Saba, la poesia è uno scandaglio dell\'interiorità: scende negli strati profondi dell\'io, raggiunge l\'inconscio, porta in superficie i traumi rimossi. In «Amai» Saba scrive «amai la verità che giace al fondo» — il "fondo" è ciò che lo scandaglio raggiunge. Il collegamento con la psicoanalisi è esplicito: come Freud porta alla luce i conflitti inconsci, la poesia di Saba esplora gli strati nascosti dell\'anima. È una coincidenza tra metodo poetico e metodo terapeutico.',
+    keywords: ['scandaglio', 'profondità', 'inconscio', 'Amai', 'verità al fondo', 'psicoanalisi', 'traumi']
+  },
+
+  /* ---- PSICOANALISI ---- */
+  {
+    id: 12,
+    type: 'mc',
+    topic: 'Psicoanalisi',
+    text: 'Cosa rappresenta la «scissione dell\'io» nella psicologia di Saba come emerge dall\'autobiografia poetica?',
+    options: [
+      'La separazione tra la sua identità di poeta e quella di libraio',
+      'La divisione tra identità italiana e ebraica nella Trieste asburgica',
+      'La frattura interiore prodotta dai due modelli materni opposti: la balia allegra (madre di gioia) e la madre biologica severa (madre mesta)',
+      'La rottura con la tradizione letteraria italiana che lo portò ad isolarsi dagli ambienti letterari'
+    ],
+    correct: 2,
+    explanation: 'Saba stesso spiega ne «Il piccolo Berto» (1929-1931) come la doppia figura materna abbia prodotto un io scisso: da un lato il ricordo gioioso della balia, dall\'altro il peso della madre biologica.'
+  },
+  {
+    id: 13,
+    type: 'tf',
+    topic: 'Psicoanalisi',
+    text: 'Vero o falso: Saba è definito «psicanalitico prima della psicanalisi» da Gianfranco Contini, il critico che per primo ne valorizzò la scrittura.',
+    options: ['Vero', 'Falso'],
+    correct: 0,
+    explanation: 'Vero. Contini riconobbe come Saba, ancor prima di conoscere la psicoanalisi freudiana, avesse intuito nella poesia una funzione di esplorazione dell\'inconscio analoga alla terapia analitica.'
+  },
+
+  /* ---- IL CANZONIERE ---- */
+  {
+    id: 14,
+    type: 'mc',
+    topic: 'Il Canzoniere',
+    text: 'Con quale espressione Saba stesso definisce il Canzoniere, chiarendo la sua concezione organica dell\'opera?',
+    options: [
+      'Una «summa lirica» dell\'esperienza triestina del Novecento',
+      'Un «romanzo psicologico in versi» in cui ogni poesia è tassello di un\'unica storia interiore',
+      'Una «confessione» in forma metrica, ispirata alle Confessioni di Agostino',
+      'Un «diario» poetico senza struttura predeterminata, cresciuto spontaneamente'
+    ],
+    correct: 1,
+    explanation: 'La formula «romanzo psicologico in versi» chiarisce che il Canzoniere non è una raccolta di liriche indipendenti ma un\'opera unitaria: la narrazione dell\'evoluzione interiore di un poeta.'
+  },
+  {
+    id: 15,
+    type: 'mc',
+    topic: 'Il Canzoniere',
+    text: 'In che anno viene pubblicata la prima edizione del Canzoniere (parziale) e quante volte viene riorganizzato da Saba nel corso della vita?',
+    options: [
+      '1919 — una sola edizione definitiva',
+      '1921 — riorganizzato e ampliato in edizioni successive fino a quella definitiva del 1961',
+      '1933 — rimaneggiato tre volte tra il 1933 e il 1945',
+      '1945 — subito nella forma finale'
+    ],
+    correct: 1,
+    explanation: 'Il Canzoniere ha una storia editoriale complessa: prima edizione parziale nel 1921, poi edizioni ampliate e riorganizzate; l\'edizione definitiva del 1961 è quella che oggi si legge.'
+  },
+  {
+    id: 16,
+    type: 'tf',
+    topic: 'Il Canzoniere',
+    text: 'Vero o falso: nella sezione «Trieste e una donna» del Canzoniere, il titolo rivela che Trieste e Lina, la moglie, sono i due poli attorno a cui ruota l\'intera sezione.',
+    options: ['Vero', 'Falso'],
+    correct: 0,
+    explanation: 'Vero. La struttura binaria del titolo è significativa: la città e la donna sono i due amori fondamentali del giovane Saba, e la sezione li esplora in parallelo.'
+  },
+
+  /* ---- TESTI — ANALISI ---- */
+  {
+    id: 17,
+    type: 'open',
+    topic: 'Testi — La capra',
+    text: 'Analizza i tre livelli di significato de «La capra» (il piano narrativo, il piano simbolico-universale, il piano autobiografico-identitario) con riferimenti testuali precisi.',
+    modelAnswer: 'Piano narrativo: il poeta cammina e incontra una capra sola, bagnata, legata in un prato che bela. Piano simbolico-universale: il belato "uguale" e costante rivela che "il dolore è eterno, ha una voce e non varia" — una sola voce del dolore in tutti gli esseri viventi; il poeta se ne sente "fraternamente" coinvolto. Piano autobiografico-identitario: "viso semita" — la capra ha il muso che ricorda un viso ebreo; Saba si riconosce nella capra come ebreo marginale, "diverso", e in essa sente querelarsi "ogni altra vita". La rima semita/vita sigla l\'identità ebraica come destino.',
+    keywords: ['dolore eterno', 'viso semita', 'fraternità', 'belato uguale', 'ogni altra vita', 'identità ebraica']
+  },
+  {
+    id: 18,
+    type: 'mc',
+    topic: 'Testi — A mia moglie',
+    text: 'In «A mia moglie», a quale struttura retorica è paragonabile l\'anafora «Tu sei come» ripetuta per sei strofe?',
+    options: [
+      'A una sequenza di metafore distese, sul modello della poesia simbolista',
+      'Al catalogo epico di matrice omerica',
+      'A una preghiera di elogio o litania (struttura che richiama il Cantico delle Creature)',
+      'A una serie di similitudini platoniche ispirate al Simposio'
+    ],
+    correct: 2,
+    explanation: 'Lorenzo Renzi ha osservato come la struttura ripetitiva «Tu sei come + animale» richiami la forma della preghiera di elogio o della litania. Il Cantico delle Creature di Francesco d\'Assisi è il riferimento più immediato.'
+  },
+  {
+    id: 19,
+    type: 'tf',
+    topic: 'Testi — A mia moglie',
+    text: 'Vero o falso: secondo Saba, la moglie Lina è assimilata a femmine animali in segno di disprezzo, come riconobbe egli stesso in una lettera alla critica.',
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: 'Falso. È il contrario: per Saba le femmine degli animali «avvicinano a Dio». Il paragone è un elogio altissimo. Saba scrisse che se un bambino potesse sposarsi e scrivere una poesia per la moglie, scriverebbe «A mia moglie».'
+  },
+  {
+    id: 20,
+    type: 'mc',
+    topic: 'Testi — Città vecchia',
+    text: 'In «Città vecchia», il verso «Tra il detrito…infinito» realizza un\'antitesi semantica fondamentale. Qual è il suo significato profondo?',
+    options: [
+      'Il contrasto tra il quartiere povero e la Trieste borghese rivela l\'ingiustizia sociale',
+      'Il "detrito" (ciò che si scarta, i rifiuti umani) contiene l\'infinito: nelle creature emarginate si trova il sacro, ciò che è eterno nell\'umanità',
+      'Il "detrito" è il passato di Trieste, l\'"infinito" è il suo futuro di città di porto',
+      'È un riferimento leopardiano: il "detrito" evoca la Ginestra, l\'"infinito" la poesia omonima'
+    ],
+    correct: 1,
+    explanation: 'È la tesi centrale della poesia: il sacro e l\'infinito non stanno nel bello e nell\'elevato, ma nel marginale, nel scartato. Il divino si agita nei "perduti" quanto nel poeta stesso.'
+  },
+  {
+    id: 21,
+    type: 'open',
+    topic: 'Testi — Mio padre',
+    text: 'Nel sonetto «Mio padre è stato per me l\'assassino», spiega cosa rappresentano le «due razze in antica tenzone» e come questo conflitto si collega alla poetica di Saba.',
+    modelAnswer: 'Le «due razze» non indicano razze etniche ma due caratteri opposti ereditati dai genitori: la «leggerezza» del padre (cristiano, spensierato, nomade) vs. la «pesantezza» della madre (ebrea, severa, oppressa dai pesi della vita). Questo contrasto è la radice della nevrosi di Saba: egli porta entrambe le nature e non riesce a comporle. Il padre, dapprima «l\'assassino» per la madre, si rivela portatore del dono della leggerezza (lo sguardo azzurro, il sorriso). La poesia nasce proprio da questa tensione irrisolta — è il motore della sua scrittura introspettiva.',
+    keywords: ['due razze', 'leggerezza paterna', 'pesantezza materna', 'nevrosi', 'scissione', 'dono del padre']
+  },
+
+  /* ---- STILE E FIGURE RETORICHE ---- */
+  {
+    id: 22,
+    type: 'mc',
+    topic: 'Stile',
+    text: 'Come evolve la metrica di Saba dal periodo giovanile (fino agli anni Venti) alla maturità (dagli anni Trenta)?',
+    options: [
+      'Passa dal verso libero alla metrica rigidamente classica nelle opere tarde',
+      'Rimane costantemente fedele all\'endecasillabo con rima alternata',
+      'Dal rigore delle forme tradizionali (sonetto, endecasillabi, rime) evolve verso una metrica più irregolare e «versi spezzati» con influenza di Ungaretti',
+      'Abbandona la rima dopo il 1930 e adotta esclusivamente la prosa poetica'
+    ],
+    correct: 2,
+    explanation: 'L\'evoluzione è documentata: nelle prime sezioni del Canzoniere prevalgono forme chiuse; a partire da «Il piccolo Berto» (1929-1931) la metrica si apre, anticipando la frammentazione dei «Mediterranee» e «Uccelli».'
+  },
+  {
+    id: 23,
+    type: 'tf',
+    topic: 'Stile',
+    text: 'Vero o falso: l\'enjambement in Saba è un elemento puramente tecnico-formale, senza relazione con il contenuto emotivo delle poesie.',
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: 'Falso. Gli enjambements di Saba hanno sempre una funzione espressiva: accentuano la tensione, il dolore, la sospensione emotiva. In «La capra», ad esempio, l\'enjambement «perché il dolore è eterno, / ha una voce» crea la pausa che dà peso alla sentenza.'
+  },
+  {
+    id: 24,
+    type: 'mc',
+    topic: 'Stile',
+    text: 'Quale critico definì Saba «moderno in modo quasi sconcertante» pur rimanendo nella tradizione — paradosso che sintetizza la sua posizione novecentesca?',
+    options: [
+      'Benedetto Croce, nella sua recensione del 1921',
+      'Sergio Solmi, osservando come la fedeltà alla tradizione fosse essa stessa un gesto radicale',
+      'Giuseppe Ungaretti, in un\'intervista del 1940',
+      'Pier Paolo Pasolini, nel saggio sulla lirica italiana del dopoguerra'
+    ],
+    correct: 1,
+    explanation: 'Sergio Solmi osservò come il «conservatorismo» di Saba fosse paradossalmente originale: in un\'epoca di sperimentalismo, tornare alla tradizione era la scelta più coraggiosa e anticonformista.'
+  },
+
+  /* ---- RAPPORTO CON LA TRADIZIONE ---- */
+  {
+    id: 25,
+    type: 'open',
+    topic: 'Tradizione e confronti',
+    text: 'In che modo Saba si colloca rispetto alle principali correnti poetiche del Novecento italiano (futurismo, crepuscolarismo, ermetismo, vocianesimo)? Usa almeno due termini chiave della sua poetica.',
+    modelAnswer: 'Saba si oppone a tutte le grandi correnti novecentesche: al futurismo (che esalta la macchina e il progresso) contrappone la quotidianità e le piccole cose; al crepuscolarismo (poesia grigia, rinunciataria) contrappone l\'accettazione piena della vita; all\'ermetismo (oscurità consapevole, la «parola pura») contrappone le «trite parole» accessibili; al vocianesimo (frammento lirico aperto) contrappone la struttura tripartita con sentenza conclusiva. La sua è la «poesia onesta»: una terza via che non si identifica con nessuna avanguardia. È su una linea «antinovecentistica» che lo connette ai classici: Leopardi, Foscolo, Petrarca.',
+    keywords: ['poesia onesta', 'antinovecentistica', 'trite parole', 'tradizione', 'Leopardi', 'ermetismo']
+  },
+  {
+    id: 26,
+    type: 'mc',
+    topic: 'Tradizione e confronti',
+    text: 'Quale tra i seguenti poeti italiani è indicato come punto di riferimento principale nella formazione di Saba, per la capacità di unire dolore cosmico e amore per la vita ordinaria?',
+    options: [
+      'Gabriele D\'Annunzio, per la musicalità della parola e la sensualità della natura',
+      'Giacomo Leopardi, per il pessimismo cosmico e la ricerca di verità nell\'umiltà del reale',
+      'Giovanni Pascoli, per la poetica del «fanciullino» e la valorizzazione del piccolo',
+      'Ugo Foscolo, per la concezione della poesia come immortalità delle passioni'
+    ],
+    correct: 1,
+    explanation: 'Leopardi è il principale referente: il «pessimismo cosmico» e la solidarietà tra gli esseri sofferenti (la Ginestra) ritornano in Saba, specialmente ne «La capra». Il dolore universale è il tema che li accomuna.'
+  },
+
+  /* ---- OPERE — ERNESTO ---- */
+  {
+    id: 27,
+    type: 'mc',
+    topic: 'Ernesto',
+    text: 'Perché il romanzo «Ernesto» rimase inedito fino al 1975, quindici anni dopo la morte di Saba?',
+    options: [
+      'Perché Saba non lo considerava compiuto dal punto di vista strutturale',
+      'Perché trattava con onestà radicale la sessualità adolescenziale maschile, inclusa una relazione omosessuale — contenuto intollerabile per il clima culturale dell\'epoca',
+      'Perché conteneva critiche politiche al fascismo che avrebbero messo in pericolo la sua famiglia',
+      'Perché era scritto in parte in dialetto triestino e richiedeva una traduzione difficile'
+    ],
+    correct: 1,
+    explanation: 'Ernesto tratta il tema dell\'omosessualità adolescenziale con assoluta mancanza di giudizio morale. Era impubblicabile nell\'Italia degli anni Cinquanta: per questo Saba lo lasciò nel cassetto.'
+  },
+  {
+    id: 28,
+    type: 'tf',
+    topic: 'Ernesto',
+    text: 'Vero o falso: nel brano «La vera causa», Ernesto trova immediatamente le parole giuste per confessare alla madre la propria esperienza omosessuale, dimostrando coraggio e maturità.',
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: 'Falso. Ernesto non trova le parole dirette: la confessione avviene indirettamente, citando le parole dello zio Giovanni su uno «scandalo» del deputato. Questo mostra l\'impossibilità linguistica di parlare di certi temi nell\'Italia del tempo.'
+  },
+
+  /* ---- TEMI ---- */
+  {
+    id: 29,
+    type: 'mc',
+    topic: 'Temi',
+    text: 'Qual è la differenza fondamentale nell\'atteggiamento verso il dolore tra Saba e Montale?',
+    options: [
+      'Saba nega il dolore attraverso la poesia, Montale lo accetta rassegnato',
+      'Saba sceglie l\'accettazione totale della vita (il dolore come condizione universale condivisa), Montale invece diagnostica il «male di vivere» come impossibile da evitare e raramente ammette spiragli di grazia',
+      'Saba usa il dolore come strumento retorico, Montale come tema biografico',
+      'Non c\'è differenza: entrambi aderiscono a un pessimismo assoluto senza riscatto'
+    ],
+    correct: 1,
+    explanation: 'È una delle distinzioni fondamentali tra i due poeti: in Saba il dolore è universale ma la vita resta degna di essere vissuta («ogni altra vita»); in Montale il male di vivere è strutturale e il «miracolo» è raro eccezione.'
+  },
+  {
+    id: 30,
+    type: 'open',
+    topic: 'Autobiografismo',
+    text: 'Saba è considerato un poeta profondamente autobiografico. Spiega il concetto di «autobiografismo» nella sua opera e come si distingue dalla semplice confessione lirica.',
+    modelAnswer: 'L\'autobiografismo di Saba non è semplice racconto di episodi personali, ma un progetto organico: il Canzoniere è definito da lui stesso «romanzo psicologico in versi», dove la propria vita diventa materia di un\'indagine interiore sistematica. A differenza della confessione lirica (che racconta per sfogo), Saba usa l\'autobiografia come scandaglio: ogni evento biografico (l\'abbandono del padre, la balia, la madre, la moglie, Trieste) è riletto alla luce della psicanalisi per svelare i traumi profondi dell\'io. Anche Ernesto è un alter ego trasparente. Il risultato non è intimismo ma universalizzazione: la storia personale rivela la condizione umana.',
+    keywords: ['romanzo psicologico in versi', 'scandaglio', 'psicoanalisi', 'traumi', 'universalizzazione', 'Canzoniere']
+  }
+
+]; // fine QUESTIONS_SABA
+/* ================================================================
+   BANCA DOMANDE — UNGARETTI (25 domande)
+   ================================================================ */
+const QUESTIONS_UNGARETTI = [
+
+  /* ---- POETICA / CONCETTI CENTRALI ---- */
+  {
+    id: 'u1',
+    type: 'open',
+    topic: 'Poetica',
+    text: `Spiega cosa intende Ungaretti quando afferma che la parola poetica è «illuminazione». A quale immagine ricorre per descrivere il suo concetto di poesia?`,
+    modelAnswer: `Per Ungaretti la parola poetica non descrive il mondo: è un lampo, una folgorazione che fa apparire la verità nascosta delle cose. È come quando un lampo in una stanza buia illumina improvvisamente tutto per un istante: in quel momento si vede la verità, poi torna il buio. Per questo Ungaretti dice che la poesia ha sempre un «inesauribile segreto»: il lampo non spiega, fa solo intuire. L'immagine emblema di tutto ciò è il «porto sepolto»: una leggenda di Alessandria d'Egitto secondo cui sotto le acque del Nilo c'era un antico porto sepolto. Il poeta è come un palombaro che si immerge nell'abisso interiore, raggiunge la verità nascosta, e poi riemerge per portare agli uomini i suoi canti — ma del viaggio resta sempre un mistero inesauribile.`,
+    keywords: ['illuminazione', 'lampo', 'verità nascosta', 'porto sepolto', 'palombaro', 'inesauribile segreto', 'abisso interiore']
+  },
+  {
+    id: 'u2',
+    type: 'mc',
+    topic: 'Poetica',
+    text: `Che cosa rappresentano gli spazi bianchi che circondano le parole nelle poesie dell'Allegria?`,
+    options: [
+      `Una pausa di respiro fra un verso e l'altro, scelta tipografica funzionale alla lettura ad alta voce`,
+      `Il silenzio da cui la parola emerge: idea derivata da Mallarmé, in cui la pagina bianca non è vuoto ma fa risuonare la parola isolata`,
+      `Lo spazio della trincea, fisicamente reale, riprodotto sulla pagina per imitare le pareti del camminamento`,
+      `Un omaggio formale alla poesia giapponese degli haiku, riscoperti in Francia dai simbolisti`
+    ],
+    correct: 1,
+    explanation: `Gli spazi bianchi sono il silenzio da cui la parola emerge. È un'eredità diretta di Mallarmé: la pagina bianca conta tanto quanto le parole, perché è il silenzio che dà peso alla parola isolata.`
+  },
+  {
+    id: 'u3',
+    type: 'open',
+    topic: 'Poetica',
+    text: `Che cos'è l'«unanimismo» in Ungaretti? Spiega il termine partendo dalla sua etimologia e fai un esempio testuale.`,
+    modelAnswer: `Unanimismo viene dal latino «unus + animus» = una sola anima. È l'idea che il poeta, quando scrive, non parla solo per sé: parla per tutti gli uomini, esprime ciò che tutti sentono ma non riescono a dire. Si manifesta in modo evidente in «Soldati»: «Si sta come d'autunno / sugli alberi / le foglie». Il «si sta» impersonale è la chiave: non è «io sto» (esperienza individuale) ma «si sta» — vale per tutti. Non parla solo dei soldati in trincea: parla della condizione di tutta l'umanità, sospesa e precaria come foglie d'autunno pronte a cadere.`,
+    keywords: ['unanimismo', 'una sola anima', 'si sta impersonale', 'Soldati', 'condizione universale', 'umanità']
+  },
+  {
+    id: 'u4',
+    type: 'tf',
+    topic: 'Poetica',
+    text: `Vero o falso: secondo gli appunti, l'analogia è la figura retorica preferita da Ungaretti perché accosta due immagini lontanissime senza alcun legame logico evidente, costringendo il lettore a un «salto» interpretativo.`,
+    options: ['Vero', 'Falso'],
+    correct: 0,
+    explanation: `Vero. Negli appunti l'analogia è definita esplicitamente «la figura preferita da Ungaretti»: è una forma di metafora ancora più ardita, in cui le immagini accostate appartengono a mondi diversi e il lettore deve «saltare» da una all'altra. Esempio: «bocca digrignata / volta al plenilunio».`
+  },
+
+  /* ---- VITA / FORMAZIONE ---- */
+  {
+    id: 'u5',
+    type: 'open',
+    topic: 'Vita',
+    text: `Quali sono i tre traumi biografici fondamentali da cui nasce, secondo gli appunti, tutta la poesia di Ungaretti? Spiega brevemente che cosa producono nell'opera.`,
+    modelAnswer: `I tre traumi sono: (1) l'esilio originario — Ungaretti nasce in Egitto da genitori lucchesi, è sempre «altrove», sempre nomade. Da qui nasce il tema dell'identità multipla, sviluppato soprattutto ne «I Fiumi». (2) La guerra di trincea (1915-1918) sul Carso — è l'evento centrale, da qui nasce tutto il primo stile dell'Allegria: parole essenziali, versi brevissimi, niente punteggiatura, fraternità di trincea e attaccamento alla vita davanti alla morte. (3) La morte del figlio Antonietto nel 1939, a nove anni, in Brasile — il lutto privato che ispira la raccolta Il dolore (1947), dove si fonde con il dolore storico della Seconda guerra mondiale.`,
+    keywords: ['esilio', 'identità nomade', 'trincea', 'Carso', 'Antonietto', 'Il dolore', 'lutto']
+  },
+  {
+    id: 'u6',
+    type: 'mc',
+    topic: 'Vita',
+    text: `Quale ambiente intellettuale frequenta Ungaretti a Parigi tra il 1912 e il 1914, e che cosa di decisivo apprende?`,
+    options: [
+      `Frequenta i circoli surrealisti maturi attorno ad Apollinaire e adotta l'écriture automatique che lo guiderà nella scrittura dell'Allegria`,
+      `Segue alla Sorbona le lezioni di Bergson sul tempo e la memoria, e conosce i simbolisti (Baudelaire, Mallarmé, Rimbaud) insieme ad Apollinaire e Picasso`,
+      `Studia con Valéry alla École Normale e si forma sulla teoria della «poesia pura» come unica esperienza estetica`,
+      `Lavora come giornalista per «Le Figaro» e conosce gli ambienti del dadaismo zurighese tramite Tristan Tzara`
+    ],
+    correct: 1,
+    explanation: `A 24 anni Ungaretti studia alla Sorbona, segue Bergson (tempo e memoria, decisivi per la sua poetica del ricordo e dell'attimo), conosce i simbolisti francesi e poi Apollinaire, Picasso, Breton — più gli italiani Papini, Palazzeschi, Marinetti.`
+  },
+  {
+    id: 'u7',
+    type: 'tf',
+    topic: 'Vita',
+    text: `Vero o falso: Ungaretti fu arruolato d'ufficio nell'esercito italiano quando l'Italia entrò in guerra nel 1915.`,
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: `Falso. Ungaretti si arruolò volontario come fante: voleva — secondo le sue parole — «sentirsi finalmente italiano». L'esperienza della trincea sul Carso non fu un'imposizione ma una scelta, ed è dato biografico decisivo per leggere l'Allegria.`
+  },
+  {
+    id: 'u8',
+    type: 'mc',
+    topic: 'Vita',
+    text: `In quale circostanza concreta nasce, materialmente, il primo libro di Ungaretti, «Il porto sepolto» (1916)?`,
+    options: [
+      `Viene scritto a Parigi prima della partenza per il fronte e pubblicato dall'editore Vallecchi appena rientrato in Italia`,
+      `Nasce a Roma negli anni '20, dopo una rilettura sistematica dei taccuini di guerra`,
+      `Viene scritto in trincea su pezzettini di carta e cartine di sigarette, e pubblicato a Udine in 80 copie grazie all'ufficiale Ettore Serra`,
+      `Viene composto dopo il congedo, su commissione di Benito Mussolini per il giornale «Il Popolo d'Italia»`
+    ],
+    correct: 2,
+    explanation: `Le prime poesie sono scritte in trincea su pezzettini di carta e cartine delle sigarette; è l'ufficiale Ettore Serra a pubblicarle nel 1916 a Udine, in soli 80 esemplari. Il dato materiale (carta di trincea) è coerente con la poetica della parola essenziale.`
+  },
+
+  /* ---- OPERE / RACCOLTE ---- */
+  {
+    id: 'u9',
+    type: 'open',
+    topic: `Opere — L'Allegria`,
+    text: `Spiega il significato del titolo «L'Allegria» e dell'espressione precedente «Allegria di naufragi». Perché si tratta di un titolo paradossale?`,
+    modelAnswer: `Il titolo definitivo «L'Allegria» (1931) deriva dalla versione precedente «Allegria di naufragi» (1919). È un ossimoro: «allegria» e «naufragi» sono concetti opposti. L'idea è quella della condizione del naufrago che, dopo aver rischiato di morire, prova un'euforia improvvisa per essere sopravvissuto. Ungaretti si considera un naufrago della guerra: l'allegria davanti alla morte è la sua forma di resistenza vitale, un'affermazione del diritto alla vita proprio nel mezzo della distruzione. Nel 1931 l'ossimoro «di naufragi» sparisce dal titolo, ma il significato resta: la raccolta nasce dalla guerra e dalla scoperta paradossale che la vicinanza alla morte rende la vita più desiderabile (la stessa idea di «Veglia»).`,
+    keywords: ['ossimoro', 'naufragi', 'allegria del naufrago sopravvissuto', 'resistenza vitale', 'paradosso vita/morte']
+  },
+  {
+    id: 'u10',
+    type: 'mc',
+    topic: 'Opere — Sentimento del tempo',
+    text: `Quali tra queste caratteristiche è propria di «Sentimento del tempo» (1933) e NON dell'Allegria?`,
+    options: [
+      `Indicazione di luogo e data sotto ogni poesia, per ancorare il testo all'esperienza concreta`,
+      `Uso massiccio del verso-parola e abolizione di ogni nesso sintattico narrativo`,
+      `Ritorno della punteggiatura, lessico aulico e versi più lunghi (con modelli in Petrarca, Leopardi, Dante e Góngora)`,
+      `Sezione iniziale dedicata ai compagni di trincea morti sul Carso`
+    ],
+    correct: 2,
+    explanation: `In «Sentimento del tempo» tutto cambia rispetto all'Allegria: torna la punteggiatura, i versi si allungano, il lessico diventa aulico e prezioso, e i modelli sono i classici italiani (Petrarca, Leopardi, Dante) più Góngora. È la fase oscura e allusiva che ispirerà gli ermetici.`
+  },
+  {
+    id: 'u11',
+    type: 'tf',
+    topic: 'Opere',
+    text: `Vero o falso: secondo gli appunti, i poeti dell'Ermetismo (Quasimodo, Luzi, Gatto) si ispirano principalmente alla prima fase di Ungaretti, quella dei versi-parola dell'Allegria.`,
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: `Falso. Gli ermetici si ispirano alla seconda fase di Ungaretti — quella di «Sentimento del tempo» (1933): poesia oscura, allusiva, sganciata dalla realtà concreta, con lessico aulico. Non la prima fase, che era invece concreta, biografica, ancorata al Carso.`
+  },
+  {
+    id: 'u12',
+    type: 'open',
+    topic: 'Opere — Il dolore',
+    text: `Da quali esperienze nasce la raccolta «Il dolore» (1947)? Spiega in che modo intrecci dolore privato e dolore storico.`,
+    modelAnswer: `«Il dolore» nasce dalla fusione di due lutti distinti ma intrecciati. Il lutto privato: la morte del figlio Antonietto nel 1939, a soli nove anni, mentre Ungaretti insegnava letteratura italiana a San Paolo del Brasile; e prima ancora la morte del fratello Costantino nel 1937. Il lutto storico: la Seconda guerra mondiale, lo sterminio, la catastrofe collettiva. Le due tragedie non si separano: il dolore individuale di un padre si fa specchio del dolore di un'intera umanità ferita. Lo stile è coerente con questa nuova sostanza: tono elegiaco, meditativo, più disteso rispetto all'Allegria; la poesia non è più folgorazione del frammento ma diventa testimonianza della sofferenza. Da questa raccolta proviene «Non gridate più».`,
+    keywords: ['Antonietto', 'fratello Costantino', 'Seconda guerra mondiale', 'fusione privato/storico', 'tono elegiaco', 'testimonianza', 'Non gridate più']
+  },
+
+  /* ---- TESTI / ANALISI ---- */
+  {
+    id: 'u13',
+    type: 'mc',
+    topic: 'Testi — Mattina',
+    text: `Nella poesia «Mattina» («M'illumino / d'immenso»), che cosa significa precisamente «immenso» dal punto di vista etimologico, e come si lega al senso della poesia?`,
+    options: [
+      `Significa «grandissimo» nel senso quantitativo, evoca lo spazio del mare al mattino, un'esperienza puramente paesaggistica`,
+      `Significa «al di là dei sensi» (dal latino in-sensus): si riferisce a un'esperienza mistica indipendente dalla percezione`,
+      `Significa «ciò che non si può misurare» (dal latino in-mensus): è l'infinito, e la poesia dice la fusione del poeta con l'assoluto in un istante di grazia laica`,
+      `Significa «interiore» (dal latino in-mensus, «messo dentro»): la luce viene da dentro e non da fuori, è una pura visione interiore`
+    ],
+    correct: 2,
+    explanation: `«Immenso» = letteralmente «ciò che non si può misurare» (in-mensus), cioè l'infinito. Il poeta si fonde con l'assoluto in un istante di grazia mistica laica. Negli appunti il titolo originario era «Cielo e mare»: il passaggio al titolo astratto «Mattina» accentua proprio l'indeterminatezza e l'universalità.`
+  },
+  {
+    id: 'u14',
+    type: 'open',
+    topic: 'Testi — Soldati',
+    text: `Analizza la struttura della similitudine in «Soldati». Perché è definita «inversa» negli appunti, e che effetto produce?`,
+    modelAnswer: `La similitudine canonica funziona così: A è come B (es. «i soldati sono come foglie»). In «Soldati» Ungaretti rovescia l'ordine: «Si sta / come / d'autunno / sugli alberi / le foglie». Vediamo prima lo stato («si sta»), poi il «come» posticipato, infine il termine di paragone (le foglie). Il vero soggetto (i soldati) non viene mai nominato: resta implicito. L'effetto è duplice. Primo: la similitudine viene scomposta nei suoi atomi minimi (un verso-parola per ogni nucleo), e ogni parola acquista un peso isolato. Secondo: l'omissione del soggetto rinforza l'unanimismo — il «si sta» impersonale vale per tutti, non solo per i soldati: tutta l'umanità è precaria e sospesa come una foglia d'autunno pronta a cadere.`,
+    keywords: ['similitudine inversa', 'si sta impersonale', 'unanimismo', 'versi-parola', 'precarietà', 'foglie']
+  },
+  {
+    id: 'u15',
+    type: 'mc',
+    topic: 'Testi — Fratelli',
+    text: `Nella poesia «Fratelli», a quale immagine viene paragonata la parola «fratelli» pronunciata nella notte di trincea?`,
+    options: [
+      `A una scheggia di granata, perché ferisce chi la pronuncia`,
+      `A una candela accesa, perché illumina il buio della trincea`,
+      `A una foglia appena nata, perché è vitale ma delicatissima, e può essere distrutta in un attimo`,
+      `A una preghiera silenziosa, perché unisce gli uomini al di là delle parole`
+    ],
+    correct: 2,
+    explanation: `L'analogia centrale è «parola fratelli = foglia appena nata»: qualcosa di vitale ma delicatissimo, esposto alla distruzione. È l'analogia più importante della poesia: nasce dall'istinto («involontaria rivolta dell'uomo presente alla sua fragilità»), non da una scelta razionale.`
+  },
+  {
+    id: 'u16',
+    type: 'tf',
+    topic: 'Testi — Fratelli',
+    text: `Vero o falso: l'espressione «aria spasimante» in «Fratelli» è un esempio di sinestesia, perché mescola la dimensione visiva/tattile dell'aria con una sensazione di sofferenza corporea.`,
+    options: ['Vero', 'Falso'],
+    correct: 0,
+    explanation: `Vero. «Aria spasimante» è una sinestesia: l'aria è qualcosa di tattile/visivo, mentre «spasimante» rinvia a una sensazione di dolore corporeo. È coerente con il contesto: l'aria della battaglia è piena di sofferenza, è essa stessa un corpo che soffre.`
+  },
+  {
+    id: 'u17',
+    type: 'open',
+    topic: 'Testi — Veglia',
+    text: `Qual è il paradosso centrale di «Veglia»? Spiega come la struttura della poesia e l'uso dei versi-parola servano a metterlo in evidenza.`,
+    modelAnswer: `Il paradosso centrale è questo: la vicinanza estrema con la morte non spegne la vita, anzi la amplifica. Il poeta passa un'intera notte accanto al cadavere di un compagno «massacrato», e proprio in quel contesto scrive «lettere piene d'amore». La conclusione: «Non sono mai stato / tanto / attaccato alla vita». Strutturalmente, la prima parte accumula participi macabri (massacrato, digrignata, penetrata) isolati nel verso-parola: ogni partifico amplifica un dettaglio di orrore creando una tensione crescente. Poi avviene il rovesciamento: «ho scritto / lettere piene d'amore» — la reazione vitale. Infine il celebre «tanto» isolato nel verso-parola: una sola parola caricata di intensità assoluta, che diventa grido di affermazione del diritto alla vita. La forma (parola isolata) coincide col contenuto (massima concentrazione emotiva).`,
+    keywords: ['paradosso vita/morte', 'attaccamento alla vita', 'lettere d\'amore', 'participi isolati', 'tanto', 'massacrato', 'reazione vitale']
+  },
+  {
+    id: 'u18',
+    type: 'mc',
+    topic: 'Testi — Il porto sepolto',
+    text: `Nell'ultima strofa de «Il porto sepolto», che cosa significa l'espressione «quel nulla / d'inesauribile segreto»?`,
+    options: [
+      `Significa che la poesia, dopo il viaggio dell'immersione, ha rivelato la verità definitiva ed esauriente sull'animo umano`,
+      `È un ossimoro: il «nulla» (zero) coesiste con il «segreto infinito» (inesauribile) — la poesia sfiora la verità ma non la possiede mai del tutto, il mistero resta`,
+      `È un'iperbole che esprime l'enorme quantità di poesie che restano da scrivere dopo il primo libro`,
+      `Indica che il poeta, di fronte all'esperienza della trincea, non ha più nulla da dire`
+    ],
+    correct: 1,
+    explanation: `È un ossimoro fondamentale per la poetica: «nulla» + «inesauribile segreto». La poesia, dopo l'immersione nell'abisso, riporta in superficie solo un «nulla» che però è un mistero infinito. La verità non si lascia possedere: la poesia la tocca, la sfiora, ma il mistero resta — ed è proprio per questo «inesauribile».`
+  },
+  {
+    id: 'u19',
+    type: 'open',
+    topic: 'Testi — I Fiumi',
+    text: `In «I Fiumi» Ungaretti elenca quattro fiumi. Quali sono, in che ordine compaiono e che cosa simboleggiano nella vita del poeta?`,
+    modelAnswer: `I quattro fiumi sono, nell'ordine: (1) Isonzo — il fiume del presente, della trincea sul Carso, in cui il poeta si immerge e si sente «docile fibra dell'universo»; (2) Serchio — il fiume della Toscana, terra degli avi contadini: rappresenta le radici familiari, l'origine lucchese; (3) Nilo — il fiume dell'Egitto, dove «arse di inconsapevolezza»: simbolo dell'infanzia spontanea ad Alessandria; (4) Senna — il fiume di Parigi, dove «si è conosciuto»: simbolo della maturità consapevole, della formazione intellettuale alla Sorbona. I quattro fiumi sono i pezzi della sua identità nomade: tutto Ungaretti è in questo elenco — toscano per sangue, egiziano per nascita, parigino per cultura, italiano per scelta in trincea.`,
+    keywords: ['Isonzo', 'Serchio', 'Nilo', 'Senna', 'identità nomade', 'docile fibra dell\'universo', 'cosmopolitismo']
+  },
+  {
+    id: 'u20',
+    type: 'mc',
+    topic: 'Testi — I Fiumi',
+    text: `Nell'ultima strofa de «I Fiumi», la vita è paragonata a «una corolla di tenebre». Che figura retorica è e che significato porta?`,
+    options: [
+      `È una metafora pura: la vita = un fiore, perché tutto fiorisce e poi appassisce`,
+      `È una similitudine zoologica: la vita è come la corolla di un fiore notturno`,
+      `È un ossimoro: «corolla» (fiore) e «tenebre» (buio) sono opposti — la vita ha bellezza ma porta dentro l'oscurità, c'è dolore al cuore della nostalgia`,
+      `È una personificazione: il fiore parla al poeta nella notte`
+    ],
+    correct: 2,
+    explanation: `«Corolla di tenebre» è un ossimoro: il fiore (bellezza, vita) e il buio (morte, oscurità) sono opposti, ma uniti. La vita di Ungaretti ha senso di bellezza ma porta dentro l'oscurità della nostalgia (nostos + algos = dolore del ritorno). Coerente con l'estetica ossimorica di Ungaretti («Allegria di naufragi»).`
+  },
+  {
+    id: 'u21',
+    type: 'open',
+    topic: 'Testi — Non gridate più',
+    text: `In «Non gridate più» Ungaretti scrive «Cessate d'uccidere i morti». Che figura retorica è e che valore civile assume nella raccolta «Il dolore»?`,
+    modelAnswer: `«Uccidere i morti» è un ossimoro e insieme un adynaton (figura che evoca qualcosa di impossibile, irrealizzabile, per denunciare una realtà assurda): i morti sono già morti, come possono essere uccisi ancora? Il significato è etico: smettete di profanarli, di tradirli con i vostri schiamazzi, con la retorica di guerra, con il rumore della modernità che cancella la loro memoria. La poesia, scritta nel 1947 e collocata in chiusura del «Dolore», ha valore civile fortissimo: si rivolge ai sopravvissuti incapaci di rinunciare all'odio post-bellico. Solo il silenzio permette di ascoltare i morti, che hanno «l'impercettibile sussurro» del crescere dell'erba. È un Ungaretti maturo che mantiene l'essenzialità ma assume un tono profetico e quasi religioso. Importante anche il ribaltamento rispetto all'Allegria: in trincea (Veglia) scriveva per dire la guerra; ora scrive per chiedere il silenzio.`,
+    keywords: ['ossimoro', 'adynaton', 'poesia civile', 'profanazione dei morti', 'silenzio', 'memoria', 'Il dolore', 'tono profetico']
+  },
+
+  /* ---- STILE / FIGURE RETORICHE ---- */
+  {
+    id: 'u22',
+    type: 'mc',
+    topic: 'Stile',
+    text: `Quali tra queste è una caratteristica formale tipica dell'Allegria che, secondo gli appunti, indica l'aderenza della poesia all'esperienza concreta del momento?`,
+    options: [
+      `La presenza di una dedica a Ettore Serra in apertura di ogni testo`,
+      `L'uso di rime baciate alla fine di ogni strofa`,
+      `L'indicazione di luogo e data sotto ogni poesia (es. «Mariano, 15 luglio 1916»)`,
+      `Una breve nota a margine che spiega l'origine biografica del testo`
+    ],
+    correct: 2,
+    explanation: `Sotto ogni poesia dell'Allegria Ungaretti pone luogo e data dal fronte (es. «Mariano il Carso, luglio 1916»). È un elemento formale che ancora la poesia all'esperienza concreta del momento: la poesia nasce qui e ora, non è elaborazione astratta.`
+  },
+  {
+    id: 'u23',
+    type: 'tf',
+    topic: 'Stile',
+    text: `Vero o falso: in tutta la produzione di Ungaretti, dall'Allegria al Dolore, lo stile resta sostanzialmente coerente: versi brevissimi, abolizione della punteggiatura, parole isolate dallo spazio bianco.`,
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: `Falso. Lo stile di Ungaretti evolve in tre fasi nette: nell'Allegria versi-parola e niente punteggiatura; in «Sentimento del tempo» ritorno della punteggiatura, versi lunghi e lessico aulico; ne «Il dolore» tono elegiaco e meditativo, sintassi rigorosa. La continuità c'è nella ricerca della parola essenziale, non nelle forme.`
+  },
+
+  /* ---- CONFRONTI ---- */
+  {
+    id: 'u24',
+    type: 'open',
+    topic: 'Confronti',
+    text: `Mettendo a confronto Ungaretti, Saba e Montale sul tema della parola poetica, come si distingue la posizione di Ungaretti? Usa termini precisi tratti dagli appunti.`,
+    modelAnswer: `Per Ungaretti la parola è epifania, illuminazione, attimo di rivelazione. Un'unica parola può contenere tutta la verità: di qui l'uso del verso-parola, dell'analogia pura, dell'abolizione della logica e della punteggiatura. La parola «salva» — è la sola certezza nel caos della guerra. Per Saba, invece, la parola è comunicazione diretta e onesta con il lettore: stile volutamente basso e colloquiale, metrica tradizionale, la poesia come confessione e racconto di vita. Per Montale la parola è insufficiente, «storta e secca come un ramo»: non illumina e non salva, può solo dire «ciò che non siamo, ciò che non vogliamo» — l'Anti-Vate per eccellenza. La sintesi degli appunti è: «Ungaretti cerca l'illuminazione, Saba cerca l'onestà, Montale dichiara l'impossibilità del senso».`,
+    keywords: ['illuminazione', 'epifania', 'parola salva', 'verso-parola', 'analogia', 'differenza da Saba', 'differenza da Montale', 'Anti-Vate']
+  },
+  {
+    id: 'u25',
+    type: 'mc',
+    topic: 'Confronti',
+    text: `Secondo gli appunti, come è il rapporto di Ungaretti con la tradizione poetica italiana?`,
+    options: [
+      `Rottura definitiva: dall'Allegria in poi rifiuta ogni modello classico e prosegue solo sulla via dei simbolisti francesi`,
+      `Fedeltà costante: anche nei versi-parola dell'Allegria Ungaretti rispetta la metrica tradizionale, in particolare l'endecasillabo`,
+      `Movimento doppio: rottura radicale nella prima fase (Allegria), poi recupero della tradizione (Petrarca, Leopardi) nella fase di Sentimento del tempo`,
+      `Indifferenza programmatica: non ha mai espresso un giudizio chiaro sui classici, considerandoli irrilevanti per la poesia moderna`
+    ],
+    correct: 2,
+    explanation: `Negli appunti la posizione di Ungaretti rispetto alla tradizione è chiaramente bifasica: si allontana radicalmente nella prima fase (Allegria), poi torna alla tradizione (Petrarca, Leopardi) nella seconda fase (Sentimento del tempo). Movimento di rottura e recupero.`
+  }
+];
+/* ================================================================
+   BANCA DOMANDE — MONTALE (26 domande)
+   ================================================================ */
+const QUESTIONS_MONTALE = [
+
+  /* ---- POETICA / CONCETTI CENTRALI ---- */
+  {
+    id: 'm1',
+    type: 'open',
+    topic: 'Poetica',
+    text: `Spiega che cos'è il «correlativo oggettivo» in Montale: da chi lo deriva, come funziona, e in cosa si distingue dall'uso simbolico dell'oggetto in Pascoli e in D'Annunzio.`,
+    modelAnswer: `Il correlativo oggettivo è la tecnica principale di Montale, mutuata da T.S. Eliot (in particolare dal saggio su Hamlet e dalla Terra desolata, 1922). Invece di esprimere direttamente un'emozione astratta, il poeta presenta un oggetto fisico concreto che «contiene» quell'emozione senza nominarla. Esempio: invece di «sento il male di vivere», Montale scrive «era il rivo strozzato che gorgoglia, era l'incartocciarsi della foglia riarsa, era il cavallo stramazzato». Tre oggetti = il male di vivere. La differenza con Pascoli e D'Annunzio è essenziale: in Pascoli l'oggetto è proiezione soggettiva dell'animo del poeta (pathetic fallacy); in D'Annunzio è porta su una bellezza assoluta; in Montale l'oggetto mantiene la sua brutale densità fisica — non è un simbolo magico che apre alla Verità, ma un emblema concreto e provvisorio che porta dentro di sé la brutalità dell'esistenza senza riscatto trascendente.`,
+    keywords: ['T.S. Eliot', 'oggetto concreto', 'rivo strozzato', 'foglia riarsa', 'cavallo stramazzato', 'no pathetic fallacy', 'emblema provvisorio', 'differenza da D\'Annunzio']
+  },
+  {
+    id: 'm2',
+    type: 'mc',
+    topic: 'Poetica',
+    text: `Che cosa indica esattamente l'espressione «divina Indifferenza» in Montale?`,
+    options: [
+      `L'indifferenza di Dio verso le preghiere degli uomini, in chiave anti-religiosa`,
+      `La natura che non partecipa al dolore umano: rovesciamento della pathetic fallacy romantica — la statua, la nuvola, il falco non soffrono, semplicemente sono al di fuori del dolore`,
+      `La distanza programmatica del poeta dall'impegno politico durante il fascismo`,
+      `L'atteggiamento di Clizia, che lontana in America non risponde più alle lettere del poeta`
+    ],
+    correct: 1,
+    explanation: `«Divina Indifferenza» indica il fatto che la natura non partecipa al dolore dell'uomo. In «Spesso il male di vivere ho incontrato», statua, nuvola, falco non soffrono con noi: semplicemente non soffrono. È il rovesciamento della pathetic fallacy romantica (Leopardi, Pascoli, D'Annunzio proiettavano i propri stati d'animo nella natura). L'unica «grazia» è l'essere al di fuori del dolore.`
+  },
+  {
+    id: 'm3',
+    type: 'open',
+    topic: 'Poetica',
+    text: `Che cos'è il «varco» nella poetica di Montale? Spiega il concetto e fai almeno due esempi presi dalle poesie del programma.`,
+    modelAnswer: `Il varco è la ricerca ossessiva — e quasi sempre fallita — di una via di fuga o di un senso nascosto dietro le cose. È l'opposto del muro (l'esistenza-prigione di «Meriggiare»). Nei testi del programma il varco appare almeno in: (1) la figura di Clizia in «Non recidere, forbice, quel volto», che porta un barlume di salvezza intellettuale e umana; (2) la carrucola in «Cigola la carrucola nel pozzo», che riporta dal fondo del pozzo un'immagine amata — un istante in cui la memoria apre uno spiraglio. Si potrebbe aggiungere (3) il profumo dei limoni in «I limoni», che apre un istante di senso. Il varco è sempre precario e temporaneo: quasi sempre si chiude (l'immagine nel secchio si deforma, sfuma, e il pozzo torna «muto»). Lo «scacco» — la sconfitta — è la condizione normale dell'uomo.`,
+    keywords: ['varco', 'opposto del muro', 'via di fuga', 'Cigola la carrucola', 'Clizia', 'scacco', 'precario', 'memoria']
+  },
+  {
+    id: 'm4',
+    type: 'tf',
+    topic: 'Poetica',
+    text: `Vero o falso: secondo Montale stesso, il «male di vivere» nasce dal trauma storico del fascismo e della guerra; senza questi eventi, il sentimento non sarebbe esistito nella sua opera.`,
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: `Falso. Negli appunti si cita esplicitamente la posizione di Montale (1951): il male di vivere non nasce dagli eventi storici, è «connaturato all'esistenza». Il fascismo e la guerra aggravano, ma non creano il problema. È una condizione esistenziale che precede e sopravvive alla storia.`
+  },
+  {
+    id: 'm5',
+    type: 'open',
+    topic: 'Poetica',
+    text: `Spiega cosa significa, per Montale, essere il poeta «Anti-Vate». Contro quali tre modelli prende posizione, secondo gli appunti?`,
+    modelAnswer: `Montale è il poeta dell'Anti-Vate per eccellenza: rifiuta la figura del poeta-profeta dannunziano, la pretesa di una parola magica che porti verità assolute. La sua poesia non illumina, non salva, non rivela: può solo dire «ciò che non siamo, ciò che non vogliamo». I tre modelli contro cui prende posizione, secondo gli appunti, sono: (1) D'Annunzio — rifiuta l'eloquenza retorica, il poeta-vate, i «nomi poco usati» delle piante ornamentali (Montale preferisce i limoni, le anguille nei fossi, i muri scalcinati); (2) Pascoli — rifiuta l'oggetto come pura proiezione soggettiva dell'animo del poeta (pathetic fallacy); (3) il Simbolismo francese (Baudelaire, Verlaine) — rifiuta la parola magica che apre sulla Verità assoluta: gli emblemi di Montale restano concreti e provvisori, non porte su un Assoluto. La frase-manifesto è: «volevo torcere il collo all'eloquenza», anche «a rischio di una controeloquenza».`,
+    keywords: ['Anti-Vate', 'D\'Annunzio', 'Pascoli', 'simbolismo francese', 'controeloquenza', 'no parola magica', 'limoni vs piante aulent']
+  },
+
+  /* ---- VITA / BIOGRAFIA ---- */
+  {
+    id: 'm6',
+    type: 'mc',
+    topic: 'Vita',
+    text: `Per quale motivo Montale fu licenziato dal Gabinetto Vieusseux di Firenze nel 1938?`,
+    options: [
+      `Per aver pubblicato un libro vietato dalla censura fascista`,
+      `Per non essersi iscritto al Partito Nazionale Fascista (PNF)`,
+      `Per aver rifiutato di ospitare nella biblioteca intellettuali ebrei`,
+      `Per assenze ingiustificate dovute alla relazione con Irma Brandeis`
+    ],
+    correct: 1,
+    explanation: `Montale fu licenziato nel 1938 per il rifiuto di iscriversi al PNF. Nel medesimo anno Irma Brandeis (Clizia) fu costretta a tornare negli USA per le leggi razziali: i due eventi insieme segnano l'orizzonte delle Occasioni.`
+  },
+  {
+    id: 'm7',
+    type: 'open',
+    topic: 'Vita',
+    text: `Quali sono le tre figure femminili principali nell'opera di Montale, a chi corrispondono nella realtà biografica e cosa rappresentano allegoricamente?`,
+    modelAnswer: `Le tre figure sono: (1) CLIZIA — corrisponde a Irma Brandeis, studiosa americana di Dante, ebrea, conosciuta a Firenze nel 1933. Costretta a tornare in USA nel 1938 per le leggi razziali. Allegoricamente è la donna-angelo sul modello di Beatrice dantesca: nelle Occasioni è la guida intellettuale; nella Bufera diventa figura quasi cristologica, messaggera cosmica di speranza contro il nazifascismo. Il nome riprende la ninfa innamorata di Apollo, trasformata in girasole, sempre rivolta verso la luce. (2) VOLPE — corrisponde a Maria Luisa Spaziani, poetessa piemontese. Allegoricamente è l'anti-Clizia: corporeità, sensualità terrena, istinto contro la purezza intellettuale. Compare nella Bufera. (3) MOSCA — corrisponde a Drusilla Tanzi, convivente dal 1939 e moglie dal 1962. Il soprannome viene dai suoi occhiali spessi per la forte miopia. Allegoricamente è la guida quotidiana, il «radar spirituale»: figura pratica e domestica, l'unica capace di orientarsi nell'assurdità del mondo moderno. Dopo la sua morte (1963), Montale le dedica le poesie degli Xenia in Satura.`,
+    keywords: ['Clizia / Irma Brandeis', 'donna-angelo', 'girasole', 'Volpe / Spaziani', 'sensualità', 'Mosca / Drusilla Tanzi', 'miopia', 'Xenia']
+  },
+  {
+    id: 'm8',
+    type: 'tf',
+    topic: 'Vita',
+    text: `Vero o falso: secondo gli appunti, durante la Seconda guerra mondiale Montale rimase a Firenze, ospitò e protesse intellettuali ebrei (tra cui Umberto Saba) e fu attivo nel Comitato di Liberazione Nazionale (CLN).`,
+    options: ['Vero', 'Falso'],
+    correct: 0,
+    explanation: `Vero. Negli anni 1943-1945 Montale rimane a Firenze, ospita e protegge intellettuali ebrei — fra questi Umberto Saba — ed è attivo nel CLN. Sempre in questo periodo scrive le poesie di «Finisterre», che confluiranno nella Bufera.`
+  },
+  {
+    id: 'm9',
+    type: 'mc',
+    topic: 'Vita',
+    text: `Quale evento biografico, secondo gli appunti, fa uscire Montale da un lungo silenzio poetico e genera la stagione di Satura?`,
+    options: [
+      `La vittoria del Premio Nobel per la Letteratura nel 1975`,
+      `La nomina a senatore a vita nel 1967`,
+      `La morte della moglie Drusilla Tanzi (Mosca) nel 1963, che sblocca la scrittura delle poesie degli Xenia`,
+      `Il trasferimento da Firenze a Milano e l'incarico al Corriere della Sera nel 1948`
+    ],
+    correct: 2,
+    explanation: `Dopo «La bufera e altro» (1956) Montale entra in un lungo silenzio poetico. È la morte di Mosca, nel 1963, a sbloccare la scrittura: nascono le poesie degli Xenia, che confluiranno in Satura (1971), pubblicata a 15 anni di distanza dalla raccolta precedente.`
+  },
+
+  /* ---- OPERE / RACCOLTE ---- */
+  {
+    id: 'm10',
+    type: 'open',
+    topic: 'Opere — Ossi di seppia',
+    text: `Spiega il titolo «Ossi di seppia». Che cosa sono materialmente, e perché diventano metafora dell'uomo? Quale doppia valenza simbolica hanno?`,
+    modelAnswer: `Gli «ossi di seppia» sono i residui calcarei dei molluschi (le seppie) abbandonati sulla spiaggia. Sono ciò che resta quando la vita è ridotta all'essenziale: l'osso, lo scheletro, il fossile spogliato di ogni ornamento. Diventano metafora dell'uomo moderno spogliato di ogni illusione, ridotto al puro esistere. La doppia valenza è importante: gli ossi possono galleggiare sul mare (immagine di armonia, leggerezza, contatto con l'elemento vitale del mare) oppure essere relitti arenati sulla spiaggia (immagine di esilio, aridità, abbandono). Questa ambivalenza rispecchia tutta la raccolta: il paesaggio ligure brullo e bruciato dal sole come correlativo oggettivo dell'aridità interiore, ma anche il mare come unico elemento positivo, simbolo di forza vitale. Stile: «storta sillaba e secca come un ramo» — antiretorico, secco, con termini bassi e tecnici.`,
+    keywords: ['residui calcarei', 'molluschi', 'essenziale', 'aridità', 'mare = vita', 'galleggia / arenato', 'paesaggio ligure', 'antiretorico']
+  },
+  {
+    id: 'm11',
+    type: 'mc',
+    topic: 'Opere — Le occasioni',
+    text: `Che cosa sono le «occasioni» da cui prende nome la seconda raccolta di Montale (1939)?`,
+    options: [
+      `Le opportunità mancate nella relazione con Clizia, perduta dopo il 1938`,
+      `Le occasioni storiche di intervento civile e politico che Montale rifiutò sotto il fascismo`,
+      `Lampi di vita vissuta, flash improvvisi che aprono un varco di senso — come le madeleine di Proust, l'istante fatale in cui sembra possibile afferrare un significato`,
+      `Le occasioni mondane fiorentine al caffè Le Giubbe Rosse con i poeti ermetici`
+    ],
+    correct: 2,
+    explanation: `«Occasioni» = lampi di vita vissuta, flash improvvisi che aprono un varco di senso. Come le madeleine di Proust: l'istante fatale in cui sembra possibile afferrare un significato. Da qui anche la sezione centrale dei Mottetti (20 brevi poesie d'amore per Clizia assente).`
+  },
+  {
+    id: 'm12',
+    type: 'open',
+    topic: 'Opere — La bufera',
+    text: `Cosa rappresenta «la bufera» nel titolo della terza raccolta? E che cosa indica l'aggiunta «e altro»? Come cambia la figura di Clizia in questa raccolta rispetto alle Occasioni?`,
+    modelAnswer: `«La bufera» è la Seconda guerra mondiale — e insieme la guerra cosmica, metafisica, di sempre: il male assoluto nella storia ma anche oltre la storia. «E altro» indica i contenuti aggiunti: lutti privati, eventi del dopoguerra, disillusione politica, moralità laica. La raccolta, pubblicata nel 1956, include il nucleo di «Finisterre» (1943-45), scritto durante la guerra. Quanto a Clizia: nelle Occasioni era la donna-angelo intellettuale (modello dantesco di Beatrice); nella Bufera si trasforma in figura quasi cristologica — intermediaria tra umano e divino, messaggera di speranza cosmica, «il girasole che si sacrifica per tutti». Compare anche Volpe come sua antitesi corporea (la passione erotica contro la purezza intellettuale). Stile: plurilinguismo — termini quotidiani accanto a termini biblico-religiosi; sintassi tortuosa; allegorismo denso. Testo chiave: «Piccolo testamento» — testamento spirituale del poeta a Clizia, traccia esile di umanità contro l'apocalisse imminente.`,
+    keywords: ['Seconda guerra mondiale', 'guerra cosmica', 'Finisterre', 'Clizia cristologica', 'girasole', 'Volpe', 'plurilinguismo', 'Piccolo testamento']
+  },
+  {
+    id: 'm13',
+    type: 'mc',
+    topic: 'Opere — Satura',
+    text: `Quali sono i tre significati che convergono nel titolo «Satura» (1971)?`,
+    options: [
+      `Saturnia (la statua antica), Saturno (il dio del tempo), saturare (riempire — riferito alla raccolta)`,
+      `Satura lanx (piatto di primizie, varietà), satira (tono sarcastico), sazietà (averne abbastanza della società dei consumi)`,
+      `Saturazione cromatica, satira politica, saggezza tarda dell'autore anziano`,
+      `Saturare il mercato editoriale, satira giornalistica del Corriere della Sera, saggezza filosofica`
+    ],
+    correct: 1,
+    explanation: `I tre significati: (1) «Satura lanx» = piatto di primizie, varietà di contenuti; (2) Satira = tono sarcastico, ironico; (3) Sazietà = averne abbastanza della società dei consumi e della volgarità di massa. La raccolta segna una rottura totale con l'allegorismo precedente: stile prosastico, colloquiale, autoparodico.`
+  },
+  {
+    id: 'm14',
+    type: 'open',
+    topic: 'Opere — Xenia',
+    text: `Che cosa sono gli «Xenia» di Satura? Spiega l'etimologia del termine, il numero, il destinatario, e in che cosa il loro tono differisce dalle raccolte precedenti.`,
+    modelAnswer: `«Xenia» viene dal greco xénos = ospite, e dal latino xenium = dono fatto a un ospite. Sono 28 poesie in totale (Xenia I e Xenia II, scritte tra 1964 e 1966) raccolte poi in Satura. Sono dedicate alla moglie Drusilla Tanzi (Mosca), morta nel 1963: una sorta di «canzoniere in morte» domestico. Si tratta di biglietti poetici alla moglie morta — memorie di vita quotidiana, gesti domestici, la miopia di Mosca, le scale della loro vita comune. Il tono è radicalmente diverso dalle raccolte precedenti: rottura totale con l'allegorismo della Bufera; stile prosastico, colloquiale, ironico e domestico; la poesia «scende dall'olimpo nelle cose quotidiane». Non c'è più la donna-angelo allegorica (Clizia): c'è la moglie reale, con difetti fisici (miopia) ma con un «radar spirituale» infallibile. La grandezza è nella prosaicità.`,
+    keywords: ['xénos / xenium', 'dono all\'ospite', '28 poesie', 'Mosca / Drusilla Tanzi', 'canzoniere in morte', 'stile prosastico', 'rottura allegorismo', 'quotidiano']
+  },
+
+  /* ---- TESTI / ANALISI ---- */
+  {
+    id: 'm15',
+    type: 'mc',
+    topic: 'Testi — Non chiederci la parola',
+    text: `In «Non chiederci la parola», che cosa significa esattamente l'espressione finale «Codesto solo oggi possiamo dirti, / ciò che non siamo, ciò che non vogliamo»?`,
+    options: [
+      `La poesia rifiuta di dare risposte politiche: non si schiera né per il fascismo né contro`,
+      `Il poeta non vuole pronunciare il nome delle persone amate per timore della censura`,
+      `La poesia può solo dire una verità negativa (definizione per esclusione): non dà certezze, non offre formule che aprano mondi — è una poetica della negazione contro la pretesa del poeta-vate`,
+      `Il poeta dichiara che la sua opera è incompleta e dovrà essere proseguita da poeti più giovani`
+    ],
+    correct: 2,
+    explanation: `Sono i versi-manifesto della poetica di Montale. L'unica certezza è negativa: la poesia non illumina, non salva, non rivela una formula «che mondi possa aprirti». Può dire solo ciò che non siamo. Posizione radicalmente agnostica e Anti-Vate (contro D'Annunzio, contro Pascoli, contro l'Ermetismo).`
+  },
+  {
+    id: 'm16',
+    type: 'tf',
+    topic: 'Testi — Non chiederci la parola',
+    text: `Vero o falso: in «Non chiederci la parola», la «storta sillaba e secca come un ramo» è una metafora positiva: la poesia, anche se essenziale, è viva come un ramo verde nella primavera.`,
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: `Falso. La «storta sillaba e secca come un ramo» è una metafora negativa: la poesia è ridotta a legno morto, senza musicalità, senza ricchezza retorica. È la dichiarazione di poetica dell'Anti-Vate: contro l'eloquenza dannunziana, contro la formula magica che mondi possa aprire.`
+  },
+  {
+    id: 'm17',
+    type: 'open',
+    topic: 'Testi — Spesso il male di vivere',
+    text: `Analizza la struttura simmetrica di «Spesso il male di vivere ho incontrato»: quali sono i correlativi oggettivi del male e quali quelli della «divina Indifferenza»? Spiega cosa intende Montale con quest'ultima espressione.`,
+    modelAnswer: `La poesia è costruita su due quartine perfettamente simmetriche. La prima quartina presenta tre correlativi oggettivi del male di vivere: (1) il «rivo strozzato che gorgoglia» — acqua che non scorre, vita bloccata; (2) «l'incartocciarsi della foglia riarsa» — vita che si inaridisce e muore; (3) «il cavallo stramazzato» — morte improvvisa, brutalità. Tre oggetti fisici senza commento: sono il male di vivere. La seconda quartina presenta tre correlativi oggettivi della «divina Indifferenza»: (1) «la statua nella sonnolenza del meriggio» — immobilità, freddezza, non-sofferenza; (2) «la nuvola» — indifferente al mondo sottostante; (3) «il falco alto levato» — distanza, altezza, estraneità. La «divina Indifferenza» non è beatitudine ma semplice assenza di dolore: l'unica forma di «grazia» possibile è essere al di fuori del dolore, non la sua risoluzione. È il rovesciamento radicale della pathetic fallacy romantica: la natura non rispecchia l'animo del poeta, non soffre con lui, semplicemente non soffre. La «divinità» di questa indifferenza è ironica.`,
+    keywords: ['rivo strozzato', 'foglia riarsa', 'cavallo stramazzato', 'statua', 'nuvola', 'falco alto levato', 'pathetic fallacy', 'non beatitudine', 'simmetria']
+  },
+  {
+    id: 'm18',
+    type: 'mc',
+    topic: 'Testi — Meriggiare',
+    text: `In «Meriggiare pallido e assorto», che cosa simboleggia la «muraglia che ha in cima cocci aguzzi di bottiglia»?`,
+    options: [
+      `Un ricordo concreto del muro del giardino di Monterosso, registrato per fedeltà autobiografica`,
+      `La separazione fisica imposta dalle leggi razziali del 1938 fra Montale e Clizia`,
+      `L'esistenza umana come prigione invalicabile: il varco non esiste, la vita è tutta nel «seguitare» un muro impossibile da scalare`,
+      `La società borghese fiorentina degli anni Trenta, chiusa e conservatrice, da cui Montale si sente escluso`
+    ],
+    correct: 2,
+    explanation: `La muraglia è il simbolo centrale della poetica di Montale: l'esistenza umana è una muraglia con cocci aguzzi in cima, invalicabile. Il varco non esiste. Lo sguardo sul mare lontano (la speranza) è solo un barlume intravisto tra le fronde. La vita è tutta nel «seguitare» quel muro.`
+  },
+  {
+    id: 'm19',
+    type: 'tf',
+    topic: 'Testi — Meriggiare',
+    text: `Vero o falso: in «Meriggiare pallido e assorto», le file di formiche rosse nelle crepe del suolo non sono una semplice descrizione naturalistica, ma un correlativo oggettivo del vano affaccendarsi degli uomini.`,
+    options: ['Vero', 'Falso'],
+    correct: 0,
+    explanation: `Vero. Le formiche che «ora si rompono ed ora s'intrecciano» senza meta sono un correlativo oggettivo puro del vano affaccendarsi degli uomini. Non è una similitudine dichiarata: il lettore deve fare il collegamento, attivando la tecnica eliotiana del correlativo.`
+  },
+  {
+    id: 'm20',
+    type: 'open',
+    topic: 'Testi — Cigola la carrucola',
+    text: `Spiega il tema centrale di «Cigola la carrucola nel pozzo». Cosa simboleggiano la carrucola e il pozzo? Perché secondo gli appunti questa poesia rappresenta uno «scacco» del varco?`,
+    modelAnswer: `Il tema centrale è il «varco della memoria» che fallisce. Il pozzo simboleggia la profondità dell'inconscio e della memoria, il tempo passato. La carrucola è il meccanismo della memoria che funziona — cigola, gira, attinge dal profondo. L'acqua nel secchio è il ricordo liquido, tremante, deformante. Sul «puro cerchio» dell'acqua appare un volto amato che «ride»: per un istante è il varco — la memoria apre uno spiraglio sul passato. Ma quando il poeta accosta il volto a «evanescenti labbri», l'immagine si deforma, «si fa vecchio, appartiene ad un altro», sfuma nel vuoto del pozzo. La ruota si ferma, il pozzo «torna ad esser muto». È lo scacco: il varco si è aperto un istante e subito si è richiuso. Il passato non può essere recuperato. Anticipa il tema della memoria di Mosca negli Xenia, dove però il tono sarà meno angoscioso e più domestico.`,
+    keywords: ['varco della memoria', 'scacco', 'pozzo = inconscio', 'carrucola = meccanismo', 'acqua = ricordo', 'immagine si deforma', 'pozzo torna muto']
+  },
+  {
+    id: 'm21',
+    type: 'mc',
+    topic: 'Testi — Non recidere, forbice',
+    text: `In «Non recidere, forbice, quel volto», che cosa rappresenta il «guscio di cicala» che cade «nella prima belletta di Novembre»?`,
+    options: [
+      `Un dettaglio paesaggistico realistico, raccolto da Montale durante una passeggiata autunnale a Firenze`,
+      `Il correlativo oggettivo perfetto del ricordo che si svuota: la cicala cantava (il ricordo era vivo), ora il guscio vuoto cade nel fango — il volto di Clizia rischia di scomparire nell'oblio`,
+      `Il simbolo del fascismo che cade, lasciando i resti vuoti della propria propaganda`,
+      `Una citazione classica dalla poesia greca di Saffo, riferita alla brevità della vita`
+    ],
+    correct: 1,
+    explanation: `Il guscio di cicala è il correlativo oggettivo perfetto: la cicala cantava (il ricordo era vivo), ora è solo un involucro vuoto (il ricordo si svuota). Cade nel fango d'autunno: il ricordo scompare nell'oblio. Tutto detto in un'immagine fisica, senza commento — è la tecnica del correlativo oggettivo al massimo grado.`
+  },
+  {
+    id: 'm22',
+    type: 'open',
+    topic: 'Testi — Non recidere, forbice',
+    text: `Negli appunti viene messo in evidenza un parallelismo preciso fra le due strofe di «Non recidere, forbice, quel volto». Ricostruiscilo: a che cosa corrisponde, nella seconda strofa, ciascun elemento della prima?`,
+    modelAnswer: `Il parallelismo fra le due strofe è la chiave tecnica del componimento. (1) La «forbice» del tempo (str. 1) corrisponde al potatore che con «duro colpo svetta» (str. 2): entrambi recidono. (2) La «memoria che si sfolla» (str. 1) corrisponde all'acacia che «scrolla» il guscio (str. 2): entrambe perdono qualcosa. (3) Il «volto in ascolto» di Clizia, che rischia di cadere nell'oblio (str. 1), corrisponde al «guscio di cicala» che cade vuoto (str. 2): entrambi sono presenze che si svuotano. (4) La «nebbia di sempre» dell'oblio (str. 1) corrisponde alla «belletta di Novembre» (str. 2): entrambe sono fango/nebbia che inghiotte. Strofe specularmente costruite: la prima dichiara l'emozione (timore dell'oblio); la seconda la traduce interamente in immagini fisiche — è la tecnica del correlativo oggettivo portata al massimo. L'emozione viene «taciuta», restano gli oggetti.`,
+    keywords: ['forbice / potatore', 'memoria che si sfolla / acacia che scrolla', 'volto di Clizia / guscio di cicala', 'nebbia / belletta', 'correlativo oggettivo', 'parallelismo']
+  },
+  {
+    id: 'm23',
+    type: 'mc',
+    topic: 'Testi — Ho sceso, dandoti il braccio',
+    text: `In «Ho sceso, dandoti il braccio», qual è il paradosso centrale costruito sulla figura di Mosca?`,
+    options: [
+      `Mosca era fisicamente forte ma psicologicamente fragile: il poeta la accompagnava perché aveva bisogno di sostegno emotivo`,
+      `Le scale della vita comune erano poche, eppure il viaggio sembrava lunghissimo: paradosso sul tempo soggettivo`,
+      `Mosca era fisicamente miope, eppure proprio i suoi occhi «offuscati» erano «le sole vere pupille»: vedeva la realtà che conta, mentre il poeta che vedeva bene non vedeva nulla di importante`,
+      `Mosca preferiva scendere le scale lentamente per godersi la conversazione: il poeta capì solo dopo la sua morte quanto fossero importanti quelle pause`
+    ],
+    correct: 2,
+    explanation: `È il nucleo della poesia e dell'intera figura di Mosca: la miopia fisica diventa paradossalmente sguardo spirituale più acuto. «Con te le ho scese perché sapevo che di noi due / le sole vere pupille, sebbene tanto offuscate, / erano le tue». Il paradosso è consapevole e costruito.`
+  },
+  {
+    id: 'm24',
+    type: 'open',
+    topic: 'Testi — Ho sceso, dandoti il braccio',
+    text: `Confronta la figura di Mosca in «Ho sceso, dandoti il braccio» con la figura di Clizia delle raccolte precedenti. In cosa Mosca rovescia l'immagine femminile montaliana?`,
+    modelAnswer: `Clizia era donna-angelo: icona intellettuale, allegoria dei valori umanistici, figura quasi cristologica, modello dantesco di Beatrice. Era una presenza salvifica «alta», sublime, lontana. Lo stile a lei dedicato (Occasioni, Bufera) era oscuro, allegorico, allusivo. Mosca è l'esatto opposto: non è donna-angelo ma figura pratica e quotidiana, fisicamente difettosa (la miopia, gli occhiali spessi), guida non per elezione spirituale ma per saggezza istintiva, «radar spirituale» nella vita di tutti i giorni. La poesia che le è dedicata non ha nulla di sublime: è un biglietto d'amore in forma di paradosso, scritto in stile totalmente prosastico — «le coincidenze, le prenotazioni, le trappole», lessico del tutto ordinario, nessuna metafora elevata. La grandezza è nella prosaicità. È coerente con la svolta di Satura: rottura totale con l'allegorismo, la poesia che «scende dall'olimpo nelle cose quotidiane».`,
+    keywords: ['Clizia donna-angelo', 'Mosca quotidiana', 'miopia / radar spirituale', 'no allegoria', 'stile prosastico', 'paradosso', 'svolta di Satura', 'grandezza nella prosaicità']
+  },
+
+  /* ---- STILE / FORMA ---- */
+  {
+    id: 'm25',
+    type: 'tf',
+    topic: 'Stile',
+    text: `Vero o falso: lo stile di Montale resta sostanzialmente costante dagli «Ossi di seppia» a «Satura»: musicalità aspra, recupero dell'endecasillabo, plurilinguismo.`,
+    options: ['Vero', 'Falso'],
+    correct: 1,
+    explanation: `Falso. Lo stile evolve nelle quattro raccolte: (1) Ossi di seppia: aspra musicalità, stile disadorno, termini bassi e tecnici; (2) Le occasioni: lingua più oscura e aristocratica, sintassi classicistica, vicinanza all'ermetismo; (3) La bufera: plurilinguismo (termini quotidiani + biblico-religiosi), sintassi tortuosa, allegorismo denso; (4) Satura: stile prosastico, colloquiale, ironico, battuta conclusiva — rottura radicale.`
+  },
+
+  /* ---- CONFRONTI ---- */
+  {
+    id: 'm26',
+    type: 'open',
+    topic: 'Confronti',
+    text: `Confronta il rapporto con la natura in Montale e in Ungaretti. In che senso Montale rovescia la tradizione romantica e si distingue da Ungaretti?`,
+    modelAnswer: `In Ungaretti la natura è sfondo sacrale e cosmico: il fiume, il deserto, la luce egiziana sono spazi della rivelazione, paesaggi dell'anima. Non sono correlativi oggettivi: sono luoghi in cui il poeta vive epifanie (l'Isonzo de I Fiumi, in cui Ungaretti si scopre «docile fibra dell'universo»). La natura partecipa alla rivelazione poetica. In Montale, al contrario, la natura è «divinamente indifferente» al dolore umano: non rispecchia l'animo, non soffre con il poeta. È aspra, bruciata, arida — correlativo oggettivo dell'esistenza, non epifania. Il paesaggio ligure brullo è la prova fisica del male di vivere. Montale rovescia la pathetic fallacy romantica (Leopardi, Pascoli, D'Annunzio proiettavano gli stati d'animo nella natura): la statua, la nuvola, il falco alto levato non soffrono, semplicemente non soffrono. La sintesi degli appunti è chiara: per Ungaretti la natura è spazio di rivelazione e armonia possibile; per Montale è muro di estraneità, prova del male.`,
+    keywords: ['Ungaretti natura sacrale', 'epifania', 'docile fibra dell\'universo', 'Montale natura indifferente', 'no pathetic fallacy', 'correlativo oggettivo', 'paesaggio ligure', 'male di vivere']
+  }
+];
+/* ================================================================
+   CONFIG AUTORI
+   ================================================================ */
+const AUTHORS = {
+  saba: {
+    key:          'saba',
+    name:         'Umberto Saba',
+    short:        'Saba',
+    bodyClass:    'saba',
+    accentVar:    'var(--saba-accent)',
+    questions:    null, // assegnato dopo
+    storageKey:   'saba_best',
+    storageTot:   'saba_best_total',
+    footerQuote:  `«Ho attraversata tutta la città. / Poi ho salita un'erta… / un cantuccio in cui solo / siedo.»`,
+    footerCite:   '— Umberto Saba, Trieste'
+  },
+  ungaretti: {
+    key:          'ungaretti',
+    name:         'Giuseppe Ungaretti',
+    short:        'Ungaretti',
+    bodyClass:    'ungaretti',
+    accentVar:    'var(--ung-accent)',
+    questions:    null,
+    storageKey:   'ung_best',
+    storageTot:   'ung_best_total',
+    footerQuote:  `«Di questa poesia / mi resta / quel nulla / d'inesauribile segreto.»`,
+    footerCite:   '— Giuseppe Ungaretti, Il porto sepolto'
+  },
+  montale: {
+    key:          'montale',
+    name:         'Eugenio Montale',
+    short:        'Montale',
+    bodyClass:    'montale',
+    accentVar:    'var(--mon-accent)',
+    questions:    null,
+    storageKey:   'mon_best',
+    storageTot:   'mon_best_total',
+    footerQuote:  `«Codesto solo oggi possiamo dirti, / ciò che non siamo, ciò che non vogliamo.»`,
+    footerCite:   '— Eugenio Montale, Non chiederci la parola'
+  }
+};
+
+/* Assegna le banche domande dopo la loro definizione */
+AUTHORS.saba.questions      = QUESTIONS_SABA;
+AUTHORS.ungaretti.questions = QUESTIONS_UNGARETTI;
+AUTHORS.montale.questions   = QUESTIONS_MONTALE;
+
+/* ================================================================
+   STATO APPLICAZIONE
+   ================================================================ */
+const state = {
+  author:        null,   // chiave stringa
+  mode:          'all',
+  shuffle:       true,
+  timerOn:       false,
+  questions:     [],
+  current:       0,
+  answers:       [],
+  timerInterval: null,
+  timerSeconds:  1200,
+  finished:      false
+};
+
+/* Opzioni pannello (temporanee, salvate al lancio) */
+const panelCfg = { mode: 'all', timer: false, shuffle: true, author: null };
+
+/* ================================================================
+   NAVIGAZIONE SCHERMATE
+   ================================================================ */
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => {
+    s.classList.remove('active','visible');
+  });
+  const sc = document.getElementById(id);
+  if (!sc) return;
+  sc.classList.add('active');
+  requestAnimationFrame(() => requestAnimationFrame(() => sc.classList.add('visible')));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ================================================================
+   HOME
+   ================================================================ */
+function goHome() {
+  clearInterval(state.timerInterval);
+  document.body.className = '';
+  refreshBestScores();
+  showScreen('screen-home');
+}
+
+function confirmExit() {
+  if (!state.finished && state.answers.some(a => a.answered)) {
+    if (!confirm('Sei sicuro di voler uscire? Il progresso andrà perso.')) return;
+  }
+  goHome();
+}
+
+/* ================================================================
+   PANNELLO MODALE — selezione modalità
+   ================================================================ */
+function openAuthorPanel(authorKey) {
+  const author = AUTHORS[authorKey];
+  panelCfg.author  = authorKey;
+  panelCfg.mode    = 'all';
+  panelCfg.timer   = false;
+  panelCfg.shuffle = true;
+
+  // Reset visual state
+  document.querySelectorAll('.mode-opt').forEach(el => {
+    el.classList.toggle('selected', el.dataset.mode === 'all');
+  });
+  document.getElementById('panel-timer-toggle').classList.remove('on');
+  document.getElementById('panel-timer-label').textContent = 'disattivato';
+  document.getElementById('panel-shuffle-toggle').classList.add('on');
+
+  // Label autore nel pannello
+  const lbl = document.getElementById('panel-author-label');
+  lbl.textContent = author.name;
+  lbl.style.color = `var(--${authorKey === 'saba' ? 'saba' : authorKey === 'ungaretti' ? 'ung' : 'mon'}-accent)`;
+
+  // Mostra overlay
+  const ov = document.getElementById('mode-overlay');
+  ov.style.display = 'flex';
+  requestAnimationFrame(() => {
+    ov.style.opacity = '0';
+    requestAnimationFrame(() => {
+      ov.style.transition = 'opacity 0.28s ease';
+      ov.style.opacity = '1';
+    });
+  });
+}
+
+function closePanel() {
+  const ov = document.getElementById('mode-overlay');
+  ov.style.opacity = '0';
+  setTimeout(() => { ov.style.display = 'none'; }, 280);
+}
+
+// Chiudi cliccando fuori dal pannello
+document.getElementById('mode-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closePanel();
+});
+
+function selectMode(el) {
+  document.querySelectorAll('.mode-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  panelCfg.mode = el.dataset.mode;
+}
+
+function togglePanelTimer() {
+  panelCfg.timer = !panelCfg.timer;
+  const btn = document.getElementById('panel-timer-toggle');
+  const lbl = document.getElementById('panel-timer-label');
+  btn.classList.toggle('on', panelCfg.timer);
+  lbl.textContent = panelCfg.timer ? '20 min' : 'disattivato';
+  lbl.style.color = panelCfg.timer ? 'var(--red)' : 'var(--gray)';
+}
+
+function togglePanelShuffle() {
+  panelCfg.shuffle = !panelCfg.shuffle;
+  document.getElementById('panel-shuffle-toggle').classList.toggle('on', panelCfg.shuffle);
+}
+
+function launchFromPanel() {
+  closePanel();
+  setTimeout(() => startQuiz(panelCfg.author, panelCfg.mode, panelCfg.timer, panelCfg.shuffle), 300);
+}
+
+/* ================================================================
+   AVVIO QUIZ
+   ================================================================ */
+function getModeQuestions(allQ, mode) {
+  let pool = [...allQ];
+  switch (mode) {
+    case 'quick':
+      pool = shuffleArr(pool).slice(0, 15);
+      break;
+    case 'mc-only':
+      pool = pool.filter(q => q.type === 'mc' || q.type === 'tf');
+      break;
+    case 'hard':
+      pool = pool.filter(q => q.type === 'open' || q.type === 'tf');
+      break;
+    default: // 'all'
+      break;
+  }
+  return pool;
+}
+
+function startQuiz(authorKey, mode, timerOn, shuffle) {
+  const author = AUTHORS[authorKey];
+
+  state.author       = authorKey;
+  state.mode         = mode;
+  state.timerOn      = timerOn;
+  state.finished     = false;
+  state.timerSeconds = 20 * 60;
+  state.current      = 0;
+
+  // Applica tema autore
+  document.body.className = author.bodyClass;
+
+  // Prepara domande
+  let qs = getModeQuestions(author.questions, mode);
+  if (shuffle) qs = shuffleArr(qs);
+  state.questions = qs;
+  state.answers   = qs.map(() => ({
+    answered: false, correct: null, openShown: false,
+    selfScore: null, chosenIndex: undefined, userText: ''
+  }));
+
+  // Intestazione quiz
+  document.getElementById('quiz-author-label').textContent = author.short;
+  document.getElementById('qTot').textContent = qs.length;
+
+  buildDotMap();
+  showScreen('screen-quiz');
+  renderQuestion();
+  updateHeader();
+
+  // Timer
+  clearInterval(state.timerInterval);
+  const td = document.getElementById('timer-disp');
+  td.classList.remove('on','warn');
+  if (timerOn) startTimer();
+}
+
+/* ================================================================
+   TIMER
+   ================================================================ */
+function startTimer() {
+  const td = document.getElementById('timer-disp');
+  td.classList.add('on');
+  updateTimerDisplay();
+  state.timerInterval = setInterval(() => {
+    state.timerSeconds--;
+    updateTimerDisplay();
+    if (state.timerSeconds <= 120) td.classList.add('warn');
+    if (state.timerSeconds <= 0) { clearInterval(state.timerInterval); finishQuiz(); }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(state.timerSeconds / 60);
+  const s = state.timerSeconds % 60;
+  document.getElementById('timer-disp').textContent =
+    String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+}
+
+/* ================================================================
+   RENDER DOMANDA
+   ================================================================ */
+function renderQuestion() {
+  const q   = state.questions[state.current];
+  const ans = state.answers[state.current];
+  const card = document.getElementById('q-card');
+
+  const typeInfo = {
+    mc:   { label: 'Risposta multipla', cls: 'mc' },
+    tf:   { label: 'Vero / Falso',      cls: 'tf' },
+    open: { label: 'Domanda aperta',    cls: 'open' }
+  }[q.type];
+
+  let html = `
+    <div class="q-meta">
+      <span class="q-badge ${typeInfo.cls}">${typeInfo.label}</span>
+      <span class="q-topic">${q.topic}</span>
+    </div>
+    <div class="q-num">Domanda ${state.current + 1} di ${state.questions.length}</div>
+    <div class="q-text">${q.text}</div>
+  `;
+
+  /* ---- MC / TF ---- */
+  if (q.type === 'mc' || q.type === 'tf') {
+    html += `<div class="answers">`;
+    const letters = ['A','B','C','D'];
+    q.options.forEach((opt, i) => {
+      let cls = '';
+      if (ans.answered) {
+        if (i === q.correct)         cls = 'correct';
+        else if (i === ans.chosenIndex) cls = 'wrong';
+      }
+      const dis = ans.answered ? 'disabled' : '';
+      html += `
+        <button class="ans-btn ${cls}" ${dis} onclick="chooseAnswer(${i})">
+          <span class="ans-letter">${letters[i]}</span>
+          <span>${opt}</span>
+        </button>`;
+    });
+    html += `</div>`;
+
+    if (ans.answered) {
+      const ok = ans.chosenIndex === q.correct;
+      html += `
+        <div class="feedback ${ok ? 'ok' : 'ko'} show">
+          <div class="fb-text"><span class="fb-icon">${ok ? '✓' : '✗'}</span>
+            ${ok ? 'Risposta corretta!' : 'Risposta errata — corretta: ' + q.options[q.correct]}
+          </div>
+          ${q.explanation ? `<div class="fb-expl">${q.explanation}</div>` : ''}
+        </div>`;
+    }
+
+  /* ---- OPEN ---- */
+  } else {
+    html += `
+      <div class="open-wrap">
+        <textarea class="open-ta" id="open-ta" placeholder="Scrivi la tua risposta…" ${ans.openShown ? 'disabled' : ''}>${escHtml(ans.userText||'')}</textarea>
+        <button class="btn-reveal" id="btn-reveal" onclick="revealAnswer()" ${ans.openShown ? 'style="display:none"' : ''}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Rivela risposta modello
+        </button>
+      </div>
+      <div class="model-ans ${ans.openShown ? 'show' : ''}" id="model-ans">
+        <div class="ma-label">Risposta modello</div>
+        <div class="ma-text">${q.modelAnswer}</div>
+        <div class="ma-label" style="margin-top:14px">Parole chiave attese</div>
+        <div class="kw-row">${q.keywords.map(k=>`<span class="kw">${k}</span>`).join('')}</div>
+      </div>
+      <div class="self-score ${ans.openShown ? 'show' : ''}" id="self-score">
+        <div class="ss-label">Auto-valutazione · com'è andata?</div>
+        <div class="ss-btns">
+          <button class="ss-btn bad  ${ans.selfScore==='bad'  ? 'chosen':''}" onclick="selfScore('bad')">✗ Non sapevo / incompleta</button>
+          <button class="ss-btn good ${ans.selfScore==='good' ? 'chosen':''}" onclick="selfScore('good')">✓ Sapevo / sostanzialmente corretta</button>
+        </div>
+      </div>`;
+  }
+
+  /* ---- Navigazione ---- */
+  const isLast  = state.current === state.questions.length - 1;
+  const canNext = ans.answered || (q.type === 'open' && ans.openShown && ans.selfScore);
+  html += `
+    <div class="q-nav">
+      <button class="btn-nav" onclick="goTo(${state.current-1})" ${state.current===0?'disabled':''}>← Precedente</button>
+      ${isLast
+        ? `<button class="btn-nav primary" onclick="finishQuiz()" ${!canNext?'disabled':''}>Vedi risultati →</button>`
+        : `<button class="btn-nav primary" onclick="goTo(${state.current+1})" ${!canNext?'disabled':''}>Prossima →</button>`
+      }
+    </div>`;
+
+  card.innerHTML = html;
+
+  /* Evento textarea */
+  const ta = document.getElementById('open-ta');
+  if (ta) ta.addEventListener('input', () => { state.answers[state.current].userText = ta.value; });
+
+  /* Animazione entrata */
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(12px)';
+  requestAnimationFrame(() => {
+    card.style.transition = 'opacity .32s ease, transform .32s ease';
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(0)';
+  });
+
+  updateDotMap();
+}
+
+function escHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ================================================================
+   RISPOSTA
+   ================================================================ */
+function chooseAnswer(idx) {
+  const ans = state.answers[state.current];
+  if (ans.answered) return;
+  ans.answered = true;
+  ans.chosenIndex = idx;
+  ans.correct = (idx === state.questions[state.current].correct);
+  updateScoreLive();
+  renderQuestion();
+}
+
+function revealAnswer() {
+  const ta = document.getElementById('open-ta');
+  if (ta) state.answers[state.current].userText = ta.value;
+  state.answers[state.current].answered  = true;
+  state.answers[state.current].openShown = true;
+  renderQuestion();
+}
+
+function selfScore(val) {
+  const ans = state.answers[state.current];
+  ans.selfScore = val;
+  ans.correct   = (val === 'good');
+  updateScoreLive();
+  renderQuestion();
+}
+
+/* ================================================================
+   NAVIGAZIONE DOMANDE
+   ================================================================ */
+function goTo(idx) {
+  if (idx < 0 || idx >= state.questions.length) return;
+  state.current = idx;
+  renderQuestion();
+  updateHeader();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ================================================================
+   HEADER + MAPPA
+   ================================================================ */
+function updateHeader() {
+  const n = state.questions.length;
+  const c = state.current + 1;
+  document.getElementById('qCur').textContent = c;
+  document.getElementById('qTot').textContent = n;
+  const pct = (c / n) * 100;
+  document.getElementById('q-prog-fill').style.width = pct + '%';
+  document.getElementById('top-progress-fill').style.width = pct + '%';
+}
+
+function updateScoreLive() {
+  const ok = state.answers.filter(a => a.answered && a.correct === true).length;
+  document.getElementById('score-live').textContent = ok;
+}
+
+function buildDotMap() {
+  const wrap = document.getElementById('q-dots');
+  wrap.innerHTML = '';
+  state.questions.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-dot';
+    d.textContent = i + 1;
+    d.onclick = () => goTo(i);
+    wrap.appendChild(d);
+  });
+}
+
+function updateDotMap() {
+  document.querySelectorAll('.q-dot').forEach((dot, i) => {
+    dot.className = 'q-dot';
+    if (i === state.current) {
+      dot.classList.add('cur');
+    } else {
+      const a = state.answers[i];
+      if (a.answered) {
+        if (state.questions[i].type === 'open') dot.classList.add('o');
+        else dot.classList.add(a.correct ? 'c' : 'w');
+      }
+    }
+  });
+}
+
+/* ================================================================
+   FINE QUIZ — risultati
+   ================================================================ */
+function finishQuiz() {
+  clearInterval(state.timerInterval);
+  state.finished = true;
+
+  const author = AUTHORS[state.author];
+  const total   = state.questions.length;
+  const correct = state.answers.filter(a => a.answered && a.correct === true).length;
+  const wrong   = state.answers.filter(a => a.answered && a.correct === false).length;
+  const openCnt = state.answers.filter((_, i) => state.questions[i].type === 'open').length;
+  const pct     = total > 0 ? correct / total : 0;
+
+  /* Valutazione */
+  let grade, msg;
+  if      (pct >= .90) { grade = `<em>Eccellente</em>`; msg = `${author.short} lo conosci perfettamente. Sei pronto per qualsiasi interrogazione.`; }
+  else if (pct >= .75) { grade = `<em>Ottimo</em>`;     msg = `Ottima preparazione. Ripassa solo le domande sbagliate e sei pronto.`; }
+  else if (pct >= .60) { grade = `Discreto`;             msg = `Buona base, ma ci sono zone d'ombra. Torna sulla poetica e sulle poesie.`; }
+  else                 { grade = `Insufficiente`;         msg = `Serve un ripasso approfondito. Riparti dalla vita, poi la poetica, poi i testi.`; }
+
+  /* Ring SVG */
+  const circ   = 2 * Math.PI * 56; // 351.86
+  const offset = circ - pct * circ;
+
+  /* Salva record */
+  const prev = parseInt(localStorage.getItem(author.storageKey) || '0');
+  if (correct > prev) {
+    localStorage.setItem(author.storageKey, correct);
+    localStorage.setItem(author.storageTot, total);
+  }
+
+  showScreen('screen-results');
+
+  setTimeout(() => {
+    document.getElementById('res-eyebrow').textContent = `Risultato · Quiz ${author.short}`;
+    document.getElementById('ring-score').textContent = correct;
+    document.getElementById('ring-total').textContent = '/' + total;
+    document.getElementById('res-grade').innerHTML    = grade;
+    document.getElementById('res-msg').textContent    = msg;
+    document.getElementById('rb-ok').textContent = correct;
+    document.getElementById('rb-ko').textContent = wrong;
+    document.getElementById('rb-op').textContent = openCnt;
+
+    /* Anima ring */
+    const ring = document.getElementById('ring-fill');
+    ring.style.strokeDashoffset = offset;
+    ring.style.stroke = pct >= .90 ? '#b88a3e' : pct >= .75 ? '#4a6b3a' : pct >= .60 ? '#7a6a40' : '#7a1f1f';
+
+    /* Record */
+    const bestVal = parseInt(localStorage.getItem(author.storageKey) || '0');
+    const bestTot = parseInt(localStorage.getItem(author.storageTot) || total);
+    document.getElementById('best-record').textContent = `★ Record personale: ${bestVal}/${bestTot}`;
+
+    /* Footer quote */
+    document.getElementById('footer-q').innerHTML =
+      `${author.footerQuote}<cite>${author.footerCite}</cite>`;
+
+    buildReviewList();
+    document.getElementById('top-progress-fill').style.width = '100%';
+  }, 280);
+}
+
+/* ================================================================
+   REVISIONE FINALE
+   ================================================================ */
+function buildReviewList() {
+  const list = document.getElementById('rev-list');
+  list.innerHTML = '';
+
+  state.questions.forEach((q, i) => {
+    const ans = state.answers[i];
+
+    let sCls, sIcon;
+    if (!ans.answered)          { sCls='o'; sIcon='?'; }
+    else if (q.type==='open')   { sCls = ans.correct ? 'c':'o'; sIcon = ans.correct ? '✓':'≈'; }
+    else if (ans.correct)       { sCls='c'; sIcon='✓'; }
+    else                        { sCls='w'; sIcon='✗'; }
+
+    let body = '';
+    if (q.type==='mc' || q.type==='tf') {
+      if (ans.answered && !ans.correct) {
+        body += `<div style="color:var(--red-dark);font-size:13px;margin-bottom:8px"><strong>Tua risposta:</strong> ${q.options[ans.chosenIndex]??'—'}</div>`;
+      }
+      body += `<div class="rev-correct-lbl">Risposta corretta</div>
+               <div class="rev-correct-txt">${q.options[q.correct]}</div>`;
+      if (q.explanation) {
+        body += `<div style="margin-top:10px;font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--ink2);line-height:1.55">${q.explanation}</div>`;
+      }
+    } else {
+      body = `<div class="rev-correct-lbl">Risposta modello</div>
+              <div class="rev-correct-txt">${q.modelAnswer}</div>
+              <div class="rev-correct-lbl" style="margin-top:12px">Parole chiave</div>
+              <div class="kw-row" style="margin-top:4px">${q.keywords.map(k=>`<span class="kw" style="background:rgba(122,31,31,.1);color:var(--red-dark)">${k}</span>`).join('')}</div>`;
+    }
+
+    const shortTxt = q.text.length > 100 ? q.text.slice(0,100)+'…' : q.text;
+    const item = document.createElement('div');
+    item.className = 'rev-item';
+    item.innerHTML = `
+      <div class="rev-head" onclick="this.parentElement.classList.toggle('open')">
+        <div class="rev-st ${sCls}">${sIcon}</div>
+        <div class="rev-qn">#${i+1}</div>
+        <div class="rev-qt">${shortTxt}</div>
+        <div class="rev-chev">▼</div>
+      </div>
+      <div class="rev-body">${body}</div>`;
+    list.appendChild(item);
+  });
+}
+
+/* ================================================================
+   RICOMINCIA
+   ================================================================ */
+function restartQuiz() {
+  clearInterval(state.timerInterval);
+  if (state.author) startQuiz(state.author, state.mode, state.timerOn, panelCfg.shuffle);
+}
+
+/* ================================================================
+   BEST SCORES — home
+   ================================================================ */
+function refreshBestScores() {
+  ['saba','ungaretti','montale'].forEach(key => {
+    const a = AUTHORS[key];
+    const v = localStorage.getItem(a.storageKey);
+    const t = localStorage.getItem(a.storageTot);
+    const elId = `best-${key}`;
+    const el = document.getElementById(elId);
+    if (el) el.textContent = v ? `★ Record: ${v}/${t}` : '';
+  });
+}
+
+/* ================================================================
+   UTILITY
+   ================================================================ */
+function shuffleArr(arr) {
+  const a = [...arr];
+  for (let i = a.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+/* ================================================================
+   INIT
+   ================================================================ */
+(function init() {
+  // Conteggi sulla home
+  document.getElementById('cs-saba-total').textContent      = QUESTIONS_SABA.length;
+  document.getElementById('cs-ung-total').textContent       = QUESTIONS_UNGARETTI.length;
+  document.getElementById('cs-mon-total').textContent       = QUESTIONS_MONTALE.length;
+
+  refreshBestScores();
+  showScreen('screen-home');
+})();
+</script>
+</body>
+</html>
