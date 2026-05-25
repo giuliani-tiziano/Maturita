@@ -2535,3 +2535,23 @@ ul.check li::before{
   body::before, .prog-wrap, .topbar, .nav, .quiz-cta, .site-footer{ display:none; }
   .section{ display:block !important; page-break-after:always; }
 }
+
+/* ── SVEVO / PIRANDELLO — emoji & rainbow cleanup ────────────── */
+body.svevo .card-icon,
+body.pirandello .card-icon{ display:none; }
+body.svevo .acc-icon,
+body.pirandello .acc-icon{ display:none; }
+
+/* Normalize colored card borders to single accent color */
+body.svevo .card::before,
+body.pirandello .card::before{
+  background:linear-gradient(90deg,var(--accent),var(--accent-light)) !important;
+}
+body.svevo .card,
+body.pirandello .card{
+  border-color:rgba(26,22,18,.12) !important;
+}
+
+/* ── AUTHOR ACCENT COLOURS ───────────────────────────────────── */
+body.montale  { --accent:#5a6b3a; --accent-dark:#3e4a26; --accent-light:#7a8c5a; }
+body.ungaretti{ --accent:#2d5a87; --accent-dark:#1d4267; --accent-light:#4d7ba8; }
