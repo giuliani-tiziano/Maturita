@@ -76,6 +76,7 @@
   };
 
   const panelCfg = { mode: 'all', timer: false, shuffle: true, author: null };
+  const QUIZ_SIZE = 10;
 
   /* ────────────────────────  UTILS  ─────────────────────────────────── */
   function shuffleArr(arr) {
@@ -201,7 +202,6 @@
     let pool = [...allQ];
     switch (mode) {
       case 'quick':
-        pool = shuffleArr(pool).slice(0, 15);
         break;
       case 'mc-only':
         pool = pool.filter(q => q.type === 'mc' || q.type === 'tf');
@@ -212,7 +212,7 @@
       default:
         break;
     }
-    return pool;
+    return shuffleArr(pool).slice(0, QUIZ_SIZE);
   }
 
   function startQuiz(authorKey, mode, timerOn, shuffle) {
@@ -229,7 +229,7 @@
     document.body.className = author.bodyClass;
 
     let qs = getModeQuestions(data, mode);
-    if (shuffle) qs = shuffleArr(qs);
+    if (!shuffle) qs = [...qs].sort((a, b) => data.indexOf(a) - data.indexOf(b));
     state.questions = qs;
     state.answers = qs.map(() => ({
       answered: false, correct: null, openShown: false,

@@ -65,61 +65,67 @@
     <div class="c-card" style="border-top-color:var(--red)"><h6 style="color:var(--red)">Pirandello</h6><p>Sicilia, Roma — Italia borghese e provinciale. La periferia come distanza critica dal centro culturale.</p></div>
   </div>
 
-  <!-- Svevo vs Pensatori: stesso stile a card di Pirandello -->
+  <!-- Svevo e pensatori: accordion verticale unico -->
   <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.35rem; margin:32px 0 12px; color:var(--ink);">Svevo e i pensatori — confronti separati</h3>
 
-  <div class="grid-2" style="margin-bottom:24px">
-    <div class="conn-card">
-      <div class="conn-name">Sigmund Freud</div>
-      <span class="conn-type confronto">↔ confronto critico</span>
-      <div class="conn-body">
-        <strong>Svevo</strong>: usa il lessico freudiano per smontare la psicanalisi dall'interno; la cura non guarisce la malattia moderna.<br><br>
-        <strong>Freud</strong>: la psiche tende alla chiarificazione attraverso l'analisi dell'inconscio e dei suoi meccanismi.
+  <div class="acc-pair-grid" style="margin-bottom:24px">
+    <div class="accordion acc-mini">
+      <button class="acc-head open" onclick="toggleAcc(this)">Sigmund Freud <span class="acc-arrow"></span></button>
+      <div class="acc-body open">
+        <div class="card-body">
+          <strong>Svevo</strong>: usa il lessico freudiano per smontare la psicanalisi dall'interno; la cura non guarisce la malattia moderna.<br><br>
+          <strong>Freud</strong>: la psiche tende alla chiarificazione attraverso l'analisi dell'inconscio e dei suoi meccanismi.
+        </div>
       </div>
     </div>
 
-    <div class="conn-card">
-      <div class="conn-name">Arthur Schopenhauer</div>
-      <span class="conn-type influenza">↑ influenza profonda</span>
-      <div class="conn-body">
-        <strong>Svevo</strong>: l'inetto è dominato da una volontà irrazionale e si autoinganna su di sé.<br><br>
-        <strong>Schopenhauer</strong>: l'uomo è guidato da una volontà cieca che supera la ragione.
+    <div class="accordion acc-mini">
+      <button class="acc-head" onclick="toggleAcc(this)">Arthur Schopenhauer <span class="acc-arrow"></span></button>
+      <div class="acc-body">
+        <div class="card-body">
+          <strong>Svevo</strong>: l'inetto è dominato da una volontà irrazionale e si autoinganna su di sé.<br><br>
+          <strong>Schopenhauer</strong>: l'uomo è guidato da una volontà cieca che supera la ragione.
+        </div>
       </div>
     </div>
 
-    <div class="conn-card">
-      <div class="conn-name">Charles Darwin</div>
-      <span class="conn-type influenza">↑ metafora biologica ribaltata</span>
-      <div class="conn-body">
-        <strong>Svevo</strong>: i forti vincono nella realtà pratica ma restano superficiali; l'inetto perde e capisce di più.<br><br>
-        <strong>Darwin</strong>: la selezione naturale descrive la lotta tra specie e individui nel mondo biologico.
+    <div class="accordion acc-mini">
+      <button class="acc-head" onclick="toggleAcc(this)">Charles Darwin <span class="acc-arrow"></span></button>
+      <div class="acc-body">
+        <div class="card-body">
+          <strong>Svevo</strong>: i forti vincono nella realtà pratica ma restano superficiali; l'inetto perde e capisce di più.<br><br>
+          <strong>Darwin</strong>: la selezione naturale descrive la lotta tra specie e individui nel mondo biologico.
+        </div>
       </div>
     </div>
 
-    <div class="conn-card">
-      <div class="conn-name">James Joyce</div>
-      <span class="conn-type influenza">↑ amicizia e influenza reciproca</span>
-      <div class="conn-body">
-        <strong>Svevo</strong>: trova in Joyce un alleato decisivo e la spinta alla riscoperta internazionale.<br><br>
-        <strong>Joyce</strong>: sperimenta il flusso di coscienza e la destrutturazione del tempo narrativo.
+    <div class="accordion acc-mini">
+      <button class="acc-head" onclick="toggleAcc(this)">James Joyce <span class="acc-arrow"></span></button>
+      <div class="acc-body">
+        <div class="card-body">
+          <strong>Svevo</strong>: trova in Joyce un alleato decisivo e la spinta alla riscoperta internazionale.<br><br>
+          <strong>Joyce</strong>: sperimenta il flusso di coscienza e la destrutturazione del tempo narrativo.
+        </div>
       </div>
     </div>
 
-    <div class="conn-card">
-      <div class="conn-name">Marcel Proust</div>
-      <span class="conn-type parallelo">◈ parallelo modernista</span>
-      <div class="conn-body">
-        <strong>Svevo</strong>: la memoria è ingannevole e riscrive continuamente il passato.<br><br>
-        <strong>Proust</strong>: la memoria involontaria può recuperare il tempo perduto in modo autentico.
+    <div class="accordion acc-mini">
+      <button class="acc-head" onclick="toggleAcc(this)">Marcel Proust <span class="acc-arrow"></span></button>
+      <div class="acc-body">
+        <div class="card-body">
+          <strong>Svevo</strong>: la memoria è ingannevole e riscrive continuamente il passato.<br><br>
+          <strong>Proust</strong>: la memoria involontaria può recuperare il tempo perduto in modo autentico.
+        </div>
       </div>
     </div>
 
-    <div class="conn-card">
-      <div class="conn-name">Henri Bergson</div>
-      <span class="conn-type influenza">↑ tempo come durata</span>
-      <div class="conn-body">
-        <strong>Svevo</strong>: trasforma la durata interiore nel tempo misto della <em>Coscienza di Zeno</em>.<br><br>
-        <strong>Bergson</strong>: distingue il tempo della scienza dalla durata della coscienza.
+    <div class="accordion acc-mini">
+      <button class="acc-head" onclick="toggleAcc(this)">Henri Bergson <span class="acc-arrow"></span></button>
+      <div class="acc-body">
+        <div class="card-body">
+          <strong>Svevo</strong>: trasforma la durata interiore nel tempo misto della <em>Coscienza di Zeno</em>.<br><br>
+          <strong>Bergson</strong>: distingue il tempo della scienza dalla durata della coscienza.
+        </div>
       </div>
     </div>
   </div>

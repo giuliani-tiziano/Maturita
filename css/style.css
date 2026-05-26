@@ -792,8 +792,9 @@ li{ margin-bottom:5px; }
 .accordion{
   border:1px solid rgba(26,22,18,.12);
   border-radius:var(--r); overflow:hidden;
-  margin:20px 0;
+  margin:20px 0 0;
 }
+.accordion + .accordion{ margin-top:-1px; }
 .acc-head, .acc-trigger{
   width:100%;
   background:var(--carta-2);
@@ -857,7 +858,7 @@ li{ margin-bottom:5px; }
 }
 .acc-pair-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:14px;
   margin:20px 0;
   align-items:start;
