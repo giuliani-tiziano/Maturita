@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luigi Pirandello — Poetica e pensiero · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="../../../index.html" class="topbar-brand"><span class="dot"></span><span><span class="full">Italiano · </span>Maturità</span></a>
+      <nav class="topbar-links">
+        <a class="topbar-link" href="../../../index.html">Home</a>
+        <a class="topbar-link active">Pirandello</a>
+        <a class="topbar-link cta" href="../../../quiz/quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn active" onclick="location.href='poetica.html'">Poetica & Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+      <button class="nav-btn" onclick="location.href='glossario.html'">Glossario</button>
+    </div>
+  </nav>
+<section class="section active" id="s-poetica">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Step 02</div>
+        <h2>Poetica e Pensiero</h2>
+      </div>
+      <p class="section-sub">I concetti fondamentali dell'universo pirandelliano</p>
+
+      <!-- Vita e Forma accordion -->
+      <div class="accordion">
+        <button class="acc-trigger open" onclick="toggleAcc(this)">
+          <span class="acc-icon">🌊</span>
+          <span>Vita e Forma — Il nucleo fondamentale</span>
+          <em class="acc-arrow">▾</em>
+        </button>
+        <div class="acc-body open">
+          <p>Con <strong>«Vita»</strong> Pirandello intende la natura continua e fluida dell'esistenza: i nostri
+            pensieri, emozioni, desideri non stanno mai fermi. Non siamo mai esattamente la stessa persona di ieri. La
+            Vita è come un fiume: non ha una forma fissa, scorre sempre.</p>
+          <p>Con <strong>«Forma»</strong> intende tutto ciò che cerca di fermare questo flusso e dargli un'etichetta: il
+            nostro nome, il nostro mestiere, il ruolo in famiglia, le aspettative altrui. Quando dici «sono un medico»,
+            «sono il figlio di» — stai dando una Forma alla tua vita.</p>
+          <p>Il paradosso centrale: <strong>non puoi fare a meno di una Forma</strong> — senza un nome, senza un ruolo,
+            non esisti per la società — ma accettare una Forma significa tradire la tua vera natura, che è mobile,
+            contraddittoria, non riducibile.</p>
+          <p>I personaggi pirandelliani sono intrappolati esattamente qui: chi crede di avere un'identità stabile si
+            inganna; chi cerca di liberarsi da tutte le forme rischia di <em>dissolversi, di essere nessuno</em>.</p>
+          <div class="quote-block" style="margin-top:14px">
+            «È come voler fotografare un fiume: nel momento in cui scatti, l'acqua è già altrove.»
+            <cite>— parabola pirandelliana</cite>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <span class="acc-icon">🪞</span>
+          <span>Identità e Maschera — Uno, nessuno, centomila</span>
+          <em class="acc-arrow">▾</em>
+        </button>
+        <div class="acc-body">
+          <p>La maschera è il simbolo centrale: ogni individuo porta una maschera — o più maschere — di fronte agli
+            altri e spesso anche di fronte a sé stesso. Questa maschera è il risultato delle aspettative sociali, dei
+            ruoli imposti dalla famiglia, dalla professione, dalla classe.</p>
+          <p>Il problema pirandelliano è però più radicale del semplice «smascheramento»: <strong>sotto la maschera non
+              c'è un «vero io» da liberare</strong>. Ci sono solo altri strati di maschere, in una regressione senza
+            fondo. L'identità non è una sostanza, è un processo.</p>
+          <p>Formula: <em>Uno, nessuno e centomila</em> — ogni individuo è «uno» (come crede di essere), «nessuno»
+            (perché non esiste un sé autentico e fisso), e «centomila» (perché ogni persona che lo conosce lo vede
+            diversamente).</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <span class="acc-icon">🔍</span>
+          <span>Relativismo conoscitivo — Nessuna verità assoluta</span>
+          <em class="acc-arrow">▾</em>
+        </button>
+        <div class="acc-body">
+          <p>Il relativismo di Pirandello non è solo morale o psicologico: è anzitutto <strong>conoscitivo</strong>. Non
+            esiste un punto di vista neutro e assoluto da cui giudicare la realtà: ogni conoscenza è sempre parziale,
+            prospettica, condizionata dalla posizione di chi osserva.</p>
+          <p>Punto di riferimento: Alfred Binet e la sua riflessione sulla molteplicità della personalità — un'identità
+            che non è unitaria ma frammentata in tanti «centri» autonomi.</p>
+          <p>Dal punto di vista epistemologico, questa posizione anticipa la fenomenologia, l'ermeneutica e il
+            prospettivismo nietzscheano. La «verità» è sempre «la vostra» o «la mia», mai semplicemente «la verità».</p>
+          <p>Il dramma <em>Così è (se vi pare)</em>, già nel titolo, dichiara questa irrisolvibilità.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <span class="acc-icon">😂</span>
+          <span>L'Umorismo — Avvertimento e Sentimento del contrario</span>
+          <em class="acc-arrow">▾</em>
+        </button>
+        <div class="acc-body">
+          <p>Il saggio <em>L'umorismo</em> (1908) è il manifesto teorico della poetica pirandelliana. Distingue con
+            precisione tra <strong>comicità</strong> e <strong>umorismo</strong>.</p>
+          <p><strong>Avvertimento del contrario</strong>: la reazione immediata e istintiva alla percezione di qualcosa
+            di incongruo. Vediamo una cosa che non corrisponde a ciò che dovrebbe essere e ridiamo. È la comicità pura.
+          </p>
+          <p><strong>Sentimento del contrario</strong>: quando a questa reazione istintiva subentra la riflessione —
+            quando ci chiediamo il <em>perché</em> di quella incongruità, quando immaginiamo la storia e la sofferenza
+            che si nasconde dietro all'apparenza comica. Il riso si mescola con la pietà e la comprensione.</p>
+          <p><strong>Esempio chiave</strong>: vediamo una vecchia signora imbellettata e vestita da giovane → ridiamo
+            (avvertimento del contrario). Ma poi riflettiamo: forse si veste così per piacere al marito che la tradisce,
+            o per non sentirsi abbandonata dai figli. Il riso si stempera in qualcosa di più complesso, misto di
+            tenerezza e malinconia: questo è il sentimento del contrario.</p>
+          <p>Implicazione etica: l'umorismo richiede la capacità di mettersi nei panni dell'altro, di immaginarne la
+            sofferenza. È una forma di <strong>conoscenza empatica</strong>.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <span class="acc-icon">🌀</span>
+          <span>La Follia — Liberazione paradossale</span>
+          <em class="acc-arrow">▾</em>
+        </button>
+        <div class="acc-body">
+          <p>In Pirandello la follia assume un ruolo ambivalente. Da un lato è una condizione tragica, l'esito disperato
+            di chi non riesce più a reggere il peso delle maschere sociali; dall'altro è una <strong>forma paradossale
+              di libertà</strong>, l'unico spazio in cui è possibile sfuggire alle gabbie della normalità.</p>
+          <p>Chi viene dichiarato «pazzo» è escluso dalle convenzioni sociali, ma per questo stesso motivo non è più
+            obbligato a portarle.</p>
+          <p>In <em>Enrico IV</em> il protagonista ha la possibilità di uscire dalla follia — ha riacquistato la ragione
+            — ma sceglie consapevolmente di rimanere nel personaggio del folle imperatore medievale, perché quella
+            maschera gli offre una libertà che la vita «normale» non darebbe. La follia diventa così non la perdita
+            della ragione, ma il suo <strong>esercizio più lucido</strong>.</p>
+          <p>Paradosso conclusivo: compiendo l'atto di violenza reale (l'omicidio di Belcredi), la follia fittizia
+            diventa la sua prigione reale. La maschera che era libertà si chiude per sempre.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <span class="acc-icon">🎭</span>
+          <span>Il Teatro — Finzione, realtà e teatro nel teatro</span>
+          <em class="acc-arrow">▾</em>
+        </button>
+        <div class="acc-body">
+          <p>Il teatro è per Pirandello lo spazio naturale in cui il contrasto tra vita e forma si manifesta nel modo
+            più diretto. Sul palcoscenico il problema della rappresentazione è letterale: c'è un testo scritto (la
+            forma), ci sono attori che lo interpretano (maschere), e c'è una storia di personaggi (vita) che aspira a
+            essere rappresentata.</p>
+          <p>La formula del <strong>«teatro nel teatro»</strong> — sviluppata nella trilogia composta da <em>Sei
+              personaggi in cerca d'autore</em> (1921), <em>Ciascuno a suo modo</em> (1924) e <em>Questa sera si recita
+              a soggetto</em> (1930) — porta questa riflessione alle sue conseguenze più radicali.</p>
+          <p>Lo spettacolo diventa riflessione su sé stesso: gli attori recitano la parte di attori che stanno provando
+            uno spettacolo, i personaggi irrompono nella finzione teatrale rivendicando la loro autonoma esistenza. La
+            <strong>«quarta parete»</strong> scompare: il teatro si denuda, mostrando i propri meccanismi.</p>
+          <p>Autonomia del personaggio: una volta creato, il personaggio esiste indipendentemente dall'autore e
+            dall'attore. Il Personaggio è «più reale» dell'attore, perché l'attore cambia sera dopo sera, mentre il
+            Personaggio è fisso nella sua essenza. Paradossale «immortalità del personaggio».</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-trigger" onclick="toggleAcc(this)">
+          <span class="acc-icon">🔀</span>
+          <span>Lo Sdoppiamento — Il doppio senza originale</span>
+          <em class="acc-arrow">▾</em>
+        </button>
+        <div class="acc-body">
+          <p>Lo sdoppiamento è un tema ricorrente: i protagonisti si trovano spesso a dover gestire due identità
+            contemporaneamente. Mattia Pascal vive sotto due nomi e due vite; Enrico IV è simultaneamente un uomo del
+            Novecento e un imperatore medievale; Vitangelo Moscarda assiste, quasi spettatore, alla dissoluzione del
+            proprio sé in mille immagini altrui.</p>
+          <p>Questo tema è connesso alla tradizione del <em>Doppelgänger</em> romantico, ma Pirandello lo porta a
+            conseguenze più radicali: <strong>non si tratta dello scontro tra due identità speculari</strong>, ma della
+            scoperta che l'identità stessa è una finzione, che non esiste un «originale» da contrapporre a una «copia».
+          </p>
+        </div>
+      </div>
+
+      <div class="quiz-block">
+        <div class="quiz-label">Mini-verifica — Poetica</div>
+        <div class="quiz-q" data-correct="1">
+          <p>Cos'è il «sentimento del contrario» nella poetica di Pirandello?</p>
+          <div class="quiz-opts">
+            <button class="qopt" data-ans="A">Il senso di ribellione contro le ingiustizie sociali della
+              borghesia</button>
+            <button class="qopt" data-ans="B">La riflessione che subentra al riso e che mescola la comicità con la pietà
+              e la comprensione empatica</button>
+            <button class="qopt" data-ans="C">Il senso di vuoto che colpisce chi ha smesso di credere nei valori
+              tradizionali</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+        <div class="quiz-q" data-correct="2">
+          <p>Nella trilogia metateatrale cosa significa che la «quarta parete scompare»?</p>
+          <div class="quiz-opts">
+            <button class="qopt" data-ans="A">Il palcoscenico non ha più scenografie, per risparmiare sui costi di
+              produzione</button>
+            <button class="qopt" data-ans="B">Gli attori parlano direttamente al regista invece che tra loro</button>
+            <button class="qopt" data-ans="C">Il teatro smette di fingere di non essere teatro: mostra i propri
+              meccanismi, il pubblico è coinvolto</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+      </div>
+
+
+      <h3 class="section-sub"
+        style="font-size:1.35rem; color:var(--ink); margin:40px 0 16px; padding-top:32px; border-top:1px solid var(--carta-3);">
+        Stile e Struttura Narrativa</h3>
+
+
+      <div class="grid-2" style="margin-bottom:20px">
+
+        <div class="card c-teal">
+          <div class="card-icon">✍️</div>
+          <div class="card-title">Lingua funzionale, non estetica</div>
+          <div class="card-subtitle">«Grigia e monotona» — Benedetto Croce</div>
+          <div class="card-body">
+            Pirandello evita deliberatamente gli «effetti», le parole auliche, gli abbellimenti, le suggestioni
+            poetiche. Croce definisce la sua prosa «grigia e monotona» — coglie un elemento reale ma lo interpreta
+            negativamente.
+            <br><br>
+            La lingua di Pirandello è <strong>funzionale a esprimere il mondo dell'autore</strong>: uno strumento al
+            servizio della visione. Nei testi siciliani la scrittura acquista vivacità espressiva e forza plastica; nei
+            testi borghesi romani diventa convenzionale e mediocre — <em>deliberatamente</em>, per mimarne dall'interno
+            la vacuità.
+          </div>
+        </div>
+
+        <div class="card c-rose">
+          <div class="card-icon">🔥</div>
+          <div class="card-title">Il «furore retorico» dei protagonisti</div>
+          <div class="card-subtitle">L'analisi ossessiva come stile</div>
+          <div class="card-body">
+            I protagonisti parlano in modo completamente diverso dalla prosa narrativa: con un <strong>«furore
+              retorico»</strong> che li distingue nettamente dagli altri personaggi.
+            <br><br>
+            I ragionatori parlano troppo, spiegano e rispiegano le stesse cose, si perdono in analisi sempre più
+            sottili. <em>Non è un difetto stilistico</em>: è la manifestazione diretta del loro stato interiore.
+            <br><br>
+            Il dialogo non serve allo scambio di informazioni ma all'esplorazione della coscienza: i personaggi
+            <strong>pensano parlando</strong>, si smontano nel parlare. Funzione quasi psicanalitica: autopsia verbale
+            del sé.
+          </div>
+        </div>
+
+        <div class="card c-navy">
+          <div class="card-icon">🔄</div>
+          <div class="card-title">L'osmosi tra le opere</div>
+          <div class="card-subtitle">Un unico corpus in continua riscrittura</div>
+          <div class="card-body">
+            Situazioni, personaggi e persino testi interi passano da un'opera all'altra: dalla novella al dramma al
+            romanzo, in un continuo processo di riscrittura.
+            <br><br>
+            L'opera di Pirandello non è una somma di testi autonomi ma <strong>un unico grande corpus</strong>, un'unica
+            riflessione sulla vita.
+            <br><br>
+            Esempi: <em>La morte addosso</em> → <em>L'uomo dal fiore in bocca</em>; la novella <em>La signora Frola e il
+              signor Ponza</em> → il dramma <em>Così è (se vi pare)</em>; materiali di <em>Uno, nessuno e centomila</em>
+            utilizzati altrove durante la lunghissima stesura.
+          </div>
+        </div>
+
+        <div class="card c-gold">
+          <div class="card-icon">😈</div>
+          <div class="card-title">Ironia e Grottesco</div>
+          <div class="card-subtitle">Il lato oscuro dell'umorismo</div>
+          <div class="card-body">
+            L'<strong>ironia</strong> è lo strumento stilistico con cui Pirandello pratica ciò che teorizza
+            nell'Umorismo: presentare simultaneamente il lato comico e quello doloroso di una situazione. Non è la
+            freddezza del moralista che giudica dall'alto, ma la consapevolezza amara di chi sa che le cose potrebbero
+            sempre andare diversamente.
+            <br><br>
+            Il <strong>grottesco</strong>: la distorsione, l'esagerazione, la deformazione dei caratteri e delle
+            situazioni. I personaggi grotteschi non sono «mostri»: sono individui in cui la pressione tra vita e forma
+            ha prodotto una rottura visibile, quasi esteriore.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card c-purple" style="margin-bottom:20px">
+        <div class="card-icon">📊</div>
+        <div class="card-title">Le fasi della produzione pirandelliana</div>
+        <div class="card-subtitle">Un'evoluzione per strati</div>
+        <div class="card-body">
+          <strong>Fase 1 — Verismo siciliano</strong>: prime prove narrative (<em>L'esclusa</em>, <em>Il turno</em>).
+          Influenza di Capuana. Ambientazione siciliana, osservazione diretta della realtà sociale.<br><br>
+          <strong>Fase 2 — La crisi dell'io</strong>: <em>Il fu Mattia Pascal</em> (1904), <em>L'Umorismo</em> (1908),
+          <em>Novelle per un anno</em>. Emerge il relativismo conoscitivo, il tema dell'identità, la forma
+          dell'umorismo.<br><br>
+          <strong>Fase 3 — Teatro della crisi</strong>: <em>Sei personaggi</em> (1921), <em>Enrico IV</em> (1922),
+          <em>Ciascuno a suo modo</em> (1924). Il teatro diventa riflessione su sé stesso; trionfo
+          internazionale.<br><br>
+          <strong>Fase 4 — Teatro dei miti</strong> (1930–1936): <em>I giganti della montagna</em> (incompiuto). Temi
+          simbolici e mitologici, riflessione sulla sopravvivenza dell'arte nella modernità.
+        </div>
+      </div>
+
+      <div class="quote-block">
+        «L'identità non è una sostanza, è un processo: un continuo negoziato tra le immagini che gli altri hanno di noi
+        e le immagini che abbiamo di noi stessi.»
+        <cite>— sintesi della poetica pirandelliana</cite>
+      </div>
+
+      <div class="quiz-block">
+        <div class="quiz-label">Mini-verifica — Stile</div>
+        <div class="quiz-q" data-correct="0">
+          <p>Come definisce Croce la prosa di Pirandello, e cosa si cela in realtà dietro questa descrizione?</p>
+          <div class="quiz-opts">
+            <button class="qopt" data-ans="A">«Grigia e monotona» — ma in realtà è una scelta deliberata: la prosa mima
+              dall'interno la vacuità della vita borghese</button>
+            <button class="qopt" data-ans="B">«Brillante e ironica» — un giudizio positivo che Pirandello però non
+              condivideva</button>
+            <button class="qopt" data-ans="C">«Oscura e incomprensibile» — un giudizio negativo che portò al rifiuto dei
+              suoi testi dalle case editrici</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+        <div class="quiz-q" data-correct="1">
+          <p>Cosa si intende per «furore retorico» dei personaggi pirandelliani?</p>
+          <div class="quiz-opts">
+            <button class="qopt" data-ans="A">L'eloquenza con cui difendono le proprie posizioni politiche nei dibattiti
+              pubblici</button>
+            <button class="qopt" data-ans="B">Il modo in cui parlano ossessivamente, analizzando e smontando le certezze
+              proprie e altrui — il dialogo come autopsia verbale del sé</button>
+            <button class="qopt" data-ans="C">L'uso di figure retoriche classiche come metafore e similitudini nella
+              narrativa siciliana</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

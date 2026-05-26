@@ -31,7 +31,19 @@
   const navBtns = document.querySelectorAll('.nav-btn[data-sec]');
   const allSections = document.querySelectorAll('.section[id]');
 
+  function closeAllAccordions(scope) {
+    const root = scope || document;
+    root.querySelectorAll('.acc-head.open, .acc-trigger.open, .acc-body.open').forEach(el => {
+      el.classList.remove('open');
+    });
+    root.querySelectorAll('.acc-head[aria-expanded], .acc-trigger[aria-expanded]').forEach(el => {
+      el.setAttribute('aria-expanded', 'false');
+    });
+  }
+
   function showSection(id) {
+    // Quando si cambia scheda, resetta ogni accordion per evitare stati residui.
+    closeAllAccordions();
     allSections.forEach(s => s.classList.remove('active'));
     navBtns.forEach(b => b.classList.remove('active'));
     const sec = document.getElementById(id);
@@ -95,7 +107,7 @@
       // fall-back: cerca un parent comune che contiene gli altri trigger
       container = trigger.parentElement;
       while (container && container.querySelectorAll &&
-             container.querySelectorAll('.acc-head, .acc-trigger').length < 2) {
+        container.querySelectorAll('.acc-head, .acc-trigger').length < 2) {
         container = container.parentElement;
       }
       if (!container) container = document.body;
@@ -118,6 +130,9 @@
     t.onclick = null;
     t.addEventListener('click', function () { toggleAccordion(this); });
   });
+
+  // Stato iniziale coerente: nessun pannello aperto automaticamente.
+  closeAllAccordions();
 
   // Espongo per compatibilità con onclick="toggleAcc(this)" inline
   window.toggleAcc = toggleAccordion;
@@ -152,7 +167,7 @@
           } else {
             opt.classList.add('wrong');
             fb.innerHTML = '✗ Risposta corretta: <strong>' +
-                           opts[correct].textContent.trim() + '</strong>';
+              opts[correct].textContent.trim() + '</strong>';
             fb.classList.add('show', 'ko', 'wrong-fb');
           }
         }
