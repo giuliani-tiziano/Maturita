@@ -75,6 +75,9 @@ body{
   overflow-x:hidden;
 }
 
+/* Reserve space for fixed topbar + subnav */
+body{ padding-top:116px; }
+
 /* Grana carta sottile */
 body::before{
   content:''; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.35;
@@ -138,7 +141,7 @@ li{ margin-bottom:5px; }
 
 /* ─────────────────────────  TOP NAVBAR  ──────────────────────────────── */
 .topbar{
-  position:sticky; top:0; z-index:200;
+  position:fixed; top:0; left:0; right:0; z-index:999;
   background:rgba(26,22,18,.95);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
@@ -184,7 +187,7 @@ li{ margin-bottom:5px; }
 
 /* ─────────────────  NAV SOTTOSEZIONE (pagine autore)  ─────────────────── */
 .nav{
-  position:sticky; top:5px; z-index:99;
+  position:fixed; top:64px; left:0; right:0; z-index:900;
   background:var(--ink);
   border-bottom:2px solid var(--red);
 }
@@ -797,14 +800,14 @@ li{ margin-bottom:5px; }
   border:none; border-bottom:1px solid rgba(26,22,18,.1);
   color:var(--ink);
   font-family:'Cormorant Garamond',serif;
-  font-size:1.15rem; font-weight:600;
+  font-size:1.05rem; font-weight:600;
   text-align:left;
-  padding:14px 18px;
+  padding:10px 14px;
   cursor:pointer;
-  display:flex; align-items:center; gap:12px;
+  display:flex; align-items:center; gap:10px;
   transition:background var(--t-f);
 }
-.acc-head{ border-left:4px solid var(--red); border-bottom:none; margin-bottom:2px; }
+.acc-head{ border-left:4px solid var(--accent); border-bottom:none; margin-bottom:0; }
 .acc-head:hover{ background:var(--carta-scura); }
 .acc-trigger:hover{ background:var(--carta-scura); }
 .acc-head.open, .acc-trigger.open{
@@ -813,19 +816,27 @@ li{ margin-bottom:5px; }
 .acc-icon{ font-size:18px; flex-shrink:0; }
 .acc-arrow{
   margin-left:auto;
-  color:var(--gray); font-size:14px;
+  color:var(--gray);
   transition:transform var(--t-m);
   font-style:normal;
+  font-size:0; /* hide any existing glyphs inside the span */
+  line-height:1;
 }
-.acc-head .acc-arrow{ color:var(--red); font-size:12px; }
-.acc-head.open .acc-arrow{ color:var(--gold); }
-.acc-trigger.open .acc-arrow{ transform:rotate(180deg); }
+/* Force a single downward arrow via pseudo-element so it never flips */
+.acc-arrow::after{
+  content:'▼';
+  font-size:12px; color:var(--red);
+  display:inline-block; transform:none; line-height:1;
+}
+.acc-head.open .acc-arrow::after{ color:var(--gold); }
+/* disable rotation from older rules */
+.acc-trigger.open .acc-arrow{ transform:none; }
 .acc-body{
   display:none;
-  padding:20px;
-  background:#fff;
-  border-bottom:1px solid rgba(26,22,18,.08);
-  font-size:14px; color:var(--ink2); line-height:1.7;
+  padding:12px 14px;
+  background:var(--carta);
+  border-bottom:1px solid rgba(26,22,18,.06);
+  font-size:14px; color:var(--ink2); line-height:1.6;
 }
 .acc-body.open{ display:block; animation:fadeIn .3s ease; }
 .acc-body strong{ color:var(--ink); }
@@ -840,11 +851,30 @@ li{ margin-bottom:5px; }
 }
 
 /* Versione Saba con border-left (acc-head) */
+.accordion{
+  border:1px solid rgba(26,22,18,.08);
+  border-radius:8px; overflow:hidden; /* ensure rounded container */
+}
+.acc-pair-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin:20px 0;
+  align-items:start;
+}
+.acc-stack{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.acc-mini{ margin:0; }
+.acc-mini .acc-head{ font-size:1rem; padding:12px 14px; }
+.acc-mini .acc-body{ padding:12px 14px; }
 .accordion .acc-head + .acc-body{
   background:var(--carta);
-  border-left:4px solid rgba(122,31,31,.25);
-  margin-bottom:8px;
-  padding:20px 22px;
+  border-left:4px solid rgba(122,31,31,.20);
+  margin-bottom:0;
+  padding:12px 16px;
 }
 
 /* ─────────────────  STILE GRID & CELL (poetica Saba)  ─────────────── */
@@ -2495,7 +2525,7 @@ ul.check li::before{
   .home-section-head{ flex-direction:column; align-items:flex-start; }
   .res-breakdown{ grid-template-columns:1fr; }
   .duality{ grid-template-columns:1fr; }
-  .grid-2, .grid-3, .stile-grid{ grid-template-columns:1fr; }
+  .grid-2, .grid-3, .stile-grid, .acc-pair-grid{ grid-template-columns:1fr; }
 }
 
 @media (max-width: 720px){

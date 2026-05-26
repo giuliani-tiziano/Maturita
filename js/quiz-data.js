@@ -266,6 +266,359 @@ saba: [
     text:'Saba è considerato un poeta profondamente autobiografico. Spiega il concetto di «autobiografismo» nella sua opera.',
     modelAnswer:'L\'autobiografismo di Saba non è semplice racconto di episodi personali, ma un progetto organico: il Canzoniere è definito «romanzo psicologico in versi», dove la vita diventa materia di un\'indagine interiore. A differenza della confessione lirica (che racconta per sfogo), Saba usa l\'autobiografia come scandaglio: ogni evento (l\'abbandono del padre, la balia, la moglie, Trieste) è riletto alla luce della psicanalisi per svelare i traumi profondi. Il risultato non è intimismo ma universalizzazione: la storia personale rivela la condizione umana.',
     keywords:['romanzo psicologico in versi','scandaglio','psicoanalisi','traumi','universalizzazione','Canzoniere']
+  },
+  { id:31, type:'mc', topic:'Vita',
+    text:'In quale anno le leggi razziali fasciste costringono Saba a cedere le proprietà e fuggire da Trieste?',
+    options:['1933','1935','1938','1942'],
+    correct:2,
+    explanation:'Le leggi razziali del 1938 colpiscono Saba in quanto ebreo. È costretto a cedere le proprietà e a rifugiarsi prima a Parigi, poi a Roma.'
+  },
+  { id:32, type:'mc', topic:'Vita',
+    text:'Con l\'aiuto di quale poeta Saba visse nascosto a Firenze durante l\'occupazione tedesca del 1943?',
+    options:['Giuseppe Ungaretti','Eugenio Montale','Benedetto Croce','Salvatore Quasimodo'],
+    correct:1,
+    explanation:'Nel 1943, durante l\'occupazione tedesca, Saba fugge a Firenze dove Montale lo accoglie e lo aiuta a nascondersi.'
+  },
+  { id:33, type:'tf', topic:'Vita',
+    text:'Vero o falso: Saba gestì una libreria antiquaria a Trieste come occupazione principale per gran parte della vita adulta.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. La Libreria Antiquaria Saba, acquistata nel 1909, fu la sua occupazione principale fino alla vecchiaia.'
+  },
+  { id:34, type:'mc', topic:'Poetica',
+    text:'Nel saggio «Quello che resta da fare ai poeti» (1911), Saba definisce il tipo morale a cui il poeta deve tendere. Qual è?',
+    options:['Il letterato di professione raffinato','Il ricercatore di verità, il più lontano possibile dal letterato di professione','Il vate che porta la parola alle masse','Il poeta simbolista che svela l\'assoluto'],
+    correct:1,
+    explanation:'Dal saggio: «Il poeta deve tendere ad un tipo morale il più remoto possibile da quello del letterato di professione, ed avvicinarsi invece a quello dei ricercatori di verità.»'
+  },
+  { id:35, type:'mc', topic:'Poetica',
+    text:'Quale rivista rifiutò il saggio «Quello che resta da fare ai poeti» di Saba nel 1911?',
+    options:['L\'Ambrosiano','La Voce','Lacerba','Il Frontespizio'],
+    correct:1,
+    explanation:'Il saggio fu rifiutato dalla rivista «La Voce». Paradossalmente, Saba si opponeva al frammentismo vociano.'
+  },
+  { id:36, type:'tf', topic:'Poetica',
+    text:'Vero o falso: Saba si opponeva all\'oscurità degli Ermetici, al preziosismo di D\'Annunzio e allo sperimentalismo delle avanguardie.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Saba costruisce la sua posizione per differenza: contro D\'Annunzio (preziosismo), avanguardie (sperimentalismo), Voce (frammentismo), Ermetici (oscurità), Crepuscolari (prosaismo spoglio).'
+  },
+  { id:37, type:'mc', topic:'Poetica · Tre funzioni',
+    text:'Quali sono le tre funzioni della poesia secondo la poetica di Saba?',
+    options:['Estetica, politica, narrativa','Etico-conoscitiva (indagare la verità interiore), consolatoria (rimedio al malessere), terapeutica (elaborare i traumi)','Lirica, epica, didattica','Religiosa, sentimentale, satirica'],
+    correct:1,
+    explanation:'Le tre funzioni sabiane: etico-conoscitiva (indagine interiore tramite la verità), consolatoria (sollievo all\'esistenza), terapeutica (elaborare i traumi, funzione psicoanalitica).'
+  },
+  { id:38, type:'mc', topic:'Stile · Metrica',
+    text:'Quale forma metrica usa prevalentemente Saba nel periodo giovanile e della maturità classica?',
+    options:['Verso libero senza rima','Sonetto, canzone, endecasillabi e settenari — forme tradizionali','Solo quartine di novenari','Terzine dantesche'],
+    correct:1,
+    explanation:'Le forme tradizionali sono la scelta di Saba anche in epoca avanguardista: coerente con la sua poetica dell\'onestà contro lo sperimentalismo.'
+  },
+  { id:39, type:'tf', topic:'Stile · Metrica',
+    text:'Vero o falso: a partire da «Il piccolo Berto» (1931) la metrica di Saba si fa più irregolare, con influenza di Ungaretti.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Il passaggio è documentato: dal 1931 Saba apre la metrica verso forme più irregolari e «versi spezzati».'
+  },
+  { id:40, type:'mc', topic:'Stile · Lessico',
+    text:'Come viene definito il lessico di Saba rispetto alle scelte novecentesche?',
+    options:['Aulico e prezioso con neologismi futuristi','Composto di parole comuni e «trite» (amore, vita, cuore) — lessico inclusivo e antinovecentesco','Dialettale triestino con germanismi','Tecnico e scientifico'],
+    correct:1,
+    explanation:'Saba usa le parole più consumate della tradizione (amore, vita, fiore) deliberatamente: sono «trite» ma vere. La banalità è un atto di coraggio contro l\'oscurità ermetica.'
+  },
+  { id:41, type:'mc', topic:'Stile · Struttura',
+    text:'Qual è la struttura tipica di una lirica di Saba, opposta al frammentismo vociano?',
+    options:['Sonetto petrarchesco con 8+6 versi rigidi','Spunto narrativo → descrizione → riflessione conclusiva con valore di sentenza','Frammento lirico aperto senza conclusione','Serie di immagini giustapposte senza sintassi'],
+    correct:1,
+    explanation:'La struttura tripartita è caratteristica: si apre con uno spunto narrativo (un incontro, una camminata), si sviluppa in descrizione, e si conclude con una sentenza morale di valenza universale.'
+  },
+  { id:42, type:'tf', topic:'Stile · Struttura',
+    text:'Vero o falso: l\'enjambement in Saba è privo di funzione espressiva — è solo un elemento tecnico.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. Gli enjambements di Saba hanno sempre funzione espressiva: accentuano tensione, dolore e sospensione emotiva.'
+  },
+  { id:43, type:'mc', topic:'Il Canzoniere · Struttura',
+    text:'In quanti volumi e quante sezioni è diviso il Canzoniere di Saba?',
+    options:['Due volumi, 12 sezioni','Tre volumi, 25 sezioni','Un unico volume, 10 libri','Cinque parti autonome'],
+    correct:1,
+    explanation:'Tre volumi: primo (1900-1920, 8 sezioni), secondo (1921-1932, 8 sezioni), terzo (1933-1954, 9 sezioni). Totale: 25 sezioni.'
+  },
+  { id:44, type:'mc', topic:'Il Canzoniere · Edizioni',
+    text:'Quante sono le edizioni principali del Canzoniere?',
+    options:['Una sola (definitiva dal 1921)','Quattro edizioni: 1921, 1945, 1948, 1961','Due edizioni (1921 e 1945)','Cinque edizioni dal 1911 al 1961'],
+    correct:1,
+    explanation:'1921 (prima edizione, accolta con indifferenza), 1945 (Einaudi, inizio riconoscimento), 1948, 1961 (edizione definitiva postuma).'
+  },
+  { id:45, type:'tf', topic:'Il Canzoniere · Edizioni',
+    text:'Vero o falso: la prima edizione del Canzoniere (1921) fu accolta con grande entusiasmo dalla critica italiana.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. Fu accolta con indifferenza. Il riconoscimento arriva gradualmente, con la seconda edizione Einaudi del 1945.'
+  },
+  { id:46, type:'mc', topic:'Il Canzoniere · Volumi',
+    text:'Quali temi dominano il primo volume del Canzoniere (1900-1920)?',
+    options:['Temi psicoanalitici e infanzia','Esperienze giovanili, Trieste, amore per Lina, Prima guerra mondiale','Autoritratto anziano e temi politici','Sola riflessione sulla morte'],
+    correct:1,
+    explanation:'Il primo volume, «La vita della fanciullezza» a «Cose leggere e vaganti», condensa la poetica dell\'onestà giovanile.'
+  },
+  { id:47, type:'mc', topic:'Il Canzoniere · Volumi',
+    text:'Quale sezione del secondo volume segna la svolta psicoanalitica?',
+    options:['Trieste e una donna','Casa e campagna','Il piccolo Berto (1931) — con tema psicoanalitico esplicito','Cuor morituro'],
+    correct:2,
+    explanation:'«Il piccolo Berto» (1931) è la sezione della svolta: Saba, dopo la terapia con Weiss, affronta esplicitamente i traumi dell\'infanzia e la figura materna.'
+  },
+  { id:48, type:'open', topic:'Il Canzoniere',
+    text:'Spiega perché Saba definisce il Canzoniere «romanzo psicologico in versi» e come si sviluppa da un\'edizione all\'altra.',
+    modelAnswer:'La formula «romanzo psicologico in versi» indica che il Canzoniere non è una raccolta di liriche indipendenti ma un\'opera unitaria: ogni poesia è tassello di un\'unica storia interiore, come i capitoli di un romanzo. Il protagonista (il poeta stesso) cresce, soffre, riflette e arriva a una saggezza amara ma consapevole. La struttura in tre volumi rispecchia le fasi dell\'esistenza: giovinezza, maturità, vecchiaia. Da un\'edizione all\'altra (1921, 1945, 1948, 1961) il testo cresce nel numero di poesie, muta la struttura interna, e le poesie vengono revisionate. Esiste una fitta rete di rimandi tematici che crea armonia: i criteri non sono solo cronologici.',
+    keywords:['romanzo psicologico in versi','opera unitaria','tre volumi','rimandi tematici','revisioni','storia interiore']
+  },
+  { id:49, type:'mc', topic:'Testi · Amai',
+    text:'In «Amai», qual è la figura retorica dominante nelle prime tre parole dei tre movimenti della poesia («Amai trite parole… / Amai la verità… / Amo te»)?',
+    options:['Ossimoro','Anafora — la ripetizione ribadisce la passione, passando dal passato al presente','Sinestesia','Apostrofe'],
+    correct:1,
+    explanation:'«Amai… Amai… Amo»: l\'anafora segna la progressione temporale — dal passato delle scelte stilistiche (trite parole), al passato della ricerca della verità, al presente del dialogo con il lettore.'
+  },
+  { id:50, type:'mc', topic:'Testi · Amai',
+    text:'Nella poesia «Amai», cosa rappresenta la «buona carta lasciata al fine del mio gioco»?',
+    options:['Un manoscritto inedito','L\'eredità poetica del Canzoniere lasciata al lettore come biglietto di congedo dalla vita','Una lettera alla moglie','La scheda anagrafica del poeta'],
+    correct:1,
+    explanation:'La metafora della carta lasciata: la vita è una partita (il «gioco»), e la poesia è la carta migliore che il poeta lascia al lettore come eredità. Coerente con la visione del Canzoniere come opera di tutta una vita.'
+  },
+  { id:51, type:'tf', topic:'Testi · Amai',
+    text:'Vero o falso: in «Amai», la «verità che giace al fondo» è paragonata a un sogno dimenticato che il dolore riscopre come amica.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. La verità non è alla superficie ma nel profondo — «quasi un sogno obliato, che il dolore / riscopre amica». La poesia è scandaglio dell\'inconscio.'
+  },
+  { id:52, type:'mc', topic:'Testi · A mia moglie',
+    text:'Quante femmine animali compare Saba alla moglie Lina in «A mia moglie»?',
+    options:['Tre','Cinque','Sette (gallina/pollastra, giovenca, cagna, coniglia, rondine, formica, ape)','Sei'],
+    correct:2,
+    explanation:'Sette paragoni animali, ciascuno in una strofa. La struttura ripetitiva «Tu sei come» richiama la preghiera di elogio, eco del Cantico delle Creature (Renzi).'
+  },
+  { id:53, type:'mc', topic:'Testi · A mia moglie',
+    text:'Perché Lorenzo Renzi parla di «violazione del tabù» riguardo ad «A mia moglie»?',
+    options:['Perché Saba parla dell\'adulterio','Perché gallina, vacca, cagna, coniglia evocano stupidità o sessualità — parole tabù nella poesia nobile — ma Saba le usa come elogio supremo','Perché il poema tratta argomenti politici proibiti','Perché è scritto in dialetto triestino'],
+    correct:1,
+    explanation:'I paragoni animali violano le norme della poesia amorosa tradizionale. La violazione è coerente con la poetica dell\'onestà: la poesia deve liberare dal malessere della civiltà.'
+  },
+  { id:54, type:'tf', topic:'Testi · A mia moglie',
+    text:'Vero o falso: in «A mia moglie», Saba afferma che le femmine degli animali sereni «avvicinano a Dio», portando il paragone a una dimensione sacra.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. La conclusione del poema generalizza: la moglie è presente in «tutte le femmine di tutti i sereni animali che avvicinano a Dio». Il paragone è un elogio altissimo, non un insulto.'
+  },
+  { id:55, type:'mc', topic:'Testi · La capra',
+    text:'Nel verso «In una capra dal viso semita», a cosa allude «semita»?',
+    options:['A una razza caprina specifica','Alla barbetta della capra che ricorda un viso ebreo — proiezione dell\'identità ebraica di Saba','A una capra importata dal Medio Oriente','All\'aspetto sofferente della capra'],
+    correct:1,
+    explanation:'«Viso semita» identifica la capra con l\'ebreo marginale, il diverso che porta in sé il dolore di «ogni altra vita». Saba si riconosce nella capra.'
+  },
+  { id:56, type:'tf', topic:'Testi · La capra',
+    text:'Vero o falso: nella «La capra», la frase «il dolore è eterno, / ha una voce e non varia» esprime una visione ottimistica della vita.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. È una visione del dolore come condizione universale e immutabile: tutti gli esseri viventi condividono la stessa voce di sofferenza. È un pessimismo solidale (non nichilistico).'
+  },
+  { id:57, type:'mc', topic:'Testi · La capra',
+    text:'In «La capra», qual è la figura retorica nel rapporto tra il belato della capra e il dolore del poeta?',
+    options:['Metafora','Personificazione','Similitudine implicita (analogia): il belato è «fraterno al mio dolore» — lo stesso dolore in due esseri diversi','Ossimoro'],
+    correct:2,
+    explanation:'«Uguale belato era fraterno / al mio dolore»: l\'analogia/similitudine stabilisce un legame di fraternità tra il dolore animale e quello umano.'
+  },
+  { id:58, type:'mc', topic:'Testi · Trieste',
+    text:'In «Trieste», il sintagma «scontrosa grazia» è un esempio di quale figura retorica?',
+    options:['Metafora','Iperbole','Ossimoro: due aggettivi dal senso opposto («scontrosa» = chiusa, «grazia» = bellezza) uniti per descrivere l\'ambivalenza di Trieste','Sinestesia'],
+    correct:2,
+    explanation:'L\'ossimoro «scontrosa grazia» descrive il carattere ambivalente della città: riservata e chiusa ma affascinante. Funziona anche come autoritratto del poeta.'
+  },
+  { id:59, type:'mc', topic:'Testi · Trieste',
+    text:'Nel poema «Trieste», come viene definita la città nella seconda strofa?',
+    options:['Come un vecchio saggio','Come un ragazzaccio aspro e vorace, con gli occhi azzurri e le mani troppo grandi per regalare un fiore','Come una donna elegante','Come un porto silenzioso'],
+    correct:1,
+    explanation:'La similitudine umanizzante: Trieste è come un ragazzo ruvido ma con un fascino spontaneo — incapace di gesti raffinati ma pieno di vita.'
+  },
+  { id:60, type:'open', topic:'Testi · Trieste',
+    text:'In «Trieste», il poeta passa dalla terza persona («Trieste ha una scontrosa / grazia») alla prima persona («La mia città»). Spiega il significato di questa progressione.',
+    modelAnswer:'La progressione sintattica rispecchia un percorso affettivo: all\'inizio Trieste è osservata da lontano, quasi come un oggetto esterno («la città», «Trieste»). Nella seconda strofa il poeta la definisce con voce analitica usando la terza persona. Nella terza strofa, dal punto panoramico dell\'erta, Trieste diventa «La mia città» — il possessivo segnala l\'appropriazione, l\'identificazione totale. La città ha un cantuccio «fatto per me, alla mia vita / pensosa e schiva»: il luogo fisico diventa specchio dell\'identità interiore. L\'«aria natia» chiude il cerchio: è l\'aria della nascita, dell\'appartenenza irriducibile.',
+    keywords:['terza persona / prima persona','La mia città','cantuccio','aria natia','specchio dell\'identità','appropriazione affettiva']
+  },
+  { id:61, type:'mc', topic:'Testi · Città vecchia',
+    text:'In «Città vecchia», perché il poeta sceglie di percorrere un cammino più lungo attraverso i vicoli degradati?',
+    options:['Per motivi di sicurezza','Perché lì ritrova la «perduta gente» in cui si sente fraternamente vicino — il sacro è presente anche nei margini','Per comprare libri usati','Per evitare il traffico'],
+    correct:1,
+    explanation:'Il cammino tra gli emarginati è una scelta esistenziale: Saba riconosce nei marginali la propria condizione di ebreo diverso e si sente fratello nel comune destino umano.'
+  },
+  { id:62, type:'mc', topic:'Testi · Città vecchia',
+    text:'In «Città vecchia», quale antitesi centrale rivela la poetica di Saba sul sacro?',
+    options:['Giorno/notte','Povero/ricco','«detrito» / «infinito» — il rifiuto e lo scarto contengono l\'infinito, il divino','Mare/terra'],
+    correct:2,
+    explanation:'L\'antitesi «detrito/infinito» è il nucleo teologico della poesia: là dove la società scarta, Saba trova l\'infinito. Il sacro non sta nel bello ma nell\'umile.'
+  },
+  { id:63, type:'tf', topic:'Testi · Città vecchia',
+    text:'Vero o falso: in «Città vecchia», Saba esprime un giudizio morale negativo sulle prostitute e i marinai.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. Il contrario: Saba si sente «fraternamente vicino» alla «perduta gente». Non giudica: riconosce la comune umanità. In esse «si agita, come in me, il Signore».'
+  },
+  { id:64, type:'mc', topic:'Testi · Mio padre',
+    text:'Nella poesia «Mio padre è stato per me l\'assassino», perché la parola «assassino» è tra virgolette?',
+    options:['Per indicare che è in dialetto','Perché è una citazione delle parole con cui la madre definiva il padre','Per ironia','Perché è un termine tecnico giuridico'],
+    correct:1,
+    explanation:'«Assassino» è la parola della madre: Saba la riporta in virgolette per indicare che è un giudizio altrui, non suo. Il poema è precisamente il capovolgimento di quel giudizio.'
+  },
+  { id:65, type:'open', topic:'Testi · Mio padre',
+    text:'Spiega il «capovolgimento del giudizio» nella poesia «Mio padre è stato per me l\'assassino».',
+    modelAnswer:'Il poema inizia con il giudizio condannatorio della madre: il padre è «l\'assassino» per aver abbandonato la famiglia. Ma l\'incontro a vent\'anni rivela qualcosa di inatteso: somiglianza fisica (lo sguardo azzurro), somiglianza spirituale (la leggerezza, lo spirito infantile). Il poeta scopre che il padre ha trasmesso un dono: «il dono ch\'io ho da lui l\'ho avuto». Il capovolgimento è completo: quello che la madre chiamava «assassino» è il portatore della leggerezza che permette a Saba di scrivere poesie. L\'ultima terzina — «due razze in antica tenzone» — non risolve il conflitto tra i due caratteri ereditati, ma lo riconosce come la radice della propria scissione interiore.',
+    keywords:['assassino tra virgolette','capovolgimento','dono del padre','sguardo azzurro','leggerezza','due razze','scissione']
+  },
+  { id:66, type:'mc', topic:'Testi · La vera causa',
+    text:'In «La vera causa» (da Ernesto), come avviene la confessione di Ernesto alla madre?',
+    options:['Direttamente, con parole chiare e dirette','Indirettamente, citando le parole dello zio Giovanni su uno scandalo del deputato','Per lettera','Non avviene: Ernesto non riesce a confessare'],
+    correct:1,
+    explanation:'Ernesto non trova le parole dirette. La confessione avviene attraverso le parole degli altri — segno di quanto fosse impossibile trovare un linguaggio proprio per questi temi nell\'Italia del tempo.'
+  },
+  { id:67, type:'tf', topic:'Testi · La vera causa',
+    text:'Vero o falso: nel brano «La vera causa», la madre di Ernesto capisce immediatamente la vera ragione del suo abbandono del lavoro.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. La madre ipotizza che Ernesto abbia rubato al signor Wilder — il peggiore crimine borghese immaginabile. Il malinteso rivela la distanza generazionale e i valori borghesi dell\'epoca.'
+  },
+  { id:68, type:'mc', topic:'Storia e cronistoria',
+    text:'Sotto quale pseudonimo Saba scrisse «Storia e cronistoria del Canzoniere» (1948) parlando di sé in terza persona?',
+    options:['Umberto Poli','Giuseppe Carimandrei','Italo Svevo','Ernesto Saba'],
+    correct:1,
+    explanation:'Saba scrive il commento al proprio Canzoniere sotto lo pseudonimo Giuseppe Carimandrei, parlando di sé in terza persona: effetto di straniamento e distanza critica da sé stesso.'
+  },
+  { id:69, type:'mc', topic:'Storia e cronistoria',
+    text:'Quale «ritardo» analizza Saba nella «Storia e cronistoria del Canzoniere»?',
+    options:['Il ritardo editoriale della seconda edizione','Il ritardato successo della propria opera, attribuito all\'arretratezza culturale di Trieste e al proprio «conservatorismo»','Il ritardo nell\'iniziare a scrivere poesie','Il ritardo nell\'incontrare la moglie Lina'],
+    correct:1,
+    explanation:'Saba analizza perché la critica ha impiegato tanto a riconoscerlo: arretratezza di Trieste (nascere a Trieste nel 1883 era come nascere altrove nel 1850), autobiografismo, «conservatorismo» nell\'uso dell\'endecasillabo.'
+  },
+  { id:70, type:'tf', topic:'Storia e cronistoria',
+    text:'Vero o falso: «Storia e cronistoria del Canzoniere» è un testo rarissimo nella letteratura italiana perché un poeta commenta la propria opera.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. L\'autocommento sistematico di Saba alla propria opera è quasi unico nella tradizione letteraria italiana.'
+  },
+  { id:71, type:'mc', topic:'Ernesto',
+    text:'In quale anno viene pubblicato postumo il romanzo «Ernesto»?',
+    options:['1957 (anno della morte di Saba)','1961','1975','1980'],
+    correct:2,
+    explanation:'Ernesto fu scritto nel 1953 ma pubblicato postumo solo nel 1975, per il trattamento sincero e senza giudizio della sessualità adolescenziale omosessuale.'
+  },
+  { id:72, type:'mc', topic:'Ernesto',
+    text:'Chi è Ilio nel romanzo «Ernesto» e cosa rappresenta?',
+    options:['Il datore di lavoro del signor Wilder','Un giovane studente di musica, amico di Ernesto — simbolo dell\'innocenza e della leggerezza, possibilità di evasione','Il padre di Ernesto','Un insegnante di violino'],
+    correct:1,
+    explanation:'Ilio è l\'amico-opposto: giovane, luminoso, privo dei pesi che gravano su Ernesto. Rappresenta la leggerezza e la gioia della vita — lo stesso dono che Saba aveva ricevuto dal padre.'
+  },
+  { id:73, type:'mc', topic:'Altre opere',
+    text:'In quale raccolta di prosa (1946) Saba scrive aforismi e apologhi brevi con influenza di Freud e Nietzsche?',
+    options:['Ricordi-Racconti','Scorciatoie e raccontini','Storia e cronistoria','Canzoniere parziale'],
+    correct:1,
+    explanation:'«Scorciatoie e raccontini» (1946): prose brevissime, taglienti, ironiche. Temi: indagine interiore, attualità politica, natura dell\'arte. Un Saba «filosofo» per lampi.'
+  },
+  { id:74, type:'mc', topic:'Psicoanalisi',
+    text:'Il critico Gianfranco Contini definì Saba «psicanalitico prima della psicanalisi». Cosa significa esattamente?',
+    options:['Saba lesse Freud prima degli altri poeti','Ancor prima di conoscere la psicoanalisi freudiana, Saba aveva intuitivamente usato la poesia come esplorazione dell\'inconscio','Saba si laureò in psicologia','Saba era amico personale di Freud'],
+    correct:1,
+    explanation:'Contini riconobbe come Saba, ancora prima della terapia con Weiss (1929), avesse già praticato nella poesia quella funzione di scandalizzazione dei traumi profondi che Freud teorizzava.'
+  },
+  { id:75, type:'mc', topic:'Confronti · Saba vs Ungaretti',
+    text:'Rispetto a Ungaretti, come differisce il rapporto di Saba con il lessico?',
+    options:['Entrambi usano parole rarissime','Saba usa parole comuni e «trite»; Ungaretti riduce la parola all\'essenziale illuminato — parola luminosa, non parola ordinaria','Saba è più oscuro di Ungaretti','Non c\'è differenza',],
+    correct:1,
+    explanation:'Saba: lessico comune, accessibile, «trite parole» deliberatamente scelte. Ungaretti: parola luminosa, illuminante, ridotta all\'essenziale («M\'illumino d\'immenso»). Due diverse concezioni della parola «vera».'
+  },
+  { id:76, type:'mc', topic:'Confronti · Saba vs Montale',
+    text:'Come differisce il rapporto di Saba con la vita rispetto a quello di Montale?',
+    options:['Entrambi pessimisti senza speranza','Saba sceglie l\'accettazione totale della vita; Montale diagnostica il «male di vivere» come ineluttabile — il miracolo è raro','Montale è ottimista, Saba pessimista','Non c\'è differenza'],
+    correct:1,
+    explanation:'In Saba il dolore è universale ma la vita resta degna — «ogni altra vita». In Montale il male di vivere è strutturale: il «varco» si apre raramente e subito si richiude.'
+  },
+  { id:77, type:'mc', topic:'Confronti · Tradizione',
+    text:'Quale tra i tre grandi poeti (Saba, Ungaretti, Montale) si ricollega più consapevolmente alla tradizione italiana?',
+    options:['Ungaretti','Montale','Saba — che si autodidatta sui classici (Dante, Petrarca, Foscolo, Leopardi, Pascoli) e vede il «conservatorismo» come scelta di poetica','Tutti e tre ugualmente'],
+    correct:2,
+    explanation:'Saba è l\'unico che fa del ritorno alla tradizione un programma esplicito: riusa rime antiche, forme tradizionali, lessico classico. Solmi lo definisce «moderno in modo quasi sconcertante» proprio per questo.'
+  },
+  { id:78, type:'open', topic:'Confronti · Tre poeti',
+    text:'Confronta Saba, Ungaretti e Montale sulla funzione della poesia secondo la loro poetica.',
+    modelAnswer:'Tre risposte diverse. SABA: la poesia è etico-conoscitiva, consolatoria e terapeutica — uno scandaglio dell\'interiorità. La parola deve comunicare direttamente (lessico comune, rime antiche). UNGARETTI: la poesia è illuminazione — un lampo che fa apparire per un istante la verità nascosta. La parola è epifania (verso-parola, analogia). MONTALE: la poesia non illumina né consola — può solo dire «ciò che non siamo, ciò che non vogliamo». Verità negativa. La parola è «storta e secca come un ramo». Saba e Ungaretti credono nel potere della parola (l\'una comunicativa, l\'altra illuminante); Montale dichiara il fallimento della parola stessa.',
+    keywords:['Saba = scandaglio','Ungaretti = illuminazione','Montale = verità negativa','tre funzioni della parola','Anti-Vate']
+  },
+  { id:79, type:'mc', topic:'Confronti · Metrica',
+    text:'Come differiscono Saba e Ungaretti sul piano metrico?',
+    options:['Entrambi usano il verso libero puro','Saba usa forme tradizionali (endecasillabo, canzone, sonetto); Ungaretti rivoluziona totalmente la metrica con il verso-parola','Entrambi rifiutano la rima','Saba usa la sestina, Ungaretti il sonetto'],
+    correct:1,
+    explanation:'Il contrasto è netto: Saba recupera le forme classiche deliberatamente; Ungaretti le spezza radicalmente nell\'Allegria. Poi Ungaretti torna alla tradizione nel Sentimento del tempo — ma Saba non ha mai rotto con essa.'
+  },
+  { id:80, type:'mc', topic:'Confronti · Realtà',
+    text:'Come differisce il rapporto di Saba con la gente comune rispetto a Montale?',
+    options:['Entrambi si allontanano dalla gente comune','Saba si avvicina alla gente umile (prostitute, marinai, emarginati) e si riconosce fratello; Montale osserva la realtà con la distanza dell\'Anti-Vate che descrive oggetti e paesaggi','Montale ama la gente; Saba la teme','Nessuna differenza'],
+    correct:1,
+    explanation:'Saba: «tra la perduta gente / mi so fraternamente vicino». Montale: il paesaggio ligure aspro come correlativo oggettivo — non partecipazione affettiva ma osservazione distaccata.'
+  },
+  { id:81, type:'mc', topic:'Scissione dell\'io',
+    text:'Quali sono le due figure materne opposte nella biografia di Saba che producono la «scissione dell\'io»?',
+    options:['La madre biologica e una zia','La balia slovena Gioseffa (madre di gioia) e la madre biologica severa (madre mesta)','Due nonne','La moglie Lina e la figlia Linuccia'],
+    correct:1,
+    explanation:'La balia slovena Gioseffa Gabrovich (i primi tre anni: gioia, amore, spensieratezza) e la madre biologica (poi: severità, peso). Il contrasto produce la scissione psicologica fondamentale.'
+  },
+  { id:82, type:'open', topic:'Scissione dell\'io',
+    text:'Spiega il concetto di «scissione dell\'io» in Saba e come si manifesta nella sua poesia.',
+    modelAnswer:'La scissione nasce dalla duplice figura materna: la balia slovena (madre di gioia, affettuosa, spensierata) e la madre biologica (fredda, severa, oppressa dai pesi della vita). Nei primi tre anni Saba viene allevato dalla balia — poi la madre lo riprende. Questo trauma produce un io diviso: da un lato il ricordo della gioia (dono anche del padre leggero), dall\'altro il peso della madre (ebraismo, senso tragico). La scissione si manifesta in tutta la poesia: la tensione tra leggerezza e dolore, tra accettazione e sofferenza, tra amore e senso di colpa. Il «Piccolo Berto» e «Mio padre è stato per me l\'assassino» esplorano esplicitamente questa radice psicologica.',
+    keywords:['balia slovena','madre biologica','madre di gioia/madre mesta','divisione','Piccolo Berto','due razze','dono del padre']
+  },
+  { id:83, type:'tf', topic:'Scissione dell\'io',
+    text:'Vero o falso: il «Piccolo Berto» è una sezione del secondo volume del Canzoniere dedicata ai ricordi dell\'infanzia e ai traumi psicologici profondi.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. «Il piccolo Berto» (1931) è la sezione psicoanalitica per eccellenza del Canzoniere: Saba rilegge la propria infanzia alla luce della terapia con Weiss.'
+  },
+  { id:84, type:'mc', topic:'Trieste e letteratura',
+    text:'Saba condivide la città di Trieste con quale altro grande scrittore del Novecento italiano?',
+    options:['Eugenio Montale','Italo Svevo — entrambi triestini, entrambi interessati alla psicoanalisi, entrambi marginali rispetto al canone italiano dell\'epoca','Carlo Michelstaedter','Scipio Slataper'],
+    correct:1,
+    explanation:'Saba e Svevo sono i due grandi di Trieste. Entrambi ebrei, entrambi interagiscono con la psicoanalisi (Saba con Weiss, Svevo traduce Freud), entrambi ignorati per decenni dalla critica italiana.'
+  },
+  { id:85, type:'mc', topic:'Identità ebraica',
+    text:'Come si manifesta l\'identità ebraica nella poesia di Saba?',
+    options:['Solo nella scelta dello pseudonimo «Saba»','In modo pervasivo: lo pseudonimo, la «capra dal viso semita», il senso di diversità e marginalità, le «due razze in tenzone»','Solo nelle opere di guerra','Non è un tema rilevante nella sua poesia'],
+    correct:1,
+    explanation:'L\'identità ebraica non è un tema separato ma una prospettiva continua: la marginalità, il senso di diversità, la solidarietà con gli emarginati — tutto parte da questa radice.'
+  },
+  { id:86, type:'mc', topic:'Ernesto · chiave psicoanalitica',
+    text:'Qual è la chiave psicoanalitica che giustifica la struttura del romanzo «Ernesto»?',
+    options:['Il complesso di Edipo risolto','L\'assenza del padre → severità materna → Ernesto cerca affetto in figure maschili sostitutive — meccanismo autobiografico trasparente','Il trauma della guerra','La malattia del protagonista'],
+    correct:1,
+    explanation:'La chiave psicoanalitica è esplicitata nel romanzo: l\'assenza del padre costringe la madre a essere severa; Ernesto cerca affetto in figure maschili. Ernesto è una maschera di Saba. Autobiografismo totale.'
+  },
+  { id:87, type:'mc', topic:'Scorciatoie',
+    text:'In che anno pubblica Saba la raccolta di prose brevi «Scorciatoie e raccontini»?',
+    options:['1929','1946','1953','1961'],
+    correct:1,
+    explanation:'1946: lo stesso anno della seconda edizione definitiva del Canzoniere. «Scorciatoie e raccontini» rappresenta la prosa saggistica e aforistica di Saba.'
+  },
+  { id:88, type:'open', topic:'Posizione letteraria',
+    text:'Perché il critico Sergio Solmi definisce Saba «moderno in modo quasi sconcertante» pur restando nella tradizione?',
+    modelAnswer:'Solmi coglie il paradosso fondamentale di Saba: in un\'epoca dominata dallo sperimentalismo (futurismo, avanguardie), dall\'oscurità ermetica, e dal frammentismo vociano, il gesto più rivoluzionario è tornare alle forme tradizionali, alle rime «trite», al lessico comune. Saba è «conservatore» in un\'epoca in cui tutti rompono con la tradizione — e proprio per questo è originale: nessuno fa la sua scelta. La «modernità sconcertante» sta nell\'uso consapevole di strumenti antichi per dire verità moderne: la psicoanalisi, la scissione dell\'io, il trauma dell\'abbandono espresso in endecasillabi petrarcheschi. È la forma più radicale di anti-avanguardismo.',
+    keywords:['Solmi','conservatorismo come scelta','anti-avanguardismo','originalità nella tradizione','forme antiche/contenuti moderni']
+  },
+  { id:89, type:'tf', topic:'Posizione letteraria',
+    text:'Vero o falso: la posizione letteraria di Saba è assimilabile all\'ermetismo di Quasimodo e Ungaretti (nella seconda fase).',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. Saba si oppone esplicitamente all\'obscurità degli Ermetici. Le sue parole sono comuni, accessibili, «trite». La chiarezza è un valore etico, non una limitazione.'
+  },
+  { id:90, type:'open', topic:'Sintesi',
+    text:'Spiega perché Saba è un «poeta fuori moda» e perché proprio questa posizione lo rende originale.',
+    modelAnswer:'Saba è «fuori moda» in ogni momento della sua carriera: quando scrive sonetti, il Novecento vuole il verso libero; quando usa parole comuni, la poesia colta vuole il preziosismo o l\'oscurità; quando racconta la propria vita con onestà, la poetica dominante richiede il frammentismo e l\'impersonalità. Eppure questa posizione lo rende unico: nessun altro fa le sue scelte. La «chiarezza come rivoluzione» — formula che riassume bene la sua poetica — è un gesto radicale in un\'epoca di avanguardie. Come osservò Solmi, il «conservatorismo» di Saba è «moderno in modo quasi sconcertante»: tornare alla tradizione, in quel contesto, è la scelta più originale di tutte. Questa è la sua grandezza: non è fuori moda, è su una frequenza diversa.',
+    keywords:['fuori moda','chiarezza come rivoluzione','conservatorismo originale','Solmi','anti-avanguardismo','poetica dell\'onestà']
   }
 ],
 
@@ -505,6 +858,518 @@ ungaretti: [
     text:'Spiega la funzione del verso-parola nell\'Allegria con almeno due esempi testuali. Perché Ungaretti riduce il verso a una sola parola?',
     modelAnswer:'Il verso-parola è la conquista formale più radicale dell\'Allegria: un verso coincide con una sola parola isolata sullo spazio bianco della pagina. Esempi: «M\'illumino / d\'immenso» — due versi, ciascuno con una parola chiave; in «Soldati», «come», «d\'autunno», «sugli alberi», «le foglie» sono quasi tutti versi-parola; «tanto» isolato in «Veglia» porta il peso emotivo massimo. Funzione: la parola senza punteggiatura, circondata dal silenzio, acquista il massimo peso semantico. Il bianco non è vuoto ma risonanza: il lettore è costretto a fermarsi, a «pesare» ogni termine. Eredità di Mallarmé: la pagina è partitura di suoni e silenzi. L\'effetto è di concentrazione totale — opposto dell\'eloquenza retorica.',
     keywords:['verso-parola','Mattina','Soldati','Veglia','tanto','silenzio bianco','Mallarmé','peso semantico','anti-eloquenza']
+  },
+
+  /* --- Vita --- */
+  { id:'u31', type:'mc', topic:'Vita',
+    text:'In quale città nasce Giuseppe Ungaretti e in quale anno?',
+    options:['A Lucca, nel 1880','Ad Alessandria d\'Egitto, nel 1888','A Trieste, nel 1891','A Roma, nel 1885'],
+    correct:1,
+    explanation:'Nasce l\'8 febbraio 1888 ad Alessandria d\'Egitto da genitori lucchesi emigrati. Il padre lavorava al Canale di Suez.'
+  },
+  { id:'u32', type:'tf', topic:'Vita',
+    text:'Vero o falso: il padre di Ungaretti muore quando Giuseppe era ancora bambino.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Il padre muore quando Giuseppe è piccolo. Questo contribuisce al senso di sradicamento e di identità nomade che attraversa tutta la sua poesia.'
+  },
+  { id:'u33', type:'mc', topic:'Vita',
+    text:'Quale filosofo segue Ungaretti alle lezioni della Sorbona a Parigi nel 1912?',
+    options:['Friedrich Nietzsche','Henri Bergson','Sigmund Freud','Karl Marx'],
+    correct:1,
+    explanation:'A Parigi segue le lezioni di Bergson sul tempo come «durata interiore» — concetto che influenzerà la sua riflessione sulla memoria in «I Fiumi» e in «Sentimento del tempo».'
+  },
+  { id:'u34', type:'mc', topic:'Vita',
+    text:'Quale anno e con quale opera debutta ufficialmente Ungaretti come poeta pubblicato?',
+    options:['1912, con una plaquette parigina','1916, con «Il porto sepolto» stampato in 80 copie a Udine grazie a Ettore Serra','1919, con «Allegria di naufragi»','1931, con «L\'Allegria» definitiva'],
+    correct:1,
+    explanation:'Nel 1916, in trincea, Ettore Serra raccoglie i foglietti di Ungaretti e pubblica «Il porto sepolto» in 80 copie a Udine. È la prima pubblicazione.'
+  },
+  { id:'u35', type:'tf', topic:'Vita',
+    text:'Vero o falso: Ungaretti si trasferisce a Roma dopo la guerra e la città barocca influenza la seconda fase della sua poesia.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Sposa Jeanne Dupoix nel 1920 e si trasferisce a Roma. La Roma eterna e barocca lo spinge verso versi più lunghi, lessico aulico e temi come il tempo e il mito — «Sentimento del tempo» (1933).'
+  },
+  { id:'u36', type:'mc', topic:'Vita',
+    text:'Quale raccolta pubblica Ungaretti nel 1919, prima versione della sua opera prima?',
+    options:['«Sentimento del tempo»','«Il dolore»','«Allegria di naufragi»','«La Terra Promessa»'],
+    correct:2,
+    explanation:'«Allegria di naufragi» (1919) è la seconda versione — dopo «Il porto sepolto» (1916) — che porta l\'ossimoro nel titolo. Nel 1931 diventerà «L\'Allegria».'
+  },
+  { id:'u37', type:'tf', topic:'Vita',
+    text:'Vero o falso: Ungaretti ottiene la cattedra di Letteratura italiana all\'Università La Sapienza di Roma nel 1942, dopo il ritorno dal Brasile.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Rientra in Italia nel 1942 dal Brasile (dove era professore a São Paulo dal 1936) e ottiene la cattedra alla Sapienza di Roma.'
+  },
+  { id:'u38', type:'mc', topic:'Vita',
+    text:'Quando e dove muore Ungaretti?',
+    options:['A Roma nel 1962','A Milano il 1° giugno 1970, a 82 anni','A Firenze nel 1965','A São Paulo nel 1942'],
+    correct:1,
+    explanation:'Muore a Milano il 1° giugno 1970, a 82 anni. Nel 1969 Mondadori aveva pubblicato «Vita d\'un uomo», il corpus definitivo con autocommento.'
+  },
+
+  /* --- Glossario --- */
+  { id:'u39', type:'mc', topic:'Glossario',
+    text:'Qual è la differenza fondamentale tra similitudine e metafora?',
+    options:[
+      'La similitudine è più antica, la metafora più moderna',
+      'Nella similitudine c\'è «come» (confronto esplicito); nella metafora il «come» è assente e si dice direttamente che una cosa è un\'altra',
+      'La similitudine riguarda le persone, la metafora le cose',
+      'Sono sinonimi perfetti'
+    ],
+    correct:1,
+    explanation:'La similitudine confronta con «come»: «Si sta come foglie». La metafora dice direttamente: «La mia vita è una corolla di tenebre». La presenza o assenza di «come» è il discrimine.'
+  },
+  { id:'u40', type:'tf', topic:'Glossario',
+    text:'Vero o falso: l\'analogia è una forma di metafora ancora più ardita che accosta immagini lontanissime senza legame logico evidente.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. L\'analogia è la figura preferita da Ungaretti: in «Fratelli», «parola tremante / nella notte / Foglia appena nata» accosta la parola «fratelli» a una foglia senza spiegazione logica.'
+  },
+  { id:'u41', type:'mc', topic:'Glossario',
+    text:'Cosa è un ossimoro? Porta l\'esempio diretto dal testo del programma.',
+    options:[
+      'Ripetizione della stessa parola ad inizio verso',
+      'Accostamento di due parole di significato opposto — es. «Allegria di naufragi» oppure «corolla di tenebre»',
+      'Verso composto da una sola parola',
+      'Continuazione della frase dal verso successivo'
+    ],
+    correct:1,
+    explanation:'Ossimoro = due opposti uniti. Nel programma: «Allegria di naufragi» (gioia + naufragio), «corolla di tenebre» (fiore + buio), «inesauribile segreto» (nulla + infinito), «uccidere i morti».'
+  },
+  { id:'u42', type:'mc', topic:'Glossario',
+    text:'Cosa distingue l\'enjambement dalla normale divisione in versi?',
+    options:[
+      'L\'enjambement è la pausa logica che coincide con la fine del verso',
+      'Nell\'enjambement la frase continua nel verso successivo senza pausa logica — il senso «scavalca» il verso',
+      'L\'enjambement è sinonimo di verso libero',
+      'L\'enjambement si usa solo nella prosa poetica'
+    ],
+    correct:1,
+    explanation:'In «Veglia»: «Un\'intera nottata / buttato vicino / a un compagno / massacrato» — la frase si spezza tra i versi, creando frammentazione. Il senso scavalca il verso: questo è enjambement.'
+  },
+  { id:'u43', type:'tf', topic:'Glossario',
+    text:'Vero o falso: la sinestesia mescola sensazioni di sensi diversi in un\'unica immagine.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Esempio in «Fratelli»: «aria spasimante» — l\'aria (visivo/tattile) + «spasimante» (sensazione di dolore corporeo). Due sensi diversi in un\'unica immagine.'
+  },
+
+  /* --- Poetica --- */
+  { id:'u44', type:'mc', topic:'Poetica',
+    text:'Da quale leggenda di Alessandria d\'Egitto Ungaretti ricava l\'immagine del «porto sepolto»?',
+    options:[
+      'La leggenda della Biblioteca di Alessandria bruciata',
+      'La leggenda secondo cui sotto le acque del Nilo c\'era un antichissimo porto sepolto da secoli',
+      'Il mito del Faro di Alessandria, una delle sette meraviglie',
+      'La storia del fondatore della città, Alessandro Magno'
+    ],
+    correct:1,
+    explanation:'Ad Alessandria si diceva che sotto le acque del Nilo ci fosse un porto antico perduto. Ungaretti usa questa leggenda come metafora del fare poetico: il poeta scende nell\'abisso, tocca la verità nascosta, risale con i canti.'
+  },
+  { id:'u45', type:'tf', topic:'Poetica',
+    text:'Vero o falso: Rimbaud con «Illuminations» è una delle fonti della metafora ungarettiana della «parola come illuminazione».',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Ungaretti a Parigi legge Rimbaud, che in «Illuminations» usa la poesia come folgorazione, lampo che illumina. Da qui nasce «M\'illumino d\'immenso».'
+  },
+  { id:'u46', type:'mc', topic:'Poetica',
+    text:'Qual è il concetto di Bergson che influenza Ungaretti nella seconda fase poetica (Sentimento del tempo)?',
+    options:[
+      'La volontà di potenza',
+      'Il tempo come «durata interiore»: solo la memoria può restituire alla parola la sua «prima immagine» mitica',
+      'La teoria della relatività temporale',
+      'Il concetto di inconscio'
+    ],
+    correct:1,
+    explanation:'Da Bergson: il tempo non è cronologico ma «durata interiore» — il flusso della coscienza. La memoria riattiva la «prima immagine» mitica delle parole. Questo appare in «Sentimento del tempo» e in «I Fiumi».'
+  },
+  { id:'u47', type:'mc', topic:'Poetica',
+    text:'Quale delle 5 caratteristiche stilistiche dell\'Allegria NON appartiene a questa prima fase?',
+    options:[
+      'Versi brevissimi, talvolta una sola parola',
+      'Spazi bianchi intorno alle parole',
+      'Ritorno della punteggiatura e versi lunghi alla maniera di Petrarca',
+      'Indicazione di luogo e data sotto ogni poesia'
+    ],
+    correct:2,
+    explanation:'Il ritorno della punteggiatura e i versi lunghi alla maniera di Petrarca caratterizzano «Sentimento del tempo» (1933), la seconda fase. Nell\'Allegria non c\'è punteggiatura.'
+  },
+  { id:'u48', type:'open', topic:'Poetica',
+    text:'Spiega in che modo la trincea sul Carso ha prodotto lo stile dell\'Allegria. Quali costrizioni materiali hanno generato quale scelta formale?',
+    modelAnswer:'In trincea, davanti al pericolo costante di morire, non c\'è tempo per le parole ornamentali: bisogna dire l\'essenziale. Le poesie vengono scritte su pezzettini di carta o cartine di sigarette — supporti minuscoli che impongono brevità. Il risultato è una poesia ridotta all\'osso: versi brevissimi (talvolta un\'unica parola), assenza di punteggiatura, analogie ardite senza mediazione logica. La guerra obbliga Ungaretti a eliminare tutto il superfluo: ogni parola deve valere la propria presenza.',
+    keywords:['trincea','costrizioni materiali','pezzettini di carta','parole essenziali','versi brevissimi','no punteggiatura','analogie']
+  },
+  { id:'u49', type:'mc', topic:'Poetica',
+    text:'Quali tre fasi corrispondono alle tre raccolte principali di Ungaretti?',
+    options:[
+      'Giovanile, matura, tarda — senza discontinuità stilistica',
+      '1ª guerra (L\'Allegria): parola pura; 2ª Roma (Sentimento del tempo): mito e caducità; 3ª lutto (Il dolore): elaborazione del lutto',
+      '1ª simbolista, 2ª realista, 3ª surrealista',
+      '1ª ermetica, 2ª classicista, 3ª moderna'
+    ],
+    correct:1,
+    explanation:'Tre fasi distinte per tema e stile: 1ª (Allegria) = parola pura davanti alla morte, stile essenziale; 2ª (Sentimento del tempo) = mito, tempo, caducità, stile classicista aulico; 3ª (Il dolore) = lutto privato e storico, tono elegiaco.'
+  },
+  { id:'u50', type:'open', topic:'Poetica',
+    text:'In che senso la poesia per Ungaretti è «testimonianza e redenzione»? Spiega con riferimento ad almeno due testi.',
+    modelAnswer:'Per Ungaretti la parola salva: è ancora di salvezza nel naufragio della storia. In «Veglia», accanto al cadavere di un compagno, scrive lettere d\'amore — la poesia come affermazione vitale nel caos. In «Non gridate più», la parola chiede silenzio perché solo nel silenzio i morti possono parlare: la poesia redime i morti dalla profanazione. Il canto è l\'unico strumento per restituire dignità agli scomparsi e senso all\'esistenza dei sopravvissuti.',
+    keywords:['testimonianza','redenzione','Veglia','lettere d\'amore','Non gridate più','silenzio','salva']
+  },
+
+  /* --- Opere --- */
+  { id:'u51', type:'mc', topic:'Opere · L\'Allegria',
+    text:'In quante edizioni appare L\'Allegria e come si chiama ogni versione?',
+    options:[
+      'Due edizioni: «Il porto sepolto» (1916) e «L\'Allegria» (1931)',
+      'Tre versioni: «Il porto sepolto» (1916) → «Allegria di naufragi» (1919) → «L\'Allegria» (1931); edizione definitiva 1942',
+      'Una sola edizione del 1919',
+      'Quattro edizioni, tutte con titoli diversi'
+    ],
+    correct:1,
+    explanation:'Tre titoli in successione: «Il porto sepolto» (1916) → «Allegria di naufragi» (1919) con l\'ossimoro → «L\'Allegria» (1931) definitivo, poi edizione finale a 5 sezioni nel 1942.'
+  },
+  { id:'u52', type:'tf', topic:'Opere · L\'Allegria',
+    text:'Vero o falso: l\'edizione definitiva del 1942 de L\'Allegria è strutturata in 5 sezioni chiamate: Ultime, Il porto sepolto, Naufragi, Girovago, Prime.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. L\'edizione definitiva del 1942 ha 5 sezioni: Ultime, Il porto sepolto, Naufragi, Girovago, Prime — ordine che rispecchia il senso complessivo di nomadismo e ricerca.'
+  },
+  { id:'u53', type:'mc', topic:'Opere · Sentimento del tempo',
+    text:'Perché «Sentimento del tempo» (1933) diventa il modello per i poeti dell\'Ermetismo?',
+    options:[
+      'Per le indicazioni di luogo e data sotto ogni poesia',
+      'Per lo stile oscuro e allusivo: versi lunghi, lessico aulico, ermetismo del senso — modello seguito da Quasimodo, Luzi, Gatto',
+      'Per l\'assenza di punteggiatura',
+      'Per il tema della guerra di trincea'
+    ],
+    correct:1,
+    explanation:'I poeti ermetici si ispirano alla seconda fase: la poesia diventata oscura, allusiva, sganciata dal referente concreto. Quasimodo, Luzi, Gatto seguono questo Ungaretti, non quello dell\'Allegria.'
+  },
+  { id:'u54', type:'open', topic:'Opere · Sentimento del tempo',
+    text:'Elenca almeno tre differenze stilistiche tra «L\'Allegria» e «Sentimento del tempo».',
+    modelAnswer:'(1) Versi: nell\'Allegria brevissimi, verso-parola; nel Sentimento del tempo lunghi e articolati, endecasillabi. (2) Punteggiatura: assente nell\'Allegria, torna nel Sentimento del tempo. (3) Lessico: essenziale e quotidiano nell\'Allegria; aulico, letterario e prezioso nel Sentimento del tempo. (4) Modelli: nell\'Allegria i simbolisti francesi; nel Sentimento del tempo Petrarca, Leopardi, Dante, Góngora. (5) Temi: guerra, vita, identità nell\'Allegria; tempo, mito, caducità, Dio nel Sentimento del tempo.',
+    keywords:['versi lunghi/corti','punteggiatura','lessico aulico','Petrarca','Leopardi','mito','caducità']
+  },
+  { id:'u55', type:'mc', topic:'Opere · Il dolore',
+    text:'Quali due lutti personali genera la raccolta «Il dolore» (1947)?',
+    options:[
+      'La morte della moglie Jeanne e del cugino',
+      'La morte del figlio Antonietto (1939, 9 anni) e del fratello Costantino (1937)',
+      'La morte di Apollinaire e di Bergson',
+      'La morte del padre e della madre'
+    ],
+    correct:1,
+    explanation:'Due lutti privati: il fratello Costantino muore nel 1937; il figlio Antonietto nel 1939 a soli 9 anni, a São Paulo. A questi si fonde il dolore storico della Seconda guerra mondiale.'
+  },
+  { id:'u56', type:'tf', topic:'Opere · Il dolore',
+    text:'Vero o falso: il tono de «Il dolore» è simile a quello dell\'Allegria — essenziale e senza punteggiatura.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. Il dolore ha uno stile diverso: tono elegiaco, meditativo, più disteso. La sintassi è rigorosa. È la terza fase, non una replica della prima.'
+  },
+
+  /* --- Testi · Mattina --- */
+  { id:'u57', type:'mc', topic:'Testi · Mattina',
+    text:'Qual era il titolo originale della poesia «Mattina» prima che Ungaretti lo cambiasse?',
+    options:['«Alba»','«Luce»','«Cielo e mare»','«Illuminazione»'],
+    correct:2,
+    explanation:'Il titolo originale era «Cielo e mare». Il cambiamento verso il titolo astratto «Mattina» accentua l\'indeterminatezza e l\'universalità: non un paesaggio specifico, ma un momento dell\'essere.'
+  },
+  { id:'u58', type:'tf', topic:'Testi · Mattina',
+    text:'Vero o falso: in «Mattina» il verbo «m\'illumino» è un verbo riflessivo che implica una fusione attiva tra il poeta e l\'assoluto.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. «M\'illumino di» (non «sono illuminato da») indica un\'azione attiva: il soggetto si fa materia di luce, non riceve passivamente. Questo potenzia il significato epifanico.'
+  },
+  { id:'u59', type:'mc', topic:'Testi · Mattina',
+    text:'Quale tema accomuna «Mattina» («M\'illumino d\'immenso») e «I Fiumi» («docile fibra dell\'universo»)?',
+    options:[
+      'Il lutto per i compagni morti in trincea',
+      'Il nomadismo e l\'identità multipla',
+      'Il momento di illuminazione: fusione del poeta con l\'universo — la «rara felicità»',
+      'La critica alla retorica di guerra'
+    ],
+    correct:2,
+    explanation:'Entrambe esprimono l\'«illuminazione»: in Mattina «M\'illumino d\'immenso» e in I Fiumi «docile fibra dell\'universo». È la stessa «rara felicità» di sentirsi parte del tutto.'
+  },
+
+  /* --- Testi · Soldati --- */
+  { id:'u60', type:'mc', topic:'Testi · Soldati',
+    text:'In «Soldati», la similitudine con le foglie d\'autunno ha grandi antecedenti letterari. Quali autori precedenti usano la stessa immagine?',
+    options:[
+      'Solo Virgilio nell\'Eneide',
+      'Omero nell\'Iliade, Virgilio nell\'Eneide, Dante nell\'Inferno',
+      'Petrarca nel Canzoniere e Boccaccio nel Decameron',
+      'Leopardi e Foscolo'
+    ],
+    correct:1,
+    explanation:'L\'immagine degli uomini come foglie ha una lunga genealogia: Omero nell\'Iliade, Virgilio nell\'Eneide, Dante nell\'Inferno. Ungaretti la riduce all\'osso: quattro versi-parola contro intere similitudini epiche.'
+  },
+  { id:'u61', type:'tf', topic:'Testi · Soldati',
+    text:'Vero o falso: il soggetto «soldati» viene esplicitamente nominato nella poesia «Soldati».',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. Il soggetto resta implicito. Il «si sta» impersonale include tutti senza nominarli. L\'assenza del soggetto rafforza l\'unanimismo: vale per tutta l\'umanità, non solo per i soldati.'
+  },
+
+  /* --- Testi · Fratelli --- */
+  { id:'u62', type:'mc', topic:'Testi · Fratelli',
+    text:'In «Fratelli», perché la parola «fratelli» viene definita «rivolta involontaria»?',
+    options:[
+      'Perché è pronunciata da un ribelle politico',
+      'Perché nasce dall\'istinto, non da una scelta razionale: è una ribellione spontanea contro la violenza della guerra',
+      'Perché il soldato la grida in modo volontariamente provocatorio',
+      'Perché è una parola straniera usata fuori contesto'
+    ],
+    correct:1,
+    explanation:'«Rivolta involontaria»: la parola esce spontaneamente dall\'istinto di sopravvivenza e fraternità umana. Non è un atto razionale ma una reazione istintiva contro la violenza. È un\'apostrofe diventata grido dell\'umanità intera.'
+  },
+  { id:'u63', type:'open', topic:'Testi · Fratelli',
+    text:'Analizza la trasformazione semantica della parola «fratelli» nel corso della poesia omonima.',
+    modelAnswer:'La parola «fratelli» compare tre volte con significati diversi. (1) All\'inizio: «Di che reggimento siete / fratelli?» — senso militare specifico, si riferisce ai commilitoni dello stesso esercito. (2) Al centro: «parola tremante / nella notte» — la parola è già qualcosa di più: vitale ma fragile come una foglia appena nata, esposta alla distruzione. (3) Alla fine: «Fratelli» isolato, senza contesto militare — ha perso ogni riferimento specifico ed è diventato l\'appello universale di tutta l\'umanità davanti alla morte. La traiettoria è dalla specificità militare all\'universalità umana.',
+    keywords:['rivolta involontaria','reggimento','foglia appena nata','fraternità universale','apostrofe grido universale']
+  },
+
+  /* --- Testi · Veglia --- */
+  { id:'u64', type:'mc', topic:'Testi · Veglia',
+    text:'In «Veglia», i participi passati «massacrato», «digrignata», «penetrata» sono isolati nel verso. Quale effetto ottengono?',
+    options:[
+      'Creano un effetto musicale di rima',
+      'Ogni participio isolato amplifica un dettaglio di morte con peso autonomo, creando accumulo di orrore',
+      'Sono usati per accelerare il ritmo',
+      'Sostituiscono i verbi principali'
+    ],
+    correct:1,
+    explanation:'I participi passati isolati nel verso-parola caricano ogni immagine di un peso enorme: «massacrato» (morto violentemente), «digrignata» (bocca con i denti stretti), «penetrata nel mio silenzio» (il morto entra nell\'animo). L\'accumulo porta all\'esplosione finale.'
+  },
+  { id:'u65', type:'tf', topic:'Testi · Veglia',
+    text:'Vero o falso: in «Veglia», il verso isolato «tanto» esprime l\'intensità emotiva massima della conclusione.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. «Non sono mai stato / tanto / attaccato alla vita»: «tanto» isolato nel verso-parola porta il peso emotivo massimo della poesia. Una sola parola contenente il paradosso intero: la morte che amplifica la vita.'
+  },
+
+  /* --- Testi · Il porto sepolto --- */
+  { id:'u66', type:'mc', topic:'Testi · Il porto sepolto',
+    text:'In «Il porto sepolto», il verbo «disperdere» («li disperse») ha una doppia valenza. Qual è?',
+    options:[
+      'Significa solo «diffondere» la poesia tra gli uomini',
+      'Richiama sia la diffusione dei canti tra gli uomini sia i «soldati dispersi» in battaglia — il poeta come combattente che lancia la parola come schegge',
+      'Indica la perdita della poesia nel tempo',
+      'È un\'allusione biblica alla dispersione dei popoli'
+    ],
+    correct:1,
+    explanation:'«Disperdere» ha doppia valenza: il poeta disperde i canti tra gli uomini (li diffonde), e il termine richiama i «soldati dispersi» in battaglia. Il poeta è un combattente che lancia la parola come schegge di granata.'
+  },
+  { id:'u67', type:'open', topic:'Testi · Il porto sepolto',
+    text:'Identifica i due echi mitici presenti in «Il porto sepolto» e spiega come si collegano al contenuto.',
+    modelAnswer:'Primo eco mitico: Orfeo agli Inferi — come Orfeo scende negli Inferi per recuperare Euridice e poi risale, il poeta si immerge nell\'abisso interiore per toccare la verità nascosta e poi riemerge. Secondo eco mitico: la Sibilla Cumana che disperde le profezie sulle foglie (il vento le sparpa, le rende inaccessibili) — il poeta «disperde» i canti ma l\'inesauribile segreto non si lascia mai possedere del tutto. Entrambi i miti sottolineano l\'incompletezza della rivelazione poetica: il mistero resta.',
+    keywords:['Orfeo','Sibilla cumana','immersione','emersione','disperde','inesauribile segreto','incompleto']
+  },
+
+  /* --- Testi · I Fiumi --- */
+  { id:'u68', type:'mc', topic:'Testi · I Fiumi',
+    text:'In «I Fiumi», il bagno nell\'Isonzo è descritto con termini sacri: «urna d\'acqua» e «reliquia». Che funzione hanno?',
+    options:[
+      'Indicano che il poeta è morto e sepolto nell\'acqua',
+      'Sono metafore ironiche sul culto della guerra',
+      'Conferiscono al bagno il valore di purificazione religiosa, quasi un battesimo che lava il «sudiciume della guerra»',
+      'Sono riferimenti alla liturgia cattolica di Ungaretti'
+    ],
+    correct:2,
+    explanation:'«Urna d\'acqua» e «reliquia» trasformano il bagno in un rito sacro: il poeta si purifica dal «sudiciume della guerra», come in un battesimo. È la resistenza dell\'umanità contro la disumanizzazione del conflitto.'
+  },
+  { id:'u69', type:'tf', topic:'Testi · I Fiumi',
+    text:'Vero o falso: in «I Fiumi», il Serchio rappresenta le radici della famiglia toscana di Ungaretti, anche se lui non ci è mai nato.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Il Serchio è il fiume della Garfagnana, terra di origine della famiglia. Ungaretti scrive: «al quale hanno bevuto duemil\'anni forse di mia gente campagnola». Radici genetiche trasmesse per via parentale, non esperienza diretta.'
+  },
+  { id:'u70', type:'mc', topic:'Testi · I Fiumi',
+    text:'Quale significato ha il Nilo tra i quattro fiumi de «I Fiumi»?',
+    options:[
+      'La maturità intellettuale conquistata a Parigi',
+      'Il fiume del fronte, della guerra presente',
+      'L\'infanzia spontanea ad Alessandria d\'Egitto — il poeta «ardeva di inconsapevolezza» nella pienezza sensoriale senza interrogativi',
+      'Le radici familiari toscane'
+    ],
+    correct:2,
+    explanation:'Il Nilo è il fiume dell\'Egitto, dell\'infanzia spontanea senza riflessione critica: «ardere d\'inconsapevolezza nelle distese pianure». La pienezza sensoriale dell\'infanzia, prima delle domande identitarie.'
+  },
+  { id:'u71', type:'mc', topic:'Testi · I Fiumi',
+    text:'Cosa rappresenta la Senna tra i quattro fiumi?',
+    options:[
+      'Le radici contadine della famiglia',
+      'L\'infanzia egiziana',
+      'Il fiume del fronte',
+      'La maturità parigina — «in quel suo torbido mi sono rimescolato e mi sono conosciuto»: la formazione intellettuale e l\'autocoscienza'
+    ],
+    correct:3,
+    explanation:'La Senna è il fiume di Parigi, dove Ungaretti studia tra 1912-1914. «Mi sono conosciuto» = l\'autocoscienza intellettuale conquistata tra avanguardie, simbolisti e le lezioni di Bergson. L\'acqua «torbida» corrisponde alla tormentata ricerca di sé.'
+  },
+
+  /* --- Testi · Non gridate più --- */
+  { id:'u72', type:'mc', topic:'Testi · Non gridate più',
+    text:'A quale raccolta appartiene «Non gridate più» e che relazione ha con le poesie di trincea dell\'Allegria?',
+    options:[
+      'All\'Allegria — è una poesia della Prima guerra mondiale',
+      'A «Sentimento del tempo» — è in chiave classicista',
+      'A «Il dolore» (1947) — è l\'Ungaretti maturo che chiede silenzio invece di «dire» la guerra come nelle poesie di trincea',
+      'A «La Terra Promessa» — riprende miti classici'
+    ],
+    correct:2,
+    explanation:'Appartiene a «Il dolore» (1947). C\'è un ribaltamento rispetto all\'Allegria: lì il poeta scriveva per dire la guerra (lettere d\'amore in Veglia); qui scrive per chiedere il silenzio. La poesia matura chiede di onorare i morti con il silenzio.'
+  },
+  { id:'u73', type:'tf', topic:'Testi · Non gridate più',
+    text:'Vero o falso: nell\'ultimo verso «lieta dove non passa l\'uomo», l\'erba è «lieta» perché è lontana dai cimiteri di guerra.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. «Lieta dove non passa l\'uomo» significa che la natura è lieta solo senza l\'uomo, che porta distruzione. È una constatazione amara sulla natura distruttiva dell\'uomo — non un riferimento ai cimiteri ma una critica morale.'
+  },
+  { id:'u74', type:'open', topic:'Testi · Non gridate più',
+    text:'Analizza l\'anafora «non gridate più, non gridate» e il tono che crea.',
+    modelAnswer:'La ripetizione anaforica di «non gridate» crea un tono imperativo e urgente, quasi profetico. Il poeta non descrive, comanda. La duplicazione («non gridate più, non gridate») aumenta l\'intensità emotiva: la prima volta è un monito civile, la seconda è quasi un grido disperato. Il tono richiama la voce del profeta biblico che ammonisce il suo popolo. In «Non gridate più» il silenzio non è assenza: è l\'unica condizione per ascoltare i morti — chi grida non può udire il loro «impercettibile sussurro».',
+    keywords:['anafora','tono imperativo','profetico','silenzio','sussurro dei morti','comando','urgenza']
+  },
+
+  /* --- Confronti --- */
+  { id:'u75', type:'mc', topic:'Confronti',
+    text:'Come differiscono Ungaretti, Saba e Montale nel rapporto con la tradizione poetica?',
+    options:[
+      'Tutti e tre rompono con la tradizione in modo uniforme',
+      'Ungaretti rompe e poi recupera (Allegria vs Sentimento del tempo); Saba non rompe mai (innovazione nei contenuti, forma tradizionale); Montale crea una terza via né con la tradizione né con l\'avanguardia',
+      'Solo Montale rompe con la tradizione; gli altri due sono conservatori',
+      'Tutti e tre usano la metrica classica senza eccezioni'
+    ],
+    correct:1,
+    explanation:'Tre posizioni diverse: Ungaretti bifasico (rottura poi recupero); Saba conserva la forma ma modernizza i contenuti; Montale né D\'Annunzio né Ungaretti — crea una via autonoma con la metrica al servizio della tensione intellettuale.'
+  },
+  { id:'u76', type:'mc', topic:'Confronti',
+    text:'Come risponde ciascuno dei tre poeti (Ungaretti, Saba, Montale) alla guerra e alla storia?',
+    options:[
+      'Tutti e tre la rifiutano e vivono in esilio',
+      'Ungaretti: esperienza fondante (trincea, fraternità); Saba: persecuzione concreta come ebreo; Montale: conferma del male di vivere preesistente',
+      'Ungaretti e Saba ignorano la guerra; Montale la affronta',
+      'Solo Saba subisce conseguenze personali dalla guerra'
+    ],
+    correct:1,
+    explanation:'Tre risposte diverse: Ungaretti (trincea = esperienza fondante, fraternità, speranza); Saba (guerra/fascismo = persecuzione concreta perché ebreo, trauma biografico); Montale (male storico si innesta su pessimismo metafisico preesistente).'
+  },
+  { id:'u77', type:'open', topic:'Confronti',
+    text:'Confronta la funzione della poesia per Ungaretti, Saba e Montale: come si distinguono le tre concezioni?',
+    modelAnswer:'Per Ungaretti la poesia è testimonianza e redenzione: la parola salva, dà senso anche nel caos della guerra (Veglia), onora i morti (Non gridate più). Per Saba la poesia è etico-conoscitiva e terapeutica: scandaglio dell\'io, confessione onesta, dialogo col lettore — consola senza ingannare. Per Montale la poesia è certificazione del negativo: registra il «male di vivere» e cerca i rari momenti di grazia, ma rifiuta ogni missione salvifica (Anti-Vate). Sintesi: Ungaretti cerca l\'illuminazione, Saba cerca l\'onestà, Montale dichiara l\'impossibilità del senso.',
+    keywords:['testimonianza','redenzione','etico-conoscitiva','terapeutica','certificazione del negativo','Anti-Vate','impossibilità del senso']
+  },
+  { id:'u78', type:'mc', topic:'Confronti',
+    text:'Cosa accomuna l\'Ungaretti dell\'Allegria e il Saba del Canzoniere nella concezione del dolore?',
+    options:[
+      'Entrambi trovano nella psicoanalisi una cura',
+      'Entrambi descrivono il dolore come condizione cosmica inevitabile',
+      'Entrambi trasformano il dolore personale in un\'esperienza che vale per tutti — universalizzazione dell\'individuale',
+      'Entrambi adottano la metrica classica per raccontarlo'
+    ],
+    correct:2,
+    explanation:'In Ungaretti (unanimismo: «si sta» vale per tutta l\'umanità) e in Saba (la verità psicologica intima tocca una verità universale) il dolore personale si universalizza. In Montale il dolore è già cosmico per definizione, non necessita di questo movimento.'
+  },
+  { id:'u79', type:'mc', topic:'Confronti',
+    text:'Qual è il principale punto di distanza tra Ungaretti e Montale nel rapporto con la speranza?',
+    options:[
+      'Ungaretti è ateo, Montale è religioso',
+      'Ungaretti non nega la speranza — la guerra genera paradossalmente allegria e attaccamento alla vita; Montale ha un pessimismo metafisico che esclude ogni salvezza definitiva',
+      'Entrambi esprimono speranza nelle loro ultime raccolte',
+      'Montale è più ottimista di Ungaretti'
+    ],
+    correct:1,
+    explanation:'Differenza chiave: Ungaretti trova nel naufragio una forma di allegria — la guerra paradossalmente rivela il valore della vita. Montale ha un pessimismo cosmico preesistente: il male di vivere non si guarisce, solo si testimonia. L\'Anti-Vate non promette salvezza.'
+  },
+  { id:'u80', type:'open', topic:'Confronti',
+    text:'Perché «Allegria di naufragi» vs «Ossi di seppia» sono due titoli che riassumono la distanza estetica tra Ungaretti e Montale?',
+    modelAnswer:'«Allegria di naufragi» di Ungaretti: il titolo è un ossimoro ma contiene una risoluzione — il naufrago sopravvissuto prova allegria, c\'è una tensione verso la vita. Il titolo conserva energia vitale anche nel disastro. «Ossi di seppia» di Montale: immagine di residui bianchi sulla spiaggia, erosi dal mare — la materia della vita dopo che l\'acqua l\'ha consumata. Non c\'è sopravvivenza gioiosa, solo il resto, il residuo, la forma svuotata. Ungaretti suggerisce resistenza; Montale denuncia erosione. Il confronto dei titoli anticipa la distanza di poetica tra i due.',
+    keywords:['ossimoro','naufrago sopravvissuto','energia vitale','ossi di seppia','residuo','erosione','resistenza vs denuncia']
+  },
+
+  /* --- Stile avanzato --- */
+  { id:'u81', type:'mc', topic:'Stile',
+    text:'Quale figura retorica usa Ungaretti nell\'apertura de «I Fiumi» con l\'immagine dell\'«albero mutilato»?',
+    options:['Analogia','Similitudine','Personificazione — «mutilato» è un termine umano applicato a un albero','Ossimoro'],
+    correct:2,
+    explanation:'«Albero mutilato»: «mutilato» è un termine usato per le persone (perde un arto in guerra) qui applicato a un albero. È una personificazione: l\'albero spezzato dai cannoni diventa specchio dell\'uomo ferito dalla guerra.'
+  },
+  { id:'u82', type:'tf', topic:'Stile',
+    text:'Vero o falso: l\'anafora «Questo è l\'Isonzo… Questo è… Questi sono i miei fiumi» in «I Fiumi» crea un ritmo quasi sacrale.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. La ripetizione anaforica di «Questo è…» crea ritmo e solennità, quasi un rito di riconoscimento identitario — il poeta elenca i propri fiumi come si elencano le tappe di una vita.'
+  },
+  { id:'u83', type:'mc', topic:'Stile',
+    text:'Perché Ungaretti elimina la punteggiatura nell\'Allegria?',
+    options:[
+      'Per imitare lo stile del futurismo italiano',
+      'Perché la punteggiatura è la grammatica della logica, e la trincea ha rotto la logica — il ritmo lo crea il poeta con la disposizione dei versi, non la grammatica',
+      'Per risparmiare spazio sulle cartine di sigarette',
+      'Per ubbidire a una moda simbolista francese senza particolare significato'
+    ],
+    correct:1,
+    explanation:'L\'assenza di punteggiatura è una scelta semantica: il ritmo non è imposto dalla grammatica ma dal poeta stesso, attraverso la disposizione dei versi. In trincea, la logica grammaticale è spezzata dall\'orrore — la poesia rispecchia questa rottura.'
+  },
+  { id:'u84', type:'open', topic:'Stile',
+    text:'Spiega perché Ungaretti inserisce luogo e data sotto ogni poesia dell\'Allegria.',
+    modelAnswer:'Le indicazioni di luogo e data (es. «Mariano, 15 luglio 1916»; «Santa Maria La Longa, 26 gennaio 1917»; «Cotici, 16 agosto 1916») servono ad ancorare la poesia all\'esperienza concreta del momento. Non è elaborazione astratta: la poesia nasce qui e ora, in questo posto preciso, in questa data precisa. È il contrario della poesia come costruzione intellettuale a distanza. L\'indicazione ha anche una funzione testimoniale: ogni poesia è una data del Carso, un documento vivo di ciò che si è vissuto quella sera in trincea.',
+    keywords:['luogo e data','ancoraggio concreto','anti-astrazione','testimonianza','Carso','documento vivo']
+  },
+  { id:'u85', type:'mc', topic:'Stile',
+    text:'In «Fratelli», «aria spasimante» è una sinestesia. Che sensi mescola?',
+    options:[
+      'Vista e olfatto',
+      'Udito e gusto',
+      'Dimensione visiva/tattile dell\'aria + dolore corporeo (spasimo): due sensi diversi fusi in un\'unica immagine',
+      'Tatto e vista in senso strettamente fisico'
+    ],
+    correct:2,
+    explanation:'«Aria» è percepita visivamente e tattilmente (si vede, si sente sul corpo); «spasimante» appartiene al dolore corporeo somatico. La sinestesia fonde due sfere sensoriali diverse in una sola immagine: l\'aria stessa soffre come un corpo in agonia.'
+  },
+
+  /* --- Sintesi e orale --- */
+  { id:'u86', type:'open', topic:'Sintesi',
+    text:'Costruisci la risposta orale al quesito: «Chi è Ungaretti e quale posto occupa nella poesia italiana del Novecento?».',
+    modelAnswer:'Giuseppe Ungaretti (1888-1970) è uno dei tre poeti cardine del Novecento italiano insieme a Saba e Montale. Nasce ad Alessandria d\'Egitto, si forma a Parigi a contatto con i simbolisti francesi e Bergson, e trova il suo stile definitivo in trincea sul Carso (1915-1918). La sua grande innovazione è la «parola come illuminazione»: non descrive, rivela. Stile: versi brevissimi (verso-parola), assenza di punteggiatura, spazi bianchi come silenzio, analogie ardite. L\'opera si divide in tre fasi: l\'Allegria (guerra, vita), il Sentimento del tempo (mito, tempo), Il dolore (lutto). L\'Allegria diventa il modello del primo Novecento; il Sentimento del tempo ispira l\'Ermetismo. La sua posizione: voce della fraternità umana di fronte alla morte.',
+    keywords:['Alessandria d\'Egitto','Parigi','trincea','parola come illuminazione','verso-parola','tre fasi','Ermetismo','fraternità']
+  },
+  { id:'u87', type:'mc', topic:'Sintesi',
+    text:'Qual è la frase-sintesi da ricordare per l\'orale sulla poetica di Ungaretti?',
+    options:[
+      '«La parola poetica è uno strumento di descrizione accurata della realtà»',
+      '«Per Ungaretti la parola poetica è un\'illuminazione: un lampo che fa apparire la verità nascosta. Il poeta è come un palombaro che si immerge nell\'abisso interiore e risale con i suoi canti. Ma resta sempre un inesauribile segreto»',
+      '«La poesia è l\'arte di dire le cose come stanno, senza mascherarle né amplificarle»',
+      '«La parola poetica può solo certificare il negativo»'
+    ],
+    correct:1,
+    explanation:'La frase-sintesi del programma: «Per Ungaretti la parola poetica è un\'illuminazione: un lampo che fa apparire la verità nascosta. Il poeta — come dice nella poesia "Il porto sepolto" — si immerge nell\'abisso interiore, tocca la verità, e poi riemerge per portarla agli uomini con il canto. Ma di questa esperienza resta sempre un "inesauribile segreto".»'
+  },
+  { id:'u88', type:'mc', topic:'Confronti',
+    text:'Quale sintesi riassume le tre risposte diverse alla crisi del Novecento da parte di Ungaretti, Saba e Montale?',
+    options:[
+      '«Ungaretti scrive in prosa, Saba in versi, Montale in entrambe»',
+      '«Ungaretti cerca l\'illuminazione, Saba cerca l\'onestà, Montale dichiara l\'impossibilità del senso»',
+      '«Ungaretti è classico, Saba è romantico, Montale è moderno»',
+      '«Tutti e tre rispondono con il silenzio alla crisi»'
+    ],
+    correct:1,
+    explanation:'La box-quote del confronto: «Tre risposte diverse alla crisi del Novecento: Ungaretti cerca l\'illuminazione, Saba cerca l\'onestà, Montale dichiara l\'impossibilità del senso.»'
+  },
+  { id:'u89', type:'open', topic:'Confronti',
+    text:'Confronta il tema della precarietà della vita in Ungaretti («Soldati») e in Saba («Trieste»). Come i due poeti declinano diversamente lo stesso tema?',
+    modelAnswer:'In «Soldati» Ungaretti esprime la precarietà con la similitudine delle foglie d\'autunno: vita sospesa, pronta a cadere, universale (unanimismo). Il tono è essenziale, rarefatto; la brevità del testo amplifca il senso di fragilità. In Saba la precarietà è intima e psicologica: la sua «scontrosa grazia» descrive la sua stessa ambivalenza, il senso di non appartenere del tutto. Ungaretti universalizza la fragilità in senso cosmico; Saba la personalizza e la intima come carattere dell\'io. Stile: in Ungaretti il verso-parola crea sospensione; in Saba la metrica tradizionale la incornicia con un senso di controllo malinconico.',
+    keywords:['Soldati','foglie d\'autunno','precarietà universale','scontrosa grazia','Trieste','intimità','universalizzazione vs personalizzazione']
+  },
+  { id:'u90', type:'mc', topic:'Sintesi',
+    text:'Quale opera pubblica Mondadori nel 1969, raccogliendo l\'intera produzione di Ungaretti con autocommento?',
+    options:['«Il taccuino del vecchio»','«La Terra Promessa»','«Vita d\'un uomo»','«Un grido e paesaggi»'],
+    correct:2,
+    explanation:'«Vita d\'un uomo» (1969, Mondadori) è il corpus definitivo dell\'intera opera di Ungaretti, con autocommento. È il titolo che dà nome al progetto poetico di tutta la sua vita: ogni raccolta è un capitolo della vita di un uomo.'
   }
 ],
 
@@ -733,6 +1598,572 @@ montale: [
     options:['Vero','Falso'],
     correct:0,
     explanation:'Vero. Nobel 1975. La motivazione svedese («senza illusioni») rispecchia perfettamente la poetica montaliana: Anti-Vate, male di vivere, verità negativa. Fu il primo Nobel italiano dopo Quasimodo (1959).'
+  },
+
+  /* --- Glossario avanzato --- */
+  { id:'m31', type:'mc', topic:'Glossario',
+    text:'Qual è la differenza fondamentale tra «simbolo» ed «emblema» in Montale?',
+    options:[
+      'Non c\'è differenza: sono sinonimi',
+      'Il simbolo apre alla Verità universale assoluta (come in Baudelaire/D\'Annunzio); l\'emblema esprime una condizione concreta e provvisoria, senza pretese di verità universale',
+      'Il simbolo è religioso, l\'emblema è laico',
+      'L\'emblema è un oggetto inventato, il simbolo è reale'
+    ],
+    correct:1,
+    explanation:'Per Baudelaire la natura è «foreste di simboli» che aprono sull\'Assoluto. Per Montale il poeta è in crisi: può solo registrare oggetti concreti («emblemi») che incarnano una condizione senza riscatto trascendente.'
+  },
+  { id:'m32', type:'tf', topic:'Glossario',
+    text:'Vero o falso: il termine «correlativo oggettivo» fu inventato da Montale.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. Il termine viene da T.S. Eliot, poeta angloamericano autore della Terra desolata. Montale disse di non averlo preso da lui, ma il legame è evidente: nelle Occasioni (1939) diventa la tecnica dominante.'
+  },
+  { id:'m33', type:'mc', topic:'Glossario',
+    text:'Cosa sono gli «Xenia» (plurale di xenion)?',
+    options:[
+      'Poesie satiriche sulla società di massa',
+      'Poesie ermetiche oscure',
+      'Dal greco: dono offerto agli ospiti e ai morti. Titolo di due cicli in Satura dedicati alla moglie Mosca morta nel 1963',
+      'Termini tecnici del simbolismo francese'
+    ],
+    correct:2,
+    explanation:'Xenia (gr. xénos = ospite): dono votivo per i morti. Montale dà questo titolo ai due cicli di 14 poesie (totale 28) in Satura dedicati alla moglie Drusilla Tanzi (Mosca). Sono il «canzoniere in morte» di Montale.'
+  },
+  { id:'m34', type:'mc', topic:'Glossario',
+    text:'Cosa significa per Montale «attraversare D\'Annunzio»?',
+    options:[
+      'Rifiutare completamente ogni influenza dannunziana',
+      'Copiare D\'Annunzio nelle prime poesie',
+      'La sua poesia passa attraverso il linguaggio dannunziano per poi rovesciarlo: D\'Annunzio cantava il panismo, Montale canta la disarmonia con la natura',
+      'Pubblicare un\'antologia critica di D\'Annunzio'
+    ],
+    correct:2,
+    explanation:'«Ho dovuto attraversare D\'Annunzio» — nelle prime poesie degli Ossi risuona il paesaggio ligure in stile quasi dannunziano, ma poi Montale lo rovescia: D\'Annunzio amplifica e celebra, Montale «torce il collo all\'eloquenza» e canta la disarmonia.'
+  },
+  { id:'m35', type:'tf', topic:'Glossario',
+    text:'Vero o falso: il «classicismo problematico» di Montale è un classicismo restauratore che recupera la tradizione senza romperla.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. È «problematico»: Montale recupera la metrica classica (endecasillabi, rime) ma la frantuma, rompe il ritmo, inserisce termini bassi e quotidiani. Non è restaurazione, è un classicismo in crisi.'
+  },
+  { id:'m36', type:'mc', topic:'Glossario',
+    text:'Cosa rappresenta il «varco» nella poetica di Montale?',
+    options:[
+      'La morte come liberazione definitiva',
+      'La possibilità di evasione dal male di vivere: fragile, momentanea, mai garantita',
+      'Il passaggio dalla giovinezza alla maturità',
+      'La porta verso la verità assoluta'
+    ],
+    correct:1,
+    explanation:'Il varco è la breccia nel muro dell\'esistenza: un\'epifania, un istante di senso. Ma è sempre precario e mai garantito: quasi sempre si chiude. Lo scacco (la sconfitta) è la condizione normale dell\'uomo.'
+  },
+  { id:'m37', type:'mc', topic:'Glossario',
+    text:'Qual è il parallelo tra «occasione» in Montale e «madeleine» in Proust?',
+    options:[
+      'Entrambi si riferiscono a dolci francesi',
+      'Entrambi sono eventi minuti che riattivano la memoria involontaria e aprono un varco di senso',
+      'Entrambi indicano la nostalgia del passato perduto',
+      'Non c\'è alcun parallelo tra i due'
+    ],
+    correct:1,
+    explanation:'L\'occasione montaliana è un evento minimo — un volto, un oggetto, un profumo — che improvvisamente riapre un varco di senso come la madeleine proustiana attiva la memoria involontaria. Le Occasioni (1939) sono costruite su questo meccanismo.'
+  },
+
+  /* --- Vita --- */
+  { id:'m38', type:'mc', topic:'Vita',
+    text:'In quale città e anno nasce Montale?',
+    options:['A Firenze nel 1902','A Genova nel 1896','A Milano nel 1891','A La Spezia nel 1898'],
+    correct:1,
+    explanation:'Nasce a Genova nel 1896, ultimo di cinque figli di famiglia borghese di commercianti. Formazione autodidatta: diploma da ragioniere.'
+  },
+  { id:'m39', type:'mc', topic:'Vita',
+    text:'Quali letture caratterizzano la formazione intellettuale del giovane Montale?',
+    options:[
+      'Nietzsche, Freud e Marx',
+      'Schopenhauer, Nietzsche e la lirica italiana; appassionato di canto lirico',
+      'Simbolisti francesi e Verga',
+      'Sola lettura della letteratura italiana del Settecento'
+    ],
+    correct:1,
+    explanation:'Montale è autodidatta: lettore vorace di Schopenhauer e Nietzsche, appassionato di canto lirico. Queste letture forgiano il pessimismo cosmico e il gusto per la musicalità aspra.'
+  },
+  { id:'m40', type:'tf', topic:'Vita',
+    text:'Vero o falso: le estati a Monterosso al Mare (Cinque Terre, Liguria) forniscono il paesaggio che diventa correlativo oggettivo dell\'aridità interiore.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Il paesaggio ligure bruciato dal sole meridiano — muri scalcinati, prati polverosi, roccia e mare — è il correlativo oggettivo dell\'aridità interiore che permea tutta la prima raccolta.'
+  },
+  { id:'m41', type:'mc', topic:'Vita',
+    text:'Quale atto antifascista compie Montale nel 1925, anno di pubblicazione di «Ossi di seppia»?',
+    options:[
+      'Si iscrive al Partito Comunista',
+      'Pubblica una poesia esplicitamente contro Mussolini',
+      'Firma il Manifesto degli intellettuali antifascisti di Benedetto Croce; il libro è pubblicato dall\'editore antifascista Gobetti (ucciso dai fascisti poco dopo)',
+      'Si rifugia in Svizzera'
+    ],
+    correct:2,
+    explanation:'Nel 1925 «Ossi di seppia» è pubblicato da Gobetti, editore antifascista assassinato dai fascisti nel 1926. Montale firma il Manifesto di Croce. Gesto coraggioso in un anno di svolta del regime.'
+  },
+  { id:'m42', type:'tf', topic:'Vita',
+    text:'Vero o falso: Montale conosce Irma Brandeis (Clizia) a Firenze nel 1933, mentre è direttore del Gabinetto Vieusseux.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Dal 1929 al 1938 Montale è direttore del Gabinetto Vieusseux. Nel 1933 incontra Irma Brandeis (studiosa americana di Dante, ebrea) che diventerà la figura di Clizia nell\'opera poetica.'
+  },
+  { id:'m43', type:'mc', topic:'Vita',
+    text:'Perché nel 1938 Irma Brandeis deve tornare negli USA?',
+    options:[
+      'Per la fine del suo contratto universitario',
+      'Per le leggi razziali fasciste che la colpiscono in quanto ebrea — lo stesso anno Montale viene licenziato dal Vieusseux per non aver aderito al PNF',
+      'Per una lite personale con Montale',
+      'Per un incarico diplomatico del governo americano'
+    ],
+    correct:1,
+    explanation:'1938: doppia tragedia. Montale viene licenziato dal Vieusseux per rifiuto di iscriversi al PNF. Irma Brandeis (Clizia), ebrea, è costretta a rientrare in USA per le leggi razziali fasciste. La sua assenza forzata la trasforma in figura salvifica delle Occasioni.'
+  },
+  { id:'m44', type:'mc', topic:'Vita',
+    text:'Chi è Drusilla Tanzi e perché viene chiamata «Mosca»?',
+    options:[
+      'È la prima fidanzata di Montale; soprannome per la vivacità',
+      'È la moglie dal 1962 (convivente dal 1939); chiamata Mosca per gli occhiali spessi dovuti alla forte miopia, che ricordavano gli occhi di una mosca',
+      'È una poetessa amica; soprannome per il carattere irrequieto',
+      'È la madre di Montale; soprannome dato in famiglia'
+    ],
+    correct:1,
+    explanation:'Drusilla Tanzi: convivente dal 1939, moglie dal 1962. Fisicamente miope — gli occhiali spessi come occhi di mosca — ma dotata di un radar spirituale infallibile. La sua morte nel 1963 genera le poesie degli Xenia.'
+  },
+  { id:'m45', type:'tf', topic:'Vita',
+    text:'Vero o falso: durante la Resistenza (1943-45) Montale rimase a Firenze e ospitò intellettuali ebrei tra cui Umberto Saba.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Durante la Resistenza Montale è a Firenze, ospita e protegge intellettuali ebrei (tra cui Saba), ed è attivo nel CLN. Scrive le poesie di Finisterre (incluse poi nella Bufera).'
+  },
+  { id:'m46', type:'mc', topic:'Vita',
+    text:'Quale ruolo svolge Montale al Corriere della Sera a partire dal 1948?',
+    options:[
+      'Direttore del quotidiano',
+      'Redattore e critico letterario, musicale, teatrale — ruolo di moralista laico della cultura italiana per oltre trent\'anni',
+      'Corrispondente straniero da Parigi',
+      'Editorialista politico'
+    ],
+    correct:1,
+    explanation:'Dal 1948 al 1981 Montale è il principale critico letterario e culturale del Corriere della Sera. Il ruolo di moralista laico è il pendant della sua poesia: rigore e distanza, pochi ma precisi giudizi.'
+  },
+  { id:'m47', type:'mc', topic:'Vita',
+    text:'Chi è Anna degli Uberti (Arletta) e che ruolo svolge nell\'opera di Montale?',
+    options:[
+      'È la moglie Mosca in giovinezza',
+      'Ragazza incontrata adolescente a Monterosso, morta prematuramente: figura evanescente della giovinezza perduta, prefigurazione di Clizia',
+      'È Irma Brandeis nei suoi anni giovanili',
+      'È una figura inventata senza riferimento biografico'
+    ],
+    correct:1,
+    explanation:'Arletta/Anna degli Uberti: ragazza conosciuta da Montale adolescente a Monterosso. Morì prematuramente — la sua scomparsa la cristallizza come figura di pura luce e assenza. È la prefigurazione di Clizia: la prima figura femminile assente che incarna il desiderio di un bene irraggiungibile.'
+  },
+  { id:'m48', type:'mc', topic:'Vita',
+    text:'Chi è la «Volpe» nell\'opera di Montale?',
+    options:[
+      'Drusilla Tanzi in giovinezza',
+      'Maria Luisa Spaziani, poetessa piemontese: l\'anti-Clizia, corporeità e sensualità terrena contro la purezza intellettuale',
+      'Irma Brandeis nella fase finale',
+      'Un personaggio simbolico inventato'
+    ],
+    correct:1,
+    explanation:'Volpe = Maria Luisa Spaziani, poetessa piemontese. Rappresenta l\'antitesi di Clizia: corporeità, sensualità, istinto terreno contro la purezza intellettuale. Compare nella Bufera come alternativa quando l\'allegorismo non basta più.'
+  },
+  { id:'m49', type:'mc', topic:'Vita',
+    text:'Chi è Dora Markus e perché Montale le dedica una poesia?',
+    options:[
+      'È Irma Brandeis con un altro nome',
+      'Donna ebrea della Carinzia, vista in fotografia attraverso Umberto Saba: simbolo dei valori culturali europei minacciati dal nazifascismo',
+      'È una poetessa tedesca',
+      'È la sorella di Mosca'
+    ],
+    correct:1,
+    explanation:'Dora Markus: donna ebrea della Carinzia (Austria). Montale non la conobbe mai direttamente ma la vide in fotografia mostrata da Saba. È il simbolo dei valori culturali europei (civiltà ebraica, cultura mitteleuropea) minacciati dal nazifascismo.'
+  },
+
+  /* --- Poetica --- */
+  { id:'m50', type:'open', topic:'Poetica',
+    text:'Spiega con un esempio testuale cosa si intende per «pathetic fallacy» e come Montale la rovescia.',
+    modelAnswer:'La pathetic fallacy (errore patetico) è il procedimento romantico per cui il poeta proietta il proprio stato d\'animo nella natura: Leopardi, Pascoli, D\'Annunzio usano la natura come specchio dell\'animo. Montale la rovescia nella «divina Indifferenza»: in Spesso il male di vivere, la statua, la nuvola e il falco non soffrono con noi — semplicemente non soffrono. La natura non rispecchia l\'animo del poeta: ne è indifferente. Questo è il rovesciamento completo della tradizione romantica.',
+    keywords:['pathetic fallacy','divina Indifferenza','statua','nuvola','falco','non soffrono','rovesciamento']
+  },
+  { id:'m51', type:'mc', topic:'Poetica',
+    text:'Cosa dice esplicitamente Montale nel 1951 sull\'origine del male di vivere?',
+    options:[
+      'Nasce dalla guerra e dal fascismo',
+      'Nasce dalla perdita di Clizia',
+      'È «connaturato all\'esistenza»: il fascismo e la guerra aggravano ma non creano il problema',
+      'Nasce dall\'incapacità di credere in Dio'
+    ],
+    correct:2,
+    explanation:'Montale lo dice esplicitamente nel 1951: il male di vivere è «connaturato all\'esistenza». Non è un prodotto della storia. Il fascismo e la guerra aggravano una condizione preesistente e strutturale dell\'essere umano. Questo lo distingue da Ungaretti e Saba.'
+  },
+  { id:'m52', type:'tf', topic:'Poetica',
+    text:'Vero o falso: la frase-manifesto di Montale «ciò che non siamo, ciò che non vogliamo» esprime una poetica della negazione: la poesia può solo definire l\'uomo per esclusione.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. La poesia non illumina, non salva, non rivela — dice solo la negazione. Unica certezza: «ciò che non siamo, ciò che non vogliamo». Questa è la poetica dell\'Anti-Vate: rifiuto di ogni missione salvifica per la parola poetica.'
+  },
+  { id:'m53', type:'mc', topic:'Stile',
+    text:'Quale caratteristica stilistica accomuna tutte le raccolte di Montale tranne Satura?',
+    options:[
+      'Versi brevissimi di una sola parola',
+      'Assenza di punteggiatura',
+      'Endecasillabo classico e musicalità aspra e antimelodica',
+      'Tono satirico e ironico'
+    ],
+    correct:2,
+    explanation:'Dagli Ossi di seppia alla Bufera: recupero dell\'endecasillabo, musicalità aspra e antimelodica, lessico che mescola quotidiano e tecnico. In Satura la svolta è verso il prosastico e il colloquiale.'
+  },
+  { id:'m54', type:'open', topic:'Stile',
+    text:'Spiega l\'evoluzione delle quattro raccolte di Montale: quale filo logico le unisce?',
+    modelAnswer:'(1) Ossi di seppia (1925): registrazione del male, ricerca del varco nel paesaggio ligure. (2) Le occasioni (1939): la donna-angelo Clizia come varco umano; il correlativo oggettivo oscura il testo; stile più aristocratico, vicino all\'ermetismo. (3) La bufera (1956): la guerra come male assoluto; Clizia diventa allegoria cosmica; lo scacco è totale; allegorismo apocalittico. (4) Satura (1971): crollo dell\'allegorismo; ironia sarcastica sulla società di massa; solo il ricordo privato di Mosca salva qualcosa; stile prosastico e diaristico.',
+    keywords:['Ossi di seppia','Le occasioni','Clizia','La bufera','allegorismo','Satura','crollo','prosastico']
+  },
+
+  /* --- Opere --- */
+  { id:'m55', type:'mc', topic:'Opere · Ossi di seppia',
+    text:'Cosa sono gli «ossi di seppia» del titolo?',
+    options:[
+      'Frammenti di roccia ligure trovati in riva al mare',
+      'I residui calcarei dei molluschi abbandonati sulla spiaggia — ciò che resta quando la vita è ridotta all\'essenziale. Metafora dell\'uomo spogliato di ogni ornamento',
+      'Un tipo di pesce tipico del Mediterraneo',
+      'Una forma poetica medievale'
+    ],
+    correct:1,
+    explanation:'Gli ossi di seppia sono ciò che la vita ha lasciato: residui bianchi sulla spiaggia, erosi e vuoti. Sono l\'emblema dell\'uomo spogliato di ogni illusione. Ambivalenza: galleggiano (armonia) o sono relitti arenati (esilio, aridità).'
+  },
+  { id:'m56', type:'mc', topic:'Opere · Ossi di seppia',
+    text:'Qual è la struttura di «Ossi di seppia»?',
+    options:[
+      'Una sola sezione di 61 liriche',
+      '61 liriche in 4 sezioni + apertura (In limine) e chiusura (Riviere): Movimenti, Ossi di seppia, Mediterraneo, Meriggi e ombre',
+      '3 capitoli simmetrici di 20 poesie ciascuno',
+      'Un\'unica poesia suddivisa in canti'
+    ],
+    correct:1,
+    explanation:'Struttura articolata: 61 liriche in 4 sezioni principali (Movimenti, Ossi di seppia, Mediterraneo, Meriggi e ombre) con apertura (In limine) e chiusura (Riviere). L\'insieme ha una logica architettonica.'
+  },
+  { id:'m57', type:'mc', topic:'Opere · Le occasioni',
+    text:'Cos\'è la sezione «Mottetti» nelle «Occasioni»?',
+    options:[
+      'Poesie satiriche sulla borghesia',
+      '20 brevi poesie — il nucleo della raccolta: canzoniere d\'amore per Clizia assente',
+      'Una traduzione di mottetti musicali medievali',
+      'Poesie di argomento paesaggistico ligure'
+    ],
+    correct:1,
+    explanation:'I Mottetti sono 20 brevi poesie al centro delle Occasioni: il canzoniere d\'amore per Clizia (Irma Brandeis) assente. Il correlativo oggettivo è sviluppato al massimo: l\'emozione è «taciuta», restano solo gli oggetti (forbice, acacia, guscio di cicala).'
+  },
+  { id:'m58', type:'mc', topic:'Opere · La bufera',
+    text:'Cosa significa «bufera» nel titolo della terza raccolta?',
+    options:[
+      'Una tempesta marina delle Cinque Terre',
+      'La Seconda guerra mondiale — e anche la guerra cosmica e metafisica di sempre. «E altro» = lutti privati, eventi post-bellici',
+      'Una crisi sentimentale con Clizia',
+      'Il nazifascismo come movimento politico specifico'
+    ],
+    correct:1,
+    explanation:'«La bufera» è la Seconda guerra mondiale — ma anche la guerra metafisica, di sempre. «E altro» allude ai lutti privati e alla disillusione post-bellica. Clizia diventa figura quasi cristologica, messaggera cosmica.'
+  },
+  { id:'m59', type:'tf', topic:'Opere · Satura',
+    text:'Vero o falso: il titolo «Satura» ha tre significati sovrapposti: varietà (satura lanx), tono satirico e sazietà.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Satura lanx = piatto di primizie offerto agli dèi, quindi varietà di forme. Satira = tono sarcastico. Sazietà = averne abbastanza della volgarità della società di massa. Tre valenze in un solo titolo.'
+  },
+  { id:'m60', type:'mc', topic:'Opere · Satura',
+    text:'In cosa consiste la «svolta radicale» di Satura rispetto alle raccolte precedenti?',
+    options:[
+      'Ritorno all\'endecasillabo e all\'ermetismo',
+      'Rottura totale con l\'allegorismo: stile prosastico, colloquiale, ironico, autoparodico — la poesia scende dall\'olimpo nelle cose quotidiane',
+      'Abbandono della figura femminile nella poesia',
+      'Recupero del simbolismo romantico'
+    ],
+    correct:1,
+    explanation:'Satura rompe con tutto: niente più allegorismo, niente più oscurità ermetica. Stile prosastico, ironico, diaristico. La battuta conclusiva con effetto sorpresa. Montale autoparodia i propri temi precedenti.'
+  },
+
+  /* --- Testi · Non chiederci la parola --- */
+  { id:'m61', type:'mc', topic:'Testi · Non chiederci la parola',
+    text:'Cosa chiede il poeta di NON chiedergli in «Non chiederci la parola»?',
+    options:[
+      'Una formula magica che riveli la Verità assoluta',
+      'Poesie di argomento politico',
+      'Una poesia accessibile al grande pubblico',
+      'La traduzione di testi stranieri'
+    ],
+    correct:0,
+    explanation:'«Non chiederci la parola che squadri da ogni lato l\'animo nostro… Non domandarci la formula che mondi possa aprirti». Montale rifiuta la funzione magica/salvifica della parola: non si può né descrivere l\'animo con precisione né dare formule di salvezza.'
+  },
+  { id:'m62', type:'open', topic:'Testi · Non chiederci la parola',
+    text:'Spiega cosa intende Montale con l\'espressione «storta sillaba e secca come un ramo» in «Non chiederci la parola».',
+    modelAnswer:'La «storta sillaba e secca come un ramo» è la metafora di ciò che la poesia di Montale può offrire. Una sillaba «storta» non è armoniosa né musicale: è spezzata, aspra, antimelodica — il contrario dell\'eloquenza dannunziana. «Secca come un ramo» = senza vita ornamentale, senza fiori retorici. La poesia è un legno morto, non un fiore. Ma questa è la sua autenticità: la parola vera è bruciata dall\'onestà, non abbellita. È la definizione del classicismo problematico e dell\'Anti-Vate.',
+    keywords:['storta','antimelodica','secca come un ramo','Anti-Vate','legno morto','no ornamenti','autenticità']
+  },
+  { id:'m63', type:'mc', topic:'Testi · Non chiederci la parola',
+    text:'Qual è la struttura metrica di «Non chiederci la parola»?',
+    options:[
+      'Terzine dantesche regolari',
+      'Tre quartine con schema sonettistico libero (ABBA CDDC EFEF), prevalenza di endecasillabi e doppi settenari',
+      'Un\'unica strofa di 12 versi liberi',
+      'Cinque terzetti irregolari'
+    ],
+    correct:1,
+    explanation:'Tre quartine con schema sonettistico libero. Prevalenza di endecasillabi e doppi settenari. Tono argomentativo e antiretorico: la struttura rispecchia la posizione di rifiuto etico.'
+  },
+
+  /* --- Testi · Spesso il male di vivere --- */
+  { id:'m64', type:'mc', topic:'Testi · Spesso il male di vivere',
+    text:'Quali sono i tre correlativi oggettivi del «male di vivere» nella prima quartina?',
+    options:[
+      'La statua, la nuvola, il falco',
+      'Il mare, il sole, il vento',
+      'Il rivo strozzato, la foglia riarsa, il cavallo stramazzato',
+      'La muraglia, i cocci di bottiglia, le formiche'
+    ],
+    correct:2,
+    explanation:'Prima quartina: tre oggetti fisici = il male di vivere. Rivo strozzato = vita bloccata. Foglia riarsa = vita che si inaridisce. Cavallo stramazzato = morte improvvisa, brutalità. Nessuna spiegazione: sono il male di vivere.'
+  },
+  { id:'m65', type:'tf', topic:'Testi · Spesso il male di vivere',
+    text:'Vero o falso: in «Spesso il male di vivere», la seconda quartina presenta tre correlativi oggettivi della «divina Indifferenza» in opposizione perfetta ai tre del male.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Struttura perfettamente simmetrica: prima quartina = tre correlativi del male (rivo, foglia, cavallo); seconda quartina = tre correlativi della divina Indifferenza (statua, nuvola, falco). Due gruppi di tre oggetti in opposizione.'
+  },
+  { id:'m66', type:'mc', topic:'Testi · Spesso il male di vivere',
+    text:'Perché la «divina Indifferenza» in Montale non è la stessa cosa della beatitudine o della salvezza?',
+    options:[
+      'Perché è solo un\'ironia letteraria',
+      'Perché riguarda solo gli dèi e non gli uomini',
+      'Perché la grazia non è beatitudine: è semplicemente l\'essere al di fuori del dolore — non salva ma non soffre. La «divinità» è quasi ironica: solo gli dèi possono essere veramente indifferenti',
+      'Perché si raggiunge solo con la meditazione'
+    ],
+    correct:2,
+    explanation:'La divina Indifferenza non è la soluzione del problema del male: è la capacità di non essere toccati. La statua, la nuvola, il falco non soffrono — e questo è il massimo «bene» a disposizione. Non è redenzione, è non-dolore.'
+  },
+
+  /* --- Testi · Meriggiare --- */
+  { id:'m67', type:'mc', topic:'Testi · Meriggiare',
+    text:'Cosa rappresenta la «muraglia con i cocci aguzzi di bottiglia» in «Meriggiare»?',
+    options:[
+      'Un vero muro visto da Montale a Monterosso',
+      'La separazione tra Italia e Francia',
+      'L\'esistenza umana come prigione invalicabile: il varco non esiste',
+      'La divisione tra fascisti e antifascisti'
+    ],
+    correct:2,
+    explanation:'Il muro con i cocci è il simbolo centrale di tutta la poetica di Montale: l\'esistenza come muraglia invalicabile. I cocci rendono impossibile scavalcarla. Il varco non esiste — o è solo un barlume lontano come il mare intravisto tra le fronde.'
+  },
+  { id:'m68', type:'mc', topic:'Testi · Meriggiare',
+    text:'Che funzione ha l\'immagine delle formiche in «Meriggiare»?',
+    options:[
+      'È una descrizione naturalistica del paesaggio ligure',
+      'È un correlativo oggettivo del vano affaccendarsi umano senza meta',
+      'È un riferimento alle truppe fasciste',
+      'È un\'analogia con la poesia come lavoro instancabile'
+    ],
+    correct:1,
+    explanation:'Le formiche che «si rompono ed ora s\'intrecciano» senza meta rappresentano il vano affaccendarsi degli uomini. È un correlativo oggettivo puro: il lettore deve fare il collegamento senza che il testo lo dichiari esplicitamente.'
+  },
+  { id:'m69', type:'tf', topic:'Testi · Meriggiare',
+    text:'Vero o falso: «Meriggiare» contiene onomatopee come «schiocchi di merli», «frusci di serpi», «tremuli scricchi di cicale» che creano suoni aspri e antimelodici.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Il testo è costruito anche sonicamente: suoni aspri e antimelodici che incarnano il disagio esistenziale. «Schiocchi», «frusci», «scricchi» sono onomatopee che amplificano l\'aridità dell\'ambiente e dell\'animo.'
+  },
+
+  /* --- Testi · Cigola la carrucola --- */
+  { id:'m70', type:'mc', topic:'Testi · Cigola la carrucola',
+    text:'Qual è la struttura simbolica di «Cigola la carrucola nel pozzo»?',
+    options:[
+      'Il pozzo = la guerra; la carrucola = la memoria; l\'acqua = il lutto',
+      'Il pozzo = l\'inconscio e la memoria; la carrucola = il meccanismo della memoria; l\'acqua = il ricordo liquido e deformante; il volto nel cerchio d\'acqua = l\'immagine amata',
+      'Il pozzo = la società borghese; la carrucola = il lavoro; l\'acqua = il tempo',
+      'Il pozzo = la morte; la carrucola = la vita; l\'acqua = le lacrime'
+    ],
+    correct:1,
+    explanation:'Il simbolismo del pozzo: pozzo = profondità dell\'inconscio; carrucola = meccanismo della memoria; acqua = ricordo liquido e deformante; volto nel cerchio d\'acqua = l\'immagine amata. Tutti elementi che funzionano come correlativi oggettivi.'
+  },
+  { id:'m71', type:'open', topic:'Testi · Cigola la carrucola',
+    text:'In «Cigola la carrucola nel pozzo», come funziona il «varco» e perché fallisce?',
+    modelAnswer:'La carrucola attinge dal profondo del pozzo (l\'inconscio) un\'immagine del passato: il varco si apre. Per un istante l\'immagine amata sorride nel «puro cerchio» dell\'acqua. Ma subito si deforma, appartiene a un altro tempo. Il profilo sfuma nel vuoto, il pozzo torna muto, la ruota si ferma. Lo scacco è inevitabile: il passato non può essere recuperato. Il varco si apre e subito si chiude — questa è la condizione normale dell\'uomo in Montale. Non c\'è redenzione della memoria.',
+    keywords:['varco','scacco','immagine amata','deforma','profilo sfuma','passato irrecuperabile','pozzo torna muto']
+  },
+
+  /* --- Testi · Non recidere forbice --- */
+  { id:'m72', type:'mc', topic:'Testi · Non recidere forbice',
+    text:'A quale sezione delle «Occasioni» appartiene «Non recidere, forbice, quel volto»?',
+    options:['Finisterre','Mottetti — 20 brevi poesie d\'amore per Clizia assente','Mediterraneo','Silvae'],
+    correct:1,
+    explanation:'Appartiene ai Mottetti: 20 brevi poesie che formano il nucleo del canzoniere d\'amore per Clizia assente. Il correlativo oggettivo è al massimo: la prima strofa esprime l\'emozione (timore dell\'oblio), la seconda la sostituisce completamente con l\'immagine fisica.'
+  },
+  { id:'m73', type:'mc', topic:'Testi · Non recidere forbice',
+    text:'Qual è il parallelismo tra le due strofe di «Non recidere, forbice, quel volto»?',
+    options:[
+      'Prima strofa = paesaggio ligure; seconda strofa = paesaggio nordico',
+      'Prima strofa: forbice del tempo / memoria che si sfolla / volto di Clizia; seconda strofa: potatore che svetta / acacia che scrolla / guscio di cicala che cade nella belletta',
+      'Prima strofa = tono lirico; seconda strofa = tono satirico',
+      'Non c\'è parallelismo: sono due immagini indipendenti'
+    ],
+    correct:1,
+    explanation:'Parallelismo perfetto: forbice del tempo = potatore; memoria che si sfolla = acacia che scrolla; volto di Clizia che rischia l\'oblio = guscio vuoto di cicala; nebbia dell\'oblio = belletta di novembre. Il correlativo oggettivo sostituisce completamente l\'emozione.'
+  },
+  { id:'m74', type:'open', topic:'Testi · Non recidere forbice',
+    text:'Spiega perché il guscio vuoto della cicala è definito «correlativo oggettivo perfetto».',
+    modelAnswer:'Il guscio vuoto di cicala è emblema perfetto del correlativo oggettivo. La cicala cantava (il ricordo era vivo, la cicala produceva musica come il ricordo produce emozione). Ora è solo un involucro vuoto — il guscio abbandonato dopo la metamorfosi, senza vita dentro. Il ricordo di Clizia si è svuotato così: l\'emozione era presente, ora è una forma vuota che cade nel fango d\'autunno. Tutto in un\'immagine fisica, senza commento o spiegazione: il lettore deve fare il collegamento. Questa è l\'essenza del correlativo oggettivo.',
+    keywords:['cicala cantava','guscio vuoto','ricordo svuotato','cade nel fango','oblio','immagine fisica','senza commento']
+  },
+
+  /* --- Testi · Ho sceso dandoti il braccio --- */
+  { id:'m75', type:'mc', topic:'Testi · Ho sceso dandoti il braccio',
+    text:'Qual è il paradosso centrale di «Ho sceso, dandoti il braccio»?',
+    options:[
+      'Che il poeta accompagnava Mosca fisicamente ma era lei la più forte',
+      'Che la vita è lunga ma alla fine sembra breve',
+      'Che Mosca era fisicamente miope (pupille offuscate) ma aveva gli unici «veri occhi» — vedeva la realtà che conta, mentre lui che vedeva bene non vedeva nulla',
+      'Che scendere le scale è più difficile che salirle'
+    ],
+    correct:2,
+    explanation:'Il rovesciamento ironico: Mosca è fisicamente miope («pupille tanto offuscate»). Eppure «le sole vere pupille erano le tue». Lui vedeva bene fisicamente ma non vedeva ciò che conta. La miopia fisica è sguardo spirituale più acuto. Paradosso consapevole e costruito.'
+  },
+  { id:'m76', type:'tf', topic:'Testi · Ho sceso dandoti il braccio',
+    text:'Vero o falso: lo stile di «Ho sceso, dandoti il braccio» è prosastico e colloquiale, con lessico ordinario.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. «Le coincidenze, le prenotazioni, le trappole, gli scorni» — lessico del tutto ordinario. Nessuna metafora elevata, nessun allegorismo. La grandezza è nella prosaicità. È l\'emblema dello stile di Satura: colloquiale, ironico, diaristico.'
+  },
+  { id:'m77', type:'mc', topic:'Testi · Ho sceso dandoti il braccio',
+    text:'Come si distingue la figura di Mosca da quella di Clizia nella poesia montaliana?',
+    options:[
+      'Mosca è intellectuale come Clizia, solo in una raccolta diversa',
+      'Clizia è donna-angelo, allegoria dei valori umanistici, quasi cristologica; Mosca è guida pratica e quotidiana, fisicamente difettosa, con saggezza istintiva',
+      'Sono la stessa persona con due nomi diversi',
+      'Mosca è più giovane di Clizia'
+    ],
+    correct:1,
+    explanation:'Differenza fondamentale: Clizia è donna-angelo intellettuale, allegoria dei valori civili contro il fascismo, quasi cristologica. Mosca è l\'opposto: concreta, quotidiana, fisicamente imperfetta. Non è sublime ma più vera. La poesia per lei non ha nulla di elevato: è un biglietto d\'amore.'
+  },
+
+  /* --- Confronti avanzati --- */
+  { id:'m78', type:'mc', topic:'Confronti',
+    text:'Come si distingue il rapporto con la natura tra Ungaretti, Montale e Saba?',
+    options:[
+      'Tutti e tre usano la natura come sfondo neutro',
+      'Ungaretti: natura sacrale e cosmica (spazio di rivelazione); Montale: natura divinamente indifferente al dolore umano, aspra (correlativo oggettivo); Saba: natura biografica intimamente legata alla vita (Trieste, porto)',
+      'Solo Montale usa il paesaggio; gli altri due lo evitano',
+      'Tutti e tre rovesciano la pathetic fallacy'
+    ],
+    correct:1,
+    explanation:'Tre rapporti diversi: Ungaretti (natura = spazio sacrale di illuminazione, paesaggi dell\'anima); Montale (natura indifferente = correlativo oggettivo dell\'aridità esistenziale, rovescia la pathetic fallacy); Saba (natura = sfondo biografico concreto, non allegoria).'
+  },
+  { id:'m79', type:'mc', topic:'Confronti',
+    text:'Come si distinguono i tre poeti per il rapporto con la forma poetica?',
+    options:[
+      'Tutti e tre usano il verso libero',
+      'Ungaretti: verso-parola, no punteggiatura; Montale: endecasillabo classico ma aspro e problematico; Saba: metrica tradizionale come scelta etica consapevole',
+      'Solo Saba usa la metrica classica',
+      'Tutti e tre rompono con la tradizione in modo uguale'
+    ],
+    correct:1,
+    explanation:'Tre posizioni sulla forma: Ungaretti (verso-parola, no punteggiatura, massima concentrazione); Montale (endecasillabo e metrica classica, ma aspra e antimelodica — classicismo problematico); Saba (metrica tradizionale come scelta etica, non ingenuità).'
+  },
+  { id:'m80', type:'open', topic:'Confronti',
+    text:'Spiega perché «Ossi di seppia» vs «Allegria di naufragi» sono due titoli che sintetizzano due poetiche opposte.',
+    modelAnswer:'«Allegria di naufragi» di Ungaretti: ossimoro energico — il naufrago sopravvissuto prova allegria. C\'è movimento, sopravvivenza, resistenza vitale. Il titolo suggerisce che anche nel naufragio si può trovare un senso. «Ossi di seppia» di Montale: immagine di residui calcarei sulla spiaggia — ciò che resta quando la vita è ridotta all\'essenziale. Non c\'è sopravvivenza gioiosa: solo il relitto, il resto, la forma svuotata. Ungaretti suggerisce energia e slancio; Montale denuncia la riduzione, l\'erosione. I due titoli anticipano la distanza di fondo tra le due poetiche.',
+    keywords:['ossimoro','naufrago sopravvissuto','resistenza vitale','ossi di seppia','residui','erosione','relitto','confronto poetiche']
+  },
+
+  /* --- Sintesi --- */
+  { id:'m81', type:'mc', topic:'Sintesi',
+    text:'Quale «unico elemento distintivo» si deve saper dire all\'orale per Montale?',
+    options:[
+      'Il poeta della parola-illuminazione',
+      'Il poeta del correlativo oggettivo e del male di vivere',
+      'Il poeta della confessione onesta',
+      'Il poeta della tradizione classica recuperata'
+    ],
+    correct:1,
+    explanation:'Dalla sintesi del confronto: «Montale è il poeta del correlativo oggettivo e del male di vivere; Ungaretti è il poeta della parola-illuminazione; Saba è il poeta della confessione onesta».'
+  },
+  { id:'m82', type:'mc', topic:'Sintesi',
+    text:'Cosa afferma Montale nel discorso del Nobel del 1975?',
+    options:[
+      '«La poesia può ancora salvare il mondo»',
+      '«È ancora possibile la poesia?» — la domanda stessa sintetizza tutta la sua poetica del dubbio e dell\'Anti-Vate',
+      '«La poesia è il linguaggio di Dio»',
+      '«Il correlativo oggettivo è la tecnica del futuro»'
+    ],
+    correct:1,
+    explanation:'Il titolo del discorso Nobel 1975: «È ancora possibile la poesia?». Non una risposta ma una domanda. Questa incertezza strutturale è coerente con tutta la poetica: la poesia non dà certezze, non salva, può solo chiedersi se è ancora possibile.'
+  },
+  { id:'m83', type:'open', topic:'Sintesi',
+    text:'Costruisci la risposta orale al quesito: «Chi è Montale e quale posto occupa nella poesia italiana del Novecento?».',
+    modelAnswer:'Eugenio Montale (1896-1981) è uno dei tre grandi poeti del Novecento italiano. Nasce a Genova, si forma nel paesaggio ligure bruciato dal sole, e costruisce una poetica radicalmente anti-retorica. I concetti-chiave sono il correlativo oggettivo (l\'oggetto fisico che sostituisce l\'emozione) e il male di vivere (condizione esistenziale connaturata all\'uomo, non prodotta dalla storia). Si oppone a D\'Annunzio e al simbolismo: è l\'Anti-Vate. Le quattro raccolte principali (Ossi di seppia, Le occasioni, La bufera, Satura) seguono un filo logico dal muro al diario. Nobel 1975 con motivazione «interpretazione dell\'esistenza umana priva di illusioni». Posizione nella letteratura: né con la tradizione né con l\'avanguardia — una terza via lirica autonoma.',
+    keywords:['Genova','correlativo oggettivo','male di vivere','Anti-Vate','tre vie lirica','Nobel 1975','quattro raccolte','classicismo problematico']
+  },
+  { id:'m84', type:'mc', topic:'Confronti',
+    text:'In quale modo la figura femminile struttura l\'opera di Montale diversamente da Saba?',
+    options:[
+      'In Montale le figure femminili sono biografiche e concrete; in Saba sono allegoriche',
+      'In Montale le figure femminili (Clizia, Mosca, Arletta, Volpe, Dora Markus) strutturano tutta l\'opera come allegorie che cambiano con ogni raccolta; in Saba la moglie Lina è figura concreta e biografica, non allegoria',
+      'Non c\'è differenza: entrambi usano figure femminili allegoriche',
+      'Solo Montale ha figure femminili rilevanti'
+    ],
+    correct:1,
+    explanation:'Distinzione fondamentale: in Montale le figure femminili sono allegoriche e cambiano funzione con ogni raccolta (Clizia = donna-angelo → allegoria cristologica; Mosca = guida quotidiana). In Saba Lina/Carolina è concreta, autobiografica, onesta — coerente con la poetica dell\'onestà.'
+  },
+  { id:'m85', type:'tf', topic:'Vita',
+    text:'Vero o falso: dopo la morte di Mosca nel 1963, Montale entra in un lungo silenzio che si interrompe solo con Satura nel 1971.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Dopo La bufera (1956), Montale ha un lungo silenzio poetico di circa 15 anni. La morte di Mosca nel 1963 sblocca la scrittura: nascono le poesie degli Xenia (1964-1966), poi le Satura (1968-1970), raccolti nel volume Satura nel 1971.'
+  },
+  { id:'m86', type:'mc', topic:'Stile',
+    text:'Quale figura retorica struttura la poesia «Non chiederci la parola» attraverso le ripetizioni «Non chiederci» e «Non domandarci»?',
+    options:['Similitudine','Anafora — ripetizione della stessa struttura negativa ad inizio verso/periodo','Ossimoro','Correlativo oggettivo'],
+    correct:1,
+    explanation:'L\'anafora «Non chiederci la parola» (v. 1) e «Non domandarci la formula» (v. 9) crea struttura circolare e ritmica. La ripetizione della negazione sottolinea la poetica del rifiuto: niente formule magiche, niente salvezza verbale.'
+  },
+  { id:'m87', type:'mc', topic:'Testi · Meriggiare',
+    text:'Nella struttura di «Meriggiare», come procede la progressione narrativa?',
+    options:[
+      'Dal passato al presente',
+      'Dalla percezione sensoriale concreta (suoni, immagini del paesaggio) alla conclusione esistenziale (il muro)',
+      'Dal generale al particolare',
+      'Dal politico al personale'
+    ],
+    correct:1,
+    explanation:'La progressione è dalla percezione sensoriale (tre strofe: suoni aspri, formiche, mare lontano — tutto concreto e fisico) alla conclusione esistenziale (la muraglia con i cocci). Il paesaggio ligure porta verso la verità del muro.'
+  },
+  { id:'m88', type:'open', topic:'Poetica',
+    text:'Spiega il concetto di «allegorismo» in Montale e come si manifesta in Clizia nella «Bufera».',
+    modelAnswer:'L\'allegorismo è diverso dal simbolismo: nell\'allegoria un personaggio o oggetto «sta per» qualcos\'altro in modo programmato e razionale. Clizia, nelle Occasioni, è già allegoria dei valori umanistici contro il fascismo, costruita sul modello di Beatrice di Dante. Nella Bufera l\'allegorismo si intensifica: Clizia diventa figura quasi cristologica — intermediaria tra umano e divino, messaggera cosmica di speranza contro il nazifascismo. È il girasole (il suo nome riprende la ninfa innamorata di Apollo che si trasformò in girasole) che si sacrifica per tutti. L\'allegorismo apocalittico della Bufera porta questa costruzione all\'estremo, segnalando che la salvezza non arriva: solo la tensione verso di essa.',
+    keywords:['allegorismo','Clizia','Beatrice','cristologica','girasole','nazifascismo','salvezza mancata','Bufera']
+  },
+  { id:'m89', type:'mc', topic:'Confronti',
+    text:'Come si manifesta l\'antifascismo di Ungaretti, Saba e Montale?',
+    options:[
+      'Tutti e tre aderiscono a partiti antifascisti',
+      'Ungaretti: posizione controversa (aderisce inizialmente al regime); Saba: persecuzione concreta in quanto ebreo; Montale: rifiuta l\'iscrizione al PNF, firma Manifesto Croce, protegge ebrei durante la Resistenza',
+      'Solo Montale è esplicitamente antifascista',
+      'Tutti e tre fuggono dall\'Italia'
+    ],
+    correct:1,
+    explanation:'Tre posizioni diverse: Ungaretti (posizione controversa — adesione iniziale al fascismo); Saba (persecuzione diretta come ebreo con le leggi razziali 1938); Montale (antifascismo etico: licenziato dal Vieusseux, firma Manifesto, protegge ebrei durante la Resistenza).'
+  },
+  { id:'m90', type:'mc', topic:'Sintesi',
+    text:'Quale frase del testo riassume meglio «il filo rosso di tutta l\'opera di Montale»?',
+    options:[
+      '«M\'illumino d\'immenso»',
+      '«Ciò che non siamo, ciò che non vogliamo. La poesia di Montale parte dalla negazione — dal muro — e cerca sempre, invano, il varco»',
+      '«Spiega cosa intende Ungaretti con illuminazione»',
+      '«L\'uomo è felice perché sa che c\'è il varco»'
+    ],
+    correct:1,
+    explanation:'La box-quote del programma: «Ciò che non siamo, ciò che non vogliamo. La poesia di Montale parte dalla negazione — dal muro — e cerca sempre, invano, il varco.» Negazione + ricerca impossibile del varco = il filo rosso di tutta l\'opera.'
   }
 ],
 
@@ -979,6 +2410,580 @@ svevo: [
     options:['Vero','Falso'],
     correct:0,
     explanation:'Vero. In una lettera del 1927: «Forse s\'accorgerà che io non ho mai scritto che un romanzo solo in tutta la mia vita». I tre romanzi sono variazioni della stessa indagine sull\'inettitudine.'
+  },
+
+  /* --- Vita --- */
+  { id:'sv31', type:'mc', topic:'Vita',
+    text:'In quale città nasce Italo Svevo e in quale anno?',
+    options:['A Milano nel 1870','A Trieste nel 1861','A Vienna nel 1858','A Venezia nel 1865'],
+    correct:1,
+    explanation:'Nasce Ettore Schmitz a Trieste nel 1861, in un ambiente multiculturale: italiano, tedesco, dialetto triestino. La famiglia è ebraica, in stretto contatto con la cultura mitteleuropea.'
+  },
+  { id:'sv32', type:'mc', topic:'Vita',
+    text:'Dove si trasferisce Svevo nel 1873 per studiare e cosa vi legge?',
+    options:[
+      'A Parigi, dove legge i simbolisti francesi',
+      'A Vienna, dove studia medicina',
+      'In Germania, per un istituto commerciale riservato a studenti ebrei; vi legge Goethe, Schiller, Jean Paul, Shakespeare',
+      'A Roma, per frequentare la Scuola Normale'
+    ],
+    correct:2,
+    explanation:'Nel 1873 si trasferisce in Germania (istituto commerciale per studenti ebrei). Legge in lingua originale Goethe, Schiller, Jean Paul; in traduzione Shakespeare. La vocazione letteraria nasce in Germania.'
+  },
+  { id:'sv33', type:'tf', topic:'Vita',
+    text:'Vero o falso: Svevo lavora come impiegato bancario per quasi vent\'anni dopo il fallimento dell\'attività paterna.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Il padre si oppone alla vocazione letteraria; il fallimento dell\'attività paterna costringe Svevo a lavorare come impiegato presso la filiale triestina della Union Bank di Vienna per quasi vent\'anni. Continua a scrivere di nascosto.'
+  },
+  { id:'sv34', type:'mc', topic:'Vita',
+    text:'In quale anno Svevo pubblica «Una vita» e con quale pseudonimo?',
+    options:['1890, con il nome Ettore Schmitz','1893, con lo pseudonimo Italo Svevo','1898, con lo pseudonimo Emilio Brentani','1900, anonimo'],
+    correct:1,
+    explanation:'Nel 1893 pubblica «Una vita» con lo pseudonimo Italo Svevo. Il romanzo, pagato di tasca propria, non riscuote successo. Il nome è un programma che cristallizza la sua duplice formazione italiana e tedesca.'
+  },
+  { id:'sv35', type:'mc', topic:'Vita',
+    text:'Cosa fa Svevo nel 1899 che cambia radicalmente la sua vita?',
+    options:[
+      'Pubblica La coscienza di Zeno',
+      'Parte per Parigi',
+      'Viene assunto nella fabbrica del suocero Veneziani e avvia una carriera commerciale',
+      'Incontra Joyce per la prima volta'
+    ],
+    correct:2,
+    explanation:'Nel 1899 viene assunto nella fabbrica di vernici del suocero Veneziani. Diventa industriale di successo — una carriera commerciale che lo porterà a viaggiare in tutta Europa. Continua a scrivere ma smette di pubblicare.'
+  },
+  { id:'sv36', type:'tf', topic:'Vita',
+    text:'Vero o falso: dopo il fallimento di «Senilità» (1898) Svevo smette di scrivere completamente per 25 anni.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. Smette di PUBBLICARE per 25 anni, ma continua a scrivere in privato. È durante questo «silenzio» che matura le idee che sfocieranno nella Coscienza di Zeno (1923).'
+  },
+  { id:'sv37', type:'mc', topic:'Vita',
+    text:'Come si conclude la vita di Svevo nel 1928?',
+    options:[
+      'Muore a Trieste di vecchiaia nel proprio letto',
+      'Muore il 13 settembre in un incidente stradale in provincia di Treviso, mentre lavorava al quarto romanzo incompiuto Il vecchione',
+      'Muore a Vienna durante un\'operazione',
+      'Scompare durante un viaggio in treno verso Parigi'
+    ],
+    correct:1,
+    explanation:'Muore il 13 settembre 1928 in un incidente stradale in provincia di Treviso. Stava lavorando al quarto romanzo, Il vecchione/Il vegliardo. Restano solo cinque frammenti.'
+  },
+
+  /* --- Glossario / Poetica --- */
+  { id:'sv38', type:'mc', topic:'Poetica',
+    text:'Come definisce Svevo l\'inetto nel contesto della logica darwiniana?',
+    options:[
+      'L\'inetto è semplicemente un fallito privo di intelligenza',
+      'L\'inetto perde nella vita pratica ma percepisce più profondamente: la sua malattia è anche una forma di lucidità',
+      'L\'inetto è un superuomo nietzschiano che rifiuta la società',
+      'L\'inetto è l\'eroe della lotta di classe marxista'
+    ],
+    correct:1,
+    explanation:'L\'inetto sveviano è un uomo debole nell\'azione ma dotato di percezione più acuta. La sua inadeguatezza pratica si accompagna a una lucidità che i personaggi «sani» non possiedono. La malattia come forma di conoscenza.'
+  },
+  { id:'sv39', type:'mc', topic:'Poetica',
+    text:'Da quale filosofo Svevo deriva la tendenza dei personaggi all\'autoinganno e l\'immutabilità del carattere?',
+    options:['Nietzsche','Marx','Schopenhauer','Bergson'],
+    correct:2,
+    explanation:'Schopenhauer è il principale ispiratore. Da lui: la volontà cieca che supera la ragione, l\'autoinganno come costruzione di narrative rassicuranti, l\'immutabilità del carattere. I personaggi di Svevo non cambiano nonostante le esperienze.'
+  },
+  { id:'sv40', type:'tf', topic:'Poetica',
+    text:'Vero o falso: Svevo usa le categorie di Freud per costruire un romanzo che demolisce la fiducia nella psicanalisi come terapia.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Il paradosso fondamentale: Svevo usa il lessico freudiano (autoinganno, rimozione, atti mancati, lapsus, complesso edipico) per smontarlo dall\'interno attraverso l\'ironia di Zeno. La psicanalisi non può curare — può solo essere materiale letterario.'
+  },
+  { id:'sv41', type:'mc', topic:'Poetica',
+    text:'Cosa intende Svevo con la formula «La vita sarà letteraturizzata» (Il vecchione)?',
+    options:[
+      'Che la letteratura deve descrivere la vita con realismo',
+      'Che la scrittura è la terapia alternativa alla psicanalisi: dà valore esistenziale a situazioni che altrimenti finirebbero nell\'oblio',
+      'Che tutti gli uomini dovranno diventare scrittori',
+      'Che la vita quotidiana è già di per sé un romanzo'
+    ],
+    correct:1,
+    explanation:'«Non colui che visse ma colui che descrissi. La vita sarà letteraturizzata.» La scrittura dà valore esistenziale a situazioni altrimenti obliabili. È la terapia alternativa alla psicanalisi: non guarisce ma permette di convivere consapevolmente con la malattia.'
+  },
+  { id:'sv42', type:'mc', topic:'Poetica',
+    text:'Come Svevo applica il concetto bergsoniano di «tempo come durata» alla Coscienza di Zeno?',
+    options:[
+      'Usando un orologio come simbolo ricorrente nel romanzo',
+      'Descrivendo il tempo in modo scientifico e lineare',
+      'Traducendolo in un tempo misto: il presente di Zeno-narratore e il passato di Zeno-protagonista coesistono senza gerarchie, seguendo la coscienza non il calendario',
+      'Eliminando completamente le date dal romanzo'
+    ],
+    correct:2,
+    explanation:'Bergson: il tempo interiore (durata) non è lineare. In Zeno: il presente del narratore (57 anni, 1916) e il passato del protagonista (giovinezza/maturità) coesistono. Il racconto segue la coscienza, non il calendario — nessun ordine cronologico lineare.'
+  },
+  { id:'sv43', type:'open', topic:'Poetica',
+    text:'Spiega il ribaltamento darwiniano nella Coscienza di Zeno.',
+    modelAnswer:'Darwin divide il mondo in forti (lottatori) e deboli (sconfitti). Svevo eredita questa opposizione e la traduce in sani/malati. I personaggi «sani» (Macario in Una vita, Stefano Balli in Senilità, Guido in Zeno) vincono nella realtà pratica. Ma il narratore li guarda con ironia: la loro salute è spesso superficialità, la loro forza è ottusità. Nella Coscienza di Zeno il ribaltamento è completo: Zeno (l\'inetto) sopravvive, ha successo economico e familiare; Guido (il forte e brillante) si suicida per i debiti. Darwin è ribaltato: l\'inetto vince paradossalmente.',
+    keywords:['Darwin','forti e deboli','sani e malati','Guido muore','Zeno sopravvive','ribaltamento paradossale','ironia']
+  },
+
+  /* --- Stile --- */
+  { id:'sv44', type:'mc', topic:'Stile',
+    text:'Perché la prosa di Svevo contiene irregolarità e disarmonie sintattiche?',
+    options:[
+      'Perché non conosce bene l\'italiano',
+      'Per imitare lo stile di Zola',
+      'La prosa quotidiana con irregolarità mima la frammentazione psicologica dei personaggi — l\'«errore» è diventato stile',
+      'Per raggiungere un pubblico popolare'
+    ],
+    correct:2,
+    explanation:'Svevo cresce tra parlate diverse (triestino, italiano, tedesco) — autodidatta con formazione eterogenea. La sua prosa irregolare non è un difetto: è la traduzione stilistica della frammentazione psicologica. L\'irregolarità della lingua mima l\'irregolarità dell\'io.'
+  },
+  { id:'sv45', type:'tf', topic:'Stile',
+    text:'Vero o falso: nelle opere narrate in terza persona (Una vita, Senilità) Svevo usa il discorso indiretto libero per calarsi nella coscienza dei personaggi.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Il discorso indiretto libero lascia spazio ai pensieri e alla coscienza dei personaggi senza le virgolette del discorso diretto: fusione fluida tra voce narrante e coscienza del personaggio.'
+  },
+  { id:'sv46', type:'mc', topic:'Stile',
+    text:'Qual è la differenza narrativa principale tra Una vita/Senilità e La coscienza di Zeno?',
+    options:[
+      'Una vita e Senilità sono più lunghe di Zeno',
+      'Nelle prime due il narratore in terza persona corregge la visione distorta del protagonista; in Zeno la funzione correttiva scompare — il lettore è lasciato solo con l\'autoinganno del narratore inattendibile',
+      'Zeno è scritto in dialetto triestino',
+      'Nelle prime due è usata la prima persona; in Zeno la terza'
+    ],
+    correct:1,
+    explanation:'Nelle prime due opere: narratore terza persona distaccato che può smentire la visione distorta del protagonista, fornendo al lettore una chiave interpretativa diversa. In Zeno: narratore in prima persona inattendibile — il lettore è disorientato senza guida superiore.'
+  },
+
+  /* --- Opere --- */
+  { id:'sv47', type:'mc', topic:'Opere · Una vita',
+    text:'Come si conclude la vicenda di Alfonso Nitti in «Una vita»?',
+    options:[
+      'Trova un nuovo amore e ricomincia la vita',
+      'Riesce a coronare il sogno di sposare Annetta',
+      'Incapace di reagire al ritorno in banca dopo il viaggio al paese, si suicida',
+      'Emigra in America con una nuova identità'
+    ],
+    correct:2,
+    explanation:'Alfonso torna al paese natale quando la madre è morente; al ritorno trova Annetta fidanzata con Macario. Incapace di reagire, si suicida. Alfonso è l\'inetto inconsapevole: non capisce la propria inadeguatezza, si autoinganna fino alla fine.'
+  },
+  { id:'sv48', type:'mc', topic:'Opere · Senilità',
+    text:'Qual era il titolo originale di «Senilità» e cosa indica?',
+    options:[
+      '«Il romanzo di Emilio» — riferimento al protagonista',
+      '«Il carnevale di Emilio» — indica la natura illusoria del rapporto con Angiolina',
+      '«L\'inetto consapevole» — sintesi tematica',
+      '«La vita grigia» — il paesaggio triestino come simbolo'
+    ],
+    correct:1,
+    explanation:'Titolo originale: «Il carnevale di Emilio». Il titolo «Senilità» è rivelatore: Emilio è psicologicamente senile nonostante l\'età — incapace di crescita, bloccato nella stessa immaturità. La senilità non è età anagrafica ma stato psicologico.'
+  },
+  { id:'sv49', type:'mc', topic:'Opere · Senilità',
+    text:'Chi sono i «sani» e i «malati» in «Senilità»?',
+    options:[
+      'Malati: tutti; sani: nessuno',
+      'Perdenti/malati: Emilio e Amalia; vittoriosi/sani: Angiolina e Stefano Balli',
+      'Sano: solo Emilio alla fine; malati: tutti gli altri',
+      'Non c\'è distinzione sani/malati in Senilità'
+    ],
+    correct:1,
+    explanation:'Senilità: perdenti/malati sono Emilio (inetto consapevole ma immobile) e Amalia (che muore). Vittoriosi/sani sono Angiolina (spregiudicata, tradisce Emilio continuamente) e Stefano Balli (forte, conquista anche Amalia). Schema sano/malato chiaro e non ribaltato come in Zeno.'
+  },
+  { id:'sv50', type:'mc', topic:'Opere · La coscienza di Zeno',
+    text:'Chi scrive la Prefazione della Coscienza di Zeno e perché la pubblica?',
+    options:[
+      'Zeno la scrive da vecchio per lasciare un testamento',
+      'Il Dottor S. (lo psicanalista), che pubblica le memorie di Zeno per vendetta dopo che Zeno ha interrotto la terapia',
+      'La moglie Augusta, per onorare la memoria del marito',
+      'James Joyce, per far conoscere il capolavoro di Svevo in Italia'
+    ],
+    correct:1,
+    explanation:'La Prefazione è scritta dal Dottor S. (psicanalista): è l\'unico testo non scritto da Zeno. Il dottore, dopo che Zeno ha interrotto la terapia, pubblica le memorie per vendetta. Questo dispositivo narrativo è il meccanismo che mette in moto tutto il romanzo.'
+  },
+  { id:'sv51', type:'mc', topic:'Opere · La coscienza di Zeno',
+    text:'Cosa dimostra il capitolo sul matrimonio (Cap. 3) nella struttura della Coscienza di Zeno?',
+    options:[
+      'Che Zeno è un marito innamorato e fedele',
+      'Il paradosso che la fortuna premia l\'inetto: Zeno sposa per caso Augusta (la meno attraente delle sorelle Malfenti) e la scelta si rivela la migliore',
+      'Che i matrimoni borghesi sono sempre basati sull\'interesse',
+      'Che Zeno è deliberatamente crudele con le donne'
+    ],
+    correct:1,
+    explanation:'Cap. 3 — Il matrimonio: Zeno vuole una delle sorelle Malfenti (non Augusta), ma per una serie di circostanze fortuite sposa Augusta. La scelta casuale si rivela la più felice. «La fortuna premia l\'inetto»: schema del ribaltamento darwiniano già in azione.'
+  },
+  { id:'sv52', type:'mc', topic:'Opere · La coscienza di Zeno',
+    text:'Cosa accade a Guido nel capitolo 5 (L\'associazione commerciale)?',
+    options:[
+      'Vince in borsa e diventa ricchissimo',
+      'Si suicida per i debiti commerciali, e Zeno (l\'inetto) salva i conti e sopravvive',
+      'Scappa con i soldi della società',
+      'Emigra in America dopo il fallimento'
+    ],
+    correct:1,
+    explanation:'Cap. 5: Guido (brillante e forte, cognato di Zeno) gestisce male gli affari e accumula debiti. Si suicida. Zeno (l\'inetto) salva i conti. Darwin definitivamente ribaltato: il forte muore, l\'inetto sopravvive e vince.'
+  },
+  { id:'sv53', type:'tf', topic:'Opere · La coscienza di Zeno',
+    text:'Vero o falso: nell\'ultimo capitolo (Cap. 6) della Coscienza di Zeno, l\'io narrante e l\'io narrato coincidono, scomparendo la distanza ironica.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Nei capitoli precedenti c\'è distanza ironica: Zeno-narratore (a 57 anni) guarda dall\'alto il giovane Zeno. Nell\'ultimo capitolo (1915-1916, Prima Guerra Mondiale) i due punti di vista coincidono — la distanza ironica scompare di fronte all\'apocalisse.'
+  },
+
+  /* --- Testi --- */
+  { id:'sv54', type:'mc', topic:'Testi · Il vizio del fumo',
+    text:'Cosa simboleggia la struttura circolare del capitolo «Il fumo» nella Coscienza di Zeno?',
+    options:[
+      'Il progressivo miglioramento della salute di Zeno',
+      'La struttura circolare e contraddittoria come la mente di Zeno: il capitolo mima la psicologia che descrive',
+      'La struttura del vizio fisico del fumo',
+      'Il ciclo delle stagioni a Trieste'
+    ],
+    correct:1,
+    explanation:'Il capitolo non è lineare ma circolare e contraddittorio — come la mente del protagonista. La struttura è contenuto: il testo mima la psicologia che descrive. Ogni «ultima sigaretta» riporta al punto di partenza.'
+  },
+  { id:'sv55', type:'mc', topic:'Testi · Il vizio del fumo',
+    text:'Cosa dimostra il meccanismo delle «ultime sigarette»?',
+    options:[
+      'La forza di volontà di Zeno di fronte alla dipendenza',
+      'La malattia della volontà: Zeno sa di non voler smettere ma ha bisogno di crederlo. La sigaretta è il simbolo della volontà che si illude di sé stessa',
+      'Il potere curativo della psicanalisi',
+      'L\'influenza negativa della famiglia di Zeno'
+    ],
+    correct:1,
+    explanation:'L\'«ultima sigaretta» è il simbolo dell\'autoinganno: Zeno sa perfettamente di non voler smettere ma si racconta una storia diversa. La volontà è malata — né libera né pienamente compromessa. È la «malattia della volontà» schopenhaueriana tradotta in gesto quotidiano.'
+  },
+  { id:'sv56', type:'mc', topic:'Testi · Lo schiaffo del padre',
+    text:'Perché «Lo schiaffo del padre» è il capitolo più tragico senza ironia?',
+    options:[
+      'Perché è il capitolo più lungo e difficile tecnicamente',
+      'Perché il present del narratore e il passato del protagonista si fondono dolorosamente: Zeno non potrà mai sapere se lo schiaffo fu intenzionale o solo l\'agonia del moribondo',
+      'Perché descrive la morte del padre in modo naturalistico',
+      'Perché è l\'unico capitolo scritto con la punteggiatura regolare'
+    ],
+    correct:1,
+    explanation:'Lo schiaffo è irrisolvibile: fu punizione intenzionale o reazione inconsulta dell\'agonia? Il testo non risolve. Il presente del narratore e il passato del protagonista si fondono dolorosamente — la tipica ironia di Svevo scompare. «Egli era morto ed io non potevo più provargli la mia innocenza!»'
+  },
+  { id:'sv57', type:'mc', topic:'Testi · La salute di Augusta',
+    text:'Cosa dimostra il paradosso di Augusta nella Coscienza di Zeno?',
+    options:[
+      'Che la salute fisica è la vera condizione della felicità',
+      'Che la «salute» di chi non si interroga è una forma di cecità — il malato (Zeno) percepisce più del sano (Augusta)',
+      'Che le donne borghesi sono più sagge degli uomini',
+      'Che il matrimonio è la terapia più efficace'
+    ],
+    correct:1,
+    explanation:'Augusta è la salute personificata: regole semplici, vivere nel presente senza interrogarsi. Ma la sua salute è mancanza di consapevolezza. Zeno la analizza: «m\'accorgo che, analizzandola, la converto in malattia». Il malato percepisce più del sano — schema di tutto il romanzo.'
+  },
+  { id:'sv58', type:'mc', topic:'Testi · La vita inquinata',
+    text:'Qual è la «profezia apocalittica» dell\'ultimo capitolo della Coscienza di Zeno?',
+    options:[
+      'Che la guerra finirà presto e tornerà la pace',
+      'Che la psicanalisi guarirà l\'umanità',
+      'Un giorno un uomo, più malato degli altri, costruirà un ordigno capace di distruggere la Terra — e quella sarà l\'unica vera guarigione: la fine di tutto',
+      'Che Zeno diventerà il più sano di tutti'
+    ],
+    correct:2,
+    explanation:'Nell\'ultimo capitolo Zeno giunge alla conclusione radicale: la malattia non è sua ma della civiltà intera. La profezia: un uomo, più malato degli altri, costruirà l\'ordigno definitivo che distruggerà la Terra. È l\'unica «guarigione» possibile. Zeno ride amaro.'
+  },
+  { id:'sv59', type:'open', topic:'Testi · La vita inquinata',
+    text:'Spiega il ribaltamento di prospettiva che compie Svevo nel finale della Coscienza di Zeno.',
+    modelAnswer:'Nel corso del romanzo il problema sembra essere Zeno: è lui l\'inetto, lui il malato. Nel finale Svevo compie un definitivo ribaltamento: non è Zeno il problema, è la civiltà intera. L\'uomo moderno ha costruito strumenti, macchine, armi che ha messo nelle mani di chi non è abbastanza evoluto per usarli. La malattia non è una deviazione dalla norma — è la norma stessa della civiltà moderna. L\'inetto non è più l\'eccezione ma il rappresentante più lucido di una condizione universale. La conclusione è apocalittica: la sola guarigione possibile è la fine di tutto.',
+    keywords:['civiltà intera malata','ribaltamento','ordigno','unica guarigione','norma','modernità','apocalisse']
+  },
+
+  /* --- Confronti --- */
+  { id:'sv60', type:'mc', topic:'Confronti · Joyce',
+    text:'In cosa convergono tecnicamente Svevo e Joyce nella loro opera maggiore?',
+    options:[
+      'Entrambi usano il verso libero in testi poetici',
+      'Entrambi sperimentano il flusso di coscienza, la destrutturazione del tempo narrativo, il narratore inattendibile — L\'Ulisse e la Coscienza di Zeno escono in anni paralleli (1922-1923)',
+      'Entrambi ambientano le opere a Parigi',
+      'Entrambi usano il dialetto locale come lingua principale'
+    ],
+    correct:1,
+    explanation:'Convergenza modernista: Joyce (Ulisse, 1922) e Svevo (Coscienza di Zeno, 1923) — capolavori paralleli del modernismo europeo. Entrambi sperimentano flusso di coscienza, destrutturazione del tempo, narratore inattendibile. Joyce fu il tramite per la fama internazionale di Svevo.'
+  },
+  { id:'sv61', type:'mc', topic:'Confronti · Proust',
+    text:'Qual è la differenza fondamentale tra Svevo e Proust sul tema della memoria?',
+    options:[
+      'Proust non usa la memoria; Svevo la usa sempre',
+      'In Proust la memoria involontaria salva (tempo ritrovato); in Svevo la memoria è strutturalmente ingannevole e distorta — un\'altra forma di autoinganno',
+      'Svevo ha memoria più vasta di Proust',
+      'Non c\'è differenza: entrambi credono nella memoria come salvezza'
+    ],
+    correct:1,
+    explanation:'Differenza fondamentale: in Proust la madeleine attiva la memoria involontaria e permette un recupero autentico del tempo perduto — la memoria salva. In Svevo la memoria è strutturalmente inattendibile: ogni ricordo è già una rielaborazione distorta, un\'altra forma di autoinganno.'
+  },
+  { id:'sv62', type:'mc', topic:'Confronti · Pirandello',
+    text:'Svevo e Pirandello condividono la stessa diagnosi della modernità ma offrono risposte diverse. Qual è?',
+    options:[
+      'Entrambi vedono il teatro come soluzione',
+      'Svevo trova soluzione ironica (scrittura come convivenza con la malattia); Pirandello non trova soluzione (la frammentazione dell\'io è insuperabile)',
+      'Pirandello trova pace; Svevo non trova soluzione',
+      'Entrambi trovano la soluzione nella fuga dalla società'
+    ],
+    correct:1,
+    explanation:'Stessa diagnosi (l\'io non è unità stabile) ma risposte diverse. Svevo: l\'io è frammentato dalla incapacità di agire e dalla memoria ingannevole; soluzione ironica: la scrittura come convivenza. Pirandello: l\'io è frammentato dalle maschere sociali; nessuna soluzione: la frammentazione è insuperabile.'
+  },
+  { id:'sv63', type:'mc', topic:'Confronti · Schopenhauer',
+    text:'Come si manifesta l\'influenza di Schopenhauer nella volontà malata di Zeno?',
+    options:[
+      'Zeno usa la volontà per raggiungere i propri obiettivi con determinazione',
+      'La volontà razionale di Zeno (smettere di fumare, agire nella vita) è continuamente sconfitta da pulsioni più profonde — esattamente come la volontà cieca schopenhaueriana supera la ragione',
+      'Zeno rifiuta ogni forma di volontà e vive passivamente',
+      'La volontà di Zeno è assente — egli è puro caso'
+    ],
+    correct:1,
+    explanation:'Schopenhauer: l\'uomo è dominato da una volontà irrazionale che supera la ragione. In Zeno: la volontà razionale (smettere di fumare, fare buoni propositi) è continuamente sconfitta da pulsioni più profonde. Le «ultime sigarette» sono la perfetta traduzione narrativa della volontà cieca schopenhaueriana.'
+  },
+  { id:'sv64', type:'open', topic:'Confronti · Svevo e Pirandello',
+    text:'Confronta la visione dell\'io in Svevo e in Pirandello in almeno tre aspetti.',
+    modelAnswer:'(1) Concezione: Svevo — l\'io è inetto, diviso tra volontà e incapacità di agire; Pirandello — l\'io è frammentato, molteplice, senza un «originale» dietro le maschere. (2) Relazione con Freud: Svevo vicino ma critico (usa Freud per smontarlo dall\'interno); Pirandello distante (nessun inconscio, nessuna terapia). (3) Soluzione della crisi: Svevo ironica (la scrittura come convivenza con la malattia); Pirandello nessuna (la frammentazione è insuperabile). (4) Forma narrativa: Svevo il diario inattendibile e il narratore inaffidabile; Pirandello il monologo ragionante e il dialogo ossessivo.',
+    keywords:['inetto','volontà','maschere sociali','Freud critica','scrittura','nessuna soluzione','narratore inattendibile','monologo']
+  },
+
+  /* --- Sintesi --- */
+  { id:'sv65', type:'mc', topic:'Sintesi',
+    text:'Come descrive Svevo il contesto triestino come elemento della sua formazione?',
+    options:[
+      'Trieste è una città culturalmente isolata e provinciale',
+      'Trieste è una città di confine: italiana per lingua e cultura, asburgica per governo, mitteleuropea per mentalità — questa posizione di margine gli dà la distanza ironica per analizzare la borghesia',
+      'Trieste è una città solo italiana, senza contaminazioni straniere',
+      'Trieste è la capitale dell\'Impero Austro-Ungarico'
+    ],
+    correct:1,
+    explanation:'Trieste è una città di confine: italiana + asburgica + mitteleuropea. Componente ebraica, cultura tedesca, ambiente mercantile. Questa posizione di «margine» offre a Svevo la distanza ironica necessaria per analizzare la borghesia senza farne parte in modo acritico.'
+  },
+  { id:'sv66', type:'open', topic:'Sintesi',
+    text:'Costruisci la risposta orale: «Chi è Svevo e quale posto occupa nella narrativa italiana del Novecento?».',
+    modelAnswer:'Italo Svevo (Ettore Schmitz, 1861-1928) è il più grande narratore italiano del primo Novecento, scoperto tardi ma fondamentale. Nasce a Trieste, cresce in un ambiente multiculturale (italiano, tedesco, ebraico), lavora come impiegato bancario e poi industriale. La sua opera si articola in tre romanzi (Una vita 1893, Senilità 1898, La coscienza di Zeno 1923) che esplorano il personaggio dell\'inetto — uomo debole ma lucido. Il capolavoro è La coscienza di Zeno: narratore inattendibile, tempo frammentato, dialogo critico con Freud. Influenze: Schopenhauer, Bergson, Darwin, Joyce, Proust. Converge con il modernismo europeo. Il riconoscimento arriva tardi (grazie a Joyce) ma è definitivo. Posizione nella letteratura: innovatore radicale che rompe con il verismo e anticipa la narrativa del Novecento.',
+    keywords:['Trieste','inetto','trilogia','narratore inattendibile','Schopenhauer','Bergson','Joyce','modernismo','La coscienza di Zeno']
+  },
+
+  /* --- Extra (u67-sv90 se serve completare fino a 90) --- */
+  { id:'sv67', type:'mc', topic:'Opere',
+    text:'Qual è la struttura dei sei capitoli tematici della Coscienza di Zeno?',
+    options:[
+      'Sei capitoli in ordine cronologico dalla nascita alla vecchiaia di Zeno',
+      'Prefazione + Preambolo + 6 capitoli tematici: Il fumo, La morte di mio padre, Il matrimonio, La moglie e l\'amante, L\'associazione commerciale, Psico-analisi',
+      'Tre parti di due capitoli ciascuna, in ordine alfabetico',
+      'Sei sezioni senza titolo in ordine casuale'
+    ],
+    correct:1,
+    explanation:'Struttura: Prefazione (Dottor S.) + Preambolo (Zeno) + 6 capitoli tematici: Il fumo / La morte di mio padre / Il matrimonio / La moglie e l\'amante / L\'associazione commerciale / Psico-analisi. I capitoli sono tematici, non cronologici.'
+  },
+  { id:'sv68', type:'tf', topic:'Vita',
+    text:'Vero o falso: Svevo legge Freud e traduce in italiano «Il sogno» nel 1908.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Nel 1908 inizia a leggere Freud — evento epocale per Svevo scrittore. Traduce in italiano Il sogno (1901). Poi entra in contatto con lo psicanalista triestino Edoardo Weiss, formatosi alla scuola di Freud.'
+  },
+  { id:'sv69', type:'mc', topic:'Opere',
+    text:'Cos\'è «Vino generoso» (1926) e che temi svolge?',
+    options:[
+      'Una descrizione dei vini triestini di fine Ottocento',
+      'Un racconto in cui un uomo trasgredisce la dieta, beve molto vino, segue una notte di incubi rivelatori dell\'inconscio — il sogno come strumento freudiano di conoscenza',
+      'Un romanzo breve sulla produzione vinicola',
+      'Un articolo giornalistico sul commercio del vino'
+    ],
+    correct:1,
+    explanation:'Vino generoso (racconto, 1926): un uomo trasgredisce la dieta e beve. Segue una notte di incubi rivelatori dell\'inconscio. Il sogno come strumento freudiano di conoscenza di sé. Meccanismo dell\'autoinganno applicato al cibo e all\'alcol.'
+  },
+  { id:'sv70', type:'mc', topic:'Testi',
+    text:'Cosa dimostra la novella «Il buon vecchio e la bella fanciulla» (1926)?',
+    options:[
+      'Che i vecchi hanno più saggezza dei giovani',
+      'Che le relazioni tra anziani e giovani sono sempre paterne',
+      'Il meccanismo dell\'autoinganno applicato alla vecchiaia e all\'eros: un vecchio si dice che la sua relazione sarà solo amicizia, poi diventa amante, infine idealizza il desiderio come sentimento paterno',
+      'Che l\'amore vero supera la distanza anagrafica'
+    ],
+    correct:2,
+    explanation:'Il racconto applica il meccanismo dell\'autoinganno alla vecchiaia e all\'eros. Il vecchio costruisce narrative rassicuranti su sé stesso (amicizia → amante → sentimento paterno) man mano che il fisico non regge più. Il tipico autoinganno sveviano in un nuovo contesto.'
+  },
+  { id:'sv71', type:'mc', topic:'Poetica',
+    text:'Come usa Svevo Nietzsche nella costruzione dei personaggi?',
+    options:[
+      'Come modello positivo del superuomo da imitare',
+      'Come critico della borghesia e dei falsi miti: per Svevo Nietzsche è strumento di critica, non teorizzatore del superuomo',
+      'Come fonte del pessimismo cosmico',
+      'Come base della teoria del tempo come durata'
+    ],
+    correct:1,
+    explanation:'Svevo usa Nietzsche come critico dei falsi miti borghesi e della pluralità dell\'io — non come teorizzatore del superuomo (categoria che Svevo considera inapplicabile). La critica dei valori borghesi è il contributo nietzschiano alla sua narrativa.'
+  },
+  { id:'sv72', type:'mc', topic:'Poetica',
+    text:'Come Svevo applica Marx alla propria visione del mondo?',
+    options:[
+      'Come strumento di analisi della crisi dell\'uomo nella società capitalistica, ma elaborando un socialismo umanitario che rifiuta la fiducia marxiana nell\'azione organizzata delle masse',
+      'Come base per la rivoluzione operaia dei personaggi',
+      'Come fonte del materialismo storico che spiega i romanzi',
+      'Svevo non usa Marx in alcun modo'
+    ],
+    correct:0,
+    explanation:'Svevo usa Marx per analizzare la crisi nella società capitalistica, ma elabora un socialismo umanitario — rifiuta la fiducia marxiana nell\'azione organizzata delle masse. La critica della borghesia è marxiana; la diffidenza verso le soluzioni collettive è sveviana.'
+  },
+  { id:'sv73', type:'mc', topic:'Stile',
+    text:'Con quale corrente del modernismo europeo converge La coscienza di Zeno?',
+    options:[
+      'Con il futurismo italiano di Marinetti',
+      'Con il naturalismo di Zola',
+      'Con Joyce (Ulisse) e Proust (Alla ricerca del tempo perduto) — flusso di coscienza, tempo frammentato, narratore inattendibile',
+      'Con il simbolismo francese di Baudelaire'
+    ],
+    correct:2,
+    explanation:'La coscienza di Zeno converge con il modernismo europeo: Joyce (Ulisse, 1922) e Proust (Alla ricerca, iniziata 1913). Elementi comuni: flusso di coscienza, tempo frammentato e non lineare, narratore inattendibile. Svevo anticipa e partecipa al modernismo senza averne la consapevolezza teorica di Joyce.'
+  },
+  { id:'sv74', type:'open', topic:'Glossario',
+    text:'Spiega il concetto di «io narrante / io narrato» nella Coscienza di Zeno e perché nell\'ultimo capitolo la distanza scompare.',
+    modelAnswer:'L\'io narrante è Zeno a 57 anni (1916) che scrive dal presente; l\'io narrato è il giovane/adulto Zeno che agisce nel passato. Tra i due c\'è una distanza ironica: il Zeno-narratore guarda il Zeno-protagonista con distacco critico e autoironia, smascherandone gli autoinganni. Questa distanza è il motore del romanzo. Nell\'ultimo capitolo (1915-1916, Prima Guerra Mondiale) i due punti di vista coincidono: il presente del narratore raggiunge il presente degli eventi narrati, e la distanza ironica scompare di fronte all\'apocalisse. La voce di Zeno perde la leggerezza ironica e diventa diretta e angosciata.',
+    keywords:['io narrante','io narrato','57 anni','distanza ironica','motore del romanzo','ultimo capitolo','coincidono','apocalisse']
+  },
+  { id:'sv75', type:'mc', topic:'Glossario',
+    text:'Cosa intende Svevo con «autoinganno» come meccanismo psicologico?',
+    options:[
+      'Un errore accidentale di valutazione',
+      'Il meccanismo per cui i personaggi costruiscono narrazioni rassicuranti su sé stessi pur conoscendo la propria realtà — razionalizzazione e rimozione à la Freud ma usati ironicamente',
+      'Una forma di amnesia psicogena',
+      'Il rifiuto cosciente della realtà'
+    ],
+    correct:1,
+    explanation:'L\'autoinganno è il meccanismo centrale: i personaggi sanno la verità ma costruiscono storie alternative per non doverla affrontare. In Zeno: sa di non voler smettere di fumare ma si racconta di volerlo fare. Usa il lessico freudiano (razionalizzazione, rimozione) ma ironicamente — per smontarlo dall\'interno.'
+  },
+  { id:'sv76', type:'mc', topic:'Poetica',
+    text:'Cosa distingue la visione di Svevo sulla letteratura rispetto al verismo e all\'estetismo?',
+    options:[
+      'Svevo condivide l\'oggettività verista e l\'estetismo dannunziano',
+      'Svevo non crede nel letterato profeta di valori assoluti, non condivide l\'oggettività verista né l\'estetismo; la letteratura è strumento di analisi interiore con funzione terapeutica',
+      'Svevo segue il naturalismo di Zola senza variazioni',
+      'Svevo considera la letteratura solo un intrattenimento'
+    ],
+    correct:1,
+    explanation:'Svevo si distanzia dal verismo (nessuna oggettività) e dall\'estetismo (nessun culto della forma): per lui la letteratura è strumento di analisi interiore, ricerca privata con funzione terapeutica. È l\'alternativa alla psicanalisi — non guarisce ma permette di convivere con la malattia.'
+  },
+  { id:'sv77', type:'mc', topic:'Opere',
+    text:'Come definisce Svevo l\'inetto nella trilogia — tre varianti?',
+    options:[
+      'Alfonso = inetto consapevole; Emilio = inetto narrante; Zeno = inetto inconsapevole',
+      'Alfonso = inetto inconsapevole; Emilio = inetto consapevole ma immobile; Zeno = inetto ironico e narrante',
+      'Tutti e tre sono inetti allo stesso modo',
+      'Alfonso = inetto giovane; Emilio = inetto maturo; Zeno = inetto anziano'
+    ],
+    correct:1,
+    explanation:'Trilogia a tre varianti: Alfonso (Una vita) = inetto inconsapevole, non capisce la propria inadeguatezza fino alla morte. Emilio (Senilità) = inetto consapevole ma immobile, sa ma non cambia. Zeno (Coscienza di Zeno) = inetto ironico e narrante, si racconta con distanza critica e autoironia.'
+  },
+  { id:'sv78', type:'tf', topic:'Vita',
+    text:'Vero o falso: James Joyce incontra Svevo a Trieste nel 1907 come insegnante di inglese e promuove le sue opere in Francia.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Joyce arriva a Trieste nel 1907 come insegnante di inglese. Svevo è tra i suoi allievi. Joyce rimane colpito dalle capacità letterarie e promuove le opere di Svevo in Francia, dove la Coscienza di Zeno viene recensita favorevolmente prima che in Italia.'
+  },
+  { id:'sv79', type:'mc', topic:'Confronti',
+    text:'Come si differenziano le relazioni di Svevo e Pirandello con il proprio contesto geografico?',
+    options:[
+      'Entrambi sono romani di nascita e formazione',
+      'Svevo: Trieste — margine della civiltà asburgica, crocevia culturale che dà distanza ironica; Pirandello: Sicilia e Roma — Italia borghese e provinciale',
+      'Solo Svevo ha una dimensione geografica significativa',
+      'Pirandello è triestino e Svevo è siciliano'
+    ],
+    correct:1,
+    explanation:'Svevo: Trieste — margine della civiltà asburgica, crocevia tra cultura italiana, tedesca, ebraica. La posizione di confine dà distanza ironica. Pirandello: Sicilia e poi Roma — Italia borghese e provinciale. Il contesto geografico è centrale per comprendere la diversa prospettiva dei due.'
+  },
+  { id:'sv80', type:'mc', topic:'Sintesi',
+    text:'Qual è il significato della frase «L\'inetto vince, paradossalmente, alla fine. La malattia non è una deviazione dalla norma: è la norma»?',
+    options:[
+      'Che alla fine la salute è impossibile per tutti',
+      'Che Zeno (inetto) sopravvive, ha successo, mentre il forte Guido muore; e che la malattia moderna non è l\'eccezione — è la condizione normale dell\'uomo contemporaneo',
+      'Che la medicina non funziona mai',
+      'Che i personaggi deboli sono sempre i protagonisti dei romanzi'
+    ],
+    correct:1,
+    explanation:'La sintesi della poetica sveviana: Zeno sopravvive e vince (ribaltamento darwiniano). E nell\'ultimo capitolo Svevo generalizza: la malattia non è una deviazione individuale ma la norma della civiltà moderna. L\'inetto non è l\'eccezione — è il rappresentante più lucido di una condizione universale.'
+  },
+  { id:'sv81', type:'open', topic:'Opere · La coscienza di Zeno',
+    text:'Spiega come si collega il meccanismo del «complesso edipico» nello schiaffo del padre.',
+    modelAnswer:'La nevrosi di Zeno ha origine edipica: il conflitto irrisolto con la figura paterna. Il padre è in agonia per demenza cerebrale. Con un gesto supremo alza il braccio e lo lascia cadere sulla guancia del figlio. Poi muore. Zeno non saprà mai il significato autentico del gesto — fu punizione intenzionale o reazione inconsulta dell\'agonia? Il testo non risolve: questa irrisolvibilità è il punto. Lo schiaffo cristallizza tutto il conflitto irrisolto in un gesto che non potrà mai essere chiarito. Zeno porta questa ambiguità per sempre: «Egli era morto ed io non potevo più provargli la mia innocenza!»',
+    keywords:['complesso edipico','conflitto irrisolto','schiaffo ambiguo','punizione o agonia','irrisolvibilità','innocenza','padre']
+  },
+  { id:'sv82', type:'mc', topic:'Glossario',
+    text:'Qual è la differenza tra l\'inetto di Senilità (Emilio) e quello di Una vita (Alfonso)?',
+    options:[
+      'Non c\'è differenza sostanziale',
+      'Alfonso è fisicamente malato; Emilio è mentalmente sano',
+      'Alfonso è inetto inconsapevole (non capisce la propria inadeguatezza); Emilio è inetto consapevole ma immobile (sa di essere inadatto ma non riesce a cambiare)',
+      'Alfonso è un lavoratore; Emilio è un aristocratico'
+    ],
+    correct:2,
+    explanation:'Distinzione fondamentale: Alfonso (Una vita) non capisce la propria inadeguatezza — autoinganna sé stesso fino al suicidio. Emilio (Senilità) sa di essere inadatto, vede chiaramente la realtà di Angiolina — ma non riesce a cambiare. La consapevolezza non porta alla trasformazione. Questo approfondisce l\'inettitudine rispetto ad Alfonso.'
+  },
+  { id:'sv83', type:'tf', topic:'Poetica',
+    text:'Vero o falso: per Svevo l\'irregolarità sintattica della prosa è un difetto derivato dalla formazione plurilingue.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. È l\'opposto: l\'irregolarità sintattica è una scelta stilistica coerente — traduce la frammentazione psicologica dei personaggi. L\'«errore» diventa stile. La prosa irregolare mima l\'irregolarità dell\'io. Non è difetto ma tecnica.'
+  },
+  { id:'sv84', type:'mc', topic:'Confronti',
+    text:'Come influisce la lettura di Flaubert e Zola sulla prima produzione di Svevo?',
+    options:[
+      'Flaubert gli insegna la scrittura autobiografica; Zola il romanticismo',
+      'Flaubert: il disprezzo ironico del narratore per i personaggi (osservazione fredda); Zola: descrizioni dell\'ambiente di lavoro d\'ufficio e della vita borghese (influenza su Una vita)',
+      'Entrambi lo spingono verso il naturalismo italiano di Verga',
+      'Non c\'è influenza diretta di Flaubert e Zola su Svevo'
+    ],
+    correct:1,
+    explanation:'Flaubert: il disprezzo ironico del narratore per i propri personaggi — osservazione fredda e ironica. Zola: le descrizioni dell\'ambiente di lavoro d\'ufficio e della vita borghese influenzano Una vita (1893). Sono i modelli della «Fase 1» della produzione sveviana.'
+  },
+  { id:'sv85', type:'mc', topic:'Opere',
+    text:'Perché Il vecchione/Il vegliardo è importante nonostante sia incompiuto?',
+    options:[
+      'Perché è il romanzo più lungo di Svevo',
+      'Perché contiene la grande dichiarazione di poetica: «Non colui che visse ma colui che descrissi. La vita sarà letteraturizzata»',
+      'Perché è l\'unico romanzo con un finale felice',
+      'Perché Svevo vi descrive la propria morte'
+    ],
+    correct:1,
+    explanation:'Il vecchione (incompiuto, 5 frammenti) è importante per la grande dichiarazione di poetica: «Non colui che visse ma colui che descrissi. La vita sarà letteraturizzata.» Questa frase sintetizza tutta la poetica sveviana: la scrittura non è racconto del vissuto ma creazione di sé.'
+  },
+  { id:'sv86', type:'mc', topic:'Vita',
+    text:'Quale evento nel 1923 segna il definitivo riconoscimento letterario di Svevo?',
+    options:[
+      'Vincita di un premio letterario a Roma',
+      'La pubblicazione della Coscienza di Zeno, promossa da Joyce in Francia dove viene recensita favorevolmente prima che in Italia — il successo arriva a 62 anni',
+      'L\'incontro con Benedetto Croce a Napoli',
+      'La traduzione in tedesco di Una vita'
+    ],
+    correct:1,
+    explanation:'Nel 1923 pubblica La coscienza di Zeno. Joyce ne promuove la lettura in Francia, dove viene recensita favorevolmente. La critica italiana lo scopre finalmente. Il successo arriva a 62 anni — tardivo ma definitivo.'
+  },
+  { id:'sv87', type:'mc', topic:'Glossario',
+    text:'Cosa intende Svevo con «malattia della volontà»?',
+    options:[
+      'Una malattia fisica che colpisce il sistema nervoso',
+      'La condizione di chi ha la volontà paralizzata: né libera né pienamente compromessa. La volontà vuole agire ma non agisce, vuole cambiare ma non cambia',
+      'L\'assenza totale di volontà',
+      'La volontà eccessiva che porta all\'arroganza'
+    ],
+    correct:1,
+    explanation:'La malattia della volontà: la volontà è né libera né pienamente compromessa. Zeno sa cosa dovrebbe fare (smettere di fumare, essere fedele) ma non riesce. I buoni propositi vengono continuamente rinviati. È la traduzione narrativa della volontà cieca schopenhaueriana che supera la ragione cosciente.'
+  },
+  { id:'sv88', type:'tf', topic:'Vita',
+    text:'Vero o falso: Svevo è autodidatta letterario e questa libertà dai modelli accademici si traduce in innovazione.',
+    options:['Vero','Falso'],
+    correct:0,
+    explanation:'Vero. Non avendo ricevuto una vera formazione letteraria accademica, Svevo si sente meno legato ai modelli precedenti. Questa libertà si traduce in una prosa anomala — irregolare, sintattica — che però corrisponde perfettamente alla frammentazione psicologica dei personaggi. L\'«errore» diventa stile.'
+  },
+  { id:'sv89', type:'mc', topic:'Poetica',
+    text:'Perché Svevo rifiuta la psicanalisi come terapia ma ne usa il lessico?',
+    options:[
+      'Perché non conosce abbastanza la psicanalisi',
+      'La psicanalisi mira a «guarire» l\'uomo proprio da ciò che di più caratteristico ha: la malattia come elemento distintivo. Ma il lessico freudiano è utile per smontarla dall\'interno con l\'ironia di Zeno',
+      'Perché la psicanalisi è troppo costosa per i suoi personaggi',
+      'Perché Freud rifiuta di incontrare Svevo personalmente'
+    ],
+    correct:1,
+    explanation:'Paradosso fondamentale: Svevo usa il lessico e le categorie di Freud (autoinganno, rimozione, associazione libera, complesso edipico) per costruire un romanzo che demolisce la fiducia nella psicanalisi come terapia. La psicanalisi vuole guarire l\'uomo da ciò che lo rende unico — la sua «malattia». Svevo non accetta questa premessa.'
+  },
+  { id:'sv90', type:'open', topic:'Confronti · Darwin',
+    text:'Spiega l\'ironia darwiniana nella trilogia sveviana con riferimento specifico ai tre romanzi.',
+    modelAnswer:'Svevo eredita da Darwin la lotta tra forti e deboli ma la trasla ironicamente nell\'opposizione sani/malati. In Una vita: il forte è Macario (vince); il debole è Alfonso (si suicida). Schema darwiniano rispettato, ma il narratore guarda Macario con ironia — la sua forza è superficialità. In Senilità: i forti vincono (Angiolina, Stefano Balli) ma sono descritti come ottusi. I deboli (Emilio, Amalia) percepiscono di più. In La coscienza di Zeno: il ribaltamento è completo — Zeno (inetto) sopravvive, ha successo; Guido (brillante e forte) si suicida per i debiti. Darwin è definitivamente rovesciato: l\'inetto vince paradossalmente.',
+    keywords:['Darwin ribaltato','Macario','Alfonso','Guido muore','Zeno sopravvive','forti ottusi','inetto lucido','paradosso']
   }
 ],
 
@@ -1223,6 +3228,350 @@ pirandello: [
     text:'Perché Pirandello è considerato sorprendentemente attuale nell\'epoca dei social network?',
     modelAnswer:'Pirandello aveva diagnosticato un secolo fa quella che oggi viviamo come esperienza quotidiana: l\'identità come costruzione plurale di immagini per gli altri. Nell\'epoca dei social network tutti costruiamo la nostra immagine pubblica — su Instagram, LinkedIn, in chat, al lavoro, in famiglia. Siamo tutti «centomila»: per il collega, per il follower, per il partner, per il vecchio compagno di scuola, siamo persone diverse. La domanda «chi sono io per gli altri?» ha una concretezza inedita. L\'autoanalisi ossessiva di Vitangelo Moscarda davanti allo specchio (il naso che pende) anticipa la nostra fissazione con la propria immagine. La «maschera» è diventata profilo. L\'autoinganno di Mattia Pascal che pensa di poter ricominciare da capo trova eco nelle identità multiple online. Pirandello aveva anticipato la postmodernità: nessuna verità unica, identità come performance, ruolo come finzione.',
     keywords:['social network','centomila identità','profilo come maschera','autoanalisi','identità come performance','postmodernità','Moscarda anticipa']
+  },
+  { id:'pi31', type:'mc', topic:'Vita',
+    text:'Quale pensatore, citato nel file, sosteneva la teoria della molteplicità della personalità che influenzò il relativismo pirandelliano?',
+    options:['Sigmund Freud, con la teoria del sogno','Alfred Binet, con la riflessione sulla personalità multipla','Henri Bergson, con la teoria della durata','Friedrich Nietzsche, con la critica alla morale'],
+    correct:1,
+    explanation:'Alfred Binet e la sua riflessione sulla molteplicità della personalità — un\'identità non unitaria ma frammentata in tanti «centri» autonomi — è il riferimento esplicito per il relativismo conoscitivo pirandelliano.'
+  },
+  { id:'pi32', type:'mc', topic:'Vita',
+    text:'Per quale motivo Pirandello si iscrisse al Partito Nazionale Fascista nel 1924?',
+    options:['Per convinta adesione agli ideali nazionalisti del regime','Per delusione verso il fallimento del liberalismo, percependo il fascismo come «forza vitale e irrazionale»','Per ottenere il finanziamento statale al suo Teatro d\'Arte di Roma','Per sfuggire alle persecuzioni degli intellettuali di sinistra'],
+    correct:1,
+    explanation:'L\'iscrizione al PNF (1924) nasce da delusione per il fallimento liberale, non da convinzione ideologica. Il fascismo è percepito come «forza vitale e irrazionale» — quasi un\'incarnazione dell\'energia caotica della realtà.'
+  },
+  { id:'pi33', type:'mc', topic:'Vita',
+    text:'In che modo la convivenza con la moglie Antonietta Portolano contribuì alla formazione del relativismo conoscitivo di Pirandello?',
+    options:['Isolandolo dalla vita sociale e costringendolo a rifugiarsi nell\'immaginazione','Dimostrandogli in modo vivente l\'impossibilità di una verità univoca: lei vedeva tradimenti inesistenti costruendo un mondo parallelo','Ispirandogli direttamente la trama del Fu Mattia Pascal','Spingendolo a studiare la psicologia clinica di Freud per capirne la malattia'],
+    correct:1,
+    explanation:'Convivere per anni con Antonietta, che vedeva tradimenti inesistenti e costruiva un mondo parallelo, offre a Pirandello una dimostrazione vivente dell\'impossibilità di una verità univoca. «Se la moglie è convinta di una realtà diversa da quella che percepisco, chi dei due ha torto?»'
+  },
+  { id:'pi34', type:'tf', topic:'Vita',
+    text:'Pirandello ricevette il Premio Nobel per la Letteratura nel 1934.',
+    correct:true,
+    explanation:'Sì. Nel 1934 Pirandello riceve il Premio Nobel per la Letteratura, riconoscimento del suo contributo al teatro e alla narrativa moderni.'
+  },
+  { id:'pi35', type:'mc', topic:'Vita',
+    text:'Quale fu l\'ultima volontà di Pirandello riguardo ai suoi funerali, in conformità con la sua filosofia?',
+    options:['Volle essere sepolto nella contrada Caos di Agrigento dove era nato','Chiese una cerimonia funebre solenne con attori del suo Teatro d\'Arte','Chiese di essere cremato senza cerimonie — per «spogliare» l\'esistenza di ogni apparenza','Volle che il suo corpo fosse esposto nel teatro più famoso d\'Italia'],
+    correct:2,
+    explanation:'Pirandello aveva chiesto di essere cremato senza cerimonie — in conformità con la sua filosofia di «spogliare» l\'esistenza di ogni apparenza. Morì nel 1936 a Roma, lasciando incompiuta I giganti della montagna.'
+  },
+  { id:'pi36', type:'mc', topic:'Vita',
+    text:'Quale opera rimase incompiuta alla morte di Pirandello nel 1936?',
+    options:['Questa sera si recita a soggetto','Uno, nessuno e centomila','I giganti della montagna','I quaderni di Serafino Gubbio operatore'],
+    correct:2,
+    explanation:'Pirandello lascia incompiuta I giganti della montagna (opera della fase del «teatro dei miti», 1930-1936). Morì a Roma nel 1936.'
+  },
+  { id:'pi37', type:'tf', topic:'Vita',
+    text:'Secondo il file, l\'iscrizione al PNF di Pirandello nasce da una profonda convinzione ideologica nei valori del nazionalismo fascista.',
+    correct:false,
+    explanation:'Falso. L\'iscrizione al PNF (1924) nasce da delusione per il fallimento liberale, non da convinzione ideologica. Il fascismo è percepito come «forza vitale e irrazionale».'
+  },
+  { id:'pi38', type:'mc', topic:'Vita',
+    text:'Quale autore influenzò le prime prove narrative siciliane di Pirandello nella sua Fase 1 (Verismo siciliano)?',
+    options:['Giovanni Verga, che lo introdusse alla tradizione realistica','Luigi Capuana, sotto la cui influenza si sviluppa il verismo siciliano di Pirandello','Gabriele D\'Annunzio, che lo spinse verso la scrittura di teatro','Benedetto Croce, che finanziò le prime pubblicazioni'],
+    correct:1,
+    explanation:'Nella Fase 1 (Verismo siciliano), Pirandello è sotto l\'influenza di Capuana. Le prime prove narrative — L\'esclusa, Il turno — mostrano ambientazione siciliana e osservazione diretta della realtà sociale.'
+  },
+  { id:'pi39', type:'mc', topic:'Vita',
+    text:'Quali rivolgimenti culturali e scientifici caratterizzano il contesto in cui si forma Pirandello?',
+    options:['La certezza positivista del progresso e la stabilità dei valori borghesi','La crisi del positivismo, le scoperte di Freud, Nietzsche, Einstein, Bergson, Binet','La Seconda Rivoluzione Industriale e l\'entusiasmo per la tecnologia moderna','L\'affermarsi del Simbolismo francese in Italia'],
+    correct:1,
+    explanation:'Pirandello si forma nella crisi di fine Ottocento: il positivismo vacilla. Freud (L\'interpretazione dei sogni, 1900), Nietzsche (Morte di Dio), Einstein (Relatività), Bergson (percezione del tempo in discussione), Binet (molteplicità della personalità). In Italia: crisi degli ideali risorgimentali, divario Nord/Sud, corruzione politica.'
+  },
+  { id:'pi40', type:'open', topic:'Vita',
+    text:'Spiega come la crisi familiare con la moglie Antonietta diventò per Pirandello una «dimostrazione vivente» del relativismo conoscitivo.',
+    modelAnswer:'Antonietta Portolano sviluppò una paranoia che la portava a vedere tradimenti inesistenti e a costruire un mondo parallelo. Pirandello si trovò di fronte a un problema filosofico quotidiano: se la moglie era convinta di una realtà diversa, chi dei due aveva torto? La risposta pirandelliana è che non esiste un punto di osservazione neutro e assoluto. La realtà è sempre filtrata dalla soggettività. La crisi familiare divenne il laboratorio filosofico da cui nacque il relativismo conoscitivo: non esiste una verità univoca, ogni individuo vive nella propria versione della realtà.',
+    keywords:['Antonietta paranoia','tradimenti inesistenti','mondo parallelo','punto di osservazione neutro','verità univoca','realtà filtrata dalla soggettività','relativismo conoscitivo']
+  },
+  { id:'pi41', type:'mc', topic:'Poetica',
+    text:'Qual è il paradosso centrale del rapporto tra «Vita» e «Forma» nella poetica pirandelliana?',
+    options:['La Vita è stabile e la Forma è mobile: i personaggi cercano di stabilizzare la propria forma','Non puoi fare a meno di una Forma — senza di essa non esisti per la società — ma accettarla tradisce la tua vera natura mobile e contraddittoria','La Forma è oppressiva ma alla fine libera l\'individuo: chi la accetta trova pace','La Vita è un concetto astratto mentre la Forma è concreta e misurabile'],
+    correct:1,
+    explanation:'Il paradosso centrale: non puoi fare a meno di una Forma — senza un nome, senza un ruolo, non esisti per la società — ma accettare una Forma significa tradire la tua vera natura, che è mobile, contraddittoria, non riducibile. I personaggi pirandelliani sono intrappolati esattamente qui.'
+  },
+  { id:'pi42', type:'mc', topic:'Poetica',
+    text:'Cosa significa la formula «Uno, nessuno e centomila» nella poetica pirandelliana?',
+    options:['L\'individuo ha un solo vero io, che si smaschera progressivamente','Ogni individuo è «uno» come crede di essere, «nessuno» perché non esiste un sé autentico fisso, e «centomila» perché ogni persona che lo conosce lo vede diversamente','Il protagonista ha avuto tre vite separate, ciascuna con la propria identità','L\'anima umana è composta da tre parti: l\'io conscio, il sé sociale e il sé nascosto'],
+    correct:1,
+    explanation:'Formula: Uno, nessuno e centomila — ogni individuo è «uno» (come crede di essere), «nessuno» (perché non esiste un sé autentico e fisso), e «centomila» (perché ogni persona che lo conosce lo vede diversamente). L\'identità non è una sostanza, è un processo.'
+  },
+  { id:'pi43', type:'mc', topic:'Poetica',
+    text:'Il relativismo conoscitivo pirandelliano anticipa quali correnti filosofiche?',
+    options:['Il materialismo dialettico marxista e il realismo socialista','La fenomenologia, l\'ermeneutica e il prospettivismo nietzscheano','Il neoidealismo crociano e l\'estetica della forma','Il naturalismo e il positivismo evoluzionistico'],
+    correct:1,
+    explanation:'Dal punto di vista epistemologico, il relativismo di Pirandello anticipa la fenomenologia, l\'ermeneutica e il prospettivismo nietzscheano. La «verità» è sempre «la vostra» o «la mia», mai semplicemente «la verità».'
+  },
+  { id:'pi44', type:'mc', topic:'Poetica',
+    text:'Nell\'Umorismo (1908), qual è la differenza tra «avvertimento del contrario» e «sentimento del contrario»?',
+    options:['L\'avvertimento è la risposta intellettuale; il sentimento è quella viscerale e irrazionale','L\'avvertimento è la reazione istintiva e il riso immediato; il sentimento è quando la riflessione subentra e mescola riso e pietà','L\'avvertimento riguarda le cose fisiche; il sentimento riguarda le emozioni interiori','L\'avvertimento è tipico della commedia; il sentimento è tipico della tragedia'],
+    correct:1,
+    explanation:'Avvertimento del contrario: la reazione immediata e istintiva — ridiamo. Sentimento del contrario: quando subentra la riflessione — ci chiediamo il perché, immaginiamo la sofferenza nascosta. Il riso si mescola con la pietà e la comprensione. Implicazione etica: l\'umorismo è una forma di conoscenza empatica.'
+  },
+  { id:'pi45', type:'mc', topic:'Poetica',
+    text:'Quale ruolo svolge la follia nell\'universo pirandelliano?',
+    options:['È solo una condizione tragica e irrecuperabile, simbolo del fallimento della ragione borghese','È esclusivamente un pretesto narrativo per giustificare comportamenti irrazionali','È ambivalente: da un lato condizione tragica, dall\'altro forma paradossale di libertà — l\'unico spazio per sfuggire alle maschere','È una malattia curabile: i personaggi che la attraversano alla fine guariscono'],
+    correct:2,
+    explanation:'In Pirandello la follia è ambivalente. Da un lato è condizione tragica; dall\'altro è una forma paradossale di libertà, l\'unico spazio per sfuggire alle gabbie della normalità. Chi viene dichiarato «pazzo» non è più obbligato a portare le maschere sociali.'
+  },
+  { id:'pi46', type:'mc', topic:'Poetica',
+    text:'Quali tre opere compongono la trilogia metateatrale di Pirandello?',
+    options:['Il fu Mattia Pascal (1904), Enrico IV (1922), Novelle per un anno (1922–1937)','Sei personaggi in cerca d\'autore (1921), Ciascuno a suo modo (1924), Questa sera si recita a soggetto (1930)','L\'umorismo (1908), Così è (se vi pare) (1917), Enrico IV (1922)','I giganti della montagna, La vita che ti diedi, La nuova colonia'],
+    correct:1,
+    explanation:'La formula del «teatro nel teatro» è sviluppata nella trilogia: Sei personaggi in cerca d\'autore (1921), Ciascuno a suo modo (1924) e Questa sera si recita a soggetto (1930).'
+  },
+  { id:'pi47', type:'tf', topic:'Poetica',
+    text:'Secondo Pirandello, sotto la maschera sociale si nasconde un «vero io» autentico che il personaggio può liberare.',
+    correct:false,
+    explanation:'Falso. Sotto la maschera non c\'è un «vero io» da liberare. Ci sono solo altri strati di maschere, in una regressione senza fondo. L\'identità non è una sostanza, è un processo.'
+  },
+  { id:'pi48', type:'mc', topic:'Poetica',
+    text:'Cosa caratterizza il «furore retorico» dei personaggi pirandelliani?',
+    options:['Usano un linguaggio poetico e figurato, ricco di metafore e allegorie','Esprimono le proprie posizioni politiche con eloquenza nei discorsi pubblici','Parlano ossessivamente, analizzano e smontano le certezze proprie e altrui, pensano parlando — il dialogo come autopsia verbale del sé','Usano il dialetto siciliano per esprimere autenticità popolare'],
+    correct:2,
+    explanation:'I protagonisti parlano con un «furore retorico» che li distingue dagli altri personaggi. I ragionatori parlano troppo, si perdono in analisi sempre più sottili. I personaggi pensano parlando, si smontano nel parlare. Funzione quasi psicanalitica: autopsia verbale del sé.'
+  },
+  { id:'pi49', type:'mc', topic:'Poetica',
+    text:'Come definisce Benedetto Croce la prosa di Pirandello, e cosa si cela dietro questa definizione secondo il file?',
+    options:['«Brillante e ironica» — giudizio positivo che Pirandello condivideva','«Oscura e incomprensibile» — giudizio negativo che portò al rifiuto delle sue opere','«Grigia e monotona» — coglie un elemento reale ma lo interpreta negativamente: è una scelta deliberata per mimare la vacuità borghese','«Sublime e classica» — il massimo elogio del critico crociano'],
+    correct:2,
+    explanation:'Croce definisce la prosa di Pirandello «grigia e monotona» — coglie un elemento reale ma lo interpreta negativamente. In realtà è funzionale: nei testi borghesi diventa convenzionale e mediocre deliberatamente, per mimarne dall\'interno la vacuità.'
+  },
+  { id:'pi50', type:'tf', topic:'Poetica',
+    text:'Il dramma Così è (se vi pare) nasce dalla trasformazione della novella La signora Frola e il signor Ponza.',
+    correct:true,
+    explanation:'Sì. È un esempio dell\'osmosi tra le opere: la novella La signora Frola e il signor Ponza viene trasformata nel dramma Così è (se vi pare), che già nel titolo dichiara l\'irrisolvibilità della verità.'
+  },
+  { id:'pi51', type:'mc', topic:'Poetica',
+    text:'Quale delle seguenti descrive correttamente la «Fase 4» della produzione pirandelliana?',
+    options:['Verismo siciliano: influenza di Capuana, ambientazione siciliana, L\'esclusa e Il turno','Teatro della crisi: Sei personaggi (1921), Enrico IV (1922), trionfo internazionale','Teatro dei miti (1930–1936): temi simbolici e mitologici, I giganti della montagna (incompiuto)','La crisi dell\'io: Il fu Mattia Pascal (1904), L\'umorismo (1908), Novelle per un anno'],
+    correct:2,
+    explanation:'Fase 4 — Teatro dei miti (1930–1936): temi simbolici e mitologici, riflessione sulla sopravvivenza dell\'arte nella modernità. Include I giganti della montagna (incompiuto). Fase 1: Verismo siciliano. Fase 2: Crisi dell\'io. Fase 3: Teatro della crisi.'
+  },
+  { id:'pi52', type:'mc', topic:'Poetica',
+    text:'Nell\'osmosi tra le opere pirandelliane, quale novella viene trasformata nell\'opera teatrale L\'uomo dal fiore in bocca?',
+    options:['La patente','La carriola','La morte addosso','Il treno ha fischiato'],
+    correct:2,
+    explanation:'La novella La morte addosso diventa il dramma L\'uomo dal fiore in bocca. È un esempio dell\'unico grande corpus pirandelliano: situazioni, personaggi e testi interi passano da un\'opera all\'altra in un continuo processo di riscrittura.'
+  },
+  { id:'pi53', type:'open', topic:'Poetica',
+    text:'Usando la metafora del fiume, spiega la distinzione pirandelliana tra Vita e Forma.',
+    modelAnswer:'La metafora del fiume illustra la distinzione: la Vita è come un fiume — ha una natura continua e fluida, i nostri pensieri e desideri non stanno mai fermi, non siamo mai esattamente la stessa persona di ieri. La Forma è tutto ciò che cerca di fermare questo flusso e dargli un\'etichetta: il nostro nome, il nostro mestiere, il ruolo in famiglia. È come voler fotografare un fiume: nel momento in cui scatti, l\'acqua è già altrove. Il paradosso è che non puoi fare a meno di una Forma — senza nome e ruolo non esisti per la società — ma accettarla tradisce la tua vera natura mobile. Chi crede di avere un\'identità stabile si inganna; chi cerca di liberarsi da tutte le forme rischia di dissolversi, di essere nessuno.',
+    keywords:['fiume fluido','fotografare il fiume','Forma etichetta','paradosso','non puoi farne a meno','tradisce la natura','dissolversi nessuno']
+  },
+  { id:'pi54', type:'mc', topic:'Poetica',
+    text:'Come si differenzia lo sdoppiamento pirandelliano dalla tradizione del Doppelgänger romantico?',
+    options:['Nessuna differenza: Pirandello si ispira direttamente al doppio romantico senza modificarlo','Lo sdoppiamento pirandelliano è meno angoscioso e più ottimista','Non si tratta dello scontro tra due identità speculari, ma della scoperta che l\'identità stessa è una finzione — non esiste un «originale» da contrapporre a una «copia»','Lo sdoppiamento pirandelliano riguarda solo la dimensione fisica, quello romantico la dimensione psichica'],
+    correct:2,
+    explanation:'Pirandello è connesso alla tradizione del Doppelgänger romantico, ma lo porta a conseguenze più radicali: non si tratta dello scontro tra due identità speculari, ma della scoperta che l\'identità stessa è una finzione — non esiste un «originale» da contrapporre a una «copia».'
+  },
+  { id:'pi55', type:'tf', topic:'Poetica',
+    text:'Pirandello ritiene che la psicoanalisi freudiana possa risolvere la frammentazione dell\'io moderno.',
+    correct:false,
+    explanation:'Falso. Pirandello non crede nell\'unità del sé e non cerca terapia. La frammentazione dell\'io non è per lui una malattia da curare, ma la condizione normale e insuperabile dell\'essere umano moderno.'
+  },
+  { id:'pi56', type:'mc', topic:'Poetica',
+    text:'Cosa significa nel teatro pirandelliano che la «quarta parete scompare»?',
+    options:['Il palcoscenico perde il soffitto per fare entrare la luce naturale','Il teatro smette di fingere di non essere teatro: mostra i propri meccanismi, il pubblico è coinvolto nella riflessione sulla finzione','Il regista elimina fisicamente una delle pareti dello spazio scenico','Gli attori recitano senza scenografia per risparmiare sui costi'],
+    correct:1,
+    explanation:'La «quarta parete» è la convenzione per cui gli attori fingono che il pubblico non esista. Nel teatro pirandelliano questa scompare: il teatro si denuda, mostrando i propri meccanismi. Lo spettacolo diventa riflessione su sé stesso.'
+  },
+  { id:'pi57', type:'mc', topic:'Poetica',
+    text:'Perché i Personaggi dei Sei personaggi sono considerati «più reali» degli attori?',
+    options:['Perché gli attori sono pagati per recitare, mentre i Personaggi vivono la loro storia autenticamente','Perché l\'attore cambia sera dopo sera, mentre il Personaggio è fisso nella sua essenza — ha una paradossale «immortalità»','Perché i Personaggi sono ispirati a persone realmente esistite','Perché parlano in dialetto siciliano autentico'],
+    correct:1,
+    explanation:'L\'attore cambia sera dopo sera, mentre il Personaggio è fisso nella sua essenza. Questa è la paradossale «immortalità del personaggio»: la forma fissa la vita, la vita sfugge alla forma. Il Personaggio ha una vita propria che nessun attore può pienamente incarnare.'
+  },
+  { id:'pi58', type:'open', topic:'Poetica',
+    text:'Spiega perché il «sentimento del contrario» dell\'Umorismo è definito nel file una forma di conoscenza empatica, usando l\'esempio della vecchia imbellettata.',
+    modelAnswer:'Il sentimento del contrario è la fase in cui alla reazione istintiva del riso subentra la riflessione. Nell\'esempio della vecchia signora imbellettata e vestita da giovane, la prima reazione è il riso: percepiamo l\'incongruità. Ma poi la riflessione interviene: perché si veste così? Forse per trattenere il marito che la tradisce, o per non sentirsi abbandonata dai figli. Il riso si mescola con la pietà e la comprensione. Questo processo richiede empatia: immaginare la sofferenza nascosta dietro l\'apparenza comica. Pirandello chiama questo sentimento del contrario e lo definisce una forma di conoscenza empatica — non ci si ferma all\'apparenza grottesca, si tenta di capire la persona nella sua interezza. L\'umorismo non condanna, ma cerca di comprendere.',
+    keywords:['avvertimento riso','sentimento pietà','vecchia imbellettata','riflessione','empatia','marito che tradisce','comprensione','conoscenza empatica','umorismo non condanna']
+  },
+  { id:'pi59', type:'mc', topic:'Poetica',
+    text:'Come si differenziano l\'ironia e il grottesco nell\'universo stilistico pirandelliano?',
+    options:['L\'ironia riguarda la dimensione visiva e il grottesco quella sonora nelle opere teatrali','L\'ironia è lo strumento che presenta simultaneamente lato comico e doloroso; il grottesco è la distorsione/esagerazione in cui la pressione Vita-Forma ha prodotto una rottura visibile','L\'ironia è tipica delle novelle siciliane; il grottesco è tipico del teatro romano','L\'ironia è usata solo nelle opere teoriche; il grottesco nelle opere narrative'],
+    correct:1,
+    explanation:'L\'ironia è lo strumento per presentare simultaneamente il lato comico e quello doloroso. Il grottesco è la distorsione, l\'esagerazione: i personaggi grotteschi sono individui in cui la pressione tra vita e forma ha prodotto una rottura visibile, quasi esteriore.'
+  },
+  { id:'pi60', type:'mc', topic:'Poetica',
+    text:'In Enrico IV, perché il protagonista sceglie di continuare a fingersi pazzo dopo aver riacquistato la ragione?',
+    options:['Perché ha paura di non essere più amato dalla donna per cui si era vestito da imperatore','Perché la follia fittizia è diventata un\'abitudine impossibile da abbandonare dopo 12 anni','Perché quella maschera della follia gli offre una libertà e un potere che la vita «normale» non darebbe','Perché vuole vendicarsi di chi lo ha fatto credere pazzo'],
+    correct:2,
+    explanation:'Il protagonista ha la possibilità di uscire dalla follia ma sceglie consapevolmente di rimanere nel personaggio del folle imperatore, perché quella maschera gli offre una libertà che la vita «normale» non darebbe. La follia diventa così il suo esercizio più lucido della ragione.'
+  },
+  { id:'pi61', type:'mc', topic:'Opere',
+    text:'Nel Fu Mattia Pascal, perché il protagonista non può vivere come Adriano Meis?',
+    options:['Perché è riconosciuto dalla moglie che lo ha cercato per anni','Perché senza identità legale non può compiere nemmeno azioni quotidiane: non può denunciare un furto senza rischiare di essere scoperto','Perché Adriano Meis viene arrestato per frode e costretto a rivelare la vera identità','Perché si innamora della figlia del padrone di casa e non può sposarla senza nome legale'],
+    correct:1,
+    explanation:'Mattia finge la propria morte, si reinventa come Adriano Meis, poi scopre che vivere senza identità legale è impossibile: non può denunciare un furto senza rischiare di essere scoperto. Inscena un suicidio nel Tevere, torna al paese: la moglie si è risposata. Va a visitare la propria tomba.'
+  },
+  { id:'pi62', type:'mc', topic:'Opere',
+    text:'Quale osservazione della moglie Dida scatena la crisi esistenziale totale di Vitangelo Moscarda?',
+    options:['Gli dice che non la ama veramente e che è sempre stato un marito assente','Gli fa notare che il suo naso «pende un pochino verso destra»','Gli rivela che gli amici lo considerano un po\' sciocco','Gli dice che ha perso i capelli e sembra invecchiato di molto'],
+    correct:1,
+    explanation:'La moglie Dida fa notare a Vitangelo che il suo naso «pende un pochino verso destra». Osservazione banale — quasi comica. Vitangelo si guarda allo specchio e vede per la prima volta il proprio naso come lo vedono gli altri: estraneo. Da qui parte la crisi esistenziale totale.'
+  },
+  { id:'pi63', type:'mc', topic:'Opere',
+    text:'Come fu accolta la première dei Sei personaggi in cerca d\'autore a Roma nel 1921?',
+    options:['Fu accolta con entusiasmo immediato dal pubblico e dalla critica','Scandalizzò Roma; divenne presto un\'opera rappresentata in tutto il mondo, fondamentale per la nascita del teatro moderno','Passò quasi inosservata fino alla traduzione in francese','Fu censurata dal governo e la rappresentazione interrotta'],
+    correct:1,
+    explanation:'La première del 1921 scandalizza Roma; diventa presto un\'opera rappresentata in tutto il mondo. Fondamentale per la nascita del teatro moderno. La trilogia metateatrale comprende anche Ciascuno a suo modo (1924) e Questa sera si recita a soggetto (1930).'
+  },
+  { id:'pi64', type:'tf', topic:'Opere',
+    text:'L\'umorismo (1908) è un romanzo in cui Pirandello applica la sua teoria alla vita di un personaggio.',
+    correct:false,
+    explanation:'Falso. L\'umorismo (1908) è un saggio teorico — il manifesto della poetica pirandelliana. Prima parte: storico-filologica. Seconda parte: la distinzione avvertimento/sentimento del contrario. È anche una risposta ai crociani.'
+  },
+  { id:'pi65', type:'mc', topic:'Opere',
+    text:'Quante novelle furono realizzate per il progetto Novelle per un anno (1922–1937)?',
+    options:['Tutte e 365 come previsto','Circa 100, meno di un terzo','250 novelle su 365 previste','Solo 288 novelle nei 24 volumi completati'],
+    correct:2,
+    explanation:'Progetto ambizioso: 365 novelle in 24 volumi. Realizzate: 250 novelle su 365. Oscillano tra la Sicilia (personaggi grotteschi, lessico dialettale, forza plastica) e Roma (mondo piccolo-borghese, occhio freddo e distaccato).'
+  },
+  { id:'pi66', type:'mc', topic:'Opere',
+    text:'In Enrico IV, per quanti anni il protagonista rimane nella follia prima di riacquistare la ragione?',
+    options:['5 anni','12 anni','20 anni','Solo pochi mesi, poi la mantiene consapevolmente'],
+    correct:1,
+    explanation:'Durante una cavalcata in costume, un giovane cade e crede di essere Enrico IV di Germania. Dopo 12 anni riacquista la ragione, ma ha perso tutto. Sceglie di continuare a fingersi pazzo.'
+  },
+  { id:'pi67', type:'mc', topic:'Opere',
+    text:'Quale delle seguenti non è una delle novelle fondamentali citate nel file tra le Novelle per un anno?',
+    options:['Il treno ha fischiato','La patente','Il fu Mattia Pascal','La carriola'],
+    correct:2,
+    explanation:'Il fu Mattia Pascal è un romanzo (1904), non una novella delle Novelle per un anno. Le novelle fondamentali citate sono: Il treno ha fischiato, La patente, La carriola, La signora Frola e il signor Ponza, La morte addosso.'
+  },
+  { id:'pi68', type:'tf', topic:'Opere',
+    text:'Il romanzo Uno, nessuno e centomila fu iniziato a scrivere nel 1908, anche se pubblicato solo nel 1926.',
+    correct:true,
+    explanation:'Sì. Uno, nessuno e centomila (1926, iniziato 1908) è la formulazione più estrema del relativismo pirandelliano. La lunghissima stesura spiega perché materiali del romanzo vengano usati altrove nel frattempo.'
+  },
+  { id:'pi69', type:'mc', topic:'Opere',
+    text:'Nel Fu Mattia Pascal, quale personaggio introduce le metafore della lanterninosofia e dello strappo nel cielo di carta?',
+    options:['Mattia Pascal stesso, durante la riflessione sulla propria finta morte','Il teosofo Anselmo Paleari, padrone di casa di Adriano Meis a Roma','La moglie di Mattia, che riflette sul marito scomparso','Il notaio che gestisce il lascito della famiglia Pascal'],
+    correct:1,
+    explanation:'Il teosofo Anselmo Paleari — padrone di casa di Adriano Meis a Roma — fornisce le due metafore più celebri: la lanterninosofia (ogni essere umano porta un piccolo lanternino nel buio) e lo strappo nel cielo di carta.'
+  },
+  { id:'pi70', type:'open', topic:'Opere',
+    text:'Descrivi la struttura e il significato della trilogia metateatrale di Pirandello, spiegando il concetto di «teatro nel teatro».',
+    modelAnswer:'La trilogia metateatrale è composta da Sei personaggi in cerca d\'autore (1921), Ciascuno a suo modo (1924) e Questa sera si recita a soggetto (1930). La formula del teatro nel teatro porta la riflessione sulla rappresentazione alle conseguenze più radicali: lo spettacolo diventa riflessione su sé stesso. In Sei personaggi, personaggi abbandonati dall\'autore irrompono in una prova teatrale chiedendo di essere rappresentati; ma gli attori non riescono a cogliere la loro vita autentica. La quarta parete scompare: il teatro si denuda, mostrando i propri meccanismi. Il Personaggio, una volta creato, esiste indipendentemente dall\'autore ed è «più reale» dell\'attore perché è fisso nella sua essenza mentre l\'attore cambia sera dopo sera. Il teatro nel teatro riflette il tema centrale di tutta la poetica: il rapporto tra vita autentica e forma.',
+    keywords:['trilogia','Sei personaggi 1921','Ciascuno a suo modo 1924','Questa sera si recita 1930','quarta parete','teatro si denuda','Personaggio più reale','autonomia del personaggio','vita vs forma']
+  },
+  { id:'pi71', type:'mc', topic:'Opere',
+    text:'Quale scelta finale fa Vitangelo Moscarda alla fine di Uno, nessuno e centomila?',
+    options:['Si suicida, incapace di sopportare la perdita dell\'identità','Ritorna dalla moglie Dida, riconciliandosi con la propria vita borghese','Rinuncia a ogni proprietà, ruolo e nome — sceglie di essere «nessuno» e si ritira in un ospizio','Emigra all\'estero per ricominciare con una nuova identità'],
+    correct:2,
+    explanation:'La gente lo crede pazzo; viene internato. Sceglie di essere «nessuno»: rinuncia a ogni proprietà, ruolo e nome. Si ritira in un ospizio. L\'identità individuale non esiste come sostanza: è solo la somma delle percezioni altrui.'
+  },
+  { id:'pi72', type:'mc', topic:'Opere',
+    text:'Come è strutturato il saggio L\'umorismo (1908)?',
+    options:['Tre parti: storia, teoria e applicazione alle opere di Pirandello','Prima parte storico-filologica (etimologia, umorismo come tradizione letteraria); seconda parte: la distinzione fondamentale avvertimento/sentimento del contrario','Prima parte: analisi delle commedie di Shakespeare; seconda parte: la teoria del riso applicata alla letteratura italiana','È una raccolta di saggi brevi senza struttura organica'],
+    correct:1,
+    explanation:'Il saggio L\'umorismo (1908): Prima parte storico-filologica, etimologia del termine, l\'umorismo come tradizione letteraria. Seconda parte: la distinzione fondamentale tra avvertimento del contrario (reazione istintiva, riso) e sentimento del contrario (riflessione + pietà).'
+  },
+  { id:'pi73', type:'mc', topic:'Opere',
+    text:'Di quale trilogia fanno parte Ciascuno a suo modo (1924) e Questa sera si recita a soggetto (1930)?',
+    options:['La trilogia dell\'identità, insieme a Uno, nessuno e centomila','La trilogia metateatrale del «teatro nel teatro», insieme a Sei personaggi in cerca d\'autore (1921)','La trilogia siciliana, insieme a L\'esclusa','La trilogia della crisi, insieme al Fu Mattia Pascal'],
+    correct:1,
+    explanation:'Ciascuno a suo modo (1924) e Questa sera si recita a soggetto (1930) fanno parte della trilogia metateatrale del «teatro nel teatro», insieme a Sei personaggi in cerca d\'autore (1921).'
+  },
+  { id:'pi74', type:'tf', topic:'Opere',
+    text:'Nel Fu Mattia Pascal, dopo aver finto la morte, Mattia si reinventa sotto il nome di Adriano Meis.',
+    correct:true,
+    explanation:'Sì. Mattia finge la propria morte, si reinventa come Adriano Meis, poi scopre che vivere senza identità legale è impossibile. Inscena un suicidio nel Tevere, torna al paese: la moglie si è risposata. Va a visitare la propria tomba.'
+  },
+  { id:'pi75', type:'mc', topic:'Opere',
+    text:'Le Novelle per un anno oscillano tra due ambientazioni principali. Quali sono le loro caratteristiche stilistiche rispettive?',
+    options:['Nord Italia (stile realistico lombardo) vs. Sud Italia (stile neorealista pugliese)','Sicilia (personaggi grotteschi, lessico dialettale, forza plastica) vs. Roma (mondo piccolo-borghese, occhio freddo e distaccato)','Milano (stile industriale moderno) vs. Napoli (commedia dell\'arte e tradizione popolare)','Parigi (stile decadente e simbolista) vs. Palermo (verismo di matrice verghiana)'],
+    correct:1,
+    explanation:'Le novelle oscillano tra la Sicilia (personaggi grotteschi, lessico dialettale, forza plastica) e Roma (mondo piccolo-borghese, occhio freddo e distaccato). Nelle novelle siciliane la scrittura acquista vivacità; in quelle borghesi romane diventa convenzionale e mediocre — deliberatamente.'
+  },
+  { id:'pi76', type:'mc', topic:'Testi',
+    text:'Chi è Belluca, protagonista de Il treno ha fischiato, e cosa gli succede?',
+    options:['Un contadino siciliano che sogna di fuggire in città','Un piccolo impiegato schiacciato da una vita di miseria totale che «impazzisce» quando il fischio di un treno lontano riattiva in lui la coscienza che il mondo esiste','Un ferroviere che perde il lavoro, simbolo della disoccupazione industriale','Un professore che ha perso la memoria e si rifà una vita lontano dalla famiglia'],
+    correct:1,
+    explanation:'Belluca è un piccolo impiegato schiacciato da una vita di miseria: lavora fino allo sfinimento, mantiene una famiglia enorme, non ha un istante per sé. Un collega narratore capisce: stanotte Belluca ha sentito fischiare un treno lontano — e ha ricordato che il mondo esiste. La cornice narrativa mette in pratica il principio dell\'umorismo: primo punto di vista il riso, secondo il sentimento del contrario.'
+  },
+  { id:'pi77', type:'mc', topic:'Testi',
+    text:'Cosa simboleggia il gesto di far fare la carriola alla cagnolina ne La carriola?',
+    options:['La crudeltà inconscia della borghesia verso i più deboli','L\'unico momento in cui l\'avvocato si sente davvero libero e sé stesso — al di là di tutti i ruoli imposti; gesto assurdo che è l\'unica autenticità possibile','Il desiderio infantile che sopravvive sotto la maschera del professionista rispettato','La metafora del capovolgimento dei valori tradizionali nella modernità'],
+    correct:1,
+    explanation:'L\'avvocato affermato scopre che la sua vita non gli appartiene: è una serie di ruoli imposti. In un momento solitario, prende la cagnolina e la fa fare la carriola. Gesto assurdo, infantile, privo di senso razionale. È l\'unico momento in cui si sente davvero libero. La libertà si riduce a qualcosa di grottesco — il che suggerisce che forse non esiste una vera libertà.'
+  },
+  { id:'pi78', type:'mc', topic:'Testi',
+    text:'Perché Rosario Chiàrchiaro de La patente si presenta in tribunale chiedendo il riconoscimento ufficiale di iettatore?',
+    options:['Perché vuole dimostrare scientificamente che la iettatura esiste','Per sfruttare economicamente la paura altrui — appropriarsi della maschera imposta e farne strumento di sopravvivenza','Per vendicarsi dei compaesani che lo hanno escluso dalla vita sociale','Per ottenere una pensione statale come persona emarginata'],
+    correct:1,
+    explanation:'Chiàrchiaro, esasperato dall\'immagine di iettatore impostagli, ha un\'idea paradossale: chiedere al giudice il riconoscimento ufficiale per sfruttare economicamente la paura altrui. Invece di liberarsi dall\'immagine, sceglie di appropriarsela e farne strumento di sopravvivenza. Umorismo pirandelliano nella sua forma più amara.'
+  },
+  { id:'pi79', type:'mc', topic:'Testi',
+    text:'Nella novella La signora Frola e il signor Ponza, cosa afferma la signora Ponza quando viene finalmente chiamata a testimoniare?',
+    options:['Conferma la versione di Ponza: è la seconda moglie, non la figlia della Frola','Conferma la versione della Frola: è davvero sua figlia, tenuta segregata','Afferma di essere «nessuna» — sia la figlia della Frola sia la seconda moglie di Ponza — solo ciò che ciascuno ha bisogno che sia','Dichiara di non ricordare nulla'],
+    correct:2,
+    explanation:'La signora Ponza afferma di essere sia la figlia della Frola sia la seconda moglie di Ponza: è «nessuna», è solo ciò che ciascuno ha bisogno che sia. L\'irrisolvibilità dell\'enigma è la tesi: non esiste una versione «vera» della storia.'
+  },
+  { id:'pi80', type:'tf', topic:'Testi',
+    text:'La metafora della lanterninosofia si trova nel romanzo Uno, nessuno e centomila.',
+    correct:false,
+    explanation:'Falso. La lanterninosofia si trova nel Fu Mattia Pascal (capitoli centrali), introdotta dal teosofo Anselmo Paleari — padrone di casa di Adriano Meis a Roma. Non è in Uno, nessuno e centomila.'
+  },
+  { id:'pi81', type:'mc', topic:'Testi',
+    text:'Nello strappo nel cielo di carta (introdotto nel Fu Mattia Pascal da Paleari), cosa vede il burattino?',
+    options:['Vede il pubblico in platea che ride di lui','Il burattino che interpreta Oreste, nel momento più drammatico, alza la testa e vede uno strappo nel fondale dipinto — il buio vero al di là della finzione','Vede il burattinaio che lo muove e realizza di non avere libero arbitrio','Vede riflessa la propria immagine in un vetro rotto'],
+    correct:1,
+    explanation:'Lo strappo nel cielo di carta: il burattino che interpreta Oreste alza la testa e vede uno strappo nel fondale dipinto. Vede il buio vero al di là della finzione. L\'uomo moderno sa che il «cielo» che lo sovrasta è solo carta dipinta, una convenzione. Il dramma non è più possibile — solo l\'angoscia e l\'ironia.'
+  },
+  { id:'pi82', type:'mc', topic:'Testi',
+    text:'Qual è la struttura argomentativa del passo sulla vecchia imbellettata nell\'Umorismo?',
+    options:['Prima la critica morale alla vanità, poi l\'analisi sociologica della condizione femminile','Una strategia in due tempi: prima la reazione immediata (riso), poi la smonta con la riflessione che porta pietà e comprensione','Un\'unica analisi filosofica astratta, senza esempi concreti','Prima il contesto storico, poi l\'applicazione della teoria estetica'],
+    correct:1,
+    explanation:'Strategia argomentativa in due tempi: prima la reazione immediata (avvertimento del contrario = riso), poi la smonta con la riflessione (sentimento del contrario = pietà + comprensione). La struttura è didattica ma il tono non è freddo — incarna già il «sentimento del contrario».'
+  },
+  { id:'pi83', type:'open', topic:'Testi',
+    text:'Analizza come la strategia di Chiàrchiaro ne La patente illustri il tema pirandelliano della maschera rivendicata.',
+    modelAnswer:'Chiàrchiaro porta una maschera che tutta la comunità gli ha imposto: quella di iettatore. La reazione attesa sarebbe combatterla. Chiàrchiaro fa l\'opposto: invece di negare la maschera, sceglie di appropriarsela, di farla propria e di sfruttarla come fonte di reddito — chiedendo al giudice il riconoscimento ufficiale. Questo è l\'umorismo pirandelliano nella sua forma più amara: la risposta al paradosso della maschera non è la sua negazione ma la sua radicalizzazione. Né vittoria né sconfitta, solo un paradosso grottesco — la sopravvivenza all\'interno delle convenzioni sociali attraverso il loro rovesciamento. La maschera imposta dalla società viene accettata, anzi rivendicata.',
+    keywords:['maschera imposta','appropriarsi','rivendicare','riconoscimento ufficiale','sfruttare economicamente','paradosso grottesco','umorismo amaro','rovesciamento','sopravvivenza']
+  },
+  { id:'pi84', type:'mc', topic:'Confronti',
+    text:'Qual è il punto di tangenza tra Freud e Pirandello, nonostante le loro profonde differenze?',
+    options:['Il riferimento ad Alfred Binet e alla sua teoria della personalità multipla — un soggetto non unitario ma un aggregato di «stati» diversi e contraddittori','L\'uso del sogno come chiave interpretativa dei comportamenti inconsci','La critica alla famiglia borghese come istituzione repressiva','La fiducia nella scienza come strumento di guarigione dell\'io'],
+    correct:0,
+    explanation:'Il punto di tangenza tra Freud e Pirandello è Alfred Binet e la sua teoria della personalità multipla. Ma le risposte sono opposte: Freud crede nella terapia che ricostituisce l\'unità; Pirandello ritiene la frammentazione condizione normale e insuperabile.'
+  },
+  { id:'pi85', type:'mc', topic:'Confronti',
+    text:'Quale opera di Samuel Beckett è considerata impensabile senza i Sei personaggi di Pirandello?',
+    options:['Finale di partita','Aspettando Godot','Molloy','Murphy'],
+    correct:1,
+    explanation:'Samuel Beckett: Aspettando Godot è impensabile senza i Sei personaggi. Il personaggio intrappolato in un\'attesa senza senso, il teatro che mostra il meccanismo del proprio funzionamento — temi fondamentali che Pirandello aveva già esplorato.'
+  },
+  { id:'pi86', type:'mc', topic:'Confronti',
+    text:'Nella tabella comparativa Pirandello–Svevo, come si differenzia il loro rapporto con Freud?',
+    options:['Entrambi sono ugualmente distanti dalla psicoanalisi freudiana','Pirandello è distante da Freud (nessun inconscio, nessuna terapia); Svevo è vicino (la coscienza di Zeno è esplicitamente psicoanalitica)','Svevo è distante da Freud; Pirandello usa l\'inconscio come motore narrativo','Entrambi sono influenzati da Freud, ma in modo diverso'],
+    correct:1,
+    explanation:'Tabella comparativa — Relazione con Freud: Pirandello = Distante (nessun inconscio, nessuna terapia). Svevo = Vicina (la coscienza di Zeno è esplicitamente psicoanalitica). È una delle differenze fondamentali tra i due autori.'
+  },
+  { id:'pi87', type:'mc', topic:'Confronti',
+    text:'Quale opera di Pirandello anticipa le riflessioni di Walter Benjamin sulla perdita dell\'«aura» dell\'opera d\'arte nel cinema?',
+    options:['Il fu Mattia Pascal (1904)','Sei personaggi in cerca d\'autore (1921)','I quaderni di Serafino Gubbio operatore (1915–1916)','Enrico IV (1922)'],
+    correct:2,
+    explanation:'I Quaderni di Serafino Gubbio operatore (1915–1916) anticipano le riflessioni di Benjamin (L\'opera d\'arte nell\'epoca della sua riproducibilità tecnica, 1936): la perdita dell\'«aura» dell\'opera d\'arte nel cinema. Pirandello aveva già intuito questo nel 1915. Serafino Gubbio, ridotto a funzione della macchina da presa, è il primo personaggio della «società dello spettacolo» di Debord.'
+  },
+  { id:'pi88', type:'tf', topic:'Confronti',
+    text:'Pirandello condivide con Čechov la riflessione metateatrale che ha portato alla scomparsa della «quarta parete».',
+    correct:false,
+    explanation:'Falso. Con Čechov Pirandello condivide l\'attenzione alle piccole miserie quotidiane, non la riflessione metateatrale. Anzi, il file precisa che «Pirandello va oltre: porta la riflessione metateatrale a un livello che nessuno di questi autori [Ibsen, Strindberg, Čechov] aveva raggiunto».'
+  },
+  { id:'pi89', type:'mc', topic:'Confronti',
+    text:'Quale elemento del teatro di Eugène Ionesco è direttamente collegato all\'eredità pirandelliana?',
+    options:['L\'uso del dialetto regionale come strumento di critica sociale','Il naturalismo psicologico e la profondità dei personaggi','L\'identità come ruolo vuoto, il linguaggio come non-comunicazione, il teatro dell\'assurdo come smontaggio delle convenzioni','La critica alla borghesia attraverso il melodramma tradizionale'],
+    correct:2,
+    explanation:'Eugène Ionesco: l\'identità come ruolo vuoto, il linguaggio come non-comunicazione, il teatro dell\'assurdo come smontaggio delle convenzioni — tutti temi che Pirandello aveva già esplorato. È considerato erede diretto di Pirandello.'
+  },
+  { id:'pi90', type:'open', topic:'Confronti',
+    text:'Confronta la visione dell\'io in Pirandello e in Svevo, usando la tabella comparativa presente nel file.',
+    modelAnswer:'La tabella comparativa mostra differenze profonde. In Pirandello l\'io è frammentato, molteplice, senza un «originale» — formula: Uno, nessuno e centomila. In Svevo l\'io è inetto, diviso tra volontà e incapacità di agire. Rispetto a Freud: Pirandello è distante (nessun inconscio, nessuna terapia), Svevo è vicino (la coscienza di Zeno è esplicitamente psicoanalitica). Soluzione della crisi: in Pirandello non esiste (la frammentazione è insuperabile); in Svevo è ironica (Zeno «guarisce» ma la guarigione è fittizia). Forma narrativa: Pirandello usa il monologo ragionante e il dialogo ossessivo; Svevo usa il diario inattendibile e il narratore inaffidabile. Teatro: centrale e innovativo per Pirandello; secondario per Svevo. Contesto geografico: Sicilia e Roma per Pirandello; Trieste per Svevo (margine della civiltà asburgica, crocevia culturale).',
+    keywords:['frammentato molteplice','inetto diviso','Freud distante','Freud vicino','nessuna soluzione','guarigione fittizia','monologo ragionante','diario inattendibile','teatro centrale','Sicilia Roma','Trieste asburgica']
   }
 ]
 
