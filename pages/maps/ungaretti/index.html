@@ -1,17 +1,277 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mappa ungaretti</title>
-  <meta http-equiv="refresh" content="0; url=../index.html#ungaretti">
+  <title>Giuseppe Ungaretti — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
-  <main class="redirect-wrap">
-    <p>Reindirizzamento alla mappa di ungaretti...</p>
-    <p><a href="../index.html#ungaretti">Apri la mappa</a></p>
-  </main>
-  <script src="script.js"></script>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="../../../index.html" class="topbar-brand"><span class="dot"></span><span><span class="full">Italiano · </span>Maturità</span></a>
+      <nav class="topbar-links">
+        <a class="topbar-link" href="../../../index.html">Home</a>
+        <a class="topbar-link active">Ungaretti</a>
+        <a class="topbar-link cta" href="../../../quiz/quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../authors/ungaretti/index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='../../authors/ungaretti/poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='../../authors/ungaretti/opere.html'">Opere</button>
+      <button class="nav-btn" onclick="location.href='../../authors/ungaretti/testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='../../authors/ungaretti/confronti.html'">Confronti</button>
+      <button class="nav-btn" onclick="location.href='../../authors/ungaretti/glossario.html'">Glossario</button>
+      <button class="nav-btn active">Mappa</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Giuseppe <em>Ungaretti</em></h2>
+      </div>
+      <p class="section-sub">Struttura concettuale — clicca su ogni nodo per la spiegazione.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;">
+        <svg viewBox="0 0 1200 700" width="1200" height="700" style="display:block;" aria-label="Mappa WBS Giuseppe Ungaretti">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <!-- Connectors Root → L1 (L1 centers: 90, 220, 350, 480, 610) -->
+          <path d="M 180,350 C 217,350 255,90 255,90" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,220 255,220" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,350 255,350" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,480 255,480" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,610 255,610" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <!-- Vita → L2 (cy: 44, 90, 136) -->
+          <path d="M 415,90 C 467,90 520,44 520,44" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,90 C 467,90 520,90 520,90" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,90 C 467,90 520,136 520,136" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Poetica → L2 (cy: 174, 220, 266) -->
+          <path d="M 415,220 C 467,220 520,174 520,174" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,220 C 467,220 520,220 520,220" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,220 C 467,220 520,266 520,266" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Opere → L2 (cy: 304, 350, 396) -->
+          <path d="M 415,350 C 467,350 520,304 520,304" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,350 C 467,350 520,350 520,350" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,350 C 467,350 520,396 520,396" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Testi → L2 (cy: 434, 480, 526) -->
+          <path d="M 415,480 C 467,480 520,434 520,434" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,480 C 467,480 520,480 520,480" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,480 C 467,480 520,526 520,526" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Confronti → L2 (cy: 587, 633) -->
+          <path d="M 415,610 C 467,610 520,587 520,587" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,610 C 467,610 520,633 520,633" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="20" y="320" width="160" height="60" rx="6"/>
+            <text>
+              <tspan x="100" y="347" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Giuseppe Ungaretti</tspan>
+              <tspan x="100" y="363" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9.5" letter-spacing="0.08em">1888 — 1970</tspan>
+            </text>
+          </g>
+
+          <!-- L1 nodes -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button">
+            <rect x="255" y="68" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="95" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button">
+            <rect x="255" y="198" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="225" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button">
+            <rect x="255" y="328" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="355" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">03 · OPERE</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button">
+            <rect x="255" y="458" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="485" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button">
+            <rect x="255" y="588" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="615" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text>
+          </g>
+
+          <!-- L2: VITA (y: 25, 71, 117) -->
+          <g class="node node-l2" onclick="showNode('vita-traumi')" tabindex="0" role="button">
+            <rect x="520" y="25" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="41" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">3 traumi fondativi</tspan>
+              <tspan x="615" y="55" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">Egitto · Carso · Antonietto</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('vita-alessandria')" tabindex="0" role="button">
+            <rect x="520" y="71" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="87" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Alessandria + Parigi</tspan>
+              <tspan x="615" y="101" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">cosmopolita · Sorbona · simbolisti</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('vita-carso')" tabindex="0" role="button">
+            <rect x="520" y="117" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="133" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Trincea sul Carso</tspan>
+              <tspan x="615" y="147" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">volontario 1915 · Il porto sepolto</tspan>
+            </text>
+          </g>
+
+          <!-- L2: POETICA (y: 155, 201, 247) -->
+          <g class="node node-l2" onclick="showNode('poetica-parola')" tabindex="0" role="button">
+            <rect x="520" y="155" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="171" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Parola = illuminazione</tspan>
+              <tspan x="615" y="185" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">lampo · verità nascosta</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('poetica-porto')" tabindex="0" role="button">
+            <rect x="520" y="201" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="217" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Porto sepolto</tspan>
+              <tspan x="615" y="231" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">abisso · inesauribile segreto</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('poetica-analogia')" tabindex="0" role="button">
+            <rect x="520" y="247" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="263" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Analogia</tspan>
+              <tspan x="615" y="277" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">immagini lontane · il «salto»</tspan>
+            </text>
+          </g>
+
+          <!-- L2: OPERE (y: 285, 331, 377) -->
+          <g class="node node-l2" onclick="showNode('opere-allegria')" tabindex="0" role="button">
+            <rect x="520" y="285" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="301" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">L'Allegria</tspan>
+              <tspan x="615" y="315" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1916→1931 · verso-parola</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('opere-sentimento')" tabindex="0" role="button">
+            <rect x="520" y="331" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="347" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Sentimento del tempo</tspan>
+              <tspan x="615" y="361" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1933 · classici · ermetismo</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('opere-dolore')" tabindex="0" role="button">
+            <rect x="520" y="377" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="393" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Il dolore</tspan>
+              <tspan x="615" y="407" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1947 · Antonietto · elegia</tspan>
+            </text>
+          </g>
+
+          <!-- L2: TESTI (y: 415, 461, 507) -->
+          <g class="node node-l2" onclick="showNode('testi-mattina')" tabindex="0" role="button">
+            <rect x="520" y="415" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="431" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Mattina</tspan>
+              <tspan x="615" y="445" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">verso-parola · illuminazione</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('testi-soldati')" tabindex="0" role="button">
+            <rect x="520" y="461" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="477" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Soldati</tspan>
+              <tspan x="615" y="491" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">similitudine inversa · unanimismo</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('testi-fiumi')" tabindex="0" role="button">
+            <rect x="520" y="507" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="523" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">I fiumi</tspan>
+              <tspan x="615" y="537" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">4 fiumi · identità nomade</tspan>
+            </text>
+          </g>
+
+          <!-- L2: CONFRONTI (y: 568, 614) -->
+          <g class="node node-l2" onclick="showNode('confronti-posizione')" tabindex="0" role="button">
+            <rect x="520" y="568" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="584" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Posizione nel Novecento</tspan>
+              <tspan x="615" y="598" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">vs Saba · vs Montale</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('confronti-chiave')" tabindex="0" role="button">
+            <rect x="520" y="614" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="630" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">5 parole-chiave</tspan>
+              <tspan x="615" y="644" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">sintesi del sistema</tspan>
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'Giuseppe Ungaretti', text: 'Nasce l\'8 febbraio 1888 ad Alessandria d\'Egitto da genitori lucchesi. Il padre muore quando è piccolo. Studia alla Sorbona di Parigi (1912). Si arruola volontario nel 1915 e combatte sul Carso. L\'intera produzione è raccolta in Vita d\'un uomo (Mondadori 1969). Muore a Milano il 1° giugno 1970.' },
+      vita: { label: 'Categoria', title: 'Vita', text: 'La biografia di Ungaretti è segnata da tre traumi fondativi: l\'esilio originario (Egitto), la trincea (1915-18, da cui nasce il primo stile), la morte del figlio Antonietto (1939, che ispira Il dolore). L\'identità è sempre «nomade»: Egitto, Toscana, Parigi, Carso.' },
+      poetica: { label: 'Categoria', title: 'Poetica', text: 'La parola poetica non descrive: è un lampo che fa apparire la verità nascosta. Da Rimbaud (Illuminations). Il porto sepolto è metafora del fare poetico: il poeta si immerge nell\'abisso, raggiunge la verità, riemerge con i canti. L\'analogia è la figura retorica preferita.' },
+      opere: { label: 'Categoria', title: 'Opere', text: 'Tre fasi stilistiche nette: L\'Allegria (1931, poesia della guerra e della parola pura), Sentimento del tempo (1933, ritorno ai classici, ermetismo), Il dolore (1947, duplice lutto privato e storico). L\'insieme si intitola Vita d\'un uomo (1969).' },
+      testi: { label: 'Categoria', title: 'Testi', text: '7 testi del programma: Veglia, Fratelli, Il porto sepolto, Soldati, I fiumi, Mattina (tutti dall\'Allegria) e Non gridate più (da Il dolore). Le prime sei mostrano il primo stile; l\'ultima mostra il terzo stile elegiaco.' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'vs Saba: entrambi autobiografici, ma Saba cerca l\'onestà; Ungaretti cerca l\'illuminazione. vs Montale: Ungaretti ha epifanie di senso; Montale ha scacco permanente. vs Ermetici: Sentimento del tempo diventa il loro modello diretto. vs Simbolismo: eredita la parola pura di Mallarmé.' },
+      'vita-traumi': { label: 'Vita', title: '3 traumi fondativi', text: '① Esilio originario: nasce in Egitto da italiani, sempre nomade, sempre «altrove». ② La trincea (1915-18): evento centrale — da qui nasce tutto il primo stile. ③ Morte del figlio Antonietto (1939): lutto privato che ispira Il dolore. Morte del fratello Costantino (1937): dolore storico.' },
+      'vita-alessandria': { label: 'Vita', title: 'Alessandria + Parigi', text: 'Alessandria d\'Egitto: città cosmopolita (arabo, francese, italiano, greco). Il porto, il deserto, il Nilo. «Lutto costante» per il padre morto. Leggenda del porto sepolto sotto le acque. Sorbona 1912: Bergson, simbolisti (Baudelaire, Mallarmé, Rimbaud), Apollinaire.' },
+      'vita-carso': { label: 'Vita', title: 'Trincea sul Carso', text: 'Si arruola volontario 1915. Combatte sul Carso. Scrive su pezzettini di carta e cartine di sigarette. L\'ufficiale Ettore Serra le pubblica: Il porto sepolto (1916, 80 copie). La guerra obbliga a una poesia ridotta all\'osso: niente fronzoli, solo l\'essenziale.' },
+      'poetica-parola': { label: 'Poetica', title: 'Parola come illuminazione', text: 'La parola poetica non descrive: è un lampo che fa apparire la verità nascosta. Come un lampo in una stanza buia illumina tutto per un istante. Da Rimbaud (Illuminations). Per questo le poesie sono brevissime: non si può prolungare il lampo.' },
+      'poetica-porto': { label: 'Poetica', title: 'Porto sepolto', text: 'Leggenda di Alessandria: porto antico sepolto sotto le acque del Nilo. Metafora del fare poetico: il poeta si immerge nell\'abisso interiore, raggiunge la verità nascosta, riemerge con i canti. Ma resta sempre un «inesauribile segreto».' },
+      'poetica-analogia': { label: 'Poetica', title: 'Analogia', text: 'La figura preferita di Ungaretti. Metafora ancora più ardita: accosta due immagini lontanissime senza legame logico evidente. Il lettore deve «saltare» da una all\'altra. Es: «bocca digrignata / volta al plenilunio» (bocca di un cadavere = luna piena).' },
+      'opere-allegria': { label: 'Opere', title: 'L\'Allegria (1931)', text: 'Nasce come Il porto sepolto (1916). Poi Allegria di naufragi (1919) — ossimoro: la gioia del naufrago sopravvissuto. Edizione definitiva 1931: L\'Allegria. 5 sezioni. Stile: versi brevissimi, spazi bianchi, niente punteggiatura, analogie, luogo+data sotto ogni poesia.' },
+      'opere-sentimento': { label: 'Opere', title: 'Sentimento del tempo (1933)', text: 'Tutto cambia rispetto all\'Allegria: versi lunghi, punteggiatura torna, lessico aulico, modelli = Petrarca/Leopardi/Dante/Góngora. Temi: tempo, mito, caducità, Dio. Ispirerà l\'Ermetismo (Quasimodo, Luzi, Gatto).' },
+      'opere-dolore': { label: 'Opere', title: 'Il dolore (1947)', text: 'Due dolori fusi: privato (morte di Antonietto 1939, fratello Costantino 1937) e storico (Seconda guerra mondiale). Stile: tono elegiaco, meditativo, sintassi rigorosa. «Fu la cosa più tremenda della mia vita.» Contiene Non gridate più.' },
+      'testi-mattina': { label: 'Testi', title: 'Mattina', text: '«M\'illumino / d\'immenso.» Due versi-parola. Immenso = in-mensus = ciò che non si può misurare = l\'infinito. Il poeta si fonde con l\'assoluto in un istante di grazia mistica laica. Titolo originario: «Cielo e mare».' },
+      'testi-soldati': { label: 'Testi', title: 'Soldati', text: '«Si sta come / d\'autunno / sugli alberi / le foglie.» Similitudine inversa (soggetto implicito). «Si sta» impersonale = unanimismo: vale per tutta l\'umanità. La precarietà universale: tutti siamo foglie pronte a cadere.' },
+      'testi-fiumi': { label: 'Testi', title: 'I fiumi', text: '4 fiumi = 4 identità: Isonzo (trincea, italiano per scelta), Serchio (radici toscane), Nilo (infanzia egiziana), Senna (maturità parigina). «Docile fibra dell\'universo.» La vita = «corolla di tenebre» = ossimoro. Ricerca d\'identità attraverso la memoria.' },
+      'confronti-posizione': { label: 'Confronti', title: 'Posizione nel Novecento', text: 'vs Saba: entrambi autobiografici, ma Saba cerca l\'onestà; Ungaretti cerca l\'illuminazione. vs Montale: Ungaretti ha epifanie di senso; Montale ha scacco permanente. vs Ermetici: Sentimento del tempo diventa il loro modello diretto.' },
+      'confronti-chiave': { label: 'Sintesi', title: '5 parole-chiave di Ungaretti', text: '① Porto sepolto — la verità nascosta in fondo all\'animo. ② Illuminazione — la parola come lampo. ③ Unanimismo — il poeta parla per tutti. ④ Analogia — figura retorica preferita. ⑤ Verso-parola — la parola isolata nello spazio bianco.' }
+    };
+
+    function showNode(key) {
+      const n = NODES[key];
+      if (!n) return;
+      document.getElementById('tip-label').textContent = n.label;
+      document.getElementById('tip-title').textContent = n.title;
+      document.getElementById('tip-text').textContent = n.text;
+      document.getElementById('map-overlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeTip() {
+      document.getElementById('map-overlay').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTip(); });
+  </script>
 </body>
 </html>

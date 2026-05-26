@@ -1,17 +1,281 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mappa saba</title>
-  <meta http-equiv="refresh" content="0; url=../index.html#saba">
+  <title>Umberto Saba — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
-  <main class="redirect-wrap">
-    <p>Reindirizzamento alla mappa di saba...</p>
-    <p><a href="../index.html#saba">Apri la mappa</a></p>
-  </main>
-  <script src="script.js"></script>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="../../../index.html" class="topbar-brand"><span class="dot"></span><span><span class="full">Italiano · </span>Maturità</span></a>
+      <nav class="topbar-links">
+        <a class="topbar-link" href="../../../index.html">Home</a>
+        <a class="topbar-link active">Saba</a>
+        <a class="topbar-link cta" href="../../../quiz/quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../authors/saba/index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='../../authors/saba/poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='../../authors/saba/opere.html'">Opere</button>
+      <button class="nav-btn" onclick="location.href='../../authors/saba/testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='../../authors/saba/confronti.html'">Confronti</button>
+      <button class="nav-btn" onclick="location.href='../../authors/saba/glossario.html'">Glossario</button>
+      <button class="nav-btn active">Mappa</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Umberto <em>Saba</em></h2>
+      </div>
+      <p class="section-sub">Struttura concettuale — clicca su ogni nodo per la spiegazione.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;">
+        <svg viewBox="0 0 1200 700" width="1200" height="700" style="display:block;" aria-label="Mappa WBS Umberto Saba">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <!-- Connectors Root → L1 -->
+          <path d="M 180,350 C 217,350 255,80 255,80" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,215 255,215" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,350 255,350" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,485 255,485" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,620 255,620" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <!-- Connectors Vita → L2 -->
+          <path d="M 415,80 C 467,80 520,57 520,57" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,80 C 467,80 520,103 520,103" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- Connectors Poetica → L2 -->
+          <path d="M 415,215 C 467,215 520,169 520,169" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,215 C 467,215 520,215 520,215" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,215 C 467,215 520,261 520,261" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- Connectors Opere → L2 -->
+          <path d="M 415,350 C 467,350 520,327 520,327" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,350 C 467,350 520,373 520,373" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- Connectors Testi → L2 -->
+          <path d="M 415,485 C 467,485 520,439 520,439" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,485 C 467,485 520,485 520,485" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,485 C 467,485 520,531 520,531" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- Connectors Confronti → L2 -->
+          <path d="M 415,620 C 467,620 520,597 520,597" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,620 C 467,620 520,643 520,643" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="20" y="320" width="160" height="60" rx="6"/>
+            <text>
+              <tspan x="100" y="347" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="15" font-weight="600">Umberto Saba</tspan>
+              <tspan x="100" y="363" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9.5" letter-spacing="0.08em">1883 — 1957</tspan>
+            </text>
+          </g>
+
+          <!-- L1: VITA -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button">
+            <rect x="255" y="58" width="160" height="44" rx="4"/>
+            <text>
+              <tspan x="335" y="85" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan>
+            </text>
+          </g>
+
+          <!-- L1: POETICA -->
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button">
+            <rect x="255" y="193" width="160" height="44" rx="4"/>
+            <text>
+              <tspan x="335" y="220" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan>
+            </text>
+          </g>
+
+          <!-- L1: OPERE -->
+          <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button">
+            <rect x="255" y="328" width="160" height="44" rx="4"/>
+            <text>
+              <tspan x="335" y="355" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">03 · OPERE</tspan>
+            </text>
+          </g>
+
+          <!-- L1: TESTI -->
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button">
+            <rect x="255" y="463" width="160" height="44" rx="4"/>
+            <text>
+              <tspan x="335" y="490" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan>
+            </text>
+          </g>
+
+          <!-- L1: CONFRONTI -->
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button">
+            <rect x="255" y="598" width="160" height="44" rx="4"/>
+            <text>
+              <tspan x="335" y="625" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan>
+            </text>
+          </g>
+
+          <!-- L2: VITA -->
+          <g class="node node-l2" onclick="showNode('vita-traumi')" tabindex="0" role="button">
+            <rect x="520" y="38" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="54" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">I traumi fondativi</tspan>
+              <tspan x="615" y="68" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">padre · madre · balia</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('vita-scissione')" tabindex="0" role="button">
+            <rect x="520" y="84" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="100" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Scissione dell'io</tspan>
+              <tspan x="615" y="114" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">cuore scisso in due</tspan>
+            </text>
+          </g>
+
+          <!-- L2: POETICA -->
+          <g class="node node-l2" onclick="showNode('poetica-onesta')" tabindex="0" role="button">
+            <rect x="520" y="150" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="166" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Poesia onesta</tspan>
+              <tspan x="615" y="180" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">dire la verità senza maschere</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('poetica-scandaglio')" tabindex="0" role="button">
+            <rect x="520" y="196" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="212" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Scandaglio</tspan>
+              <tspan x="615" y="226" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">immersione nell'interiorità</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('poetica-anti')" tabindex="0" role="button">
+            <rect x="520" y="242" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="258" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Anti-novecentismo</tspan>
+              <tspan x="615" y="272" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">vs ermetismo · tradizione</tspan>
+            </text>
+          </g>
+
+          <!-- L2: OPERE -->
+          <g class="node node-l2" onclick="showNode('opere-canzoniere')" tabindex="0" role="button">
+            <rect x="520" y="308" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="324" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Il Canzoniere</tspan>
+              <tspan x="615" y="338" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1921–1961 · romanzo in versi</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('opere-ernesto')" tabindex="0" role="button">
+            <rect x="520" y="354" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="370" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Ernesto</tspan>
+              <tspan x="615" y="384" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">postumo 1975 · formazione</tspan>
+            </text>
+          </g>
+
+          <!-- L2: TESTI -->
+          <g class="node node-l2" onclick="showNode('testi-amai')" tabindex="0" role="button">
+            <rect x="520" y="420" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="436" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Amai</tspan>
+              <tspan x="615" y="450" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">poesia onesta · scandaglio</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('testi-capra')" tabindex="0" role="button">
+            <rect x="520" y="466" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="482" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">La capra</tspan>
+              <tspan x="615" y="496" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">dolore eterno · viso semita</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('testi-trieste')" tabindex="0" role="button">
+            <rect x="520" y="512" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="528" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Trieste</tspan>
+              <tspan x="615" y="542" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">scontrosa grazia · cantuccio</tspan>
+            </text>
+          </g>
+
+          <!-- L2: CONFRONTI -->
+          <g class="node node-l2" onclick="showNode('confronti-posizione')" tabindex="0" role="button">
+            <rect x="520" y="578" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="594" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Posizione nel Novecento</tspan>
+              <tspan x="615" y="608" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">vs Ungaretti · vs Montale</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('confronti-chiave')" tabindex="0" role="button">
+            <rect x="520" y="624" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="640" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">5 parole-chiave</tspan>
+              <tspan x="615" y="654" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">sintesi del sistema</tspan>
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'Umberto Saba', text: 'Vero nome Umberto Poli. Pseudonimo dal 1910: dal cognome della balia (Sabaz) o da «saba» = pane in ebraico. Nasce a Trieste (Impero austro-ungarico) nel 1883. La vita è segnata da tre figure materne contrapposte e dalla scissione interiore che ne deriva. Poeta antinovecentista: rifiuta l\'ermetismo e sceglie la tradizione. Muore a Gorizia nel 1957.' },
+      vita: { label: 'Categoria', title: 'Vita', text: 'La biografia di Saba è il materiale diretto della sua poesia. I traumi dell\'infanzia, Trieste come città-specchio, la psicanalisi con Weiss dal 1929, le leggi razziali del 1938 che lo costringono alla fuga: tutto entra nel Canzoniere senza filtri estetici. «O mio cuore, dal nascere in due scisso.»' },
+      poetica: { label: 'Categoria', title: 'Poetica e stile', text: 'Dal saggio «Quello che resta da fare ai poeti» (1911): la poesia deve dire la verità senza mascherarla. Contro D\'Annunzio (preziosismo), gli Ermetici (oscurità), i Vociani (frammento). Per: Petrarca, Leopardi, Foscolo. «Moderno in modo quasi sconcertante pur restando nella tradizione» (Solmi).' },
+      opere: { label: 'Categoria', title: 'Opere', text: 'Il Canzoniere (1900–1954) è il centro di tutto: Saba lo definisce «romanzo psicologico in versi». Tre volumi, 25 sezioni. Historia e cronistoria (1948, sotto pseudonimo Carimandrei) è il raro caso di un poeta che commenta il proprio lavoro. Ernesto (postumo 1975) è il romanzo di formazione incompiuto.' },
+      testi: { label: 'Categoria', title: 'Testi', text: 'I testi del programma vengono quasi tutti dal Canzoniere: Amai, La capra, Trieste, A mia moglie, Città vecchia, Mio padre è stato per me l\'assassino. Più un brano da Ernesto (La vera causa). Tutti ruotano attorno alla scissione, al dolore universale, all\'identità triestina.' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'vs Ungaretti: entrambi autobiografici, ma Ungaretti cerca l\'illuminazione; Saba cerca l\'onestà. vs Montale: entrambi nel segno del dolore, ma Saba accetta la vita pienamente; Montale diagnostica il male senza riscatto. vs Ermetici: rifiuta l\'oscurità. vs Vociani: rifiuta il frammento aperto.' },
+      'vita-traumi': { label: 'Vita', title: 'I traumi fondativi', text: 'Padre (Ugo Poli) abbandona la famiglia prima della nascita. Madre ebrea severa e opprimente. Balia slovena Peppa Gabrovich: la «madre lieta». Questa triplice ferita genera le nevrosi che alimentano tutta la poesia. Contini lo definisce «psicanalitico prima della psicanalisi».' },
+      'vita-scissione': { label: 'Vita', title: 'Scissione dell\'io', text: 'Il cuore scisso: da una parte la balia (madre di gioia), dall\'altra la madre biologica (madre mesta). Questa frattura è la radice della nevrosi e attraversa tutto il Canzoniere. Dal 1929 terapia con Edoardo Weiss (allievo di Freud) a Trieste. «O mio cuore, dal nascere in due scisso.»' },
+      'poetica-onesta': { label: 'Poetica', title: 'Poesia onesta', text: 'Dal saggio «Quello che resta da fare ai poeti» (1911). La poesia deve dire la verità senza mascherarla. Il poeta è ricercatore di verità, non letterato di professione. Contro il preziosismo di D\'Annunzio. «Amai la verità che giace al fondo» (Amai). La rima fiore/amore, banale per il Novecento, è per Saba «la più antica difficile del mondo».' },
+      'poetica-scandaglio': { label: 'Poetica', title: 'Scandaglio', text: 'Strumento che si cala in mare per misurare la profondità. Metafora della poesia: scende nell\'interiorità, sonda l\'inconscio. «Amai la verità che giace al fondo» (Amai). Il fondo è ciò che lo scandaglio raggiunge. Il metodo è perfettamente sovrapponibile a quello freudiano.' },
+      'poetica-anti': { label: 'Poetica', title: 'Anti-novecentismo', text: 'Contro: ermetismo (oscurità), vocianesimo (frammento), futurismo (avanguardia). Verso: Petrarca, Leopardi, Foscolo. «Amai trite parole che non uno osava.» Usare parole comuni (amore, fiore, vita) è un atto di coraggio. «Moderno in modo quasi sconcertante» (Solmi).' },
+      'opere-canzoniere': { label: 'Opere', title: 'Il Canzoniere', text: 'Raccolta di tutta la produzione (1900–1954). Saba lo definisce «romanzo psicologico in versi». Tre volumi per 25 sezioni. Prima edizione 1921 (accolta con indifferenza); definitiva 1961. Il titolo dichiara fedeltà a Petrarca. È una delle grandi opere del Novecento italiano.' },
+      'opere-ernesto': { label: 'Opere', title: 'Ernesto', text: 'Romanzo incompiuto (scritto 1953, pubblicato postumo 1975). Protagonista Ernesto, 16 anni, Trieste fine Ottocento. Iniziazione sentimentale e sessuale. Tema: assenza del padre, rapporto con la madre, ricerca di affetto. Stile narrativo diretto, quasi autobiografico.' },
+      'testi-amai': { label: 'Testi', title: 'Amai', text: 'Dichiarazione di poetica: «Amai trite parole che non uno osava. M\'incantò la rima fiore / amore». Tre anafore (Amai · Amai · Amo). La «buona carta» = l\'eredità poetica lasciata al lettore. La «verità al fondo» = scandaglio. Da Mediterranee.' },
+      'testi-capra': { label: 'Testi', title: 'La capra', text: '«Il dolore è eterno, ha una voce e non varia.» Il belato uguale della capra = dolore universale. «Viso semita» = identificazione ebraica. Eco leopardiana: pessimismo cosmico e solidarietà tra le creature. La capra lamentosa e il poeta si riconoscono fratelli nel dolore.' },
+      'testi-trieste': { label: 'Testi', title: 'Trieste', text: '«Scontrosa grazia» = ossimoro. La città come specchio dell\'anima: riservata ma piena di vita. Il cantuccio = spazio di solitudine e appartenenza. «La mia città che in ogni parte è viva / ha il cantuccio a me fatto.» Da Trieste e una donna.' },
+      'confronti-posizione': { label: 'Confronti', title: 'Posizione nel Novecento', text: 'vs Ungaretti: entrambi autobiografici, ma Ungaretti cerca l\'illuminazione; Saba cerca l\'onestà. vs Montale: entrambi nel segno del dolore, ma Saba accetta la vita; Montale diagnostica il male come irrisolvibile. vs Ermetici: rifiuta l\'oscurità. vs Vociani: rifiuta il frammento.' },
+      'confronti-chiave': { label: 'Sintesi', title: '5 parole-chiave di Saba', text: '① Poesia onesta — la verità senza maschere. ② Scandaglio — immersione nell\'interiorità. ③ Scissione — il cuore diviso in due. ④ Canzoniere — romanzo psicologico in versi. ⑤ Trieste — scontrosa grazia, specchio dell\'anima.' }
+    };
+
+    function showNode(key) {
+      const n = NODES[key];
+      if (!n) return;
+      document.getElementById('tip-label').textContent = n.label;
+      document.getElementById('tip-title').textContent = n.title;
+      document.getElementById('tip-text').textContent = n.text;
+      document.getElementById('map-overlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeTip() {
+      document.getElementById('map-overlay').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTip(); });
+  </script>
 </body>
 </html>

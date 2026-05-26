@@ -1,17 +1,260 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mappa pirandello</title>
-  <meta http-equiv="refresh" content="0; url=../index.html#pirandello">
+  <title>Luigi Pirandello — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
-  <main class="redirect-wrap">
-    <p>Reindirizzamento alla mappa di pirandello...</p>
-    <p><a href="../index.html#pirandello">Apri la mappa</a></p>
-  </main>
-  <script src="script.js"></script>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="../../../index.html" class="topbar-brand"><span class="dot"></span><span><span class="full">Italiano · </span>Maturità</span></a>
+      <nav class="topbar-links">
+        <a class="topbar-link" href="../../../index.html">Home</a>
+        <a class="topbar-link active">Pirandello</a>
+        <a class="topbar-link cta" href="../../../quiz/quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../authors/pirandello/index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='../../authors/pirandello/poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='../../authors/pirandello/opere.html'">Opere</button>
+      <button class="nav-btn" onclick="location.href='../../authors/pirandello/testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='../../authors/pirandello/confronti.html'">Confronti</button>
+      <button class="nav-btn" onclick="location.href='../../authors/pirandello/glossario.html'">Glossario</button>
+      <button class="nav-btn active">Mappa</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Luigi <em>Pirandello</em></h2>
+      </div>
+      <p class="section-sub">Struttura concettuale — clicca su ogni nodo per la spiegazione.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;">
+        <!-- 5 categories · L2 counts [2,3,2,3,2] · Root cy=350 -->
+        <svg viewBox="0 0 1200 700" width="1200" height="700" style="display:block;" aria-label="Mappa WBS Luigi Pirandello">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <!-- Connectors Root → L1 (L1 centers: 80, 215, 350, 485, 620) -->
+          <path d="M 180,350 C 217,350 255,80 255,80" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,215 255,215" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,350 255,350" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,485 255,485" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,350 C 217,350 255,620 255,620" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <!-- Vita (L1 cy=80) → L2 (cy: 57, 103) -->
+          <path d="M 415,80 C 467,80 520,57 520,57" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,80 C 467,80 520,103 520,103" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Poetica (L1 cy=215) → L2 (cy: 169, 215, 261) -->
+          <path d="M 415,215 C 467,215 520,169 520,169" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,215 C 467,215 520,215 520,215" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,215 C 467,215 520,261 520,261" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Opere (L1 cy=350) → L2 (cy: 327, 373) -->
+          <path d="M 415,350 C 467,350 520,327 520,327" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,350 C 467,350 520,373 520,373" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Testi (L1 cy=485) → L2 (cy: 439, 485, 531) -->
+          <path d="M 415,485 C 467,485 520,439 520,439" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,485 C 467,485 520,485 520,485" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,485 C 467,485 520,531 520,531" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Confronti (L1 cy=620) → L2 (cy: 597, 643) -->
+          <path d="M 415,620 C 467,620 520,597 520,597" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,620 C 467,620 520,643 520,643" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="20" y="320" width="160" height="60" rx="6"/>
+            <text>
+              <tspan x="100" y="347" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14.5" font-weight="600">Luigi Pirandello</tspan>
+              <tspan x="100" y="363" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9.5" letter-spacing="0.08em">1867 — 1936</tspan>
+            </text>
+          </g>
+
+          <!-- L1 nodes (y = cy - 22) -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button">
+            <rect x="255" y="58" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="85" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button">
+            <rect x="255" y="193" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="220" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button">
+            <rect x="255" y="328" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="355" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">03 · OPERE</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button">
+            <rect x="255" y="463" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="490" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button">
+            <rect x="255" y="598" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="625" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text>
+          </g>
+
+          <!-- L2: VITA (cy: 57→y=38, 103→y=84) -->
+          <g class="node node-l2" onclick="showNode('vita-caos')" tabindex="0" role="button">
+            <rect x="520" y="38" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="54" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Nascita a Caos</tspan>
+              <tspan x="615" y="68" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">figlio del caos · Agrigento 1867</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('vita-moglie')" tabindex="0" role="button">
+            <rect x="520" y="84" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="100" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Moglie paranoica</tspan>
+              <tspan x="615" y="114" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">relativismo conoscitivo · 1894–1919</tspan>
+            </text>
+          </g>
+
+          <!-- L2: POETICA (cy: 169→y=150, 215→y=196, 261→y=242) -->
+          <g class="node node-l2" onclick="showNode('poetica-vitaforma')" tabindex="0" role="button">
+            <rect x="520" y="150" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="166" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Vita e Forma</tspan>
+              <tspan x="615" y="180" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">il paradosso fondamentale</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('poetica-umorismo')" tabindex="0" role="button">
+            <rect x="520" y="196" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="212" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">L'umorismo</tspan>
+              <tspan x="615" y="226" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">avvertimento vs sentimento</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('poetica-relativismo')" tabindex="0" role="button">
+            <rect x="520" y="242" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="258" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Relativismo conoscitivo</tspan>
+              <tspan x="615" y="272" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">nessuna verità assoluta</tspan>
+            </text>
+          </g>
+
+          <!-- L2: OPERE (cy: 327→y=308, 373→y=354) -->
+          <g class="node node-l2" onclick="showNode('opere-mattia')" tabindex="0" role="button">
+            <rect x="520" y="308" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="324" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Il fu Mattia Pascal</tspan>
+              <tspan x="615" y="338" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1904 · identità come gabbia</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('opere-sei')" tabindex="0" role="button">
+            <rect x="520" y="354" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="370" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Sei personaggi</tspan>
+              <tspan x="615" y="384" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1921 · teatro nel teatro</tspan>
+            </text>
+          </g>
+
+          <!-- L2: TESTI (cy: 439→y=420, 485→y=466, 531→y=512) -->
+          <g class="node node-l2" onclick="showNode('testi-treno')" tabindex="0" role="button">
+            <rect x="520" y="420" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="436" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Il treno ha fischiato</tspan>
+              <tspan x="615" y="450" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">follia come lucidità · Belluca</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('testi-ciaula')" tabindex="0" role="button">
+            <rect x="520" y="466" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="482" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Ciaula scopre la luna</tspan>
+              <tspan x="615" y="496" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">epifania · verismo + esistenziale</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('testi-mattia')" tabindex="0" role="button">
+            <rect x="520" y="512" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="528" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Il fu Mattia Pascal</tspan>
+              <tspan x="615" y="542" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">«fu» · doppia trappola</tspan>
+            </text>
+          </g>
+
+          <!-- L2: CONFRONTI (cy: 597→y=578, 643→y=624) -->
+          <g class="node node-l2" onclick="showNode('confronti-svevo')" tabindex="0" role="button">
+            <rect x="520" y="578" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="594" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">vs Svevo</tspan>
+              <tspan x="615" y="608" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">maschera (soc.) vs inetto (psic.)</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('confronti-chiave')" tabindex="0" role="button">
+            <rect x="520" y="624" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="640" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">5 parole-chiave</tspan>
+              <tspan x="615" y="654" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">sintesi del sistema</tspan>
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'Luigi Pirandello', text: 'Nasce il 28 giugno 1867 in una contrada di nome Caos, presso Agrigento. Si laurea a Bonn con una tesi sul dialetto girgentino. Insegna al Magistero femminile di Roma. Moglie internata definitivamente nel 1919. Nobel per la letteratura 1934. Muore a Roma il 10 dicembre 1936 lasciando incompiuti I giganti della montagna.' },
+      vita: { label: 'Categoria', title: 'Vita', text: 'La biografia di Pirandello è il laboratorio del suo pensiero. La nascita a Caos (metafora dell\'esistenza caotica), la convivenza con la moglie paranoica (dimostrazione vivente del relativismo), il Nobel (riconoscimento del valore dell\'inquietudine moderna).' },
+      poetica: { label: 'Categoria', title: 'Poetica', text: 'Il nucleo: Vita = flusso continuo; Forma = etichette sociali imposte. Paradosso: non puoi fare a meno di una Forma, ma accettarla significa tradire la tua natura mobile. L\'umorismo (1908): avvertimento del contrario (comicità) vs sentimento del contrario (comprensione empatica). Relativismo: nessuna verità assoluta.' },
+      opere: { label: 'Categoria', title: 'Opere', text: '4 fasi: Verismo siciliano (L\'esclusa, Il turno), Crisi dell\'io (Il fu Mattia Pascal 1904, L\'Umorismo 1908), Teatro della crisi (Sei personaggi 1921, Enrico IV 1922), Teatro dei miti (I giganti della montagna, incompiuto). Il fu Mattia Pascal e Uno, nessuno e centomila sono i romanzi fondamentali.' },
+      testi: { label: 'Categoria', title: 'Testi', text: 'Novelle: Il treno ha fischiato (follia come lucidità), Ciaula scopre la luna (epifania esistenziale), La patente (il grottesco). Romanzi: Il fu Mattia Pascal (identità come gabbia necessaria). Teatro: Enrico IV, Sei personaggi in cerca d\'autore.' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'vs Svevo: Pirandello decostruisce l\'identità dall\'esterno (gli altri, la maschera sociale); Svevo dall\'interno (la coscienza, la psicologia). vs Freud: entrambi dell\'inconscio, ma Pirandello lo socializza (gli altri ci vedono diversi). vs Verismo: Pirandello parte da lì ma lo trascende.' },
+      'vita-caos': { label: 'Vita', title: 'Nascita a Caos', text: 'Nasce in una contrada di nome Caos presso Agrigento il 28 giugno 1867. Si autodefinisce «figlio del Caos»: allude sia alla nascita sia alla natura caotica dell\'esistenza umana. Padre Stefano gestisce una zolfara. Contatto con Capuana che lo orienta verso la narrativa. Laurea a Bonn.' },
+      'vita-moglie': { label: 'Vita', title: 'Moglie paranoica', text: 'Antonietta Portolano: matrimonio combinato 1894. Dal 1897 sviluppa paranoia ossessiva: vede tradimenti inesistenti, costruisce una realtà parallela. Pirandello vive per anni con lei, rifiutandosi di internarla. Internamento definitivo 1919. Questa convivenza è la dimostrazione vivente che non esiste una verità univoca.' },
+      'poetica-vitaforma': { label: 'Poetica', title: 'Vita e Forma', text: 'Vita = flusso continuo e mobile dell\'esistenza: pensieri, emozioni, desideri che non stanno mai fermi. Forma = tutto ciò che cerca di fermare questo flusso: nome, mestiere, ruolo in famiglia, aspettative altrui. Paradosso: senza Forma non si esiste per la società, ma accettarla tradisce la propria natura.' },
+      'poetica-umorismo': { label: 'Poetica', title: 'L\'umorismo (1908)', text: 'Avvertimento del contrario: la reazione istintiva all\'incongruità — ridiamo della vecchia imbellettata. Sentimento del contrario: la riflessione che subentra — capiamo la storia di dolore nascosta dietro l\'apparenza comica. Il riso si mescola con la pietà e la comprensione empatica.' },
+      'poetica-relativismo': { label: 'Poetica', title: 'Relativismo conoscitivo', text: 'Non esiste un punto di vista neutro e assoluto. Ogni verità è «la tua» o «la mia», mai semplicemente «la verità». Il titolo Così è (se vi pare) lo dichiara. Influenze: Alfred Binet (molteplicità della personalità), Nietzsche, Schopenhauer, contatto con la cultura tedesca.' },
+      'opere-mattia': { label: 'Opere', title: 'Il fu Mattia Pascal (1904)', text: 'Protagonista finge la propria morte e assume un\'identità nuova (Adriano Meis). Scopre di non poter vivere senza identità sociale: non può sposarsi, denunciare, avere diritti. Alla fine torna, «fu» Mattia Pascal: non più vivo, ma nemmeno morto. Il tema: l\'identità è una gabbia necessaria.' },
+      'opere-sei': { label: 'Opere', title: 'Sei personaggi (1921)', text: 'Capolavoro metateatrale. 6 personaggi irrompono in una prova teatrale cercando un autore. Il teatro si denuda: la «quarta parete» scompare, mostra i propri meccanismi. I personaggi sono più reali degli attori perché fissi nella loro essenza. Scandalo alla prima romana; trionfo internazionale.' },
+      'testi-treno': { label: 'Testi', title: 'Il treno ha fischiato', text: 'Belluca, impiegato modello martirizzato dalla famiglia, impazzisce. Ha «sentito il fischio del treno» e capisce che esiste un mondo là fuori. La «follia» è in realtà un recupero di consapevolezza: la maschera sociale che soffoca fino alla rottura diventa il tema centrale.' },
+      'testi-ciaula': { label: 'Testi', title: 'Ciaula scopre la luna', text: 'Minatore siciliano (caruso) che ha paura del buio. La prima volta che vede la luna, piange. La luna è l\'illuminazione di chi vive nell\'oscurità assoluta. Pirandello usa il verismo siciliano come sfondo per un momento di epifania esistenziale: anche il più emarginato è capace di stupore.' },
+      'testi-mattia': { label: 'Testi', title: 'Il fu Mattia Pascal', text: 'I temi centrali del testo: l\'identità come finzione necessaria, l\'impossibilità di esistere fuori dalla Forma, la doppia trappola (nessuno è Adriano Meis, ma Mattia Pascal è «fu»). La società non accetta chi esce dai suoi schemi: il «fu» davanti al nome è una condanna definitiva.' },
+      'confronti-svevo': { label: 'Confronti', title: 'vs Svevo', text: 'Pirandello: la maschera — l\'identità è imposta dall\'esterno; il problema è sociologico (gli altri). Svevo: l\'inetto — la coscienza che si auto-sabota; il problema è psicologico (il sé). Entrambi decostruiscono la fiducia positivista nell\'identità stabile, ma da angolature opposte.' },
+      'confronti-chiave': { label: 'Sintesi', title: '5 parole-chiave di Pirandello', text: '① Vita/Forma — il paradosso fondamentale. ② Maschera — l\'identità imposta dall\'esterno. ③ Umorismo — sentimento del contrario: riso misto a pietà. ④ Relativismo — nessuna verità assoluta. ⑤ Teatro nel teatro — la quarta parete che cade.' }
+    };
+
+    function showNode(key) {
+      const n = NODES[key];
+      if (!n) return;
+      document.getElementById('tip-label').textContent = n.label;
+      document.getElementById('tip-title').textContent = n.title;
+      document.getElementById('tip-text').textContent = n.text;
+      document.getElementById('map-overlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeTip() {
+      document.getElementById('map-overlay').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTip(); });
+  </script>
 </body>
 </html>

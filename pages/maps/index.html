@@ -113,7 +113,7 @@
       <div class="map-area" style="margin-bottom:20px">
         <div class="map-grid">
           <div class="map-card root"
-            onclick="showTip(event,'Autore','Umberto Saba','Vero nome Umberto Poli. Pseudonimo dal 1910: dal cognome della balia (Saber) o da Â«sabaÂ» = pane/nonno in ebraico. Nasce a Trieste (Impero austro-ungarico) nel 1883. Muore a Gorizia nel 1957.')">
+            onclick="showTip(event,'Autore','Umberto Saba','Vero nome Umberto Poli. Pseudonimo dal 1910: dal cognome della balia (Sabaz) o da «saba» = pane/nonno in ebraico. Nasce a Trieste (Impero austro-ungarico) nel 1883. Muore a Gorizia nel 1957.')">
             <div>
               <div class="node-label">Autore</div>
               <div class="node-title">Umberto Saba</div>
@@ -776,12 +776,14 @@
 
   </main><!-- /container -->
 
-  <!-- TOOLTIP -->
-  <div class="tooltip" id="tooltip">
-    <button class="tooltip-close" onclick="closeTip()">&times;</button>
-    <div class="tooltip-label" id="tip-label"></div>
-    <div class="tooltip-title" id="tip-title"></div>
-    <div class="tooltip-text" id="tip-text"></div>
+  <!-- MODAL OVERLAY -->
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
   </div>
 
   <script>
@@ -850,41 +852,21 @@
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    /* â”€â”€ TOOLTIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── MODAL ─────────────────────────────────────────────────────────── */
     function showTip(event, label, title, text) {
       event.stopPropagation();
-      const tip = document.getElementById('tooltip');
       document.getElementById('tip-label').textContent = label;
       document.getElementById('tip-title').textContent = title;
       document.getElementById('tip-text').textContent = text;
-
-      const W = window.innerWidth, H = window.innerHeight;
-      tip.style.display = 'block';
-      const tw = tip.offsetWidth, th = tip.offsetHeight;
-
-      let x = event.clientX + 14;
-      let y = event.clientY + 14;
-      if (x + tw > W - 10) x = event.clientX - tw - 14;
-      if (y + th > H - 10) y = H - th - 10;
-      if (x < 10) x = 10;
-      if (y < 10) y = 10;
-
-      tip.style.left = x + 'px';
-      tip.style.top = y + 'px';
-      tip.classList.add('show');
-      tip.style.pointerEvents = 'all';
+      document.getElementById('map-overlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeTip() {
-      const tip = document.getElementById('tooltip');
-      tip.classList.remove('show');
-      tip.style.display = 'none';
-      tip.style.pointerEvents = 'none';
+      document.getElementById('map-overlay').classList.remove('show');
+      document.body.style.overflow = '';
     }
 
-    document.addEventListener('click', function (e) {
-      if (!e.target.closest('.tooltip') && !e.target.closest('.map-card')) closeTip();
-    });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTip(); });
 
     /* Init */

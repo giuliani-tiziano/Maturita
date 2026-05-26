@@ -1,17 +1,305 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mappa montale</title>
-  <meta http-equiv="refresh" content="0; url=../index.html#montale">
+  <title>Eugenio Montale — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/style.css">
 </head>
 <body>
-  <main class="redirect-wrap">
-    <p>Reindirizzamento alla mappa di montale...</p>
-    <p><a href="../index.html#montale">Apri la mappa</a></p>
-  </main>
-  <script src="script.js"></script>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="../../../index.html" class="topbar-brand"><span class="dot"></span><span><span class="full">Italiano · </span>Maturità</span></a>
+      <nav class="topbar-links">
+        <a class="topbar-link" href="../../../index.html">Home</a>
+        <a class="topbar-link active">Montale</a>
+        <a class="topbar-link cta" href="../../../quiz/quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../authors/montale/index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='../../authors/montale/poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='../../authors/montale/opere.html'">Opere</button>
+      <button class="nav-btn" onclick="location.href='../../authors/montale/testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='../../authors/montale/confronti.html'">Confronti</button>
+      <button class="nav-btn" onclick="location.href='../../authors/montale/glossario.html'">Glossario</button>
+      <button class="nav-btn active">Mappa</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Eugenio <em>Montale</em></h2>
+      </div>
+      <p class="section-sub">Struttura concettuale — clicca su ogni nodo per la spiegazione.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;">
+        <!-- 6 categories: L1 centers at 70, 210, 350, 490, 630, 770 · Root cy=420 -->
+        <svg viewBox="0 0 1200 860" width="1200" height="860" style="display:block;" aria-label="Mappa WBS Eugenio Montale">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <!-- Connectors Root → L1 (root cy=420, L1 centers: 70,210,350,490,630,770) -->
+          <path d="M 180,420 C 217,420 255,70 255,70" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,420 C 217,420 255,210 255,210" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,420 C 217,420 255,350 255,350" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,420 C 217,420 255,490 255,490" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,420 C 217,420 255,630 255,630" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 180,420 C 217,420 255,770 255,770" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <!-- Vita (L1 cy=70) → L2 (cy: 47,93) -->
+          <path d="M 415,70 C 467,70 520,47 520,47" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,70 C 467,70 520,93 520,93" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Figure femminili (L1 cy=210) → L2 (cy: 164,210,256) -->
+          <path d="M 415,210 C 467,210 520,164 520,164" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,210 C 467,210 520,210 520,210" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,210 C 467,210 520,256 520,256" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Poetica (L1 cy=350) → L2 (cy: 304,350,396) -->
+          <path d="M 415,350 C 467,350 520,304 520,304" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,350 C 467,350 520,350 520,350" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,350 C 467,350 520,396 520,396" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Opere (L1 cy=490) → L2 (cy: 444,490,536) -->
+          <path d="M 415,490 C 467,490 520,444 520,444" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,490 C 467,490 520,490 520,490" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,490 C 467,490 520,536 520,536" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Testi (L1 cy=630) → L2 (cy: 584,630,676) -->
+          <path d="M 415,630 C 467,630 520,584 520,584" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,630 C 467,630 520,630 520,630" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,630 C 467,630 520,676 520,676" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Confronti (L1 cy=770) → L2 (cy: 747,793) -->
+          <path d="M 415,770 C 467,770 520,747 520,747" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 415,770 C 467,770 520,793 520,793" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT (cy=420, y=390) -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="20" y="390" width="160" height="60" rx="6"/>
+            <text>
+              <tspan x="100" y="417" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="15" font-weight="600">Eugenio Montale</tspan>
+              <tspan x="100" y="433" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9.5" letter-spacing="0.08em">1896 — 1981</tspan>
+            </text>
+          </g>
+
+          <!-- L1 nodes (y = cy - 22) -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button">
+            <rect x="255" y="48" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="75" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('figure')" tabindex="0" role="button">
+            <rect x="255" y="188" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="215" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="10.5" font-weight="600" letter-spacing="0.06em">02 · FIGURE</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button">
+            <rect x="255" y="328" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="355" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">03 · POETICA</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button">
+            <rect x="255" y="468" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="495" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">04 · OPERE</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button">
+            <rect x="255" y="608" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="635" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">05 · TESTI</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button">
+            <rect x="255" y="748" width="160" height="44" rx="4"/>
+            <text><tspan x="335" y="775" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">06 · CONFRONTI</tspan></text>
+          </g>
+
+          <!-- L2: VITA (y: 28,74) -->
+          <g class="node node-l2" onclick="showNode('vita-tappe')" tabindex="0" role="button">
+            <rect x="520" y="28" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="44" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Tappe fondamentali</tspan>
+              <tspan x="615" y="58" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">Gobetti · Vieusseux · Nobel</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('vita-antifascismo')" tabindex="0" role="button">
+            <rect x="520" y="74" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="90" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Antifascismo</tspan>
+              <tspan x="615" y="104" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">PNF rifiutato · CLN · Saba</tspan>
+            </text>
+          </g>
+
+          <!-- L2: FIGURE (y: 145,191,237) -->
+          <g class="node node-l2" onclick="showNode('figure-clizia')" tabindex="0" role="button">
+            <rect x="520" y="145" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="161" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Clizia — Irma Brandeis</tspan>
+              <tspan x="615" y="175" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">donna-angelo · Beatrice · girasole</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('figure-mosca')" tabindex="0" role="button">
+            <rect x="520" y="191" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="207" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Mosca — Drusilla Tanzi</tspan>
+              <tspan x="615" y="221" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">miopia · Xenia · quotidiana</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('figure-volpe')" tabindex="0" role="button">
+            <rect x="520" y="237" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="253" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Volpe — M.L. Spaziani</tspan>
+              <tspan x="615" y="267" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">eros · anti-Clizia · vitalità</tspan>
+            </text>
+          </g>
+
+          <!-- L2: POETICA (y: 285,331,377) -->
+          <g class="node node-l2" onclick="showNode('poetica-correlativo')" tabindex="0" role="button">
+            <rect x="520" y="285" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="301" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Correlativo oggettivo</tspan>
+              <tspan x="615" y="315" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">T.S. Eliot · oggetto = emozione</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('poetica-male')" tabindex="0" role="button">
+            <rect x="520" y="331" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="347" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Male di vivere</tspan>
+              <tspan x="615" y="361" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">prigione · muro · nessun riscatto</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('poetica-varco')" tabindex="0" role="button">
+            <rect x="520" y="377" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="393" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Il varco</tspan>
+              <tspan x="615" y="407" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">via di fuga · quasi sempre fallita</tspan>
+            </text>
+          </g>
+
+          <!-- L2: OPERE (y: 425,471,517) -->
+          <g class="node node-l2" onclick="showNode('opere-ossi')" tabindex="0" role="button">
+            <rect x="520" y="425" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="441" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Ossi di seppia</tspan>
+              <tspan x="615" y="455" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1925 · muro · paesaggio ligure</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('opere-occasioni')" tabindex="0" role="button">
+            <rect x="520" y="471" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="487" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Le occasioni</tspan>
+              <tspan x="615" y="501" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1939 · Mottetti · Clizia</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('opere-satura')" tabindex="0" role="button">
+            <rect x="520" y="517" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="533" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Satura</tspan>
+              <tspan x="615" y="547" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1971 · Xenia · ironia · prosa</tspan>
+            </text>
+          </g>
+
+          <!-- L2: TESTI (y: 565,611,657) -->
+          <g class="node node-l2" onclick="showNode('testi-non-chiederci')" tabindex="0" role="button">
+            <rect x="520" y="565" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="581" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Non chiederci la parola</tspan>
+              <tspan x="615" y="595" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">manifesto · anti-vate</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('testi-male')" tabindex="0" role="button">
+            <rect x="520" y="611" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="627" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Spesso il male di vivere</tspan>
+              <tspan x="615" y="641" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">correlativi · divina Indifferenza</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('testi-ho-sceso')" tabindex="0" role="button">
+            <rect x="520" y="657" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="673" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Ho sceso, dandoti il braccio</tspan>
+              <tspan x="615" y="687" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">Mosca · prosa · miopia</tspan>
+            </text>
+          </g>
+
+          <!-- L2: CONFRONTI (y: 728,774) -->
+          <g class="node node-l2" onclick="showNode('confronti-posizione')" tabindex="0" role="button">
+            <rect x="520" y="728" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="744" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Posizione nel Novecento</tspan>
+              <tspan x="615" y="758" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">vs Ungaretti · vs D'Annunzio</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('confronti-chiave')" tabindex="0" role="button">
+            <rect x="520" y="774" width="190" height="38" rx="3"/>
+            <text>
+              <tspan x="615" y="790" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">5 parole-chiave</tspan>
+              <tspan x="615" y="804" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">sintesi del sistema</tspan>
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'Eugenio Montale', text: 'Nasce a Genova nel 1896, ultimo di 5 figli. Formazione autodidatta. Estati a Monterosso al mare (Cinque Terre): il paesaggio ligure entra nella poesia come correlativo oggettivo. Direttore del Gabinetto Vieusseux (Firenze) 1929-38. Senatore a vita 1967. Nobel per la letteratura 1975. Muore a Milano 1981.' },
+      vita: { label: 'Categoria', title: 'Vita', text: '1925: Ossi di seppia (Gobetti). 1929-38: Direttore Vieusseux a Firenze. 1933: incontra Irma Brandeis (Clizia). 1938: licenziato per rifiuto PNF; Clizia torna in USA. 1943-45: protegge ebrei a Firenze, attivo nel CLN. 1948: Milano, Corriere della Sera. 1975: Nobel.' },
+      figure: { label: 'Categoria', title: 'Figure femminili', text: 'Non sono solo donne amate: sono allegorie di esigenze interiori che cambiano di raccolta in raccolta. Clizia (Irma Brandeis): donna-angelo-Beatrice. Mosca (Drusilla Tanzi): guida pratica quotidiana. Volpe (Maria Luisa Spaziani): vitalità e eros. Arletta (Anna degli Uberti): memoria.' },
+      poetica: { label: 'Categoria', title: 'Poetica', text: 'Il correlativo oggettivo (da T.S. Eliot): l\'oggetto fisico «contiene» l\'emozione senza nominarla. Il male di vivere: l\'esistenza come prigione invalicabile. Il varco: ricerca ossessiva — quasi sempre fallita — di una via di fuga. La divina Indifferenza: la natura non partecipa al dolore umano.' },
+      opere: { label: 'Categoria', title: 'Opere', text: '4 raccolte: Ossi di seppia (1925), Le occasioni (1939), La bufera e altro (1956), Satura (1971). Evoluzione: dal muro al diario. 15 anni di silenzio tra Bufera e Satura — sbloccato dalla morte di Mosca (1963). L\'insieme mostra una trasformazione radicale dello stile.' },
+      testi: { label: 'Categoria', title: 'Testi', text: '6 testi del programma: Non chiederci la parola, Spesso il male di vivere, Meriggiare pallido e assorto, Cigola la carrucola nel pozzo, Non recidere forbice quel volto, Ho sceso dandoti il braccio. 4 da Ossi, 1 da Occasioni, 1 da Satura.' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'vs Ungaretti: Ungaretti ha epifanie (illuminazione); Montale ha scacco permanente. vs Saba: Saba accetta la vita pienamente; Montale diagnostica il male come irrisolvibile. vs D\'Annunzio: anti-vate radicale. vs Leopardi: stesso pessimismo cosmico, ma Montale non canta nemmeno la speranza vana.' },
+      'vita-tappe': { label: 'Vita', title: 'Tappe fondamentali', text: '1925: Ossi di seppia (Gobetti, antifascista assassinato dai fascisti). 1929-38: Direttore del Gabinetto Vieusseux a Firenze. 1933: incontra Irma Brandeis. 1938: licenziato. 1943-45: protegge ebrei, attivo nel CLN. 1948: critico del Corriere della Sera. 1967: Senatore a vita. 1975: Nobel.' },
+      'vita-antifascismo': { label: 'Vita', title: 'Antifascismo', text: '1925: firma Manifesto antifascista Croce. Pubblica con Gobetti (editore ucciso dai fascisti). 1938: licenziato dal Vieusseux per rifiuto di iscriversi al PNF. 1943-45: ospita Saba e altri ebrei a Firenze, attivo nel Comitato di Liberazione Nazionale.' },
+      'figure-clizia': { label: 'Figure femminili', title: 'Clizia — Irma Brandeis', text: 'Studiosa americana di Dante, ebrea, conosciuta a Firenze 1933. Torna in USA per leggi razziali 1938. Nelle Occasioni: donna-angelo sul modello di Beatrice dantesca. Nella Bufera: messaggera cosmica quasi cristologica (girasole che si sacrifica).' },
+      'figure-mosca': { label: 'Figure femminili', title: 'Mosca — Drusilla Tanzi', text: 'Convivente dal 1939, moglie dal 1962. Soprannome per la miopia forte (occhiali spessi = occhi di mosca). Guida pratica e quotidiana: «radar spirituale» infallibile. Morta nel 1963 → sblocca gli Xenia (Satura). Rovescia l\'immagine di Clizia: non sublime ma domestica.' },
+      'figure-volpe': { label: 'Figure femminili', title: 'Volpe — M.L. Spaziani', text: 'Poetessa, incontrata negli anni 50. Incarna l\'eros e la vitalità: anti-Clizia. Nella Bufera e altri: sensualità contro spiritualità. «La volpe» = astuzia e istinto. Breve ma intensa presenza nella raccolta.' },
+      'poetica-correlativo': { label: 'Poetica', title: 'Correlativo oggettivo', text: 'Da T.S. Eliot (La terra desolata, 1922). Oggetto fisico concreto che «contiene» l\'emozione senza nominarla. Es: rivo strozzato + foglia riarsa + cavallo stramazzato = male di vivere. Differenza: in Pascoli l\'oggetto è proiezione soggettiva; in Montale mantiene la sua densità fisica.' },
+      'poetica-male': { label: 'Poetica', title: 'Male di vivere', text: 'Tema centrale di tutta l\'opera. L\'esistenza è una prigione: il muro invalicabile (Meriggiare). La natura è indifferente al dolore umano. Nessuna ideologia o fede può liberare l\'uomo. Non nasce dagli eventi storici: è «connaturato all\'esistenza».' },
+      'poetica-varco': { label: 'Poetica', title: 'Il varco', text: 'Ricerca ossessiva — quasi sempre fallita — di una via di fuga o di senso. Es: profumo dei limoni (I limoni), carrucola nel pozzo (memoria), Clizia (Non recidere). Il varco è sempre precario e si richiude. Lo «scacco» è la condizione normale dell\'uomo.' },
+      'opere-ossi': { label: 'Opere', title: 'Ossi di seppia (1925)', text: 'Residui calcarei di molluschi = uomo spogliato di illusioni. Doppia valenza: galleggia (armonia) o è arenato (esilio, aridità). Stile: aspra musicalità, lessico basso e tecnico, «storta sillaba e secca come un ramo». Paesaggio ligure come correlativo del male di vivere.' },
+      'opere-occasioni': { label: 'Opere', title: 'Le occasioni (1939)', text: '«Occasioni» = lampi di vita vissuta, flash improvvisi che aprono un varco. Sezione centrale: i Mottetti (20 brevi poesie per Clizia assente). Lingua più oscura e aristocratica; vicino all\'ermetismo.' },
+      'opere-satura': { label: 'Opere', title: 'Satura (1971)', text: '3 significati: satura lanx (varietà) + satira (tono ironico) + sazietà. Rottura totale con l\'allegorismo: stile prosastico, colloquiale, diaristico. Contiene gli Xenia (28 poesie per Mosca morta).' },
+      'testi-non-chiederci': { label: 'Testi', title: 'Non chiederci la parola', text: 'Manifesto poetico. «Ciò che non siamo, ciò che non vogliamo» = definizione per esclusione. La poesia non illumina, non salva. «Storta sillaba e secca come un ramo» = metafora negativa della parola. Contro il poeta-vate di D\'Annunzio.' },
+      'testi-male': { label: 'Testi', title: 'Spesso il male di vivere', text: 'Struttura simmetrica: 3 correlativi del male (rivo strozzato, foglia riarsa, cavallo stramazzato) + 3 correlativi della divina Indifferenza (statua, nuvola, falco). Rovesciamento della pathetic fallacy romantica.' },
+      'testi-ho-sceso': { label: 'Testi', title: 'Ho sceso, dandoti il braccio', text: 'Dagli Xenia (Satura). Per Mosca morta. Paradosso: lei miope vedeva meglio di lui. «Le sole vere pupille, sebbene tanto offuscate, erano le tue.» Stile totalmente prosastico. Rovescia l\'immagine di Clizia: grandezza nella prosaicità.' },
+      'confronti-posizione': { label: 'Confronti', title: 'Posizione nel Novecento', text: 'vs Ungaretti: Ungaretti ha epifanie (illuminazione); Montale ha scacco permanente. vs Saba: Saba accetta pienamente la vita; Montale diagnostica il male come irrisolvibile. vs D\'Annunzio: Anti-Vate radicale. vs Leopardi: stesso pessimismo cosmico, ma Montale non canta nemmeno la speranza vana.' },
+      'confronti-chiave': { label: 'Sintesi', title: '5 parole-chiave di Montale', text: '① Correlativo oggettivo — oggetto che contiene l\'emozione. ② Male di vivere — condizione irrisolvibile. ③ Varco — tentativo (quasi sempre fallito) di fuga. ④ Divina Indifferenza — natura estranea al dolore. ⑤ Anti-Vate — rifiuto del poeta-profeta.' }
+    };
+
+    function showNode(key) {
+      const n = NODES[key];
+      if (!n) return;
+      document.getElementById('tip-label').textContent = n.label;
+      document.getElementById('tip-title').textContent = n.title;
+      document.getElementById('tip-text').textContent = n.text;
+      document.getElementById('map-overlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeTip() {
+      document.getElementById('map-overlay').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTip(); });
+  </script>
 </body>
 </html>
