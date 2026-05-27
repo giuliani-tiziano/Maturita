@@ -3573,6 +3573,372 @@ pirandello: [
     modelAnswer:'La tabella comparativa mostra differenze profonde. In Pirandello l\'io è frammentato, molteplice, senza un «originale» — formula: Uno, nessuno e centomila. In Svevo l\'io è inetto, diviso tra volontà e incapacità di agire. Rispetto a Freud: Pirandello è distante (nessun inconscio, nessuna terapia), Svevo è vicino (la coscienza di Zeno è esplicitamente psicoanalitica). Soluzione della crisi: in Pirandello non esiste (la frammentazione è insuperabile); in Svevo è ironica (Zeno «guarisce» ma la guarigione è fittizia). Forma narrativa: Pirandello usa il monologo ragionante e il dialogo ossessivo; Svevo usa il diario inattendibile e il narratore inaffidabile. Teatro: centrale e innovativo per Pirandello; secondario per Svevo. Contesto geografico: Sicilia e Roma per Pirandello; Trieste per Svevo (margine della civiltà asburgica, crocevia culturale).',
     keywords:['frammentato molteplice','inetto diviso','Freud distante','Freud vicino','nessuna soluzione','guarigione fittizia','monologo ragionante','diario inattendibile','teatro centrale','Sicilia Roma','Trieste asburgica']
   }
+],
+
+/* ===================================================================
+   GABRIELE D'ANNUNZIO — 90 domande
+   Sezioni: Vita · Poetica · Opere · Testi · Confronti
+   =================================================================== */
+dannunzio: [
+  /* ──────────────  VITA  ────────────── */
+  { id:'da01', type:'mc', topic:'Vita',
+    text:'In quale città nacque Gabriele D\'Annunzio nel 1863?',
+    options:['Roma','Napoli','Pescara','Firenze'],
+    correct:2,
+    explanation:'D\'Annunzio nacque a Pescara (allora Pescara di Abruzzo) il 12 marzo 1863. La città abruzzese è centrale nella sua produzione giovanile e nelle prime raccolte poetiche.'
+  },
+  { id:'da02', type:'mc', topic:'Vita',
+    text:'Come si chiama il protagonista-alter ego di D\'Annunzio nel romanzo Il piacere (1889)?',
+    options:['Giorgio Aurispa','Stelio Èffrena','Andrea Sperelli','Claudio Cantelmo'],
+    correct:2,
+    explanation:'Andrea Sperelli è il protagonista de Il piacere (1889), dandy romano che vuole «fare la propria vita come si fa un\'opera d\'arte». È il primo alter ego romanzesco di D\'Annunzio e il prototipo del dandy italiano.'
+  },
+  { id:'da03', type:'mc', topic:'Vita',
+    text:'Cos\'era «La Capponcina»?',
+    options:['Il teatro romano dove D\'Annunzio debuttò come drammaturgo','La tenuta presso Settignano (Firenze) dove D\'Annunzio visse tra 1898 e 1910 conducendo una vita lussuosa','Il nome del biplano con cui D\'Annunzio sorvolò Vienna nel 1918','La casa editrice fondata da D\'Annunzio a Milano'],
+    correct:1,
+    explanation:'La Capponcina era la villa nei pressi di Settignano (Firenze) dove D\'Annunzio abitò dal 1898 al 1910 con Eleonora Duse, conducendo una vita di lusso sfrenato che lo portò a contrarre enormi debiti. È il simbolo del suo «estetismo vissuto».'
+  },
+  { id:'da04', type:'tf', topic:'Vita',
+    text:'Eleonora Duse, la grande attrice con cui D\'Annunzio ebbe una relazione, è la fonte di ispirazione per il personaggio di Foscarina Perdita nel romanzo Il fuoco (1900).',
+    correct:true,
+    explanation:'Vero. Nel Fuoco, Stelio Èffrena (alter ego di D\'Annunzio) ha una relazione con Foscarina Perdita (alter ego di Eleonora Duse). Il romanzo, pubblicato mentre la relazione era ancora in corso, causò enorme scandalo per la crudezza con cui D\'Annunzio descrisse il declino fisico della Duse.'
+  },
+  { id:'da05', type:'mc', topic:'Vita',
+    text:'Il Vittoriale degli Italiani è:',
+    options:['Il nome della nave con cui D\'Annunzio salpò per Fiume','Il complesso monumentale sul lago di Garda dove D\'Annunzio visse dal 1921 alla morte (1938)','Il palazzo romano in cui D\'Annunzio scrisse le Laudi','Il nome della tenuta abruzzese della famiglia D\'Annunzio'],
+    correct:1,
+    explanation:'Il Vittoriale degli Italiani è il complesso monumentale di Gardone Riviera (lago di Garda) dove D\'Annunzio si ritirò dal 1921 fino alla morte nel 1938. Vi costruì una sorta di museo di se stesso: la nave Puglia incagliata nel giardino, mausolei, stanze cerimoniose. Oggi è museo statale.'
+  },
+  { id:'da06', type:'mc', topic:'Vita',
+    text:'Cosa fu l\'«Impresa di Fiume» (1919–1920)?',
+    options:['La costruzione del canale idroelettrico sul Tagliamento finanziata da D\'Annunzio','L\'occupazione militare della città di Fiume (oggi Rijeka) guidata da D\'Annunzio con un esercito di volontari, in contrasto con i trattati di pace post-bellici','Il tentativo di golpe monarchico orchestrato da D\'Annunzio a Roma nel 1919','Una manovra diplomatica di D\'Annunzio per ottenere la Dalmazia per l\'Italia'],
+    correct:1,
+    explanation:'Nel settembre 1919 D\'Annunzio guidò un esercito di volontari («i legionari») nell\'occupazione di Fiume, città a maggioranza italiana assegnata alla Jugoslavia dai trattati di pace. La cosiddetta «città di vita» durò fino al «Natale di sangue» (dicembre 1920), quando il governo Giolitti la sgomberò militarmente. Storicamente è considerata un preludio al fascismo.'
+  },
+  { id:'da07', type:'mc', topic:'Vita',
+    text:'Quale fu il ruolo di D\'Annunzio nell\'interventismo italiano del 1915?',
+    options:['D\'Annunzio era neutralista e si oppose all\'entrata in guerra dell\'Italia','Con i discorsi del «Maggio Radioso» D\'Annunzio fu la principale voce interventista, arringando le folle per l\'entrata in guerra al fianco dell\'Intesa','D\'Annunzio sostenne l\'alleanza con gli Imperi Centrali (Germania e Austria)','D\'Annunzio si rifiutò di pronunciarsi sulla guerra per non compromettere la sua immagine di artista'],
+    correct:1,
+    explanation:'Il «Maggio Radioso» del 1915: D\'Annunzio tenne una serie di discorsi infuocati che incitarono la folla all\'intervento in guerra. Il suo verbo trascinante contribuì significativamente alla decisione dell\'Italia di entrare in guerra. È uno degli esempi più nitidi di come D\'Annunzio usasse la parola come arma politica, conformemente al suo ruolo di «vate».'
+  },
+  { id:'da08', type:'tf', topic:'Vita',
+    text:'D\'Annunzio fu il primo scrittore italiano a usare la radio come mezzo di comunicazione di massa per diffondere i propri testi poetici.',
+    correct:false,
+    explanation:'Falso. D\'Annunzio non usò sistematicamente la radio per diffondere la sua poesia. La sua azione di comunicazione di massa avvenne attraverso i giornali (collaboratore de Il Mattino, Il Corriere della Sera), i discorsi pubblici, e il teatro. La radio come mezzo letterario fu sperimentata da altri autori, non è una caratteristica dannunziana documentata nei contenuti del sito.'
+  },
+  { id:'da09', type:'mc', topic:'Vita',
+    text:'In quale città D\'Annunzio trascorse gran parte degli anni \'80 e \'90 conducendo una vita mondana che ispirò Il piacere?',
+    options:['Venezia','Roma','Milano','Napoli'],
+    correct:1,
+    explanation:'D\'Annunzio visse a Roma dal 1881 al 1891, frequentando i salotti aristocratici, le avventure amorose e il giornalismo mondano. Quest\'esperienza romana è la materia narrativa de Il piacere (1889): i saloni, i palazzi nobiliari, le due figure femminili (Elena Muti e Maria Ferres) rispecchiano la vita del giovane D\'Annunzio nella capitale.'
+  },
+  { id:'da10', type:'mc', topic:'Vita',
+    text:'Come definì Carducci nel suo percorso poetico?',
+    options:['Il «maestro definitivo» da cui non si distaccò mai','Prima «la scossa rivelatrice», poi il «maestro avverso» da cui prese le distanze','Il suo opposto assoluto, che non lo influenzò in alcun modo','Il poeta che lo spinse verso il Simbolismo francese'],
+    correct:1,
+    explanation:'D\'Annunzio descrisse il suo rapporto con Carducci in due fasi: prima «la scossa rivelatrice» — Carducci fu il punto di partenza (Primo vere, 1879, usa i metri barbari carducciani); poi il «maestro avverso» — D\'Annunzio se ne distaccò per elaborare la propria poetica sensoriale e decadente, profondamente diversa dall\'etica civile e classica di Carducci.'
+  },
+
+  /* ──────────────  POETICA  ────────────── */
+  { id:'da11', type:'mc', topic:'Poetica',
+    text:'Dal nome di quale divinità greca deriva il termine «panismo»?',
+    options:['Apollo, dio della poesia e della luce','Pan, dio dei boschi e della natura selvaggia','Poseidone, dio del mare','Dioniso, dio dell\'ebbrezza'],
+    correct:1,
+    explanation:'Panismo deriva da Pan, il dio greco dei boschi, delle greggi e della natura. Indica la tendenza di D\'Annunzio a fondersi totalmente con la natura fino alla metamorfosi: il poeta non contempla la natura, diventa natura. L\'io si dissolve nell\'elemento naturale (albero, foglia, onda) perdendo i confini dell\'individuo.'
+  },
+  { id:'da12', type:'mc', topic:'Poetica',
+    text:'Quali sono i due movimenti simultanei del panismo?',
+    options:['Sublimazione del reale e recupero del mito classico','Umanizzazione della natura (la natura acquista tratti umani) e naturalizzazione dell\'uomo (il poeta diventa elemento naturale)','Descrizione oggettiva e soggettiva della natura','Metafora e metonimia applicate al paesaggio'],
+    correct:1,
+    explanation:'Il panismo ha due movimenti: (1) umanizzazione della natura — la natura acquista tratti umani (la Sera ha «un viso di perla e grandi occhi umidi»); (2) naturalizzazione dell\'uomo — il poeta diventa elemento naturale (Ermione «quasi fatta virente» — quasi diventata verde). I due movimenti sono simultanei e reciproci.'
+  },
+  { id:'da13', type:'mc', topic:'Poetica',
+    text:'Cosa intende D\'Annunzio con il termine «imaginifico» con cui si autodefiniva?',
+    options:['La tendenza a inventare storie fantastiche e mitologiche','La capacità di creare immagini attraverso il valore fonico delle parole, prima ancora del loro significato semantico','Il ricorso frequente a immagini visive nelle sue poesie','La sua fama come creatore di personaggi letterari memorabili'],
+    correct:1,
+    explanation:'«Imaginifico» indica la capacità di creare immagini attraverso la magia dei suoni: le parole vengono scelte per il loro valore fonico ed evocativo prima di quello semantico. In La pioggia nel pineto, l\'anafora «piove su tamerici, piove su pini, piove su mirti» non descrive la pioggia: crea musica. La parola si dissolve di immagine in immagine, di suggestione in suggestione.'
+  },
+  { id:'da14', type:'mc', topic:'Poetica',
+    text:'Cosa significa «vate» nella poetica di D\'Annunzio?',
+    options:['Il poeta-profeta che guida spiritualmente e politicamente la nazione, plasma la realtà con la parola','Il nome latino di un tipo di metro classico usato in Alcyone','Il narratore onnisciente che conosce il destino dei personaggi','Il protagonista autobiografico dei romanzi del superuomo'],
+    correct:0,
+    explanation:'Il vate è il poeta-profeta: nell\'antichità era insieme poeta e sacerdote, interprete della volontà degli dèi. D\'Annunzio riprende questa figura per il ruolo dell\'artista-superuomo: guida spirituale e politica della nazione. Il vate non descrive la realtà: la plasma con la parola. La funzione pubblica si concretizza nella vita stessa di D\'Annunzio: il «Maggio Radioso», la marcia di Ronchi, il Vittoriale.'
+  },
+  { id:'da15', type:'mc', topic:'Poetica',
+    text:'Il superuomo di D\'Annunzio deriva dalla teoria di Nietzsche. Come D\'Annunzio ne modifica la portata?',
+    options:['D\'Annunzio approfondisce la dimensione filosofica dell\'Übermensch nietzscheano','D\'Annunzio ne impoverisce la portata filosofica ma ne divulga il pensiero in Italia, trasformando il superuomo in artista-vate che rifiuta il liberalismo democratico','D\'Annunzio trasforma il superuomo in un personaggio popolare e democratico','D\'Annunzio ignora Nietzsche e costruisce il superuomo su basi puramente estetiche'],
+    correct:1,
+    explanation:'D\'Annunzio attinge a Nietzsche (Così parlò Zarathustra, 1883–85) ma ne semplifica la portata filosofica. Il superuomo nietzscheano è una complessa proposta morale e ontologica; quello dannunziano è l\'artista-vate che indica nuove strade, rifiuta il liberalismo democratico in nome di un\'élite privilegiata, e incarna la volontà di potenza nella vita vissuta come opera d\'arte.'
+  },
+  { id:'da16', type:'mc', topic:'Poetica',
+    text:'Cosa distingue l\'analogia simbolista (Baudelaire, Verlaine, Mallarmé) dalla similitudine tradizionale?',
+    options:['L\'analogia usa più termini di paragone della similitudine','L\'analogia elimina il termine comparativo e suggerisce senza spiegare, accostando oggetti apparentemente lontani sulla base di una corrispondenza segreta','L\'analogia si applica solo alla natura, la similitudine solo ai sentimenti umani','L\'analogia è una figura retorica del Rinascimento, non dei Simbolisti'],
+    correct:1,
+    explanation:'La similitudine tradizionale esplicita il termine di paragone («come», «simile a»). L\'analogia simbolista lo elimina: accosta oggetti, sensazioni e stati d\'animo apparentemente lontani sulla base di una corrispondenza segreta, suggerendo senza spiegare. Esempio: «le colline s\'incurvino come labbra che un divieto chiuda» (La sera fiesolana) — le colline sono labbra sigillate che custodiscono un segreto.'
+  },
+  { id:'da17', type:'tf', topic:'Poetica',
+    text:'La «poetica della bontà» di D\'Annunzio (fase napoletana 1891–1894) rappresenta un avvicinamento a sentimenti più intimi e al dolore dei deboli, sotto l\'influenza di Dostoevskij e Tolstoj.',
+    correct:true,
+    explanation:'Vero. La fase napoletana (1891–1894) vede D\'Annunzio distaccarsi dall\'estetismo mondano romano per avvicinarsi a sentimenti delicati e intimistici: il dolore dei deboli e degli umili diventa materia poetica. Le opere chiave sono Giovanni Episcopo, L\'innocente, e il Poema paradisiaco. L\'influenza è quella dei grandi romanzieri russi (Dostoevskij, Tolstoj).'
+  },
+  { id:'da18', type:'mc', topic:'Poetica',
+    text:'Qual è la caratteristica principale del lessico di D\'Annunzio?',
+    options:['Parole comuni e trite, scelte per la loro onestà semantica','Termini dialettali e tecnico-scientifici, come in Pascoli','Lessico aulico, arcaico e musicale: le parole sono scelte prima per il valore fonico che semantico','Sintassi nominale e parola isolata, come in Ungaretti'],
+    correct:2,
+    explanation:'Il lessico di D\'Annunzio è aulico (latineggiante, arcaico), musicale (assonanze, allitterazioni, parole rare per il suono), e «imaginifico»: la parola è scelta prima per il suo valore fonico ed evocativo che per quello semantico. Saba si opporrà esplicitamente a questa scelta con la sua «poesia onesta» delle «parole trite», cioè comuni.'
+  },
+  { id:'da19', type:'open', topic:'Poetica',
+    text:'Spiega il concetto di panismo in D\'Annunzio, indicando i due movimenti che lo compongono e un\'opera esemplare.',
+    modelAnswer:'Il panismo (da Pan, dio greco dei boschi) è la tendenza di D\'Annunzio a fondersi totalmente con la natura fino alla metamorfosi: il poeta non contempla la natura ma la diventa. Ha due movimenti simultanei: (1) umanizzazione della natura — la natura acquista tratti umani (es. la Sera ha un viso di perla); (2) naturalizzazione dell\'uomo — il poeta diventa elemento naturale (Ermione «quasi fatta virente»). L\'opera esemplare è Alcyone (1903), in particolare La pioggia nel pineto: il poeta e Ermione si trasformano gradualmente in esseri vegetali nel corso della poesia, attraverso tre tappe: contiguità metonimica, similitudine, vera metamorfosi.',
+    keywords:['Pan','fusione totale','umanizzazione della natura','naturalizzazione dell\'uomo','Alcyone','metamorfosi','tre tappe']
+  },
+  { id:'da20', type:'mc', topic:'Poetica',
+    text:'Quale movimento culturale europeo di fine Ottocento si oppone al positivismo e al Naturalismo, privilegiando l\'intuizione, il simbolo e la musica?',
+    options:['Romanticismo','Realismo','Decadentismo','Futurismo'],
+    correct:2,
+    explanation:'Il Decadentismo è il movimento culturale europeo di fine Ottocento che reagisce al positivismo e al Naturalismo: privilegia l\'intuizione sul ragionamento, il simbolo sulla descrizione, la musica sul significato logico. L\'artista decadente è «maledetto», superiore per sensibilità. In Italia i massimi esponenti sono D\'Annunzio (estroversione e potenza) e Pascoli (introversione e fanciullino), con poetiche opposte.'
+  },
+
+  /* ──────────────  OPERE  ────────────── */
+  { id:'da21', type:'mc', topic:'Opere',
+    text:'Quale libro delle Laudi del cielo, del mare, della terra e degli eroi è considerato il capolavoro assoluto di D\'Annunzio?',
+    options:['Maia — per la lunghezza e il superomismo','Elettra — per il nazionalismo civile','Alcyone — per il panismo e la sperimentazione musicale','Merope — per la celebrazione della guerra libica'],
+    correct:2,
+    explanation:'Alcyone (1903) è il terzo libro delle Laudi ed è il capolavoro riconosciuto di D\'Annunzio: 88 componimenti in 5 sezioni che seguono un ciclo stagionale dalla primavera all\'autunno. Qui il panismo raggiunge la perfezione nella Pioggia nel pineto e nella Sera fiesolana. La musicalità è totale e la sperimentazione metrica si spinge fino al trisillabo.'
+  },
+  { id:'da22', type:'mc', topic:'Opere',
+    text:'In quanti libri era concepito il progetto delle Laudi, dedicati alle stelle delle Pleiadi? Quanti ne vennero effettivamente pubblicati?',
+    options:['Progetto: 9 libri; pubblicati: 4','Progetto: 7 libri; pubblicati: 5','Progetto: 5 libri; pubblicati: 5','Progetto: 12 libri; pubblicati: 3'],
+    correct:1,
+    explanation:'Il progetto delle Laudi prevedeva 7 libri dedicati alle stelle delle Pleiadi (Maia, Elettra, Alcyone, Merope, Asterope, Taigete, Celeno). Ne vennero pubblicati effettivamente 5: Maia, Elettra, Alcyone (1903), e poi Merope (1912) e Asterope (1949, postumo). Il cuore del progetto è Alcyone.'
+  },
+  { id:'da23', type:'mc', topic:'Opere',
+    text:'Cosa rappresenta Andrea Sperelli nel romanzo Il piacere (1889)?',
+    options:['Il trionfo del superuomo nietzscheano','Il fallimento dell\'estetismo: senza forza morale, l\'arte diventa forza distruttiva, e il dandy perde entrambe le donne che ama','Il modello positivo del dandy perfetto, esempi da imitare','L\'inetto sveviano traslato in un contesto aristocratico romano'],
+    correct:1,
+    explanation:'Sperelli rappresenta il fallimento dell\'estetismo: vuole «fare la propria vita come si fa un\'opera d\'arte», ma la sua debolezza di volontà lo porta a perdere entrambe le donne amate (Elena Muti, la donna sensuale, e Maria Ferres, l\'angelo). Il romanzo è la critica implicita dell\'estetismo senza fondamento morale. Anticipa la figura novecentesca dell\'inetto.'
+  },
+  { id:'da24', type:'mc', topic:'Opere',
+    text:'Come nacque Il Notturno (1921)?',
+    options:['Durante l\'esilio parigino (1910–1915), come riflessione sull\'Europa in guerra','Durante la convalescenza del 1916 con l\'occhio bendato per mesi: D\'Annunzio scriveva su strisce di carta («cartigli») al buio','Come commento letterario al V canto dell\'Inferno dantesco','Dopo l\'impresa di Fiume, come resoconto politico in stile autobiografico'],
+    correct:1,
+    explanation:'Il Notturno nasce durante la convalescenza del 1916: D\'Annunzio aveva subito un incidente aereo che gli aveva ferito un occhio, costringendolo a mesi di immobilità con l\'occhio bendato. Scriveva su migliaia di strisce di carta («cartigli») che la figlia Renata ritagliava. Il risultato è un testo autobiografico e introspettivo con stile impressionistico e ruptura totale rispetto allo stile magnificente precedente.'
+  },
+  { id:'da25', type:'mc', topic:'Opere',
+    text:'Quale romanzo segna la transizione dal mito dell\'esteta al superuomo e ha come protagonista Giorgio Aurispa, ossessionato dalla morte?',
+    options:['Il piacere (1889)','Le vergini delle rocce (1895)','Trionfo della morte (1894)','Il fuoco (1900)'],
+    correct:2,
+    explanation:'Trionfo della morte (1894) segna la transizione dall\'esteta al superuomo: Giorgio Aurispa è ossessionato dalla morte, in una relazione tormentata con Ippolita Sanzio che lo seduce e lo svuota spiritualmente. Trova risposta nella musica di Wagner e nel superuomo di Nietzsche, ma le forze distruttive prevalgono: trascina Ippolita su una scogliera e precipita con lei nel vuoto.'
+  },
+  { id:'da26', type:'tf', topic:'Opere',
+    text:'La figlia di Iorio (1904) è una commedia borghese ambientata in un salotto romano aristocratico.',
+    correct:false,
+    explanation:'Falso. La figlia di Iorio è una tragedia pastorale ambientata in un Abruzzo arcaico e mescola realtà popolare, superstizione, religione e passioni violente. Non ha nulla del salotto borghese: è il mondo contadino e rurale, con linguaggio ricco di termini dialettali. Mila di Codra, accusata di essere una strega, fugge con Aligi e alla fine si sacrifica per salvarlo dalla condanna.'
+  },
+  { id:'da27', type:'mc', topic:'Opere',
+    text:'Qual è la caratteristica principale dello stile del Notturno rispetto alla produzione precedente di D\'Annunzio?',
+    options:['Torna al verso libero delle Laudi, con musicalità ancora più intensa','Prosa semplice e impressionistica, periodi brevi e incalzanti: una rottura totale con lo stile magnificente precedente','Usa per la prima volta il dialetto abruzzese come lingua letteraria','Adotta il flusso di coscienza integrale, senza punteggiatura e senza divisione in capitoli'],
+    correct:1,
+    explanation:'Il Notturno rompe totalmente con lo stile magnificente e aulico della produzione precedente: la prosa è semplice, impressionistica, i periodi brevi e incalzanti. D\'Annunzio definì il libro «commentario delle tenebre». C\'è un\'influenza freudiana (profondità dell\'Es) e un intreccio di piani temporali. «Taccio. Ascolto. Non sento se non il silenzio stesso.» — questo è il nuovo stile.'
+  },
+
+  /* ──────────────  TESTI  ────────────── */
+  { id:'da28', type:'mc', topic:'Testi',
+    text:'Nella Pioggia nel pineto, quali sono le tre tappe della metamorfosi del poeta e di Ermione?',
+    options:['Visione, ascolto, trasformazione','Contiguità metonimica → similitudine → vera metamorfosi','Metafora → metonimia → sinestesia','Anafora → epifora → climax'],
+    correct:1,
+    explanation:'La metamorfosi panica nella Pioggia nel pineto avviene in tre tappe progressive: (1) contiguità metonimica — il poeta e Ermione sono accanto alla natura, gli elementi naturali sono nominati in sequenza; (2) similitudine — iniziano le comparazioni tra parti del corpo e parti delle piante; (3) vera metamorfosi — il poeta diventa albero, Ermione diventa foglia verde. Le tre tappe erano già presenti nell\'analisi del testo.'
+  },
+  { id:'da29', type:'mc', topic:'Testi',
+    text:'Chi è Ermione nella mitologia, e perché D\'Annunzio sceglie questo nome?',
+    options:['Una ninfa dei boschi trasformata in quercia da Zeus','La figlia di Elena di Troia, personaggio mitico che nella Pioggia nel pineto conferisce alla donna una dimensione atemporale e mitica','Una delle Muse, protettrice della poesia lirica','La moglie di Pan, che nella mitologia si trasforma in flauto'],
+    correct:1,
+    explanation:'Ermione è la figlia di Elena di Troia nella mitologia greca. D\'Annunzio sceglie questo nome mitologico per togliere la donna dalla dimensione quotidiana e collocarla in un tempo mitico eterno. Il critico Gibellini sottolinea come il refrain invertito («che ieri t\'illuse, che oggi m\'illude» → «che ieri m\'illuse, che oggi t\'illude») crei un\'atemporalità mitica: nel mito il tempo lineare non esiste.'
+  },
+  { id:'da30', type:'mc', topic:'Testi',
+    text:'Cosa significa l\'inversione dei pronomi nel refrain finale della Pioggia nel pineto, secondo il critico Gibellini?',
+    options:['È un errore di copia mai corretto nelle edizioni successive','Indica che il poeta e la donna hanno scambiato la loro identità durante la metamorfosi','Crea il senso di atemporalità mitica: nel mito il tempo lineare non esiste, il passato e il presente sono intercambiabili','Serve a rispettare la metrica del verso'],
+    correct:2,
+    explanation:'Il critico Gibellini ha interpretato l\'inversione «che ieri t\'illuse, che oggi m\'illude» → «che ieri m\'illuse, che oggi t\'illude» come creazione di atemporalità mitica: nel mito, il tempo lineare non esiste. I due piani temporali (ieri/oggi) e i due soggetti (io/tu) diventano intercambiabili, come in un eterno presente mitico. Ermione, personaggio mitologico (figlia di Elena), rivive nel presente.'
+  },
+  { id:'da31', type:'mc', topic:'Testi',
+    text:'Qual è la funzione dell\'anafora «piove su tamerici, piove su pini, piove su mirti» nella Pioggia nel pineto?',
+    options:['Descrivere con precisione botanica le piante del pineto della Versilia','Creare un effetto di lentezza narrativa','Creare musica attraverso la ripetizione del suono, non descrivere la pioggia: è la tecnica dell\'«imaginifico»','Imitare il ritmo dello stilnovo dantesco'],
+    correct:2,
+    explanation:'L\'anafora della Pioggia non serve a descrivere: serve a creare musica. È la tecnica dell\'«imaginifico»: le parole vengono scelte per il loro valore fonico (tamerici, pini, mirti — suoni liquidi e nasali) prima di quello semantico. Il «piove» ripetuto ossessivamente è come il ticchettio della pioggia stessa, un effetto mimetico-musicale. È uno degli esempi più citati di come D\'Annunzio usi la parola come strumento sonoro.'
+  },
+  { id:'da32', type:'mc', topic:'Testi',
+    text:'Nella Sera fiesolana, le colline che «s\'incurvino come labbra che un divieto chiuda» sono un esempio di:',
+    options:['Metafora semplice','Analogia simbolista: accostamento tra elementi apparentemente lontani sulla base di una corrispondenza segreta, senza termine comparativo esplicito','Similitudine con «come» — quindi non è un\'analogia','Personificazione: le colline hanno un\'identità umana permanente'],
+    correct:1,
+    explanation:'«Le colline s\'incurvino come labbra che un divieto chiuda» è un\'analogia simbolista: il termine «come» è presente ma il collegamento non è ovvio (le colline = labbra sigillate da un divieto). La natura custodisce un segreto indicibile, come una bocca che non può parlare. L\'analogia suggerisce la presenza di un mistero nella natura senza spiegarlo: tecnica tipica del Simbolismo francese (Baudelaire, Verlaine, Mallarmé).'
+  },
+  { id:'da33', type:'open', topic:'Testi',
+    text:'Analizza la struttura della Pioggia nel pineto: metro, tecnica della metamorfosi e significato del refrain.',
+    modelAnswer:'La Pioggia nel pineto ha una struttura metrica sperimentale: verso libero fino al trisillabo, strofe regolari ma senza rime canoniche, sostituite da assonanze e rime interne che creano musicalità continua. La tecnica della metamorfosi segue tre tappe: (1) contiguità metonimica — poeta ed Ermione stanno tra gli elementi naturali; (2) similitudine — il corpo umano inizia a essere paragonato alle piante (Ermione ha «capelli» che «profumano come ginestre»); (3) vera metamorfosi — Ermione è «quasi fatta virente», il poeta diventa «albero». Il refrain è ripetuto quattro volte con variazioni progressive. Il critico Gibellini ha analizzato l\'inversione finale dei pronomi («che ieri t\'illuse, che oggi m\'illude» → «che ieri m\'illuse, che oggi t\'illude») come creazione di atemporalità mitica: nel mito il tempo lineare scompare, il passato e il presente diventano intercambiabili.',
+    keywords:['verso libero trisillabo','tre tappe','contiguità metonimica','similitudine','vera metamorfosi','refrain','inversione pronomi','atemporalità mitica','Gibellini']
+  },
+  { id:'da34', type:'mc', topic:'Testi',
+    text:'Nel Ritratto di Andrea Sperelli (Il piacere), D\'Annunzio descrive Sperelli come «un tipo assai raro di giovine uomo di lettere italiano». Cosa simbolizza la «debolezza di volontà» del personaggio nel sistema tematico del romanzo?',
+    options:['Un difetto psicologico irrilevante rispetto alla sua genialità artistica','Il fallimento dell\'estetismo: la bellezza senza forza morale diventa autodistruttiva, e il dandy perde tutto ciò che ama','Un omaggio all\'inettitudine sveviana, che D\'Annunzio ammirava','La critica al sistema educativo italiano dell\'Ottocento'],
+    correct:1,
+    explanation:'La debolezza di volontà di Sperelli è il nodo tematico centrale de Il piacere: incarna il fallimento dell\'estetismo. Sperelli vuole «fare la propria vita come si fa un\'opera d\'arte», ma non ha la forza morale per realizzare questo progetto. Per questo perde Elena Muti (che lo abbandona per un matrimonio conveniente) e poi Maria Ferres (che offende sovrapponendo mentalmente le due donne). L\'arte senza etica diventa forza distruttiva.'
+  },
+  { id:'da35', type:'tf', topic:'Testi',
+    text:'La Sera fiesolana è inclusa in Alcyone e descrive un paesaggio toscano primaverile (le colline di Fiesole, intorno a Firenze).',
+    correct:true,
+    explanation:'Vero. La Sera fiesolana appartiene ad Alcyone (1903) ed è ambientata sulle colline di Fiesole, a nord-est di Firenze, dove D\'Annunzio abitò tra 1898 e 1910 alla Capponcina. La poesia descrive una sera di primavera: il paesaggio collinare toscano, i cipressi, le luci della pianura. È considerata un\'altra opera emblematica del panismo dannunziano insieme alla Pioggia nel pineto.'
+  },
+
+  /* ──────────────  CONFRONTI  ────────────── */
+  { id:'da36', type:'mc', topic:'Confronti',
+    text:'Come si differenziano D\'Annunzio e Pascoli nel loro rapporto con la natura?',
+    options:['D\'Annunzio contempla la natura; Pascoli si fonde con essa attraverso la metamorfosi','D\'Annunzio si fonde con la natura (panismo, metamorfosi); Pascoli la contempla come rifugio del fanciullino, con simbolismo degli oggetti minuti','Entrambi hanno lo stesso approccio panico alla natura, ma con stili diversi','Pascoli ignora la natura e D\'Annunzio ne fa il centro assoluto della propria poetica'],
+    correct:1,
+    explanation:'D\'Annunzio: panismo — fusione totale, metamorfosi. La natura è l\'essenza segreta che il superuomo penetra. Tre tappe: contiguità → similitudine → metamorfosi. Pascoli: la natura come rifugio del fanciullino — simbolismo, oggetti minuti che parlano un linguaggio segreto. Contemplazione, non fusione. Pascoli non si trasforma in natura: la osserva con gli occhi stupiti del bambino che «vede» ciò che l\'adulto non vede.'
+  },
+  { id:'da37', type:'mc', topic:'Confronti',
+    text:'Cos\'è la «poesia onesta» di Saba e come si oppone a D\'Annunzio?',
+    options:['La poesia onesta usa le stesse forme di D\'Annunzio ma con contenuti meno provocatori','Saba contrappone alle «parole aulicate» di D\'Annunzio le parole «trite» e comuni: dire la verità senza mascherarla è per lui un atto di coraggio estetico','La poesia onesta è il termine con cui Saba indica la poesia dialettale triestina','Saba usa il termine «onesta» nel senso latino di «decorosa», in contrapposizione all\'erotismo dannunziano'],
+    correct:1,
+    explanation:'Saba oppone alla poesia di D\'Annunzio la sua «poesia onesta»: mentre D\'Annunzio sceglie un lessico aulico mettendosi al centro come superuomo, Saba sceglie le parole comuni e trite, dice la verità senza mascherarla. Per Saba la poesia di D\'Annunzio è «disonesta»: preziosismo formale che copre la mancanza di vera verità interiore. Due visioni opposte: D\'Annunzio trasforma la vita in opera d\'arte (verso il bello); Saba porta l\'arte nella vita quotidiana (verso il vero).'
+  },
+  { id:'da38', type:'mc', topic:'Confronti',
+    text:'Come risponde Montale a D\'Annunzio nella lirica Piove (1971)?',
+    options:['Riprende l\'anafora di «piove» della Pioggia nel pineto, ma la svuota di ogni vitalismo: la pioggia cade sul nulla, sulla tomba della moglie, sulla Gazzetta Ufficiale','Scrive una parodia comica che smonta il panismo attraverso l\'ironia borghese','Dedica Piove alla memoria di D\'Annunzio come omaggio alla sua grandezza poetica','Usa la pioggia come simbolo di speranza e rinnovamento, ribaltando il senso negativo della Pioggia nel pineto'],
+    correct:0,
+    explanation:'Nella lirica Piove (1971), Montale riprende l\'anafora ossessiva della Pioggia nel pineto ma la svuota di ogni vitalismo: piove sul nulla, sulla tomba della moglie Mosca, sulla Gazzetta Ufficiale. L\'assenza di Ermione è universale. La pioggia non è più metamorfosi panica ma metafora negativa di immobilità e impotenza. È un esempio nitido di come il Novecento «risponde» a D\'Annunzio: stesso gesto stilistico, senso opposto.'
+  },
+  { id:'da39', type:'mc', topic:'Confronti',
+    text:'Come si differenzia il rapporto di D\'Annunzio, Ungaretti e Montale con la parola poetica?',
+    options:['D\'Annunzio riduce la parola all\'essenziale; Ungaretti la moltiplica; Montale usa il correlativo oggettivo','D\'Annunzio moltiplica le parole saturdandole di musica; Ungaretti le riduce all\'essenziale isolandole nel silenzio; Montale usa un lessico duro e aspro, il correlativo oggettivo come distanza dall\'io','Tutti e tre privilegiano il silenzio come forma suprema di espressione','D\'Annunzio e Montale usano lo stesso tipo di lessico aulico; Ungaretti si distingue con il verso-parola'],
+    correct:1,
+    explanation:'Il confronto tripartito: D\'Annunzio moltiplica le parole, le satura di musica e sensazione, non lascia mai spazio al silenzio (lessico sempre pieno, sonoro, «imaginifico»). Ungaretti riduce la parola all\'essenziale, la isola nel silenzio bianco della pagina: «Mattina» è un solo verso di due parole. Montale usa un lessico duro e aspro, anti-aulico: gli oggetti portano il peso emotivo che l\'io non può esprimere (correlativo oggettivo).'
+  },
+  { id:'da40', type:'open', topic:'Confronti',
+    text:'Confronta D\'Annunzio e Saba usando il concetto di «poesia onesta» di Saba. Quali scelte stilistiche li oppongono e quali visioni del ruolo della poesia incarnano?',
+    modelAnswer:'Saba contrappone esplicitamente la sua «poesia onesta» alla poetica di D\'Annunzio. Le differenze sono radicali. Lessico: D\'Annunzio usa parole aulicizzate, arcaiche, musicali, scelte per il valore fonico prima che semantico (tecnica dell\'«imaginifico»); Saba sceglie parole «trite» e comuni, le parole della vita quotidiana, come atto di coraggio estetico. Visione del poeta: D\'Annunzio è il vate, superuomo-guida che si mette al centro trasformando la vita in opera d\'arte («vivere inimitabile»); Saba è il poeta-testimone che porta l\'arte nella vita quotidiana, cercando la verità anche dolorosa (psicanalisi, scissione interiore). Funzione della poesia: per D\'Annunzio è strumento di potenza e bellezza; per Saba è scandaglio dell\'anima, ricerca di verità. Metrica: D\'Annunzio sperimenta radicalmente (verso libero fino al trisillabo); Saba recupera forme tradizionali (sonetto, canzone) consapevolmente. La formula per l\'orale: «D\'Annunzio verso il bello; Saba verso il vero.»',
+    keywords:['poesia onesta','parole trite','aulico','imaginifico','vate superuomo','testimone','verso il bello','verso il vero','metrica tradizionale','sperimentazione']
+  },
+  { id:'da41', type:'mc', topic:'Confronti',
+    text:'Come D\'Annunzio affronta la «crisi del soggetto moderno», rispetto a Ungaretti e Montale?',
+    options:['D\'Annunzio la nega e si ritira nell\'arte pura; Ungaretti e Montale l\'affrontano direttamente','D\'Annunzio la affronta con la potenza e la bellezza: il superuomo sovrasta la crisi con la forza della volontà; Ungaretti con la luce istantanea della parola; Montale con l\'ostacolo e il negativo','D\'Annunzio, Ungaretti e Montale condividono la stessa risposta: il silenzio come unica forma possibile','D\'Annunzio è il solo che offre una risposta positiva alla crisi; Ungaretti e Montale la subiscono passivamente'],
+    correct:1,
+    explanation:'Tre risposte diverse alla stessa crisi: D\'Annunzio affronta la crisi con potenza e bellezza — il superuomo la sovrasta, la vince con la forza della volontà e dell\'arte. Ungaretti affronta con la luce istantanea: la parola illumina la crisi nel momento presente («M\'illumino d\'immenso»). Montale affronta con l\'ostacolo e il negativo: «ciò che non siamo, ciò che non vogliamo» — il correlativo oggettivo come distanza dall\'io che non riesce ad affermarsi.'
+  },
+  { id:'da42', type:'tf', topic:'Confronti',
+    text:'D\'Annunzio e Pascoli condividono la stessa visione del ruolo del poeta: entrambi credono che il poeta debba essere guida politica della nazione.',
+    correct:false,
+    explanation:'Falso. Le visioni del ruolo del poeta sono diametralmente opposte. D\'Annunzio è il vate — guida spirituale e politica della nazione, superuomo che plasma la realtà con la parola; la sua vita stessa è un atto politico («Maggio Radioso», Fiume, Vittoriale). Pascoli è il «fanciullino» — il poeta rivela l\'ineffabile nei piccoli oggetti quotidiani, con vita appartata e introversione. Pascoli non ha ambizioni politiche; D\'Annunzio fa della politica un\'arte.'
+  },
+  { id:'da43', type:'mc', topic:'Confronti',
+    text:'In quale aspetto D\'Annunzio è definito il «massimo esponente» dell\'Estetismo in Italia?',
+    options:['Perché fu il primo ad adottare il verso libero nella letteratura italiana','Perché incarnò l\'Estetismo non solo nella scrittura ma nella vita stessa: il «vivere inimitabile» trasformò ogni sua azione in opera d\'arte, dal lusso della Capponcina all\'impresa di Fiume','Perché tradusse in italiano i testi fondamentali dell\'Estetismo inglese e francese','Perché fu il fondatore della rivista «Il Convito» che divulgò l\'Estetismo in Italia'],
+    correct:1,
+    explanation:'D\'Annunzio è il massimo esponente italiano dell\'Estetismo perché incarnò la poetica nella vita stessa: il «vivere inimitabile» trasformò ogni azione in opera d\'arte. Non basta scrivere opere estetiste (come Oscar Wilde o Huysmans in altri contesti): D\'Annunzio visse l\'estetismo — la Capponcina come palazzo del gusto assoluto, i debiti folli per mantenere uno stile di vita magnificente, l\'impresa di Fiume come azione estetica. L\'arte e la vita si fondono totalmente.'
+  },
+  { id:'da44', type:'mc', topic:'Confronti',
+    text:'Quali sono le radici europee dell\'Estetismo che influenzano D\'Annunzio?',
+    options:['I romanzi di Emile Zola e il Naturalismo francese','Oscar Wilde e Joris-Karl Huysmans (À rebours, 1884): il culto della bellezza come valore supremo, la vita come opera d\'arte, il dandy come prototipo dell\'artista moderno','Friedrich Nietzsche e Arthur Schopenhauer: filosofia della volontà di potenza','Charles Baudelaire e Arthur Rimbaud: la parola come sortilegio e la ribellione bohémienne'],
+    correct:1,
+    explanation:'Le radici europee dell\'Estetismo di D\'Annunzio sono principalmente Oscar Wilde (il dandy inglese, la vita come opera d\'arte) e Joris-Karl Huysmans (À rebours, 1884 — il romanzo cult dell\'estetismo: il protagonista Des Esseintes si ritira dal mondo per creare una realtà artificiale perfetta). D\'Annunzio è il massimo rappresentante italiano di questo filone. Baudelaire e Nietzsche influenzano altri aspetti della sua poetica.'
+  },
+  { id:'da45', type:'open', topic:'Confronti',
+    text:'Confronta la metrica di D\'Annunzio con quella di Pascoli e Saba, indicando le scelte specifiche di ciascuno e la loro relazione con la poetica.',
+    modelAnswer:'D\'Annunzio compie una sperimentazione metrica radicale: in Alcyone usa il verso libero fino al trisillabo (La pioggia nel pineto), adotta strofe saffiche e alcaiche, sostituisce la rima con assonanze e rime interne. La musicalità è il fine: ogni scelta metrica serve a creare un effetto sonoro («imaginifico»). È il primo grande poeta italiano a usare sistematicamente il verso libero come scelta estetica. Pascoli usa la tradizione con innovazione simbolica: mantiene rime e versi tradizionali ma li carica di valori simbolici; la metrica è al servizio del suono e del simbolo, non della norma. Saba recupera consapevolmente le forme tradizionali (sonetto, canzone, rime facili) come scelta «onesta» contro l\'oscurità novecentesca; dal 1931 introduce il verso libero spezzato sotto l\'influenza di Ungaretti. In sintesi: D\'Annunzio sperimenta verso il musicale; Pascoli conserva con fini simbolici; Saba recupera il tradizionale come atto etico.',
+    keywords:['verso libero trisillabo','assonanze rime interne','musicalità','sperimentazione','Pascoli tradizione simbolica','Saba forme tradizionali sonetto','scelta onesta','verso libero spezzato']
+  },
+
+  /* ──────────────  VITA (approfondimento)  ────────────── */
+  { id:'da46', type:'mc', topic:'Vita',
+    text:'Qual è il significato del termine «estetismo» come programma di vita in D\'Annunzio?',
+    options:['Il rifiuto di qualsiasi forma di estetica borghese a favore di uno stile popolare','Il culto della bellezza come valore supremo a cui tutti gli altri valori sono subordinati: la vita deve diventare opera d\'arte («vivere inimitabile»)','L\'interesse per le arti figurative come complemento alla scrittura','La ricerca di uno stile sobrio e classico contro il decorativismo romantici'],
+    correct:1,
+    explanation:'L\'estetismo è il culto della bellezza come valore supremo a cui tutti gli altri valori (compresi quelli morali) sono subordinati. L\'arte vive in una sfera autonoma, lontana dalle dinamiche sociali. La vita stessa deve diventare opera d\'arte: è il programma del «vivere inimitabile» che D\'Annunzio realizzò concretamente nella sua esistenza. Radici europee: Oscar Wilde e Huysmans (À rebours, 1884).'
+  },
+  { id:'da47', type:'tf', topic:'Vita',
+    text:'D\'Annunzio si trasferì in Francia nel 1910 per sfuggire ai creditori italiani e vi rimase fino al 1915, anno del suo ritorno per i discorsi interventisti.',
+    correct:true,
+    explanation:'Vero. D\'Annunzio fuggì in Francia nel 1910 (a Arcachon, poi a Parigi) per evitare i creditori che reclamavano i debiti accumulati durante la vita lussuosa alla Capponcina. Tornò in Italia nel maggio 1915, proprio per pronunciare i discorsi del «Maggio Radioso» a favore dell\'interventismo. L\'esilio francese lo aprì alla cultura francese e al Simbolismo.'
+  },
+  { id:'da48', type:'mc', topic:'Vita',
+    text:'Quale epiteto politico-culturale nasce dall\'impresa di Fiume di D\'Annunzio e prelude al fascismo?',
+    options:['Il «poeta soldato»','La «città di vita» — con la Carta del Carnaro, la prima costituzione italiana con norme sul lavoro e la libertà di espressione','L\'«esercito dei poeti» — i legionari come incarnazione dell\'élite culturale armata','Il «profeta armato» — D\'Annunzio come Savonarola del Novecento'],
+    correct:1,
+    explanation:'L\'impresa di Fiume (1919–1920) produsse la «città di vita» e la Carta del Carnaro: una delle prime costituzioni italiane moderne, che includeva norme sul lavoro, libertà di espressione e di culto. L\'esperienza fiume è storicamente considerata un laboratorio politico-estetico che anticipò alcune forme del fascismo (il culto del capo, i rituali di piazza, la retorica guerriera), anche se D\'Annunzio non aderì mai formalmente al Partito Nazionale Fascista.'
+  },
+  { id:'da49', type:'mc', topic:'Opere',
+    text:'Quale opera teatrale di D\'Annunzio fu scritta in collaborazione con il musicista Claude Debussy?',
+    options:['La figlia di Iorio (1904)','Francesca da Rimini (1901)','Il martirio di san Sebastiano (1911)','La città morta (1898)'],
+    correct:2,
+    explanation:'Il martirio di san Sebastiano (1911) è l\'opera per musica scritta in francese con musiche di Claude Debussy. Fonde il mito cristiano e quello pagano nella figura di Sebastiano, martire romano che è anche atleta solare. L\'opera fu eseguita a Parigi con la danzatrice Ida Rubinstein nel ruolo del titolo, ed ebbe una grande eco internazionale.'
+  },
+  { id:'da50', type:'mc', topic:'Poetica',
+    text:'Il verso libero in D\'Annunzio (specialmente in Alcyone) è una scelta:',
+    options:['Casuale, dovuta alla difficoltà di mantenere schemi metrici fissi in una produzione così ampia','Estetica sistematica: D\'Annunzio è il primo grande poeta italiano a usarlo non come improvvisazione ma come programma musicale','Derivata dal Futurismo di Marinetti che D\'Annunzio seguì da vicino','Tradizionale, perché il verso libero era già usato sistematicamente dai poeti del Seicento'],
+    correct:1,
+    explanation:'D\'Annunzio è il primo grande poeta italiano a usare sistematicamente il verso libero come scelta estetica, non come improvvisazione. In Alcyone si spinge fino al trisillabo (La pioggia nel pineto). La rima è sostituita da assonanze e rime interne; il ritmo serve la musicalità, non la tradizione metrica. Questa è la differenza fondamentale rispetto agli usi precedenti: è un programma, non un\'eccezione.'
+  },
+
+  /* ──────────────  OPERE (approfondimento)  ────────────── */
+  { id:'da51', type:'mc', topic:'Opere',
+    text:'Qual è il tema centrale del libro Maia (1903) delle Laudi?',
+    options:['Il superuomo che rifiuta la mediocrità del presente e abbraccia l\'eroismo del passato, con Ulisse come incarnazione del superuomo libero da ogni legge morale','La celebrazione dei santi della patria italiana (Dante, Verdi, Garibaldi)','La fusione panica con la natura marina della Versilia','La guerra in Libia come campo d\'azione del superuomo'],
+    correct:0,
+    explanation:'Maia (1903) è un lungo poema autobiografico (8400 versi liberi) in cui il superuomo rifiuta la mediocrità del presente per abbracciare l\'eroismo del passato. La figura centrale è Ulisse come incarnazione del superuomo libero da ogni legge morale: l\'eroe omerico che non si ferma mai, sempre alla ricerca di nuove esperienze, diventa il modello della vita inimitabile.'
+  },
+  { id:'da52', type:'mc', topic:'Testi',
+    text:'In quale sezione di Alcyone sono concentrate le due poesie più studiate, La pioggia nel pineto e La sera fiesolana?',
+    options:['Prima sezione, «Primavera»','Seconda sezione, «L\'Estate»','Terza sezione, «La mietitura»','Quarta sezione, «L\'Autunno»'],
+    correct:1,
+    explanation:'La sera fiesolana e La pioggia nel pineto appartengono entrambe alla seconda sezione di Alcyone, dedicata all\'estate — la stagione della fusione panica per eccellenza. Il ciclo di Alcyone va dalla primavera (arrivo sulle colline di Fiesole) all\'autunno (nella Versilia). Il panismo raggiunge il suo apice nell\'estate della seconda sezione.'
+  },
+  { id:'da53', type:'mc', topic:'Confronti',
+    text:'Quale definizione sintetizza meglio il confronto D\'Annunzio–Pascoli sul piano della visione del poeta?',
+    options:['D\'Annunzio: introversione e fanciullino; Pascoli: estroversione e potenza','D\'Annunzio: estroversione e potenza (il vate); Pascoli: introversione e fanciullino (il poeta che rivela l\'ineffabile nei piccoli oggetti)','D\'Annunzio e Pascoli condividono la visione decadente del poeta come «maledetto»','D\'Annunzio è il poeta politico; Pascoli è il poeta civile e garibaldino'],
+    correct:1,
+    explanation:'La formula canonica del manuale: in Italia i massimi esponenti del Decadentismo sono D\'Annunzio e Pascoli con poetiche opposte. D\'Annunzio: estroversione e potenza — il vate che guida la nazione, il superuomo che conquista la natura con la metamorfosi. Pascoli: introversione e fanciullino — il poeta che rivela l\'ineffabile nei piccoli oggetti quotidiani, vita appartata, regressione verso l\'infanzia e l\'intuizione pre-logica.'
+  },
+  { id:'da54', type:'open', topic:'Vita',
+    text:'Descrivi il percorso biografico di D\'Annunzio dall\'estetismo romano alla funzione pubblica di vate, indicando le tappe fondamentali.',
+    modelAnswer:'Il percorso di D\'Annunzio ha tre grandi fasi. Prima fase (anni \'80–\'90, Roma): giornalismo mondano, vita nel salotto aristocratico romano, nascita dell\'estetismo incarnato in Andrea Sperelli (Il piacere, 1889). La vita è già opera d\'arte. Seconda fase (1898–1910, La Capponcina): convivenza con Eleonora Duse, scrittura delle Laudi (Alcyone, 1903), trasformazione da dandy in vate-superuomo. I debiti lo costringono a fuggire in Francia (1910). Terza fase (1915 in poi, la «funzione pubblica»): ritorno in Italia per il «Maggio Radioso» (1915), partecipazione attiva alla guerra (volo su Vienna, battaglia del Carso, perdíta dell\'occhio 1916), impresa di Fiume (1919–1920), ritiro al Vittoriale degli Italiani (1921–1938). In ogni fase il confine tra arte e vita si dissolve: D\'Annunzio non scrive del superuomo, è il superuomo.',
+    keywords:['Roma estetismo','Andrea Sperelli','Capponcina Duse','Alcyone vate','Maggio Radioso interventismo','volo su Vienna','Fiume','Vittoriale','vita come opera d\'arte']
+  },
+  { id:'da55', type:'mc', topic:'Poetica',
+    text:'Cosa si intende con «dandismo» in D\'Annunzio?',
+    options:['Un genere letterario di romanzi brevi di argomento galante','Un fenomeno culturale di fine Ottocento: il dandy fa dell\'eleganza e dell\'ostentazione la propria ragione d\'esistenza, unendo trasgressione morale e culto del bello contro la «volgarità» della borghesia','Un movimento letterario che valorizza il folklore e le tradizioni popolari','Il termine con cui D\'Annunzio indicava i suoi rivali letterari romani'],
+    correct:1,
+    explanation:'Il dandismo è un fenomeno culturale di fine Ottocento: il dandy fa dell\'eleganza e dell\'ostentazione la propria ragione d\'esistenza — contaminazione tra vita e letteratura, trasgressione della morale borghese, culto del bello come reazione alla «volgarità» della borghesia. D\'Annunzio è il prototipo del dandy italiano: vita mondana romana, avventure amorose, debiti, La Capponcina come palazzo del gusto assoluto.'
+  },
+  { id:'da56', type:'mc', topic:'Testi',
+    text:'Nella Pioggia nel pineto, come D\'Annunzio crea il «tappeto sonoro» che mima il suono della pioggia nella pineta?',
+    options:['Attraverso rime baciate (AABB) a ogni verso','Con frequenti onomatopee dirette (tic-tac, sciabordio) e pause ritmiche','Attraverso anafore («piove su…»), assonanze, allitterazioni di liquide e sibilanti, e verso libero breve che mima il ritmo della pioggia','Con la struttura del sonetto petrarchesco, che crea un ritmo naturale e regolare'],
+    correct:2,
+    explanation:'Il tappeto sonoro della Pioggia nel pineto è creato attraverso: (1) anafore («piove su tamerici, piove su pini…») che mimano la caduta ritmica delle gocce; (2) assonanze e allitterazioni di suoni liquidi (l, r) e sibilanti (s, sc) che evocano il fruscio della pioggia tra le fronde; (3) verso libero breve — il trisillabo e il quadrisillabo danno un ritmo ternario simile alle gocce che cadono. Tutto serve la musicalità prima della descrizione.'
+  },
+  { id:'da57', type:'tf', topic:'Confronti',
+    text:'Ungaretti considera D\'Annunzio il suo maestro e in Vita d\'un uomo ne riprende lo stile musicale e imaginifico.',
+    correct:false,
+    explanation:'Falso. Ungaretti non considera D\'Annunzio un maestro: la sua poetica è l\'esatto opposto. D\'Annunzio moltiplica le parole, le satura di musica e non lascia mai spazio al silenzio. Ungaretti riduce la parola all\'essenziale, la isola nel silenzio bianco della pagina (verso-parola: «Mattina» è un verso di due parole). Le radici di Ungaretti sono nei Simbolisti francesi (Mallarmé, Apollinaire) e nella sua esperienza della guerra, non in D\'Annunzio.'
+  },
+  { id:'da58', type:'mc', topic:'Testi',
+    text:'Quale elemento geografico-paesaggistico è centrale nella Pioggia nel pineto?',
+    options:['Il Garda, con i cipressi e le vigne della riva bresciana','La pineta della Versilia (costa toscana tra Viareggio e Forte dei Marmi)','I boschi di lecci dell\'Abruzzo natale di D\'Annunzio','Le campagne di Fiesole e le vigne intorno a Firenze'],
+    correct:1,
+    explanation:'La Pioggia nel pineto è ambientata nella pineta della Versilia, sulla costa toscana tra Viareggio e Forte dei Marmi, dove D\'Annunzio trascorreva le estati. Le tamerici, i pini, i mirti, i ginepri sono le piante tipiche della macchia mediterranea costiera versiliese. D\'Annunzio soggiornava in questa zona mentre scriveva Alcyone (1903).'
+  },
+  { id:'da59', type:'mc', topic:'Opere',
+    text:'Il romanzo Le vergini delle rocce (1895) è il «primo romanzo del superuomo» di D\'Annunzio. Quale è il progetto del protagonista Claudio Cantelmo?',
+    options:['Ricostruire il sistema politico italiano su basi aristocratiche, scalzando il parlamento democratico','Generare, attraverso l\'unione con una delle tre sorelle aristocratiche, il futuro re di Roma destinato a guidare l\'Italia verso un nuovo Impero','Scrivere un\'opera letteraria definitiva che sostituisca la Commedia di Dante','Fondare un convento artistico sul modello di Bayreuth di Wagner'],
+    correct:1,
+    explanation:'Claudio Cantelmo è convinto di essere il superuomo destinato a generare il futuro re di Roma. Cerca tra tre sorelle aristocratiche (una pazza, una malata, una sana) la madre dell\'erede destinato a rifondare Roma e l\'Impero. Disprezza la democrazia e il liberalismo. Il progetto fallisce — è il tema del superuomo che non riesce a tradurre la volontà in azione, anticipando il motivo dell\'inetto.'
+  },
+  { id:'da60', type:'open', topic:'Testi',
+    text:'Analizza il ruolo della musicalità nella Pioggia nel pineto, individuando almeno tre tecniche specifiche e spiegando come contribuiscono al panismo.',
+    modelAnswer:'La musicalità della Pioggia nel pineto è il veicolo del panismo: la parola non descrive la fusione tra poeta e natura, la crea sonicamente. Tre tecniche fondamentali: (1) Anafora — «piove su tamerici, piove su pini, piove su mirti» ripete il verbo come un ticchettio, abolendo la sintassi narrativa a favore di un ritmo puramente musicale. (2) Allitterazione e assonanza — sequenze di suoni liquidi (r, l) e sibilanti (s, sc) evocano il fruscio della pioggia nelle fronde. Esempio: «il tuo volto ebbrO» (v e b), «i capelli chiari come / are chiome» (ch). (3) Verso libero breve — il trisillabo e il quadrisillabo creano un ritmo ternario che mima la caduta delle gocce, molto diverso dall\'endecasillabo tradizionale. Insieme, queste tecniche creano un tappeto sonoro in cui la distinzione tra il linguaggio poetico e i suoni della natura si dissolve: il poema è la pioggia, non la descrive. Questo è il panismo a livello formale: la forma e il contenuto si fondono.',
+    keywords:['anafora','allitterazione assonanza','verso libero breve trisillabo','tappeto sonoro','forma e contenuto','panismo formale','musicalità']
+  }
 ]
 
 }; // fine QUIZ_DATA

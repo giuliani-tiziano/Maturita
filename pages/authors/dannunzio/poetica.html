@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poetica &amp; Stile — Gabriele D'Annunzio · Maturità</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+</head>
+
+<body>
+  <div class="prog-wrap">
+    <div class="prog-bar" id="pb"></div>
+  </div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="../../../index.html" class="topbar-brand"><span class="dot"></span><span><span class="full">Italiano ·
+          </span>Maturità</span></a>
+      <nav class="topbar-links">
+        <a class="topbar-link" href="../../../index.html">Home</a>
+        <a class="topbar-link active">D'Annunzio</a>
+        <a class="topbar-link cta" href="../../../quiz/quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn active" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+      <button class="nav-btn" onclick="location.href='glossario.html'">Glossario</button>
+    </div>
+  </nav>
+
+  <section class="section active" id="poetica">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Sezione 02</div>
+        <h2>Poetica e stile <span class="badge">35 MIN</span></h2>
+      </div>
+
+      <h3>Le cinque fasi del pensiero</h3>
+
+      <div class="accordion">
+        <button class="acc-head open" onclick="toggleAcc(this)">1. Fase giovanile — Carducci e Verga <span
+            class="acc-arrow">▼</span></button>
+        <div class="acc-body open">
+          <p>Le prime opere risentono del modello <strong>carducciano</strong> (metro barbaro, temi classici) e di un
+            certo verismo. In <em>Canto novo</em> emerge già il vitalismo sensuale e la fusione tra io e natura.
+            D'Annunzio chiamerà poi Carducci «maestro avverso»: troppo severo per il giovane dandy.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">2. Estetismo <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Culto della bellezza contrapposto all'inciviltà borghese. L'arte vive in una sfera autonoma, lontana
+            dalle dinamiche sociali. <strong>La vita diventa opera d'arte.</strong> Il dandy è il modello
+            esistenziale: eleganza ostentata, trasgressione morale, sensualità raffinata. Radici europee: Oscar Wilde,
+            Joris-Karl Huysmans (<em>À rebours</em>, 1884). Opere chiave: <em>Il piacere</em>, <em>Intermezzo di
+              rime</em>.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">3. Poetica della bontà <span
+            class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Fase napoletana (1891–1894). Sentimenti più delicati e intimistici; concentrazione sui temi familiari,
+            sull'infanzia, sui «deboli». Influenza di <strong>Dostoevskij e Tolstoj</strong>. Opere chiave:
+            <em>Giovanni Episcopo</em>, <em>L'innocente</em>, <em>Poema paradisiaco</em>. Tono confidenziale e
+            trattenuto, vicino a Pascoli.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">4. Superuomo — Nietzsche <span
+            class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Dall'incontro con Nietzsche (circa 1892) emerge la figura del <strong>superuomo</strong>: individuo
+            forte e possente che si oppone alla decadenza e plasma la realtà. <em>Volontà di potenza</em>, rifiuto
+            della democrazia, culto dell'azione. Opere chiave: <em>Trionfo della morte</em>, <em>Le vergini delle
+              rocce</em>, <em>Il fuoco</em>, le <em>Laudi</em>.</p>
+          <div class="box box-concetto" style="margin-top:12px;">
+            <h4>Il poeta-vate</h4>
+            <p>Il superuomo dannunziano non è solo l'eroe filosofico nietzscheano: è il <em>vate</em>, poeta-profeta
+              che guida spiritualmente e politicamente la nazione. Non descrive la realtà: la plasma con la
+              parola.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">5. Il Notturno — fase finale <span
+            class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Dopo la guerra e Fiume: prosa frammentata e introspettiva. Profondità dell'interiorità (influenza
+            freudiana dell'Es). Scrittura <em>orba e frammentata</em>: periodi brevi e incalzanti, rottura con lo
+            stile magnificente precedente. Opera chiave: <em>Il Notturno</em> (1921).</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:32px;">Il panismo e la fusione con la natura</h3>
+      <p>Concetto centrale di <em>Alcyone</em>. «Panismo» deriva da Pan, dio dei boschi. L'io lirico si dissolve
+        nella natura: la descrive con termini antropomorfi (la sera diventa donna, le colline diventano labbra), si
+        assimila a essa fino alla <strong>metamorfosi</strong>. È la sensibilità superiore del poeta-superuomo che
+        penetra nell'anima segreta delle cose.</p>
+
+      <div class="duality">
+        <div class="dual-side">
+          <div class="dual-label">Umanizzazione della natura</div>
+          <div class="dual-item"><span class="dual-dot"></span><span>La Sera ha un viso di perla e grandi umidi occhi
+              (<em>La sera fiesolana</em>)</span></div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Le colline si incurvano come labbra chiuse da un
+              divieto</span></div>
+          <div class="dual-item"><span class="dual-dot"></span><span>La pioggia suona su ogni albero come su strumenti
+              diversi</span></div>
+          <div class="dual-item"><span class="dual-dot"></span><span>I pini hanno germogli come «novelli rosei
+              diti»</span></div>
+        </div>
+        <div class="dual-side">
+          <div class="dual-label">Naturalizzazione dell'uomo</div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Ermione diventa «quasi fatta virente», esce dalla
+              corteccia come driade</span></div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Le chiome di Ermione auliscono come ginestre</span>
+          </div>
+          <div class="dual-item"><span class="dual-dot"></span><span>I «freschi pensieri» dell'anima si rinnovano come
+              la vegetazione bagnata</span></div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Il volto di Ermione è «molle di pioggia» come una
+              foglia</span></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:32px;">Le scelte stilistiche</h3>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Lessico <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Colto, raffinato, musicale. D'Annunzio usa un linguaggio arcaico (<em>aulente</em>, <em>ignude</em>,
+            <em>stromenti</em>), forme grafiche superate («su i», «su le»), termini tecnico-specialistici e rari.
+            L'apparente oscurità è una scelta estetica deliberata. D'Annunzio si definiva «<strong>immaginìfico</strong>»:
+            la parola è scelta per il suo valore fonico ed evocativo prima ancora che semantico.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Sintassi <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>In prevalenza <strong>paratattica</strong> (coordinazione), con periodi brevi e spesso nominali (privi di
+            verbi reggenti). Nella maturità la sintassi si fa sempre più frammentata. Non sviluppo logico-discorsivo
+            ma catena ininterrotta di analogie: immagini che fluiscono l'una nell'altra.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Metrica <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Rompe con la tradizione per servire la musicalità. In <em>Alcyone</em> usa strofe saffiche e alcaiche,
+            sonetti, madrigali, ma anche <strong>verso libero</strong> (fino al trisillabo nella <em>Pioggia nel
+              pineto</em>). La rima è spesso sostituita da assonanze e rime interne. Citazione dal <em>Canto
+              novo</em>: tre strofe di due novenari e due dodecasillabi, assenza di rime (come in Carducci).</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Figure retoriche <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p><strong>Analogia</strong> (tecnica simbolista: accostamenti tra oggetti, sensazioni, stati d'animo
+            apparentemente lontani). <strong>Allitterazioni</strong>, <strong>anafore</strong>,
+            <strong>sinestesie</strong>, <strong>iterazioni</strong>. Onomatopee nella <em>Pioggia nel pineto</em>
+            (<em>crepitìo</em>, <em>isciacquìo</em>). La parola è scelta per il suo <em>valore fonico</em> prima
+            ancora che semantico.</p>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top:18px; margin-bottom:8px">
+        <h3>D'Annunzio vs Pascoli — da ricordare all'orale</h3>
+      </div>
+      <p>Entrambi sono i massimi esponenti del Decadentismo italiano, ma con poetiche <strong>opposte e
+          complementari</strong>.</p>
+      <div class="duality">
+        <div class="dual-side">
+          <div class="dual-label">D'Annunzio — il superuomo</div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Usa il linguaggio per <em>agire</em> sulla realtà
+              e trasformarla</span></div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Mondano, dandy, nazionalismo imperialista</span>
+          </div>
+          <div class="dual-item"><span class="dual-dot"></span><span>«Vivere inimitabile» — la vita come performance
+              pubblica</span></div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Panismo: fusione totale con la natura fino alla
+              metamorfosi</span></div>
+        </div>
+        <div class="dual-side">
+          <div class="dual-label">Pascoli — il fanciullino</div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Invita alla regressione verso l'infanzia e
+              l'intuizione pre-logica</span></div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Riservato, nazionalismo moderato, vita
+              appartata</span></div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Il «nido» familiare come rifugio dal
+              dolore</span></div>
+          <div class="dual-item"><span class="dual-dot"></span><span>Simbolismo: la natura come linguaggio
+              segreto</span></div>
+        </div>
+      </div>
+
+      <div class="quiz" style="margin-top:32px;">
+        <span class="quiz-lbl">Mini-quiz · Poetica</span>
+        <h3>Verifica la poetica</h3>
+        <div class="qd" data-correct="1">
+          <p class="q">1. Cosa significa «panismo» nella poetica di D'Annunzio?</p>
+          <div class="qopts">
+            <button class="qo">La contemplazione della natura dal distanza</button>
+            <button class="qo">La fusione totale tra l'io lirico e la natura, fino alla metamorfosi dell'uomo in
+              elemento vegetale o animale</button>
+            <button class="qo">La descrizione scientifica della vegetazione mediterranea</button>
+            <button class="qo">L'ispirazione alle favole di Esopo</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+        <div class="qd" data-correct="2">
+          <p class="q">2. Qual è la differenza principale tra l'estetismo e il superomismo in D'Annunzio?</p>
+          <div class="qopts">
+            <button class="qo">L'estetismo è la fase matura; il superomismo è quella giovanile</button>
+            <button class="qo">L'estetismo riguarda solo la prosa; il superomismo solo la poesia</button>
+            <button class="qo">L'estetismo è il culto passivo della bellezza; il superomismo aggiunge la volontà di
+              potenza e il rifiuto attivo della mediocrità</button>
+            <button class="qo">Non ci sono differenze: sono sinonimi</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+        <div class="qd" data-correct="0">
+          <p class="q">3. D'Annunzio si definiva «immaginìfico»: cosa significa?</p>
+          <div class="qopts">
+            <button class="qo">La sua capacità di creare immagini attraverso la magia dei suoni — la parola è scelta
+              per il valore fonico ed evocativo prima di quello semantico</button>
+            <button class="qo">La capacità di inventare storie fantastiche</button>
+            <button class="qo">L'uso di immagini tipografiche nelle sue opere</button>
+            <button class="qo">La tendenza a illustrare le sue raccolte poetiche</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+
+</html>

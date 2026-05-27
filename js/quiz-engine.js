@@ -1,5 +1,5 @@
 /* =========================================================================
-   quiz-engine.js — Motore quiz unificato per i 5 autori
+   quiz-engine.js — Motore quiz unificato per i 6 autori
    Architettura: home autori → modal modalità → quiz → risultati
    Dipende da: quiz-data.js (window.QUIZ_DATA)
    ========================================================================= */
@@ -58,6 +58,16 @@
       storageTot: 'q_pir_best_total',
       footerQuote: '«Uno, nessuno e centomila: non è una condanna, è una libertà. La più difficile delle libertà.»',
       footerCite: '— Luigi Pirandello'
+    },
+    dannunzio: {
+      key: 'dannunzio',
+      name: 'Gabriele D\'Annunzio',
+      short: 'D\'Annunzio',
+      bodyClass: 'dannunzio',
+      storageKey: 'q_dan_best',
+      storageTot: 'q_dan_best_total',
+      footerQuote: '«Bisogna fare la propria vita come si fa un\'opera d\'arte.»',
+      footerCite: '— Gabriele D\'Annunzio, Il piacere'
     }
   };
 
@@ -155,7 +165,7 @@
       lbl.textContent = author.name;
       const c = ({
         saba: 'var(--red)', ungaretti: '#2d5a87', montale: 'var(--green-dark)',
-        svevo: '#6b4a2a', pirandello: '#6040a0'
+        svevo: '#6b4a2a', pirandello: '#6040a0', dannunzio: '#7a2235'
       })[authorKey];
       lbl.style.color = c;
     }
@@ -623,7 +633,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     // Mostra conteggi sulla home
     if (window.QUIZ_DATA) {
-      ['saba', 'ungaretti', 'montale', 'svevo', 'pirandello'].forEach(k => {
+      ['saba', 'ungaretti', 'montale', 'svevo', 'pirandello', 'dannunzio'].forEach(k => {
         const el = document.getElementById('cs-' + k + '-total');
         if (el && window.QUIZ_DATA[k]) el.textContent = window.QUIZ_DATA[k].length;
       });

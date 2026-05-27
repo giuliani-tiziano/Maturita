@@ -2483,3 +2483,119 @@ input:focus, select:focus, textarea:focus, .open-ta:focus {
   .container { padding: 1rem; max-width: none; }
   a { color: black; text-decoration: underline; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   HOME PAGE — ritmo visivo tra le sezioni (index.html only)
+   Tutti i selettori partono da .home-wrap, che esiste solo
+   nella root index.html. Nessun token nuovo, nessuna ombra.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Separatori: bordo superiore netto sulle sezioni chiave */
+.home-wrap #autori,
+.home-wrap #mappe,
+.home-wrap #sul-progetto {
+  border-top: 4px solid var(--bordeaux-mid);
+  padding-top: 4.5rem;
+}
+
+/* ── Titoli di sezione — più imponenti ─────────────────── */
+.home-wrap .home-section-title {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--bordeaux-deep);
+  letter-spacing: -.015em;
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+}
+/* linea decorativa bordeaux sotto il titolo */
+.home-wrap .home-section-title::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--bordeaux-light);
+}
+.home-wrap .home-section-title em {
+  color: var(--bordeaux-deep);
+  font-style: italic;
+}
+
+/* ── Eyebrow (01 · Le guide, 02 · …) — ancora visiva ──── */
+.home-wrap .home-section-eyebrow {
+  font-size: .78rem;
+  letter-spacing: .45em;
+  color: var(--bordeaux-deep);
+}
+
+/* ── Numeri statistici — grandi, bordeaux, già come da CSS */
+/* Bump leggero: da clamp(2.4rem,4vw,3.2rem) a 4.4rem max */
+.home-wrap .feature-num {
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+}
+
+/* ── Card "Il progetto": sfondo --beige-mid + bordo sx ─── */
+.home-wrap .grid-3 .card {
+  border-top: none;
+  border-left: 3px solid var(--bordeaux-light);
+  padding: 1.8rem 1.5rem 1.8rem 1.4rem;
+  background: var(--beige-mid);
+}
+.home-wrap .grid-3 .card:hover {
+  border-left-color: var(--bordeaux-deep);
+  border-top: none;
+}
+/* Icone: nascoste globalmente, riattivate solo in questa sezione */
+.home-wrap .grid-3 .card-icon {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: .8rem;
+  opacity: .85;
+}
+
+/* ── Card autori e mappe — staccate dallo sfondo ────────
+   Le sezioni sono su --beige-light; le card diventano
+   --paper (bianco caldo) così il contrasto è netto.
+   Bordo superiore 3px bordeaux + cornice 1px --beige-dark.
+   ────────────────────────────────────────────────────── */
+
+/* griglia: gap reale invece di margin-right manuale */
+.home-wrap .authors-grid {
+  gap: 1.5rem;
+  border-top: none;     /* rimossa la riga grigia pre-grid:
+                           le card portano già il loro bordo */
+  margin-top: 2rem;
+}
+
+/* card: sfondo, bordo completo, padding uniforme */
+.home-wrap .author-card {
+  background: var(--paper) !important;  /* override !important base */
+  border-top:    3px solid var(--bordeaux-mid);
+  border-right:  1px solid var(--beige-dark);
+  border-bottom: 1px solid var(--beige-dark);
+  border-left:   1px solid var(--beige-dark);
+  padding:       2rem 1.5rem;
+  margin-right:  0;           /* gap gestito dalla griglia */
+}
+
+/* hover: mantiene il background, colore top border più intenso,
+   e slide-in di 0.5rem (era padding-left da 0→.5rem;
+   ora da 1.5rem → 2rem per lo stesso delta visivo) */
+.home-wrap .author-card:hover {
+  background: var(--paper) !important;
+  border-top-color: var(--bordeaux-deep);
+  padding-left: 2rem;
+}
+
+/* nome autore — leggibile come titolo, non come testo */
+.home-wrap .author-card-name {
+  color: var(--bordeaux-deep);
+  font-weight: 500;
+}
+.home-wrap .author-card-name em {
+  color: var(--bordeaux-deep);
+}
