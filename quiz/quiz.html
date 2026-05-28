@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz · Italiano · Maturità</title>
-<meta name="description" content="Sei quiz per la maturità: D'Annunzio, Saba, Ungaretti, Montale, Svevo, Pirandello. Ogni quiz estrae 10 domande casuali da una banca di 90 domande.">
+<meta name="description" content="Sei quiz per la maturità: Saba, Ungaretti, Montale, Svevo, Pirandello, D'Annunzio. Ogni quiz estrae 10 domande casuali da una banca di 90 domande.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
@@ -37,27 +37,7 @@
     <p class="home-subtitle">Sei autori, 90 domande in banca per ciascuno. Ogni avvio genera 10 domande casuali, con scelta multipla, vero/falso e domande aperte con auto-valutazione.</p>
     <div class="home-divider"></div>
 
-    <div class="author-grid">
-
-      <!-- D'ANNUNZIO -->
-      <div class="author-card dannunzio" onclick="QuizApp.openAuthorPanel('dannunzio')">
-        <span class="author-card-initial">D</span>
-        <div class="author-card-meta">Quiz · Alcyone · Il piacere</div>
-        <div class="author-card-name">Gabriele<br><em>D'Annunzio</em></div>
-        <div class="author-card-tagline">Panismo, superuomo, estetismo, il vate-poeta e il vivere inimitabile.</div>
-        <div class="author-card-topics">
-          <span class="author-card-topic"><span id="cs-dannunzio-total">90</span> domande</span>
-          <span class="author-card-topic">3 tipologie</span>
-          <span class="author-card-topic">5 sezioni</span>
-        </div>
-        <div class="author-card-cta" id="best-dannunzio"></div>
-        <div class="author-card-cta">
-          Scegli modalità
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </div>
-      </div>
+    <div class="author-grid" style="grid-template-columns: repeat(3, 1fr);">
 
       <!-- SABA -->
       <div class="author-card saba" onclick="QuizApp.openAuthorPanel('saba')">
@@ -159,11 +139,31 @@
         </div>
       </div>
 
+      <!-- D'ANNUNZIO -->
+      <div class="author-card dannunzio" onclick="QuizApp.openAuthorPanel('dannunzio')">
+        <span class="author-card-initial">D</span>
+        <div class="author-card-meta">Quiz · Alcyone · Il piacere</div>
+        <div class="author-card-name">Gabriele<br><em>D'Annunzio</em></div>
+        <div class="author-card-tagline">Panismo, superuomo, estetismo, il vate-poeta e il vivere inimitabile.</div>
+        <div class="author-card-topics">
+          <span class="author-card-topic"><span id="cs-dannunzio-total">90</span> domande</span>
+          <span class="author-card-topic">3 tipologie</span>
+          <span class="author-card-topic">5 sezioni</span>
+        </div>
+        <div class="author-card-cta" id="best-dannunzio"></div>
+        <div class="author-card-cta">
+          Scegli modalità
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+
     </div>
 
     <div class="home-quote">
       «Bisogna fare la propria vita come si fa un'opera d'arte.» · «Ho attraversata tutta la città.» · «M'illumino d'immenso.»
-      <cite>— D'Annunzio · Saba · Ungaretti</cite>
+      <cite>— Saba · Ungaretti · D'Annunzio</cite>
     </div>
   </div>
 </section>

@@ -3938,6 +3938,326 @@ dannunzio: [
     text:'Analizza il ruolo della musicalità nella Pioggia nel pineto, individuando almeno tre tecniche specifiche e spiegando come contribuiscono al panismo.',
     modelAnswer:'La musicalità della Pioggia nel pineto è il veicolo del panismo: la parola non descrive la fusione tra poeta e natura, la crea sonicamente. Tre tecniche fondamentali: (1) Anafora — «piove su tamerici, piove su pini, piove su mirti» ripete il verbo come un ticchettio, abolendo la sintassi narrativa a favore di un ritmo puramente musicale. (2) Allitterazione e assonanza — sequenze di suoni liquidi (r, l) e sibilanti (s, sc) evocano il fruscio della pioggia nelle fronde. Esempio: «il tuo volto ebbrO» (v e b), «i capelli chiari come / are chiome» (ch). (3) Verso libero breve — il trisillabo e il quadrisillabo creano un ritmo ternario che mima la caduta delle gocce, molto diverso dall\'endecasillabo tradizionale. Insieme, queste tecniche creano un tappeto sonoro in cui la distinzione tra il linguaggio poetico e i suoni della natura si dissolve: il poema è la pioggia, non la descrive. Questo è il panismo a livello formale: la forma e il contenuto si fondono.',
     keywords:['anafora','allitterazione assonanza','verso libero breve trisillabo','tappeto sonoro','forma e contenuto','panismo formale','musicalità']
+  },
+
+  /* ──────────────  LE FASI DELLA POETICA (approfondimento)  ────────────── */
+  { id:'da61', type:'mc', topic:'Poetica',
+    text:'Quali sono le cinque fasi principali della poetica di D\'Annunzio in ordine cronologico?',
+    options:[
+      'Futurismo → Simbolismo → Estetismo → Superuomo → Notturno',
+      'Giovanile-carducciana → Estetismo → Poetica della bontà → Superuomo → Notturno',
+      'Verismo siciliano → Estetismo → Superuomo → Teatro → Notturno',
+      'Romantismo → Estetismo → Decadentismo → Superuomo → Futurismo'
+    ],
+    correct:1,
+    explanation:'Le cinque fasi di D\'Annunzio: (1) Giovanile-carducciana (Primo vere, 1879): imitazione dei metri barbari di Carducci; (2) Estetismo (Il piacere, 1889): culto della bellezza, dandy romano; (3) Poetica della bontà (1891–94): fase napoletana, Dostoevskij, intimismo; (4) Superuomo (Laudi, 1903): Nietzsche, vate, panismo; (5) Notturno (1921): prosa franta, introspezione.'
+  },
+  { id:'da62', type:'mc', topic:'Poetica',
+    text:'La «poetica della bontà» di D\'Annunzio (fase napoletana, 1891–1894) si distingue dall\'estetismo romano per:',
+    options:[
+      'Il rifiuto della narrativa a favore della sola poesia lirica',
+      'L\'avvicinamento ai temi dell\'umiltà, del dolore dei deboli e dell\'introspezione intima, sotto l\'influenza dei romanzieri russi',
+      'L\'adozione del dialetto napoletano come lingua letteraria',
+      'La scelta del teatro musicale come forma espressiva principale'
+    ],
+    correct:1,
+    explanation:'Nella fase napoletana D\'Annunzio si distacca dal mondanismo romano per avvicinarsi a tematiche più intime: il dolore, la pietà, l\'umiltà. L\'influenza è quella di Dostoevskij e Tolstoj. Le opere chiave sono Giovanni Episcopo (1891), L\'innocente (1892) e il Poema paradisiaco (1893), con toni melanconici e sentimentali lontani dal superuomo.'
+  },
+  { id:'da63', type:'mc', topic:'Poetica',
+    text:'Quale elemento accomuna le fasi poetiche dell\'estetismo e del superuomo in D\'Annunzio, distinguendole dalla fase della poetica della bontà?',
+    options:[
+      'Entrambe usano il verso libero mentre la fase della bontà usa la metrica tradizionale',
+      'Entrambe sono incentrate su una figura d\'eccellenza (il dandy / il superuomo) che si pone al di sopra della mediocrità borghese, mentre la poetica della bontà si avvicina agli umili',
+      'Entrambe sono ispirate alla musica di Wagner, mentre la poetica della bontà è ispirata a Verdi',
+      'Entrambe sono scritte in prosa, mentre la poetica della bontà usa la poesia'
+    ],
+    correct:1,
+    explanation:'Estetismo e superuomo condividono l\'aristocratismo: il dandy (estetismo) si distingue dalla borghesia per il culto della bellezza; il superuomo (Nietzsche) si distingue per la volontà di potenza. La fase della bontà inverte la prospettiva: il poeta si avvicina agli ultimi, ai sofferenti, agli esclusi, sotto l\'influenza etica di Dostoevskij e Tolstoj.'
+  },
+  { id:'da64', type:'tf', topic:'Poetica',
+    text:'Il Notturno (1921) segna un ritorno allo stile magnificente delle Laudi, con versi lunghi e lessico aulico.',
+    options:['Vero','Falso'],
+    correct:1,
+    explanation:'Falso. Il Notturno rappresenta una rottura totale con lo stile magnificente precedente: prosa semplice, periodi brevissimi e incalzanti scritti su strisce di carta («cartigli») durante la convalescenza del 1916. Il lessico è sobrio, quasi giornalistico. D\'Annunzio definì il libro «commentario delle tenebre». È il momento di massima introspezione della sua produzione.'
+  },
+
+  /* ──────────────  OPERE NARRATIVE  ────────────── */
+  { id:'da65', type:'mc', topic:'Opere',
+    text:'Giovanni Episcopo (1891) è il romanzo che segna l\'inizio della «poetica della bontà». Chi è il protagonista e quale tema centrale affronta?',
+    options:[
+      'Un nobile romano che fallisce nel tentativo di diventare vate della nazione',
+      'Un uomo debole e sottomesso che racconta in prima persona la propria vita di sconfitte e umiliazioni, dominata da un amico violento',
+      'Un aviatore che scopre la vertigine del volo come metafora della superiorità dell\'artista',
+      'Un sacerdote che perde la fede di fronte alle atrocità della guerra'
+    ],
+    correct:1,
+    explanation:'Giovanni Episcopo è un personaggio debole, sottomesso, vittima di un amico violento (Wanzer) che gli distrugge la vita. Racconta in prima persona le proprie umiliazioni. Il romanzo è costruito sul modello dostoevskijano (Il sosia, Povera gente): l\'uomo mite e incapace di ribellarsi. È l\'opposto del superuomo: la pietà per i vinti, gli umili, i dominati.'
+  },
+  { id:'da66', type:'mc', topic:'Opere',
+    text:'Il romanzo L\'innocente (1892) di D\'Annunzio affronta quale tema centrale?',
+    options:[
+      'La storia di un soldato che torna dalla guerra e non riesce a reintegrarsi nella società civile',
+      'Un marito che uccide il figlio illegittimo della moglie, convinto di essere nel giusto: il tema è la crudeltà mascherata da innocenza morale',
+      'Un bambino orfano nella Napoli di fine Ottocento alla ricerca delle proprie origini aristocratiche',
+      'Un artista che sacrifica la propria vita alla creazione dell\'opera perfetta'
+    ],
+    correct:1,
+    explanation:'L\'innocente (1892) è la storia di Tullio Hermil, uomo raffinato che uccide il figlio che la moglie ha avuto da un altro, convinto di agire in nome di una giustizia superiore. Il titolo è profondamente ironico: Tullio si considera «innocente» proprio nell\'atto più colpevole. D\'Annunzio studia la psicologia di un personaggio capace di autoingannamento totale. Influenza di Dostoevskij e Tolstoj.'
+  },
+  { id:'da67', type:'mc', topic:'Opere',
+    text:'Il romanzo Il fuoco (1900) scandalizzò il pubblico italiano perché:',
+    options:[
+      'Descriveva in modo esplicito la brutalità della guerra coloniale in Africa',
+      'Ritraeva Eleonora Duse (Foscarina Perdita) in maniera crudele, mentre la relazione era ancora in corso, mettendo in luce il suo declino fisico',
+      'Proponeva apertamente idee anarchiche e antimonarchiche',
+      'Raccontava in dettaglio le malversazioni finanziarie della nobiltà veneziana'
+    ],
+    correct:1,
+    explanation:'Il fuoco (1900) narra la storia d\'amore tra Stelio Èffrena (alter ego di D\'Annunzio) e Foscarina Perdita (alter ego di Eleonora Duse). D\'Annunzio descrive con crudezza il declino fisico di lei e la crescente insofferenza di lui. Il libro fu pubblicato mentre la relazione era ancora in corso: Duse, che aveva letto le bozze, fu ferita profondamente. Lo scandalo fu enorme in tutta Europa.'
+  },
+  { id:'da68', type:'mc', topic:'Opere',
+    text:'Forse che sì forse che no (1910) è l\'ultimo romanzo di D\'Annunzio. Quale elemento tematico nuovo introduce rispetto ai romanzi precedenti?',
+    options:[
+      'Il tema del socialismo come alternativa al capitalismo borghese',
+      'Il tema dell\'aviazione come metafora della superiorità del superuomo: il protagonista Paolo Tarsis è un aviatore che vola come atto di potenza contro la mediocrità',
+      'Il ritorno al verismo siciliano con ambientazione rurale',
+      'Il tema del misticismo cristiano come riscatto dal peccato'
+    ],
+    correct:1,
+    explanation:'Forse che sì forse che no (1910) introduce il tema dell\'aviazione come metafora moderna della superiorità dell\'uomo eccezionale. Paolo Tarsis è un aviatore: il volo è l\'atto supremo del superuomo che sfida la gravità e la morte. D\'Annunzio stesso pilotava aeroplani e aveva vissuto il volo come esperienza mistica. Il titolo richiama la scritta in un labirinto mediceo: l\'ambiguità come cifra esistenziale.'
+  },
+  { id:'da69', type:'mc', topic:'Opere',
+    text:'Il Poema paradisiaco (1893) appartiene alla fase della poetica della bontà. Quale caratteristica stilistica lo distingue dalle Laudi successive?',
+    options:[
+      'Usa il dialetto abruzzese per evocare la terra natale',
+      'Tono melanconico e intimista, immagini di quiete e rimpianto, influenza del Simbolismo francese (Verlaine): è l\'opposto della sontuosità delle Laudi',
+      'Struttura teatrale con dialoghi e didascalie',
+      'Versi brevissimi a monosillabi, anticipando il verso-parola di Ungaretti'
+    ],
+    correct:1,
+    explanation:'Il Poema paradisiaco (1893) è la raccolta più intimista e malinconica di D\'Annunzio: toni crepuscolari, immagini di case silenziose, giardini autunnali, rimpianto per l\'innocenza perduta. L\'influenza è quella di Verlaine (musicalità della parola, stati d\'animo imprecisi). È il momento più «soft» della poetica dannunziana, lontanissimo dalla pompa delle Laudi.'
+  },
+
+  /* ──────────────  LE LAUDI — struttura  ────────────── */
+  { id:'da70', type:'mc', topic:'Opere',
+    text:'Il libro Elettra delle Laudi (1903) è dedicato principalmente a quale tema?',
+    options:[
+      'La fusione panica con la natura estiva della Versilia',
+      'La celebrazione dei grandi italiani (Dante, Garibaldi, Verdi) e del nazionalismo imperialista',
+      'Il superuomo che cerca la donna fatale nelle città europee',
+      'La meditazione sulla morte durante la guerra in Libia'
+    ],
+    correct:1,
+    explanation:'Elettra (1903) è il secondo libro delle Laudi ed è il libro del nazionalismo civile: celebra i grandi italiani (Dante, Michelangelo, Garibaldi, Verdi) e invoca una nuova grandezza imperiale per l\'Italia. È il libro più «politico» di D\'Annunzio. Non ha la bellezza musicale di Alcyone ma ha una potente carica retorica e patriottica che anticiperà i discorsi interventisti del 1915.'
+  },
+  { id:'da71', type:'mc', topic:'Opere',
+    text:'Merope (1912), quarto libro delle Laudi, è dedicato a quale evento storico?',
+    options:[
+      'La Prima guerra mondiale e il sacrificio dei soldati italiani',
+      'La guerra di Libia (1911–1912): celebrazione dell\'impresa coloniale italiana in Africa settentrionale',
+      'L\'Impresa di Fiume e la fondazione della città di vita',
+      'Il volo di D\'Annunzio su Vienna del 1918'
+    ],
+    correct:1,
+    explanation:'Merope o Canzoni delle gesta d\'oltremare (1912) è dedicato alla guerra di Libia (1911–12): la conquista italiana della Libia ottomana. D\'Annunzio canta l\'impresa come gesta eroica della nazione, in linea con il suo nazionalismo imperialista. È il libro più propagandistico delle Laudi e il più lontano dall\'ideale artistico di Alcyone.'
+  },
+  { id:'da72', type:'mc', topic:'Opere',
+    text:'Quale libro delle Laudi rimase incompiuto e fu pubblicato postumo nel 1949?',
+    options:['Maia','Elettra','Merope','Asterope'],
+    correct:3,
+    explanation:'Asterope, il quinto libro delle Laudi, rimase incompiuto e fu pubblicato postumo nel 1949. I libri effettivamente completati in vita da D\'Annunzio furono: Maia (1903), Elettra (1903), Alcyone (1903) e Merope (1912). Taigete e Celeno, gli ultimi due libri del progetto originale dedicato alle Pleiadi, non furono mai scritti.'
+  },
+
+  /* ──────────────  O FALCE DI LUNA CALANTE  ────────────── */
+  { id:'da73', type:'mc', topic:'Testi',
+    text:'«O falce di luna calante» appartiene a quale raccolta e quale periodo della produzione di D\'Annunzio?',
+    options:[
+      'Alle Laudi (Alcyone, 1903): fase del superuomo e del panismo',
+      'Al Canto novo (1882): la prima raccolta poetica giovanile, fase carducciana',
+      'Al Poema paradisiaco (1893): fase della poetica della bontà',
+      'All\'Elettra (1903): fase del nazionalismo civile'
+    ],
+    correct:1,
+    explanation:'«O falce di luna calante» è inclusa nel Canto novo (1882), la prima raccolta poetica di D\'Annunzio scritta a soli diciannove anni. Risente dell\'influenza di Carducci (uso delle odi barbare) ma già si distingue per la sensorialità del paesaggio notturno. È il testo che apre la tradizione dannunziana del paesaggio-simbolo e della luna come presenza femminile.'
+  },
+  { id:'da74', type:'mc', topic:'Testi',
+    text:'Qual è la struttura metrica di «O falce di luna calante»?',
+    options:[
+      'Endecasillabi sciolti con cesura fissa al quinto piede',
+      'Una strofa di apertura con apostrofe alla luna, segue un dialogo tra il poeta e la natura in quartine di ottonari',
+      'Tre strofe di cinque versi con schema metrico misto (endecasillabi e settenari), con ritornello sul «silenzio»',
+      'Sonetto shakespeariano con tre quartine e una coppia finale'
+    ],
+    correct:2,
+    explanation:'«O falce di luna calante» è composta da tre strofe di cinque versi ciascuna, con mix di endecasillabi e settenari. L\'elemento strutturale fondamentale è il ritornello «taci» (o variante) che invita al silenzio: la natura silenziosa diventa il correlativo del desiderio e dell\'attesa. La luna calante è apostrofata come presenza femminile luminosa che veglia sull\'incontro amoroso.'
+  },
+  { id:'da75', type:'mc', topic:'Testi',
+    text:'Quale tema centrale unisce «O falce di luna calante» alla successiva poetica di Alcyone?',
+    options:[
+      'Il tema della morte come liberazione dall\'angoscia esistenziale',
+      'La fusione tra il paesaggio notturno e il desiderio amoroso: la natura partecipa emotivamente alla scena umana, anticipando il panismo',
+      'La critica alla classe borghese incapace di cogliere la bellezza',
+      'Il motivo del viaggio come fuga dalla mediocrità'
+    ],
+    correct:1,
+    explanation:'«O falce di luna calante» anticipa il panismo di Alcyone: la luna, il silenzio, la notte non fanno da sfondo all\'esperienza amorosa ma vi partecipano attivamente. La natura e l\'emozione umana sono un tutt\'uno. Questo collegamento — natura come specchio amplificatore delle emozioni — diventerà il principio strutturale dell\'Alcyone, dove il processo arriva fino alla vera metamorfosi.'
+  },
+  { id:'da76', type:'open', topic:'Testi',
+    text:'Analizza «O falce di luna calante» come testo di raccordo tra la fase giovanile carducciana e la futura poetica di Alcyone. Quali elementi anticipano il panismo?',
+    modelAnswer:'«O falce di luna calante» (Canto novo, 1882) è il testo che testimonia il primo incontro di D\'Annunzio con la fusione tra paesaggio e sentimento, anticipando il panismo maturo di Alcyone. Quattro elementi profetici: (1) La luna apostrofata come presenza quasi femminile e viva — non è un oggetto astronomico ma un\'entità che partecipa alla scena. (2) Il silenzio come condizione della fusione — il «taci» rivolto all\'amante crea lo spazio per ascoltare la voce della natura. (3) Il paesaggio notturno come amplificatore dell\'emozione — mare, luna, silenzio non fanno da cornice ma da vettore del desiderio. (4) La mistura di endecasillabi e settenari — anticipa la sperimentazione metrica che culminerà nel trisillabo di Alcyone. La differenza dalla fase carducciana (Primo vere) è già marcata: Carducci usa il paesaggio in funzione civile e storica; D\'Annunzio lo usa per esprimere stati d\'animo sensuali.',
+    keywords:['luna apostrofata','silenzio taci','paesaggio-emozione','anticipazione panismo','sperimentazione metrica','differenza da Carducci','sensorialità']
+  },
+
+  /* ──────────────  ANDREA SPERELLI E VITA COME OPERA D'ARTE  ────────────── */
+  { id:'da77', type:'mc', topic:'Testi',
+    text:'Nel Ritratto di Andrea Sperelli (Il piacere, cap. II), D\'Annunzio descrive il padre di Andrea che gli insegna la massima «Bisogna fare la propria vita come si fa un\'opera d\'arte». Quale paradosso emerge subito dopo?',
+    options:[
+      'Andrea la rifiuta e sceglie una vita di povertà ascetica',
+      'Andrea la interiorizza ma non ha la forza morale per realizzarla: le massime cadono in una «natura involontaria», cioè in un carattere debole',
+      'La massima porta Andrea al successo mondano assoluto, senza contraddizioni',
+      'Il padre muore subito dopo averla pronunciata, privando Andrea del modello necessario'
+    ],
+    correct:1,
+    explanation:'Il paradosso fondamentale del personaggio: Andrea riceve dal padre una massima estetica sublime («fare la propria vita come un\'opera d\'arte»), ma queste massime cadono in una «natura involontaria» — un carattere debole e oscillante. Andrea vuole realizzare l\'ideale estetico ma non ha la volontà per farlo. È il fallimento strutturale dell\'estetismo senza fondamento morale: la bellezza senza forza distrugge chi la insegue.'
+  },
+  { id:'da78', type:'mc', topic:'Testi',
+    text:'Perché il critico De Sanctis definisce Sperelli come «inetto» prima che il termine acquistasse il significato sveviano?',
+    options:[
+      'Perché è fisicamente debole e incapace di partecipare alla vita mondana romana',
+      'Perché la sua incapacità di scegliere tra le due donne (Elena e Maria) rivela un\'inadeguatezza della volontà: come Svevo\'s inetto, non traduce l\'intenzione in azione',
+      'Perché è incapace di produrre opere d\'arte di qualità nonostante le sue aspirazioni',
+      'Perché rifiuta di impegnarsi politicamente quando l\'Italia ne avrebbe bisogno'
+    ],
+    correct:1,
+    explanation:'Sperelli anticipa la figura dell\'inetto novecentesco: come i protagonisti di Svevo (Alfonso Nitti, Emilio Brentani, Zeno), non riesce a tradurre l\'intenzione in azione concreta. La sua «debolezza di volontà» si manifesta nella sovrapposizione mentale delle due donne amate (confonde Elena con Maria) — incapacità di decidere, di scegliere, di agire. La differenza con l\'inetto sveviano è che Sperelli è consapevole della propria debolezza e la vive come colpa estetica, non come condizione psicologica.'
+  },
+
+  /* ──────────────  VITA: DUSE, FIUME, VITTORIALE  ────────────── */
+  { id:'da79', type:'mc', topic:'Vita',
+    text:'In che modo la relazione con Eleonora Duse influenzò la produzione letteraria di D\'Annunzio?',
+    options:[
+      'Duse lo spinse verso il teatro e le opere drammatiche; senza di lei D\'Annunzio avrebbe scritto solo poesia',
+      'La relazione fu l\'ambiente in cui nacquero le Laudi, il teatro e le prose del periodo della Capponcina; Duse fu ispiratrice di opere e protagonista scandalosa de Il fuoco',
+      'Duse finanziò le edizioni delle Laudi grazie ai proventi dei suoi tournée internazionali',
+      'Duse convinse D\'Annunzio ad abbandonare l\'estetismo e ad abbracciare il nazionalismo socialista'
+    ],
+    correct:1,
+    explanation:'La relazione con Eleonora Duse (1895–1910) coincide con il periodo più fecondo di D\'Annunzio: La Capponcina a Settignano, le Laudi (Alcyone, 1903), il teatro (La figlia di Iorio, Francesca da Rimini). Duse interpretò molte delle sue opere teatrali. Il culmine scandaloso fu Il fuoco (1900), dove D\'Annunzio ritrasse il declino fisico di lei in maniera crudele, scatenando polemiche in tutta Europa.'
+  },
+  { id:'da80', type:'mc', topic:'Vita',
+    text:'Quale fu il lascito politico-culturale dell\'Impresa di Fiume (1919–1920) nella storia italiana?',
+    options:[
+      'Portò alla firma del Trattato di Rapallo che assegnò Fiume all\'Italia nel 1921',
+      'Fu un laboratorio politico-estetico che anticipò alcune forme del fascismo: il culto del capo, i rituali di piazza, la retorica guerriera, il coinvolgimento delle masse attraverso la parola',
+      'Portò D\'Annunzio a fondare un partito politico nazionalista che concorse alle elezioni del 1921',
+      'Fu condannato dal re Vittorio Emanuele III che ordinò immediatamente lo sgombero militare'
+    ],
+    correct:1,
+    explanation:'L\'impresa di Fiume è storicamente considerata un laboratorio del fascismo: D\'Annunzio inventò o anticipò il saluto romano, i discorsi dal balcone alla folla, le camicie nere, i rituali di piazza (il «dialogo» tra il capo e la folla). Mussolini osservò attentamente e replicò questi modelli. La Carta del Carnaro (de Ambris / D\'Annunzio) fu la prima costituzione italiana moderna. Il «Natale di sangue» del 1920 (sgombero da parte del governo Giolitti) portò D\'Annunzio al ritiro al Vittoriale.'
+  },
+  { id:'da81', type:'mc', topic:'Vita',
+    text:'Il Vittoriale degli Italiani fu costruito da D\'Annunzio come:',
+    options:[
+      'Un museo privato delle sue opere letterarie donato allo Stato come archivio',
+      'Un complesso monumentale sul lago di Garda che è insieme dimora, museo di sé stesso e monumento alla nazione italiana: ogni oggetto ha valore simbolico',
+      'Un convento artistico laico per giovani poeti, sul modello della colonia di Bayreuth di Wagner',
+      'Un palazzo veneziano acquistato e trasformato in simbolo della resistenza all\'occupazione austriaca'
+    ],
+    correct:1,
+    explanation:'Il Vittoriale è la realizzazione finale del «vivere inimitabile»: D\'Annunzio lo costruisce come monumento vivente a sé stesso e alla nazione. Vi sono: la nave Puglia incagliata nel giardino, l\'aereo del volo di Vienna, stanze cerimoniose con migliaia di oggetti simbolici, il mausoleo. Nel 1923 lo dona all\'Italia. Ogni oggetto è scelto secondo criteri estetici e politici: è la vita trasformata in opera d\'arte totale.'
+  },
+
+  /* ──────────────  LA SERA FIESOLANA — analisi approfondita  ────────────── */
+  { id:'da82', type:'mc', topic:'Testi',
+    text:'Nella Sera fiesolana, la Sera è descritta come «viso di perla» e ha «grandi umidi occhi». Qual è la figura retorica dominante e quale effetto crea?',
+    options:[
+      'Metafora semplice che trasforma la Sera in donna per pura ornamentazione stilistica',
+      'Personificazione totale: la Sera diventa una donna viva con tratti fisici concreti, creando un\'umanizzazione della natura che è già un primo grado del panismo',
+      'Sinestesia: il visivo (viso) si fonde con il tattile (perla) per evocare la morbidezza crepuscolare',
+      'Ossimoro: la luce del tramonto (viso di perla) si scontra con il buio imminente (umidi occhi)'
+    ],
+    correct:1,
+    explanation:'La personificazione della Sera è totale e sistematica: non è solo un\'immagine decorativa ma l\'umanizzazione strutturale della natura. La Sera ha un viso, occhi, gesti: è una donna che muore dissolvendosi nella notte («pura morte»). Questo è il primo grado del panismo: la natura acquista tratti umani (umanizzazione). Nella Pioggia nel pineto si compirà il passo inverso: l\'uomo diventerà natura (naturalizzazione). I due movimenti sono complementari.'
+  },
+  { id:'da83', type:'mc', topic:'Testi',
+    text:'Il ritornello «Fresche le mie parole ne la sera / ti sien come il fruscio che fan le foglie / del gelso ne la man di chi le coglie» nella Sera fiesolana svolge quale funzione strutturale?',
+    options:[
+      'È una semplice ripetizione musicale senza funzione semantica',
+      'È la preghiera del poeta alla Sera affinché le sue parole abbiano la stessa freschezza sensoriale della natura: il ritornello lega la poetica (parole fresche) all\'ambiente naturale (foglie del gelso)',
+      'È un riferimento alla tradizione della lauda medievale francescana: D\'Annunzio cita Jacopone da Todi',
+      'È una variazione sul tema della similitudine inversa ungarettiana'
+    ],
+    correct:1,
+    explanation:'Il ritornello della Sera fiesolana è una poetica dichiarata: il poeta chiede che le sue «parole fresche» abbiano la stessa concretezza sensoriale della natura (il fruscio delle foglie di gelso tra le dita di chi le coglie). Il ritornello collega esplicitamente l\'atto del poetare all\'atto naturale: la parola poetica deve essere fisica, sensoriale, viva come la natura. È una riflessione metalinguistica incastonata nel paesaggio.'
+  },
+
+  /* ──────────────  CONFRONTO CON PASCOLI (approfondimento)  ────────────── */
+  { id:'da84', type:'mc', topic:'Confronti',
+    text:'Come si differenziano D\'Annunzio e Pascoli nel loro rapporto con il nazionalismo?',
+    options:[
+      'D\'Annunzio è internazionalista; Pascoli è nazionalista',
+      'D\'Annunzio ha un nazionalismo imperialista e bellicoso (vate che guida la nazione alla gloria); Pascoli ha un nazionalismo umanitario e difensivo (la Grande Proletaria che si è mossa)',
+      'Entrambi hanno lo stesso nazionalismo imperialista, differendo solo nello stile',
+      'Pascoli non ha posizioni nazionaliste; è puramente un poeta della natura e dell\'infanzia'
+    ],
+    correct:1,
+    explanation:'Il nazionalismo è uno dei punti di massima divergenza. D\'Annunzio: nazionalismo imperialista e bellicoso — l\'Italia deve espandersi, conquistare, dominare; il poeta-vate guida la nazione verso la gloria. Pascoli: nel discorso La grande proletaria si è mossa (1911) giustifica la guerra di Libia in termini umanitari e difensivi — l\'Italia povera ha diritto a uno spazio; il tono è compassionevole, non guerrafondaio. Due nazionalismi contrapposti.'
+  },
+  { id:'da85', type:'mc', topic:'Confronti',
+    text:'Come usano il simbolo della notte e del buio D\'Annunzio e Pascoli?',
+    options:[
+      'D\'Annunzio usa il buio come metafora della morte; Pascoli lo usa come spazio dell\'illuminazione',
+      'D\'Annunzio usa la notte come scenario sensuale del panismo (la Sera fiesolana) o come spazio di introspezione (Notturno); Pascoli usa il buio come spazio del mysterium: le stelle, i morti, il linguaggio pre-logico',
+      'Entrambi usano la notte come sfondo neutro senza valenza simbolica specifica',
+      'D\'Annunzio evita la notte perché la notte è associata alla debolezza; Pascoli la esalta'
+    ],
+    correct:1,
+    explanation:'Notte e buio hanno valenze opposte nei due poeti. D\'Annunzio: la notte è sensuale (Sera fiesolana — la sera muore come donna) o introspettiva (Notturno — il buio delle bende sull\'occhio come spazio di memoria). Pascoli: la notte è il luogo del mysterium — le stelle (X Agosto), i morti che comunicano con i vivi, la voce dell\'aldilà, il fanciullino che percepisce ciò che l\'adulto non vede. Per Pascoli il buio è ricco di presenze; per D\'Annunzio è uno spazio sensoriale da dominare.'
+  },
+  { id:'da86', type:'mc', topic:'Confronti',
+    text:'In quale romanzo di D\'Annunzio e in quale opera di Pascoli emerge con più chiarezza la visione opposta del rapporto tra poeta e storia?',
+    options:[
+      'D\'Annunzio: Le vergini delle rocce (il superuomo che rifiuta la democrazia); Pascoli: Myricae (poesia dei piccoli oggetti senza impegno storico)',
+      'D\'Annunzio: Il piacere (il dandy che ignora la storia); Pascoli: I Poemetti (poesia epica del lavoro contadino)',
+      'D\'Annunzio: Elettra (celebrazione dei grandi italiani come guida per la nazione); Pascoli: La grande proletaria si è mossa (il poeta come voce pacifica e difensiva della nazione)',
+      'D\'Annunzio: Il Notturno (introspezione bellica); Pascoli: Il fanciullino (rifiuto totale dell\'impegno politico)'
+    ],
+    correct:2,
+    explanation:'Il confronto più diretto: Elettra di D\'Annunzio celebra i grandi italiani come eroi da emulare per costruire un nuovo Impero — visione attiva, guerriera, elitaria della storia. La grande proletaria si è mossa di Pascoli giustifica la guerra di Libia in tono difensivo e compassionevole — la nazione come «proletaria» che cerca spazio, non come potenza imperiale. Due poeti che leggono lo stesso momento storico (l\'espansionismo italiano) con strumenti poetici opposti.'
+  },
+  { id:'da87', type:'open', topic:'Confronti',
+    text:'Confronta la figura del «poeta-vate» in D\'Annunzio con quella del «fanciullino» in Pascoli: quali visioni del ruolo del poeta nella società incarnano?',
+    modelAnswer:'Le due figure sono le più celebri metafore del ruolo del poeta nel Decadentismo italiano e sono antitetiche. Il vate di D\'Annunzio (Laudi, discorsi pubblici): il poeta è il profeta della nazione, guida spirituale e politica, superuomo che plasma la realtà con la parola. È una figura eroica, estroversa, mondana, che parla alle folle e le trascina. La vita stessa diventa azione poetica («Maggio Radioso», Fiume). Il fanciullino di Pascoli (saggio Il fanciullino, 1897): in ogni essere umano vive un bambino che percepisce la realtà con occhi stupiti, prima della razionalizzazione adulta. Il poeta è colui che conserva intatta questa capacità di meraviglia. È una figura introvertita, solitaria, rifugiata nel «nido» familiare. Non guida le folle: rivela l\'indicibile. In sintesi: D\'Annunzio verso l\'alto (il poeta sale sul podio della storia); Pascoli verso l\'interno (il poeta scende nella profondità dell\'animo). Entrambi reagiscono alla crisi di fine Ottocento, ma con risposte opposte.',
+    keywords:['vate profeta nazione','guida politica','folle Maggio Radioso','fanciullino meraviglia','introversione nido','rivelazione ineffabile','crisi fine Ottocento','verso alto vs verso interno']
+  },
+
+  /* ──────────────  SINTESI GENERALE  ────────────── */
+  { id:'da88', type:'mc', topic:'Poetica',
+    text:'Quale tra le seguenti affermazioni descrive correttamente il rapporto di D\'Annunzio con il Simbolismo francese?',
+    options:[
+      'D\'Annunzio ignora il Simbolismo francese e costruisce la sua poetica esclusivamente su fonti latine e rinascimentali',
+      'D\'Annunzio eredita dal Simbolismo (Baudelaire, Mallarmé, Verlaine) la centralità del suono e dell\'evocazione, ma ne trasforma la dimensione crepuscolare in potenza vitalistica',
+      'D\'Annunzio è il traduttore italiano di Baudelaire: le Laudi sono una versione italiana dei Fiori del male',
+      'D\'Annunzio rifiuta esplicitamente il Simbolismo nel saggio Come io vivo perché lo considera troppo individualistico'
+    ],
+    correct:1,
+    explanation:'D\'Annunzio eredita dal Simbolismo la concezione musicale della parola (Mallarmé: «la musica prima di ogni cosa»), la centralità della suggestione su quella del significato logico, l\'uso dell\'analogia. Ma trasforma la dimensione crepuscolare e malinconica del Simbolismo (Verlaine: «Je suis l\'empire à la fin de la décadence») in potenza vitalistica: il panismo è espansione energetica, non rassegnazione. Il Simbolismo è la radice; il superuomo è la trasformazione italiana.'
+  },
+  { id:'da89', type:'mc', topic:'Confronti',
+    text:'Quale fra questi è il confronto D\'Annunzio-Montale più utile per l\'orale?',
+    options:[
+      'Entrambi celebrano la natura mediterranea come luogo di pace: D\'Annunzio con la Versilia, Montale con le Cinque Terre',
+      'D\'Annunzio usa la parola per amplificare e traboccare (imaginifico); Montale usa la parola per negare ed escludere (ciò che non siamo, ciò che non vogliamo): Anti-Vate radicale che parodia la Pioggia nel pineto',
+      'D\'Annunzio e Montale hanno lo stesso approccio al correlativo oggettivo: la natura come specchio dell\'anima',
+      'Montale ammira D\'Annunzio come maestro e ne riprende il panismo nelle Occasioni'
+    ],
+    correct:1,
+    explanation:'Il confronto canonico: D\'Annunzio moltiplica la parola (imaginifico, tutto pieno, tutto sonoro), amplifica il sé fino alla fusione con la natura. Montale riduce e nega (il «ciò che non siamo» di Non chiederci la parola è il manifesto dell\'anti-vate), usa un lessico duro e aspro, il correlativo oggettivo come distanza dall\'io. La parodia di Montale a Piove (1971) è il gesto critico esplicito: stessa anafora, opposta direzione.'
+  },
+  { id:'da90', type:'open', topic:'Confronti',
+    text:'Sintetizza il percorso di D\'Annunzio dalle cinque fasi della poetica al confronto con i grandi del Novecento, identificando la sua posizione nel panorama letterario italiano.',
+    modelAnswer:'D\'Annunzio attraversa cinque fasi: (1) Giovanile-carducciana (metri barbari, classicismo civile); (2) Estetismo romano (Il piacere, 1889 — vita come opera d\'arte, Andrea Sperelli); (3) Poetica della bontà (Giovanni Episcopo, L\'innocente, 1891–93 — influenza russa, pietà per gli umili); (4) Superuomo-vate (Laudi 1903, Alcyone — panismo, fusione con la natura, nazionalismo imperialista); (5) Notturno (1921 — prosa franta, introspezione). Nel panorama novecentesco D\'Annunzio occupa la posizione del «maestro avverso» che tutti i poeti successivi devono confrontare: Saba gli oppone la poesia onesta delle parole trite; Ungaretti gli oppone il verso-parola e il silenzio (opposto al traboccare sonoro); Montale lo parodia in Piove (1971) svuotando il panismo. D\'Annunzio è il punto di riferimento negativo del Novecento italiano: la sua grandezza è così ingombrante che ogni poeta si definisce anche per differenza da lui. È il massimo esponente italiano del Decadentismo e dell\'Estetismo, il vate che fuse letteratura e politica in modo irripetibile.',
+    keywords:['cinque fasi','estetismo','poetica bontà','superuomo panismo','Notturno','maestro avverso','Saba parole trite','Ungaretti verso-parola','Montale anti-vate','decadentismo italiano']
   }
 ]
 

@@ -22,27 +22,27 @@
   </header>
   <nav class="nav">
     <div class="nav-inner">
-      <button class="nav-btn" onclick="location.href='../../authors/pirandello/index.html'">Vita</button>
-      <button class="nav-btn" onclick="location.href='../../authors/pirandello/poetica.html'">Poetica &amp; Stile</button>
-      <button class="nav-btn" onclick="location.href='../../authors/pirandello/opere.html'">Opere</button>
-      <button class="nav-btn" onclick="location.href='../../authors/pirandello/testi.html'">Testi</button>
-      <button class="nav-btn" onclick="location.href='../../authors/pirandello/confronti.html'">Confronti</button>
-      <button class="nav-btn" onclick="location.href='../../authors/pirandello/glossario.html'">Glossario</button>
-      <button class="nav-btn active">Mappa</button>
+      <button class="nav-btn" onclick="location.href='../../../index.html'">Home</button>
+      <button class="nav-btn" onclick="location.href='../saba/index.html'">Mappa Saba</button>
+      <button class="nav-btn" onclick="location.href='../svevo/index.html'">Mappa Svevo</button>
+      <button class="nav-btn active">Mappa Pirandello</button>
+      <button class="nav-btn" onclick="location.href='../ungaretti/index.html'">Mappa Ungaretti</button>
+      <button class="nav-btn" onclick="location.href='../montale/index.html'">Mappa Montale</button>
+      <button class="nav-btn" onclick="location.href='../dannunzio/index.html'">Mappa D'Annunzio</button>
     </div>
   </nav>
 
   <section class="section active">
-    <div class="container">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
       <div class="section-header">
         <div class="section-tag">Mappa WBS</div>
         <h2>Luigi <em>Pirandello</em></h2>
       </div>
       <p class="section-sub">Struttura concettuale — clicca su ogni nodo per la spiegazione.</p>
 
-      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;">
-        <!-- 5 categories · L2 counts [2,3,2,3,2] · Root cy=350 -->
-        <svg viewBox="0 0 1200 700" width="1200" height="700" style="display:block;" aria-label="Mappa WBS Luigi Pirandello">
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <!-- 5 categories · L2 counts [2,3,2,3,2] · Root cy=438 -->
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:750px;width:max(100%, 1400px);" aria-label="Mappa WBS Luigi Pirandello">
           <style>
             .node { cursor: pointer; }
             .node-root rect { fill: var(--bordeaux-deep); }
@@ -56,153 +56,153 @@
             .node:focus { outline: none; }
           </style>
 
-          <!-- Connectors Root → L1 (L1 centers: 80, 215, 350, 485, 620) -->
-          <path d="M 180,350 C 217,350 255,80 255,80" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path d="M 180,350 C 217,350 255,215 255,215" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path d="M 180,350 C 217,350 255,350 255,350" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path d="M 180,350 C 217,350 255,485 255,485" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path d="M 180,350 C 217,350 255,620 255,620" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <!-- Connectors Root → L1 (L1 centers: 100, 269, 438, 606, 775) -->
+          <path d="M 225,438 C 271,438 319,100 319,100" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,269 319,269" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,438 319,438" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,606 319,606" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,775 319,775" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
 
-          <!-- Vita (L1 cy=80) → L2 (cy: 57, 103) -->
-          <path d="M 415,80 C 467,80 520,57 520,57" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,80 C 467,80 520,103 520,103" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <!-- Poetica (L1 cy=215) → L2 (cy: 169, 215, 261) -->
-          <path d="M 415,215 C 467,215 520,169 520,169" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,215 C 467,215 520,215 520,215" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,215 C 467,215 520,261 520,261" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <!-- Opere (L1 cy=350) → L2 (cy: 327, 373) -->
-          <path d="M 415,350 C 467,350 520,327 520,327" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,350 C 467,350 520,373 520,373" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <!-- Testi (L1 cy=485) → L2 (cy: 439, 485, 531) -->
-          <path d="M 415,485 C 467,485 520,439 520,439" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,485 C 467,485 520,485 520,485" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,485 C 467,485 520,531 520,531" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <!-- Confronti (L1 cy=620) → L2 (cy: 597, 643) -->
-          <path d="M 415,620 C 467,620 520,597 520,597" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,620 C 467,620 520,643 520,643" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Vita (L1 cy=100) → L2 (cy: 71, 129) -->
+          <path d="M 519,100 C 584,100 650,71 650,71" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,100 C 584,100 650,129 650,129" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Poetica (L1 cy=269) → L2 (cy: 211, 269, 326) -->
+          <path d="M 519,269 C 584,269 650,211 650,211" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,269 650,269" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,326 650,326" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Opere (L1 cy=438) → L2 (cy: 409, 466) -->
+          <path d="M 519,438 C 584,438 650,409 650,409" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,466 650,466" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Testi (L1 cy=606) → L2 (cy: 549, 606, 664) -->
+          <path d="M 519,606 C 584,606 650,549 650,549" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,606 650,606" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,664 650,664" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Confronti (L1 cy=775) → L2 (cy: 746, 804) -->
+          <path d="M 519,775 C 584,775 650,746 650,746" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,775 C 584,775 650,804 650,804" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
 
           <!-- ROOT -->
           <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
-            <rect x="20" y="320" width="160" height="60" rx="6"/>
+            <rect x="25" y="400" width="200" height="75" rx="7"/>
             <text>
-              <tspan x="100" y="347" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14.5" font-weight="600">Luigi Pirandello</tspan>
-              <tspan x="100" y="363" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9.5" letter-spacing="0.08em">1867 — 1936</tspan>
+              <tspan x="125" y="434" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">Luigi Pirandello</tspan>
+              <tspan x="125" y="454" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">1867 — 1936</tspan>
             </text>
           </g>
 
-          <!-- L1 nodes (y = cy - 22) -->
+          <!-- L1 nodes -->
           <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button">
-            <rect x="255" y="58" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="85" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text>
+            <rect x="319" y="72" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="106" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text>
           </g>
           <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button">
-            <rect x="255" y="193" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="220" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text>
+            <rect x="319" y="241" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="275" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text>
           </g>
           <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button">
-            <rect x="255" y="328" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="355" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">03 · OPERE</tspan></text>
+            <rect x="319" y="410" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="444" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · OPERE</tspan></text>
           </g>
           <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button">
-            <rect x="255" y="463" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="490" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text>
+            <rect x="319" y="578" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="613" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text>
           </g>
           <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button">
-            <rect x="255" y="598" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="625" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text>
+            <rect x="319" y="747" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="781" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text>
           </g>
 
-          <!-- L2: VITA (cy: 57→y=38, 103→y=84) -->
+          <!-- L2: VITA (y: 47, 105) -->
           <g class="node node-l2" onclick="showNode('vita-caos')" tabindex="0" role="button">
-            <rect x="520" y="38" width="190" height="38" rx="3"/>
+            <rect x="650" y="47" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="54" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Nascita a Caos</tspan>
-              <tspan x="615" y="68" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">figlio del caos · Agrigento 1867</tspan>
+              <tspan x="769" y="67" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Nascita a Caos</tspan>
+              <tspan x="769" y="85" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">figlio del caos · Agrigento 1867</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('vita-moglie')" tabindex="0" role="button">
-            <rect x="520" y="84" width="190" height="38" rx="3"/>
+            <rect x="650" y="105" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="100" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Moglie paranoica</tspan>
-              <tspan x="615" y="114" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">relativismo conoscitivo · 1894–1919</tspan>
+              <tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Moglie paranoica</tspan>
+              <tspan x="769" y="143" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">relativismo conoscitivo · 1894–1919</tspan>
             </text>
           </g>
 
-          <!-- L2: POETICA (cy: 169→y=150, 215→y=196, 261→y=242) -->
+          <!-- L2: POETICA (y: 187, 245, 302) -->
           <g class="node node-l2" onclick="showNode('poetica-vitaforma')" tabindex="0" role="button">
-            <rect x="520" y="150" width="190" height="38" rx="3"/>
+            <rect x="650" y="187" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="166" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Vita e Forma</tspan>
-              <tspan x="615" y="180" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">il paradosso fondamentale</tspan>
+              <tspan x="769" y="207" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Vita e Forma</tspan>
+              <tspan x="769" y="225" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">il paradosso fondamentale</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('poetica-umorismo')" tabindex="0" role="button">
-            <rect x="520" y="196" width="190" height="38" rx="3"/>
+            <rect x="650" y="245" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="212" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">L'umorismo</tspan>
-              <tspan x="615" y="226" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">avvertimento vs sentimento</tspan>
+              <tspan x="769" y="265" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">L'umorismo</tspan>
+              <tspan x="769" y="283" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">avvertimento vs sentimento</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('poetica-relativismo')" tabindex="0" role="button">
-            <rect x="520" y="242" width="190" height="38" rx="3"/>
+            <rect x="650" y="302" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="258" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Relativismo conoscitivo</tspan>
-              <tspan x="615" y="272" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">nessuna verità assoluta</tspan>
+              <tspan x="769" y="322" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Relativismo conoscitivo</tspan>
+              <tspan x="769" y="340" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">nessuna verità assoluta</tspan>
             </text>
           </g>
 
-          <!-- L2: OPERE (cy: 327→y=308, 373→y=354) -->
+          <!-- L2: OPERE (y: 385, 442) -->
           <g class="node node-l2" onclick="showNode('opere-mattia')" tabindex="0" role="button">
-            <rect x="520" y="308" width="190" height="38" rx="3"/>
+            <rect x="650" y="385" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="324" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Il fu Mattia Pascal</tspan>
-              <tspan x="615" y="338" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1904 · identità come gabbia</tspan>
+              <tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Il fu Mattia Pascal</tspan>
+              <tspan x="769" y="423" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">1904 · identità come gabbia</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('opere-sei')" tabindex="0" role="button">
-            <rect x="520" y="354" width="190" height="38" rx="3"/>
+            <rect x="650" y="442" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="370" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Sei personaggi</tspan>
-              <tspan x="615" y="384" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1921 · teatro nel teatro</tspan>
+              <tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Sei personaggi</tspan>
+              <tspan x="769" y="480" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">1921 · teatro nel teatro</tspan>
             </text>
           </g>
 
-          <!-- L2: TESTI (cy: 439→y=420, 485→y=466, 531→y=512) -->
+          <!-- L2: TESTI (y: 525, 582, 640) -->
           <g class="node node-l2" onclick="showNode('testi-treno')" tabindex="0" role="button">
-            <rect x="520" y="420" width="190" height="38" rx="3"/>
+            <rect x="650" y="525" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="436" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Il treno ha fischiato</tspan>
-              <tspan x="615" y="450" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">follia come lucidità · Belluca</tspan>
+              <tspan x="769" y="545" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Il treno ha fischiato</tspan>
+              <tspan x="769" y="563" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">follia come lucidità · Belluca</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('testi-ciaula')" tabindex="0" role="button">
-            <rect x="520" y="466" width="190" height="38" rx="3"/>
+            <rect x="650" y="582" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="482" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Ciaula scopre la luna</tspan>
-              <tspan x="615" y="496" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">epifania · verismo + esistenziale</tspan>
+              <tspan x="769" y="602" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Ciaula scopre la luna</tspan>
+              <tspan x="769" y="620" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">epifania · verismo + esistenziale</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('testi-mattia')" tabindex="0" role="button">
-            <rect x="520" y="512" width="190" height="38" rx="3"/>
+            <rect x="650" y="640" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="528" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Il fu Mattia Pascal</tspan>
-              <tspan x="615" y="542" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">«fu» · doppia trappola</tspan>
+              <tspan x="769" y="660" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Il fu Mattia Pascal</tspan>
+              <tspan x="769" y="678" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">«fu» · doppia trappola</tspan>
             </text>
           </g>
 
-          <!-- L2: CONFRONTI (cy: 597→y=578, 643→y=624) -->
+          <!-- L2: CONFRONTI (y: 722, 780) -->
           <g class="node node-l2" onclick="showNode('confronti-svevo')" tabindex="0" role="button">
-            <rect x="520" y="578" width="190" height="38" rx="3"/>
+            <rect x="650" y="722" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="594" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">vs Svevo</tspan>
-              <tspan x="615" y="608" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">maschera (soc.) vs inetto (psic.)</tspan>
+              <tspan x="769" y="742" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">vs Svevo</tspan>
+              <tspan x="769" y="760" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">maschera (soc.) vs inetto (psic.)</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('confronti-chiave')" tabindex="0" role="button">
-            <rect x="520" y="624" width="190" height="38" rx="3"/>
+            <rect x="650" y="780" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="640" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">5 parole-chiave</tspan>
-              <tspan x="615" y="654" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">sintesi del sistema</tspan>
+              <tspan x="769" y="800" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">5 parole-chiave</tspan>
+              <tspan x="769" y="818" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">sintesi del sistema</tspan>
             </text>
           </g>
         </svg>

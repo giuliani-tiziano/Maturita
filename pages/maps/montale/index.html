@@ -22,27 +22,27 @@
   </header>
   <nav class="nav">
     <div class="nav-inner">
-      <button class="nav-btn" onclick="location.href='../../authors/montale/index.html'">Vita</button>
-      <button class="nav-btn" onclick="location.href='../../authors/montale/poetica.html'">Poetica &amp; Stile</button>
-      <button class="nav-btn" onclick="location.href='../../authors/montale/opere.html'">Opere</button>
-      <button class="nav-btn" onclick="location.href='../../authors/montale/testi.html'">Testi</button>
-      <button class="nav-btn" onclick="location.href='../../authors/montale/confronti.html'">Confronti</button>
-      <button class="nav-btn" onclick="location.href='../../authors/montale/glossario.html'">Glossario</button>
-      <button class="nav-btn active">Mappa</button>
+      <button class="nav-btn" onclick="location.href='../../../index.html'">Home</button>
+      <button class="nav-btn" onclick="location.href='../saba/index.html'">Mappa Saba</button>
+      <button class="nav-btn" onclick="location.href='../svevo/index.html'">Mappa Svevo</button>
+      <button class="nav-btn" onclick="location.href='../pirandello/index.html'">Mappa Pirandello</button>
+      <button class="nav-btn" onclick="location.href='../ungaretti/index.html'">Mappa Ungaretti</button>
+      <button class="nav-btn active">Mappa Montale</button>
+      <button class="nav-btn" onclick="location.href='../dannunzio/index.html'">Mappa D'Annunzio</button>
     </div>
   </nav>
 
   <section class="section active">
-    <div class="container">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
       <div class="section-header">
         <div class="section-tag">Mappa WBS</div>
         <h2>Eugenio <em>Montale</em></h2>
       </div>
       <p class="section-sub">Struttura concettuale — clicca su ogni nodo per la spiegazione.</p>
 
-      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;">
-        <!-- 6 categories: L1 centers at 70, 210, 350, 490, 630, 770 · Root cy=420 -->
-        <svg viewBox="0 0 1200 860" width="1200" height="860" style="display:block;" aria-label="Mappa WBS Eugenio Montale">
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <!-- 6 categories: L1 centers at 88, 263, 438, 613, 788, 963 · Root cy=525 -->
+        <svg viewBox="0 0 1600 1075" width="100%" style="display:block;min-height:750px;width:max(100%, 1400px);" aria-label="Mappa WBS Eugenio Montale">
           <style>
             .node { cursor: pointer; }
             .node-root rect { fill: var(--bordeaux-deep); }
@@ -56,193 +56,193 @@
             .node:focus { outline: none; }
           </style>
 
-          <!-- Connectors Root → L1 (root cy=420, L1 centers: 70,210,350,490,630,770) -->
-          <path d="M 180,420 C 217,420 255,70 255,70" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path d="M 180,420 C 217,420 255,210 255,210" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path d="M 180,420 C 217,420 255,350 255,350" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path d="M 180,420 C 217,420 255,490 255,490" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path d="M 180,420 C 217,420 255,630 255,630" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path d="M 180,420 C 217,420 255,770 255,770" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <!-- Connectors Root → L1 (root cy=525, L1 centers: 88,263,438,613,788,963) -->
+          <path d="M 225,525 C 271,525 319,88 319,88" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,263 319,263" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,438 319,438" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,613 319,613" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,788 319,788" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,963 319,963" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
 
-          <!-- Vita (L1 cy=70) → L2 (cy: 47,93) -->
-          <path d="M 415,70 C 467,70 520,47 520,47" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,70 C 467,70 520,93 520,93" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <!-- Figure femminili (L1 cy=210) → L2 (cy: 164,210,256) -->
-          <path d="M 415,210 C 467,210 520,164 520,164" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,210 C 467,210 520,210 520,210" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,210 C 467,210 520,256 520,256" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <!-- Poetica (L1 cy=350) → L2 (cy: 304,350,396) -->
-          <path d="M 415,350 C 467,350 520,304 520,304" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,350 C 467,350 520,350 520,350" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,350 C 467,350 520,396 520,396" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <!-- Opere (L1 cy=490) → L2 (cy: 444,490,536) -->
-          <path d="M 415,490 C 467,490 520,444 520,444" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,490 C 467,490 520,490 520,490" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,490 C 467,490 520,536 520,536" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <!-- Testi (L1 cy=630) → L2 (cy: 584,630,676) -->
-          <path d="M 415,630 C 467,630 520,584 520,584" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,630 C 467,630 520,630 520,630" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,630 C 467,630 520,676 520,676" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <!-- Confronti (L1 cy=770) → L2 (cy: 747,793) -->
-          <path d="M 415,770 C 467,770 520,747 520,747" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
-          <path d="M 415,770 C 467,770 520,793 520,793" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Vita (L1 cy=88) → L2 (cy: 59, 116) -->
+          <path d="M 519,88 C 584,88 650,59 650,59" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,88 C 584,88 650,116 650,116" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Figure femminili (L1 cy=263) → L2 (cy: 205, 263, 320) -->
+          <path d="M 519,263 C 584,263 650,205 650,205" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,263 C 584,263 650,263 650,263" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,263 C 584,263 650,320 650,320" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Poetica (L1 cy=438) → L2 (cy: 380, 438, 495) -->
+          <path d="M 519,438 C 584,438 650,380 650,380" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,438 650,438" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,495 650,495" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Opere (L1 cy=613) → L2 (cy: 555, 613, 670) -->
+          <path d="M 519,613 C 584,613 650,555 650,555" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,613 C 584,613 650,613 650,613" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,613 C 584,613 650,670 650,670" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Testi (L1 cy=788) → L2 (cy: 730, 788, 845) -->
+          <path d="M 519,788 C 584,788 650,730 650,730" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,788 C 584,788 650,788 650,788" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,788 C 584,788 650,845 650,845" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Confronti (L1 cy=963) → L2 (cy: 934, 992) -->
+          <path d="M 519,963 C 584,963 650,934 650,934" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,963 C 584,963 650,992 650,992" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
 
-          <!-- ROOT (cy=420, y=390) -->
+          <!-- ROOT (cy=525, y=488) -->
           <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
-            <rect x="20" y="390" width="160" height="60" rx="6"/>
+            <rect x="25" y="488" width="200" height="75" rx="7"/>
             <text>
-              <tspan x="100" y="417" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="15" font-weight="600">Eugenio Montale</tspan>
-              <tspan x="100" y="433" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9.5" letter-spacing="0.08em">1896 — 1981</tspan>
+              <tspan x="125" y="522" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">Eugenio Montale</tspan>
+              <tspan x="125" y="542" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">1896 — 1981</tspan>
             </text>
           </g>
 
-          <!-- L1 nodes (y = cy - 22) -->
+          <!-- L1 nodes -->
           <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button">
-            <rect x="255" y="48" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="75" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text>
+            <rect x="319" y="60" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="94" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text>
           </g>
           <g class="node node-l1" onclick="showNode('figure')" tabindex="0" role="button">
-            <rect x="255" y="188" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="215" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="10.5" font-weight="600" letter-spacing="0.06em">02 · FIGURE</tspan></text>
+            <rect x="319" y="235" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="269" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · FIGURE</tspan></text>
           </g>
           <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button">
-            <rect x="255" y="328" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="355" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">03 · POETICA</tspan></text>
+            <rect x="319" y="410" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="444" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · POETICA</tspan></text>
           </g>
           <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button">
-            <rect x="255" y="468" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="495" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">04 · OPERE</tspan></text>
+            <rect x="319" y="585" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="619" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · OPERE</tspan></text>
           </g>
           <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button">
-            <rect x="255" y="608" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="635" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">05 · TESTI</tspan></text>
+            <rect x="319" y="760" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="794" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · TESTI</tspan></text>
           </g>
           <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button">
-            <rect x="255" y="748" width="160" height="44" rx="4"/>
-            <text><tspan x="335" y="775" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">06 · CONFRONTI</tspan></text>
+            <rect x="319" y="935" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="969" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">06 · CONFRONTI</tspan></text>
           </g>
 
-          <!-- L2: VITA (y: 28,74) -->
+          <!-- L2: VITA (y: 35, 92) -->
           <g class="node node-l2" onclick="showNode('vita-tappe')" tabindex="0" role="button">
-            <rect x="520" y="28" width="190" height="38" rx="3"/>
+            <rect x="650" y="35" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="44" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Tappe fondamentali</tspan>
-              <tspan x="615" y="58" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">Gobetti · Vieusseux · Nobel</tspan>
+              <tspan x="769" y="55" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Tappe fondamentali</tspan>
+              <tspan x="769" y="73" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Gobetti · Vieusseux · Nobel</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('vita-antifascismo')" tabindex="0" role="button">
-            <rect x="520" y="74" width="190" height="38" rx="3"/>
+            <rect x="650" y="92" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="90" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Antifascismo</tspan>
-              <tspan x="615" y="104" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">PNF rifiutato · CLN · Saba</tspan>
+              <tspan x="769" y="112" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Antifascismo</tspan>
+              <tspan x="769" y="130" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">PNF rifiutato · CLN · Saba</tspan>
             </text>
           </g>
 
-          <!-- L2: FIGURE (y: 145,191,237) -->
+          <!-- L2: FIGURE (y: 181, 239, 296) -->
           <g class="node node-l2" onclick="showNode('figure-clizia')" tabindex="0" role="button">
-            <rect x="520" y="145" width="190" height="38" rx="3"/>
+            <rect x="650" y="181" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="161" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Clizia — Irma Brandeis</tspan>
-              <tspan x="615" y="175" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">donna-angelo · Beatrice · girasole</tspan>
+              <tspan x="769" y="201" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Clizia — Irma Brandeis</tspan>
+              <tspan x="769" y="219" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">donna-angelo · Beatrice · girasole</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('figure-mosca')" tabindex="0" role="button">
-            <rect x="520" y="191" width="190" height="38" rx="3"/>
+            <rect x="650" y="239" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="207" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Mosca — Drusilla Tanzi</tspan>
-              <tspan x="615" y="221" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">miopia · Xenia · quotidiana</tspan>
+              <tspan x="769" y="259" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Mosca — Drusilla Tanzi</tspan>
+              <tspan x="769" y="277" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">miopia · Xenia · quotidiana</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('figure-volpe')" tabindex="0" role="button">
-            <rect x="520" y="237" width="190" height="38" rx="3"/>
+            <rect x="650" y="296" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="253" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Volpe — M.L. Spaziani</tspan>
-              <tspan x="615" y="267" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">eros · anti-Clizia · vitalità</tspan>
+              <tspan x="769" y="316" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Volpe — M.L. Spaziani</tspan>
+              <tspan x="769" y="334" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">eros · anti-Clizia · vitalità</tspan>
             </text>
           </g>
 
-          <!-- L2: POETICA (y: 285,331,377) -->
+          <!-- L2: POETICA (y: 356, 414, 471) -->
           <g class="node node-l2" onclick="showNode('poetica-correlativo')" tabindex="0" role="button">
-            <rect x="520" y="285" width="190" height="38" rx="3"/>
+            <rect x="650" y="356" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="301" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Correlativo oggettivo</tspan>
-              <tspan x="615" y="315" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">T.S. Eliot · oggetto = emozione</tspan>
+              <tspan x="769" y="376" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Correlativo oggettivo</tspan>
+              <tspan x="769" y="394" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">T.S. Eliot · oggetto = emozione</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('poetica-male')" tabindex="0" role="button">
-            <rect x="520" y="331" width="190" height="38" rx="3"/>
+            <rect x="650" y="414" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="347" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Male di vivere</tspan>
-              <tspan x="615" y="361" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">prigione · muro · nessun riscatto</tspan>
+              <tspan x="769" y="434" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Male di vivere</tspan>
+              <tspan x="769" y="452" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">prigione · muro · nessun riscatto</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('poetica-varco')" tabindex="0" role="button">
-            <rect x="520" y="377" width="190" height="38" rx="3"/>
+            <rect x="650" y="471" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="393" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Il varco</tspan>
-              <tspan x="615" y="407" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">via di fuga · quasi sempre fallita</tspan>
+              <tspan x="769" y="491" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Il varco</tspan>
+              <tspan x="769" y="509" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">via di fuga · quasi sempre fallita</tspan>
             </text>
           </g>
 
-          <!-- L2: OPERE (y: 425,471,517) -->
+          <!-- L2: OPERE (y: 531, 589, 646) -->
           <g class="node node-l2" onclick="showNode('opere-ossi')" tabindex="0" role="button">
-            <rect x="520" y="425" width="190" height="38" rx="3"/>
+            <rect x="650" y="531" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="441" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Ossi di seppia</tspan>
-              <tspan x="615" y="455" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1925 · muro · paesaggio ligure</tspan>
+              <tspan x="769" y="551" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Ossi di seppia</tspan>
+              <tspan x="769" y="569" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">1925 · muro · paesaggio ligure</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('opere-occasioni')" tabindex="0" role="button">
-            <rect x="520" y="471" width="190" height="38" rx="3"/>
+            <rect x="650" y="589" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="487" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Le occasioni</tspan>
-              <tspan x="615" y="501" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1939 · Mottetti · Clizia</tspan>
+              <tspan x="769" y="609" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Le occasioni</tspan>
+              <tspan x="769" y="627" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">1939 · Mottetti · Clizia</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('opere-satura')" tabindex="0" role="button">
-            <rect x="520" y="517" width="190" height="38" rx="3"/>
+            <rect x="650" y="646" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="533" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Satura</tspan>
-              <tspan x="615" y="547" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">1971 · Xenia · ironia · prosa</tspan>
+              <tspan x="769" y="666" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Satura</tspan>
+              <tspan x="769" y="684" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">1971 · Xenia · ironia · prosa</tspan>
             </text>
           </g>
 
-          <!-- L2: TESTI (y: 565,611,657) -->
+          <!-- L2: TESTI (y: 706, 764, 821) -->
           <g class="node node-l2" onclick="showNode('testi-non-chiederci')" tabindex="0" role="button">
-            <rect x="520" y="565" width="190" height="38" rx="3"/>
+            <rect x="650" y="706" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="581" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Non chiederci la parola</tspan>
-              <tspan x="615" y="595" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">manifesto · anti-vate</tspan>
+              <tspan x="769" y="726" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Non chiederci la parola</tspan>
+              <tspan x="769" y="744" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">manifesto · anti-vate</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('testi-male')" tabindex="0" role="button">
-            <rect x="520" y="611" width="190" height="38" rx="3"/>
+            <rect x="650" y="764" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="627" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Spesso il male di vivere</tspan>
-              <tspan x="615" y="641" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">correlativi · divina Indifferenza</tspan>
+              <tspan x="769" y="784" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Spesso il male di vivere</tspan>
+              <tspan x="769" y="802" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">correlativi · divina Indifferenza</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('testi-ho-sceso')" tabindex="0" role="button">
-            <rect x="520" y="657" width="190" height="38" rx="3"/>
+            <rect x="650" y="821" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="673" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Ho sceso, dandoti il braccio</tspan>
-              <tspan x="615" y="687" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">Mosca · prosa · miopia</tspan>
+              <tspan x="769" y="841" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Ho sceso, dandoti il braccio</tspan>
+              <tspan x="769" y="859" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Mosca · prosa · miopia</tspan>
             </text>
           </g>
 
-          <!-- L2: CONFRONTI (y: 728,774) -->
+          <!-- L2: CONFRONTI (y: 910, 968) -->
           <g class="node node-l2" onclick="showNode('confronti-posizione')" tabindex="0" role="button">
-            <rect x="520" y="728" width="190" height="38" rx="3"/>
+            <rect x="650" y="910" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="744" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">Posizione nel Novecento</tspan>
-              <tspan x="615" y="758" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">vs Ungaretti · vs D'Annunzio</tspan>
+              <tspan x="769" y="930" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Posizione nel Novecento</tspan>
+              <tspan x="769" y="948" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">vs Ungaretti · vs D'Annunzio</tspan>
             </text>
           </g>
           <g class="node node-l2" onclick="showNode('confronti-chiave')" tabindex="0" role="button">
-            <rect x="520" y="774" width="190" height="38" rx="3"/>
+            <rect x="650" y="968" width="238" height="48" rx="4"/>
             <text>
-              <tspan x="615" y="790" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="12" font-weight="600">5 parole-chiave</tspan>
-              <tspan x="615" y="804" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="9" opacity="0.65">sintesi del sistema</tspan>
+              <tspan x="769" y="988" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">5 parole-chiave</tspan>
+              <tspan x="769" y="1006" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">sintesi del sistema</tspan>
             </text>
           </g>
         </svg>
