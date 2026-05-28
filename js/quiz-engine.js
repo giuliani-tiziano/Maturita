@@ -1,5 +1,5 @@
 /* =========================================================================
-   quiz-engine.js — Motore quiz unificato per i 6 autori
+  quiz-engine.js — Motore quiz unificato per i 7 autori
    Architettura: home autori → modal modalità → quiz → risultati
    Dipende da: quiz-data.js (window.QUIZ_DATA)
    ========================================================================= */
@@ -68,6 +68,16 @@
       storageTot: 'q_dan_best_total',
       footerQuote: '«Bisogna fare la propria vita come si fa un\'opera d\'arte.»',
       footerCite: '— Gabriele D\'Annunzio, Il piacere'
+    },
+    pascoli: {
+      key: 'pascoli',
+      name: 'Giovanni Pascoli',
+      short: 'Pascoli',
+      bodyClass: 'pascoli',
+      storageKey: 'q_pascoli_best',
+      storageTot: 'q_pascoli_best_total',
+      footerQuote: '«E s’aprono i fiori notturni, nell\'ora che penso a\' miei cari.»',
+      footerCite: '— Giovanni Pascoli, Il gelsomino notturno'
     }
   };
 
@@ -163,10 +173,10 @@
     const lbl = document.getElementById('panel-author-label');
     if (lbl) {
       lbl.textContent = author.name;
-      const c = ({
+      const c = (({
         saba: 'var(--red)', ungaretti: '#2d5a87', montale: 'var(--green-dark)',
-        svevo: '#6b4a2a', pirandello: '#6040a0', dannunzio: '#7a2235'
-      })[authorKey];
+        svevo: '#6b4a2a', pirandello: '#6040a0', dannunzio: '#7a2235', pascoli: '#8a6a2a'
+      })[authorKey]);
       lbl.style.color = c;
     }
 
@@ -633,7 +643,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     // Mostra conteggi sulla home
     if (window.QUIZ_DATA) {
-      ['saba', 'ungaretti', 'montale', 'svevo', 'pirandello', 'dannunzio'].forEach(k => {
+      ['saba', 'ungaretti', 'montale', 'svevo', 'pirandello', 'dannunzio', 'pascoli'].forEach(k => {
         const el = document.getElementById('cs-' + k + '-total');
         if (el && window.QUIZ_DATA[k]) el.textContent = window.QUIZ_DATA[k].length;
       });
