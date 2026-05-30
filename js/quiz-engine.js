@@ -70,14 +70,34 @@
       footerCite: '— Gabriele D\'Annunzio, Il piacere'
     },
     pascoli: {
-      key: 'pascoli',
-      name: 'Giovanni Pascoli',
-      short: 'Pascoli',
-      bodyClass: 'pascoli',
-      storageKey: 'q_pascoli_best',
-      storageTot: 'q_pascoli_best_total',
-      footerQuote: '«E s’aprono i fiori notturni, nell\'ora che penso a\' miei cari.»',
-      footerCite: '— Giovanni Pascoli, Il gelsomino notturno'
+      key: "pascoli",
+      name: "Giovanni Pascoli",
+      short: "Pascoli",
+      bodyClass: "pascoli",
+      storageKey: "q_pascoli_best",
+      storageTot: "q_pascoli_best_total",
+      footerQuote: "«E s’aprono i fiori notturni, nell’ora che penso a’ miei cari.»",
+      footerCite: "— Giovanni Pascoli, Il gelsomino notturno"
+    },
+    verga: {
+      key: "verga",
+      name: "Giovanni Verga",
+      short: "Verga",
+      bodyClass: "verga",
+      storageKey: "q_verga_best",
+      storageTot: "q_verga_best_total",
+      footerQuote: "«Solo l’osservatore, travolto anch’esso dalla fiumana, ha il diritto di interessarsi ai vinti.»",
+      footerCite: "— Giovanni Verga, Prefazione ai Malavoglia"
+    },
+    campana: {
+      key: "campana",
+      name: "Dino Campana",
+      short: "Campana",
+      bodyClass: "campana",
+      storageKey: "q_campana_best",
+      storageTot: "q_campana_best_total",
+      footerQuote: "«Sempre una piaga rossa languente.»",
+      footerCite: "— Dino Campana, L’invetriata"
     }
   };
 
@@ -175,7 +195,9 @@
       lbl.textContent = author.name;
       const c = (({
         saba: 'var(--red)', ungaretti: '#2d5a87', montale: 'var(--green-dark)',
-        svevo: '#6b4a2a', pirandello: '#6040a0', dannunzio: '#7a2235', pascoli: '#8a6a2a'
+        svevo: '#6b4a2a', pirandello: '#6040a0', dannunzio: '#7a2235', pascoli: '#8a6a2a',
+        verga: '#5C1A28',
+        campana: '#4a1a60'
       })[authorKey]);
       lbl.style.color = c;
     }
@@ -643,7 +665,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     // Mostra conteggi sulla home
     if (window.QUIZ_DATA) {
-      ['saba', 'ungaretti', 'montale', 'svevo', 'pirandello', 'dannunzio', 'pascoli'].forEach(k => {
+      ['saba', 'ungaretti', 'montale', 'svevo', 'pirandello', 'dannunzio', 'pascoli', 'verga', 'campana'].forEach(k => {
         const el = document.getElementById('cs-' + k + '-total');
         if (el && window.QUIZ_DATA[k]) el.textContent = window.QUIZ_DATA[k].length;
       });
