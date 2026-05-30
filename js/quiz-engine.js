@@ -98,6 +98,108 @@
       storageTot: "q_campana_best_total",
       footerQuote: "«Sempre una piaga rossa languente.»",
       footerCite: "— Dino Campana, L’invetriata"
+    },
+
+    /* ── CORRENTI LETTERARIE ── */
+    naturalismo: {
+      key: "naturalismo",
+      name: "Il Naturalismo",
+      short: "Naturalismo",
+      bodyClass: "verga",
+      storageKey: "q_naturalismo_best",
+      storageTot: "q_naturalismo_best_total",
+      footerQuote: "«Il romanziere sperimentale fa muovere i personaggi secondo le leggi che la scienza ha scoperto.»",
+      footerCite: "— Emile Zola, Il romanzo sperimentale"
+    },
+    verismo: {
+      key: "verismo",
+      name: "Il Verismo",
+      short: "Verismo",
+      bodyClass: "campana",
+      storageKey: "q_verismo_best",
+      storageTot: "q_verismo_best_total",
+      footerQuote: "«La fiumana del progresso porta via tutti — vincitori e vinti.»",
+      footerCite: "— Giovanni Verga, Prefazione ai Malavoglia"
+    },
+    decadentismo: {
+      key: "decadentismo",
+      name: "Il Decadentismo",
+      short: "Decadentismo",
+      bodyClass: "dannunzio",
+      storageKey: "q_decadentismo_best",
+      storageTot: "q_decadentismo_best_total",
+      footerQuote: "«La Natura e un tempio dove viventi pilastri lasciano sfuggire confuse parole.»",
+      footerCite: "— Charles Baudelaire, Corrispondenze"
+    },
+    simbolismo: {
+      key: "simbolismo",
+      name: "Il Simbolismo",
+      short: "Simbolismo",
+      bodyClass: "pascoli",
+      storageKey: "q_simbolismo_best",
+      storageTot: "q_simbolismo_best_total",
+      footerQuote: "«Nominare un oggetto significa sopprimere i tre quarti del piacere della poesia.»",
+      footerCite: "— Stephane Mallarme"
+    },
+    estetismo: {
+      key: "estetismo",
+      name: "L’Estetismo",
+      short: "Estetismo",
+      bodyClass: "montale",
+      storageKey: "q_estetismo_best",
+      storageTot: "q_estetismo_best_total",
+      footerQuote: "«L’unica maniera di liberarsi da una tentazione e cedere a essa.»",
+      footerCite: "— Oscar Wilde, Il ritratto di Dorian Gray"
+    },
+    futurismo: {
+      key: "futurismo",
+      name: "Il Futurismo",
+      short: "Futurismo",
+      bodyClass: "pirandello",
+      storageKey: "q_futurismo_best",
+      storageTot: "q_futurismo_best_total",
+      footerQuote: "«Un automobile da corsa e piu bello della Nike di Samotracia.»",
+      footerCite: "— F.T. Marinetti, Manifesto del Futurismo"
+    },
+    crepuscolarismo: {
+      key: "crepuscolarismo",
+      name: "Il Crepuscolarismo",
+      short: "Crepuscolarismo",
+      bodyClass: "saba",
+      storageKey: "q_crepuscolarismo_best",
+      storageTot: "q_crepuscolarismo_best_total",
+      footerQuote: "«Perche tu mi dici: poeta? Io non sono che un piccolo fanciullo che piange.»",
+      footerCite: "— Sergio Corazzini, Desolazione del povero poeta sentimentale"
+    },
+    vociani: {
+      key: "vociani",
+      name: "I Vociani",
+      short: "Vociani",
+      bodyClass: "ungaretti",
+      storageKey: "q_vociani_best",
+      storageTot: "q_vociani_best_total",
+      footerQuote: "«Taci, anima stanca di godere e di soffrire.»",
+      footerCite: "— Camillo Sbarbaro, Pianissimo"
+    },
+    ermetismo: {
+      key: "ermetismo",
+      name: "L’Ermetismo",
+      short: "Ermetismo",
+      bodyClass: "svevo",
+      storageKey: "q_ermetismo_best",
+      storageTot: "q_ermetismo_best_total",
+      footerQuote: "«M’illumino d’immenso.»",
+      footerCite: "— Giuseppe Ungaretti, Mattina"
+    },
+    antinovecentismo: {
+      key: "antinovecentismo",
+      name: "Linea Antinovecentista",
+      short: "Antinovecentismo",
+      bodyClass: "saba",
+      storageKey: "q_antinovecentismo_best",
+      storageTot: "q_antinovecentismo_best_total",
+      footerQuote: "«Avevo scelto le trite parole perche il mio cuore fosse compreso.»",
+      footerCite: "— Umberto Saba"
     }
   };
 
@@ -196,8 +298,11 @@
       const c = (({
         saba: 'var(--red)', ungaretti: '#2d5a87', montale: 'var(--green-dark)',
         svevo: '#6b4a2a', pirandello: '#6040a0', dannunzio: '#7a2235', pascoli: '#8a6a2a',
-        verga: '#5C1A28',
-        campana: '#4a1a60'
+        verga: '#5C1A28', campana: '#4a1a60',
+        naturalismo: '#5C1A28', verismo: '#4a1a60', decadentismo: '#7a2235',
+        simbolismo: '#8a6a2a', estetismo: '#2d5a87', futurismo: '#6040a0',
+        crepuscolarismo: 'var(--red)', vociani: '#2d5a87', ermetismo: '#6b4a2a',
+        antinovecentismo: 'var(--red)'
       })[authorKey]);
       lbl.style.color = c;
     }

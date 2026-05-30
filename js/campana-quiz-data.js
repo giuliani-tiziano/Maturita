@@ -160,7 +160,70 @@
 
     open("ca35", "Misto", "Perche i Canti orfici (1914) segnano un punto di non ritorno nella lirica italiana del primo Novecento?",
       "I Canti orfici sono l'unica opera di pura visionarieta' orfica nella tradizione italiana. Campana fonde Simbolismo francese (non mediato) ed Espressionismo, usa il prosimetro con una tensione unitaria inedita, sviluppa il verso lungo di respiro whitmaniano contro la tendenza al frammento breve. Nessun poeta italiano del suo tempo ha questa sintesi. Influenzera' Ungaretti e gli Ermetici.",
-      ["visionarieta'", "orfica", "Simbolismo", "prosimetro", "Ungaretti", "Ermetici"])
+      ["visionarieta'", "orfica", "Simbolismo", "prosimetro", "Ungaretti", "Ermetici"]),
+
+    /* ── VITA (aggiuntive) ── */
+    mc("ca36", "Vita", "In quale paese del Sud America si reco' Campana durante i suoi viaggi giovanili?",
+      ["Brasile", "Argentina", "Cile", "Uruguay"],
+      1, "Campana si imbarca clandestinamente per l'Argentina, dove lavora come guardiano di notte e operaio. Questo viaggio, come quelli in Francia, Belgio e America del Nord, appartiene alla sua biografia erratica di vagabondo intellettuale."),
+
+    mc("ca37", "Vita", "In quale anno fu ritrovato il manoscritto originale de 'Il piu lungo giorno', creduto perduto?",
+      ["1945", "1958", "1971", "1985"],
+      2, "Nel 1971, quasi sessant'anni dopo la consegna a Soffici, il manoscritto viene ritrovato negli archivi dello scrittore toscano. Il confronto con i Canti orfici pubblicati rivela varianti significative e la laboriosita' del lavoro di riscrittura di Campana."),
+
+    tf("ca38", "Vita", "Campana mori nell'ospedale psichiatrico di Castel Pulci nel 1932, dopo quattordici anni di internamento.",
+      true, "Vero. Campana viene internato nel 1918 e muore il 1 marzo 1932, dopo quattordici anni trascorsi a Castel Pulci. Durante il ricovero scrive ancora: alcune lettere e riflessioni dimostrano una lucidita' che smentisce la diagnosi di schizofrenia come condizione totale."),
+
+    /* ── POETICA (aggiuntive) ── */
+    mc("ca39", "Poetica", "Quale colore domina il simbolismo cromatico dei Canti orfici e cosa rappresenta?",
+      ["Il blu, che rappresenta il cielo e la purezza", "Il bianco, che rappresenta l'innocenza e la morte", "Il rosso, che rappresenta la passione, la ferita esistenziale e la visione", "Il verde, che rappresenta la natura e la speranza"],
+      2, "Il rosso e' il colore dominante dei Canti orfici: 'piaga rossa languente', i tramonti infuocati, il sangue. Rappresenta insieme la passione bruciante, la ferita esistenziale, l'intensita' della visione. Gli altri colori ricorrenti sono il viola (crepuscolare) e l'oro (della luce meridiana)."),
+
+    mc("ca40", "Poetica", "Come viene rappresentata la figura femminile nella poetica di Campana?",
+      ["Come madre protettiva e rassicurante sul modello pascoliano", "Come donna-angelo stilnovistica e spiritualizzata", "Come figura ambivalente tra la femme fatale che brucia e distrugge e la Chimera irraggiungibile che salva", "Come compagna quotidiana e domestica"],
+      2, "La figura femminile in Campana oscilla tra due poli: la donna fatale che trascina nell'abisso (la Lena de La Notte, le figure orfiche perdute) e la Chimera irraggiungibile, creatura luminosa e impossibile, unica possibilita' di salvezza. Sibilla Aleramo appartiene al primo polo."),
+
+    mc("ca41", "Poetica", "Perche' si dice che Campana legga le fonti simboliste 'senza mediazioni italiane'?",
+      ["Perche' rifiuta esplicitamente la poesia italiana", "Perche' legge Baudelaire e Rimbaud direttamente in francese, non attraverso le traduzioni o interpretazioni degli altri vociani", "Perche' vive all'estero durante la sua formazione", "Perche' non ha mai letto Pascoli e D'Annunzio"],
+      1, "Campana e' l'unico poeta del suo tempo che legge Baudelaire, Rimbaud, Mallarme' in lingua originale. Gli altri autori italiani — compresi Pascoli e D'Annunzio — ricevono il Simbolismo francese in modo filtrato e mediato. Campana lo assume direttamente, senza filtri nazionali."),
+
+    /* ── OPERE (aggiuntive) ── */
+    mc("ca42", "Opere", "Qual e' il contenuto della sezione 'La Notte', la prima dei Canti orfici?",
+      ["Le poesie di tema politico e sociale", "Un lungo viaggio notturno tra Marradi e Faenza che diventa discesa agli Inferi, allucinazione e rivelazione", "Le prose descrittive dei paesaggi toscani", "Le poesie d'amore dedicate a Sibilla Aleramo"],
+      1, "La Notte e' il pezzo piu' lungo e centrale dei Canti orfici: un resoconto in prosimetro di un viaggio notturno che si trasforma in discesa orfea agli Inferi. Il paesaggio reale (la strada tra Marradi e Faenza) diventa teatro di visioni e allucinazioni."),
+
+    tf("ca43", "Opere", "Il titolo 'Canti orfici' allude al mito di Orfeo che scende nell'Ade per riportare Euridice alla luce.",
+      true, "Vero. Il mito di Orfeo e' la metafora strutturale dell'intera raccolta: il poeta scende nelle zone oscure del reale (la notte, la malattia, il viaggio) per riportarne una verita'. Come Orfeo, rischia di perdere tutto al momento della risalita. La 'tradizione orfica' include anche i riti misterici dell'Orfismo antico."),
+
+    mc("ca44", "Opere", "Cosa si intende per 'prosa lirica' in Campana?",
+      ["Una poesia scritta senza punteggiatura", "Un testo in prosa che usa strutture ritmiche, immagini e densita' della poesia pur senza rispettare il verso", "Un romanzo in versi", "Una commistione di dialetto e italiano"],
+      1, "La prosa lirica e' il genere ibrido che Campana usa nei Canti orfici: testi in prosa che hanno il ritmo interno, la densita' metaforica e la concentrazione emotiva della poesia. E' diversa sia dalla prosa narrativa tradizionale che dal verso libero: e' una terza via che i Vociani sviluppano e Campana porta all'estremo."),
+
+    /* ── TESTI (aggiuntive) ── */
+    mc("ca45", "Testi", "Chi e' 'La Chimera' nella lirica omonima dei Canti orfici?",
+      ["Un mostro della mitologia greca usato come allegoria della guerra", "Una figura femminile irraggiungibile e luminosa, simbolo della bellezza impossibile e dell'ideale poetico", "La citta' di Firenze personificata", "La madre del poeta"],
+      1, "La Chimera e' la figura femminile assoluta di Campana: non una donna reale ma un ideale luminoso e irraggiungibile. La 'bianca', la 'splendente', appare e scompare. E' al tempo stesso ispiratrice poetica e promessa di salvezza — l'opposto della donna fatale che brucia. L'ultima strofa della lirica e' tra i passi piu' memorabili della poesia italiana del Novecento."),
+
+    mc("ca46", "Testi", "Come viene descritta Genova nei Canti orfici?",
+      ["Come citta' industriale e grigia, simbolo della modernita' capitalistica", "Come 'la regina' dai 'palazzi di pietra e d'ardesia' che domina il mare: metropoli visionaria e femminile", "Come luogo di esilio e malinconia simile a Trieste per Saba", "Come sfondo indifferente dei viaggi del poeta"],
+      1, "In Campana Genova e' la citta' per eccellenza: 'la superba', potente e visiva. La prosa su Genova e' uno dei momenti piu' alti dei Canti orfici: il porto, le navi, i vicoli, i palazzi di ardesia formano un affresco urbano visionario dove la citta' e' trattata come una figura femminile e regale."),
+
+    /* ── CONFRONTI (aggiuntive) ── */
+    mc("ca47", "Confronti", "Qual e' la differenza fondamentale tra Campana e D'Annunzio nel rapporto con la figura femminile?",
+      ["D'Annunzio ignora la figura femminile; Campana la mette al centro", "D'Annunzio usa la donna come parte del trionfo del superuomo estetizzante; Campana la vive come abisso esistenziale, ossessione e impossibilita'", "Entrambi hanno la stessa concezione della donna", "Campana ignora la figura femminile; D'Annunzio no"],
+      1, "In D'Annunzio la donna e' estetizzata, controllata, parte del trionfo sensoriale del superuomo. In Campana la donna (la Chimera, la donna fatale, Sibilla) e' qualcosa che il poeta non domina: lo travolge, lo brucia, gli sfugge. E' la differenza tra estetismo trionfante e esperienza esistenziale abissale."),
+
+    tf("ca48", "Confronti", "Campana fu vicino al Futurismo e partecipo' alle serate futuriste di Marinetti.",
+      false, "Falso. Campana non aderisce al Futurismo. Il Futurismo celebra la macchina, la velocita', il futuro; Campana e' radicato nel mito, nell'orfismo, nel paesaggio appenninico, nella tradizione simbolista. Sono mondi inconciliabili. Campana rimane sempre un solitario, inclassificabile in qualunque corrente."),
+
+    /* ── MISTO (aggiuntive) ── */
+    mc("ca49", "Misto", "Cosa rende straordinario il carteggio tra Campana e Sibilla Aleramo (1916-1917)?",
+      ["E' scritto interamente in versi liberi", "E' uno dei carteggi piu' intensi della letteratura italiana: due vite marginali e tormentate che si cercano e si distruggono a vicenda attraverso lettere di straordinaria potenza espressiva", "E' la principale fonte biografica sulla famiglia di Campana", "E' scritto in parte in francese"],
+      1, "Il carteggio Campana-Aleramo (pubblicato postumo nel 1958) e' un documento letterario e umano eccezionale: due artisti ai margini — lei scrittrice e femminista, lui poeta vagabondo e malato — si amano e si tormentano con una verita' bruciante. Le lettere di Campana sono tra i testi piu' intensi della prosa italiana del Novecento."),
+
+    mc("ca50", "Misto", "Quale critico letterario contribui' decisivamente alla riscoperta di Campana nel secondo dopoguerra?",
+      ["Benedetto Croce, che lo cito' nell'Estetica", "Carlo Bo, che lo associo' all'Ermetismo", "Enrico Falqui, che curo' le sue opere e ne studio' i manoscritti", "Luigi Russo, che pubblico' la prima monografia"],
+      2, "Enrico Falqui e' il critico che, a partire dagli anni '40-'50, cura sistematicamente i testi di Campana, ne raccoglie le varianti, pubblica le lettere e avvia la riscoperta critica. Senza il suo lavoro filologico, Campana sarebbe rimasto molto piu' a lungo nell'ombra.")
 
   ];
 })();
