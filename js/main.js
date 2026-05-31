@@ -42,12 +42,17 @@
   }
 
   function showSection(id) {
-    // Quando si cambia scheda, resetta ogni accordion per evitare stati residui.
     closeAllAccordions();
     allSections.forEach(s => s.classList.remove('active'));
     navBtns.forEach(b => b.classList.remove('active'));
     const sec = document.getElementById(id);
-    if (sec) sec.classList.add('active');
+    if (sec) {
+      sec.classList.add('active');
+      // Rendi visibili gli elementi .ai nella sezione appena mostrata
+      sec.querySelectorAll('.ai:not(.visible)').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 30 + i * 40);
+      });
+    }
     navBtns.forEach(b => {
       if (b.dataset.sec === id) b.classList.add('active');
     });
@@ -290,5 +295,20 @@
     document.querySelectorAll('.card, .opera-card, .author-card, .feature').forEach(el => {
       animObserver.observe(el);
     });
+
+    /* Observer per .ai → aggiunge classe .visible */
+    const aiObserver = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add('visible');
+          aiObserver.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+    document.querySelectorAll('.ai').forEach(el => aiObserver.observe(el));
+  } else {
+    /* Fallback senza IntersectionObserver: mostra tutto subito */
+    document.querySelectorAll('.ai').forEach(el => el.classList.add('visible'));
   }
 })();
