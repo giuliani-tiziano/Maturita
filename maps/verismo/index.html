@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verismo — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .map-overlay{display:none;position:fixed;inset:0;background:rgba(28,16,16,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}
+    .map-overlay.show{display:flex;}
+    .map-modal{background:var(--paper);border:1px solid var(--bordeaux-mid);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}
+    .modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;line-height:1;}
+    .modal-close:hover{color:var(--bordeaux-deep);}
+    .modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bordeaux-mid);margin-bottom:.5rem;}
+    .modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--bordeaux-deep);margin-bottom:.8rem;line-height:1.1;}
+    .modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../pages/autori.html">Autori</a>
+      <a class="topbar-link" href="../../pages/correnti.html">Correnti</a>
+      <a class="topbar-link active" href="../../pages/mappe.html">Mappe</a>
+      <a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">&#x2190; Mappe</button>
+      <button class="nav-btn" onclick="location.href='../naturalismo/'">Naturalismo</button>
+      <button class="nav-btn active">Verismo</button>
+      <button class="nav-btn" onclick="location.href='../decadentismo/'">Decadentismo</button>
+      <button class="nav-btn" onclick="location.href='../simbolismo/'">Simbolismo</button>
+      <button class="nav-btn" onclick="location.href='../estetismo/'">Estetismo</button>
+      <button class="nav-btn" onclick="location.href='../futurismo/'">Futurismo</button>
+      <button class="nav-btn" onclick="location.href='../crepuscolarismo/'">Crepuscolarismo</button>
+      <button class="nav-btn" onclick="location.href='../vociani/'">Vociani</button>
+      <button class="nav-btn" onclick="location.href='../ermetismo/'">Ermetismo</button>
+      <button class="nav-btn" onclick="location.href='../antinovecentismo/'">Antinovecentismo</button>
+    </div>
+  </nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;"><div class="section-tag">Mappa WBS</div><h2>Il <em>Verismo</em></h2></div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: contesto, poetica, Verga, testi chiave, i Vinti e il confronto col Naturalismo.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 1075" width="100%" style="display:block;min-height:750px;width:max(100%,1400px);" aria-label="Mappa WBS Verismo">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--bordeaux-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--bordeaux-mid);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <path d="M 225,525 C 271,525 319,88 319,88" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,263 319,263" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,438 319,438" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,613 319,613" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,788 319,788" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,963 319,963" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 519,88 C 584,88 650,59 650,59" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,88 C 584,88 650,116 650,116" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,263 C 584,263 650,234 650,234" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,263 C 584,263 650,292 650,292" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,409 650,409" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,466 650,466" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,613 C 584,613 650,584 650,584" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,613 C 584,613 650,642 650,642" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,788 C 584,788 650,759 650,759" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,788 C 584,788 650,817 650,817" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,963 C 584,963 650,934 650,934" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,963 C 584,963 650,992 650,992" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button"><rect x="25" y="488" width="200" height="75" rx="7"/><text><tspan x="125" y="522" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">Verismo</tspan><tspan x="125" y="542" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">Italia 1870–1900</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('contesto')" tabindex="0" role="button"><rect x="319" y="60" width="200" height="55" rx="5"/><text><tspan x="419" y="94" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · CONTESTO</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button"><rect x="319" y="235" width="200" height="55" rx="5"/><text><tspan x="419" y="269" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('verga')" tabindex="0" role="button"><rect x="319" y="410" width="200" height="55" rx="5"/><text><tspan x="419" y="444" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · VERGA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button"><rect x="319" y="585" width="200" height="55" rx="5"/><text><tspan x="419" y="619" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('vinti')" tabindex="0" role="button"><rect x="319" y="760" width="200" height="55" rx="5"/><text><tspan x="419" y="794" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · I VINTI</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('confronto')" tabindex="0" role="button"><rect x="319" y="935" width="200" height="55" rx="5"/><text><tspan x="419" y="969" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">06 · VS NATURALISMO</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('contesto-italia')" tabindex="0" role="button"><rect x="650" y="35" width="238" height="48" rx="4"/><text><tspan x="769" y="55" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Italia post-unitaria</tspan><tspan x="769" y="73" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">delusione risorgimentale · questione meridionale</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('contesto-capuana')" tabindex="0" role="button"><rect x="650" y="92" width="238" height="48" rx="4"/><text><tspan x="769" y="112" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Luigi Capuana</tspan><tspan x="769" y="130" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">teorico · Giacinta · critica letteraria</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-impersonalita')" tabindex="0" role="button"><rect x="650" y="210" width="238" height="48" rx="4"/><text><tspan x="769" y="230" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Impersonalità radicale</tspan><tspan x="769" y="248" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">regressione · DIL · narratore collettivo</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-straniamento')" tabindex="0" role="button"><rect x="650" y="268" width="238" height="48" rx="4"/><text><tspan x="769" y="288" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Straniamento</tspan><tspan x="769" y="306" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">logica circolare · Rosso Malpelo</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('verga-svolta')" tabindex="0" role="button"><rect x="650" y="385" width="238" height="48" rx="4"/><text><tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Svolta verista 1878</tspan><tspan x="769" y="423" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Vita dei campi · Novelle rusticane</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('verga-ciclo')" tabindex="0" role="button"><rect x="650" y="442" width="238" height="48" rx="4"/><text><tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Ciclo dei Vinti</tspan><tspan x="769" y="480" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Malavoglia · Mastro-don Gesualdo</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-malpelo')" tabindex="0" role="button"><rect x="650" y="560" width="238" height="48" rx="4"/><text><tspan x="769" y="580" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Rosso Malpelo</tspan><tspan x="769" y="598" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">straniamento · escluso assoluto</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-fiumana')" tabindex="0" role="button"><rect x="650" y="618" width="238" height="48" rx="4"/><text><tspan x="769" y="638" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">La fiumana del progresso</tspan><tspan x="769" y="656" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">prefazione Malavoglia · manifesto</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('vinti-fiumana')" tabindex="0" role="button"><rect x="650" y="735" width="238" height="48" rx="4"/><text><tspan x="769" y="755" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Fiumana del progresso</tspan><tspan x="769" y="773" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">sconfitta senza riscatto</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('vinti-ostrica')" tabindex="0" role="button"><rect x="650" y="793" width="238" height="48" rx="4"/><text><tspan x="769" y="813" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Ideale dell'ostrica</tspan><tspan x="769" y="831" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">immobilismo · sopravvivenza biologica</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('confronto-pessimismo')" tabindex="0" role="button"><rect x="650" y="910" width="238" height="48" rx="4"/><text><tspan x="769" y="930" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Pessimismo assoluto</tspan><tspan x="769" y="948" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">vs fiducia nel progresso di Zola</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('confronto-sud')" tabindex="0" role="button"><rect x="650" y="968" width="238" height="48" rx="4"/><text><tspan x="769" y="988" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Sud arcaico</tspan><tspan x="769" y="1006" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">vs Francia industriale · immobilismo</tspan></text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+  <script>
+    const NODES = {
+      root:{label:'Corrente',title:'Verismo',text:'Il Verismo è la declinazione italiana del Naturalismo francese, nata nell\'Italia post-unitaria. A differenza di Zola, non crede nel progresso: i vinti sono sconfitti senza rimedio. Verga è il massimo esponente. Il metodo è l\'impersonalità radicale, la regressione del narratore e il discorso indiretto libero.'},
+      contesto:{label:'Categoria',title:'Contesto',text:'L\'Italia post-unitaria è un paese profondamente diviso: Nord industriale vs Sud agrario arcaico. La delusione risorgimentale alimenta il pessimismo. La Questione meridionale — il Sud immobile, povero, analfabeto — diventa il soggetto privilegiato dei veristi. Capuana è il teorico; Verga l\'artista maggiore.'},
+      poetica:{label:'Categoria',title:'Poetica',text:'L\'impersonalità verghiana non è metodo scientifico (come in Zola) ma conseguenza filosofica del pessimismo: poiché la realtà è immutabile, il giudizio morale è vuoto. La regressione del narratore immerge il testo nel punto di vista dei personaggi. Il Discorso Indiretto Libero (DIL) ne è il principale strumento stilistico.'},
+      verga:{label:'Categoria',title:'Giovanni Verga',text:'Verga (1840–1922) è il fondatore del Verismo. Dopo romanzi mondani a Milano, la svolta nel 1878 con Rosso Malpelo. Il Ciclo dei Vinti — I Malavoglia (1881) e Mastro-don Gesualdo (1889) — è l\'opera maggiore. Dal 1893 silenzio letterario e ritorno a Catania.'},
+      testi:{label:'Categoria',title:'Testi chiave',text:'Rosso Malpelo (1878) inaugura il Verismo: narratore collettivo, logica circolare, straniamento. La fiumana del progresso (prefazione ai Malavoglia) è il manifesto ideologico del Ciclo dei Vinti. L\'addio di \'Ntoni chiude il romanzo con l\'ideale dell\'ostrica rovesciato. La roba mostra l\'ossessione per i beni materiali.'},
+      vinti:{label:'Categoria',title:'I Vinti',text:'La «fiumana del progresso» trascina tutti — senza distinzione di classe o merito. I vinti sono i detriti lasciati sulla riva. Non c\'è salvezza attraverso l\'adattamento: chi si stacca dalla propria radice (l\'ideale dell\'ostrica) viene divorato. Il pessimismo è cosmico, non socialmente correttivo come in Zola.'},
+      confronto:{label:'Categoria',title:'Vs Naturalismo',text:'Stesso metodo (impersonalità, ciclo romanzesco) ma ragioni e risultati opposti. Zola crede nel progresso e nella riforma sociale; Verga è radicalmente pessimista. Zola descrive la Francia industriale in trasformazione; Verga il Sud immobile e arcaico. Zola ottimista darwiniano; Verga fatalista conservatore.'},
+      'contesto-italia':{label:'Contesto',title:'Italia post-unitaria',text:'L\'Unità d\'Italia (1861) non risolve la frattura Nord-Sud. La delusione risorgimentale alimenta il realismo disincantato dei veristi. Il Mezzogiorno — povero, rurale, analfabeta — è il laboratorio di Verga. La Questione meridionale non era una questione politica per lui: era una legge naturale immodificabile.'},
+      'contesto-capuana':{label:'Contesto',title:'Luigi Capuana',text:'Luigi Capuana (1839–1915) è il teorico del Verismo italiano. Il suo romanzo Giacinta (1879) è tra i primi veristi. Scrive saggi critici fondamentali (Studi sulla letteratura contemporanea) che acclimatano il Naturalismo francese in Italia. Rimane più fiducioso di Verga nel potenziale scientifico e riformatore della letteratura.'},
+      'poetica-impersonalita':{label:'Poetica',title:'Impersonalità radicale',text:'L\'autore non si vede, non si sente, non giudica. Il testo sembra essersi fatto da sé. La regressione del narratore: l\'autore si immerge nella logica, nel linguaggio e nella mentalità dei personaggi — anche quando sono circolari, superstiziosi, primitivi. Il Discorso Indiretto Libero (DIL) fonde la voce del narratore con quella del personaggio senza virgolette né verba dicendi.'},
+      'poetica-straniamento':{label:'Poetica',title:'Straniamento',text:'Tecnica narrativa che presenta fatti ovvi come se fossero inspiegabili, e fatti inspiegabili come ovvi. In Rosso Malpelo: la prima riga è un esempio perfetto di logica circolare del narratore collettivo (i capelli rossi = cattivo carattere: dato per scontato come fosse un fatto naturale). Lo straniamento defamiliarizza la realtà e ne svela la crudeltà.'},
+      'verga-svolta':{label:'Verga',title:'Svolta verista 1878',text:'Dopo romanzi mondani (Eva 1873, Eros 1875), la pubblicazione di Rosso Malpelo nel 1878 è la svolta definitiva. Vita dei campi (1880) raccoglie le prime novelle veriste (Rosso Malpelo, La lupa, Fantasticheria, Cavalleria rusticana). Novelle rusticane (1883) approfondisce il tema della roba e dell\'ossessione per i beni materiali.'},
+      'verga-ciclo':{label:'Verga',title:'Ciclo dei Vinti',text:'I Malavoglia (1881): la famiglia di pescatori di Aci Trezza perde la casa del nespolo. Il ciclo è previsto in 5 romanzi ma si ferma al secondo: Mastro-don Gesualdo (1889) racconta l\'ascesa e la rovinosa solitudine di un ex manovale arricchito. Il ciclo resta incompiuto: il silenzio di Verga è parte del sistema.'},
+      'testi-malpelo':{label:'Testi',title:'Rosso Malpelo',text:'Da Vita dei campi (1878). Il testo che inaugura il Verismo verghiano. Prima riga: «Malpelo si chiamava così perché aveva i capelli rossi; e aveva i capelli rossi perché era un ragazzo malizioso e cattivo.» Logica circolare del narratore collettivo. Lo straniamento mostra l\'esclusione come fatto naturale. Malpelo muore nelle miniere: nessuna redenzione.'},
+      'testi-fiumana':{label:'Testi',title:'La fiumana del progresso',text:'Prefazione ai Malavoglia (1881). Manifesto ideologico del Ciclo dei Vinti. «La fiumana del progresso» è uno spettacolo grandioso da lontano e devastante da vicino. I vinti sono i detriti lasciati sulla riva. Lo scrittore non ha il diritto di giudicare né di compiangere: «deve scomparire».'},
+      'vinti-fiumana':{label:'I Vinti',title:'Fiumana del progresso',text:'Il progresso — economico, industriale, sociale — travolge tutti. I vinti non sono i più cattivi o i più deboli: sono semplicemente quelli che si trovano sulla riva sbagliata. Non c\'è salvezza attraverso la virtù o il talento. La sconfitta è strutturale, non individuale. La fiumana è cieca.'},
+      'vinti-ostrica':{label:'I Vinti',title:'Ideale dell\'ostrica',text:'Da Fantasticheria (1880): l\'unica strategia di sopravvivenza per i deboli è restare attaccati al proprio ambiente natale come l\'ostrica allo scoglio. Chi si stacca viene divorato dal «pesce vorace». Non è esaltazione della povertà: è una legge biologica della sopravvivenza. \'Ntoni la viola e si perde.'},
+      'confronto-pessimismo':{label:'Vs Naturalismo',title:'Pessimismo assoluto',text:'Zola crede nel progresso e nella riforma sociale: la letteratura può contribuire a migliorare le condizioni delle classi lavoratrici. Verga non crede in nessun riscatto: la realtà è immutabile per legge naturale. Non c\'è rimedio al destino dei vinti. Il pessimismo verghiano è filosofico e assoluto, non socialmente correttivo.'},
+      'confronto-sud':{label:'Vs Naturalismo',title:'Sud arcaico',text:'Zola descrive la Francia industriale in trasformazione, con masse operaie, fabbriche, scioperi, modernità. Verga descrive il Sud siciliano immobile: pesca, agricoltura, superstizioni, strutture sociali feudali. Non c\'è industrializzazione, non c\'è classe operaia in senso moderno. L\'arretratezza non è transitoria: è strutturale.'}
+    };
+    function showNode(key){const n=NODES[key];if(!n)return;document.getElementById('tip-label').textContent=n.label;document.getElementById('tip-title').textContent=n.title;document.getElementById('tip-text').textContent=n.text;document.getElementById('map-overlay').classList.add('show');document.body.style.overflow='hidden';}
+    function closeTip(){document.getElementById('map-overlay').classList.remove('show');document.body.style.overflow='';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTip();});
+  </script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

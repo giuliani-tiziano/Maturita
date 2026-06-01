@@ -12,6 +12,40 @@
 (function () {
   'use strict';
 
+  /* ────────────────────────  DARK MODE  ─────────────────────────────── */
+  // Applica il tema salvato e inietta il bottone toggle nella topbar.
+  (function initTheme() {
+    const saved = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', saved);
+
+    function buildToggle() {
+      if (document.querySelector('.theme-toggle')) return;
+      const nav = document.querySelector('.topbar-nav') ||
+                  document.querySelector('.topbar-links') ||
+                  document.querySelector('.topbar');
+      if (!nav) return;
+      const btn = document.createElement('button');
+      btn.className = 'theme-toggle';
+      btn.setAttribute('aria-label', 'Modalità notte');
+      btn.setAttribute('title', 'Modalità notte');
+      btn.textContent = (document.documentElement.getAttribute('data-theme') === 'dark') ? '☀' : '☾';
+      btn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme');
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        btn.textContent = next === 'dark' ? '☀' : '☾';
+      });
+      nav.appendChild(btn);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', buildToggle);
+    } else {
+      buildToggle();
+    }
+  })();
+
   /* ────────────────────────  PROGRESS BAR  ──────────────────────────── */
   const pb = document.getElementById('pb');
   function updateProg() {

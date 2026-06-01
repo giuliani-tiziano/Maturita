@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naturalismo — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .map-overlay { display:none; position:fixed; inset:0; background:rgba(28,16,16,.55); z-index:500; align-items:center; justify-content:center; padding:1rem; }
+    .map-overlay.show { display:flex; }
+    .map-modal { background:var(--paper); border:1px solid var(--bordeaux-mid); padding:2rem 2rem 1.5rem; max-width:480px; width:100%; max-height:80vh; overflow-y:auto; position:relative; }
+    .modal-close { position:absolute; top:.8rem; right:1rem; font-family:var(--serif); font-size:1.4rem; color:var(--ink-soft); background:none; border:none; cursor:pointer; line-height:1; }
+    .modal-close:hover { color:var(--bordeaux-deep); }
+    .modal-label { font-family:var(--sans); font-weight:500; font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--bordeaux-mid); margin-bottom:.5rem; }
+    .modal-title { font-family:var(--serif); font-style:italic; font-weight:500; font-size:1.6rem; color:var(--bordeaux-deep); margin-bottom:.8rem; line-height:1.1; }
+    .modal-text { font-family:var(--sans); font-weight:300; font-size:.92rem; color:var(--ink-soft); line-height:1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../pages/autori.html">Autori</a>
+      <a class="topbar-link" href="../../pages/correnti.html">Correnti</a>
+      <a class="topbar-link active" href="../../pages/mappe.html">Mappe</a>
+      <a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">&#x2190; Mappe</button>
+      <button class="nav-btn active">Naturalismo</button>
+      <button class="nav-btn" onclick="location.href='../verismo/'">Verismo</button>
+      <button class="nav-btn" onclick="location.href='../decadentismo/'">Decadentismo</button>
+      <button class="nav-btn" onclick="location.href='../simbolismo/'">Simbolismo</button>
+      <button class="nav-btn" onclick="location.href='../estetismo/'">Estetismo</button>
+      <button class="nav-btn" onclick="location.href='../futurismo/'">Futurismo</button>
+      <button class="nav-btn" onclick="location.href='../crepuscolarismo/'">Crepuscolarismo</button>
+      <button class="nav-btn" onclick="location.href='../vociani/'">Vociani</button>
+      <button class="nav-btn" onclick="location.href='../ermetismo/'">Ermetismo</button>
+      <button class="nav-btn" onclick="location.href='../antinovecentismo/'">Antinovecentismo</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Il <em>Naturalismo</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: contesto, poetica, Zola, stile, temi e influenze.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 1075" width="100%" style="display:block;min-height:750px;width:max(100%,1400px);" aria-label="Mappa WBS Naturalismo">
+          <style>
+            .node { cursor:pointer; }
+            .node-root rect { fill:var(--bordeaux-deep); }
+            .node-root text { fill:#fff; }
+            .node-l1 rect { fill:var(--bordeaux-mid); }
+            .node-l1 text { fill:#fff; }
+            .node-l2 rect { fill:var(--beige-mid); stroke:var(--rule-soft); stroke-width:1; }
+            .node-l2 text { fill:var(--ink); }
+            .node rect { transition:filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter:brightness(1.12); }
+            .node:focus { outline:none; }
+          </style>
+          <!-- Root → L1 -->
+          <path d="M 225,525 C 271,525 319,88 319,88" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,263 319,263" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,438 319,438" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,613 319,613" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,788 319,788" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,525 C 271,525 319,963 319,963" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <!-- L1 → L2 -->
+          <path d="M 519,88 C 584,88 650,59 650,59" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,88 C 584,88 650,116 650,116" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,263 C 584,263 650,234 650,234" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,263 C 584,263 650,292 650,292" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,409 650,409" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,466 650,466" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,613 C 584,613 650,584 650,584" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,613 C 584,613 650,642 650,642" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,788 C 584,788 650,759 650,759" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,788 C 584,788 650,817 650,817" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,963 C 584,963 650,934 650,934" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,963 C 584,963 650,992 650,992" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="25" y="488" width="200" height="75" rx="7"/>
+            <text>
+              <tspan x="125" y="522" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">Naturalismo</tspan>
+              <tspan x="125" y="542" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">Francia 1860–1890</tspan>
+            </text>
+          </g>
+          <!-- L1 -->
+          <g class="node node-l1" onclick="showNode('contesto')" tabindex="0" role="button"><rect x="319" y="60" width="200" height="55" rx="5"/><text><tspan x="419" y="94" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · CONTESTO</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button"><rect x="319" y="235" width="200" height="55" rx="5"/><text><tspan x="419" y="269" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('zola')" tabindex="0" role="button"><rect x="319" y="410" width="200" height="55" rx="5"/><text><tspan x="419" y="444" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · ZOLA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('stile')" tabindex="0" role="button"><rect x="319" y="585" width="200" height="55" rx="5"/><text><tspan x="419" y="619" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · STILE</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('temi')" tabindex="0" role="button"><rect x="319" y="760" width="200" height="55" rx="5"/><text><tspan x="419" y="794" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · TEMI</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('influenze')" tabindex="0" role="button"><rect x="319" y="935" width="200" height="55" rx="5"/><text><tspan x="419" y="969" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">06 · INFLUENZE</tspan></text></g>
+          <!-- L2 -->
+          <g class="node node-l2" onclick="showNode('contesto-positivismo')" tabindex="0" role="button"><rect x="650" y="35" width="238" height="48" rx="4"/><text><tspan x="769" y="55" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Positivismo</tspan><tspan x="769" y="73" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Comte · Bernard · metodo scientifico</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('contesto-industria')" tabindex="0" role="button"><rect x="650" y="92" width="238" height="48" rx="4"/><text><tspan x="769" y="112" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Rivoluzione industriale</tspan><tspan x="769" y="130" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">proletariato urbano · periferie</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-romanzo')" tabindex="0" role="button"><rect x="650" y="210" width="238" height="48" rx="4"/><text><tspan x="769" y="230" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Romanzo sperimentale</tspan><tspan x="769" y="248" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Zola 1880 · narratore-scienziato</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-determinismo')" tabindex="0" role="button"><rect x="650" y="268" width="238" height="48" rx="4"/><text><tspan x="769" y="288" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Determinismo</tspan><tspan x="769" y="306" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">ereditarietà · ambiente · milieu</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('zola-rougon')" tabindex="0" role="button"><rect x="650" y="385" width="238" height="48" rx="4"/><text><tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Rougon-Macquart</tspan><tspan x="769" y="423" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">20 romanzi · 5 generazioni</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('zola-germinal')" tabindex="0" role="button"><rect x="650" y="442" width="238" height="48" rx="4"/><text><tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Germinal · J'accuse</tspan><tspan x="769" y="480" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">minatori · Dreyfus · denuncia</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('stile-lingua')" tabindex="0" role="button"><rect x="650" y="560" width="238" height="48" rx="4"/><text><tspan x="769" y="580" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Linguaggio mimetico</tspan><tspan x="769" y="598" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">argot · dialetto · lessico tecnico</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('stile-impersonalita')" tabindex="0" role="button"><rect x="650" y="618" width="238" height="48" rx="4"/><text><tspan x="769" y="638" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Narrazione oggettiva</tspan><tspan x="769" y="656" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">autore scomparso · ciclo romanzesco</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('temi-miseria')" tabindex="0" role="button"><rect x="650" y="735" width="238" height="48" rx="4"/><text><tspan x="769" y="755" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Miseria urbana</tspan><tspan x="769" y="773" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">periferie · alcolismo · degradazione</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('temi-classe')" tabindex="0" role="button"><rect x="650" y="793" width="238" height="48" rx="4"/><text><tspan x="769" y="813" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Classe operaia</tspan><tspan x="769" y="831" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">lotta sociale · ereditarietà biologica</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('influenze-verismo')" tabindex="0" role="button"><rect x="650" y="910" width="238" height="48" rx="4"/><text><tspan x="769" y="930" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Verismo italiano</tspan><tspan x="769" y="948" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Verga · Capuana · adattamento</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('influenze-goncourt')" tabindex="0" role="button"><rect x="650" y="968" width="238" height="48" rx="4"/><text><tspan x="769" y="988" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Fratelli Goncourt</tspan><tspan x="769" y="1006" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Germinie Lacerteux · precursori</tspan></text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label:'Corrente', title:'Naturalismo', text:'Il Naturalismo è il movimento letterario francese del secondo Ottocento fondato da Zola. Applica il metodo scientifico positivista alla narrativa: l\'autore osserva, documenta, «sperimenta». L\'uomo è prodotto dell\'ereditarietà e dell\'ambiente sociale. Influenza direttamente il Verismo italiano.' },
+      contesto: { label:'Categoria', title:'Contesto storico', text:'Il Naturalismo nasce dall\'incontro tra il Positivismo filosofico (Comte, Spencer) e la scienza sperimentale (Claude Bernard). La Rivoluzione industriale crea le condizioni sociali che diventano il soggetto principale: masse operaie, bidonville, industria, miseria urbana.' },
+      poetica: { label:'Categoria', title:'Poetica', text:'Zola nel Romanzo sperimentale (1880) teorizza il romanziere come «scienziato». Determinismo: l\'uomo è governato da ereditarietà e ambiente. Impersonalità assoluta: l\'autore scompare. Il romanzo è documento sociale e laboratorio clinico insieme.' },
+      zola: { label:'Categoria', title:'Émile Zola', text:'Zola (1840–1902) è il teorico e massimo esponente. Il ciclo Rougon-Macquart (20 romanzi, 1871–1893) studia una famiglia attraverso 5 generazioni. J\'accuse (1898) lo coinvolge nell\'affaire Dreyfus: lo scrittore come voce civile.' },
+      stile: { label:'Categoria', title:'Stile', text:'Il linguaggio mimetico riproduce quello dei personaggi: argot operaio, lessico tecnico, dialetti. Zola conduce inchieste dirette (scende nelle miniere, visita i mercati). La narrazione oggettiva esclude giudizi morali: i fatti parlano da soli.' },
+      temi: { label:'Categoria', title:'Temi', text:'Miseria urbana, degradazione, alcolismo, prostituzione — l\'altra faccia della modernità borghese. Lotta di classe e condizioni operaie. Ereditarietà biologica come destino. Per la prima volta la classe operaia entra nei romanzi come protagonista con complessità e dignità.' },
+      influenze: { label:'Categoria', title:'Influenze', text:'I Fratelli Goncourt (Germinie Lacerteux, 1865) sono i precursori. Flaubert è il modello stilistico. Il Verismo italiano è l\'erede diretto: Verga e Capuana adattano il Naturalismo al Sud immobile con un pessimismo più radicale, senza fiducia nel progresso.' },
+      'contesto-positivismo': { label:'Contesto', title:'Positivismo', text:'Auguste Comte fonda il positivismo: il metodo scientifico si applica a tutto il sapere. Claude Bernard nell\'Introduzione allo studio della medicina sperimentale (1865) fornisce il modello: osservazione, ipotesi, sperimentazione. Zola lo traduce direttamente in estetica letteraria.' },
+      'contesto-industria': { label:'Contesto', title:'Rivoluzione industriale', text:'L\'industrializzazione crea le città-fabbrica, le periferie misere, il proletariato urbano. Questi nuovi ambienti diventano il laboratorio del Naturalismo: miseria, lavoro minorile, alcolismo, prostituzione sono soggetti che nessuna letteratura aveva affrontato con metodo scientifico.' },
+      'poetica-romanzo': { label:'Poetica', title:'Romanzo sperimentale', text:'Testo teorico di Zola (1880). Il romanziere parte da fatti osservati, immagina un meccanismo, lo «sperimenta» attraverso i personaggi e registra i risultati. È documento e laboratorio insieme. La differenza con Verga: Zola crede nel progresso e nella riforma; Verga è radicalmente pessimista.' },
+      'poetica-determinismo': { label:'Poetica', title:'Determinismo', text:'L\'uomo è governato da tre fattori: ereditarietà biologica (istinti, malattie, temperamento), ambiente sociale (classe, luogo, lavoro) e momento storico. Il libero arbitrio è un\'illusione borghese. Da qui il taglio scientifico-documentario dei romanzi: ogni comportamento ha una causa identificabile.' },
+      'zola-rougon': { label:'Zola', title:'Rougon-Macquart', text:'20 romanzi (1871–1893) che seguono due rami di una famiglia attraverso 5 generazioni. Ogni romanzo esplora un ambiente: minatori (Germinal), prostituzione (Nana), grandi magazzini (Au Bonheur des Dames), borsa (L\'Argent). Il ciclo è storia sociale e studio clinico dell\'ereditarietà insieme.' },
+      'zola-germinal': { label:'Zola', title:'Germinal e J\'accuse', text:'Germinal (1885): uno sciopero nelle miniere del nord Francia. La sconfitta è totale ma nel finale il germoglio cresce sottoterra. J\'accuse (1898): lettera aperta per la difesa di Dreyfus (ufficiale ebreo falsamente accusato di tradimento). Zola rischia la prigione: il romanziere come coscienza civile.' },
+      'stile-lingua': { label:'Stile', title:'Linguaggio mimetico', text:'Il testo imita il linguaggio dei personaggi: argot operaio, terminologia tecnica, dialetti regionali. Zola compie inchieste dirette — scende nelle miniere, visita i mercati, frequenta i quartieri operai — per raccogliere il lessico reale. Nessuna concessione alla lingua letteraria.' },
+      'stile-impersonalita': { label:'Stile', title:'Narrazione oggettiva', text:'L\'autore si cancella: nessun commento diretto, nessuna valutazione esplicita. I fatti parlano da soli. La tecnica del «documento»: ogni romanzo è preceduto da un dossier di ricerca empirica. Il ciclo romanzesco (serie di romanzi su un unico universo) permette uno studio sistematico dell\'ambiente.' },
+      'temi-miseria': { label:'Temi', title:'Miseria urbana', text:'Parigi è il grande laboratorio: periferie operaie, quartieri malfamati, l\'altra faccia della modernità borghese. L\'Assommoir (1877) mostra la degradazione dell\'operaio attraverso l\'alcolismo. Nana (1880) quella della prostituta. La miseria non è fatalità romantica: è prodotto di un sistema economico.' },
+      'temi-classe': { label:'Temi', title:'Classe operaia', text:'Per la prima volta la classe operaia entra nei romanzi come protagonista con complessità e dignità, non come sfondo pittoresco. Zola documenta le condizioni di lavoro nelle miniere, nelle fabbriche, nei grandi magazzini. L\'ereditarietà biologica aggrava la condizione sociale: la trappola è genetica e strutturale insieme.' },
+      'influenze-verismo': { label:'Influenze', title:'Verismo italiano', text:'Il Verismo è l\'adattamento italiano del Naturalismo. Verga e Capuana conoscono Zola ma lo rielaborano: il contesto è il Sud arretrato, non la Francia industriale. Il pessimismo è assoluto (nessuna fiducia nel progresso), la regressione del narratore è più radicale, il fatalismo storico è senza rimedio.' },
+      'influenze-goncourt': { label:'Influenze', title:'Fratelli Goncourt', text:'Edmond e Jules de Goncourt pubblicano Germinie Lacerteux (1865), il primo romanzo naturalista su una donna del popolo. Nel Journal documentano la vita culturale parigina per decenni. Sono precursori di Zola: meno sistematici nel programma, più raffinati nello stile. L\'Accademia Goncourt esiste ancora oggi.' }
+    };
+    function showNode(key) {
+      const n = NODES[key]; if (!n) return;
+      document.getElementById('tip-label').textContent = n.label;
+      document.getElementById('tip-title').textContent = n.title;
+      document.getElementById('tip-text').textContent = n.text;
+      document.getElementById('map-overlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeTip() {
+      document.getElementById('map-overlay').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTip(); });
+  </script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

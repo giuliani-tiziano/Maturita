@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
@@ -59,11 +59,11 @@
 <!-- ============================ TOPBAR ============================ -->
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="../index.html" class="topbar-brand">Una guida per la Maturità</a>
+    <a href="../italiano.html" class="topbar-brand">Una guida per la Maturità</a>
     <nav class="topbar-links">
-      <a class="topbar-link" href="../index.html">Una guida per la Maturità</a>
-      <a class="topbar-link" href="../index.html#autori">Autori</a>
-      <a class="topbar-link" href="../index.html#correnti">Correnti</a>
+      <a class="topbar-link" href="../italiano.html">Una guida per la Maturità</a>
+      <a class="topbar-link" href="../italiano.html#autori">Autori</a>
+      <a class="topbar-link" href="../italiano.html#correnti">Correnti</a>
       <a class="topbar-link active cta" href="quiz.html">Quiz</a>
     </nav>
   </div>
@@ -221,6 +221,51 @@
             <span class="author-card-topic">5 sezioni</span>
           </div>
           <div class="author-card-cta" id="best-campana"></div>
+          <div class="author-card-cta">Scegli modalità <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+
+        <!-- PAVESE -->
+        <div class="author-card verga" onclick="QuizApp.openAuthorPanel('pavese')">
+          <span class="author-card-initial">P</span>
+          <div class="author-card-meta">Quiz · La luna e i falò</div>
+          <div class="author-card-name">Cesare<br><em>Pavese</em></div>
+          <div class="author-card-tagline">Il mito delle Langhe, il ritorno impossibile, la solitudine.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic"><span id="cs-pavese-total">32</span> domande</span>
+            <span class="author-card-topic">3 tipologie</span>
+            <span class="author-card-topic">6 sezioni</span>
+          </div>
+          <div class="author-card-cta" id="best-pavese"></div>
+          <div class="author-card-cta">Scegli modalità <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+
+        <!-- PASOLINI -->
+        <div class="author-card dannunzio" onclick="QuizApp.openAuthorPanel('pasolini')">
+          <span class="author-card-initial">P</span>
+          <div class="author-card-meta">Quiz · Scritti corsari</div>
+          <div class="author-card-name">Pier Paolo<br><em>Pasolini</em></div>
+          <div class="author-card-tagline">Sottoproletariato, omologazione, il corsaro eretico.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic"><span id="cs-pasolini-total">32</span> domande</span>
+            <span class="author-card-topic">3 tipologie</span>
+            <span class="author-card-topic">6 sezioni</span>
+          </div>
+          <div class="author-card-cta" id="best-pasolini"></div>
+          <div class="author-card-cta">Scegli modalità <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+
+        <!-- CALVINO -->
+        <div class="author-card montale" onclick="QuizApp.openAuthorPanel('calvino')">
+          <span class="author-card-initial">C</span>
+          <div class="author-card-meta">Quiz · Le città invisibili</div>
+          <div class="author-card-name">Italo<br><em>Calvino</em></div>
+          <div class="author-card-tagline">La leggerezza, la fiaba filosofica, il combinatorio.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic"><span id="cs-calvino-total">32</span> domande</span>
+            <span class="author-card-topic">3 tipologie</span>
+            <span class="author-card-topic">6 sezioni</span>
+          </div>
+          <div class="author-card-cta" id="best-calvino"></div>
           <div class="author-card-cta">Scegli modalità <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
 
@@ -382,6 +427,21 @@
           <div class="author-card-cta">Scegli modalità <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
 
+        <!-- NEOREALISMO -->
+        <div class="author-card verga" onclick="QuizApp.openAuthorPanel('neorealismo')">
+          <span class="author-card-initial">N</span>
+          <div class="author-card-meta">Quiz · Corrente · Italia 1945–1955</div>
+          <div class="author-card-name">Il <em>Neorealismo</em></div>
+          <div class="author-card-tagline">Testimonianza, impegno, Resistenza. Pavese, Calvino, Levi, Fenoglio.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic">30 domande</span>
+            <span class="author-card-topic">3 tipologie</span>
+            <span class="author-card-topic">6 argomenti</span>
+          </div>
+          <div class="author-card-cta" id="best-neorealismo"></div>
+          <div class="author-card-cta">Scegli modalità <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+
       </div>
     </div><!-- /#tab-correnti -->
 
@@ -525,6 +585,9 @@
 <script src="../js/verga-quiz-data.js"></script>
 <script src="../js/campana-quiz-data.js"></script>
 <script src="../js/dannunzio-quiz-data.js"></script>
+<script src="../js/pavese-quiz-data.js"></script>
+<script src="../js/pasolini-quiz-data.js"></script>
+<script src="../js/calvino-quiz-data.js"></script>
 <!-- ── DATI CORRENTI ── -->
 <script src="../js/naturalismo-quiz-data.js"></script>
 <script src="../js/verismo-quiz-data.js"></script>
@@ -536,6 +599,7 @@
 <script src="../js/vociani-quiz-data.js"></script>
 <script src="../js/ermetismo-quiz-data.js"></script>
 <script src="../js/antinovecentismo-quiz-data.js"></script>
+<script src="../js/neorealismo-quiz-data.js"></script>
 <!-- ── ENGINE ── -->
 <script src="../js/quiz-engine.js"></script>
 <script src="../js/main.js"></script>
