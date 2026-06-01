@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contattaci — Studio · Maturità</title>
+  <meta name="description" content="Scrivici per segnalare errori, suggerire contenuti o fare domande sul portale Maturità.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1210'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E❧%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/portal.css">
+  <style>
+    body { padding-top: var(--top-h); }
+
+    /* ── Hero ── */
+    .ct-hero {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2.5rem;
+      text-align: center;
+    }
+    .ct-eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: .45em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .ct-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(3rem, 7vw, 5rem);
+      line-height: .95;
+      color: var(--ink);
+      letter-spacing: -.02em;
+      margin-bottom: 1rem;
+    }
+    .ct-subtitle {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+      max-width: 52ch;
+      margin: 0 auto 1.8rem;
+    }
+    .ct-email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--sans);
+      font-size: .82rem;
+      letter-spacing: .12em;
+      color: var(--c-italiano);
+      border: 1px solid var(--c-italiano);
+      padding: .55rem 1.2rem;
+      border-radius: 100px;
+      transition: background var(--t), color var(--t);
+    }
+    .ct-email-link:hover { background: var(--c-italiano); color: #FDFAF4; }
+
+    /* ── Form ── */
+    .ct-form-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+    .ct-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--beige-dark), transparent);
+      margin: 2rem 0 2.5rem;
+    }
+    .ct-form { display: flex; flex-direction: column; gap: 1.4rem; }
+
+    .ct-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .ct-field { display: flex; flex-direction: column; gap: .45rem; }
+    .ct-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .ct-label .ct-req { color: var(--c-italiano); margin-left: .2rem; }
+
+    .ct-input,
+    .ct-select,
+    .ct-textarea {
+      font-family: var(--sans);
+      font-size: .88rem;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--beige-dark);
+      border-radius: var(--radius-sm);
+      padding: .7rem 1rem;
+      outline: none;
+      transition: border-color var(--t), box-shadow var(--t);
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .ct-input::placeholder,
+    .ct-textarea::placeholder { color: var(--ink-muted); opacity: .7; }
+    .ct-input:focus,
+    .ct-select:focus,
+    .ct-textarea:focus {
+      border-color: var(--c-italiano);
+      box-shadow: 0 0 0 3px rgba(122,34,53,.10);
+    }
+
+    /* Select: singola freccia, no repeat */
+    .ct-select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237A6B60' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right .8rem center;
+      background-size: 16px 16px;
+      padding-right: 2.4rem;
+    }
+
+    .ct-textarea { resize: vertical; min-height: 120px; line-height: 1.55; }
+
+    /* Campo altra materia */
+    #altra-materia-wrap { display: none; margin-top: .6rem; }
+    #altra-materia-wrap.visible { display: block; }
+
+    /* ── Stelle ── */
+    .ct-stars { display: flex; gap: .35rem; }
+    .ct-star {
+      font-size: 1.5rem;
+      color: var(--beige-dark);
+      cursor: pointer;
+      transition: color var(--t), transform var(--t);
+      line-height: 1;
+    }
+    .ct-star.lit  { color: var(--gold); }
+    .ct-star:hover { transform: scale(1.15); }
+    .ct-star-label {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: .9rem;
+      color: var(--ink-muted);
+      margin-left: .6rem;
+      align-self: center;
+    }
+
+    /* ── Submit ── */
+    .ct-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: var(--sans);
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: .95rem 2rem;
+      background: var(--c-italiano);
+      color: #FDFAF4;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background var(--t), box-shadow var(--t);
+      align-self: flex-start;
+    }
+    .ct-submit:hover { background: #5C1A28; box-shadow: var(--shadow-md); }
+    .ct-submit:hover svg { transform: translateX(3px); }
+    .ct-submit svg { transition: transform var(--t); }
+
+    /* Feedback */
+    #ct-feedback {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      background: var(--paper);
+      border: 1px solid var(--beige-dark);
+      border-radius: var(--radius-md);
+      margin-top: 1.5rem;
+    }
+    #ct-feedback.show { display: block; }
+    #ct-feedback .ct-fb-icon { font-size: 2rem; margin-bottom: .5rem; }
+    #ct-feedback p { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--ink-soft); }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 640px) {
+      .ct-hero { padding: 3rem 1.2rem 2rem; }
+      .ct-form-wrap { padding: 0 1.2rem 4rem; }
+      .ct-row { grid-template-columns: 1fr; }
+      .ct-submit { width: 100%; justify-content: center; }
+    }
+
+    /* ══ DARK MODE ══ */
+    [data-theme="dark"] .ct-input,
+    [data-theme="dark"] .ct-select,
+    [data-theme="dark"] .ct-textarea {
+      background: var(--beige-mid);
+      border-color: rgba(245,239,230,.14);
+      color: var(--ink);
+    }
+    [data-theme="dark"] .ct-input::placeholder,
+    [data-theme="dark"] .ct-textarea::placeholder { color: var(--ink-muted); }
+    /* Select dark mode: freccia chiara, NO repeat */
+    [data-theme="dark"] .ct-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23BFB0A0' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right .8rem center;
+      background-size: 16px 16px;
+    }
+    [data-theme="dark"] .ct-star { color: var(--beige-dark); }
+    [data-theme="dark"] .ct-star.lit { color: var(--gold); }
+    [data-theme="dark"] #ct-feedback { background: var(--beige-mid); border-color: rgba(245,239,230,.12); }
+    [data-theme="dark"] .ct-email-link { color: var(--gold); border-color: var(--gold); }
+    [data-theme="dark"] .ct-email-link:hover { background: var(--gold); color: var(--beige-dark); }
+  </style>
+</head>
+<body>
+
+  <!-- ══ TOPBAR ══ -->
+  <header class="p-topbar">
+    <a href="index.html" class="p-brand"><span>❧</span>Studio · Maturità</a>
+    <div class="p-topbar-right">
+      <a href="contattaci.html" class="p-nav-link active">Contattaci</a>
+    </div>
+  </header>
+
+  <!-- ══ HERO ══ -->
+  <section class="ct-hero">
+    <span class="ct-eyebrow">Portale Maturità · Supporto</span>
+    <h1 class="ct-title">Contattaci</h1>
+    <p class="ct-subtitle">Scrivici per segnalare errori, suggerire contenuti o semplicemente farci sapere come migliorare.</p>
+    <a href="mailto:guidaallamaturita@gmail.com" class="ct-email-link">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      guidaallamaturita@gmail.com
+    </a>
+  </section>
+
+  <!-- ══ FORM ══ -->
+  <div class="ct-form-wrap">
+    <div class="ct-divider"></div>
+
+    <form class="ct-form" id="ct-form" novalidate>
+
+      <!-- Email + Oggetto -->
+      <div class="ct-row">
+        <div class="ct-field">
+          <label class="ct-label" for="ct-email">Email<span class="ct-req">*</span></label>
+          <input class="ct-input" type="email" id="ct-email" name="email"
+                 placeholder="La tua email" required autocomplete="email">
+        </div>
+        <div class="ct-field">
+          <label class="ct-label" for="ct-oggetto">Oggetto<span class="ct-req">*</span></label>
+          <input class="ct-input" type="text" id="ct-oggetto" name="oggetto"
+                 placeholder="Oggetto del messaggio" required>
+        </div>
+      </div>
+
+      <!-- Materia + Tipo di richiesta -->
+      <div class="ct-row">
+        <div class="ct-field">
+          <label class="ct-label" for="ct-materia">Materia</label>
+          <select class="ct-select" id="ct-materia" name="materia">
+            <option value="">— Seleziona una materia —</option>
+            <option value="Italiano">Italiano</option>
+            <option value="Inglese">Inglese</option>
+            <option value="Storia">Storia</option>
+            <option value="Scienze">Scienze</option>
+            <option value="Sistemi e Reti">Sistemi e Reti</option>
+            <option value="Informatica">Informatica</option>
+            <option value="Tutte le materie">Tutte le materie</option>
+            <option value="altro">Altro…</option>
+          </select>
+          <div id="altra-materia-wrap">
+            <input class="ct-input" type="text" id="ct-altra-materia" name="altra_materia"
+                   placeholder="Specifica la materia">
+          </div>
+        </div>
+        <div class="ct-field">
+          <label class="ct-label" for="ct-tipo">Tipo di richiesta</label>
+          <select class="ct-select" id="ct-tipo" name="tipo">
+            <option value="">— Seleziona il tipo —</option>
+            <option value="Segnalazione errore">Segnala un errore</option>
+            <option value="Suggerimento contenuto">Suggerisci un contenuto</option>
+            <option value="Richiesta funzionalità">Richiedi una funzionalità</option>
+            <option value="Domanda generale">Domanda generale</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Messaggio -->
+      <div class="ct-field">
+        <label class="ct-label" for="ct-messaggio">Messaggio<span class="ct-req">*</span></label>
+        <textarea class="ct-textarea" id="ct-messaggio" name="messaggio" rows="5"
+                  placeholder="Descrivi cosa vorresti aggiungere o migliorare…" required></textarea>
+      </div>
+
+      <!-- Valutazione stelle -->
+      <div class="ct-field">
+        <span class="ct-label">Come valuteresti l'app?</span>
+        <div style="display:flex;align-items:center;">
+          <div class="ct-stars" id="ct-stars">
+            <span class="ct-star" data-val="1" tabindex="0">★</span>
+            <span class="ct-star" data-val="2" tabindex="0">★</span>
+            <span class="ct-star" data-val="3" tabindex="0">★</span>
+            <span class="ct-star" data-val="4" tabindex="0">★</span>
+            <span class="ct-star" data-val="5" tabindex="0">★</span>
+          </div>
+          <span class="ct-star-label" id="ct-star-label">Nessuna valutazione</span>
+          <input type="hidden" id="ct-valutazione" name="valutazione" value="">
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div>
+        <button type="submit" class="ct-submit">
+          Invia messaggio
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+    </form>
+
+    <div id="ct-feedback">
+      <div class="ct-fb-icon">✉️</div>
+      <p>Messaggio inviato — grazie per il tuo feedback!<br>Ti risponderemo il prima possibile.</p>
+    </div>
+
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="p-footer">
+    <div class="p-footer-inner">
+
+      <div class="p-footer-brand-block">
+        <span class="p-footer-logo"><span>❧</span>Studio · Maturità</span>
+        <p class="p-footer-tagline">Portale di studio per la Maturità: schede complete, quiz interattivi e mappe concettuali per prepararsi al meglio all'esame di stato.</p>
+        <a href="mailto:guidaallamaturita@gmail.com" class="p-footer-email-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          guidaallamaturita@gmail.com
+        </a>
+      </div>
+
+      <div>
+        <div class="p-footer-col-title">Sezioni</div>
+        <nav class="p-footer-nav">
+          <a href="index.html">Portale</a>
+          <a href="italiano/italiano.html">Italiano</a>
+          <a href="contattaci.html">Contattaci</a>
+        </nav>
+      </div>
+
+      <div>
+        <div class="p-footer-col-title">Informazioni</div>
+        <div class="p-footer-info">
+          <span class="p-footer-info-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.93 11 19.79 19.79 0 01.86 2.38 2 2 0 012.83.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            Risposta entro 24 ore
+          </span>
+          <span class="p-footer-info-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Aggiornato per l'a.s. 2025–26
+          </span>
+          <span class="p-footer-info-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Contenuti verificati
+          </span>
+        </div>
+      </div>
+
+    </div>
+    <div class="p-footer-bottom">
+      <span class="p-footer-copy">© 2025 Studio · Maturità — Tutti i diritti riservati</span>
+      <span class="p-footer-copy">Fatto con ❤ per la Maturità italiana</span>
+    </div>
+  </footer>
+
+  <script src="js/portal.js"></script>
+  <script>
+  (function () {
+    "use strict";
+
+    /* ── Materia "Altro" ── */
+    var selMateria = document.getElementById("ct-materia");
+    var altraWrap  = document.getElementById("altra-materia-wrap");
+    selMateria.addEventListener("change", function () {
+      altraWrap.classList.toggle("visible", this.value === "altro");
+      if (this.value !== "altro") document.getElementById("ct-altra-materia").value = "";
+    });
+
+    /* ── Stelle ── */
+    var stars     = document.querySelectorAll(".ct-star");
+    var starLabel = document.getElementById("ct-star-label");
+    var starInput = document.getElementById("ct-valutazione");
+    var labels    = ["", "Pessima", "Scarsa", "Sufficiente", "Buona", "Ottima ✨"];
+    var currentVal = 0;
+
+    function paintStars(val) {
+      stars.forEach(function (s, i) { s.classList.toggle("lit", i < val); });
+      starLabel.textContent = val ? labels[val] : "Nessuna valutazione";
+    }
+
+    stars.forEach(function (s) {
+      s.addEventListener("mouseenter", function () { paintStars(+this.dataset.val); });
+      s.addEventListener("mouseleave", function () { paintStars(currentVal); });
+      s.addEventListener("click", function () {
+        currentVal = +this.dataset.val;
+        starInput.value = currentVal;
+        paintStars(currentVal);
+      });
+      s.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          currentVal = +this.dataset.val;
+          starInput.value = currentVal;
+          paintStars(currentVal);
+        }
+      });
+    });
+
+    /* ── Submit → mailto: ── */
+    document.getElementById("ct-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email    = document.getElementById("ct-email").value.trim();
+      var oggetto  = document.getElementById("ct-oggetto").value.trim();
+      var messaggio= document.getElementById("ct-messaggio").value.trim();
+
+      if (!email || !oggetto || !messaggio) {
+        alert("Compila i campi obbligatori: Email, Oggetto e Messaggio.");
+        return;
+      }
+
+      var materia = selMateria.value === "altro"
+                    ? (document.getElementById("ct-altra-materia").value.trim() || "Altro")
+                    : (selMateria.value || "Non specificata");
+      var tipo    = document.getElementById("ct-tipo").value || "Non specificato";
+      var valut   = currentVal ? labels[currentVal] + " (" + currentVal + "/5)" : "Non valutata";
+
+      var subj = "[Maturità] " + oggetto;
+      var body = [
+        "Da: " + email,
+        "Materia: " + materia,
+        "Tipo di richiesta: " + tipo,
+        "Valutazione app: " + valut,
+        "",
+        "--- Messaggio ---",
+        messaggio
+      ].join("\n");
+
+      window.location.href = "mailto:guidaallamaturita@gmail.com"
+        + "?subject=" + encodeURIComponent(subj)
+        + "&body="    + encodeURIComponent(body);
+
+      setTimeout(function () {
+        document.getElementById("ct-feedback").classList.add("show");
+        document.getElementById("ct-form").style.opacity = ".4";
+        document.getElementById("ct-form").style.pointerEvents = "none";
+      }, 400);
+    });
+
+  })();
+  </script>
+</body>
+</html>
