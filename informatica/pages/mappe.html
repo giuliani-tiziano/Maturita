@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mappe — Informatica · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ══ TOPBAR SPLIT ══ -->
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../index.html" class="topbar-back">← Portale</a>
+      <a href="../informatica.html" class="topbar-brand">Informatica</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="argomenti.html">Argomenti</a>
+      <a class="topbar-link" href="moduli.html">Moduli</a>
+      <a class="topbar-link active" href="mappe.html">Mappe</a>
+      <a class="topbar-link" href="timeline.html">Timeline</a>
+      <a class="topbar-link" href="flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- ══ HERO BANNER ══ -->
+  <div class="hero-banner" data-initial="C">
+    <div class="hero-banner-inner">
+      <div class="eyebrow">Home → Mappe Concettuali</div>
+      <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Mappe Concettuali</h1>
+      <p class="hero-banner-sub">Relazioni tra concetti per ogni modulo del programma</p>
+    </div>
+  </div>
+
+  <!-- ══ LAYOUT SIDEBAR + MAIN ══ -->
+  <div class="page-layout">
+
+    <aside class="page-sidebar">
+      <div class="page-sidebar-title">Indice</div>
+      <a class="page-sidebar-item" href="#m1">M1 · Basi di Dati</a>
+      <a class="page-sidebar-item" href="#m2">M2 · PHP</a>
+      <a class="page-sidebar-item" href="#m3">M3 · JavaScript</a>
+      <a class="page-sidebar-item" href="#m4">M4 · SQL</a>
+      <a class="page-sidebar-item" href="#m5">M5 · App Web</a>
+      <a class="page-sidebar-item" href="#m6">M6 · Progettazione</a>
+    </aside>
+
+    <main class="page-main">
+
+      <!-- M1 — Basi di Dati -->
+      <div id="m1" class="map-area">
+        <div class="map-area-hd">
+          <span class="map-area-num">M1</span>
+          <span class="map-area-name">Basi di Dati e Algebra Relazionale</span>
+        </div>
+        <div class="map-grid">
+          <div class="map-card root">
+            <div>
+              <div class="node-label">Concetto centrale</div>
+              <div class="node-title">DBMS</div>
+              <div class="node-body">Sistema software per la gestione di basi di dati relazionali</div>
+            </div>
+            <div>
+              <div class="node-pill">DB</div>
+              <div class="node-pill">Relazionale</div>
+              <div class="node-pill">SQL</div>
+            </div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Struttura</div>
+            <div class="node-title">Relazione</div>
+            <div class="node-body">Tabella con schema fisso (grado) e istanza variabile (cardinalità)</div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Identificazione</div>
+            <div class="node-title">Chiavi</div>
+            <div class="node-body">Superchiave → candidata → primaria. Chiave esterna per l'integrità referenziale</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Architettura</div>
+            <div class="node-title">ANSI/SPARC</div>
+            <div class="node-body">Livello esterno, logico e fisico. Indipendenza dei dati</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Linguaggio formale</div>
+            <div class="node-title">Algebra Relazionale</div>
+            <div class="node-body">σ selezione, π proiezione, ⋈ join, ∪ ∩ − unione differenza</div>
+          </div>
+          <div class="map-card tag-gold">
+            <div class="node-label">Connessione</div>
+            <div class="node-title">Algebra → SQL</div>
+            <div class="node-body">WHERE = σ, SELECT = π, JOIN = ⋈, UNION = ∪</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-gold">
+
+      <!-- M2 — PHP -->
+      <div id="m2" class="map-area">
+        <div class="map-area-hd">
+          <span class="map-area-num">M2</span>
+          <span class="map-area-name">PHP lato server</span>
+        </div>
+        <div class="map-grid">
+          <div class="map-card root">
+            <div>
+              <div class="node-label">Concetto centrale</div>
+              <div class="node-title">Architettura Client/Server</div>
+              <div class="node-body">Browser ↔ HTTP ↔ PHP+MySQL (server)</div>
+            </div>
+            <div>
+              <div class="node-pill">PHP</div>
+              <div class="node-pill">HTTP</div>
+              <div class="node-pill">Server-side</div>
+            </div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Dati form</div>
+            <div class="node-title">GET vs POST</div>
+            <div class="node-body">GET: URL, idempotente, lettura. POST: body, dati sensibili, scrittura</div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Stato</div>
+            <div class="node-title">Cookie e Sessioni</div>
+            <div class="node-body">Cookie: lato client, persistente. Sessione: lato server, temporanea</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Sicurezza password</div>
+            <div class="node-title">Hashing</div>
+            <div class="node-body">password_hash() → bcrypt. password_verify() per confronto sicuro</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Database</div>
+            <div class="node-title">MySQLi</div>
+            <div class="node-body">connect → prepare → bind_param → execute → fetch</div>
+          </div>
+          <div class="map-card tag-gold">
+            <div class="node-label">Scambio dati</div>
+            <div class="node-title">JSON</div>
+            <div class="node-body">json_encode(): PHP→JSON. json_decode(): JSON→PHP</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-gold">
+
+      <!-- M3 — JavaScript -->
+      <div id="m3" class="map-area">
+        <div class="map-area-hd">
+          <span class="map-area-num">M3</span>
+          <span class="map-area-name">JavaScript lato client</span>
+        </div>
+        <div class="map-grid">
+          <div class="map-card root">
+            <div>
+              <div class="node-label">Concetto centrale</div>
+              <div class="node-title">DOM</div>
+              <div class="node-body">Document Object Model: albero HTML in memoria, manipolabile da JS</div>
+            </div>
+            <div>
+              <div class="node-pill">HTML</div>
+              <div class="node-pill">Nodi</div>
+              <div class="node-pill">Browser</div>
+            </div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Interattività</div>
+            <div class="node-title">Eventi</div>
+            <div class="node-body">addEventListener, bubbling, preventDefault, stopPropagation</div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Comunicazione asincrona</div>
+            <div class="node-title">AJAX</div>
+            <div class="node-body">XMLHttpRequest → server → JSON → DOM. Aggiornamento senza reload</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Variabili</div>
+            <div class="node-title">var / let / const</div>
+            <div class="node-body">var: scope funzione. let: scope blocco. const: blocco, non riassegnabile</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Serializzazione</div>
+            <div class="node-title">JSON</div>
+            <div class="node-body">JSON.parse(): JSON→oggetto. JSON.stringify(): oggetto→JSON</div>
+          </div>
+          <div class="map-card tag-gold">
+            <div class="node-label">Debug</div>
+            <div class="node-title">DevTools</div>
+            <div class="node-body">Console, Sources (breakpoints), Network (AJAX), Elements (DOM live)</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-gold">
+
+      <!-- M4 — SQL -->
+      <div id="m4" class="map-area">
+        <div class="map-area-hd">
+          <span class="map-area-num">M4</span>
+          <span class="map-area-name">SQL</span>
+        </div>
+        <div class="map-grid">
+          <div class="map-card root">
+            <div>
+              <div class="node-label">Concetto centrale</div>
+              <div class="node-title">SQL</div>
+              <div class="node-body">Linguaggio dichiarativo per definire e manipolare dati relazionali</div>
+            </div>
+            <div>
+              <div class="node-pill">DDL</div>
+              <div class="node-pill">DML</div>
+              <div class="node-pill">MySQL</div>
+            </div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Struttura</div>
+            <div class="node-title">DDL</div>
+            <div class="node-body">CREATE TABLE · ALTER TABLE · DROP · TRUNCATE. Vincoli e tipi di dato</div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Dati</div>
+            <div class="node-title">DML</div>
+            <div class="node-body">INSERT · SELECT · UPDATE · DELETE. Clausole WHERE, GROUP BY, HAVING</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Combinazione tabelle</div>
+            <div class="node-title">JOIN</div>
+            <div class="node-body">INNER JOIN: solo corrispondenze. LEFT JOIN: tutte le righe sinistra + NULL</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Query annidate</div>
+            <div class="node-title">Subquery</div>
+            <div class="node-body">Non correlata: eseguita una volta. Correlata: per ogni riga esterna</div>
+          </div>
+          <div class="map-card tag-gold">
+            <div class="node-label">Oggetti avanzati</div>
+            <div class="node-title">Viste · Trigger · Procedure</div>
+            <div class="node-body">VIEW: tabella virtuale. Trigger: automatico su eventi. Stored procedure: riutilizzabile</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-gold">
+
+      <!-- M5 — App Web -->
+      <div id="m5" class="map-area">
+        <div class="map-area-hd">
+          <span class="map-area-num">M5</span>
+          <span class="map-area-name">Applicazioni Web Integrate</span>
+        </div>
+        <div class="map-grid">
+          <div class="map-card root">
+            <div>
+              <div class="node-label">Stack completo</div>
+              <div class="node-title">PHP + JS + MySQL</div>
+              <div class="node-body">HTML (struttura) + CSS (stile) + JS (client) + PHP (server) + MySQL (dati)</div>
+            </div>
+            <div>
+              <div class="node-pill">AJAX</div>
+              <div class="node-pill">JSON</div>
+              <div class="node-pill">CRUD</div>
+            </div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Attacco #1</div>
+            <div class="node-title">SQL Injection</div>
+            <div class="node-body">Previene con: prepared statements e bind_param(). MAI concatenazione SQL</div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Attacco #2</div>
+            <div class="node-title">XSS</div>
+            <div class="node-body">PHP: htmlspecialchars(). JS: textContent non innerHTML per input utente</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Sessioni</div>
+            <div class="node-title">Session Hijacking</div>
+            <div class="node-body">HTTPS + HttpOnly + session_regenerate_id() + timeout</div>
+          </div>
+          <div class="map-card tag-gold">
+            <div class="node-label">Operazioni base</div>
+            <div class="node-title">CRUD</div>
+            <div class="node-body">Create/INSERT · Read/SELECT · Update/UPDATE · Delete/DELETE</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-gold">
+
+      <!-- M6 — Progettazione -->
+      <div id="m6" class="map-area">
+        <div class="map-area-hd">
+          <span class="map-area-num">M6</span>
+          <span class="map-area-name">Progettazione DB</span>
+        </div>
+        <div class="map-grid">
+          <div class="map-card root">
+            <div>
+              <div class="node-label">Processo</div>
+              <div class="node-title">3 Fasi di Progettazione</div>
+              <div class="node-body">Concettuale (E/R) → Logica (relazionale) → Fisica (SQL)</div>
+            </div>
+            <div>
+              <div class="node-pill">E/R</div>
+              <div class="node-pill">3NF</div>
+              <div class="node-pill">MySQL</div>
+            </div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Fase 1</div>
+            <div class="node-title">Diagramma E/R</div>
+            <div class="node-body">Entità (rettangolo), attributi (ellisse), associazioni (rombo), cardinalità</div>
+          </div>
+          <div class="map-card l1">
+            <div class="node-label">Fase 2</div>
+            <div class="node-title">Normalizzazione</div>
+            <div class="node-body">1NF: atomico. 2NF: no dep. parziali. 3NF: no dep. transitive</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Traduzione</div>
+            <div class="node-title">N:N → Tabella ponte</div>
+            <div class="node-body">Crea tabella associativa con PK composta dalle due FK</div>
+          </div>
+          <div class="map-card l2">
+            <div class="node-label">Specializzazione</div>
+            <div class="node-title">ISA (generalizzazione)</div>
+            <div class="node-body">Entità figlia "è un tipo di" padre. Eredita attributi. Totale/parziale, esclusiva/sovrapposta</div>
+          </div>
+          <div class="map-card tag-gold">
+            <div class="node-label">Problemi senza normalizzazione</div>
+            <div class="node-title">Anomalie</div>
+            <div class="node-body">Inserimento, cancellazione, aggiornamento. Causa: ridondanza dei dati</div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-quote-final">
+      «Una mappa vale più di mille parole: visualizza le relazioni che le parole nascondono.»
+      <cite>— Informatica · Maturità</cite>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

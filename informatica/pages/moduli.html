@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moduli — Informatica · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ══ TOPBAR SPLIT ══ -->
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../index.html" class="topbar-back">← Portale</a>
+      <a href="../informatica.html" class="topbar-brand">Informatica</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="argomenti.html">Argomenti</a>
+      <a class="topbar-link active" href="moduli.html">Moduli</a>
+      <a class="topbar-link" href="mappe.html">Mappe</a>
+      <a class="topbar-link" href="timeline.html">Timeline</a>
+      <a class="topbar-link" href="flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- ══ HERO BANNER ══ -->
+  <div class="hero-banner" data-initial="M">
+    <div class="hero-banner-inner">
+      <div class="eyebrow">Home → Moduli</div>
+      <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Moduli</h1>
+      <p class="hero-banner-sub">Sei macro-aree del programma di Informatica</p>
+    </div>
+  </div>
+
+  <!-- ══ LAYOUT SIDEBAR + MAIN ══ -->
+  <div class="page-layout">
+
+    <aside class="page-sidebar">
+      <div class="page-sidebar-title">Indice</div>
+      <a class="page-sidebar-item" href="#m1">M1 · Basi di Dati</a>
+      <a class="page-sidebar-item" href="#m2">M2 · PHP</a>
+      <a class="page-sidebar-item" href="#m3">M3 · JavaScript</a>
+      <a class="page-sidebar-item" href="#m4">M4 · SQL</a>
+      <a class="page-sidebar-item" href="#m5">M5 · App Web</a>
+      <a class="page-sidebar-item" href="#m6">M6 · Progettazione DB</a>
+    </aside>
+
+    <main class="page-main">
+
+      <!-- M1 -->
+      <div id="m1" class="section-header" style="margin-top:0;">
+        <div class="section-tag">M1</div>
+      </div>
+      <div class="authors-grid ai">
+        <a class="author-card" href="quiz.html" onclick="return false;" style="cursor:default;">
+          <span class="author-card-initial">1</span>
+          <div class="author-card-meta">Modulo 1</div>
+          <div class="author-card-name">Basi di Dati e<br><em>Algebra Relazionale</em></div>
+          <div class="author-card-tagline">Sistema informatico e informativo; DBMS; architettura ANSI/SPARC; struttura di una relazione; chiavi; vincoli; algebra relazionale.</div>
+          <a class="author-card-cta link-arrow" href="quiz.html">Quiz →</a>
+        </a>
+      </div>
+      <div class="box-concetto">
+        <h4>Concetti chiave del modulo</h4>
+        <ul class="clean">
+          <li>Sistema informatico e sistema informativo — differenza fondamentale</li>
+          <li>DBMS: definizione, funzioni, vantaggi rispetto ai file</li>
+          <li>Architettura ANSI/SPARC: livello esterno, logico, fisico</li>
+          <li>Struttura relazione: attributi, tuple, domini, schema, istanza</li>
+          <li>Grado (numero attributi) e cardinalità (numero tuple)</li>
+          <li>Superchiavi → chiavi candidate → chiave primaria → chiave esterna</li>
+          <li>Vincoli di dominio, unicità, NOT NULL, integrità referenziale</li>
+          <li>Regole di gestione: CASCADE, RESTRICT, SET NULL</li>
+          <li>Algebra relazionale: operatori insiemistici (∪ ∩ − ×) e relazionali (σ π ⋈ ρ)</li>
+          <li>Collegamento algebra relazionale ↔ SQL</li>
+        </ul>
+      </div>
+
+      <hr class="divider-gold">
+
+      <!-- M2 -->
+      <div id="m2" class="section-header">
+        <div class="section-tag">M2</div>
+      </div>
+      <div class="authors-grid ai d2">
+        <a class="author-card" href="quiz.html" onclick="return false;" style="cursor:default;">
+          <span class="author-card-initial">2</span>
+          <div class="author-card-meta">Modulo 2</div>
+          <div class="author-card-name">PHP<br><em>lato server</em></div>
+          <div class="author-card-tagline">Architettura client/server; sintassi PHP; strutture di controllo; array; form HTTP; cookie; sessioni; autenticazione; MySQLi; JSON.</div>
+          <a class="author-card-cta link-arrow" href="quiz.html">Quiz →</a>
+        </a>
+      </div>
+      <div class="box-concetto">
+        <h4>Concetti chiave del modulo</h4>
+        <ul class="clean">
+          <li>Architettura client/server e ruolo di PHP nel ciclo richiesta/risposta</li>
+          <li>Variabili ($), costanti (define/const), tipi di dato, operatori</li>
+          <li>Scope locale/globale; variabili superglobali ($_GET, $_POST, $_SESSION…)</li>
+          <li>Strutture di controllo: if/else, switch, for, while, do-while, foreach</li>
+          <li>Array indicizzati e associativi; funzioni su array</li>
+          <li>Funzioni personalizzate e anonime (lambda)</li>
+          <li>Form: GET vs POST, gestione input, htmlspecialchars() per sicurezza XSS</li>
+          <li>Cookie (setcookie) e sessioni (session_start, $_SESSION)</li>
+          <li>Autenticazione: password_hash() e password_verify()</li>
+          <li>MySQLi: connessione, query, prepared statements, fetch</li>
+          <li>JSON: json_encode() / json_decode()</li>
+          <li>Gestione file: fopen, fread, fwrite, file_get_contents</li>
+        </ul>
+      </div>
+
+      <hr class="divider-gold">
+
+      <!-- M3 -->
+      <div id="m3" class="section-header">
+        <div class="section-tag">M3</div>
+      </div>
+      <div class="authors-grid ai d3">
+        <a class="author-card" href="quiz.html" onclick="return false;" style="cursor:default;">
+          <span class="author-card-initial">3</span>
+          <div class="author-card-meta">Modulo 3</div>
+          <div class="author-card-name">JavaScript<br><em>lato client</em></div>
+          <div class="author-card-tagline">DOM, eventi, manipolazione dinamica HTML/CSS, tabelle dinamiche, XMLHttpRequest, AJAX, JSON, validazione form, debugging.</div>
+          <a class="author-card-cta link-arrow" href="quiz.html">Quiz →</a>
+        </a>
+      </div>
+      <div class="box-concetto">
+        <h4>Concetti chiave del modulo</h4>
+        <ul class="clean">
+          <li>var/let/const — scope e differenze fondamentali</li>
+          <li>DOM: Document Object Model come albero; nodi e relazioni</li>
+          <li>Selezione: getElementById, querySelector, querySelectorAll</li>
+          <li>Modifica: textContent, innerHTML, setAttribute, classList, style</li>
+          <li>Creazione/rimozione: createElement, appendChild, removeChild</li>
+          <li>Costruzione dinamica di tabelle HTML</li>
+          <li>Gestione eventi: addEventListener, event bubbling, preventDefault</li>
+          <li>XMLHttpRequest: open, send, onreadystatechange, readyState</li>
+          <li>AJAX: richieste asincrone senza ricaricamento pagina</li>
+          <li>JSON: JSON.parse() e JSON.stringify()</li>
+          <li>Validazione form lato client (non è sicurezza!)</li>
+          <li>Debugging: console.log, DevTools, breakpoints, Network panel</li>
+        </ul>
+      </div>
+
+      <hr class="divider-gold">
+
+      <!-- M4 -->
+      <div id="m4" class="section-header">
+        <div class="section-tag">M4</div>
+      </div>
+      <div class="authors-grid ai">
+        <a class="author-card" href="quiz.html" onclick="return false;" style="cursor:default;">
+          <span class="author-card-initial">4</span>
+          <div class="author-card-meta">Modulo 4</div>
+          <div class="author-card-name">SQL<br><em>DDL e DML</em></div>
+          <div class="author-card-tagline">CREATE/ALTER/DROP/TRUNCATE; SELECT con clausole avanzate; JOIN; subquery; funzioni di aggregazione; viste; trigger; stored procedure.</div>
+          <a class="author-card-cta link-arrow" href="quiz.html">Quiz →</a>
+        </a>
+      </div>
+      <div class="box-concetto">
+        <h4>Concetti chiave del modulo</h4>
+        <ul class="clean">
+          <li>DDL: CREATE TABLE con tipi e vincoli, ALTER TABLE, DROP, TRUNCATE</li>
+          <li>DML: INSERT, UPDATE (con WHERE!), DELETE, SELECT</li>
+          <li>SELECT: WHERE, ORDER BY (ASC/DESC), GROUP BY, HAVING, LIMIT, DISTINCT</li>
+          <li>Funzioni aggregazione: COUNT, SUM, AVG, MAX, MIN</li>
+          <li>Funzioni MySQL: numeri, stringhe, DATE_FORMAT(), IF()</li>
+          <li>INNER JOIN, LEFT JOIN — differenza e casi d'uso</li>
+          <li>Subquery: correlata vs non correlata; IN, ANY, ALL, EXISTS</li>
+          <li>UNION vs UNION ALL</li>
+          <li>Viste (VIEW): creazione, vantaggi, limitazioni</li>
+          <li>Trigger: BEFORE/AFTER, FOR EACH ROW, NEW/OLD</li>
+          <li>Stored procedure: CALL, IN/OUT parametri</li>
+          <li>INSERT IGNORE e ON DUPLICATE KEY UPDATE (upsert)</li>
+          <li>Indici: performance, CREATE INDEX, indici su FK</li>
+        </ul>
+      </div>
+
+      <hr class="divider-gold">
+
+      <!-- M5 -->
+      <div id="m5" class="section-header">
+        <div class="section-tag">M5</div>
+      </div>
+      <div class="authors-grid ai d2">
+        <a class="author-card" href="quiz.html" onclick="return false;" style="cursor:default;">
+          <span class="author-card-initial">5</span>
+          <div class="author-card-meta">Modulo 5</div>
+          <div class="author-card-name">Applicazioni Web<br><em>Integrate</em></div>
+          <div class="author-card-tagline">PHP + JS + AJAX + JSON + MySQL. Sicurezza (SQL injection, XSS, session hijacking). CRUD. Preparazione seconda prova.</div>
+          <a class="author-card-cta link-arrow" href="quiz.html">Quiz →</a>
+        </a>
+      </div>
+      <div class="box-concetto">
+        <h4>Concetti chiave del modulo</h4>
+        <ul class="clean">
+          <li>Stack: HTML/CSS + JavaScript (client) + PHP (server) + MySQL (DB)</li>
+          <li>Flusso AJAX: JS → XHR → PHP → SQL → JSON → JS → DOM</li>
+          <li>SQL Injection: attacco + prevenzione con prepared statements</li>
+          <li>XSS: attacco + prevenzione con htmlspecialchars() / textContent</li>
+          <li>Session hijacking: HTTPS, HttpOnly, session_regenerate_id()</li>
+          <li>CRUD: Create/Read/Update/Delete → INSERT/SELECT/UPDATE/DELETE</li>
+          <li>Viste SQL in applicazioni PHP: vantaggi pratici</li>
+          <li>Fasi di sviluppo: analisi → progettazione → sviluppo → test → deploy</li>
+        </ul>
+      </div>
+
+      <hr class="divider-gold">
+
+      <!-- M6 -->
+      <div id="m6" class="section-header">
+        <div class="section-tag">M6</div>
+      </div>
+      <div class="authors-grid ai d3">
+        <a class="author-card" href="quiz.html" onclick="return false;" style="cursor:default;">
+          <span class="author-card-initial">6</span>
+          <div class="author-card-meta">Modulo 6</div>
+          <div class="author-card-name">Progettazione<br><em>Concettuale, Logica e Fisica</em></div>
+          <div class="author-card-tagline">Diagramma E/R. Entità deboli. ISA. Traduzione E/R→relazionale. Normalizzazione 1NF/2NF/3NF. Implementazione MySQL.</div>
+          <a class="author-card-cta link-arrow" href="quiz.html">Quiz →</a>
+        </a>
+      </div>
+      <div class="box-concetto">
+        <h4>Concetti chiave del modulo</h4>
+        <ul class="clean">
+          <li>3 fasi: concettuale (E/R) → logica (relazionale) → fisica (SQL)</li>
+          <li>E/R: entità, attributi, associazioni, cardinalità (1:1, 1:N, N:N)</li>
+          <li>Associazioni: binarie, unarie (ricorsive), multiple (ternarie)</li>
+          <li>Entità deboli: dipendenza dall'entità forte, chiave parziale</li>
+          <li>Generalizzazioni ISA: subset, totale/parziale, esclusiva/sovrapposta</li>
+          <li>Ristrutturazione E/R: attributi multivalore, generalizzazioni</li>
+          <li>Traduzione E/R→relazionale: regole per 1:1, 1:N, N:N, entità deboli</li>
+          <li>Dipendenze funzionali: A→B, determinante, parziali, transitive</li>
+          <li>1NF: attributi atomici. 2NF: no dipendenze parziali. 3NF: no dipendenze transitive</li>
+          <li>Anomalie: inserimento, cancellazione, aggiornamento</li>
+          <li>Progettazione fisica: tipi di dato MySQL, vincoli SQL, indici</li>
+        </ul>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-quote-final">
+      «Normalizzare i dati è come organizzare una biblioteca: ogni libro al posto giusto, nessuna copia inutile.»
+      <cite>— Informatica · Maturità</cite>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
