@@ -3354,29 +3354,279 @@ input:focus, select:focus, textarea:focus, .open-ta:focus { border-color: var(--
   letter-spacing: .28em;
 }
 
-/* ══ DARK MODE ══ */
+/* ══ DARK MODE — COMPLETO ══ */
 [data-theme="dark"] {
-  --beige-light:   #1A1210;
-  --beige-mid:     #221614;
-  --beige-dark:    #2E1E1A;
-  --paper:         #1E1412;
-  --paper-warm:    #231816;
-  --ink:           #E8E0D4;
-  --ink-soft:      #C8BDB0;
-  --ink-muted:     #9A8C80;
-  --rule:          rgba(232, 224, 212, .14);
-  --rule-soft:     rgba(232, 224, 212, .07);
-  --gold-soft:     rgba(201, 168, 76, .10);
-  /* i colori bordeaux (--color-primary, --color-deep, --color-light) restano:
-     funzionano bene anche su fondo scuro */
+  /* ─── Backgrounds ─── */
+  --beige-light:   #140c0a;   /* body bg */
+  --beige-mid:     #1c1210;   /* raised surfaces, sidebar */
+  --beige-dark:    #271a16;   /* still-more-raised */
+  --paper:         #180e0c;   /* card / input bg */
+  --paper-warm:    #1c1210;
+
+  /* ─── Text ─── */
+  --ink:           #e6ddd8;   /* body text */
+  --ink-soft:      #c0aea6;   /* secondary text */
+  --ink-muted:     #8a7068;   /* muted text */
+
+  /* ─── Rules / lines ─── */
+  --rule:          rgba(230, 200, 190, .16);
+  --rule-soft:     rgba(230, 200, 190, .09);
+  --rule-gold:     rgba(201, 168, 76, .22);
+
+  /* ─── Gold ─── */
+  --gold-soft:     rgba(201, 168, 76, .11);
+
+  /* ─── Shadows (darker on dark bg = less visible, so boost opacity) ─── */
+  --shadow-xs:  0 1px 2px rgba(0,0,0,.5);
+  --shadow-sm:  0 1px 6px rgba(0,0,0,.5), 0 1px 2px rgba(0,0,0,.35);
+  --shadow-md:  0 4px 20px rgba(0,0,0,.55), 0 1px 4px rgba(0,0,0,.4);
+  --shadow-lg:  0 8px 40px rgba(0,0,0,.6), 0 2px 8px rgba(0,0,0,.45);
+  --shadow-xl:  0 16px 60px rgba(0,0,0,.65), 0 4px 16px rgba(0,0,0,.5);
+
+  /* ─── Bordeaux — leggermente più luminosi per visibilità su scuro ─── */
+  --color-primary: #9E3347;
+  --color-light:   #C0485C;
+  --bordeaux-mid:  var(--color-primary);
+  --bordeaux-light: var(--color-light);
 }
 
-/* La topbar split usa il beige come sfondo: in dark va resa scura coerente */
-[data-theme="dark"] .topbar--split { background: var(--beige-mid); }
-[data-theme="dark"] .nav { background: var(--beige-mid); }
-[data-theme="dark"] .nav-btn { background: var(--beige-dark); color: var(--ink-soft); }
+/* ── Topbar ── */
+[data-theme="dark"] .topbar--split {
+  background: var(--beige-mid);
+}
+[data-theme="dark"] .topbar--split .topbar-link {
+  color: rgba(230, 210, 200, .55);
+}
+[data-theme="dark"] .topbar--split .topbar-link:hover,
+[data-theme="dark"] .topbar--split .topbar-link.active {
+  color: var(--ink);
+}
+[data-theme="dark"] .topbar--split .topbar-link.cta {
+  color: var(--color-light);
+  font-weight: 500;
+}
 
-[data-theme="dark"] img:not([src*="svg"]) { filter: brightness(.88) contrast(1.05); }
+/* ── Secondary nav ── */
+[data-theme="dark"] .nav {
+  background: var(--beige-mid);
+  border-bottom-color: var(--rule-soft);
+}
+[data-theme="dark"] .nav-btn {
+  background: var(--beige-dark);
+  color: var(--ink-soft);
+}
+[data-theme="dark"] .nav-btn:hover {
+  background: var(--beige-dark);
+  color: var(--ink);
+}
+[data-theme="dark"] .nav-btn.active {
+  background: var(--color-deep);
+  color: var(--paper);
+  border-bottom-color: var(--gold);
+}
+
+/* ── Author cards ── */
+[data-theme="dark"] .author-card,
+[data-theme="dark"] .author-btn {
+  background: var(--paper);
+  border-color: rgba(230, 200, 190, .12);
+}
+[data-theme="dark"] .author-card:hover,
+[data-theme="dark"] .author-btn:hover {
+  border-top-color: var(--color-light);
+  border-bottom-color: var(--gold);
+  box-shadow: var(--shadow-md);
+}
+[data-theme="dark"] .author-card-initial,
+[data-theme="dark"] .author-initial {
+  color: var(--beige-dark);
+}
+[data-theme="dark"] .author-card:hover .author-card-initial { color: var(--gold); }
+
+/* ── Sidebar ── */
+[data-theme="dark"] .page-sidebar {
+  background: var(--beige-mid);
+  border-right-color: var(--rule-soft);
+}
+[data-theme="dark"] .page-sidebar-item {
+  border-bottom-color: rgba(230, 200, 190, .07);
+  color: var(--ink-soft);
+}
+[data-theme="dark"] .page-sidebar-item:hover { color: var(--color-light); }
+[data-theme="dark"] .page-sidebar-item.active { color: var(--ink); }
+
+/* ── Page main ── */
+[data-theme="dark"] .page-main {
+  background: var(--paper);
+}
+
+/* ── Accordion ── */
+[data-theme="dark"] .accordion { border-top-color: var(--rule-soft); }
+[data-theme="dark"] .acc-head,
+[data-theme="dark"] .acc-trigger {
+  border-bottom-color: var(--rule-soft);
+  color: var(--ink);
+}
+[data-theme="dark"] .acc-head:hover,
+[data-theme="dark"] .acc-trigger:hover { color: var(--color-light); }
+[data-theme="dark"] .acc-head.open,
+[data-theme="dark"] .acc-trigger.open {
+  color: var(--color-light);
+  border-bottom-color: var(--color-primary);
+}
+[data-theme="dark"] .acc-body {
+  border-bottom-color: var(--rule-soft);
+  color: var(--ink-soft);
+}
+
+/* ── Tables ── */
+[data-theme="dark"] table th {
+  background: var(--color-deep);
+  color: var(--paper);
+}
+[data-theme="dark"] table td {
+  border-bottom-color: var(--rule-soft);
+  color: var(--ink-soft);
+}
+[data-theme="dark"] .versi-table tbody tr:nth-child(even) td,
+[data-theme="dark"] .tv tbody tr:nth-child(even) td { background: var(--beige-mid); }
+[data-theme="dark"] .versi-table tbody tr:nth-child(odd) td,
+[data-theme="dark"] .tv tbody tr:nth-child(odd) td  { background: var(--paper); }
+[data-theme="dark"] .versi-table tbody tr:hover td,
+[data-theme="dark"] .tv tbody tr:hover td { background: var(--beige-dark); }
+
+/* ── Box / Cards ── */
+[data-theme="dark"] .box,
+[data-theme="dark"] .box-def,
+[data-theme="dark"] .box-concetto,
+[data-theme="dark"] .box-key,
+[data-theme="dark"] .box-note,
+[data-theme="dark"] .box-warning {
+  background: var(--beige-mid);
+  border-left-color: var(--color-primary);
+}
+[data-theme="dark"] .card,
+[data-theme="dark"] .opera-card {
+  border-top-color: var(--rule-soft);
+}
+
+/* ── Blockquote ── */
+[data-theme="dark"] blockquote {
+  background: rgba(158, 51, 71, .12);
+  border-left-color: var(--gold);
+}
+
+/* ── Buttons ── */
+[data-theme="dark"] .btn,
+[data-theme="dark"] .btn-act {
+  border-color: var(--rule);
+  color: var(--ink-soft);
+}
+[data-theme="dark"] .btn:hover,
+[data-theme="dark"] .btn-act:hover {
+  background: var(--color-primary);
+  color: var(--paper);
+  border-color: var(--color-primary);
+}
+[data-theme="dark"] .ans-btn {
+  background: var(--beige-mid);
+  border-color: rgba(230, 200, 190, .12);
+  color: var(--ink);
+}
+[data-theme="dark"] .ans-btn:hover:not(:disabled) {
+  background: var(--beige-dark);
+  border-color: rgba(230, 200, 190, .2);
+}
+[data-theme="dark"] .ans-btn.correct {
+  background: rgba(158, 51, 71, .15);
+  border-color: var(--color-primary);
+}
+[data-theme="dark"] .ans-btn.wrong {
+  background: rgba(201, 168, 76, .1);
+  border-color: var(--gold);
+}
+
+/* ── Input / textarea ── */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea,
+[data-theme="dark"] .open-ta {
+  background: var(--beige-mid);
+  border-color: var(--rule);
+  color: var(--ink);
+}
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus { border-color: var(--color-primary); }
+
+/* ── Quiz result ── */
+[data-theme="dark"] .res-hero {
+  background: var(--color-deep);
+}
+[data-theme="dark"] .quiz-header { background: var(--color-deep); }
+
+/* ── Map modal / overlay ── */
+[data-theme="dark"] .map-modal {
+  background: var(--beige-mid);
+  border-color: var(--color-primary);
+}
+[data-theme="dark"] .modal-close { color: var(--ink-muted); }
+[data-theme="dark"] .modal-title { color: var(--color-light); }
+[data-theme="dark"] .modal-text  { color: var(--ink-soft); }
+
+/* ── Flashcard ── */
+[data-theme="dark"] .fc-front {
+  background: var(--beige-mid);
+  border-color: rgba(230, 200, 190, .15);
+}
+[data-theme="dark"] .fc-front-text { color: var(--ink); }
+
+/* ── Glossary details ── */
+[data-theme="dark"] .glossary details {
+  border-top-color: var(--rule-soft);
+}
+[data-theme="dark"] .glossary details:hover,
+[data-theme="dark"] .glossary details[open] {
+  background: rgba(158, 51, 71, .08);
+  border-left-color: var(--gold);
+}
+[data-theme="dark"] .glossary details > summary {
+  color: var(--color-light);
+}
+[data-theme="dark"] .glossary details > :not(summary) {
+  color: var(--ink-soft);
+}
+
+/* ── Dividers ── */
+[data-theme="dark"] hr,
+[data-theme="dark"] .divider-gold {
+  background: linear-gradient(90deg, transparent, var(--rule-gold), transparent);
+}
+
+/* ── Section headers ── */
+[data-theme="dark"] .section-tag,
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] .home-eyebrow,
+[data-theme="dark"] .home-hero-eyebrow,
+[data-theme="dark"] .section-sub { color: var(--ink-muted); }
+
+/* ── Footer ── */
+[data-theme="dark"] .footer-quote,
+[data-theme="dark"] .footer-q { border-top-color: var(--rule-soft); }
+
+/* ── Scrollbar ── */
+[data-theme="dark"] ::-webkit-scrollbar-track { background: var(--beige-mid); }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--color-primary); }
+
+/* ── Images ── */
+[data-theme="dark"] img:not([src*="svg"]) { filter: brightness(.85) contrast(1.05); }
+
+/* ── Selection ── */
+[data-theme="dark"] ::selection { background: var(--color-primary); color: var(--paper); }
+
+/* ── Progress bar ── */
+[data-theme="dark"] .prog-wrap { background: rgba(0,0,0,.3); }
+[data-theme="dark"] .prog-bar { background: var(--color-light); }
 
 /* Bottone toggle tema (iniettato da main.js) */
 .theme-toggle {

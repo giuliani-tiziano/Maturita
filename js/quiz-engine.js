@@ -200,6 +200,50 @@
       storageTot: "q_antinovecentismo_best_total",
       footerQuote: "«Avevo scelto le trite parole perche il mio cuore fosse compreso.»",
       footerCite: "— Umberto Saba"
+    },
+
+    /* ── SECONDO NOVECENTO ── */
+    pavese: {
+      key: "pavese",
+      name: "Cesare Pavese",
+      short: "Pavese",
+      bodyClass: "verga",
+      storageKey: "q_pavese_best",
+      storageTot: "q_pavese_best_total",
+      footerQuote: "«Un paese ci vuole, non fosse che per il gusto di andarsene via.»",
+      footerCite: "— Cesare Pavese, La luna e i falo"
+    },
+    pasolini: {
+      key: "pasolini",
+      name: "Pier Paolo Pasolini",
+      short: "Pasolini",
+      bodyClass: "campana",
+      storageKey: "q_pasolini_best",
+      storageTot: "q_pasolini_best_total",
+      footerQuote: "«Io so. Ma non ho le prove.»",
+      footerCite: "— Pier Paolo Pasolini, Scritti corsari"
+    },
+    calvino: {
+      key: "calvino",
+      name: "Italo Calvino",
+      short: "Calvino",
+      bodyClass: "pirandello",
+      storageKey: "q_calvino_best",
+      storageTot: "q_calvino_best_total",
+      footerQuote: "«Leggerezza non e superficialita, ma planare sulle cose dall'alto.»",
+      footerCite: "— Italo Calvino, Lezioni americane"
+    },
+
+    /* ── NEOREALISMO ── */
+    neorealismo: {
+      key: "neorealismo",
+      name: "Il Neorealismo",
+      short: "Neorealismo",
+      bodyClass: "verga",
+      storageKey: "q_neorealismo_best",
+      storageTot: "q_neorealismo_best_total",
+      footerQuote: "«Cristo si e fermato a Eboli.»",
+      footerCite: "— Carlo Levi"
     }
   };
 
@@ -777,6 +821,23 @@
     }
     refreshBestScores();
     showScreen('screen-home');
+
+    // ── Avvio diretto da pages/quiz.html (parametri URL) ──────────────
+    // URL: quiz/quiz.html?key=verga&mode=all&timer=0&shuffle=1
+    const sp = new URLSearchParams(location.search);
+    const urlKey  = sp.get('key');
+    const urlMode = sp.get('mode');
+    if (urlKey && urlMode && window.QUIZ_DATA && window.QUIZ_DATA[urlKey]) {
+      const urlTimer  = sp.get('timer')  === '1';
+      const urlShuf   = sp.get('shuffle') !== '0';
+      setTimeout(() => startQuiz(urlKey, urlMode, urlTimer, urlShuf), 80);
+    } else {
+      // Fallback: hash legacy (#authorKey) → apre il panel di selezione modalità
+      const hash = location.hash.slice(1);
+      if (hash && window.QUIZ_DATA && window.QUIZ_DATA[hash]) {
+        setTimeout(() => openAuthorPanel(hash), 80);
+      }
+    }
 
     // Wiring statico
     const ov = document.getElementById('mode-overlay');
