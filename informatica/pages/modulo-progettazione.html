@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 6 · Progettazione DB — Informatica · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E6%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../index.html" class="topbar-back">← Portale</a>
+    <a href="../informatica.html" class="topbar-brand">Informatica</a>
+  </div>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="argomenti.html">Argomenti</a>
+    <a class="topbar-link" href="mappe.html">Mappe</a>
+    <a class="topbar-link" href="flashcard.html">Flashcard</a>
+    <a class="topbar-link cta" href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+    <button class="nav-btn" data-sec="er">Diagramma E/R</button>
+    <button class="nav-btn" data-sec="logica">Progettazione Logica</button>
+    <button class="nav-btn" data-sec="normalizzazione">Normalizzazione</button>
+    <button class="nav-btn" data-sec="fisica">Progettazione Fisica</button>
+    <button class="nav-btn" data-sec="quiz-mini">Mini-quiz</button>
+  </div>
+</nav>
+
+<!-- ══ PANORAMICA ══ -->
+<section class="section active" id="panoramica">
+  <div class="container">
+
+    <div class="hero">
+      <div class="eyebrow">Informatica · Modulo 6 · Apr–Mag 2026</div>
+      <h1 class="title">Progettazione DB<br><em>concettuale, logica e fisica</em></h1>
+      <p class="subtitle">Dal problema reale al database MySQL: tre fasi, un metodo.</p>
+    </div>
+
+    <div class="section-header" style="margin-top:0;">
+      <div class="section-tag">Le tre fasi</div>
+      <h2>Il processo di progettazione</h2>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title">Fase 1 — Concettuale</div>
+        <div class="card-body"><strong>Obiettivo:</strong> capire il problema. Strumento: diagramma E/R. Output: schema E/R con entità, attributi, associazioni, cardinalità. Indipendente da qualsiasi DBMS.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Fase 2 — Logica</div>
+        <div class="card-body"><strong>Obiettivo:</strong> tradurre in tabelle. Strumento: regole di traduzione E/R → relazionale. Output: schema relazionale con PK e FK. Normalizzazione fino alla 3NF.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Fase 3 — Fisica</div>
+        <div class="card-body"><strong>Obiettivo:</strong> implementare in MySQL. Strumento: SQL + phpMyAdmin/HeidiSQL. Output: CREATE TABLE con tipi di dato, vincoli e indici ottimizzati.</div>
+      </div>
+    </div>
+
+    <div class="box-frase">
+      «Una buona progettazione concettuale vale ore di debugging. Un diagramma E/R sbagliato produce un database sbagliato.»
+      <span class="label">— Principio di progettazione</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ DIAGRAMMA E/R ══ -->
+<section class="section" id="er">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 02</div>
+      <h2>Diagramma Entità/Relazione (E/R)</h2>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="accordion">
+          <button class="acc-head" onclick="toggleAcc(this)">Entità, attributi e associazioni <span class="acc-arrow">▼</span></button>
+          <div class="acc-body">
+            <table>
+              <thead><tr><th>Elemento</th><th>Simbolo</th><th>Descrizione</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Entità</strong></td><td>Rettangolo</td><td>Oggetto del mondo reale con esistenza autonoma. Es. Studente, Corso, Prodotto.</td></tr>
+                <tr><td><strong>Attributo</strong></td><td>Ellisse</td><td>Proprietà di un'entità. Es. nome, cognome, data_nascita.</td></tr>
+                <tr><td><strong>Chiave</strong></td><td>Ellisse sottolineata</td><td>Attributo che identifica univocamente le istanze dell'entità.</td></tr>
+                <tr><td><strong>Associazione</strong></td><td>Rombo</td><td>Relazione tra due o più entità. Es. FREQUENTA tra Studente e Corso.</td></tr>
+                <tr><td><strong>Cardinalità</strong></td><td>Coppie (min,max)</td><td>Quante istanze partecipano all'associazione: (0,1), (1,1), (0,N), (1,N).</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="accordion">
+          <button class="acc-head" onclick="toggleAcc(this)">Cardinalità — 1:1, 1:N, N:N <span class="acc-arrow">▼</span></button>
+          <div class="acc-body">
+            <p>La cardinalità esprime quante istanze di ciascuna entità possono partecipare all'associazione:</p>
+            <table>
+              <thead><tr><th>Tipo</th><th>Significato</th><th>Esempio</th></tr></thead>
+              <tbody>
+                <tr><td><strong>1:1</strong></td><td>Un'istanza di A è associata ad al massimo una di B e viceversa</td><td>Dipendente ↔ Scrivania (ognuno ha una)</td></tr>
+                <tr><td><strong>1:N</strong></td><td>Un'istanza di A può essere associata a molte di B; ogni B a una sola A</td><td>Dipartimento → N Dipendenti</td></tr>
+                <tr><td><strong>N:N</strong></td><td>Un'istanza di A a molte B; un'istanza di B a molte A</td><td>Studenti ↔ Corsi</td></tr>
+              </tbody>
+            </table>
+            <p>La partecipazione può essere <strong>obbligatoria</strong> (ogni istanza DEVE partecipare) o <strong>opzionale</strong> (può non partecipare, min=0).</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="accordion">
+          <button class="acc-head" onclick="toggleAcc(this)">Tipi di associazione: binarie, unarie, multiple <span class="acc-arrow">▼</span></button>
+          <div class="acc-body">
+            <ul>
+              <li><strong>Binaria:</strong> coinvolge due entità distinte. Tipo più comune. Es. Studente FREQUENTA Corso.</li>
+              <li><strong>Unaria (ricorsiva):</strong> un'entità associata con se stessa con ruoli diversi. Es. Dipendente GESTISCE Dipendente (un dipendente può essere manager di altri).</li>
+              <li><strong>Ternaria (o multipla):</strong> coinvolge tre o più entità. Es. Fornitore FORNISCE Prodotto a Negozio.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion">
+          <button class="acc-head" onclick="toggleAcc(this)">Entità deboli — definizione ed esempio <span class="acc-arrow">▼</span></button>
+          <div class="acc-body">
+            <p>Un'entità debole non ha attributi sufficienti per identificarsi da sola. Dipende da un'<strong>entità forte</strong> tramite una <strong>relazione identificante</strong>.</p>
+            <p>Si rappresenta con un doppio rettangolo. La sua chiave primaria è composta: include la PK dell'entità forte + un attributo discriminante.</p>
+            <p>Esempio: <strong>Riga_Ordine</strong> è entità debole — una riga d'ordine si identifica solo con il numero d'ordine (entità forte Ordine) + numero di riga. Senza l'ordine a cui appartiene, la riga non ha senso.</p>
+          </div>
+        </div>
+        <div class="accordion">
+          <button class="acc-head" onclick="toggleAcc(this)">Gerarchie ISA e ristrutturazione E/R <span class="acc-arrow">▼</span></button>
+          <div class="acc-body">
+            <p><strong>ISA (Is-A):</strong> una generalizzazione dove le entità figlie "sono un tipo di" entità padre. Le figlie ereditano tutti gli attributi del padre e aggiungono i propri.</p>
+            <p>Tipi di gerarchia:</p>
+            <ul>
+              <li><strong>Totale:</strong> ogni istanza padre è necessariamente in almeno una figlia</li>
+              <li><strong>Parziale (subset):</strong> alcune istanze padre non appartengono a nessuna figlia</li>
+              <li><strong>Esclusiva:</strong> ogni istanza è in al massimo una figlia</li>
+              <li><strong>Sovrapposta:</strong> un'istanza può appartenere a più figlie contemporaneamente</li>
+            </ul>
+            <p><strong>Ristrutturazione E/R:</strong> prima della traduzione logica si elimina: attributi multivalore (→ nuova entità), generalizzazioni ISA (vedi strategie di traduzione), associazioni complesse.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ PROGETTAZIONE LOGICA ══ -->
+<section class="section" id="logica">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 03</div>
+      <h2>Progettazione Logica — da E/R a Relazionale</h2>
+    </div>
+
+    <p>Lo schema logico traduce il diagramma E/R in tabelle (relazioni) con colonne, chiavi primarie e chiavi esterne.</p>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Regole di traduzione E/R → Relazionale <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <table>
+          <thead><tr><th>Elemento E/R</th><th>Traduzione nel modello relazionale</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Entità forte</strong></td><td>Una tabella con PK (la chiave dell'entità)</td></tr>
+            <tr><td><strong>Associazione 1:1</strong></td><td>FK nella tabella con partecipazione obbligatoria (o fusione se entrambe obbligatorie)</td></tr>
+            <tr><td><strong>Associazione 1:N</strong></td><td>FK nell'entità "molti" che referenzia la PK dell'entità "uno" — nessuna tabella aggiuntiva</td></tr>
+            <tr><td><strong>Associazione N:N</strong></td><td>Tabella associativa (ponte) con PK composta = FK delle due entità; attributi dell'associazione vanno in questa tabella</td></tr>
+            <tr><td><strong>Entità debole</strong></td><td>Tabella con PK = discriminante + FK all'entità forte</td></tr>
+            <tr><td><strong>Generalizzazione ISA — unica tabella</strong></td><td>Un'unica tabella con tutti gli attributi + colonna tipo; semplice ma con molti NULL</td></tr>
+            <tr><td><strong>ISA — padre + figlie</strong></td><td>Tabella padre + tabelle figlie con PK = FK al padre; più flessibile</td></tr>
+            <tr><td><strong>ISA — solo figlie</strong></td><td>Solo tabelle figlie con attributi padre replicati; no JOIN ma ridondanza</td></tr>
+            <tr><td><strong>Attributo multivalore</strong></td><td>Tabella separata con FK all'entità e il valore come colonna</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Dipendenze funzionali e anomalie <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p>Una <strong>dipendenza funzionale</strong> A → B significa: dato un valore di A, esiste uno e un solo valore di B corrispondente. A è il determinante, B il dipendente.</p>
+        <p>Le anomalie emergono quando uno schema non è ben normalizzato:</p>
+        <ul>
+          <li><strong>Anomalia di inserimento:</strong> impossibile inserire dati senza informazioni ridondanti obbligatorie. Es. non si può inserire un nuovo prodotto senza avere almeno un ordine.</li>
+          <li><strong>Anomalia di cancellazione:</strong> cancellando un record si perdono accidentalmente altre informazioni. Es. eliminando l'unico ordine di un fornitore si perdono i suoi dati.</li>
+          <li><strong>Anomalia di aggiornamento:</strong> un dato è ripetuto in più righe; modificandone solo alcune si crea inconsistenza. Es. cambio indirizzo cliente in una riga su dieci.</li>
+        </ul>
+        <p>La soluzione alle anomalie è la <strong>normalizzazione</strong>.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ NORMALIZZAZIONE ══ -->
+<section class="section" id="normalizzazione">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 04</div>
+      <h2>Normalizzazione — 1NF, 2NF, 3NF</h2>
+    </div>
+    <p class="section-sub">Processo di ristrutturazione per eliminare ridondanze e anomalie.</p>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Prima Forma Normale (1NF) <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p><strong>Regola:</strong> ogni attributo deve essere <strong>atomico</strong> (un solo valore, non divisibile). Nessun gruppo ripetuto. Deve esistere una chiave primaria.</p>
+        <div class="grid-2">
+          <div>
+            <p><strong>Viola la 1NF:</strong></p>
+            <table>
+              <thead><tr><th>ID</th><th>Nome</th><th>Telefoni</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Mario</td><td>333-111, 02-9999</td></tr>
+              </tbody>
+            </table>
+            <p>Telefoni contiene più valori → non atomico.</p>
+          </div>
+          <div>
+            <p><strong>Rispetta la 1NF:</strong></p>
+            <table>
+              <thead><tr><th>ID</th><th>Nome</th><th>Telefono</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Mario</td><td>333-111</td></tr>
+                <tr><td>1</td><td>Mario</td><td>02-9999</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Seconda Forma Normale (2NF) <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p><strong>Regola:</strong> soddisfa 1NF + ogni attributo non-chiave dipende dall'<strong>intera</strong> chiave primaria (nessuna dipendenza parziale). Si applica quando la PK è composta.</p>
+        <p>Dipendenza parziale: un attributo non-chiave dipende da <em>parte</em> della PK composta.</p>
+        <div class="grid-2">
+          <div>
+            <p><strong>Viola la 2NF:</strong></p>
+            <table>
+              <thead><tr><th>id_ord</th><th>id_prod</th><th>qta</th><th>nome_prod</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>10</td><td>3</td><td>Penna</td></tr>
+              </tbody>
+            </table>
+            <p>PK = {id_ord, id_prod}. Ma nome_prod dipende solo da id_prod → dipendenza parziale.</p>
+          </div>
+          <div>
+            <p><strong>Rispetta la 2NF:</strong></p>
+            <table>
+              <thead><tr><th>id_ord</th><th>id_prod</th><th>qta</th></tr></thead>
+              <tbody><tr><td>1</td><td>10</td><td>3</td></tr></tbody>
+            </table>
+            <table>
+              <thead><tr><th>id_prod</th><th>nome_prod</th></tr></thead>
+              <tbody><tr><td>10</td><td>Penna</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Terza Forma Normale (3NF) <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p><strong>Regola:</strong> soddisfa 2NF + nessun attributo non-chiave dipende transitivamente da un altro attributo non-chiave (nessuna dipendenza transitiva).</p>
+        <p>Dipendenza transitiva: A → B e B → C implica A → C, ma B non è chiave.</p>
+        <div class="grid-2">
+          <div>
+            <p><strong>Viola la 3NF:</strong></p>
+            <table>
+              <thead><tr><th>id_dip</th><th>id_rep</th><th>nome_rep</th></tr></thead>
+              <tbody><tr><td>1</td><td>5</td><td>IT</td></tr></tbody>
+            </table>
+            <p>id_dip → id_rep → nome_rep. nome_rep dipende da id_rep, non direttamente dalla PK.</p>
+          </div>
+          <div>
+            <p><strong>Rispetta la 3NF:</strong></p>
+            <table>
+              <thead><tr><th>id_dip</th><th>id_rep</th></tr></thead>
+              <tbody><tr><td>1</td><td>5</td></tr></tbody>
+            </table>
+            <table>
+              <thead><tr><th>id_rep</th><th>nome_rep</th></tr></thead>
+              <tbody><tr><td>5</td><td>IT</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ PROGETTAZIONE FISICA ══ -->
+<section class="section" id="fisica">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 05</div>
+      <h2>Progettazione Fisica — Implementazione MySQL</h2>
+    </div>
+
+    <p>La progettazione fisica traduce lo schema logico in SQL concreto, scegliendo tipi di dato, vincoli e strategie di ottimizzazione.</p>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Criteri di scelta dei tipi di dato <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <table>
+          <thead><tr><th>Cosa rappresenta</th><th>Tipo consigliato</th><th>Motivo</th></tr></thead>
+          <tbody>
+            <tr><td>Identificatori auto-incrementali</td><td>INT UNSIGNED AUTO_INCREMENT</td><td>Senza segno → range doppio (0 a 4 miliardi)</td></tr>
+            <tr><td>ID di tabelle grandi</td><td>BIGINT UNSIGNED</td><td>Per sistemi con miliardi di record</td></tr>
+            <tr><td>Testo corto (nome, città)</td><td>VARCHAR(n)</td><td>n = lunghezza massima prevista + margine</td></tr>
+            <tr><td>Testo lungo (descrizione, bio)</td><td>TEXT</td><td>No indice diretto; per testi &gt; 255 char</td></tr>
+            <tr><td>Importi monetari</td><td>DECIMAL(10,2)</td><td>MAI FLOAT (arrotondamenti!); precisione esatta</td></tr>
+            <tr><td>Solo data</td><td>DATE</td><td>YYYY-MM-DD; più efficiente di DATETIME</td></tr>
+            <tr><td>Data e ora</td><td>DATETIME</td><td>o TIMESTAMP (auto-aggiornamento, fuso orario)</td></tr>
+            <tr><td>Flag sì/no</td><td>TINYINT(1) o BOOLEAN</td><td>0=false, 1=true</td></tr>
+            <tr><td>Valori da lista fissa</td><td>ENUM('A','B','C')</td><td>Efficiente, ma difficile da modificare</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Esempio completo di schema fisico da E/R <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p>Schema logico: Studente(id, nome, cognome, email) — Corso(id, titolo, ore) — Iscrizione(id_stud FK, id_corso FK, data_iscr, voto_finale)</p>
+        <pre style="font-size:.82rem;">CREATE TABLE Studenti (
+    id        INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome      VARCHAR(50)  NOT NULL,
+    cognome   VARCHAR(50)  NOT NULL,
+    email     VARCHAR(100) NOT NULL UNIQUE,
+    data_nasc DATE,
+    creato_il TIMESTAMP    DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE Corsi (
+    id     INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    titolo VARCHAR(100) NOT NULL,
+    ore    SMALLINT     NOT NULL CHECK (ore > 0),
+    attivo TINYINT(1)   NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE Iscrizioni (
+    id_studente INT UNSIGNED NOT NULL,
+    id_corso    INT UNSIGNED NOT NULL,
+    data_iscr   DATE         NOT NULL DEFAULT (CURDATE()),
+    voto_finale DECIMAL(5,2) CHECK (voto_finale BETWEEN 18 AND 30),
+    PRIMARY KEY (id_studente, id_corso),
+    FOREIGN KEY (id_studente) REFERENCES Studenti(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_corso)    REFERENCES Corsi(id)    ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Indici per ottimizzare le query frequenti
+CREATE INDEX idx_iscrizioni_corso ON Iscrizioni(id_corso);
+CREATE INDEX idx_studenti_cognome ON Studenti(cognome);</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ MINI-QUIZ ══ -->
+<section class="section" id="quiz-mini">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 06</div>
+      <h2>Mini-quiz · Progettazione DB</h2>
+    </div>
+
+    <div class="quiz">
+      <span class="quiz-lbl">Quiz inline · Modulo 6</span>
+      <h3>Rispondi alle domande</h3>
+
+      <div class="qd" data-correct="1">
+        <p class="q">1. Un'associazione N:N nel modello E/R si traduce nel modello relazionale con:</p>
+        <div class="qopts">
+          <button class="qo">Una FK nell'entità "molti"</button>
+          <button class="qo">Una tabella associativa (ponte) con PK composta dalle FK delle due entità</button>
+          <button class="qo">La fusione delle due entità in un'unica tabella</button>
+          <button class="qo">Due FK nelle rispettive entità originali</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="2">
+        <p class="q">2. La 2NF richiede che ogni attributo non-chiave:</p>
+        <div class="qopts">
+          <button class="qo">Sia atomico (un solo valore per attributo)</button>
+          <button class="qo">Non dipenda da un altro attributo non-chiave (no dipendenze transitive)</button>
+          <button class="qo">Dipenda dall'INTERA chiave primaria, non solo da una parte di essa</button>
+          <button class="qo">Sia obbligatoriamente NOT NULL</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="0">
+        <p class="q">3. Un'entità debole nel modello E/R è:</p>
+        <div class="qopts">
+          <button class="qo">Un'entità che non ha attributi sufficienti per identificarsi autonomamente — dipende da un'entità forte</button>
+          <button class="qo">Un'entità con pochi attributi rispetto alle altre</button>
+          <button class="qo">Un'entità che partecipa a poche associazioni</button>
+          <button class="qo">Un'entità senza chiave primaria nello schema fisico</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="3">
+        <p class="q">4. L'anomalia di aggiornamento avviene quando:</p>
+        <div class="qopts">
+          <button class="qo">Non si può inserire un record senza dati non pertinenti</button>
+          <button class="qo">Cancellando un record si perdono accidentalmente altre informazioni</button>
+          <button class="qo">Una query SELECT restituisce troppi dati</button>
+          <button class="qo">Un dato è ripetuto in più righe: modificarne solo alcune crea inconsistenza</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="1">
+        <p class="q">5. Per rappresentare importi monetari in MySQL, il tipo di dato corretto è:</p>
+        <div class="qopts">
+          <button class="qo">FLOAT — la massima precisione disponibile</button>
+          <button class="qo">DECIMAL(p,s) — precisione esatta, senza arrotondamenti in virgola mobile</button>
+          <button class="qo">VARCHAR — converte in numero solo quando necessario</button>
+          <button class="qo">DOUBLE — più preciso di FLOAT</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="2">
+        <p class="q">6. Nel diagramma E/R, una generalizzazione ISA indica che:</p>
+        <div class="qopts">
+          <button class="qo">Le entità figlie sono completamente indipendenti dal padre</button>
+          <button class="qo">Il padre eredita gli attributi delle figlie</button>
+          <button class="qo">Le entità figlie "sono un tipo di" padre: ereditano i suoi attributi e ne aggiungono di propri</button>
+          <button class="qo">Il padre contiene le PK di tutte le figlie</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -20,9 +20,7 @@
     </div>
     <nav class="topbar-nav topbar-links">
       <a class="topbar-link active" href="argomenti.html">Argomenti</a>
-      <a class="topbar-link" href="moduli.html">Moduli</a>
       <a class="topbar-link" href="mappe.html">Mappe</a>
-      <a class="topbar-link" href="timeline.html">Timeline</a>
       <a class="topbar-link" href="flashcard.html">Flashcard</a>
       <a class="topbar-link cta" href="quiz.html">Quiz</a>
     </nav>
@@ -33,7 +31,7 @@
     <div class="hero-banner-inner">
       <div class="eyebrow">Home → Argomenti</div>
       <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Argomenti</h1>
-      <p class="hero-banner-sub">Programma svolto — a.s. 2025/2026</p>
+      <p class="hero-banner-sub">Sei moduli — programma svolto a.s. 2025/2026</p>
     </div>
   </div>
 
@@ -41,172 +39,73 @@
   <div class="page-layout">
 
     <aside class="page-sidebar">
-      <div class="page-sidebar-title">Indice</div>
+      <div class="page-sidebar-title">Moduli</div>
 
-      <div class="sidebar-section-label">Moduli</div>
-      <a class="page-sidebar-item" href="#mod1">M1 · Basi di Dati</a>
-      <a class="page-sidebar-item" href="#mod2">M2 · PHP</a>
-      <a class="page-sidebar-item" href="#mod3">M3 · JavaScript</a>
-      <a class="page-sidebar-item" href="#mod4">M4 · SQL</a>
-      <a class="page-sidebar-item" href="#mod5">M5 · App Web</a>
-      <a class="page-sidebar-item" href="#mod6">M6 · Progettazione DB</a>
+      <a class="page-sidebar-item" href="modulo-basi-db.html">M1 · Basi di Dati</a>
+      <a class="page-sidebar-item" href="modulo-php.html">M2 · PHP</a>
+      <a class="page-sidebar-item" href="modulo-javascript.html">M3 · JavaScript</a>
+      <a class="page-sidebar-item" href="modulo-sql.html">M4 · SQL</a>
+      <a class="page-sidebar-item" href="modulo-webapp.html">M5 · App Web</a>
+      <a class="page-sidebar-item" href="modulo-progettazione.html">M6 · Progettazione DB</a>
     </aside>
 
     <!-- Main content -->
     <main class="page-main">
 
-      <!-- MODULO 1 -->
-      <div id="mod1" class="section-header" style="margin-top:0;">
-        <div class="section-tag">Modulo 1</div>
-      </div>
-      <div class="authors-grid ai">
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">DB</span>
-          <div class="author-card-meta">M1 · Algebra Relazionale</div>
-          <div class="author-card-name">Introduzione ai DB<br><em>e Algebra Relazionale</em></div>
-          <div class="author-card-tagline">Sistema informatico e informativo. DBMS, modello relazionale, architettura ANSI/SPARC.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">R</span>
-          <div class="author-card-meta">Struttura della relazione</div>
-          <div class="author-card-name">Attributi, Tuple<br><em>e Vincoli</em></div>
-          <div class="author-card-tagline">Grado, cardinalità, schema e istanza. Superchiavi, chiavi candidate, primarie ed esterne. Vincoli di integrità.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">∩</span>
-          <div class="author-card-meta">Algebra Relazionale</div>
-          <div class="author-card-name">Operatori<br><em>Insiemistici e Relazionali</em></div>
-          <div class="author-card-tagline">Unione, intersezione, differenza, prodotto cartesiano. Selezione, proiezione, join. Collegamento con SQL.</div>
-        </div>
-      </div>
+      <div class="authors-grid ai" style="margin-top:0;">
 
-      <hr class="divider-gold">
+        <a class="author-card" href="modulo-basi-db.html">
+          <span class="author-card-initial">01</span>
+          <div class="author-card-meta">Modulo 1</div>
+          <div class="author-card-name">Basi di Dati<br><em>e Algebra Relazionale</em></div>
+          <div class="author-card-tagline">DBMS, architettura ANSI/SPARC, relazioni, chiavi, vincoli, algebra relazionale e collegamento con SQL.</div>
+          <div class="author-card-cta link-arrow">Studia →</div>
+        </a>
 
-      <!-- MODULO 2 -->
-      <div id="mod2" class="section-header">
-        <div class="section-tag">Modulo 2</div>
-      </div>
-      <div class="authors-grid ai d2">
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">PHP</span>
-          <div class="author-card-meta">M2 · Server-side</div>
+        <a class="author-card" href="modulo-php.html">
+          <span class="author-card-initial">02</span>
+          <div class="author-card-meta">Modulo 2</div>
           <div class="author-card-name">PHP<br><em>lato server</em></div>
-          <div class="author-card-tagline">Architettura client/server. Sintassi: variabili, costanti, tipi, operatori, scope, superglobali.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">[]</span>
-          <div class="author-card-meta">Strutture dati e controllo</div>
-          <div class="author-card-name">Array e Strutture<br><em>di Controllo</em></div>
-          <div class="author-card-tagline">if, switch, for, while, foreach. Array indicizzati e associativi. Funzioni personalizzate e anonime.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">🔒</span>
-          <div class="author-card-meta">Form, sessioni, sicurezza</div>
-          <div class="author-card-name">Form, Cookie<br><em>e Autenticazione</em></div>
-          <div class="author-card-tagline">GET e POST, cookie e sessioni, hashing password, MySQLi, JSON, gestione file, espressioni regolari.</div>
-        </div>
-      </div>
+          <div class="author-card-tagline">Architettura client/server, sintassi PHP, array, form GET/POST, sessioni, autenticazione, MySQLi, JSON.</div>
+          <div class="author-card-cta link-arrow">Studia →</div>
+        </a>
 
-      <hr class="divider-gold">
-
-      <!-- MODULO 3 -->
-      <div id="mod3" class="section-header">
-        <div class="section-tag">Modulo 3</div>
-      </div>
-      <div class="authors-grid ai d3">
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">JS</span>
-          <div class="author-card-meta">M3 · Client-side</div>
+        <a class="author-card" href="modulo-javascript.html">
+          <span class="author-card-initial">03</span>
+          <div class="author-card-meta">Modulo 3</div>
           <div class="author-card-name">JavaScript<br><em>lato client</em></div>
-          <div class="author-card-tagline">Variabili (var/let/const), array, oggetti, strutture di controllo, funzioni, eventi.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">⊞</span>
-          <div class="author-card-meta">DOM e manipolazione</div>
-          <div class="author-card-name">DOM e Contenuti<br><em>Dinamici</em></div>
-          <div class="author-card-tagline">Selezione e modifica elementi HTML. Creazione/rimozione dinamica. Tabelle dinamiche. Validazione form.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">⟷</span>
-          <div class="author-card-meta">AJAX e JSON</div>
-          <div class="author-card-name">AJAX e Chiamate<br><em>Asincrone</em></div>
-          <div class="author-card-tagline">XMLHttpRequest, chiamate asincrone, JSON per scambio dati, aggiornamento dinamico senza ricaricamento.</div>
-        </div>
+          <div class="author-card-tagline">DOM, eventi, manipolazione HTML dinamica, tabelle, XMLHttpRequest, AJAX, JSON, validazione, debugging.</div>
+          <div class="author-card-cta link-arrow">Studia →</div>
+        </a>
+
       </div>
 
-      <hr class="divider-gold">
+      <div class="authors-grid ai d2" style="margin-top:2rem;">
 
-      <!-- MODULO 4 -->
-      <div id="mod4" class="section-header">
-        <div class="section-tag">Modulo 4</div>
-      </div>
-      <div class="authors-grid ai">
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">SQL</span>
-          <div class="author-card-meta">M4 · DDL e DML</div>
+        <a class="author-card" href="modulo-sql.html">
+          <span class="author-card-initial">04</span>
+          <div class="author-card-meta">Modulo 4</div>
           <div class="author-card-name">SQL<br><em>DDL e DML</em></div>
-          <div class="author-card-tagline">CREATE, ALTER, DROP, TRUNCATE. INSERT, UPDATE, DELETE. Tipi di dato, vincoli, NULL.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">∑</span>
-          <div class="author-card-meta">Interrogazioni avanzate</div>
-          <div class="author-card-name">SELECT avanzato<br><em>e Aggregazioni</em></div>
-          <div class="author-card-tagline">WHERE, ORDER BY, GROUP BY, HAVING, LIMIT, DISTINCT. COUNT, SUM, AVG. Funzioni MySQL su numeri, stringhe, date.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">⋈</span>
-          <div class="author-card-meta">JOIN e subquery</div>
-          <div class="author-card-name">JOIN e Query<br><em>Annidate</em></div>
-          <div class="author-card-tagline">INNER/LEFT JOIN, subquery, ANY/ALL/IN/BETWEEN, UNION, viste, trigger, stored procedure, indici.</div>
-        </div>
-      </div>
+          <div class="author-card-tagline">CREATE/ALTER/DROP, SELECT avanzato, JOIN, subquery, funzioni di aggregazione, viste, trigger, stored procedure.</div>
+          <div class="author-card-cta link-arrow">Studia →</div>
+        </a>
 
-      <hr class="divider-gold">
-
-      <!-- MODULO 5 -->
-      <div id="mod5" class="section-header">
-        <div class="section-tag">Modulo 5</div>
-      </div>
-      <div class="authors-grid ai d2">
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">⚙</span>
-          <div class="author-card-meta">M5 · Integrazione</div>
+        <a class="author-card" href="modulo-webapp.html">
+          <span class="author-card-initial">05</span>
+          <div class="author-card-meta">Modulo 5</div>
           <div class="author-card-name">Applicazioni Web<br><em>Integrate</em></div>
-          <div class="author-card-tagline">PHP + JavaScript + AJAX + JSON + MySQL. Sviluppo applicazioni web dinamiche. Viste SQL. Sicurezza.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">✏</span>
-          <div class="author-card-meta">Seconda prova</div>
-          <div class="author-card-name">Preparazione<br><em>Esame di Stato</em></div>
-          <div class="author-card-tagline">Progettazione e sviluppo software. Esercitazioni su temi d'esame. Integrazione di tutte le tecnologie.</div>
-        </div>
-      </div>
+          <div class="author-card-tagline">Stack PHP+JS+AJAX+JSON+MySQL. Sicurezza: SQL injection, XSS, session hijacking. CRUD. Seconda prova.</div>
+          <div class="author-card-cta link-arrow">Studia →</div>
+        </a>
 
-      <hr class="divider-gold">
+        <a class="author-card" href="modulo-progettazione.html">
+          <span class="author-card-initial">06</span>
+          <div class="author-card-meta">Modulo 6</div>
+          <div class="author-card-name">Progettazione DB<br><em>concettuale, logica e fisica</em></div>
+          <div class="author-card-tagline">Diagramma E/R, entità deboli, gerarchie ISA, traduzione, normalizzazione 1NF/2NF/3NF, implementazione MySQL.</div>
+          <div class="author-card-cta link-arrow">Studia →</div>
+        </a>
 
-      <!-- MODULO 6 -->
-      <div id="mod6" class="section-header">
-        <div class="section-tag">Modulo 6</div>
-      </div>
-      <div class="authors-grid ai d3">
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">E/R</span>
-          <div class="author-card-meta">M6 · Progettazione concettuale</div>
-          <div class="author-card-name">Diagramma E/R<br><em>e analisi</em></div>
-          <div class="author-card-tagline">Entità, attributi, associazioni, cardinalità. Associazioni 1:N, N:N, unarie, multiple. Entità deboli. ISA.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">⊡</span>
-          <div class="author-card-meta">Progettazione logica</div>
-          <div class="author-card-name">Schema Relazionale<br><em>e Normalizzazione</em></div>
-          <div class="author-card-tagline">Traduzione E/R → relazionale. Dipendenze funzionali, ridondanze, anomalie. 1NF, 2NF, 3NF.</div>
-        </div>
-        <div class="author-card" style="cursor:default;">
-          <span class="author-card-initial">🗄</span>
-          <div class="author-card-meta">Progettazione fisica</div>
-          <div class="author-card-name">Implementazione<br><em>MySQL</em></div>
-          <div class="author-card-tagline">Creazione tabelle con vincoli SQL, tipi di dato, phpMyAdmin, HeidiSQL. Esercitazioni su temi d'esame.</div>
-        </div>
       </div>
 
     </main>
@@ -214,8 +113,8 @@
 
   <footer class="site-footer">
     <div class="footer-quote-final">
-      «La progettazione precede l'implementazione. Il modello precede il codice.»
-      <cite>— Principio di informatica</cite>
+      «La comprensione viene prima della memorizzazione: capisci il perché, ricorderai il come.»
+      <cite>— Informatica · Maturità 2025–26</cite>
     </div>
   </footer>
 
