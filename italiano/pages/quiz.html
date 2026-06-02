@@ -55,7 +55,25 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:2rem;max-width:1080px;">
 
       <!-- AUTORI -->
-      <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding-bottom:.5rem;border-bottom:1px solid var(--rule);">Autori</div>
+      <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding-bottom:.5rem;border-bottom:1px solid var(--rule);">Autori · Ottocento</div>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('carducci')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">C</span>
+        <div class="author-card-meta">Odi barbare · Nobel 1906</div>
+        <div class="author-card-name">Giosuè<br><em>Carducci</em></div>
+        <div class="author-card-cta" id="best-carducci"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding:.8rem 0 .5rem;border-bottom:1px solid var(--rule);margin-top:.5rem;">Autori · Novecento</div>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('marinetti')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">M</span>
+        <div class="author-card-meta">Manifesto · paroliberismo</div>
+        <div class="author-card-name">Filippo Tommaso<br><em>Marinetti</em></div>
+        <div class="author-card-cta" id="best-marinetti"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
 
       <button class="author-card" onclick="QuizApp.openAuthorPanel('saba')" style="cursor:pointer;text-align:left;">
         <span class="author-card-initial">S</span>
@@ -129,6 +147,24 @@
         <div class="author-card-cta">Avvia quiz →</div>
       </button>
 
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('quasimodo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">Q</span>
+        <div class="author-card-meta">Ed è subito sera · Nobel</div>
+        <div class="author-card-name">Salvatore<br><em>Quasimodo</em></div>
+        <div class="author-card-cta" id="best-quasimodo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding:.8rem 0 .5rem;border-bottom:1px solid var(--rule);margin-top:.5rem;">Autori · Secondo Novecento</div>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('fenoglio')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">F</span>
+        <div class="author-card-meta">Resistenza anti-retorica</div>
+        <div class="author-card-name">Beppe<br><em>Fenoglio</em></div>
+        <div class="author-card-cta" id="best-fenoglio"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
       <button class="author-card" onclick="QuizApp.openAuthorPanel('pavese')" style="cursor:pointer;text-align:left;">
         <span class="author-card-initial">P</span>
         <div class="author-card-meta">Luna e falò · mito</div>
@@ -155,6 +191,14 @@
 
       <!-- CORRENTI -->
       <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding:.8rem 0 .5rem;border-bottom:1px solid var(--rule);margin-top:1.5rem;">Correnti letterarie</div>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('carduccianesimo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">C</span>
+        <div class="author-card-meta">Carducci · classicismo civile</div>
+        <div class="author-card-name">Il <em>Carduccianesimo</em></div>
+        <div class="author-card-cta" id="best-carduccianesimo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
 
       <button class="author-card" onclick="QuizApp.openAuthorPanel('naturalismo')" style="cursor:pointer;text-align:left;">
         <span class="author-card-initial">N</span>
@@ -375,6 +419,11 @@
 
 <!-- ══ DATI QUIZ — AUTORI ══ -->
 <script src="../js/quiz-data.js"></script>
+<script src="../js/carducci-quiz-data.js"></script>
+<script src="../js/carduccianesimo-quiz-data.js"></script>
+<script src="../js/marinetti-quiz-data.js"></script>
+<script src="../js/quasimodo-quiz-data.js"></script>
+<script src="../js/fenoglio-quiz-data.js"></script>
 <script src="../js/pascoli-quiz-data.js"></script>
 <script src="../js/verga-quiz-data.js"></script>
 <script src="../js/campana-quiz-data.js"></script>

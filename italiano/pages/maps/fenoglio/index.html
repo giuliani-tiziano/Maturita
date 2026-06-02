@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beppe Fenoglio — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .map-overlay { display: none; position: fixed; inset: 0; background: rgba(28,16,16,.55); z-index: 500; align-items: center; justify-content: center; padding: 1rem; }
+    .map-overlay.show { display: flex; }
+    .map-modal { background: var(--paper); border: 1px solid var(--bordeaux-mid); padding: 2rem 2rem 1.5rem; max-width: 480px; width: 100%; max-height: 80vh; overflow-y: auto; position: relative; }
+    .modal-close { position: absolute; top: .8rem; right: 1rem; font-family: var(--serif); font-size: 1.4rem; color: var(--ink-soft); background: none; border: none; cursor: pointer; line-height: 1; }
+    .modal-close:hover { color: var(--bordeaux-deep); }
+    .modal-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: .5rem; }
+    .modal-title { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.6rem; color: var(--bordeaux-deep); margin-bottom: .8rem; line-height: 1.1; }
+    .modal-text { font-family: var(--sans); font-weight: 300; font-size: .92rem; color: var(--ink-soft); line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../quasimodo/index.html'">Mappa Quasimodo</button>
+      <button class="nav-btn" onclick="location.href='../pavese/index.html'">Mappa Pavese</button>
+      <button class="nav-btn active">Mappa Fenoglio</button>
+      <button class="nav-btn" onclick="location.href='../pasolini/index.html'">Mappa Pasolini</button>
+      <button class="nav-btn" onclick="location.href='../calvino/index.html'">Mappa Calvino</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Beppe <em>Fenoglio</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: vita, poetica, opere, testi e confronti.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:760px;width:max(100%, 1400px);margin:0 auto;" aria-label="Mappa WBS Beppe Fenoglio">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <g transform="translate(260,0)">
+
+          <path d="M 225,438 C 271,438 319,100 319,100" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,269 319,269" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,438 319,438" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,606 319,606" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,775 319,775" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <path d="M 519,100 C 584,100 650,71 650,71" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,100 C 584,100 650,129 650,129" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,211 650,211" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,269 650,269" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,326 650,326" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,409 650,409" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,466 650,466" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,549 650,549" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,606 650,606" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,664 650,664" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,775 C 584,775 650,746 650,746" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,775 C 584,775 650,804 650,804" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="25" y="400" width="200" height="75" rx="7"/>
+            <text>
+              <tspan x="125" y="434" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">Beppe Fenoglio</tspan>
+              <tspan x="125" y="454" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">1922 — 1963</tspan>
+            </text>
+          </g>
+
+          <!-- L1 -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button"><rect x="319" y="72" width="200" height="55" rx="5"/><text><tspan x="419" y="106" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button"><rect x="319" y="241" width="200" height="55" rx="5"/><text><tspan x="419" y="275" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button"><rect x="319" y="410" width="200" height="55" rx="5"/><text><tspan x="419" y="444" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · OPERE</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button"><rect x="319" y="578" width="200" height="55" rx="5"/><text><tspan x="419" y="613" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button"><rect x="319" y="747" width="200" height="55" rx="5"/><text><tspan x="419" y="781" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text></g>
+
+          <!-- L2 - VITA -->
+          <g class="node node-l2" onclick="showNode('vita-alba')" tabindex="0" role="button"><rect x="650" y="48" width="238" height="48" rx="4"/><text><tspan x="769" y="68" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Alba 1922 — morte 1963</tspan><tspan x="769" y="86" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">40 anni · postumo: lavori incompiuti</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('vita-resistenza')" tabindex="0" role="button"><rect x="650" y="105" width="238" height="48" rx="4"/><text><tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Resistenza nelle Langhe 1943-45</tspan><tspan x="769" y="143" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Garibaldi poi Badogliane · 23 giorni</tspan></text></g>
+
+          <!-- L2 - POETICA -->
+          <g class="node node-l2" onclick="showNode('poetica-antiretorica')" tabindex="0" role="button"><rect x="650" y="188" width="238" height="48" rx="4"/><text><tspan x="769" y="208" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Anti-retorica resistenziale</tspan><tspan x="769" y="226" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">partigiani con paura · nessun eroe</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-anglosassone')" tabindex="0" role="button"><rect x="650" y="245" width="238" height="48" rx="4"/><text><tspan x="769" y="265" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Influenza anglosassone</tspan><tspan x="769" y="283" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Hemingway iceberg · Conrad morale</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-langhe')" tabindex="0" role="button"><rect x="650" y="302" width="238" height="48" rx="4"/><text><tspan x="769" y="322" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Le Langhe come paesaggio morale</tspan><tspan x="769" y="340" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">come Hardy il Wessex · non pittoresco</tspan></text></g>
+
+          <!-- L2 - OPERE -->
+          <g class="node node-l2" onclick="showNode('opere-ventitre')" tabindex="0" role="button"><rect x="650" y="385" width="238" height="48" rx="4"/><text><tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">I ventitre giorni (1952)</tspan><tspan x="769" y="423" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">esordio Einaudi · ironia tragicomica</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('opere-questione')" tabindex="0" role="button"><rect x="650" y="442" width="238" height="48" rx="4"/><text><tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Una questione privata (1963)</tspan><tspan x="769" y="480" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">IL CAPOLAVORO · Milton · Fulvia · Calvino</tspan></text></g>
+
+          <!-- L2 - TESTI -->
+          <g class="node node-l2" onclick="showNode('testi-incipit23')" tabindex="0" role="button"><rect x="650" y="525" width="238" height="48" rx="4"/><text><tspan x="769" y="545" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Incipit I ventitre giorni</tspan><tspan x="769" y="563" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">ironia · neve · rancore gente di Alba</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-incipitq')" tabindex="0" role="button"><rect x="650" y="582" width="238" height="48" rx="4"/><text><tspan x="769" y="602" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Incipit Una questione privata</tspan><tspan x="769" y="620" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">nebbia · villa evanescente · rivedere</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-johnny')" tabindex="0" role="button"><rect x="650" y="640" width="238" height="48" rx="4"/><text><tspan x="769" y="660" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Brano Partigiano Johnny</tspan><tspan x="769" y="678" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">dialogo hemingwayano · ellissi</tspan></text></g>
+
+          <!-- L2 - CONFRONTI -->
+          <g class="node node-l2" onclick="showNode('confronti-calvino')" tabindex="0" role="button"><rect x="650" y="722" width="238" height="48" rx="4"/><text><tspan x="769" y="742" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Fenoglio vs Calvino</tspan><tspan x="769" y="760" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">immersione vs straniamento Pin</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('confronti-pavese')" tabindex="0" role="button"><rect x="650" y="780" width="238" height="48" rx="4"/><text><tspan x="769" y="800" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Fenoglio vs Pavese</tspan><tspan x="769" y="818" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Langhe concrete vs mito/nostalgia</tspan></text></g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'Beppe Fenoglio', text: 'Beppe Fenoglio (1922–1963) nasce e muore ad Alba. Resistenza nelle Langhe (1943-45). Esordio con Einaudi nel 1952. Muore a 40 anni lasciando opere incompiute. Anti-retorica resistenziale, influenza anglosassone (Hemingway, Conrad), lingua «fenogliana» ibrida. Una questione privata è il capolavoro.' },
+      vita: { label: 'Categoria', title: 'Vita', text: 'Nasce il 1° marzo 1922 ad Alba (Cuneo). Formazione letteraria anglosassone (Shakespeare, Hemingway, Conrad) al liceo. Resistenza nelle Langhe 1943-45 (Garibaldi poi Badogliane). Esordio con Einaudi 1952. La malora (1954). Primavera di bellezza (1959). Muore il 18 febbraio 1963 a 40 anni.' },
+      poetica: { label: 'Categoria', title: 'Poetica', text: 'Anti-retorica: partigiani con paura ed errori, nessun eroe convenzionale. Influenza anglosassone: Hemingway (iceberg, dialogo per ellissi), Conrad (avventura morale). Il «fenogliano»: italiano + dialetto piemontese + calchi inglesi + arcaismi. Le Langhe come paesaggio morale (come Hardy il Wessex).' },
+      opere: { label: 'Categoria', title: 'Opere', text: 'I ventitre giorni della città di Alba (1952): esordio, ironia tragicomica. La malora (1954): vita contadina. Primavera di bellezza (1959): 8 settembre 1943. Una questione privata (1963, postumo): il capolavoro — Milton/Fulvia/Fulvio. Il partigiano Johnny (1968, postumo): due versioni, Lorenzo Mondo curatore.' },
+      testi: { label: 'Categoria', title: 'Testi', text: 'I ventitre giorni (incipit): ironia sul periodo di 23 giorni, neve che sopravanza la storia. Una questione privata (incipit): nebbia = incertezza su Fulvia, villa evanescente già memoria. Partigiano Johnny: dialogo hemingwayano («Vengono. Quanti? Tanti.»), fenomenologia dell\'azione, stelle indifferenti.' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'Fenoglio vs Calvino: immersione diretta vs straniamento Pin bambino; anti-retorico asciutto vs simbolico-letterario; Hemingway+Conrad vs Stevenson+Ariosto. Fenoglio vs Pavese: Langhe come paesaggio morale concreto vs mito/nostalgia; Resistenza come presente vs sfondo già passato; Hemingway vs Anderson.' },
+      'vita-alba': { label: 'Vita', title: 'Alba 1922 — morte 1963', text: 'Nasce il 1° marzo 1922 ad Alba, Cuneo, nel cuore delle Langhe. Figlio di un salumiere. Muore il 18 febbraio 1963, a soli 40 anni, stroncato da un tumore ai polmoni mentre lavora a Una questione privata e Il partigiano Johnny. La morte prematura lascia un\'opera incompiuta che diventa essa stessa simbolo.' },
+      'vita-resistenza': { label: 'Vita', title: 'Resistenza nelle Langhe 1943-45', text: 'Dopo l\'8 settembre 1943 si unisce alla Resistenza. Prima nelle Brigate Garibaldi (comuniste), poi nelle Brigate Badogliane (monarchiche). Questa doppia esperienza alimenta la complessità morale delle sue narrazioni. Il «fatto di Alba» (23 giorni, ottobre-novembre 1945) è il nucleo del primo racconto.' },
+      'poetica-antiretorica': { label: 'Poetica', title: 'Anti-retorica resistenziale', text: 'La Resistenza viene spesso raccontata in chiave celebrativa. Fenoglio rompe questo schema: i suoi partigiani hanno paura, commettono errori, dubitano. Nessun eroe convenzionale, nessun martirologio glorioso. La guerra partigiana è avventura morale — come Conrad — non epopea.' },
+      'poetica-anglosassone': { label: 'Poetica', title: 'Influenza anglosassone', text: 'Hemingway: il principio dell\'iceberg (tutto ciò che non viene detto pesa quanto ciò che viene detto), dialoghi asciutti per ellissi. Conrad: l\'avventura come prova morale; ciò che conta non è la vittoria ma come si affronta la prova. Shakespeare: grandezza tragica e linguaggio aulico.' },
+      'poetica-langhe': { label: 'Poetica', title: 'Le Langhe come paesaggio morale', text: 'Come Thomas Hardy ha costruito il suo «Wessex» (Inghilterra rurale del Dorset), Fenoglio costruisce le sue Langhe come territorio narrativo con propria logica morale. Non sfondo pittoresco: le colline, i borghi, il Tanaro, i vigneti partecipano attivamente alla narrazione. Il paesaggio condiziona la guerra e la vita.' },
+      'opere-ventitre': { label: 'Opere', title: 'I ventitre giorni (1952)', text: 'La prima raccolta con Einaudi: racconti sulla Resistenza nelle Langhe. Il titolo ricorda la liberazione di Alba (10 ottobre 1945) e il suo abbandono dopo 23 giorni. Tono tragicomico: né celebrativo né sentimentale. I partigiani entrano ed escono da Alba senza combattere. La gente di Alba serba rancore: la Resistenza non sempre capita né apprezzata.' },
+      'opere-questione': { label: 'Opere', title: 'Una questione privata (1963)', text: 'IL CAPOLAVORO di Fenoglio, postumo 1963. Milton (partigiano) cerca di sapere se Fulvia — la ragazza che ama — ha avuto una relazione con Fulvio, suo compagno. La questione privata (amore) si svolge mentre imperversa la guerra: le due dimensioni si intensificano a vicenda. Calvino (prefazione 1968): «aveva quello che tutti cercavano».' },
+      'testi-incipit23': { label: 'Testi', title: 'Incipit I ventitre giorni', text: '«Se li fossero tenuti più a lungo, il mondo ne avrebbe certo saputo qualcosa»: ironia che relativizza l\'episodio. «Senza combattere, come c\'erano entrati»: simmetria tragicomica. «La gente di Alba le serba rancore»: il punto di vista della gente comune, non dei partigiani. Neve finale = il tempo naturale sopravanza la storia.' },
+      'testi-incipitq': { label: 'Testi', title: 'Incipit Una questione privata', text: 'La nebbia fisica è anche nebbia mentale: Milton non la vede eppure la fissa «come se lo sforzo potesse farle uno strappo». La villa appare «evanescente, quasi irreale»: già memoria, non realtà presente. «Non venuto per vedere la villa ma per rivederla»: Milton è prigioniero del passato. La Calvino prefazione 1968.' },
+      'testi-johnny': { label: 'Testi', title: 'Brano Partigiano Johnny', text: '«Vengono. — Quanti? — Non so. Tanti.»: dialogo hemingwayano di tre battute che contengono tutto. «Pensò: sarà dura. Poi smise di pensare e cominciò a correre»: la fenomenologia dell\'azione sotto pressione. Stelle «limpide e gelide»: natura indifferente. Verbi d\'azione concreti: nessuna introspezione esibita.' },
+      'confronti-calvino': { label: 'Confronti', title: 'Fenoglio vs Calvino', text: 'Resistenza: immersione diretta (Fenoglio) vs straniamento del bambino Pin (Calvino). Tono: anti-retorico asciutto (Fenoglio) vs simbolico-letterario con filtro fiaba (Calvino). Influenza: Hemingway+Conrad (Fenoglio) vs Stevenson+Ariosto+Neorealismo (Calvino). Lingua: fenogliano ibrido vs italiano letterario.' },
+      'confronti-pavese': { label: 'Confronti', title: 'Fenoglio vs Pavese', text: 'Langhe: paesaggio morale concreto che partecipa all\'azione (Fenoglio) vs mito e nostalgia simbolica del ritorno (Pavese). Resistenza: materia diretta e presente vivo (Fenoglio) vs sfondo già passato e mitizzato (Pavese). Stile: Hemingway — azione, dialogo (Fenoglio) vs Anderson, Dos Passos — dialogo interiore (Pavese).' }
+    };
+
+    function showNode(key) {
+      const node = NODES[key];
+      if (!node) return;
+      document.getElementById('tip-label').textContent = node.label || '';
+      document.getElementById('tip-title').textContent = node.title || '';
+      document.getElementById('tip-text').textContent = node.text || '';
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeTip() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeTip(); });
+  </script>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

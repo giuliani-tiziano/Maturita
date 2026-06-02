@@ -9,7 +9,9 @@
     verga: "Giovanni Verga", pascoli: "Giovanni Pascoli", dannunzio: "Gabriele D'Annunzio",
     pirandello: "Luigi Pirandello", svevo: "Italo Svevo", ungaretti: "Giuseppe Ungaretti",
     saba: "Umberto Saba", montale: "Eugenio Montale", campana: "Dino Campana",
-    pavese: "Cesare Pavese", pasolini: "Pier Paolo Pasolini", calvino: "Italo Calvino"
+    pavese: "Cesare Pavese", pasolini: "Pier Paolo Pasolini", calvino: "Italo Calvino",
+    carducci: "Giosuè Carducci", marinetti: "Filippo Tommaso Marinetti",
+    quasimodo: "Salvatore Quasimodo", fenoglio: "Beppe Fenoglio"
   };
 
   let deck = [];        // carte correnti (eventualmente mescolate)

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testi — Filippo Tommaso Marinetti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .testo-dual { display: grid; grid-template-columns: 55fr 45fr; gap: 2.5rem; margin: 2rem 0 3rem; align-items: start; }
+    .td-original { background: var(--beige-mid); padding: 1.5rem 1.8rem; }
+    .td-original-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-original p { font-family: var(--serif); font-size: 1rem; line-height: 1.85; color: var(--ink); margin: 0 0 1rem; font-weight: 400; }
+    .td-original p:last-child { margin-bottom: 0; }
+    .td-comment { padding: 0 0 0 1.8rem; border-left: 2px solid var(--bordeaux-mid); }
+    .td-comment-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-note { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(28,16,16,.12); }
+    .td-note:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .td-note strong { display: block; font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bordeaux-deep); margin-bottom: .35rem; }
+    .td-note p { font-size: .92rem; color: var(--ink-soft); line-height: 1.65; margin: 0; }
+    .testo-badge { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--paper); background: var(--bordeaux-deep); padding: .2rem .7rem; margin-bottom: 1.2rem; }
+    .testo-titolo { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.9rem; color: var(--bordeaux-deep); margin-bottom: .3rem; line-height: 1.1; }
+    .testo-meta { font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1.5rem; }
+    @media (max-width: 768px) { .testo-dual { grid-template-columns: 1fr; } .td-comment { padding-left: 0; border-left: none; border-top: 2px solid var(--bordeaux-mid); padding-top: 1.5rem; margin-top: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn active" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+    </div>
+  </nav>
+
+  <section class="section active" id="testi">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Step 04</div>
+        <h2>I testi: analisi <em>ravvicinata</em> <span class="badge">45 MIN</span></h2>
+      </div>
+      <p class="section-sub">Dal Manifesto fondatore al bombardamento di Adrianopoli: tre testi chiave del Futurismo.</p>
+
+      <div class="poem-tabs">
+        <button class="ptab active" onclick="showPoem('punti')">Manifesto — punti chiave</button>
+        <button class="ptab" onclick="showPoem('incipit')">Incipit del Manifesto</button>
+        <button class="ptab" onclick="showPoem('bombardamento')">Bombardamento</button>
+      </div>
+
+      <!-- PUNTI CHIAVE -->
+      <div id="poem-punti" class="poem-panel active">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Manifesto del Futurismo — I punti fondamentali</div>
+        <div class="testo-meta">Pubblicato su <em>Le Figaro</em>, Parigi · 20 febbraio 1909</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (punti selezionati)</span>
+            <p><strong>Punto 4:</strong> «Noi affermiamo che la magnificenza del mondo si è arricchita di una bellezza nuova: la bellezza della velocità. Un automobile da corsa col suo cofano adorno di grossi tubi simili a serpenti dall'alito esplosivo... è più bello della Vittoria di Samotracia.»</p>
+            <p><strong>Punto 7:</strong> «Non v'è più bellezza se non nella lotta. Nessuna opera che non abbia un carattere aggressivo può essere un capolavoro.»</p>
+            <p><strong>Punto 9:</strong> «Noi vogliamo glorificare la guerra — sola igiene del mondo.»</p>
+            <p><strong>Punto 10:</strong> «Noi vogliamo demolire i musei, le biblioteche, combattere il moralismo, il femminismo.»</p>
+            <p><strong>Punto 11:</strong> «Noi canteremo le grandi folle agitate dal lavoro, dal piacere o dalla sommossa.»</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Anafora «Noi vogliamo»</strong>
+              <p>La ripetizione martellante di «Noi vogliamo» e «Noi affermiamo» crea un ritmo quasi militare. Il plurale collettivo «Noi» costruisce l'identità del gruppo come soggetto storico.</p>
+            </div>
+            <div class="td-note">
+              <strong>Strategia retorica</strong>
+              <p>Il Manifesto usa una retorica deliberatamente estrema e provocatoria: ogni affermazione è portata all'assurdo per massimizzare l'impatto. Non è un programma politico letterale ma un atto performativo di rottura.</p>
+            </div>
+            <div class="td-note">
+              <strong>Pubblicazione su Le Figaro</strong>
+              <p>La scelta di pubblicare sulla prima pagina del più importante quotidiano francese — non su una rivista letteraria — è già un atto futurista: la letteratura esce dai circuiti specialistici ed entra nell'arena mediatica pubblica. La forma della comunicazione è già il messaggio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INCIPIT -->
+      <div id="poem-incipit" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Incipit del Manifesto — la notte in automobile</div>
+        <div class="testo-meta">Da <em>Manifesto del Futurismo</em> · 1909 · La cornice narrativa</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale (selezione)</span>
+            <p>Avevamo vegliato tutta la notte — i miei amici ed io — sotto le lampade di moschea dalle cupole di ottone traforato, stellate come le nostre anime, perché come queste irradiavano lo splendore di un cuore elettrico.</p>
+            <p>[...] Ci alzammo di un tratto, e ce ne andammo, soli, per le strade illuminate ad ogni crocicchio da livide luci. Poi ci fermammo dinanzi alle nostre automobili fumanti [...]</p>
+            <p>[...] Io mi distesi sul mio veicolo come un cadavere nella bara, ma subito mi ridestai sotto il volante, lama di ghigliottina che minacciava il mio stomaco. [...]</p>
+            <p>— Oh! materno fossato, quasi pieno di un'acqua fangosa! Bel fossato di officina! Io gustai avidamente la tua melma rinforzatrice, io ricordai il benedetto petto nero delle mie nutrici sudanesi!</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Ancora stile simbolista</strong>
+              <p>L'apertura con le «lampade di moschea», il tono notturno e prezioso, le immagini esotiche — tutto è ancora simbolista. Marinetti non nasce futurista: il Manifesto è la rottura con il proprio passato letterario.</p>
+            </div>
+            <div class="td-note">
+              <strong>L'automobile come divinità</strong>
+              <p>«Come un cadavere nella bara»: il corpo dell'uomo si fonde con la macchina. Il conducente non guida: è guidato. La macchina ha un'autonomia quasi divina; l'uomo vi si offre come sacrificio.</p>
+            </div>
+            <div class="td-note">
+              <strong>La cornice narrativa — preparazione emotiva</strong>
+              <p>L'incipit narrativo serve a trascinare emotivamente il lettore prima dei punti del Manifesto. Non è ornamento: è retorica. La storia della corsa notturna crea un climax che rende i punti seguenti emotivamente credibili.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOMBARDAMENTO -->
+      <div id="poem-bombardamento" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Bombardamento — da Zang Tumb Tuum</div>
+        <div class="testo-meta">Da <em>Zang Tumb Tuum</em> · 1914 · La battaglia di Adrianopoli (1912)</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (selezione)</span>
+            <p>ogni 5 secondi cannoni da assedio sventrare spazio con un accordo ZANG-TUMB-TUUUUMB ammutinamento di 500 echi per azzannarlo sminuzzarlo sparpagliarlo all'infinito nel centro di quei ZANG-TUMB-TUUUUMB schiacciati</p>
+            <p>...croc-croc-croc-croc (passo lento) nel fango + palude + glu-glu</p>
+            <p>bue caduto in un fango = camion che straripava ogni 4 metri quadri di spazio + 8000 granate schegge fuochi colori odori</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Onomatopea ZANG TUMB</strong>
+              <p>ZANG TUMB TUUUUMB è l'onomatopea del cannone: il suono dell'esplosione trascritto graficamente con maiuscole. La triplice consonante finale («TUUUUMB») mima la risonanza dell'esplosione che si perde nello spazio.</p>
+            </div>
+            <div class="td-note">
+              <strong>Sintassi abolita — infiniti</strong>
+              <p>«sventrare spazio», «azzannarlo sminuzzarlo sparpagliarlo»: solo infiniti senza soggetto, senza connettivi. La velocità sintattica mima la velocità della battaglia. Non c'è narratore che racconta: c'è solo il fatto bruto.</p>
+            </div>
+            <div class="td-note">
+              <strong>Segni matematici (+ =)</strong>
+              <p>«nel fango + palude», «bue caduto = camion che straripava»: i segni matematici sostituiscono i connettivi. L'equazione «bue = camion» è un'analogia futurista (naturale = meccanico): due elementi normalmente distanti vengono equiparati.</p>
+            </div>
+            <div class="td-note">
+              <strong>croc-croc e glu-glu</strong>
+              <p>«croc-croc» = il suono dei passi nel fango; «glu-glu» = il fango che inghiotte. Le onomatopee di suoni bassi e realistici contrastano con il ZANG TUMB delle esplosioni: la guerra ha i rumori del sublime e i rumori del quotidiano lurido.</p>
+            </div>
+            <div class="td-note">
+              <strong>Pagina come partitura</strong>
+              <p>Nel testo originale le parole sono disposte a diverse dimensioni e angolature nello spazio della pagina. Il testo non si legge solo: si vede. La pagina diventa una tavola visiva — la letteratura diventa arte grafica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poetica &amp; Stile — Beppe Fenoglio · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn active" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+    </div>
+  </nav>
+
+  <section class="section active" id="poetica">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Step 02</div>
+        <h2>Poetica e <em>stile</em> <span class="badge">30 MIN</span></h2>
+      </div>
+      <p class="section-sub">L'anti-retorica resistenziale, l'influenza anglosassone, il fenogliano: una voce unica nel Novecento italiano.</p>
+
+      <div class="accordion">
+        <button class="acc-head open" onclick="toggleAcc(this)">Anti-retorica resistenziale — partigiani con paura ed errori <span class="acc-arrow">▼</span></button>
+        <div class="acc-body open">
+          <p>La Resistenza nel dopoguerra italiano viene spesso raccontata in chiave celebrativa e agiografica: gli eroi partigiani come protagonisti di un'epopea gloriosa. Fenoglio rompe questo schema in modo sistematico.</p>
+          <ul>
+            <li><strong>Paura autentica:</strong> i suoi partigiani hanno paura, tremare, dubitano — come ogni essere umano di fronte alla morte</li>
+            <li><strong>Errori e fallimenti:</strong> le operazioni non sempre riescono; la Resistenza è guerra caotica, non piano strategico perfetto</li>
+            <li><strong>Nessun eroe convenzionale:</strong> Johnny non è un eroe da manuale; è un uomo che fa scelte difficili in condizioni impossibili</li>
+            <li><strong>Moralità complessa:</strong> la violenza della guerra non può essere giustificata retroattivamente dalla vittoria; rimane violenza</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Influenza anglosassone — Hemingway e Conrad <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Fenoglio non è stato formato dalla tradizione narrativa italiana ma da quella anglosassone. Due influenze dominanti:</p>
+          <div class="grid-2" style="gap:1rem;margin:1rem 0;">
+            <div class="card">
+              <div class="card-title">Hemingway — iceberg</div>
+              <div class="card-body">Il «principio dell'iceberg»: ciò che il testo non dice pesa quanto ciò che dice. I dialoghi sono asciutti, ridotti al minimo: le ellissi portano significato. «Vengono. Quanti? Non so. Tanti.» — tre frasi che valgono un paragrafo.</div>
+            </div>
+            <div class="card">
+              <div class="card-title">Conrad — avventura morale</div>
+              <div class="card-body">La guerra e l'avventura come prove morali: ciò che conta non è la vittoria o la sconfitta ma come si affronta la prova. Johnny non è un eroe: è un uomo che si scopre mentre combatte, come Jim di <em>Lord Jim</em>.</div>
+            </div>
+          </div>
+          <p>La differenza con i contemporanei italiani (Calvino, Pavese) è evidente: Fenoglio non ha modelli italiani, il suo sistema di riferimento è Shakespeare e la narrativa anglosassone del primo Novecento.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Il «fenogliano» — lingua ibrida unica <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>La lingua di Fenoglio è un sistema unico, inimitabile. Quattro strati sovrapposti:</p>
+          <ul>
+            <li><strong>Italiano letterario:</strong> la base formale</li>
+            <li><strong>Dialetto piemontese delle Langhe:</strong> lessico, ritmi, costruzioni della parlata locale di Alba</li>
+            <li><strong>Calchi dall'inglese:</strong> strutture sintattiche inglesi tradotte letteralmente in italiano; verbi usati con reggenze inglesi; lessico tecnico militare anglosassone</li>
+            <li><strong>Arcaismi:</strong> termini e costruzioni letterarie antiche che danno una patina aulica al parlato</li>
+          </ul>
+          <p>Il risultato è una lingua che suona come nessun'altra: non è sbagliata, è sistematica. Funziona perché Fenoglio la costruisce consapevolmente come strumento narrativo.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Le Langhe come paesaggio morale — come Hardy il Wessex <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Le Langhe non sono sfondo pittoresco: sono il paesaggio morale in cui si svolgono le vicende. Come Thomas Hardy ha costruito il suo «Wessex» (l'Inghilterra rurale del Dorset), Fenoglio costruisce le sue Langhe come territorio narrativo con una propria logica morale.</p>
+          <p>Le colline, i borghi, i vigneti, il Tanaro in piena, le strade bianche — tutto partecipa attivamente alla narrazione. Il paesaggio non è decorazione: è parte dell'azione. La guerra si combatte in quel paesaggio specifico, e il paesaggio condiziona la guerra.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Il romanzo incompiuto — problema filologico <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>La morte prematura di Fenoglio (40 anni) lascia un problema filologico complesso. <em>Il partigiano Johnny</em> esiste in due versioni manoscritte diverse, incompatibili tra loro. Il curatore Lorenzo Mondo ha pubblicato nel 1968 la versione che ha ritenuto più avanzata — ma il dibattito critico continua.</p>
+          <p><em>Una questione privata</em> — giudicata da Calvino il romanzo che «aveva quello che tutti cercavano» — è l'opera più compiuta, pubblicata postuma nel 1963. Ma anche questa non è definitiva: Fenoglio stava ancora lavorandoci alla morte.</p>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Confronto con Calvino e Pavese sulla Resistenza <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Tutti e tre raccontano la Resistenza e le Langhe, ma con poetiche diversissime:</p>
+          <ul>
+            <li><strong>Calvino</strong> (<em>Il sentiero dei nidi di ragno</em>, 1947): straniamento attraverso Pin bambino; la Resistenza vista da un innocente che non capisce ma vede tutto; influenza Stevenson e fiaba</li>
+            <li><strong>Pavese</strong>: la Resistenza come sfondo già passato e mitizzato; le Langhe come paesaggio del ritorno e della nostalgia; influenza Anderson e Dos Passos</li>
+            <li><strong>Fenoglio</strong>: immersione diretta; la Resistenza come presente vissuto, non ricordato; anti-retorica asciutta; influenza Hemingway e Conrad</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="box box-frase" style="margin-top: 2rem;">
+        <strong>La dualità fenogliana</strong>
+        <table style="margin-top:.8rem;">
+          <thead><tr><th>Caratteristiche dello stile</th><th>Cosa evita sistematicamente</th></tr></thead>
+          <tbody>
+            <tr><td>Frasi brevi; dialoghi per ellissi</td><td>Retorica celebrativa della Resistenza</td></tr>
+            <tr><td>Verbi d'azione senza commento</td><td>Introspezione psicologica esibita</td></tr>
+            <tr><td>Lingua «fenogliana» ibrida</td><td>Tesi politica esplicita</td></tr>
+            <tr><td>Paesaggio come attante morale</td><td>Morale esplicita a fine racconto</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="quiz" style="margin-top:24px;">
+        <span class="quiz-lbl">Mini-quiz · Poetica</span>
+        <h3>Verifica la poetica</h3>
+        <div class="qd" data-correct="1"><p class="q">1. Cosa si intende per «fenogliano»?</p><div class="qopts"><button class="qo">Il dialetto piemontese puro delle Langhe</button><button class="qo">La lingua ibrida di Fenoglio: italiano + dialetto piemontese + calchi inglesi + arcaismi</button><button class="qo">L'inglese tradotto in italiano senza adattamenti</button><button class="qo">Un dialetto inventato da Fenoglio per i suoi personaggi</button></div><div class="qfb"></div></div>
+        <div class="qd" data-correct="0"><p class="q">2. Come si differenzia Fenoglio da Calvino nel raccontare la Resistenza?</p><div class="qopts"><button class="qo">Fenoglio si immerge direttamente; Calvino usa lo straniamento del bambino Pin</button><button class="qo">Calvino si immerge direttamente; Fenoglio usa lo straniamento</button><button class="qo">Entrambi usano lo straniamento nello stesso modo</button><button class="qo">Nessuno dei due racconta la Resistenza realisticamente</button></div><div class="qfb"></div></div>
+        <div class="qd" data-correct="2"><p class="q">3. Il «principio dell'iceberg» di Hemingway applicato da Fenoglio significa...</p><div class="qopts"><button class="qo">Che i romanzi di Fenoglio sono ambientati in luoghi freddi</button><button class="qo">Che Fenoglio usa molte descrizioni dettagliate della natura</button><button class="qo">Che ciò che il testo non dice — le ellissi e il non-detto — pesa quanto ciò che dice</button><button class="qo">Che la superficie del testo nasconde un senso allegorico cristiano</button></div><div class="qfb"></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

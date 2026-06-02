@@ -100,7 +100,37 @@
       footerCite: "— Dino Campana, L’invetriata"
     },
 
+    carducci: {
+      key: "carducci", name: "Giosuè Carducci", short: "Carducci",
+      bodyClass: "carducci", storageKey: "q_carducci_best", storageTot: "q_carducci_best_total",
+      footerQuote: "«Meglio oprare che lamentarsi.»", footerCite: "— Giosuè Carducci"
+    },
+    marinetti: {
+      key: "marinetti", name: "Filippo Tommaso Marinetti", short: "Marinetti",
+      bodyClass: "marinetti", storageKey: "q_marinetti_best", storageTot: "q_marinetti_best_total",
+      footerQuote: "«Non v'è più bellezza se non nella lotta.»",
+      footerCite: "— F.T. Marinetti, Manifesto del Futurismo, 1909"
+    },
+    quasimodo: {
+      key: "quasimodo", name: "Salvatore Quasimodo", short: "Quasimodo",
+      bodyClass: "quasimodo", storageKey: "q_quasimodo_best", storageTot: "q_quasimodo_best_total",
+      footerQuote: "«Ognuno sta solo sul cuor della terra / trafitto da un raggio di sole: / ed è subito sera.»",
+      footerCite: "— Salvatore Quasimodo, Ed è subito sera, 1930"
+    },
+    fenoglio: {
+      key: "fenoglio", name: "Beppe Fenoglio", short: "Fenoglio",
+      bodyClass: "fenoglio", storageKey: "q_fenoglio_best", storageTot: "q_fenoglio_best_total",
+      footerQuote: "«Passò il Tanaro in piena come un esercito.»",
+      footerCite: "— Beppe Fenoglio, Il partigiano Johnny"
+    },
+
     /* ── CORRENTI LETTERARIE ── */
+    carduccianesimo: {
+      key: "carduccianesimo", name: "Il Carduccianesimo", short: "Carduccianesimo",
+      bodyClass: "verga", storageKey: "q_carduccianesimo_best", storageTot: "q_carduccianesimo_best_total",
+      footerQuote: "«Salute, o Satana, o ribellione, o forza vindice de la ragione!»",
+      footerCite: "— Giosuè Carducci, Inno a Satana"
+    },
     naturalismo: {
       key: "naturalismo",
       name: "Il Naturalismo",

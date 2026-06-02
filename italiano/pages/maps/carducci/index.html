@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giosuè Carducci — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .map-overlay { display: none; position: fixed; inset: 0; background: rgba(28,16,16,.55); z-index: 500; align-items: center; justify-content: center; padding: 1rem; }
+    .map-overlay.show { display: flex; }
+    .map-modal { background: var(--paper); border: 1px solid var(--bordeaux-mid); padding: 2rem 2rem 1.5rem; max-width: 480px; width: 100%; max-height: 80vh; overflow-y: auto; position: relative; }
+    .modal-close { position: absolute; top: .8rem; right: 1rem; font-family: var(--serif); font-size: 1.4rem; color: var(--ink-soft); background: none; border: none; cursor: pointer; line-height: 1; }
+    .modal-close:hover { color: var(--bordeaux-deep); }
+    .modal-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: .5rem; }
+    .modal-title { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.6rem; color: var(--bordeaux-deep); margin-bottom: .8rem; line-height: 1.1; }
+    .modal-text { font-family: var(--sans); font-weight: 300; font-size: .92rem; color: var(--ink-soft); line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../verga/index.html'">Mappa Verga</button>
+      <button class="nav-btn" onclick="location.href='../pascoli/index.html'">Mappa Pascoli</button>
+      <button class="nav-btn active">Mappa Carducci</button>
+      <button class="nav-btn" onclick="location.href='../dannunzio/index.html'">Mappa D'Annunzio</button>
+      <button class="nav-btn" onclick="location.href='../pirandello/index.html'">Mappa Pirandello</button>
+      <button class="nav-btn" onclick="location.href='../ungaretti/index.html'">Mappa Ungaretti</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Giosuè <em>Carducci</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: vita, poetica, opere, testi e confronti.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:760px;width:max(100%, 1400px);margin:0 auto;" aria-label="Mappa WBS Giosuè Carducci">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <g transform="translate(260,0)">
+
+          <!-- Connessioni root → L1 -->
+          <path d="M 225,438 C 271,438 319,100 319,100" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,269 319,269" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,438 319,438" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,606 319,606" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,775 319,775" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <!-- Connessioni L1 → L2 -->
+          <path d="M 519,100 C 584,100 650,71 650,71" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,100 C 584,100 650,129 650,129" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,211 650,211" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,269 650,269" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,326 650,326" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,409 650,409" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,466 650,466" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,549 650,549" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,606 650,606" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,664 650,664" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,775 C 584,775 650,746 650,746" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,775 C 584,775 650,804 650,804" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="25" y="400" width="200" height="75" rx="7"/>
+            <text>
+              <tspan x="125" y="434" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">Giosuè Carducci</tspan>
+              <tspan x="125" y="454" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">1835 — 1907</tspan>
+            </text>
+          </g>
+
+          <!-- L1 -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button"><rect x="319" y="72" width="200" height="55" rx="5"/><text><tspan x="419" y="106" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button"><rect x="319" y="241" width="200" height="55" rx="5"/><text><tspan x="419" y="275" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button"><rect x="319" y="410" width="200" height="55" rx="5"/><text><tspan x="419" y="444" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · OPERE</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button"><rect x="319" y="578" width="200" height="55" rx="5"/><text><tspan x="419" y="613" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button"><rect x="319" y="747" width="200" height="55" rx="5"/><text><tspan x="419" y="781" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text></g>
+
+          <!-- L2 - VITA -->
+          <g class="node node-l2" onclick="showNode('vita-valdicastello')" tabindex="0" role="button"><rect x="650" y="48" width="238" height="48" rx="4"/><text><tspan x="769" y="68" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Valdicastello 1835 · Nobel 1906</tspan><tspan x="769" y="86" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">primo italiano Premio Nobel</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('vita-bologna')" tabindex="0" role="button"><rect x="650" y="105" width="238" height="48" rx="4"/><text><tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Cattedra a Bologna 1860</tspan><tspan x="769" y="143" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">40 anni · Pascoli tra gli allievi</tspan></text></g>
+
+          <!-- L2 - POETICA -->
+          <g class="node node-l2" onclick="showNode('poetica-classicismo')" tabindex="0" role="button"><rect x="650" y="188" width="238" height="48" rx="4"/><text><tspan x="769" y="208" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Classicismo programmatico</tspan><tspan x="769" y="226" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">contro Romanticismo sentimentale</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-odi')" tabindex="0" role="button"><rect x="650" y="245" width="238" height="48" rx="4"/><text><tspan x="769" y="265" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Odi barbare — metrica</tspan><tspan x="769" y="283" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">saffica + alcaica · sistema tonico</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-positivismo')" tabindex="0" role="button"><rect x="650" y="302" width="238" height="48" rx="4"/><text><tspan x="769" y="322" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Positivismo e anticlericalismo</tspan><tspan x="769" y="340" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Inno a Satana · ragione vs dogma</tspan></text></g>
+
+          <!-- L2 - OPERE -->
+          <g class="node node-l2" onclick="showNode('opere-rimenove')" tabindex="0" role="button"><rect x="650" y="385" width="238" height="48" rx="4"/><text><tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Rime nuove (1887)</tspan><tspan x="769" y="423" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Pianto antico · San Martino</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('opere-odibarbare')" tabindex="0" role="button"><rect x="650" y="442" width="238" height="48" rx="4"/><text><tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Odi barbare (1877–1889)</tspan><tspan x="769" y="480" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Alla stazione · Nevicata</tspan></text></g>
+
+          <!-- L2 - TESTI -->
+          <g class="node node-l2" onclick="showNode('testi-pianto')" tabindex="0" role="button"><rect x="650" y="525" width="238" height="48" rx="4"/><text><tspan x="769" y="545" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Pianto antico</tspan><tspan x="769" y="563" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">figlio = fiore · antitesi · anafora</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-sanmartino')" tabindex="0" role="button"><rect x="650" y="582" width="238" height="48" rx="4"/><text><tspan x="769" y="602" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">San Martino</tspan><tspan x="769" y="620" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">sinestesia · rima C · com'esuli</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-odibarbare')" tabindex="0" role="button"><rect x="650" y="640" width="238" height="48" rx="4"/><text><tspan x="769" y="660" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Alla stazione / Nevicata</tspan><tspan x="769" y="678" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">treno / Garibaldi · metro alcaico/saffico</tspan></text></g>
+
+          <!-- L2 - CONFRONTI -->
+          <g class="node node-l2" onclick="showNode('confronti-pascoli')" tabindex="0" role="button"><rect x="650" y="722" width="238" height="48" rx="4"/><text><tspan x="769" y="742" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Carducci vs Pascoli</tspan><tspan x="769" y="760" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">natura concreta vs simbolica</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('confronti-dannunzio')" tabindex="0" role="button"><rect x="650" y="780" width="238" height="48" rx="4"/><text><tspan x="769" y="800" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Carducci vs D'Annunzio</tspan><tspan x="769" y="818" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">programma civile vs estetismo</tspan></text></g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'Giosuè Carducci', text: 'Giosuè Carducci (1835–1907) nasce a Valdicastello (Lucca) e muore a Bologna. Cattedra di Letteratura italiana a Bologna dal 1860 per quarant\'anni. Premio Nobel 1906, primo italiano. Poeta vate della nazione, classicista programmatico, anticlericate positivista. Pascoli e D\'Annunzio sono tra i suoi eredi.' },
+      vita: { label: 'Categoria', title: 'Vita', text: 'Nasce nel 1835 a Valdicastello. Studia alla Scuola Normale di Pisa (1853-56). Cattedra di Letteratura italiana a Bologna nel 1860, che occuperà per quarant\'anni. Inno a Satana (1865), Odi barbare (1877-1889), Rime nuove (1887). Nobel 1906. Muore nel 1907.' },
+      poetica: { label: 'Categoria', title: 'Poetica', text: 'Classicismo programmatico (modelli: Orazio, Virgilio, Pindaro), anticlericalismo positivista (Satana = ragione vs dogma), funzione civile del poeta vate, patriottismo risorgimentale. Metrica delle Odi barbare: sistema tonico che imita quello quantitativo latino. Natura sensoriale e oggettiva. Dolore controllato dalla forma classica.' },
+      opere: { label: 'Categoria', title: 'Opere', text: 'Inno a Satana (1865): manifesto anticlericale. Rime nuove (1887): Pianto antico, San Martino, Funere mersit acerbo. Odi barbare I serie (1877): Alle fonti del Clitumno, Mors. Odi barbare II serie (1889): Alla stazione, Nevicata. Rime e ritmi (1899).' },
+      testi: { label: 'Categoria', title: 'Testi', text: 'Pianto antico: dolore per il figlio Dante (1870); 4 quartine novenari; metafora figlio=fiore; anafora «sei». San Martino: paesaggio autunnale; rima C costante; sinestesia; «com\'esuli pensieri». Alla stazione: treno simbolo modernità; metro alcaico; «ululando, e sparve». Nevicata: Garibaldi di bronzo; apostrofe «O neve»; metro saffico.' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'Carducci vs Pascoli: natura concreta vs simbolica; morte controllata vs ossessione; classicismo rigido vs fonosimbolismo. Carducci vs D\'Annunzio: programma civile vs ornamento estetico; indipendenza vs cortigianeria; vate civile vs superuomo estetista.' },
+      'vita-valdicastello': { label: 'Vita', title: 'Valdicastello 1835 · Nobel 1906', text: 'Nasce il 27 luglio 1835 a Valdicastello di Pietrasanta. Studia alla Scuola Normale di Pisa (1853-56). Nel 1906 riceve il Premio Nobel per la letteratura, primo italiano nella storia. La motivazione: «profonda dottrina e fresca originalità e bellezza poetica». Non può ritirarlo di persona per la malattia. Muore il 16 febbraio 1907.' },
+      'vita-bologna': { label: 'Vita', title: 'Cattedra a Bologna 1860', text: 'A 25 anni ottiene la cattedra di Letteratura italiana all\'Università di Bologna. La occuperà per quarant\'anni, diventando il centro della cultura letteraria italiana postunitaria. Tra i suoi allievi: Giovanni Pascoli. La cattedra è la base del suo magistero civile e culturale.' },
+      'poetica-classicismo': { label: 'Poetica', title: 'Classicismo programmatico', text: 'Il classicismo di Carducci non è nostalgia ma programma estetico militante: recupera i modelli greco-latini (Orazio, Virgilio, Pindaro) come strumenti di battaglia contro il Romanticismo sentimentale. Non imitazione pedante: battaglia civile. L\'antichità come sistema di valori, non come ornamento.' },
+      'poetica-odi': { label: 'Poetica', title: 'Odi barbare — metrica', text: 'Le Odi barbare tentano di adattare i piedi metrici latini (basati sulla quantità sillabica) all\'italiano (basato sull\'accento tonico). Il nome «barbare» è paradossale: è la metrica greca che Roma chiamava «barbara». Strofe saffica: 3 endecasillabi saffici + adonio. Strofe alcaica: schema oraziano di 4 versi.' },
+      'poetica-positivismo': { label: 'Poetica', title: 'Positivismo e anticlericalismo', text: 'Carducci crede nella ragione, nella scienza, nel progresso laico — tutti valori del Positivismo. L\'anticlericalismo è conseguenza: il potere temporale della Chiesa è incompatibile con lo Stato laico e il progresso razionale. L\'Inno a Satana (1865) è il manifesto: Satana = la ragione umana che si ribella al dogma.' },
+      'opere-rimenove': { label: 'Opere', title: 'Rime nuove (1887)', text: 'Raccolta della produzione 1861-1887, con i testi più celebri. Usa la metrica tradizionale italiana. Comprende: Pianto antico (dolore per il figlio; 4 quartine novenari), San Martino (paesaggio autunnale romagnolo; rima C costante), Funere mersit acerbo (per il figlio; titolo dall\'Eneide di Virgilio).' },
+      'opere-odibarbare': { label: 'Opere', title: 'Odi barbare (1877–1889)', text: 'I serie (1877): il tentativo di adattare i metri quantitativi latini all\'italiano. Testi: Alle fonti del Clitumno (continuità Roma-Italia), Mors. II serie (1889): Alla stazione in una mattina d\'autunno (treno come modernità; metro alcaico), Nevicata (neve e silenzio; Garibaldi; metro saffico).' },
+      'testi-pianto': { label: 'Testi', title: 'Pianto antico', text: 'Da Rime nuove (1887). Dolore per la morte del figlio Dante (3 anni, 1870). 4 quartine di novenari con rima alternata. La natura rinverde (melograno) mentre il figlio è morto: antitesi strutturale. «Tu fior de la mia pianta» = metafora figlio=fiore. «Sei ne la terra fredda, / sei ne la terra negra» = anafora. Il controllo classico del dolore (planctus).' },
+      'testi-sanmartino': { label: 'Testi', title: 'San Martino', text: 'Da Rime nuove (1883). Paesaggio autunnale in Romagna. 4 quartine con rima C costante (mar/rallegrar/rimirar/migrar): effetto di ritornello. Struttura: paesaggio cupo (nebbia, mare) + contrasto calore del borgo (vini, spiedo). Sinestesia: «l\'aspro odor de i vini l\'anime a rallegrar». Similitudine finale: «com\'esuli pensieri».' },
+      'testi-odibarbare': { label: 'Testi', title: 'Alla stazione / Nevicata', text: 'Alla stazione (metro alcaico): il treno porta via la donna amata. «Corre il treno, corre, corre, ululando, e sparve»: personificazione del treno; triplice «corre» mima la velocità; «e sparve» = chiusura brutale. Nevicata (metro saffico): la neve copre tutto. Garibaldi di bronzo innevato = grandezza risorgimentale immobilizzata. «O neve, o silenziosa» = apostrofe + anafora.' },
+      'confronti-pascoli': { label: 'Confronti', title: 'Carducci vs Pascoli', text: 'Pascoli fu allievo di Carducci a Bologna. Somiglianze: classicismo di base. Differenze: natura concreta e sensoriale (Carducci) vs natura simbolica e carica di trauma (Pascoli). Morte controllata dalla forma classica (Carducci) vs ossessione per il padre assassinato (Pascoli). Forma rigida vs fonosimbolismo innovativo. Antichità come modello vs antichità come fonte di suggestioni.' },
+      'confronti-dannunzio': { label: 'Confronti', title: 'Carducci vs D\'Annunzio', text: 'D\'Annunzio eredita il modello del vate ma lo trasforma: il classicismo è ornamento estetico (D\'Annunzio) invece di programma civile (Carducci). Indipendenza del poeta vs cortigianeria verso i potenti. Patriottismo laico e risorgimentale vs nazionalismo estetista. Vate come voce della nazione vs superuomo come centro di tutto.' }
+    };
+
+    function showNode(key) {
+      const node = NODES[key];
+      if (!node) return;
+      document.getElementById('tip-label').textContent = node.label || '';
+      document.getElementById('tip-title').textContent = node.title || '';
+      document.getElementById('tip-text').textContent = node.text || '';
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeTip() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeTip(); });
+  </script>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

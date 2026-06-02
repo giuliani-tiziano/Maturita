@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testi — Salvatore Quasimodo · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .testo-dual { display: grid; grid-template-columns: 55fr 45fr; gap: 2.5rem; margin: 2rem 0 3rem; align-items: start; }
+    .td-original { background: var(--beige-mid); padding: 1.5rem 1.8rem; }
+    .td-original-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-original p { font-family: var(--serif); font-size: 1rem; line-height: 1.85; color: var(--ink); margin: 0 0 1rem; font-weight: 400; }
+    .td-original p:last-child { margin-bottom: 0; }
+    .td-comment { padding: 0 0 0 1.8rem; border-left: 2px solid var(--bordeaux-mid); }
+    .td-comment-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-note { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(28,16,16,.12); }
+    .td-note:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .td-note strong { display: block; font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bordeaux-deep); margin-bottom: .35rem; }
+    .td-note p { font-size: .92rem; color: var(--ink-soft); line-height: 1.65; margin: 0; }
+    .testo-badge { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--paper); background: var(--bordeaux-deep); padding: .2rem .7rem; margin-bottom: 1.2rem; }
+    .testo-titolo { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.9rem; color: var(--bordeaux-deep); margin-bottom: .3rem; line-height: 1.1; }
+    .testo-meta { font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1.5rem; }
+    @media (max-width: 768px) { .testo-dual { grid-template-columns: 1fr; } .td-comment { padding-left: 0; border-left: none; border-top: 2px solid var(--bordeaux-mid); padding-top: 1.5rem; margin-top: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn active" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+    </div>
+  </nav>
+
+  <section class="section active" id="testi">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Step 04</div>
+        <h2>I testi: analisi <em>verso per verso</em> <span class="badge">60 MIN</span></h2>
+      </div>
+      <p class="section-sub">Dalla parola pura di tre versi alla testimonianza civile della guerra: quattro testi che raccontano entrambe le fasi.</p>
+
+      <div class="poem-tabs">
+        <button class="ptab active" onclick="showPoem('sera')">Ed è subito sera</button>
+        <button class="ptab" onclick="showPoem('tindari')">Vento a Tindari</button>
+        <button class="ptab" onclick="showPoem('salici')">Alle fronde dei salici</button>
+        <button class="ptab" onclick="showPoem('uomo')">Uomo del mio tempo</button>
+      </div>
+
+      <!-- ED È SUBITO SERA -->
+      <div id="poem-sera" class="poem-panel active">
+        <div class="testo-badge">Testo chiave · Fase ermetica</div>
+        <div class="testo-titolo">Ed è subito sera</div>
+        <div class="testo-meta">Da <em>Acque e terre</em> · 1930 · Massimo con minimo</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale (testo completo)</span>
+            <p>Ognuno sta solo sul cuor della terra<br>trafitto da un raggio di sole:<br>ed è subito sera.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>v.1 — «Ognuno» = solitudine universale</strong>
+              <p>«Ognuno» (non «io»): la solitudine non è biografica ma ontologica. Ogni essere umano è strutturalmente solo — non per cause esterne ma per condizione di esistenza.</p>
+            </div>
+            <div class="td-note">
+              <strong>v.2 — «Trafitto» = ambiguità fondamentale</strong>
+              <p>«Trafitto da un raggio di sole»: il sole è luce e vita, ma «trafitto» implica una ferita. L'immagine è ambigua: la bellezza dell'esistenza è anche il suo dolore. La vita è bella e brevissima — e la brevità è essa stessa una ferita.</p>
+            </div>
+            <div class="td-note">
+              <strong>v.3 — «Subito» = velocità del tempo</strong>
+              <p>«Ed è subito sera»: l'avverbio «subito» è la chiave. La sera arriva prima che ci si aspetti. La vita è brevis — non per tragedia ma per natura. Il «subito» mima la velocità con cui la luce del giorno (= la vita) svanisce.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica — struttura tripartita</strong>
+              <p>Endecasillabo + novenario + senario tronco. I versi si accorciano: la vita si contrae. La forma mima il contenuto. Non è autobiografico ma universale: il pronome «ognuno» estende il senso a tutta l'umanità.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VENTO A TINDARI -->
+      <div id="poem-tindari" class="poem-panel">
+        <div class="testo-badge">Testo chiave · Fase ermetica</div>
+        <div class="testo-titolo">Vento a Tindari</div>
+        <div class="testo-meta">Da <em>Acque e terre</em> · 1930 · La Sicilia come mito</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (strofe chiave)</span>
+            <p>Tindari, mite ti so<br>fra larghi colli pensile sull'acque<br>dell'isole dolci del dio,<br>oggi m'assali<br>e ti pieghi in cuore.</p>
+            <p>La mia gioia era alta,<br>non so dirti di me<br>fatta d'aria e di pietra<br>[...]</p>
+            <p>Mi trovi ancora fanciullo<br>reduce dai santuari<br>di villaggi sepolti...</p>
+            <p>Mite scendi nell'anima.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Apostrofe a Tindari — luogo→tu vivo</strong>
+              <p>Tindari è apostrofata come persona («ti so», «m'assali», «ti pieghi in cuore»): il luogo geografico diventa soggetto vivo, quasi una persona cara o una forza cosmica. L'apostrofe trasforma la topografia in relazione.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Mite ti so» — apertura e chiusura ad anello</strong>
+              <p>La poesia si apre con «Tindari, mite ti so» e si chiude con «Mite scendi nell'anima»: la struttura ad anello porta Tindari dall'esterno (luogo geografico) all'interno (anima). Il percorso del testo è un'interiorizzazione.</p>
+            </div>
+            <div class="td-note">
+              <strong>Analogia ermetica — vento = anima</strong>
+              <p>Il vento di Tindari non è descritto fisicamente: è già interiore. Non c'è «come» che spieghi il passaggio. L'analogia è diretta: il vento del luogo-mito coincide con il movimento dell'anima — sono la stessa cosa.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Mi trovi ancora fanciullo» — memoria</strong>
+              <p>La Sicilia trova il poeta ancora come era da bambino: il mito dell'infanzia è ancora presente sotto la crosta dell'adulto. «Reduce dai santuari di villaggi sepolti» = le radici arcaiche della sua formazione siciliana.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALLE FRONDE DEI SALICI -->
+      <div id="poem-salici" class="poem-panel">
+        <div class="testo-badge">Testo chiave · Fase civile</div>
+        <div class="testo-titolo">Alle fronde dei salici</div>
+        <div class="testo-meta">Da <em>Giorno dopo giorno</em> · 1945 · La Resistenza e il silenzio sacro</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale (testo completo)</span>
+            <p>E come potevano noi cantare<br>con il piede straniero sopra il cuore,<br>fra i morti abbandonati nelle piazze<br>sull'erba dura di ghiaccio, al lamento<br>d'agnello dei fanciulli, all'urlo nero<br>della madre che andava incontro al figlio<br>crocifisso sul palo del telegrafo?<br>Alle fronde dei salici, per voto,<br>anche le nostre cetre erano appese,<br>oscillavano lievi al triste vento.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Domanda retorica — impossibilità del canto</strong>
+              <p>La poesia è interamente una domanda retorica: «E come potevano noi cantare?» La risposta implicita è: non potevano. La poesia lirica — il canto puro dell'ermetismo — diventa moralmente impossibile di fronte alla storia.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Piede straniero sopra il cuore» = occupazione</strong>
+              <p>Metafora dell'occupazione nazista: il «piede straniero» è letteralmente la Wehrmacht che marcia sull'Italia. Ma «sopra il cuore» fa di questa occupazione una violenza interiore, non solo geopolitica.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Crocifisso sul palo del telegrafo»</strong>
+              <p>Il partigiano impiccato sul palo del telegrafo è «crocifisso»: il sacrificio sacro si incontra con la tecnologia moderna. Il paragone con Cristo non è retorico: è strutturale — il martirio del presente ha la stessa dignità sacra di quello antico.</p>
+            </div>
+            <div class="td-note">
+              <strong>Salmo 137 — gli ebrei a Babilonia</strong>
+              <p>«Alle fronde dei salici / anche le nostre cetre erano appese»: cita il Salmo 137 (gli ebrei in esilio a Babilonia appendono le cetre ai salici per non cantare in terra straniera). Il parallelo: noi italiani occupati = ebrei esiliati. Il silenzio come atto sacro di fedeltà alla propria identità.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Per voto» = silenzio come atto sacro</strong>
+              <p>Il voto è un impegno religioso: non cantare non è incapacità ma scelta etica deliberata. Il silenzio poetico di fronte all'orrore bellico è un atto di rispetto per i morti — equivalente al voto monastico.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UOMO DEL MIO TEMPO -->
+      <div id="poem-uomo" class="poem-panel">
+        <div class="testo-badge">Testo chiave · Fase civile</div>
+        <div class="testo-titolo">Uomo del mio tempo</div>
+        <div class="testo-meta">Da <em>Giorno dopo giorno</em> · 1946 · Continuità della violenza umana</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale</span>
+            <p>Sei ancora quello della pietra e della fionda,<br>uomo del mio tempo. Eri nella carlinga,<br>con le ali maligne, i quadranti di morte,<br>t'ho visto — dentro il carro di fuoco, alle forche,<br>alle ruote di tortura. T'ho visto: eri tu,<br>con la tua scienza esatta persuasa allo sterminio,<br>senza amore, senza Cristo. Hai ucciso ancora,<br>come sempre, come uccidevano i padri,<br>come gli animali che ti videro per la prima volta.</p>
+            <p>E questo sangue odora come nel giorno<br>quando il fratello disse all'altro fratello:<br>«Andiamo ai campi». E quell'eco fredda, tenace,<br>è giunta fino a te, dentro la tua giornata.</p>
+            <p>Dimenticate, o figli, le nuvole di sangue<br>salite dalla terra, dimenticate i padri:<br>le loro tombe affondano nella cenere,<br>gli uccelli neri, il vento, coprono il loro cuore.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>«Pietra e fionda» = violenza primordiale</strong>
+              <p>L'uomo contemporaneo è ancora quello della pietra e della fionda preistorica: la violenza non è progredita, ha solo cambiato strumenti (fionda→bomba). La modernità tecnologica non ha eliminato la barbarie — l'ha amplificata.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Carlinga» = modernità bellica</strong>
+              <p>La carlinga dell'aereo da guerra porta il primordiale «uomo della fionda» nel cielo del XX secolo. La fusione di primitivo e moderno è il nucleo del testo: l'uomo non cambia, cambiano i mezzi del male.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Scienza esatta persuasa allo sterminio» = paradosso</strong>
+              <p>La scienza — lo strumento del progresso razionale — messa al servizio dello sterminio. Il paradosso illuminista: la ragione che produce la bomba, il lager, le camere a gas. «Persuasa allo sterminio» = non costretta ma convinta, complice.</p>
+            </div>
+            <div class="td-note">
+              <strong>Caino e Abele — «Andiamo ai campi»</strong>
+              <p>«Il fratello disse all'altro fratello: "Andiamo ai campi"»: la citazione velata di Genesi 4 (Caino uccide Abele nei campi). Il sangue di Caino «odora» ancora nel sangue della guerra. La storia non è progresso: è ciclo eterno della stessa violenza fraterna.</p>
+            </div>
+            <div class="td-note">
+              <strong>Finale ai figli — superare il ciclo</strong>
+              <p>«Dimenticate, o figli, le nuvole di sangue... dimenticate i padri»: la chiusa non è rassegnazione ma invito. I figli devono spezzare il ciclo dimenticando — non memorizzando — la violenza dei padri. La memoria del sangue perpetua il sangue.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

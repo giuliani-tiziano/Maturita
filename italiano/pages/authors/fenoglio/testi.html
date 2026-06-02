@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testi — Beppe Fenoglio · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .testo-dual { display: grid; grid-template-columns: 55fr 45fr; gap: 2.5rem; margin: 2rem 0 3rem; align-items: start; }
+    .td-original { background: var(--beige-mid); padding: 1.5rem 1.8rem; }
+    .td-original-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-original p { font-family: var(--serif); font-size: 1rem; line-height: 1.85; color: var(--ink); margin: 0 0 1rem; font-weight: 400; }
+    .td-original p:last-child { margin-bottom: 0; }
+    .td-comment { padding: 0 0 0 1.8rem; border-left: 2px solid var(--bordeaux-mid); }
+    .td-comment-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-note { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(28,16,16,.12); }
+    .td-note:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .td-note strong { display: block; font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bordeaux-deep); margin-bottom: .35rem; }
+    .td-note p { font-size: .92rem; color: var(--ink-soft); line-height: 1.65; margin: 0; }
+    .testo-badge { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--paper); background: var(--bordeaux-deep); padding: .2rem .7rem; margin-bottom: 1.2rem; }
+    .testo-titolo { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.9rem; color: var(--bordeaux-deep); margin-bottom: .3rem; line-height: 1.1; }
+    .testo-meta { font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1.5rem; }
+    @media (max-width: 768px) { .testo-dual { grid-template-columns: 1fr; } .td-comment { padding-left: 0; border-left: none; border-top: 2px solid var(--bordeaux-mid); padding-top: 1.5rem; margin-top: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn active" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+    </div>
+  </nav>
+
+  <section class="section active" id="testi">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Step 04</div>
+        <h2>I testi: analisi <em>ravvicinata</em> <span class="badge">45 MIN</span></h2>
+      </div>
+      <p class="section-sub">Tre brani chiave: l'ironia dei ventitre giorni, il simbolismo della nebbia, il dialogo hemingwayano.</p>
+
+      <div class="poem-tabs">
+        <button class="ptab active" onclick="showPoem('ventitre')">I ventitre giorni (incipit)</button>
+        <button class="ptab" onclick="showPoem('questione')">Una questione privata (incipit)</button>
+        <button class="ptab" onclick="showPoem('johnny')">Il partigiano Johnny (brano)</button>
+      </div>
+
+      <!-- I VENTITRE GIORNI -->
+      <div id="poem-ventitre" class="poem-panel active">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">I ventitre giorni della città di Alba — incipit</div>
+        <div class="testo-meta">Da <em>I ventitre giorni della città di Alba</em> · 1952 · Racconto d'apertura</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale</span>
+            <p>Il 10 ottobre del '45 i partigiani presero Alba e la tennero per 23 giorni. Se li fossero tenuti più a lungo, il mondo ne avrebbe certo saputo qualcosa, e forse sarebbe valsa la pena; ma i partigiani l'abbandonarono il 2 novembre, senza combattere, come c'erano entrati. La gente di Alba le serba rancore per questo, e si capisce; ma i partigiani lì per lì non sapevano dove andare se non fuori città, lungo i bordi delle strade, e nella nebbia. Poi, a Natale e Capodanno, ricominciò a venire la neve.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Ironia — «Se li fossero tenuti più a lungo»</strong>
+              <p>«Il mondo ne avrebbe certo saputo qualcosa»: l'ironia è sottile ma devastante. Fenoglio relativizza l'episodio che per i partigiani era la loro Liberazione. Il tono è quello di chi guarda da fuori con distacco compassionevole ma non reverenziale.</p>
+            </div>
+            <div class="td-note">
+              <strong>Simmetria — «senza combattere come c'erano entrati»</strong>
+              <p>I partigiani entrano e escono da Alba senza combattere. La simmetria è comica e tragica allo stesso tempo: l'impresa eroica si rivela un'occupazione di trenta giorni senza sparo. La guerra resistenziale non è sempre gloriosa.</p>
+            </div>
+            <div class="td-note">
+              <strong>«La gente di Alba le serba rancore» — Resistenza non capita</strong>
+              <p>La gente comune non è sempre dalla parte dei partigiani: si aspettava protezione, li ha visti andarsene. Il punto di vista della «gente» — «e si capisce» — viene compreso senza essere condannato. La Resistenza vive in un contesto umano complesso.</p>
+            </div>
+            <div class="td-note">
+              <strong>La neve finale — il tempo naturale sopravanza la storia</strong>
+              <p>«A Natale e Capodanno, ricominciò a venire la neve»: la chiusa è la natura che riprende il suo ciclo indifferente. La neve copre la storia degli uomini. Il tempo naturale — stagioni, neve, ciclo — è più grande e più lungo della storia partigiana.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNA QUESTIONE PRIVATA -->
+      <div id="poem-questione" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Una questione privata — incipit</div>
+        <div class="testo-meta">Da <em>Una questione privata</em> · 1963 postumo · La nebbia come incertezza</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale</span>
+            <p>La nebbia era tale che Milton quasi non la vedeva. Eppure la guardava intensamente attraverso gli occhiali anneriti: era abituato a credere che certi sforzi potessero ammorbidire la nebbia, farle uno strappo. La villa era ai margini del bosco, dove la collina degradava verso il fondovalle. Dalla strada appariva come qualcosa di evanescente, quasi irreale nel candore del mattino. Milton si fermò all'incrocio, sul bordo della strada. Non era venuto fin lì per vedere la villa ma per rivederla, ricordarsi com'era quando ci veniva Fulvia.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Nebbia = incertezza di Milton su Fulvia/Fulvio</strong>
+              <p>La nebbia fisica è anche nebbia mentale: Milton «quasi non la vedeva» ma «la guardava intensamente» come se lo sforzo potesse dissolverla. Come la nebbia non si dissolve, l'incertezza su Fulvia e Fulvio non si dissolve. La metafora è costruita già nell'incipit.</p>
+            </div>
+            <div class="td-note">
+              <strong>Villa «evanescente» — già memoria</strong>
+              <p>La villa «appare come qualcosa di evanescente, quasi irreale»: è già un ricordo, non una realtà presente. Il passato con Fulvia si proietta sul presente, rendendolo irreale. Milton è prigioniero della memoria.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Non vedere ma rivedere» — prigioniero del passato</strong>
+              <p>«Non era venuto fin lì per vedere la villa ma per rivederla»: la distinzione è cruciale. Vedere = presente. Rivedere = sovrapporre il presente al passato. Milton non vive nel presente: vive in un passato che cerca di recuperare.</p>
+            </div>
+            <div class="td-note">
+              <strong>Calvino prefazione 1968</strong>
+              <p>Calvino ha scritto nella prefazione del 1968: «Aveva quello che tutti cercavano e nessuno trovava: la costruzione classica e la rapidità americana». L'incipit dimostra entrambe le cose: la struttura narrativa classica (esposizione dell'antefatto) e la velocità che non spiega mai, solo mostra.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IL PARTIGIANO JOHNNY -->
+      <div id="poem-johnny" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Il partigiano Johnny — brano notturno</div>
+        <div class="testo-meta">Da <em>Il partigiano Johnny</em> · 1968 postumo · La fenomenologia dell'azione</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (brano)</span>
+            <p>Erano le tre del mattino. Il ragazzo Tito era di vedetta sulla collina e Johnny dormiva dentro la capanna quando sentì il rumore: qualcosa si muoveva nel buio, con precauzione, rompendo i rametti secchi. Saltò su e andò alla porta.</p>
+            <p>— Tito, — disse sottovoce.<br>— Sì.<br>— Vengono.<br>— Quanti?<br>— Non so. Tanti.</p>
+            <p>Johnny prese il mitra e uscì nella notte. Il cielo era limpido e gelido, pieno di stelle. Pensò: sarà dura. Poi smise di pensare e cominciò a correre.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Dialogo hemingwayano — tre battute per eccellenza</strong>
+              <p>«Vengono. — Quanti? — Non so. Tanti.»: tre battute che contengono tutto ciò che serve sapere. Nessuna spiegazione, nessuna emozione esibita. Il pericolo si comunica attraverso l'ellissi: ciò che non viene detto (la paura, l'incertezza, la morte possibile) pesa più delle parole.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Pensò: sarà dura. Poi smise di pensare»</strong>
+              <p>Il momento più tipicamente fenogliano: la coscienza di fronte al pericolo, la lucidità che valuta la situazione («sarà dura»), poi la scelta deliberata di smettere di pensare e agire. La fenomenologia dell'azione sotto pressione: il pensiero come lusso che non ci si può permettere quando bisogna correre.</p>
+            </div>
+            <div class="td-note">
+              <strong>Stelle indifferenti</strong>
+              <p>«Il cielo era limpido e gelido, pieno di stelle»: la natura è indifferente al pericolo umano. Le stelle non sono presagio: sono descrizione neutra. Come la neve de <em>I ventitre giorni</em>, la natura sopravanza la storia.</p>
+            </div>
+            <div class="td-note">
+              <strong>Lingua «fenogliana» concreta</strong>
+              <p>«Rompendo i rametti secchi», «saltò su», «prese il mitra», «cominciò a correre»: verbi d'azione concreti senza commento. La lingua non descrive gli stati d'animo: descrive i gesti fisici. L'emozione è dedotta dall'azione, mai esplicitata.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

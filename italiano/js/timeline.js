@@ -23,7 +23,8 @@
   ];
 
   const CORRENTI = [
-    { key: "naturalismo",      name: "Naturalismo",      start: 1860, end: 1890, color: "#7A2235" },
+    { key: "carduccianesimo",  name: "Carduccianesimo",  start: 1860, end: 1907, color: "#8B1A1A" },
+    { key: "naturalismo",      name: "Naturalismo",      start: 1860, end: 1890, color: "#C0392B" },
     { key: "verismo",          name: "Verismo",          start: 1870, end: 1900, color: "#9E3347" },
     { key: "decadentismo",     name: "Decadentismo",     start: 1880, end: 1910, color: "#5C1A28" },
     { key: "simbolismo",       name: "Simbolismo",       start: 1880, end: 1910, color: "#B85C1A" },
@@ -37,22 +38,30 @@
   ];
 
   const AUTORI = [
+    { key: "carducci",   name: "Carducci",   birth: 1835, death: 1907 },
     { key: "verga",      name: "Verga",      birth: 1840, death: 1922 },
     { key: "pascoli",    name: "Pascoli",    birth: 1855, death: 1912 },
+    { key: "svevo",      name: "Svevo",      birth: 1861, death: 1928 },
     { key: "dannunzio",  name: "D'Annunzio", birth: 1863, death: 1938 },
     { key: "pirandello", name: "Pirandello", birth: 1867, death: 1936 },
-    { key: "svevo",      name: "Svevo",      birth: 1861, death: 1928 },
+    { key: "marinetti",  name: "Marinetti",  birth: 1876, death: 1944 },
     { key: "saba",       name: "Saba",       birth: 1883, death: 1957 },
-    { key: "ungaretti",  name: "Ungaretti",  birth: 1888, death: 1970 },
     { key: "campana",    name: "Campana",    birth: 1885, death: 1932 },
+    { key: "ungaretti",  name: "Ungaretti",  birth: 1888, death: 1970 },
     { key: "montale",    name: "Montale",    birth: 1896, death: 1981 },
+    { key: "quasimodo",  name: "Quasimodo",  birth: 1901, death: 1968 },
+    { key: "levi",       name: "Carlo Levi", birth: 1902, death: 1975, nolink: true },
     { key: "pavese",     name: "Pavese",     birth: 1908, death: 1950 },
+    { key: "fenoglio",   name: "Fenoglio",   birth: 1922, death: 1963 },
     { key: "pasolini",   name: "Pasolini",   birth: 1922, death: 1975 },
-    { key: "calvino",    name: "Calvino",    birth: 1923, death: 1985 },
-    { key: "levi",       name: "Carlo Levi", birth: 1902, death: 1975, nolink: true }
+    { key: "calvino",    name: "Calvino",    birth: 1923, death: 1985 }
   ];
 
   const OPERE = [
+    { author: "carducci", year: 1865, title: "Inno a Satana", desc: "Manifesto anticlericale e positivista: Satana come ragione umana." },
+    { author: "carducci", year: 1877, title: "Odi barbare I", desc: "Prima serie: Alle fonti del Clitumno, la rivoluzione metrica." },
+    { author: "carducci", year: 1887, title: "Rime nuove", desc: "Pianto antico, San Martino, Funere mersit acerbo." },
+    { author: "carducci", year: 1889, title: "Odi barbare II", desc: "Alla stazione, Nevicata: il culmine della tecnica metrica." },
     { author: "verga", year: 1881, title: "I Malavoglia", desc: "Primo romanzo del Ciclo dei Vinti." },
     { author: "verga", year: 1889, title: "Mastro-don Gesualdo", desc: "Secondo romanzo del Ciclo dei Vinti." },
     { author: "pascoli", year: 1891, title: "Myricae", desc: "La raccolta delle piccole cose." },
@@ -70,7 +79,13 @@
     { author: "levi", year: 1945, title: "Cristo si è fermato a Eboli", desc: "Il documento della questione meridionale." },
     { author: "calvino", year: 1947, title: "Il sentiero dei nidi di ragno", desc: "La Resistenza vista da un bambino." },
     { author: "calvino", year: 1972, title: "Le città invisibili", desc: "Marco Polo, le 55 città (oltre l'asse, indicato al 1960)." },
-    { author: "pasolini", year: 1955, title: "Ragazzi di vita", desc: "Le borgate romane, il dialetto." }
+    { author: "pasolini", year: 1955, title: "Ragazzi di vita", desc: "Le borgate romane, il dialetto." },
+    { author: "marinetti", year: 1909, title: "Manifesto del Futurismo", desc: "Le Figaro, 20 febbraio 1909: 11 punti che fondano il Futurismo." },
+    { author: "marinetti", year: 1914, title: "Zang Tumb Tuum", desc: "Il capolavoro del paroliberismo: la battaglia di Adrianopoli." },
+    { author: "quasimodo", year: 1930, title: "Acque e terre", desc: "Esordio ermetico: Ed è subito sera, Vento a Tindari." },
+    { author: "quasimodo", year: 1947, title: "Giorno dopo giorno", desc: "La svolta civile: Alle fronde dei salici, Uomo del mio tempo." },
+    { author: "fenoglio", year: 1952, title: "I ventitre giorni della città di Alba", desc: "Esordio Einaudi: Resistenza tragicomica e anti-retorica." },
+    { author: "fenoglio", year: 1963, title: "Una questione privata", desc: "Il capolavoro postumo: Milton, Fulvia, Fulvio. Calvino: 'aveva quello che tutti cercavano'." }
   ];
 
   /* ── STATO ────────────────────────────────────────────────────────── */

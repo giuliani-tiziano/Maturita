@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F.T. Marinetti — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .map-overlay { display: none; position: fixed; inset: 0; background: rgba(28,16,16,.55); z-index: 500; align-items: center; justify-content: center; padding: 1rem; }
+    .map-overlay.show { display: flex; }
+    .map-modal { background: var(--paper); border: 1px solid var(--bordeaux-mid); padding: 2rem 2rem 1.5rem; max-width: 480px; width: 100%; max-height: 80vh; overflow-y: auto; position: relative; }
+    .modal-close { position: absolute; top: .8rem; right: 1rem; font-family: var(--serif); font-size: 1.4rem; color: var(--ink-soft); background: none; border: none; cursor: pointer; line-height: 1; }
+    .modal-close:hover { color: var(--bordeaux-deep); }
+    .modal-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: .5rem; }
+    .modal-title { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.6rem; color: var(--bordeaux-deep); margin-bottom: .8rem; line-height: 1.1; }
+    .modal-text { font-family: var(--sans); font-weight: 300; font-size: .92rem; color: var(--ink-soft); line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../verga/index.html'">Mappa Verga</button>
+      <button class="nav-btn" onclick="location.href='../pascoli/index.html'">Mappa Pascoli</button>
+      <button class="nav-btn active">Mappa Marinetti</button>
+      <button class="nav-btn" onclick="location.href='../ungaretti/index.html'">Mappa Ungaretti</button>
+      <button class="nav-btn" onclick="location.href='../montale/index.html'">Mappa Montale</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>F.T. <em>Marinetti</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: vita, poetica, manifesto, opere e confronti.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:760px;width:max(100%, 1400px);margin:0 auto;" aria-label="Mappa WBS F.T. Marinetti">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <g transform="translate(260,0)">
+
+          <path d="M 225,438 C 271,438 319,100 319,100" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,219 319,219" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,338 319,338" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,557 319,557" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,726 319,726" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <path d="M 519,100 C 584,100 650,71 650,71" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,100 C 584,100 650,129 650,129" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,219 C 584,219 650,160 650,160" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,219 C 584,219 650,219 650,219" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,219 C 584,219 650,278 650,278" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,338 C 584,338 650,309 650,309" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,338 C 584,338 650,367 650,367" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,557 C 584,557 650,490 650,490" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,557 C 584,557 650,549 650,549" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,557 C 584,557 650,614 650,614" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,726 C 584,726 650,697 650,697" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,726 C 584,726 650,755 650,755" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="25" y="400" width="200" height="75" rx="7"/>
+            <text>
+              <tspan x="125" y="430" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="15" font-weight="600">F.T. Marinetti</tspan>
+              <tspan x="125" y="450" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">1876 — 1944</tspan>
+            </text>
+          </g>
+
+          <!-- L1 -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button"><rect x="319" y="72" width="200" height="55" rx="5"/><text><tspan x="419" y="106" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button"><rect x="319" y="191" width="200" height="55" rx="5"/><text><tspan x="419" y="225" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('manifesto')" tabindex="0" role="button"><rect x="319" y="310" width="200" height="55" rx="5"/><text><tspan x="419" y="344" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · MANIFESTO</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button"><rect x="319" y="529" width="200" height="55" rx="5"/><text><tspan x="419" y="563" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · OPERE</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button"><rect x="319" y="698" width="200" height="55" rx="5"/><text><tspan x="419" y="732" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text></g>
+
+          <!-- L2 - VITA -->
+          <g class="node node-l2" onclick="showNode('vita-alessandria')" tabindex="0" role="button"><rect x="650" y="48" width="238" height="48" rx="4"/><text><tspan x="769" y="68" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Alessandria 1876 · fasci 1919</tspan><tspan x="769" y="86" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Bellagio 1944 · Accademia 1929</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('vita-poesia')" tabindex="0" role="button"><rect x="650" y="105" width="238" height="48" rx="4"/><text><tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Rivista Poesia 1905</tspan><tspan x="769" y="143" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Milano · laboratorio del Futurismo</tspan></text></g>
+
+          <!-- L2 - POETICA -->
+          <g class="node node-l2" onclick="showNode('poetica-antipassatismo')" tabindex="0" role="button"><rect x="650" y="137" width="238" height="48" rx="4"/><text><tspan x="769" y="157" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Antipassatismo</tspan><tspan x="769" y="175" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">musei = cimiteri · bruciare il passato</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-velocita')" tabindex="0" role="button"><rect x="650" y="196" width="238" height="48" rx="4"/><text><tspan x="769" y="216" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Velocità e macchina</tspan><tspan x="769" y="234" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">auto &gt; Nike di Samotracia</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-parolibero')" tabindex="0" role="button"><rect x="650" y="255" width="238" height="48" rx="4"/><text><tspan x="769" y="275" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Parole in libertà</tspan><tspan x="769" y="293" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">sintassi abolita · infiniti · onomatopee</tspan></text></g>
+
+          <!-- L2 - MANIFESTO -->
+          <g class="node node-l2" onclick="showNode('manifesto-1909')" tabindex="0" role="button"><rect x="650" y="286" width="238" height="48" rx="4"/><text><tspan x="769" y="306" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Manifesto del Futurismo 1909</tspan><tspan x="769" y="324" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Le Figaro · 11 punti · guerra igiene</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('manifesto-1912')" tabindex="0" role="button"><rect x="650" y="344" width="238" height="48" rx="4"/><text><tspan x="769" y="364" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Manifesto tecnico 1912</tspan><tspan x="769" y="382" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">codifica del paroliberismo</tspan></text></g>
+
+          <!-- L2 - OPERE -->
+          <g class="node node-l2" onclick="showNode('opere-mafarka')" tabindex="0" role="button"><rect x="650" y="466" width="238" height="48" rx="4"/><text><tspan x="769" y="486" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Mafarka il futurista 1909</tspan><tspan x="769" y="504" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">romanzo · processato oscenità</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('opere-zang')" tabindex="0" role="button"><rect x="650" y="524" width="238" height="48" rx="4"/><text><tspan x="769" y="544" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Zang Tumb Tuum 1914</tspan><tspan x="769" y="562" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Adrianopoli · ZANG TUMB TUUUUMB</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('opere-arti')" tabindex="0" role="button"><rect x="650" y="590" width="238" height="48" rx="4"/><text><tspan x="769" y="610" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Futurismo nelle arti</tspan><tspan x="769" y="628" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Boccioni · Balla · Russolo</tspan></text></g>
+
+          <!-- L2 - CONFRONTI -->
+          <g class="node node-l2" onclick="showNode('confronti-dannunzio')" tabindex="0" role="button"><rect x="650" y="674" width="238" height="48" rx="4"/><text><tspan x="769" y="694" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Marinetti vs D'Annunzio</tspan><tspan x="769" y="712" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">distruzione vs ornamento</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('confronti-crepuscolare')" tabindex="0" role="button"><rect x="650" y="732" width="238" height="48" rx="4"/><text><tspan x="769" y="752" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Futurismo vs Crepuscolarismo</tspan><tspan x="769" y="770" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">eroico/veloce vs malinconico/grigio</tspan></text></g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'F.T. Marinetti', text: 'Filippo Tommaso Marinetti (1876–1944) nasce ad Alessandria d\'Egitto. Fonda il Futurismo con il Manifesto del 1909 su Le Figaro. Codifica il paroliberismo nel 1912. Zang Tumb Tuum (1914) è il capolavoro. Nel 1919 partecipa ai Fasci con Mussolini. Nel 1929 è nell\'Accademia d\'Italia. Muore a Bellagio nel 1944.' },
+      vita: { label: 'Categoria', title: 'Vita', text: 'Nasce il 22 dicembre 1876 ad Alessandria d\'Egitto. Fonda la rivista Poesia a Milano nel 1905. Il 20 febbraio 1909 pubblica il Manifesto su Le Figaro. Interviene nella Grande Guerra (1915-18). Nel 1919 partecipa ai Fasci. Nel 1929 è nell\'Accademia d\'Italia. Muore il 2 dicembre 1944 a Bellagio.' },
+      poetica: { label: 'Categoria', title: 'Poetica', text: 'Antipassatismo: musei = cimiteri, bruciare il passato. Velocità e macchina: auto da corsa > Nike di Samotracia. Guerra: sola igiene del mondo. Parole in libertà: abolire sintassi (infiniti), punteggiatura (segni matematici), aggettivi; onomatopee; analogie distanti; tavola visiva.' },
+      manifesto: { label: 'Categoria', title: 'Il Manifesto', text: 'Manifesto del Futurismo (1909, Le Figaro): 11 punti; la strategia mediatica come atto artistico. Manifesto tecnico della letteratura futurista (1912): codifica del paroliberismo (infiniti, segni matematici, abolizione sintassi e punteggiatura).' },
+      opere: { label: 'Categoria', title: 'Opere', text: 'Mafarka il futurista (1909): romanzo, processato per oscenità. Zang Tumb Tuum (1914): il capolavoro del paroliberismo, la battaglia di Adrianopoli, ZANG TUMB TUUUUMB. Arte dei rumori di Russolo (1913): musica futurista.' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'Marinetti vs D\'Annunzio: distruzione della tradizione vs ornamento estetico; paroliberismo vs raffinatezza metrica; fascismo rivoluzionario vs cortigianeria. Futurismo vs Crepuscolarismo: eroico e veloce vs malinconico e dimesso; modernità esaltata vs indifferente.' },
+      'vita-alessandria': { label: 'Vita', title: 'Alessandria 1876 · Fasci 1919', text: 'Nasce il 22 dicembre 1876 ad Alessandria d\'Egitto da genitori italiani borghesi. L\'infanzia cosmopolita (Egitto, Francia, Italia) gli dà l\'apertura internazionale che distinguerà il Futurismo. Nel 1919 partecipa alla fondazione dei Fasci di Combattimento con Mussolini. Nel 1929 entra nell\'Accademia d\'Italia, paradosso per il nemico dei musei. Muore il 2 dicembre 1944 a Bellagio.' },
+      'vita-poesia': { label: 'Vita', title: 'Rivista Poesia 1905', text: 'Fonda a Milano nel 1905 la rivista Poesia, che diventa il laboratorio delle idee che porteranno al Manifesto del Futurismo. La rivista gli dà i contatti internazionali necessari per pubblicare su Le Figaro — la scelta strategica che darà al Futurismo la massima diffusione europea.' },
+      'poetica-antipassatismo': { label: 'Poetica', title: 'Antipassatismo', text: 'Principio fondamentale: rottura totale con il passato culturale. I musei sono «cimiteri», le biblioteche «dormitori». Il passato è un cadavere che soffoca il presente. Non è nostalgia romantica del passato perduto: è distruzione gioiosa. «Noi vogliamo demolire i musei, le biblioteche» (punto 10 del Manifesto).' },
+      'poetica-velocita': { label: 'Poetica', title: 'Velocità e macchina', text: 'La velocità è il valore estetico supremo della modernità. L\'automobile da corsa — con il suo rombo e la sua potenza meccanica — è più bella della Nike di Samotracia (punto 4). Non è provocazione: è nuova estetica. Il confronto è deliberatamente scandaloso: il prodotto industriale del presente contro il capolavoro artistico dell\'antichità.' },
+      'poetica-parolibero': { label: 'Poetica', title: 'Parole in libertà', text: 'Il Manifesto tecnico (1912) codifica: abolire la sintassi (usare solo infiniti), abolire la punteggiatura (sostituirla con segni matematici: + × ÷ =), abolire gli aggettivi, usare onomatopee per i suoni, analogie distanti senza «come», tavola parolibera (pagina come campo visivo). ZANG TUMB TUMB è l\'onomatopea del cannone.' },
+      'manifesto-1909': { label: 'Manifesto', title: 'Manifesto del Futurismo 1909', text: 'Pubblicato il 20 febbraio 1909 su Le Figaro di Parigi: la scelta mediatica più importante. 11 punti: punto 4 (auto > Nike), punto 7 (bellezza nella lotta), punto 9 (guerra igiene del mondo), punto 10 (demolire musei), punto 11 (cantare le folle). La pubblicazione su Le Figaro è già un atto futurista: letteratura come happening mediatico.' },
+      'manifesto-1912': { label: 'Manifesto', title: 'Manifesto tecnico 1912', text: 'Completa il Manifesto del 1909 con la codifica tecnica del paroliberismo: abolire sintassi (infiniti), punteggiatura (segni matematici), aggettivi (sostantivi nudi); onomatopee; analogie distanti; tavola visiva. È il passaggio dall\'ideologia alla tecnica: come scrivere futurista in pratica.' },
+      'opere-mafarka': { label: 'Opere', title: 'Mafarka il futurista 1909', text: 'Romanzo scritto in francese (1909) e tradotto in italiano. Ambientato in un\'Africa immaginaria, racconta le gesta del condottiero Mafarka-el-Bar. Tono epico, violento, sessualità esibita. Processato per oscenità in Italia — successo di pubbliche relazioni per Marinetti, che trasforma il processo in ribalta mediatica.' },
+      'opere-zang': { label: 'Opere', title: 'Zang Tumb Tuum 1914', text: 'Il capolavoro del paroliberismo: la battaglia di Adrianopoli del 1912. ZANG TUMB TUUUUMB = onomatopea del cannone. Sintassi abolita: solo infiniti e sostantivi nudi. Segni matematici: + × ÷ = al posto dei connettivi. croc-croc (passi nel fango), glu-glu (acqua palude). La pagina come partitura visiva.' },
+      'opere-arti': { label: 'Opere', title: 'Futurismo nelle arti', text: 'Il Futurismo coinvolge tutte le arti: Umberto Boccioni (pittura/scultura: simultaneità del movimento), Giacomo Balla (scomposizione del movimento), Luigi Russolo (Arte dei rumori, 1913: gli intonarumori). La proliferazione dei manifesti artistici è essa stessa un gesto futurista: quantità e velocità come valori.' },
+      'confronti-dannunzio': { label: 'Confronti', title: 'Marinetti vs D\'Annunzio', text: 'D\'Annunzio usa la tradizione come ornamento estetico; Marinetti la vuole distruggere. D\'Annunzio raffina la metrica; Marinetti la abolisce. D\'Annunzio è cortigiano verso i potenti; Marinetti è radicalmente antiborghese (almeno all\'inizio). D\'Annunzio nazionalismo aristocratico; Marinetti fascismo rivoluzionario.' },
+      'confronti-crepuscolare': { label: 'Confronti', title: 'Futurismo vs Crepuscolarismo', text: 'Risposte opposte alla stessa crisi (la modernità industriale): il Futurismo la esalta con tono eroico e veloce; il Crepuscolarismo la subisce con malinconia dimessa e grigia. Modernità: esaltata come valore supremo (Futurismo) vs fonte di grigio squallore (Gozzano, Corazzini). Forma: sperimentazione radicale vs tono dimesso tradizionale.' }
+    };
+
+    function showNode(key) {
+      const node = NODES[key];
+      if (!node) return;
+      document.getElementById('tip-label').textContent = node.label || '';
+      document.getElementById('tip-title').textContent = node.title || '';
+      document.getElementById('tip-text').textContent = node.text || '';
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeTip() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeTip(); });
+  </script>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salvatore Quasimodo — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .map-overlay { display: none; position: fixed; inset: 0; background: rgba(28,16,16,.55); z-index: 500; align-items: center; justify-content: center; padding: 1rem; }
+    .map-overlay.show { display: flex; }
+    .map-modal { background: var(--paper); border: 1px solid var(--bordeaux-mid); padding: 2rem 2rem 1.5rem; max-width: 480px; width: 100%; max-height: 80vh; overflow-y: auto; position: relative; }
+    .modal-close { position: absolute; top: .8rem; right: 1rem; font-family: var(--serif); font-size: 1.4rem; color: var(--ink-soft); background: none; border: none; cursor: pointer; line-height: 1; }
+    .modal-close:hover { color: var(--bordeaux-deep); }
+    .modal-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: .5rem; }
+    .modal-title { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.6rem; color: var(--bordeaux-deep); margin-bottom: .8rem; line-height: 1.1; }
+    .modal-text { font-family: var(--sans); font-weight: 300; font-size: .92rem; color: var(--ink-soft); line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../carducci/index.html'">Mappa Carducci</button>
+      <button class="nav-btn" onclick="location.href='../marinetti/index.html'">Mappa Marinetti</button>
+      <button class="nav-btn active">Mappa Quasimodo</button>
+      <button class="nav-btn" onclick="location.href='../montale/index.html'">Mappa Montale</button>
+      <button class="nav-btn" onclick="location.href='../saba/index.html'">Mappa Saba</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Salvatore <em>Quasimodo</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: vita, fase ermetica, fase civile, testi e confronti.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:760px;width:max(100%, 1400px);margin:0 auto;" aria-label="Mappa WBS Salvatore Quasimodo">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <g transform="translate(260,0)">
+
+          <path d="M 225,438 C 271,438 319,100 319,100" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,250 319,250" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,400 319,400" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,560 319,560" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,720 319,720" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <path d="M 519,100 C 584,100 650,71 650,71" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,100 C 584,100 650,129 650,129" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,250 C 584,250 650,192 650,192" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,250 C 584,250 650,250 650,250" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,250 C 584,250 650,308 650,308" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,400 C 584,400 650,371 650,371" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,400 C 584,400 650,429 650,429" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,560 C 584,560 650,503 650,503" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,560 C 584,560 650,560 650,560" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,560 C 584,560 650,617 650,617" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,720 C 584,720 650,691 650,691" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,720 C 584,720 650,749 650,749" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="25" y="395" width="200" height="85" rx="7"/>
+            <text>
+              <tspan x="125" y="425" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="15" font-weight="600">Salvatore Quasimodo</tspan>
+              <tspan x="125" y="445" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">1901 — 1968</tspan>
+              <tspan x="125" y="465" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" letter-spacing="0.06em">Nobel 1959</tspan>
+            </text>
+          </g>
+
+          <!-- L1 -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button"><rect x="319" y="72" width="200" height="55" rx="5"/><text><tspan x="419" y="106" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('ermetica')" tabindex="0" role="button"><rect x="319" y="222" width="200" height="55" rx="5"/><text><tspan x="419" y="256" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · FASE ERMETICA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('civile')" tabindex="0" role="button"><rect x="319" y="372" width="200" height="55" rx="5"/><text><tspan x="419" y="406" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · FASE CIVILE</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button"><rect x="319" y="532" width="200" height="55" rx="5"/><text><tspan x="419" y="566" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button"><rect x="319" y="692" width="200" height="55" rx="5"/><text><tspan x="419" y="726" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text></g>
+
+          <!-- L2 - VITA -->
+          <g class="node node-l2" onclick="showNode('vita-modica')" tabindex="0" role="button"><rect x="650" y="48" width="238" height="48" rx="4"/><text><tspan x="769" y="68" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Modica 1901 · Nobel 1959</tspan><tspan x="769" y="86" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">secondo italiano dopo Carducci</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('vita-milano')" tabindex="0" role="button"><rect x="650" y="105" width="238" height="48" rx="4"/><text><tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Firenze e Milano</tspan><tspan x="769" y="143" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Solaria 1929 · Conservatorio 1940</tspan></text></g>
+
+          <!-- L2 - ERMETICA -->
+          <g class="node node-l2" onclick="showNode('erm-parolapura')" tabindex="0" role="button"><rect x="650" y="168" width="238" height="48" rx="4"/><text><tspan x="769" y="188" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Parola pura — massimo/minimo</tspan><tspan x="769" y="206" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Ed è subito sera · 3 versi</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('erm-sicilia')" tabindex="0" role="button"><rect x="650" y="226" width="238" height="48" rx="4"/><text><tspan x="769" y="246" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Sicilia come mito</tspan><tspan x="769" y="264" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">infanzia perduta · Tindari · analogia</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('erm-solitudine')" tabindex="0" role="button"><rect x="650" y="284" width="238" height="48" rx="4"/><text><tspan x="769" y="304" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Tempo e solitudine</tspan><tspan x="769" y="322" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">condizione ontologica · universale</tspan></text></g>
+
+          <!-- L2 - CIVILE -->
+          <g class="node node-l2" onclick="showNode('civ-guerra')" tabindex="0" role="button"><rect x="650" y="348" width="238" height="48" rx="4"/><text><tspan x="769" y="368" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">La guerra — spartiacque</tspan><tspan x="769" y="386" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Seconda Guerra · canto impossibile</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('civ-denuncia')" tabindex="0" role="button"><rect x="650" y="406" width="238" height="48" rx="4"/><text><tspan x="769" y="426" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Poesia d'accusa</tspan><tspan x="769" y="444" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">io→noi · immagini bibliche · denuncia</tspan></text></g>
+
+          <!-- L2 - TESTI -->
+          <g class="node node-l2" onclick="showNode('testi-sera')" tabindex="0" role="button"><rect x="650" y="480" width="238" height="48" rx="4"/><text><tspan x="769" y="500" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Ed è subito sera</tspan><tspan x="769" y="518" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">ognuno · trafitto · subito · 3 versi</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-salici')" tabindex="0" role="button"><rect x="650" y="537" width="238" height="48" rx="4"/><text><tspan x="769" y="557" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Alle fronde dei salici</tspan><tspan x="769" y="575" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Salmo 137 · piede straniero · per voto</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-uomo')" tabindex="0" role="button"><rect x="650" y="594" width="238" height="48" rx="4"/><text><tspan x="769" y="614" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Uomo del mio tempo</tspan><tspan x="769" y="632" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">pietra e fionda · Caino · scienza</tspan></text></g>
+
+          <!-- L2 - CONFRONTI -->
+          <g class="node node-l2" onclick="showNode('confronti-ungaretti')" tabindex="0" role="button"><rect x="650" y="668" width="238" height="48" rx="4"/><text><tspan x="769" y="688" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Quasimodo vs Ungaretti</tspan><tspan x="769" y="706" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">brevità · guerra 2ª vs 1ª · Sicilia/Egitto</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('confronti-montale')" tabindex="0" role="button"><rect x="650" y="726" width="238" height="48" rx="4"/><text><tspan x="769" y="746" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Quasimodo vs Montale</tspan><tspan x="769" y="764" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">impegno esplicito vs cattivo impegno</tspan></text></g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'Salvatore Quasimodo', text: 'Salvatore Quasimodo (1901–1968) nasce a Modica (Sicilia). Nobel 1959, secondo italiano dopo Carducci. Due fasi: ermetica (1930-1942, parola pura, Sicilia come mito) e civile (1945-1968, testimonianza bellica, io→noi). La Seconda Guerra Mondiale è lo spartiacque assoluto.' },
+      vita: { label: 'Categoria', title: 'Vita', text: 'Nasce a Modica nel 1901. Firenze e la rivista Solaria nel 1929. Acque e terre (esordio, 1930). Cattedra al Conservatorio di Milano nel 1940. La guerra trasforma la poetica (1942-45). Nobel nel 1959. Muore a Napoli nel 1968.' },
+      ermetica: { label: 'Categoria', title: 'Fase ermetica', text: 'Prima fase (1930-1942): parola pura (massimo con minimo), analogia ermetica (senza «come»), Sicilia come mito dell\'infanzia, tempo e solitudine come condizione ontologica. Raccolte: Acque e terre (1930), Oboe sommerso (1932), Lirici greci (1940).' },
+      civile: { label: 'Categoria', title: 'Fase civile', text: 'Seconda fase (1945-1968): poesia di testimonianza bellica, denuncia, io→noi collettivo, immagini bibliche (Salmo 137, Caino e Abele), versi più ampi. Raccolta chiave: Giorno dopo giorno (1947), con Alle fronde dei salici e Uomo del mio tempo.' },
+      testi: { label: 'Categoria', title: 'Testi', text: 'Ed è subito sera (3 versi, fase ermetica): ognuno=universale, trafitto=ambiguità, subito=velocità tempo. Vento a Tindari: apostrofe, Sicilia come mito, analogia. Alle fronde dei salici: Salmo 137, piede straniero, silenzio per voto. Uomo del mio tempo: pietra e fionda, Caino e Abele, scienza allo sterminio.' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'Quasimodo vs Ungaretti: brevità come risultato vs sistema; guerra collettiva vs biografica; Sicilia=mito vs Alessandria=energia. Quasimodo vs Montale: analogia→interiore vs correlativo oggettivo; impegno civile esplicito vs resistenza al cattivo impegno.' },
+      'vita-modica': { label: 'Vita', title: 'Modica 1901 · Nobel 1959', text: 'Nasce il 20 agosto 1901 a Modica (Ragusa, Sicilia), figlio di un capostazione. Nel 1959 riceve il Nobel, secondo italiano dopo Carducci (1906). La motivazione: «per la sua poetica lirica, che con ardente classicità esprime le tragiche esperienze della vita ai nostri tempi».' },
+      'vita-milano': { label: 'Vita', title: 'Firenze e Milano', text: 'Nel 1929 si trasferisce a Firenze dove entra in contatto con la rivista Solaria e con Elio Vittorini (suo cognato). Questo ambiente è decisivo per la formazione ermetica. Nel 1940 ottiene la cattedra di Letteratura italiana al Conservatorio Giuseppe Verdi di Milano, che occuperà fino alla morte.' },
+      'erm-parolapura': { label: 'Fase ermetica', title: 'Parola pura — massimo con minimo', text: 'Il principio dell\'ermetismo: fare il massimo con il minimo di parole. Ed è subito sera — tre versi, diciassette parole, infinità di significato — è il caso-limite. L\'oscurità non è gratuita: è fedeltà alla natura dell\'esperienza interiore che non si traduce in prosa. Silenzio e non-detto pesano quanto le parole.' },
+      'erm-sicilia': { label: 'Fase ermetica', title: 'Sicilia come mito', text: 'La Sicilia non è sfondo realistico ma mito dell\'infanzia perduta. Solo da Milano, in esilio volontario, diventa il luogo assoluto. Il ritorno sarebbe deludente: non si torna nel mito, si torna nella realtà geografica. Tindari è apostrofata come persona («ti so», «m\'assali»): il luogo diventa soggetto vivo.' },
+      'erm-solitudine': { label: 'Fase ermetica', title: 'Tempo e solitudine', text: 'La solitudine in Quasimodo non è biografica ma ontologica: «Ognuno sta solo sul cuor della terra» — il pronome universalizza. Il tempo è rapido e inesorabile: «ed è subito sera». Non c\'è tragedia romantica: c\'è constatazione asciutta della condizione umana. La vita è breve non per colpa ma per natura.' },
+      'civ-guerra': { label: 'Fase civile', title: 'La guerra — spartiacque', text: 'La Seconda Guerra Mondiale divide la carriera in due fasi incompatibili. La domanda di Alle fronde dei salici — «E come potevano noi cantare / con il piede straniero sopra il cuore» — è il momento della rottura. La parola pura ermetica diventa moralmente impossibile di fronte all\'orrore bellico.' },
+      'civ-denuncia': { label: 'Fase civile', title: 'Poesia d\'accusa', text: 'La poesia diventa testimonianza storica e denuncia. L\'io poetico diventa collettivo (io→noi). I versi si allungano — l\'urgenza non si contiene in frammenti. Immagini bibliche: Salmo 137 (Alle fronde dei salici), Caino e Abele (Uomo del mio tempo). Tono diretto di accusa: «Sei ancora quello della pietra e della fionda».' },
+      'testi-sera': { label: 'Testi', title: 'Ed è subito sera', text: 'Da Acque e terre (1930). Tre versi: endecasillabo + novenario + senario tronco (i versi si accorciano: la vita si contrae). «Ognuno» = solitudine universale, non autobiografica. «Trafitto da un raggio di sole» = ambiguità: la vita è bella e si ferisce allo stesso tempo. «Subito sera» = la vita finisce prima di capirla.' },
+      'testi-salici': { label: 'Testi', title: 'Alle fronde dei salici', text: 'Da Giorno dopo giorno (1945). Domanda retorica: come cantare con l\'occupazione? «Piede straniero sopra il cuore» = occupazione nazista. «Crocifisso sul palo del telegrafo» = martire sacro+moderno. Riferimento al Salmo 137 (ebrei a Babilonia che appendono le cetre ai salici). «Per voto» = silenzio come atto sacro.' },
+      'testi-uomo': { label: 'Testi', title: 'Uomo del mio tempo', text: 'Da Giorno dopo giorno (1946). «Pietra e fionda» = violenza primordiale dell\'umanità. «Carlinga» = aereo da guerra del XX secolo. «Scienza esatta persuasa allo sterminio» = paradosso illuminista. «Andiamo ai campi» = Caino e Abele (Genesi 4): il ciclo eterno della violenza fraterna. Finale ai figli: spezzare il ciclo dimenticando.' },
+      'confronti-ungaretti': { label: 'Confronti', title: 'Quasimodo vs Ungaretti', text: 'Brevità: risultato di processo ermetico (Quasimodo) vs sistema strutturale (Ungaretti). Guerra: Seconda Guerra/collettiva (Quasimodo) vs Prima Guerra/autobiografica/Carso (Ungaretti). Radici: Sicilia come mito lontano e perduto (Quasimodo) vs Alessandria come fonte di energia e contrasto (Ungaretti).' },
+      'confronti-montale': { label: 'Confronti', title: 'Quasimodo vs Montale', text: 'Natura: analogia ermetica — diventa interiore senza mediazione (Quasimodo) vs correlativo oggettivo — l\'oggetto concreto veicola l\'emozione senza diventare simbolo (Montale). Impegno: poesia civile esplicita e denuncia diretta (Quasimodo) vs resistenza al «cattivo impegno» — la poesia non deve fare propaganda (Montale).' }
+    };
+
+    function showNode(key) {
+      const node = NODES[key];
+      if (!node) return;
+      document.getElementById('tip-label').textContent = node.label || '';
+      document.getElementById('tip-title').textContent = node.title || '';
+      document.getElementById('tip-text').textContent = node.text || '';
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeTip() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeTip(); });
+  </script>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

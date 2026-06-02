@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testi — Giosuè Carducci · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .testo-dual { display: grid; grid-template-columns: 55fr 45fr; gap: 2.5rem; margin: 2rem 0 3rem; align-items: start; }
+    .td-original { background: var(--beige-mid); padding: 1.5rem 1.8rem; }
+    .td-original-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-original p { font-family: var(--serif); font-size: 1rem; line-height: 1.85; color: var(--ink); margin: 0 0 1rem; font-weight: 400; }
+    .td-original p:last-child { margin-bottom: 0; }
+    .td-comment { padding: 0 0 0 1.8rem; border-left: 2px solid var(--bordeaux-mid); }
+    .td-comment-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-note { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(28,16,16,.12); }
+    .td-note:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .td-note strong { display: block; font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bordeaux-deep); margin-bottom: .35rem; }
+    .td-note p { font-size: .92rem; color: var(--ink-soft); line-height: 1.65; margin: 0; }
+    .testo-badge { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--paper); background: var(--bordeaux-deep); padding: .2rem .7rem; margin-bottom: 1.2rem; }
+    .testo-titolo { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.9rem; color: var(--bordeaux-deep); margin-bottom: .3rem; line-height: 1.1; }
+    .testo-meta { font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1.5rem; }
+    @media (max-width: 768px) { .testo-dual { grid-template-columns: 1fr; } .td-comment { padding-left: 0; border-left: none; border-top: 2px solid var(--bordeaux-mid); padding-top: 1.5rem; margin-top: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn active" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+    </div>
+  </nav>
+
+  <section class="section active" id="testi">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Step 04</div>
+        <h2>I testi: analisi <em>verso per verso</em> <span class="badge">60 MIN</span></h2>
+      </div>
+      <p class="section-sub">Quattro testi fondamentali. Originale a sinistra, analisi stilistica e metrica a destra.</p>
+
+      <div class="poem-tabs">
+        <button class="ptab active" onclick="showPoem('pianto')">Pianto antico</button>
+        <button class="ptab" onclick="showPoem('sanmartino')">San Martino</button>
+        <button class="ptab" onclick="showPoem('stazione')">Alla stazione</button>
+        <button class="ptab" onclick="showPoem('nevicata')">Nevicata</button>
+      </div>
+
+      <!-- PIANTO ANTICO -->
+      <div id="poem-pianto" class="poem-panel active">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Pianto antico</div>
+        <div class="testo-meta">Da <em>Rime nuove</em> · 1887 · Dolore per la morte del figlio Dante</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale</span>
+            <p>L'albero a cui tendevi<br>la pargoletta mano,<br>il verde melograno<br>da' bei vermigli fior,</p>
+            <p>nel muto orto solingo<br>rinverdì tutto or ora<br>e giugno lo ristora<br>di luce e di calor.</p>
+            <p>Tu fior de la mia pianta<br>percossa e inaridita,<br>tu de l'inutil vita<br>estremo unico fior,</p>
+            <p>sei ne la terra fredda,<br>sei ne la terra negra;<br>né il sol più ti rallegra<br>né ti risveglia amor.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Strofe I–II — La natura che rinverde</strong>
+              <p>Il melograno del giardino torna a fiorire; giugno lo «ristora di luce e calor». Immagine di rinascita naturale nella prima metà, che prepara il contrasto della seconda metà.</p>
+            </div>
+            <div class="td-note">
+              <strong>Strofe III — La metafora figlio=fiore</strong>
+              <p>«Tu fior de la mia pianta» identifica il figlio con il fiore: naturale, fragile, reciso prima del tempo. La pianta (il padre) è «percossa e inaridita» — colpita dal lutto. «Inutil vita» = la vita del padre ora svuotata di senso.</p>
+            </div>
+            <div class="td-note">
+              <strong>Strofe IV — Anafora «sei»</strong>
+              <p>«Sei ne la terra fredda, / sei ne la terra negra» — l'anafora di «sei» ripete e martella la realtà della morte. Il contrasto con il calore e la luce delle strofe precedenti è il cuore emotivo del testo.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>4 quartine di novenari con rima alternata (ABBA). Antitesi centrale: natura rinverde / figlio morto. Anafora «sei» nella strofe finale. Metafora figlio=fiore di pianta. Lo schema metrico sobrio è già controllo classico del dolore.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAN MARTINO -->
+      <div id="poem-sanmartino" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">San Martino</div>
+        <div class="testo-meta">Da <em>Rime nuove</em> · 1883 · Paesaggio autunnale romagnolo</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale</span>
+            <p>La nebbia a gl'irti colli<br>piovigginando sale,<br>e sotto il maestrale<br>urla e biancheggia il mar;</p>
+            <p>ma per le vie del borgo<br>dal ribollir de' tini<br>va l'aspro odor de i vini<br>l'anime a rallegrar.</p>
+            <p>Gira su' ceppi accesi<br>lo spiedo scoppiettando:<br>sta il cacciator fischiando<br>su l'uscio a rimirar</p>
+            <p>tra le rossastre nuvole<br>stormi d'uccelli neri,<br>com'esuli pensieri,<br>nel vespero migrar.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Strofa I — Paesaggio cupo</strong>
+              <p>Nebbia, pioggia, maestrale, mare che urla e biancheggia: paesaggio autunnale aspro. «Irti colli» = aggettivo che dà fisicità quasi dolorosa al paesaggio.</p>
+            </div>
+            <div class="td-note">
+              <strong>Strofa II — «Ma» avversativo</strong>
+              <p>Il «ma» introduce il contrasto: al paesaggio esterno cupo corrisponde il calore interno del borgo. L'«aspro odor de i vini» è sinestesia (aspro = gusto + odore). L'anima si rallegra nonostante il freddo esterno.</p>
+            </div>
+            <div class="td-note">
+              <strong>Strofe III — Lo spiedo, il cacciatore</strong>
+              <p>Immagine domestica e concreta: il fuoco, lo spiedo che scoppietta, il cacciatore fischiettante. La vita del borgo continua immune dalle condizioni esterne.</p>
+            </div>
+            <div class="td-note">
+              <strong>Strofa IV — Similitudine finale</strong>
+              <p>«Com'esuli pensieri»: gli uccelli migratori che fuggono nel tramonto diventano metafora dei pensieri malinconici del poeta. Unico momento soggettivo della poesia, tutto concentrato nella similitudine.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>4 quartine con rima C costante (mar/rallegrar/rimirar/migrar): effetto di ritornello malinconico. Sinestesia «aspro odor... l'anime a rallegrar». Personificazione del mare («urla»). Similitudine «com'esuli pensieri» come unica apertura lirica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALLA STAZIONE -->
+      <div id="poem-stazione" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Alla stazione in una mattina d'autunno</div>
+        <div class="testo-meta">Da <em>Odi barbare</em> II serie · 1883/1889 · Metro alcaico</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (selezione quartine chiave)</span>
+            <p>Nebbia fitta, il caparbio<br>schiamazzo dei corvi;<br>la stazione in una tetra<br>luce sfumava.</p>
+            <p>Tra il fumo e il fracasso<br>de le cose che vanno,<br>tra il rumor de le cose<br>che vengono e vanno,</p>
+            <p>tu sola, anima mia,<br>tu sola rimanevi;<br>e il cuor ti si stringeva<br>a la partenza.</p>
+            <p>Quanto è cupa la notte!<br>Come urla il vento!<br>Corre il treno, corre, corre,<br>ululando, e sparve.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Apertura lugubre</strong>
+              <p>Nebbia, corvi, luce tetra: l'apertura è deliberatamente cupa, quasi romantica. Il paesaggio rispecchia lo stato d'animo del congedo imminente.</p>
+            </div>
+            <div class="td-note">
+              <strong>Modernità caotica</strong>
+              <p>«Cose che vanno... vengono e vanno»: il movimento caotico della stazione moderna, senza direzione o significato. La stazione come simbolo dell'accelerazione industriale — un mondo estraneo alla misura classica.</p>
+            </div>
+            <div class="td-note">
+              <strong>Treno — simbolo della modernità</strong>
+              <p>«Corre il treno, corre, corre, ululando, e sparve»: la personificazione del treno («ululando») lo trasforma in bestia o mostro. La triplice ripetizione di «corre» mima la velocità crescente. «E sparve» — chiusura brutale, irreversibile.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metro alcaico</strong>
+              <p>Il contrasto tra la gravità del metro alcaico (oraziano, solenne, lento) e la velocità frenetica del treno è deliberato: la tradizione classica è inadeguata a contenere la modernità — ma è l'unico strumento che il poeta ha.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEVICATA -->
+      <div id="poem-nevicata" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Nevicata</div>
+        <div class="testo-meta">Da <em>Odi barbare</em> II serie · 1881/1889 · Metro saffico</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (strofe chiave)</span>
+            <p>Lenta fiocca la neve pe 'l cielo cinerino:<br>gridi, strepiti, rombi<br>tace il mondo...</p>
+            <p>[strofe centrali: Garibaldi di bronzo coperto di bianco,<br>grandezza risorgimentale silenziata dalla neve]</p>
+            <p>O neve, o silenziosa, o quiete, tu scendi,<br>bianca, lenta, su tutto,<br>o neve, o silenziosa, sul dolor che s'ascende<br>tu scendi, tu scendi.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi e commento</span>
+            <div class="td-note">
+              <strong>Il silenzio della neve</strong>
+              <p>La neve non è elemento pittoresco ma forza che azzera ogni differenza — copre suoni, colori, distinzioni. «Tace il mondo» è chiave: la neve impone il silenzio come condizione cosmica.</p>
+            </div>
+            <div class="td-note">
+              <strong>Garibaldi di bronzo — grandezza immobilizzata</strong>
+              <p>La statua di Garibaldi coperta di neve: la grandezza risorgimentale — il mito fondante dell'Italia unita — viene silenziata e immobilizzata dalla neve. Non è ironia ma malinconia: il passato eroico si congela sotto il presente.</p>
+            </div>
+            <div class="td-note">
+              <strong>Apostrofe finale e anafora «O neve»</strong>
+              <p>«O neve, o silenziosa» — apostrofe alla neve come figura quasi divina. L'anafora («O neve, o silenziosa... tu scendi, tu scendi») crea un ritmo incantatorio che mima il cadere lento dei fiocchi.</p>
+            </div>
+            <div class="td-note">
+              <strong>Paradosso: neve fredda su «dolor che s'ascende»</strong>
+              <p>Il dolore è caldo (s'ascende = sale, brucia); la neve è fredda. Il paradosso: la neve fredda scende su un dolore che sale caldo. La morte, il silenzio cosmico, portano una pace che il cuore non può trovare da solo.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metro saffico</strong>
+              <p>Tre endecasillabi saffici + adonio per strofe. La lentezza del metro saffico imita il cadere pigro della neve: forma e contenuto si corrispondono perfettamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>
