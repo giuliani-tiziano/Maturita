@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Italo Svevo — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../../index.html'">Una guida per la Maturità</button>
+      <button class="nav-btn" onclick="location.href='../saba/index.html'">Mappa Saba</button>
+      <button class="nav-btn active">Mappa Svevo</button>
+      <button class="nav-btn" onclick="location.href='../pirandello/index.html'">Mappa Pirandello</button>
+      <button class="nav-btn" onclick="location.href='../ungaretti/index.html'">Mappa Ungaretti</button>
+      <button class="nav-btn" onclick="location.href='../montale/index.html'">Mappa Montale</button>
+      <button class="nav-btn" onclick="location.href='../dannunzio/index.html'">Mappa D'Annunzio</button>
+      <button class="nav-btn" onclick="location.href='../pascoli/index.html'">Mappa Pascoli</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Italo <em>Svevo</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Struttura concettuale — clicca su ogni nodo per la spiegazione.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <!-- 5 categories · L1 centers: 112, 275, 438, 600, 763 · Root cy=438 -->
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:750px;width:max(100%, 1400px);" aria-label="Mappa WBS Italo Svevo">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <!-- Connectors Root → L1 -->
+          <path d="M 225,438 C 271,438 319,112 319,112" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,275 319,275" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,438 319,438" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,600 319,600" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,763 319,763" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <!-- Vita → L2 (cy: 55, 112, 170) -->
+          <path d="M 519,112 C 584,112 650,55 650,55" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,112 C 584,112 650,112 650,112" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,112 C 584,112 650,170 650,170" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Poetica → L2 (cy: 218, 275, 333) -->
+          <path d="M 519,275 C 584,275 650,218 650,218" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,275 C 584,275 650,275 650,275" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,275 C 584,275 650,333 650,333" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Opere → L2 (cy: 380, 438, 495) -->
+          <path d="M 519,438 C 584,438 650,380 650,380" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,438 650,438" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,495 650,495" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Testi → L2 (cy: 543, 600, 658) -->
+          <path d="M 519,600 C 584,600 650,543 650,543" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,600 C 584,600 650,600 650,600" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,600 C 584,600 650,658 650,658" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <!-- Confronti → L2 (cy: 734, 792) -->
+          <path d="M 519,763 C 584,763 650,734 650,734" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,763 C 584,763 650,792 650,792" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="25" y="400" width="200" height="75" rx="7"/>
+            <text>
+              <tspan x="125" y="434" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">Italo Svevo</tspan>
+              <tspan x="125" y="454" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">1861 — 1928</tspan>
+            </text>
+          </g>
+
+          <!-- L1 nodes -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button">
+            <rect x="319" y="85" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="119" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button">
+            <rect x="319" y="248" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="282" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button">
+            <rect x="319" y="410" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="444" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · OPERE</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button">
+            <rect x="319" y="573" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="607" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text>
+          </g>
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button">
+            <rect x="319" y="736" width="200" height="55" rx="5"/>
+            <text><tspan x="419" y="770" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text>
+          </g>
+
+          <!-- L2: VITA (y: 31, 88, 146) -->
+          <g class="node node-l2" onclick="showNode('vita-trieste')" tabindex="0" role="button">
+            <rect x="650" y="31" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="51" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Trieste borghese</tspan>
+              <tspan x="769" y="69" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">italiano/austriaco · Schmitz</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('vita-joyce')" tabindex="0" role="button">
+            <rect x="650" y="88" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="108" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Amicizia con Joyce</tspan>
+              <tspan x="769" y="126" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">dal 1907 · Larbaud · Parigi</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('vita-tardivo')" tabindex="0" role="button">
+            <rect x="650" y="146" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="166" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Tardivo riconoscimento</tspan>
+              <tspan x="769" y="184" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">1925 · 25 anni di oblio</tspan>
+            </text>
+          </g>
+
+          <!-- L2: POETICA (y: 194, 251, 309) -->
+          <g class="node node-l2" onclick="showNode('poetica-inetto')" tabindex="0" role="button">
+            <rect x="650" y="194" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="214" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">L'inetto</tspan>
+              <tspan x="769" y="232" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">fallimento come lucidità</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('poetica-monologo')" tabindex="0" role="button">
+            <rect x="650" y="251" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="271" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Monologo interiore</tspan>
+              <tspan x="769" y="289" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">flusso di coscienza · inattendibile</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('poetica-ironia')" tabindex="0" role="button">
+            <rect x="650" y="309" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="329" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Ironia e inattendibilità</tspan>
+              <tspan x="769" y="347" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Zeno svela ciò che nega</tspan>
+            </text>
+          </g>
+
+          <!-- L2: OPERE (y: 356, 414, 471) -->
+          <g class="node node-l2" onclick="showNode('opere-uvita')" tabindex="0" role="button">
+            <rect x="650" y="356" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="376" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Una vita</tspan>
+              <tspan x="769" y="394" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">1892 · Alfonso Nitti · flop</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('opere-senilita')" tabindex="0" role="button">
+            <rect x="650" y="414" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="434" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Senilità</tspan>
+              <tspan x="769" y="452" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">1898 · Emilio Brentani</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('opere-zeno')" tabindex="0" role="button">
+            <rect x="650" y="471" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="491" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">La coscienza di Zeno</tspan>
+              <tspan x="769" y="509" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">1923 · struttura tematica</tspan>
+            </text>
+          </g>
+
+          <!-- L2: TESTI (y: 519, 576, 634) -->
+          <g class="node node-l2" onclick="showNode('testi-fumo')" tabindex="0" role="button">
+            <rect x="650" y="519" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="539" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Il fumo</tspan>
+              <tspan x="769" y="557" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">l'ultima sigaretta · intenzione</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('testi-padre')" tabindex="0" role="button">
+            <rect x="650" y="576" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="596" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">La morte del padre</tspan>
+              <tspan x="769" y="614" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">lo schiaffo · Freud in filigrana</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('testi-finale')" tabindex="0" role="button">
+            <rect x="650" y="634" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="654" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Psico-analisi / Il finale</tspan>
+              <tspan x="769" y="672" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">profezia · bomba atomica</tspan>
+            </text>
+          </g>
+
+          <!-- L2: CONFRONTI (y: 710, 768) -->
+          <g class="node node-l2" onclick="showNode('confronti-pirandello')" tabindex="0" role="button">
+            <rect x="650" y="710" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="730" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">vs Pirandello</tspan>
+              <tspan x="769" y="748" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">inetto (interno) vs maschera (soc.)</tspan>
+            </text>
+          </g>
+          <g class="node node-l2" onclick="showNode('confronti-chiave')" tabindex="0" role="button">
+            <rect x="650" y="768" width="238" height="48" rx="4"/>
+            <text>
+              <tspan x="769" y="788" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">5 parole-chiave</tspan>
+              <tspan x="769" y="806" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">sintesi del sistema</tspan>
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'Italo Svevo', text: 'Vero nome Ettore Schmitz. Nasce a Trieste nel 1861 da padre tedesco e madre italiana. Borghese di successo (direttore Veneziani & Co.) e scrittore fallito. Tre romanzi, tutti ignorati in vita. Amicizia con James Joyce dal 1907. Riconosciuto nel 1925 grazie a Larbaud e Crémieux. Muore nel 1928 in un incidente automobilistico.' },
+      vita: { label: 'Categoria', title: 'Vita', text: 'Trieste città di confine: italiana, tedesca, ebraica. La doppia identità — imprenditore di giorno, scrittore di notte — nutre il tema dell\'inetto. Amicizia con Joyce dal 1907. Il successo di Zeno in Francia (1926) precede quello italiano. Muore nel 1928.' },
+      poetica: { label: 'Categoria', title: 'Poetica', text: 'L\'inetto: personaggio che fallisce per impossibilità psicologica, non per mancanza di talento. L\'inettitudine è lucidità travestita da debolezza. Monologo interiore: il narratore è inattendibile — racconta non come le cose sono andate, ma come le interpreta la propria coscienza.' },
+      opere: { label: 'Categoria', title: 'Opere', text: 'Tre romanzi: Una vita (1892, Alfonso Nitti), Senilità (1898, Emilio Brentani), La coscienza di Zeno (1923). I primi due ignorati; Zeno riconosciuto solo nel 1925-26. Le 25 anni di silenzio tra Senilità e Zeno sono fondamentali per la maturazione dello stile.' },
+      testi: { label: 'Categoria', title: 'Testi', text: 'I testi del programma vengono quasi tutti da La coscienza di Zeno: Prefazione/Preambolo (narratore inattendibile), Il fumo (l\'ultima sigaretta), La morte del padre (lo schiaffo), Psico-analisi e Il finale (la profezia della bomba atomica).' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'vs Pirandello: Svevo decostruisce l\'identità dall\'interno (psicologia, coscienza); Pirandello la decostruisce dall\'esterno (società, maschere). vs Proust: entrambi usano la memoria, ma Svevo è ironico dove Proust è lirico. vs Joyce: flusso di coscienza condiviso, ma ironia vs epifania.' },
+      'vita-trieste': { label: 'Vita', title: 'Trieste borghese', text: 'Trieste austro-ungarica: città di confine (italiana, tedesca, ebraica). Svevo è borghese di successo (direttore della Veneziani & Co.), letterato fallito, ebreo laico. Il nome d\'arte «Italo Svevo» unifica le due anime: italiano + svevo (tedesco). La doppia identità è il nutrimento dell\'inettitudine.' },
+      'vita-joyce': { label: 'Vita', title: 'Amicizia con Joyce', text: 'Joyce insegna inglese a Svevo dal 1907. Leggendo Senilità, lo definisce «un maestro». Svevo gli mostra il dattiloscritto di Zeno. Joyce lo segnala agli intellettuali parigini (Larbaud, Crémieux). Il successo di Zeno in Francia (1926) precede quello italiano.' },
+      'vita-tardivo': { label: 'Vita', title: 'Tardivo riconoscimento', text: 'Fino al 1925 Svevo è sconosciuto in Italia. Una vita (1892) e Senilità (1898): critiche tiepide. Solo con La coscienza di Zeno (1923) e la mediazione francese (1925-26) arriva il riconoscimento. 25 anni di silenzio letterario. Muore nel 1928 prima di raccogliere i frutti.' },
+      'poetica-inetto': { label: 'Poetica', title: 'L\'inetto', text: 'Personaggio che fallisce per impossibilità psicologica, non per mancanza di talento. Alfonso Nitti (Una vita), Emilio Brentani (Senilità), Zeno Cosini (La coscienza). L\'inettitudine è lucidità travestita da debolezza: l\'inetto vede la vanità del mondo e non riesce ad adeguarsi.' },
+      'poetica-monologo': { label: 'Poetica', title: 'Monologo interiore', text: 'Anticipazione del flusso di coscienza. Il narratore di Zeno è inattendibile: racconta non come le cose sono andate, ma come le interpreta la propria coscienza. La struttura non è cronologica ma psicologica (capitoli tematici: il fumo, il padre, la moglie, l\'amante, gli affari).' },
+      'poetica-ironia': { label: 'Poetica', title: 'Ironia e inattendibilità', text: 'Svevo usa un\'ironia che si rivolge prima di tutto al narratore stesso. Zeno si giustifica, si assolve, si contraddice. Il lettore vede ciò che Zeno non vuole vedere. L\'ironia sveviana non è satirica ma conoscitiva: svela l\'autoingannamento come struttura della coscienza.' },
+      'opere-uvita': { label: 'Opere', title: 'Una vita (1892)', text: 'Protagonista: Alfonso Nitti, impiegato di banca che fallisce nell\'amore e nella letteratura. Primo tentativo del tipo inetto. Influenza di Schopenhauer. Accolta con indifferenza dalla critica: Svevo la autopubblica a spese sue. Il titolo è già una condanna ironica.' },
+      'opere-senilita': { label: 'Opere', title: 'Senilità (1898)', text: 'Emilio Brentani, letterato mediocre che costruisce un\'illusione d\'amore su Angiolina. «Senilità» = incapacità di vivere pienamente, non vecchiaia anagrafica. Altro flop critico. Svevo smette di scrivere narrativa per 25 anni.' },
+      'opere-zeno': { label: 'Opere', title: 'La coscienza di Zeno (1923)', text: 'Struttura: memorie fittizie scritte su consiglio del dottore-psicanalista. Capitoli tematici, non cronologici. Zeno racconta la propria vita (il fumo, la morte del padre, il matrimonio, l\'amante, il commercio) con ironia che svela l\'autoingannamento. Finale profetico: la bomba atomica.' },
+      'testi-fumo': { label: 'Testi', title: 'Il fumo', text: 'Zeno è dipendente dal fumo e si prefigge continuamente l\'ultima sigaretta senza smettere mai. «L\'ultima sigaretta» = metafora del voler cambiare senza mai farlo. Ogni sigaretta porta la data dell\'ultima: l\'intenzione permanente di cambiare che non cambia mai.' },
+      'testi-padre': { label: 'Testi', title: 'La morte del padre', text: 'Zeno racconta la morte del padre: momento cruciale ma narrato con distorsioni (lo schiaffo — involontario? intenzionale?). L\'ambiguità è irrisolvibile: il narratore inattendibile non può stabilire la propria innocenza. Freud in filigrana: senso di colpa, rimozione, elaborazione del lutto.' },
+      'testi-finale': { label: 'Testi', title: 'Psico-analisi / Il finale', text: 'Zeno smette la psicanalisi e scopre di stare bene senza. Nel finale, profezia apocalittica: un uomo costruirà una bomba e distruggerà la terra. La malattia dell\'uomo è incurabile. L\'ironia diventa nichilismo cosmico: l\'inettitudine è non più individuale ma universale.' },
+      'confronti-pirandello': { label: 'Confronti', title: 'vs Pirandello', text: 'Svevo: l\'inetto — consapevole della vanità del mondo, si rifiuta di adeguarsi; il problema è interiore (coscienza, psicologia). Pirandello: la maschera — l\'identità è imposta dall\'esterno; il problema è sociale (gli altri, la forma). Entrambi decostruiscono la fiducia positivista nell\'identità stabile.' },
+      'confronti-chiave': { label: 'Sintesi', title: '5 parole-chiave di Svevo', text: '① Inetto — fallimento come lucidità. ② Inattendibilità — il narratore mente a se stesso. ③ Coscienza — titolo e tema centrale: la malattia della coscienza. ④ Ironia — stile e visione del mondo. ⑤ Trieste — città di confine che genera l\'identità doppia.' }
+    };
+
+    function showNode(key) {
+      const n = NODES[key];
+      if (!n) return;
+      document.getElementById('tip-label').textContent = n.label;
+      document.getElementById('tip-title').textContent = n.title;
+      document.getElementById('tip-text').textContent = n.text;
+      document.getElementById('map-overlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeTip() {
+      document.getElementById('map-overlay').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTip(); });
+  </script>
+</body>
+</html>

@@ -12,6 +12,40 @@
 (function () {
   'use strict';
 
+  /* ────────────────────────  DARK MODE  ─────────────────────────────── */
+  // Applica il tema salvato e inietta il bottone toggle nella topbar.
+  (function initTheme() {
+    const saved = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', saved);
+
+    function buildToggle() {
+      if (document.querySelector('.theme-toggle')) return;
+      const nav = document.querySelector('.topbar-nav') ||
+                  document.querySelector('.topbar-links') ||
+                  document.querySelector('.topbar');
+      if (!nav) return;
+      const btn = document.createElement('button');
+      btn.className = 'theme-toggle';
+      btn.setAttribute('aria-label', 'Modalità notte');
+      btn.setAttribute('title', 'Modalità notte');
+      btn.textContent = (document.documentElement.getAttribute('data-theme') === 'dark') ? '☀' : '☾';
+      btn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme');
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        btn.textContent = next === 'dark' ? '☀' : '☾';
+      });
+      nav.appendChild(btn);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', buildToggle);
+    } else {
+      buildToggle();
+    }
+  })();
+
   /* ────────────────────────  PROGRESS BAR  ──────────────────────────── */
   const pb = document.getElementById('pb');
   function updateProg() {
@@ -31,11 +65,28 @@
   const navBtns = document.querySelectorAll('.nav-btn[data-sec]');
   const allSections = document.querySelectorAll('.section[id]');
 
+  function closeAllAccordions(scope) {
+    const root = scope || document;
+    root.querySelectorAll('.acc-head.open, .acc-trigger.open, .acc-body.open').forEach(el => {
+      el.classList.remove('open');
+    });
+    root.querySelectorAll('.acc-head[aria-expanded], .acc-trigger[aria-expanded]').forEach(el => {
+      el.setAttribute('aria-expanded', 'false');
+    });
+  }
+
   function showSection(id) {
+    closeAllAccordions();
     allSections.forEach(s => s.classList.remove('active'));
     navBtns.forEach(b => b.classList.remove('active'));
     const sec = document.getElementById(id);
-    if (sec) sec.classList.add('active');
+    if (sec) {
+      sec.classList.add('active');
+      // Rendi visibili gli elementi .ai nella sezione appena mostrata
+      sec.querySelectorAll('.ai:not(.visible)').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 30 + i * 40);
+      });
+    }
     navBtns.forEach(b => {
       if (b.dataset.sec === id) b.classList.add('active');
     });
@@ -95,7 +146,7 @@
       // fall-back: cerca un parent comune che contiene gli altri trigger
       container = trigger.parentElement;
       while (container && container.querySelectorAll &&
-             container.querySelectorAll('.acc-head, .acc-trigger').length < 2) {
+        container.querySelectorAll('.acc-head, .acc-trigger').length < 2) {
         container = container.parentElement;
       }
       if (!container) container = document.body;
@@ -118,6 +169,9 @@
     t.onclick = null;
     t.addEventListener('click', function () { toggleAccordion(this); });
   });
+
+  // Stato iniziale coerente: nessun pannello aperto automaticamente.
+  closeAllAccordions();
 
   // Espongo per compatibilità con onclick="toggleAcc(this)" inline
   window.toggleAcc = toggleAccordion;
@@ -152,7 +206,7 @@
           } else {
             opt.classList.add('wrong');
             fb.innerHTML = '✗ Risposta corretta: <strong>' +
-                           opts[correct].textContent.trim() + '</strong>';
+              opts[correct].textContent.trim() + '</strong>';
             fb.classList.add('show', 'ko', 'wrong-fb');
           }
         }
@@ -275,5 +329,20 @@
     document.querySelectorAll('.card, .opera-card, .author-card, .feature').forEach(el => {
       animObserver.observe(el);
     });
+
+    /* Observer per .ai → aggiunge classe .visible */
+    const aiObserver = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add('visible');
+          aiObserver.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+    document.querySelectorAll('.ai').forEach(el => aiObserver.observe(el));
+  } else {
+    /* Fallback senza IntersectionObserver: mostra tutto subito */
+    document.querySelectorAll('.ai').forEach(el => el.classList.add('visible'));
   }
 })();

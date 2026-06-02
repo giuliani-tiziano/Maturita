@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz · Letteratura Italiana — Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%235C1A28'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<!-- ══ TOPBAR ══ -->
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../index.html" class="topbar-back">← Portale</a>
+    <a href="../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+  </div>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="../pages/autori.html">Autori</a>
+    <a class="topbar-link" href="../pages/correnti.html">Correnti</a>
+    <a class="topbar-link" href="../pages/mappe.html">Mappe</a>
+    <a class="topbar-link" href="../pages/timeline.html">Timeline</a>
+    <a class="topbar-link" href="../pages/flashcard.html">Flashcard</a>
+    <a class="topbar-link active cta" href="../pages/quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<!-- ══════════ SCREEN HOME ══════════ -->
+<section class="screen active" id="screen-home">
+  <div class="home-inner">
+    <span class="home-eyebrow" style="display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bordeaux-mid);margin-bottom:1.5rem;">
+      Verifica · Letteratura italiana dell'Otto e Novecento
+    </span>
+    <h1 class="home-title" style="font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,5vw,3.8rem);margin-bottom:.8rem;color:var(--ink);">
+      Scegli il <em style="color:var(--bordeaux-deep);">quiz</em>
+    </h1>
+    <p style="font-family:var(--serif);font-style:italic;color:var(--ink-soft);max-width:52ch;margin-bottom:2.5rem;font-size:1.05rem;line-height:1.55;">
+      Autori e correnti letterarie · ogni avvio estrae 10 domande casuali dalla banca,
+      con scelta multipla, vero/falso e domande aperte con auto-valutazione.
+    </p>
+
+    <div style="margin-bottom:2rem;">
+      <a href="../pages/quiz.html" class="btn primary" style="display:inline-flex;align-items:center;gap:.6rem;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Torna alla selezione autori
+      </a>
+    </div>
+
+    <!-- Griglia autori rapida (fallback se si arriva senza hash) -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:2rem;max-width:1080px;">
+
+      <!-- AUTORI -->
+      <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding-bottom:.5rem;border-bottom:1px solid var(--rule);">Autori</div>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('saba')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">S</span>
+        <div class="author-card-meta">Canzoniere · poesia onesta</div>
+        <div class="author-card-name">Umberto<br><em>Saba</em></div>
+        <div class="author-card-cta" id="best-saba"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('ungaretti')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">U</span>
+        <div class="author-card-meta">L'Allegria · parola-lampo</div>
+        <div class="author-card-name">Giuseppe<br><em>Ungaretti</em></div>
+        <div class="author-card-cta" id="best-ungaretti"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('montale')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">M</span>
+        <div class="author-card-meta">Ossi di seppia · il muro</div>
+        <div class="author-card-name">Eugenio<br><em>Montale</em></div>
+        <div class="author-card-cta" id="best-montale"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('svevo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">S</span>
+        <div class="author-card-meta">Coscienza di Zeno · inetto</div>
+        <div class="author-card-name">Italo<br><em>Svevo</em></div>
+        <div class="author-card-cta" id="best-svevo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('pirandello')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">P</span>
+        <div class="author-card-meta">Sei personaggi · umorismo</div>
+        <div class="author-card-name">Luigi<br><em>Pirandello</em></div>
+        <div class="author-card-cta" id="best-pirandello"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('dannunzio')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">D</span>
+        <div class="author-card-meta">Alcyone · superuomo</div>
+        <div class="author-card-name">Gabriele<br><em>D'Annunzio</em></div>
+        <div class="author-card-cta" id="best-dannunzio"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('pascoli')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">P</span>
+        <div class="author-card-meta">Myricae · fanciullino</div>
+        <div class="author-card-name">Giovanni<br><em>Pascoli</em></div>
+        <div class="author-card-cta" id="best-pascoli"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('verga')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">V</span>
+        <div class="author-card-meta">Malavoglia · i vinti</div>
+        <div class="author-card-name">Giovanni<br><em>Verga</em></div>
+        <div class="author-card-cta" id="best-verga"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('campana')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">C</span>
+        <div class="author-card-meta">Canti orfici · orfismo</div>
+        <div class="author-card-name">Dino<br><em>Campana</em></div>
+        <div class="author-card-cta" id="best-campana"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('pavese')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">P</span>
+        <div class="author-card-meta">Luna e falò · mito</div>
+        <div class="author-card-name">Cesare<br><em>Pavese</em></div>
+        <div class="author-card-cta" id="best-pavese"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('pasolini')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">P</span>
+        <div class="author-card-meta">Ragazzi di vita · corsaro</div>
+        <div class="author-card-name">Pier Paolo<br><em>Pasolini</em></div>
+        <div class="author-card-cta" id="best-pasolini"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('calvino')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">C</span>
+        <div class="author-card-meta">Città invisibili · leggerezza</div>
+        <div class="author-card-name">Italo<br><em>Calvino</em></div>
+        <div class="author-card-cta" id="best-calvino"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <!-- CORRENTI -->
+      <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding:.8rem 0 .5rem;border-bottom:1px solid var(--rule);margin-top:1.5rem;">Correnti letterarie</div>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('naturalismo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">N</span>
+        <div class="author-card-meta">Zola · positivismo</div>
+        <div class="author-card-name">Il <em>Naturalismo</em></div>
+        <div class="author-card-cta" id="best-naturalismo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('verismo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">V</span>
+        <div class="author-card-meta">Verga · impersonalità</div>
+        <div class="author-card-name">Il <em>Verismo</em></div>
+        <div class="author-card-cta" id="best-verismo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('decadentismo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">D</span>
+        <div class="author-card-meta">Baudelaire · simbolo</div>
+        <div class="author-card-name">Il <em>Decadentismo</em></div>
+        <div class="author-card-cta" id="best-decadentismo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('simbolismo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">S</span>
+        <div class="author-card-meta">Mallarmé · suggestione</div>
+        <div class="author-card-name">Il <em>Simbolismo</em></div>
+        <div class="author-card-cta" id="best-simbolismo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('estetismo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">E</span>
+        <div class="author-card-meta">Wilde · arte per l'arte</div>
+        <div class="author-card-name">L'<em>Estetismo</em></div>
+        <div class="author-card-cta" id="best-estetismo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('futurismo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">F</span>
+        <div class="author-card-meta">Marinetti · velocità</div>
+        <div class="author-card-name">Il <em>Futurismo</em></div>
+        <div class="author-card-cta" id="best-futurismo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('crepuscolarismo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">C</span>
+        <div class="author-card-meta">Gozzano · tono dimesso</div>
+        <div class="author-card-name">Il <em>Crepuscolarismo</em></div>
+        <div class="author-card-cta" id="best-crepuscolarismo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('vociani')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">V</span>
+        <div class="author-card-meta">La Voce · frammento</div>
+        <div class="author-card-name">I <em>Vociani</em></div>
+        <div class="author-card-cta" id="best-vociani"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('ermetismo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">E</span>
+        <div class="author-card-meta">Ungaretti · parola assoluta</div>
+        <div class="author-card-name">L'<em>Ermetismo</em></div>
+        <div class="author-card-cta" id="best-ermetismo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('antinovecentismo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">A</span>
+        <div class="author-card-meta">Saba · chiarezza</div>
+        <div class="author-card-name">Linea <em>antinovecentista</em></div>
+        <div class="author-card-cta" id="best-antinovecentismo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+      <button class="author-card" onclick="QuizApp.openAuthorPanel('neorealismo')" style="cursor:pointer;text-align:left;">
+        <span class="author-card-initial">N</span>
+        <div class="author-card-meta">Pavese · Calvino · testimonianza</div>
+        <div class="author-card-name">Il <em>Neorealismo</em></div>
+        <div class="author-card-cta" id="best-neorealismo"></div>
+        <div class="author-card-cta">Avvia quiz →</div>
+      </button>
+
+    </div><!-- /grid -->
+
+    <div class="home-quote" id="home-q-quote" style="display:none;">
+      <cite id="home-q-cite"></cite>
+    </div>
+  </div><!-- /home-inner -->
+</section>
+
+<!-- ══════════ SCREEN QUIZ ══════════ -->
+<section class="screen" id="screen-quiz">
+  <div class="quiz-header">
+    <div class="quiz-header-inner">
+      <button class="btn-home-q" onclick="QuizApp.confirmExit()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:.4rem;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Quiz
+      </button>
+      <div class="quiz-author-badge" id="quiz-author-label">—</div>
+      <div class="quiz-counter">Dom. <span id="qCur">1</span>/<span id="qTot">10</span></div>
+      <div class="q-prog-wrap"><div class="q-prog-fill" id="q-prog-fill"></div></div>
+      <div class="score-live">★ <span id="score-live">0</span></div>
+      <div class="timer-disp" id="timer-disp">20:00</div>
+    </div>
+  </div>
+
+  <div class="quiz-body">
+    <div class="q-card" id="q-card"></div>
+  </div>
+
+  <div class="q-map-bar">
+    <div class="q-map-inner">
+      <div class="q-map-lbl">Mappa domande</div>
+      <div class="q-dots" id="q-dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SCREEN RESULTS ══════════ -->
+<section class="screen" id="screen-results">
+  <div class="res-hero">
+    <div class="res-hero-inner">
+      <div class="res-eyebrow" id="res-eyebrow">Risultato Quiz</div>
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120" width="140" height="140">
+          <circle class="ring-bg" cx="60" cy="60" r="56"/>
+          <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="56"/>
+        </svg>
+        <div class="ring-txt">
+          <div class="ring-score" id="ring-score">0</div>
+          <div class="ring-total" id="ring-total">/10</div>
+        </div>
+      </div>
+      <div class="res-grade" id="res-grade">—</div>
+      <div class="res-msg" id="res-msg"></div>
+    </div>
+  </div>
+
+  <div class="res-body">
+    <div class="res-breakdown">
+      <div class="rb-card ok"><div class="rb-val" id="rb-ok">0</div><div class="rb-lbl">Corrette</div></div>
+      <div class="rb-card ko"><div class="rb-val" id="rb-ko">0</div><div class="rb-lbl">Errate</div></div>
+      <div class="rb-card op"><div class="rb-val" id="rb-op">0</div><div class="rb-lbl">Aperte</div></div>
+    </div>
+
+    <div class="rev-title">Revisione risposte</div>
+    <div class="rev-sub">Clicca su ogni domanda per vedere la risposta corretta e la spiegazione</div>
+    <div id="rev-list"></div>
+
+    <div class="res-actions">
+      <button class="btn-act primary" onclick="QuizApp.restartQuiz()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 4v6h6M23 20v-6h-6M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+        Ricomincia
+      </button>
+      <button class="btn-act secondary" onclick="QuizApp.goHome()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        Scegli altro quiz
+      </button>
+    </div>
+
+    <div class="best-record" id="best-record"></div>
+    <div class="footer-q" id="footer-q"></div>
+  </div>
+</section>
+
+<!-- ══════════ MODAL MODALITÀ ══════════ -->
+<div id="mode-overlay">
+  <div id="mode-panel">
+    <button class="panel-close" onclick="QuizApp.closePanel()">×</button>
+    <div id="panel-author-label">Autore</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:var(--ink);margin-bottom:22px;line-height:1.1;">
+      Scegli la <em style="font-style:italic;color:var(--bordeaux-deep);">modalità</em>
+    </h2>
+
+    <div class="mode-grid">
+      <div class="mode-opt selected" data-mode="all" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">📚 Casuale</div>
+        <div class="mode-opt-desc">10 domande miste (MC + V/F + Aperte)</div>
+      </div>
+      <div class="mode-opt" data-mode="quick" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">⚡ Rapido</div>
+        <div class="mode-opt-desc">10 domande veloci, tutte casuali</div>
+      </div>
+      <div class="mode-opt" data-mode="mc-only" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">🔵 Solo MC</div>
+        <div class="mode-opt-desc">Solo scelta multipla e Vero/Falso</div>
+      </div>
+      <div class="mode-opt" data-mode="hard" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">🔥 Difficile</div>
+        <div class="mode-opt-desc">Solo Vero/Falso e domande aperte</div>
+      </div>
+    </div>
+
+    <div class="toggle-row">
+      <span>⏱ Timer 20 minuti</span>
+      <button class="toggle" id="panel-timer-toggle" onclick="QuizApp.togglePanelTimer()"></button>
+      <span class="toggle-label" id="panel-timer-label">disattivato</span>
+    </div>
+
+    <div class="toggle-row">
+      <span>🔀 Ordine casuale</span>
+      <button class="toggle on" id="panel-shuffle-toggle" onclick="QuizApp.togglePanelShuffle()"></button>
+    </div>
+
+    <button id="panel-start-btn" onclick="QuizApp.launchFromPanel()">
+      Inizia il Quiz
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:.5rem"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ══ DATI QUIZ — AUTORI ══ -->
+<script src="../js/quiz-data.js"></script>
+<script src="../js/pascoli-quiz-data.js"></script>
+<script src="../js/verga-quiz-data.js"></script>
+<script src="../js/campana-quiz-data.js"></script>
+<script src="../js/dannunzio-quiz-data.js"></script>
+<script src="../js/pavese-quiz-data.js"></script>
+<script src="../js/pasolini-quiz-data.js"></script>
+<script src="../js/calvino-quiz-data.js"></script>
+
+<!-- ══ DATI QUIZ — CORRENTI ══ -->
+<script src="../js/naturalismo-quiz-data.js"></script>
+<script src="../js/verismo-quiz-data.js"></script>
+<script src="../js/decadentismo-quiz-data.js"></script>
+<script src="../js/simbolismo-quiz-data.js"></script>
+<script src="../js/estetismo-quiz-data.js"></script>
+<script src="../js/futurismo-quiz-data.js"></script>
+<script src="../js/crepuscolarismo-quiz-data.js"></script>
+<script src="../js/vociani-quiz-data.js"></script>
+<script src="../js/ermetismo-quiz-data.js"></script>
+<script src="../js/antinovecentismo-quiz-data.js"></script>
+<script src="../js/neorealismo-quiz-data.js"></script>
+
+<!-- ══ MOTORE ══ -->
+<script src="../js/quiz-engine.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>

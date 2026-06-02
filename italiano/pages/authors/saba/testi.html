@@ -1,0 +1,601 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testi — Umberto Saba · Maturità</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+</head>
+
+<body>
+  <div class="prog-wrap">
+    <div class="prog-bar" id="pb"></div>
+  </div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn active" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+      <button class="nav-btn" onclick="location.href='glossario.html'">Glossario</button>
+    </div>
+  </nav>
+
+  <section class="section active" id="testi">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Step 05</div>
+        <h2>I testi: analisi verso per verso <span class="badge">60 MIN</span></h2>
+      </div>
+      <p>7 testi del programma. Per ognuno: testo → parafrasi → temi → figure retoriche → 3 parole chiave.</p>
+
+      <div class="poem-tabs">
+        <button class="ptab active" onclick="showPoem('amai')">Amai</button>
+        <button class="ptab" onclick="showPoem('moglie')">A mia moglie</button>
+        <button class="ptab" onclick="showPoem('capra')">La capra</button>
+        <button class="ptab" onclick="showPoem('trieste')">Trieste</button>
+        <button class="ptab" onclick="showPoem('citta')">Città vecchia</button>
+        <button class="ptab" onclick="showPoem('padre')">Mio padre «l'assassino»</button>
+        <button class="ptab" onclick="showPoem('ernesto')">La vera causa</button>
+        <button class="ptab" onclick="showPoem('ulisse')">Ulisse</button>
+      </div>
+
+      <div id="poem-amai" class="poem-panel active">
+        <div class="pw">
+          <div class="ptitle">Amai</div>
+          <div class="pmeta">Dal Canzoniere · sezione Mediterranee · 1946</div>
+          <p style="font-size:14px;margin-bottom:16px;"><strong>Cos'è:</strong> la <strong>dichiarazione di
+              poetica</strong> di Saba. Un bilancio finale (63 anni) in cui rivendica le sue scelte: parole semplici,
+            rime antiche, verità al fondo.</p>
+          <table class="tv">
+            <thead>
+              <tr>
+                <th>Testo</th>
+                <th>Parafrasi verso per verso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Amai trite parole che non uno<br>osava. M'incantò la rima fiore<br>amore,<br>la più antica difficile
+                  del mondo.</td>
+                <td>Ho amato le parole comuni, consumate, che nessun altro poeta osava usare. Mi ha affascinato la rima
+                  fiore/amore, la più antica e proprio per questo la più difficile da usare nel mondo.</td>
+              </tr>
+              <tr>
+                <td>Amai la verità che giace al fondo,<br>quasi un sogno obliato, che il dolore<br>riscopre amica. Con
+                  paura il cuore<br>le si accosta, che più non l'abbandona.</td>
+                <td>Ho amato la verità che sta nel profondo dell'anima, come un sogno dimenticato che il dolore ritrova
+                  come consolazione. Il cuore si avvicina a questa verità con paura, ma una volta scoperta non la lascia
+                  più.</td>
+              </tr>
+              <tr>
+                <td>Amo te che mi ascolti e la mia buona<br>carta lasciata al fine del mio gioco.</td>
+                <td>Amo te (lettore) che mi ascolti, e amo la mia buona carta: l'eredità poetica che lascio alla fine
+                  della mia vita.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ab">
+            <h5>Temi</h5>
+            <ul>
+              <li><strong>La poesia onesta</strong>: le "trite parole" sono la bandiera di Saba contro la poesia oscura
+                del Novecento.</li>
+              <li><strong>Il coraggio della semplicità</strong>: «che non uno osava» — usare parole comuni è un gesto
+                eroico.</li>
+              <li><strong>La verità al fondo</strong>: la poesia come scandaglio. Il dolore permette di riscoprire la
+                verità.</li>
+              <li><strong>La poesia come eredità</strong>: la «buona carta» lasciata al lettore.</li>
+            </ul>
+          </div>
+          <div class="ab">
+            <h5>Figure retoriche</h5>
+            <ul>
+              <li><strong>Anafora</strong>: «Amai… Amai… Amo» — ribadisce la passione, dal passato al presente.</li>
+              <li><strong>Rima fiore/amore</strong>: citata e usata. Recupero ironico-consapevole della rima più
+                "banale" della tradizione.</li>
+              <li><strong>Metafora</strong>: «buona carta lasciata al fine del mio gioco» → la vita come partita, la
+                poesia come carta vincente in eredità.</li>
+              <li><strong>Personificazione</strong>: la verità è «amica» del cuore.</li>
+            </ul>
+          </div>
+          <div class="ab">
+            <h5>3 parole chiave</h5>
+            <div class="pills"><span class="pill">trite parole</span><span class="pill">verità al fondo</span><span
+                class="pill">buona carta</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="poem-moglie" class="poem-panel">
+        <div class="pw">
+          <div class="ptitle">A mia moglie</div>
+          <div class="pmeta">Dal Canzoniere · Casa e campagna · 1909–1910 · sei strofe irregolari, endecasillabi e
+            settenari</div>
+          <p style="font-size:14px;margin-bottom:16px;"><strong>Cos'è:</strong> una dichiarazione d'amore non
+            convenzionale. Saba rifiuta il linguaggio aulico: la paragona a 7 animali femminili domestici. La critica
+            dell'epoca rise; Saba rispose: «Se un bambino potesse sposare e scrivere una poesia per sua moglie,
+            scriverebbe questa.»</p>
+          <table class="tv">
+            <thead>
+              <tr>
+                <th>Strofa / animale</th>
+                <th>Significato del paragone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><em>Gallina (pollastra)</em></td>
+                <td>Apparenza umile ma dignità regale nel camminare. «È migliore del maschio.» Le femmine degli animali
+                  sereni avvicinano a Dio.</td>
+              </tr>
+              <tr>
+                <td><em>Giovenca</em></td>
+                <td>Dolcezza, maternità in potenza, gioia. Non ancora appesantita dalla gravidanza — leggerezza festosa.
+                </td>
+              </tr>
+              <tr>
+                <td><em>Cagna</em></td>
+                <td>Fedeltà assoluta, amore protettivo e geloso. La cagna ai piedi sembra una santa che arde per il suo
+                  Signore.</td>
+              </tr>
+              <tr>
+                <td><em>Coniglia</em></td>
+                <td>Istinto materno (si strappa il pelo per fare il nido), tenerezza. Saba si sente in colpa per ogni
+                  sua sofferenza.</td>
+              </tr>
+              <tr>
+                <td><em>Rondine</em></td>
+                <td>Leggerezza dei movimenti — ma la moglie è stanziale: non fugge mai. È la costanza della fedeltà.
+                </td>
+              </tr>
+              <tr>
+                <td><em>Formica / Ape</em></td>
+                <td>Laboriosità, previdenza. Conclusione: la moglie è presente in tutte le femmine che avvicinano a Dio
+                  — universalizzazione dell'elogio.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ab">
+            <h5>Chiave psicoanalitica</h5>
+            <p>La moglie Lina è l'opposto della madre: non soffoca, non giudica, non pesa. Saba duplica l'immagine
+              materna in quella della moglie, sentendosi in colpa per le sofferenze che il padre ha arrecato alla madre.
+              «Chi mai farti soffrire?»</p>
+          </div>
+          <div class="ab">
+            <h5>Violazione del tabù (Lorenzo Renzi)</h5>
+            <p>Gallina evoca stupidità; vacca/cagna/coniglia evocano sessualità. Saba viola deliberatamente il tabù:
+              coerente con la concezione della poesia come «forza liberatoria dal malessere della civiltà». La struttura
+              ripetitiva («Tu sei come») richiama la preghiera di elogio (eco del <em>Cantico delle Creature</em>).</p>
+          </div>
+          <div class="ab">
+            <h5>3 parole chiave</h5>
+            <div class="pills"><span class="pill">avvicinano a Dio</span><span class="pill">trite rime</span><span
+                class="pill">violazione del tabù</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="poem-capra" class="poem-panel">
+        <div class="pw">
+          <div class="ptitle">La capra</div>
+          <div class="pmeta">Dal Canzoniere · Casa e campagna · 1909–1910 · tre strofe irregolari</div>
+          <table class="tv">
+            <thead>
+              <tr>
+                <th>Testo</th>
+                <th>Parafrasi verso per verso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ho parlato a una capra.<br>Era sola sul prato, era legata.<br>Sazia d'erba, bagnata<br>dalla
+                  pioggia, belava.</td>
+                <td>Ho parlato con una capra. Era sola in un prato, legata. Aveva mangiato erba, era bagnata dalla
+                  pioggia, e belava.</td>
+              </tr>
+              <tr>
+                <td>Quell'uguale belato era fraterno<br>al mio dolore. Ed io risposi, prima<br>per celia, poi perché il
+                  dolore è eterno,<br>ha una voce e non varia.<br>Questa voce sentiva<br>gemere in una capra solitaria.
+                </td>
+                <td>Quel belato sempre uguale era simile al mio dolore. Io risposi, dapprima per gioco, poi perché ho
+                  capito: il dolore è eterno, ha una voce sola che non cambia. Questa stessa voce sentivo nel gemito
+                  della capra solitaria.</td>
+              </tr>
+              <tr>
+                <td>In una capra dal viso semita<br>sentiva querelarsi ogni altro male,<br>ogni altra vita.</td>
+                <td>In quella capra dal muso che ricordava un viso ebreo, sentivo lamentarsi ogni altro dolore, ogni
+                  altro essere vivente.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ab">
+            <h5>Temi</h5>
+            <ul>
+              <li><strong>Dolore universale</strong>: «il dolore è eterno, / ha una voce e non varia» — una voce sola in
+                tutti gli esseri viventi.</li>
+              <li><strong>Fraternità tra le creature</strong>: il belato della capra è «fraterno al mio dolore».</li>
+              <li><strong>Identità ebraica</strong>: «viso semita» — proiezione della propria condizione di ebreo, di
+                diverso.</li>
+              <li><strong>Eco leopardiana</strong>: il «pessimismo cosmico» del <em>Canto notturno</em>, ma anche la
+                solidarietà della <em>Ginestra</em>.</li>
+            </ul>
+          </div>
+          <div class="ab">
+            <h5>Figure retoriche e stile</h5>
+            <ul>
+              <li><strong>Enjambement</strong> nella seconda strofa in relazione al contenuto doloroso.</li>
+              <li><strong>Allitterazione</strong>: «sentiva… solitaria… semita».</li>
+              <li><strong>Rima semita/vita</strong>: la parola chiave <em>vita</em> è legata all'identità ebraica — non
+                casuale.</li>
+              <li>Andamento <strong>colloquiale e prosastico</strong> che nasconde costruzione accurata.</li>
+            </ul>
+          </div>
+          <div class="ab">
+            <h5>3 parole chiave</h5>
+            <div class="pills"><span class="pill">dolore eterno</span><span class="pill">viso semita</span><span
+                class="pill">fraternità</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="poem-trieste" class="poem-panel">
+        <div class="pw">
+          <div class="ptitle">Trieste</div>
+          <div class="pmeta">Dal Canzoniere · Trieste e una donna · tre strofe irregolari, liberamente rimati</div>
+          <table class="tv">
+            <thead>
+              <tr>
+                <th>Testo</th>
+                <th>Parafrasi verso per verso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ho attraversata tutta la città.<br>Poi ho salita un'erta,<br>popolosa in principio, in là
+                  deserta,<br>chiusa da un muricciolo:<br>un cantuccio in cui solo<br>siedo; e mi pare che dove esso
+                  termina<br>termini la città.</td>
+                <td>Ho attraversato tutta la città. Poi sono salito su una strada ripida, all'inizio affollata poi
+                  deserta, chiusa da un piccolo muro: c'è un angolino in cui siedo da solo; mi sembra che, dove questo
+                  finisce, finisca anche la città.</td>
+              </tr>
+              <tr>
+                <td>Trieste ha una scontrosa<br>grazia. Se piace,<br>è come un ragazzaccio aspro e vorace,<br>con gli
+                  occhi azzurri e mani troppo grandi<br>per regalare un fiore;<br>come un amore<br>con gelosia.</td>
+                <td>Trieste ha una grazia schiva e ritrosa. Se piace, è come un ragazzo ruvido e ingordo, con gli occhi
+                  azzurri ma le mani troppo grandi per fare regali delicati; è come un amore fatto di gelosia.</td>
+              </tr>
+              <tr>
+                <td>Da quest'erta ogni chiesa, ogni sua via<br>scopro […]<br>Intorno circola ad ogni cosa<br>un'aria
+                  strana, un'aria tormentosa,<br>l'aria natia.<br>La mia città che in ogni parte è viva,<br>ha il
+                  cantuccio a me fatto, alla mia vita<br>pensosa e schiva.</td>
+                <td>Da questo punto vedo ogni chiesa, ogni via della città. Intorno circola un'aria strana, tormentosa:
+                  è l'aria della mia terra natale. La mia città, viva dappertutto, ha un angolino fatto per me, per la
+                  mia vita pensierosa e solitaria.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ab">
+            <h5>Trieste come specchio dell'anima</h5>
+            <p><strong>«Scontrosa grazia»</strong> è un ossimoro che descrive sia Trieste che Saba stesso: ambivalente,
+              riservata eppure piena di vita. Il conflitto del poeta tra solitudine (<em>cantuccio</em>) e bisogno di
+              vita è il conflitto della città stessa.</p>
+          </div>
+          <div class="ab">
+            <h5>Figure retoriche</h5>
+            <ul>
+              <li><strong>Ossimoro</strong>: «scontrosa grazia».</li>
+              <li><strong>Similitudine</strong>: Trieste come «ragazzaccio aspro e vorace».</li>
+              <li><strong>Diminutivi affettuosi</strong>: <em>muricciolo</em>, <em>cantuccio</em>.</li>
+            </ul>
+          </div>
+          <div class="ab">
+            <h5>3 parole chiave</h5>
+            <div class="pills"><span class="pill">scontrosa grazia</span><span class="pill">cantuccio</span><span
+                class="pill">aria natia</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="poem-citta" class="poem-panel">
+        <div class="pw">
+          <div class="ptitle">Città vecchia</div>
+          <div class="pmeta">Dal Canzoniere · Trieste e una donna · 1909–1910</div>
+          <p style="font-size:14px;margin-bottom:16px;"><strong>Cos'è:</strong> Saba cammina per i vicoli di Trieste e
+            incontra le creature ai margini — prostitute, ubriachi, marinai, poveri. Non li giudica: li sente fratelli
+            nel comune destino umano.</p>
+          <table class="tv">
+            <thead>
+              <tr>
+                <th>Testo (selezione)</th>
+                <th>Parafrasi e commento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Spesso, per ritornare alla mia casa<br>prendo un cammino più lungo.<br>[…] è il mio cammino.</td>
+                <td>Scelgo il percorso della città vecchia — mercatini di libri usati, vecchi che bestemmiano, gatti tra
+                  i rifiuti, botteghe di alcool. Questo è il mio cammino scelto.</td>
+              </tr>
+              <tr>
+                <td>Qui fra la perduta gente<br>mi so fraternamente vicino.<br>[…] s'agita in esse, come in me,<br>il
+                  Signore.</td>
+                <td>Qui tra la gente "perduta" mi sento fraternamente vicino. E in loro si agita il Signore — il sacro —
+                  come in me. La «perduta gente» porta in sé il divino.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ab">
+            <h5>Temi</h5>
+            <ul>
+              <li><strong>Fraternità universale</strong>: il poeta si riconosce uguale alle creature emarginate.</li>
+              <li><strong>L'infinito nell'umiltà</strong>: «detrito» è in rima con «infinito» — ossimoro/antitesi
+                centrale.</li>
+              <li><strong>Il sacro nei margini</strong>: «s'agita in esse, come in me, il Signore» — Dio è presente
+                anche nei reietti.</li>
+            </ul>
+          </div>
+          <div class="ab">
+            <h5>Figure retoriche</h5>
+            <ul>
+              <li><strong>Antitesi</strong>: «detrito» / «infinito».</li>
+              <li><strong>Anastrofe</strong>: inversioni sintattiche frequenti.</li>
+              <li><strong>Enumerazione</strong>: lunga lista di figure marginali.</li>
+            </ul>
+          </div>
+          <div class="ab">
+            <h5>3 parole chiave</h5>
+            <div class="pills"><span class="pill">fraternamente vicino</span><span
+                class="pill">detrito/infinito</span><span class="pill">perduta gente</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="poem-padre" class="poem-panel">
+        <div class="pw">
+          <div class="ptitle">Mio padre è stato per me «l'assassino»</div>
+          <div class="pmeta">Dal Canzoniere · Autobiografia (sonetto 3) · 1922–1924 · Sonetto ABAB ABAB / CDE CDE</div>
+          <table class="tv">
+            <thead>
+              <tr>
+                <th>Testo</th>
+                <th>Parafrasi verso per verso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mio padre è stato per me «l'assassino»,<br>fino ai vent'anni che l'ho conosciuto.<br>Allora ho visto
+                  ch'egli era un bambino,<br>e che il dono ch'io ho da lui l'ho avuto.</td>
+                <td>Mio padre è stato per me «l'assassino» (così lo chiamava mia madre) fino a quando l'ho incontrato a
+                  vent'anni. Allora ho visto che era rimasto bambino — spensierato e infantile — e che il dono che ho
+                  (la leggerezza) l'ho ricevuto da lui.</td>
+              </tr>
+              <tr>
+                <td>Aveva in volto il mio sguardo azzurrino,<br>un sorriso, in miseria, dolce e astuto.<br>Andò sempre
+                  pel mondo pellegrino;<br>più d'una donna l'ha amato e pasciuto.</td>
+                <td>Aveva il mio sguardo azzurro, un sorriso dolce e furbo nonostante la miseria. Era andato sempre per
+                  il mondo come un vagabondo; più di una donna l'aveva amato e mantenuto.</td>
+              </tr>
+              <tr>
+                <td>Egli era gaio e leggero; mia madre<br>tutti sentiva della vita i pesi.<br>Di mano ei gli sfuggì come
+                  un pallone.</td>
+                <td>Lui era allegro e leggero; mia madre sentiva tutto il peso del vivere. Le sfuggì di mano come un
+                  pallone che vola via.</td>
+              </tr>
+              <tr>
+                <td>«Non somigliare – ammoniva – a tuo padre.»<br>Ed io più tardi in me stesso lo intesi:<br>Eran due
+                  razze in antica tenzone.</td>
+                <td>«Non somigliare a tuo padre», mi ammoniva la madre. E io, più tardi, capii dentro di me: erano due
+                  razze in un antico scontro — e quel contrasto vive ancora in me.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ab">
+            <h5>Il capovolgimento del giudizio</h5>
+            <p>Il padre era «l'assassino» per la madre. Ma quando Saba lo incontra a vent'anni, scopre una somiglianza
+              fisica (lo sguardo azzurro) e spirituale (la leggerezza). Riconosce in lui il <strong>dono della
+                leggerezza</strong> — l'opposto della madre che «sentiva della vita i pesi».</p>
+          </div>
+          <div class="ab">
+            <h5>Le due razze in antica tenzone</h5>
+            <p>Le «due razze» non sono etnie: sono i due <strong>caratteri opposti dei genitori</strong> — pesantezza
+              materna (ebraismo, severità) vs. leggerezza paterna (cristiano, spensieratezza). Questo contrasto vive
+              irrisolto dentro Saba: è la radice della sua nevrosi.</p>
+          </div>
+          <div class="ab">
+            <h5>3 parole chiave</h5>
+            <div class="pills"><span class="pill">gaio e leggero</span><span class="pill">due razze in
+                tenzone</span><span class="pill">il dono del padre</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="poem-ernesto" class="poem-panel">
+        <div class="pw">
+          <div class="ptitle">La vera causa</div>
+          <div class="pmeta">Da Ernesto (1953, postumo 1975) · prosa narrativa · IV episodio</div>
+          <p style="font-size:14px;margin-bottom:16px;"><strong>Contesto:</strong> Ernesto deve spiegare alla madre
+            perché ha abbandonato il lavoro dal signor Wilder. Deve confessare la relazione omosessuale con un operaio
+            della ditta — la «vera causa» del suo rifiuto di tornare.</p>
+          <table class="tv">
+            <thead>
+              <tr>
+                <th>Momento narrativo</th>
+                <th>Significato e analisi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><em>Ernesto non trova le parole.</em> «Come dire quella cosa? Come dirla a sua madre?»</td>
+                <td>Il segreto è «terribile» non per Ernesto, ma per la società. Il silenzio è il silenzio dell'epoca su
+                  questi temi.</td>
+              </tr>
+              <tr>
+                <td><em>La madre ipotizza il furto.</em> «Non avrai mica rubato al signor Wilder?»</td>
+                <td>Ironia tragica: la madre immagina il peggior crimine possibile per lei (il furto), infinitamente più
+                  accettabile della vera causa. Rivela i valori borghesi dell'epoca.</td>
+              </tr>
+              <tr>
+                <td><em>Ernesto confessa indirettamente</em>, poi direttamente: «Ebbene, mamma, mammina, io e quell'uomo
+                  abbiamo fatto di quelle cose…»</td>
+                <td>La confessione avviene attraverso le parole degli altri prima, poi direttamente. Questo mostra
+                  quanto fosse impossibile trovare un linguaggio proprio per questi temi.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ab">
+            <h5>Temi</h5>
+            <ul>
+              <li><strong>Onestà radicale</strong>: Saba affronta la sessualità con sincerità totale — il motivo per cui
+                il romanzo è rimasto nel cassetto fino al 1975.</li>
+              <li><strong>Rapporto madre-figlio</strong>: la madre è dura e non capisce, eppure Ernesto sceglie lei come
+                confidente.</li>
+              <li><strong>Chiave psicoanalitica</strong>: l'assenza del padre → severità materna → Ernesto cerca affetto
+                in figure maschili sostitutive.</li>
+            </ul>
+          </div>
+          <div class="ab">
+            <h5>3 parole chiave</h5>
+            <div class="pills"><span class="pill">vera causa</span><span class="pill">terribile segreto</span><span
+                class="pill">onestà radicale</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="poem-ulisse" class="poem-panel">
+        <div class="pw">
+          <div class="ptitle">Ulisse</div>
+          <div class="pmeta">Dal Canzoniere · sezione Mediterranee · 1947 · sonetto irregolare, endecasillabi e settenari</div>
+          <p style="font-size:14px;margin-bottom:16px;"><strong>Cos'è:</strong> il testamento poetico di Saba. Il mito di Ulisse riletto in chiave autobiografica: non il ritorno a Itaca, ma la solitudine della vecchiaia come isola sempre più irraggiungibile.</p>
+          <table class="tv">
+            <thead>
+              <tr>
+                <th>Testo</th>
+                <th>Parafrasi verso per verso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nella mia giovinezza ho navigato<br>lungo le coste dalmate. Isolotti<br>a fior d'acqua emergevano, ove raro<br>un uccello sostava intento a prede,<br>coperti d'alghe, scivolosi, al sole<br>belli come smeraldi.</td>
+                <td>Nella giovinezza ho navigato lungo le coste della Dalmazia. Ricordo gli isolotti appena affioranti dall'acqua, dove di rado un uccello si fermava in cerca di prede; isolotti coperti d'alghe, scivolosi, bellissimi al sole come smeraldi.</td>
+              </tr>
+              <tr>
+                <td>Quando l'alta<br>marea e la notte li annullava, vele<br>sottovento sbandavano più al largo,<br>per timore di quella insidia.</td>
+                <td>Quando la marea alta e la notte li sommergevano rendendoli invisibili, le barche si allontanavano al largo, sottovento, per paura di quell'insidia nascosta.</td>
+              </tr>
+              <tr>
+                <td>Oggi<br>il mio regno è quell'isola di notte<br>sempre più sola, sempre più sorvegliata.<br>Sempre più difficile da raggiunger.</td>
+                <td>Oggi il mio «regno» interiore è come quell'isola di notte: sempre più isolata, sempre più sorvegliata (dalla vecchiaia, dalla malattia, dalla morte), sempre più difficile da raggiungere per chiunque voglia avvicinarsi.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ab">
+            <h5>Temi</h5>
+            <ul>
+              <li><strong>Il mito di Ulisse autobiografico</strong>: non l'eroe che torna a Itaca, ma l'uomo che guarda indietro alla propria giovinezza di navigatore e vede chiuso il viaggio.</li>
+              <li><strong>La struttura temporale</strong>: «Nella mia giovinezza» (passato vitale, luce) vs «Oggi» (presente immobile, isolamento). Il punto di svolta è «Oggi» al verso 9.</li>
+              <li><strong>La poesia onesta</strong>: Saba parte da un ricordo concreto e preciso — la Dalmazia — e lascia che il significato emerga dalla descrizione. La profondità arriva attraverso la chiarezza, non l'oscurità ermetica.</li>
+              <li><strong>Gli isolotti come simbolo</strong>: belli e pericolosi insieme, come la vita interiore di Saba. Di giorno brillano «come smeraldi»; di notte diventano un'insidia.</li>
+            </ul>
+          </div>
+          <div class="ab">
+            <h5>Figure retoriche e stile</h5>
+            <ul>
+              <li><strong>Similitudine</strong>: «belli come smeraldi» — gli isolotti come pietre preziose.</li>
+              <li><strong>Anafora</strong>: «sempre più sola, sempre più sorvegliata… Sempre più difficile» — climax dell'isolamento.</li>
+              <li><strong>Enjambement</strong>: «Oggi / il mio regno» — la parola-svolta isolata a fine verso.</li>
+              <li><strong>Simbolo</strong>: l'isola = la solitudine del poeta vecchio, il regno interiore inaccessibile.</li>
+            </ul>
+          </div>
+          <div class="ab">
+            <h5>3 parole chiave</h5>
+            <div class="pills"><span class="pill">isolotti come smeraldi</span><span class="pill">Oggi (la svolta)</span><span class="pill">sempre più sola</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz" style="margin-top:24px;">
+        <span class="quiz-lbl">Mini-quiz · Testi</span>
+        <h3>Verifica i testi</h3>
+        <div class="qd" data-correct="1">
+          <p class="q">1. In Amai, le «trite parole» sono:</p>
+          <div class="qopts">
+            <button class="qo">Parole senza senso</button>
+            <button class="qo">Parole comuni, consumate, che nessun altro poeta osava usare — scelta coraggiosa contro
+              l'oscurità novecentesca</button>
+            <button class="qo">Parole in dialetto triestino</button>
+            <button class="qo">Parole di Leopardi copiate da Saba</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+        <div class="qd" data-correct="3">
+          <p class="q">2. In A mia moglie, perché paragonare Lina a femmine di animali è un elogio?</p>
+          <div class="qopts">
+            <button class="qo">Perché Saba ama gli animali domestici</button>
+            <button class="qo">Perché Lina viveva in campagna</button>
+            <button class="qo">Per parodiare la poesia greca</button>
+            <button class="qo">Perché le femmine animali «avvicinano a Dio»: la donna è più vicina al sacro
+              dell'uomo</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+        <div class="qd" data-correct="2">
+          <p class="q">3. In La capra, l'aggettivo «semita» allude a:</p>
+          <div class="qopts">
+            <button class="qo">La provenienza geografica della capra</button>
+            <button class="qo">Una razza animale specifica</button>
+            <button class="qo">La barbetta che ricorda un viso ebreo — allusione alle proprie origini e al dolore
+              universale</button>
+            <button class="qo">Un termine inventato da Saba</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+        <div class="qd" data-correct="0">
+          <p class="q">4. In Trieste, «scontrosa grazia» è un esempio di:</p>
+          <div class="qopts">
+            <button class="qo">Ossimoro: due qualità opposte unite, che descrivono il carattere ambivalente della città
+              (e del poeta)</button>
+            <button class="qo">Metafora politica</button>
+            <button class="qo">Allitterazione</button>
+            <button class="qo">Sinestesia</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+        <div class="qd" data-correct="2">
+          <p class="q">5. In Mio padre «l'assassino», le «due razze in antica tenzone» sono:</p>
+          <div class="qopts">
+            <button class="qo">Italiani e tedeschi a Trieste</button>
+            <button class="qo">Ebrei e cristiani in senso religioso</button>
+            <button class="qo">I due caratteri opposti dei genitori: pesantezza materna vs leggerezza paterna —
+              conflitto che vive in Saba</button>
+            <button class="qo">Borghesi e operai</button>
+          </div>
+          <div class="qfb"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+
+</html>

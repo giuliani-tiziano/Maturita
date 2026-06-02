@@ -1,5 +1,5 @@
 /* =========================================================================
-   quiz-engine.js — Motore quiz unificato per i 5 autori
+  quiz-engine.js — Motore quiz unificato per i 7 autori
    Architettura: home autori → modal modalità → quiz → risultati
    Dipende da: quiz-data.js (window.QUIZ_DATA)
    ========================================================================= */
@@ -58,6 +58,192 @@
       storageTot: 'q_pir_best_total',
       footerQuote: '«Uno, nessuno e centomila: non è una condanna, è una libertà. La più difficile delle libertà.»',
       footerCite: '— Luigi Pirandello'
+    },
+    dannunzio: {
+      key: 'dannunzio',
+      name: 'Gabriele D\'Annunzio',
+      short: 'D\'Annunzio',
+      bodyClass: 'dannunzio',
+      storageKey: 'q_dan_best',
+      storageTot: 'q_dan_best_total',
+      footerQuote: '«Bisogna fare la propria vita come si fa un\'opera d\'arte.»',
+      footerCite: '— Gabriele D\'Annunzio, Il piacere'
+    },
+    pascoli: {
+      key: "pascoli",
+      name: "Giovanni Pascoli",
+      short: "Pascoli",
+      bodyClass: "pascoli",
+      storageKey: "q_pascoli_best",
+      storageTot: "q_pascoli_best_total",
+      footerQuote: "«E s’aprono i fiori notturni, nell’ora che penso a’ miei cari.»",
+      footerCite: "— Giovanni Pascoli, Il gelsomino notturno"
+    },
+    verga: {
+      key: "verga",
+      name: "Giovanni Verga",
+      short: "Verga",
+      bodyClass: "verga",
+      storageKey: "q_verga_best",
+      storageTot: "q_verga_best_total",
+      footerQuote: "«Solo l’osservatore, travolto anch’esso dalla fiumana, ha il diritto di interessarsi ai vinti.»",
+      footerCite: "— Giovanni Verga, Prefazione ai Malavoglia"
+    },
+    campana: {
+      key: "campana",
+      name: "Dino Campana",
+      short: "Campana",
+      bodyClass: "campana",
+      storageKey: "q_campana_best",
+      storageTot: "q_campana_best_total",
+      footerQuote: "«Sempre una piaga rossa languente.»",
+      footerCite: "— Dino Campana, L’invetriata"
+    },
+
+    /* ── CORRENTI LETTERARIE ── */
+    naturalismo: {
+      key: "naturalismo",
+      name: "Il Naturalismo",
+      short: "Naturalismo",
+      bodyClass: "verga",
+      storageKey: "q_naturalismo_best",
+      storageTot: "q_naturalismo_best_total",
+      footerQuote: "«Il romanziere sperimentale fa muovere i personaggi secondo le leggi che la scienza ha scoperto.»",
+      footerCite: "— Emile Zola, Il romanzo sperimentale"
+    },
+    verismo: {
+      key: "verismo",
+      name: "Il Verismo",
+      short: "Verismo",
+      bodyClass: "campana",
+      storageKey: "q_verismo_best",
+      storageTot: "q_verismo_best_total",
+      footerQuote: "«La fiumana del progresso porta via tutti — vincitori e vinti.»",
+      footerCite: "— Giovanni Verga, Prefazione ai Malavoglia"
+    },
+    decadentismo: {
+      key: "decadentismo",
+      name: "Il Decadentismo",
+      short: "Decadentismo",
+      bodyClass: "dannunzio",
+      storageKey: "q_decadentismo_best",
+      storageTot: "q_decadentismo_best_total",
+      footerQuote: "«La Natura e un tempio dove viventi pilastri lasciano sfuggire confuse parole.»",
+      footerCite: "— Charles Baudelaire, Corrispondenze"
+    },
+    simbolismo: {
+      key: "simbolismo",
+      name: "Il Simbolismo",
+      short: "Simbolismo",
+      bodyClass: "pascoli",
+      storageKey: "q_simbolismo_best",
+      storageTot: "q_simbolismo_best_total",
+      footerQuote: "«Nominare un oggetto significa sopprimere i tre quarti del piacere della poesia.»",
+      footerCite: "— Stephane Mallarme"
+    },
+    estetismo: {
+      key: "estetismo",
+      name: "L’Estetismo",
+      short: "Estetismo",
+      bodyClass: "montale",
+      storageKey: "q_estetismo_best",
+      storageTot: "q_estetismo_best_total",
+      footerQuote: "«L’unica maniera di liberarsi da una tentazione e cedere a essa.»",
+      footerCite: "— Oscar Wilde, Il ritratto di Dorian Gray"
+    },
+    futurismo: {
+      key: "futurismo",
+      name: "Il Futurismo",
+      short: "Futurismo",
+      bodyClass: "pirandello",
+      storageKey: "q_futurismo_best",
+      storageTot: "q_futurismo_best_total",
+      footerQuote: "«Un automobile da corsa e piu bello della Nike di Samotracia.»",
+      footerCite: "— F.T. Marinetti, Manifesto del Futurismo"
+    },
+    crepuscolarismo: {
+      key: "crepuscolarismo",
+      name: "Il Crepuscolarismo",
+      short: "Crepuscolarismo",
+      bodyClass: "saba",
+      storageKey: "q_crepuscolarismo_best",
+      storageTot: "q_crepuscolarismo_best_total",
+      footerQuote: "«Perche tu mi dici: poeta? Io non sono che un piccolo fanciullo che piange.»",
+      footerCite: "— Sergio Corazzini, Desolazione del povero poeta sentimentale"
+    },
+    vociani: {
+      key: "vociani",
+      name: "I Vociani",
+      short: "Vociani",
+      bodyClass: "ungaretti",
+      storageKey: "q_vociani_best",
+      storageTot: "q_vociani_best_total",
+      footerQuote: "«Taci, anima stanca di godere e di soffrire.»",
+      footerCite: "— Camillo Sbarbaro, Pianissimo"
+    },
+    ermetismo: {
+      key: "ermetismo",
+      name: "L’Ermetismo",
+      short: "Ermetismo",
+      bodyClass: "svevo",
+      storageKey: "q_ermetismo_best",
+      storageTot: "q_ermetismo_best_total",
+      footerQuote: "«M’illumino d’immenso.»",
+      footerCite: "— Giuseppe Ungaretti, Mattina"
+    },
+    antinovecentismo: {
+      key: "antinovecentismo",
+      name: "Linea Antinovecentista",
+      short: "Antinovecentismo",
+      bodyClass: "saba",
+      storageKey: "q_antinovecentismo_best",
+      storageTot: "q_antinovecentismo_best_total",
+      footerQuote: "«Avevo scelto le trite parole perche il mio cuore fosse compreso.»",
+      footerCite: "— Umberto Saba"
+    },
+
+    /* ── SECONDO NOVECENTO ── */
+    pavese: {
+      key: "pavese",
+      name: "Cesare Pavese",
+      short: "Pavese",
+      bodyClass: "verga",
+      storageKey: "q_pavese_best",
+      storageTot: "q_pavese_best_total",
+      footerQuote: "«Un paese ci vuole, non fosse che per il gusto di andarsene via.»",
+      footerCite: "— Cesare Pavese, La luna e i falo"
+    },
+    pasolini: {
+      key: "pasolini",
+      name: "Pier Paolo Pasolini",
+      short: "Pasolini",
+      bodyClass: "campana",
+      storageKey: "q_pasolini_best",
+      storageTot: "q_pasolini_best_total",
+      footerQuote: "«Io so. Ma non ho le prove.»",
+      footerCite: "— Pier Paolo Pasolini, Scritti corsari"
+    },
+    calvino: {
+      key: "calvino",
+      name: "Italo Calvino",
+      short: "Calvino",
+      bodyClass: "pirandello",
+      storageKey: "q_calvino_best",
+      storageTot: "q_calvino_best_total",
+      footerQuote: "«Leggerezza non e superficialita, ma planare sulle cose dall'alto.»",
+      footerCite: "— Italo Calvino, Lezioni americane"
+    },
+
+    /* ── NEOREALISMO ── */
+    neorealismo: {
+      key: "neorealismo",
+      name: "Il Neorealismo",
+      short: "Neorealismo",
+      bodyClass: "verga",
+      storageKey: "q_neorealismo_best",
+      storageTot: "q_neorealismo_best_total",
+      footerQuote: "«Cristo si e fermato a Eboli.»",
+      footerCite: "— Carlo Levi"
     }
   };
 
@@ -153,10 +339,15 @@
     const lbl = document.getElementById('panel-author-label');
     if (lbl) {
       lbl.textContent = author.name;
-      const c = ({
+      const c = (({
         saba: 'var(--red)', ungaretti: '#2d5a87', montale: 'var(--green-dark)',
-        svevo: '#6b4a2a', pirandello: '#6040a0'
-      })[authorKey];
+        svevo: '#6b4a2a', pirandello: '#6040a0', dannunzio: '#7a2235', pascoli: '#8a6a2a',
+        verga: '#5C1A28', campana: '#4a1a60',
+        naturalismo: '#5C1A28', verismo: '#4a1a60', decadentismo: '#7a2235',
+        simbolismo: '#8a6a2a', estetismo: '#2d5a87', futurismo: '#6040a0',
+        crepuscolarismo: 'var(--red)', vociani: '#2d5a87', ermetismo: '#6b4a2a',
+        antinovecentismo: 'var(--red)'
+      })[authorKey]);
       lbl.style.color = c;
     }
 
@@ -623,13 +814,30 @@
   document.addEventListener('DOMContentLoaded', () => {
     // Mostra conteggi sulla home
     if (window.QUIZ_DATA) {
-      ['saba', 'ungaretti', 'montale', 'svevo', 'pirandello'].forEach(k => {
+      ['saba', 'ungaretti', 'montale', 'svevo', 'pirandello', 'dannunzio', 'pascoli', 'verga', 'campana'].forEach(k => {
         const el = document.getElementById('cs-' + k + '-total');
         if (el && window.QUIZ_DATA[k]) el.textContent = window.QUIZ_DATA[k].length;
       });
     }
     refreshBestScores();
     showScreen('screen-home');
+
+    // ── Avvio diretto da pages/quiz.html (parametri URL) ──────────────
+    // URL: quiz/quiz.html?key=verga&mode=all&timer=0&shuffle=1
+    const sp = new URLSearchParams(location.search);
+    const urlKey  = sp.get('key');
+    const urlMode = sp.get('mode');
+    if (urlKey && urlMode && window.QUIZ_DATA && window.QUIZ_DATA[urlKey]) {
+      const urlTimer  = sp.get('timer')  === '1';
+      const urlShuf   = sp.get('shuffle') !== '0';
+      setTimeout(() => startQuiz(urlKey, urlMode, urlTimer, urlShuf), 80);
+    } else {
+      // Fallback: hash legacy (#authorKey) → apre il panel di selezione modalità
+      const hash = location.hash.slice(1);
+      if (hash && window.QUIZ_DATA && window.QUIZ_DATA[hash]) {
+        setTimeout(() => openAuthorPanel(hash), 80);
+      }
+    }
 
     // Wiring statico
     const ov = document.getElementById('mode-overlay');

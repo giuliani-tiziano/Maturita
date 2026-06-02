@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vociani — Opere · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link active" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='index.html'">Origini</button>
+      <button class="nav-btn" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn active" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+      <button class="nav-btn" onclick="location.href='glossario.html'">Glossario</button>
+    </div>
+  </nav>
+  <section class="section active" id="opere">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Sezione 03</div>
+        <h2>Opere <em>fondamentali</em> <span class="badge">15 MIN</span></h2>
+      </div>
+      <div class="accordion">
+        <button class="acc-head open" onclick="toggleAcc(this)">Pianissimo — Camillo Sbarbaro (1914) <span class="acc-arrow">▼</span></button>
+        <div class="acc-body open">
+          <p>Raccolta lirica di Sbarbaro. Il titolo è indicazione musicale: il volume più basso possibile. In contrasto con il fragore futurista e il magniloquente D'Annunzio.</p>
+          <p>Temi: distanza dalla vita, inerzia psicologica, paesaggio ligure come specchio dell'anima senza emozioni. Sbarbaro scrive di non riuscire a sentire, di guardare la realtà come un osservatore esterno e lontano dalla propria stessa vita. La freddezza è il tono — ma non per insensibilità: per eccesso di dolore interiorizzato.</p>
+          <p>Stile: verso libero breve, immagini precise e dure, nessun ornamento retorico. La poesia come referto medico di uno stato d'animo.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Frammenti lirici — Clemente Rebora (1913) <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Prima raccolta di Rebora. Tensione morale e religiosa rarissima nella poesia italiana del Novecento; immagini violente e spezzate; espressionismo italiano.</p>
+          <p>Rebora è il poeta della tensione incompiuta: i suoi versi non arrivano mai a una risoluzione pacificante. La forma «frante in frantumi» è la risposta estetica a un'esperienza del mondo irrisolvibile. Poi, nel 1929, si convertirà e diventerà sacerdote rosminiano.</p>
+          <p>Temi: ricerca di un senso impossibile, critica della modernità vuota, tensione verso il trascendente non ancora nominato.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Il mio Carso — Scipio Slataper (1912) <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Prosa lirica autobiografica. Non è un romanzo — c'è una trama esile — né una raccolta di saggi: è la ricerca di un'identità attraverso il paesaggio. Il Carso (l'altopiano carsico tra Trieste e la Slovenia) diventa lo spazio fisico dell'identità, della appartenenza, del conflitto.</p>
+          <p>Slataper — triestino di lingua italiana in un territorio di frontiera — usa la prosa lirica per rispondere alla domanda: chi sono, di dove sono, a quale cultura appartengo? Il paesaggio risponde, in modo obliquo e simbolico.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <button class="acc-head" onclick="toggleAcc(this)">Canti orfici — Dino Campana (1914) <span class="acc-arrow">▼</span></button>
+        <div class="acc-body">
+          <p>Il libro più visionario del primo Novecento italiano, pubblicato a proprie spese dopo che il manoscritto era stato smarrito da Papini. Campana non è classificabile: non è vociano, non è crepuscolare, non è futurista — è un outsider assoluto.</p>
+          <p>Temi: musicalità ossessiva, simbolismo cromatico violento, visione onirica e allucinata, figure femminili fatali (la Chimera, Sibilla). L'orfismo come discesa agli inferi e risalita impossibile.</p>
+          <p>Campana viene internato in manicomio nel 1918 e vi muore nel 1932. La sua figura è diventata mito: il poeta visionario che brucia senza risparmiarsi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

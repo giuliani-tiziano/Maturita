@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giovanni Verga — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .map-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(28,16,16,.55); z-index: 500;
+      align-items: center; justify-content: center; padding: 1rem;
+    }
+    .map-overlay.show { display: flex; }
+    .map-modal {
+      background: var(--paper); border: 1px solid var(--bordeaux-mid);
+      padding: 2rem 2rem 1.5rem; max-width: 480px; width: 100%;
+      max-height: 80vh; overflow-y: auto; position: relative;
+    }
+    .modal-close {
+      position: absolute; top: .8rem; right: 1rem;
+      font-family: var(--serif); font-size: 1.4rem;
+      color: var(--ink-soft); background: none; border: none;
+      cursor: pointer; line-height: 1;
+    }
+    .modal-close:hover { color: var(--bordeaux-deep); }
+    .modal-label {
+      font-family: var(--sans); font-weight: 500; font-size: .65rem;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--bordeaux-mid); margin-bottom: .5rem;
+    }
+    .modal-title {
+      font-family: var(--serif); font-style: italic; font-weight: 500;
+      font-size: 1.6rem; color: var(--bordeaux-deep);
+      margin-bottom: .8rem; line-height: 1.1;
+    }
+    .modal-text {
+      font-family: var(--sans); font-weight: 300; font-size: .92rem;
+      color: var(--ink-soft); line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../../index.html'">Una guida per la Maturità</button>
+      <button class="nav-btn" onclick="location.href='../saba/index.html'">Mappa Saba</button>
+      <button class="nav-btn" onclick="location.href='../svevo/index.html'">Mappa Svevo</button>
+      <button class="nav-btn" onclick="location.href='../pirandello/index.html'">Mappa Pirandello</button>
+      <button class="nav-btn" onclick="location.href='../ungaretti/index.html'">Mappa Ungaretti</button>
+      <button class="nav-btn" onclick="location.href='../montale/index.html'">Mappa Montale</button>
+      <button class="nav-btn" onclick="location.href='../dannunzio/index.html'">Mappa D'Annunzio</button>
+      <button class="nav-btn" onclick="location.href='../pascoli/index.html'">Mappa Pascoli</button>
+      <button class="nav-btn active">Mappa Verga</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Giovanni <em>Verga</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: vita, poetica, opere, testi e confronti.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:760px;width:max(100%, 1400px);margin:0 auto;" aria-label="Mappa WBS Giovanni Verga">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <g transform="translate(260,0)">
+
+          <!-- Connessioni root → L1 -->
+          <path d="M 225,438 C 271,438 319,100 319,100" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,269 319,269" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,438 319,438" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,606 319,606" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,775 319,775" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <!-- Connessioni L1 → L2 -->
+          <path d="M 519,100 C 584,100 650,71 650,71" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,100 C 584,100 650,129 650,129" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,211 650,211" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,269 650,269" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,326 650,326" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,409 650,409" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,466 650,466" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,549 650,549" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,606 650,606" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,664 650,664" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,775 C 584,775 650,746 650,746" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,775 C 584,775 650,804 650,804" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="25" y="400" width="200" height="75" rx="7"/>
+            <text>
+              <tspan x="125" y="434" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">Giovanni Verga</tspan>
+              <tspan x="125" y="454" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">1840 — 1922</tspan>
+            </text>
+          </g>
+
+          <!-- L1 -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button"><rect x="319" y="72" width="200" height="55" rx="5"/><text><tspan x="419" y="106" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button"><rect x="319" y="241" width="200" height="55" rx="5"/><text><tspan x="419" y="275" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button"><rect x="319" y="410" width="200" height="55" rx="5"/><text><tspan x="419" y="444" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · OPERE</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button"><rect x="319" y="578" width="200" height="55" rx="5"/><text><tspan x="419" y="613" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button"><rect x="319" y="747" width="200" height="55" rx="5"/><text><tspan x="419" y="781" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text></g>
+
+          <!-- L2 - VITA -->
+          <g class="node node-l2" onclick="showNode('vita-catania')" tabindex="0" role="button"><rect x="650" y="48" width="238" height="48" rx="4"/><text><tspan x="769" y="68" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Catania e proprietà terriera</tspan><tspan x="769" y="86" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">galantuomo del Sud</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('vita-svolta')" tabindex="0" role="button"><rect x="650" y="105" width="238" height="48" rx="4"/><text><tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Svolta verista 1878</tspan><tspan x="769" y="143" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Rosso Malpelo · silenzio 1893</tspan></text></g>
+
+          <!-- L2 - POETICA -->
+          <g class="node node-l2" onclick="showNode('poetica-impersonalita')" tabindex="0" role="button"><rect x="650" y="188" width="238" height="48" rx="4"/><text><tspan x="769" y="208" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Impersonalità</tspan><tspan x="769" y="226" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">eclissi dell'autore</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-regressione')" tabindex="0" role="button"><rect x="650" y="245" width="238" height="48" rx="4"/><text><tspan x="769" y="265" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Regressione del narratore</tspan><tspan x="769" y="283" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">DIL · narratore popolare</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-ostrica')" tabindex="0" role="button"><rect x="650" y="302" width="238" height="48" rx="4"/><text><tspan x="769" y="322" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Ideale dell'ostrica</tspan><tspan x="769" y="340" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Fantasticheria · sopravvivenza</tspan></text></g>
+
+          <!-- L2 - OPERE -->
+          <g class="node node-l2" onclick="showNode('opere-malavoglia')" tabindex="0" role="button"><rect x="650" y="385" width="238" height="48" rx="4"/><text><tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">I Malavoglia</tspan><tspan x="769" y="423" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">1881 · pescatori · casa del nespolo</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('opere-gesualdo')" tabindex="0" role="button"><rect x="650" y="442" width="238" height="48" rx="4"/><text><tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Mastro-don Gesualdo</tspan><tspan x="769" y="480" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">1889 · roba · solitudine</tspan></text></g>
+
+          <!-- L2 - TESTI -->
+          <g class="node node-l2" onclick="showNode('testi-malpelo')" tabindex="0" role="button"><rect x="650" y="525" width="238" height="48" rx="4"/><text><tspan x="769" y="545" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Rosso Malpelo</tspan><tspan x="769" y="563" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">straniamento · escluso</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-fiumana')" tabindex="0" role="button"><rect x="650" y="582" width="238" height="48" rx="4"/><text><tspan x="769" y="602" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">La fiumana del progresso</tspan><tspan x="769" y="620" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">prefazione · ciclo dei vinti</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-ntoni')" tabindex="0" role="button"><rect x="650" y="640" width="238" height="48" rx="4"/><text><tspan x="769" y="660" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">L'addio di 'Ntoni</tspan><tspan x="769" y="678" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">finale Malavoglia · ostrica rovesciata</tspan></text></g>
+
+          <!-- L2 - CONFRONTI -->
+          <g class="node node-l2" onclick="showNode('confronti-zola')" tabindex="0" role="button"><rect x="650" y="722" width="238" height="48" rx="4"/><text><tspan x="769" y="742" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Verga vs Zola</tspan><tspan x="769" y="760" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">impersonalità · progresso</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('confronti-dannunzio')" tabindex="0" role="button"><rect x="650" y="780" width="238" height="48" rx="4"/><text><tspan x="769" y="800" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Verga vs D'Annunzio</tspan><tspan x="769" y="818" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">vinti · vate · impersonalità</tspan></text></g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'Giovanni Verga', text: 'Giovanni Verga (1840–1922) nasce a Catania da una famiglia di proprietari terrieri. Dopo una fase mondana e romantica a Firenze e Milano, approda al Verismo nel 1878 con Rosso Malpelo. Il Ciclo dei Vinti (Malavoglia, 1881; Mastro-don Gesualdo, 1889) è la sua opera maggiore. Dal 1893 vive a Catania e smette di scrivere.' },
+      vita: { label: 'Categoria', title: 'Vita', text: 'Nasce a Catania nel 1840 da proprietari terrieri. Dopo i romanzi mondani a Firenze e Milano (1865-1878), la svolta verista con Rosso Malpelo (1878). I Malavoglia (1881) e Mastro-don Gesualdo (1889) completano il Ciclo dei Vinti. Dal 1893 ritorno definitivo a Catania e silenzio letterario totale.' },
+      poetica: { label: 'Categoria', title: 'Poetica', text: 'Tre pilastri: impersonalità (la mano dell\'autore deve essere assolutamente invisibile), regressione del narratore (si immerge nella mentalità dei personaggi), pessimismo (la realtà non è modificabile). Il metodo non è scientifico come in Zola: è la conseguenza filosofica del pessimismo.' },
+      opere: { label: 'Categoria', title: 'Opere', text: 'Vita dei campi (1880) è la prima raccolta verista. Novelle rusticane (1883) sviluppa il tema della roba. Il Ciclo dei Vinti comprende I Malavoglia (1881) e Mastro-don Gesualdo (1889). Gli altri tre romanzi del ciclo restano incompiuti o mai scritti.' },
+      testi: { label: 'Categoria', title: 'Testi', text: 'Rosso Malpelo è il testo dello straniamento e del narratore collettivo. La fiumana del progresso (prefazione ai Malavoglia) è il manifesto del Ciclo dei Vinti. L\'addio di \'Ntoni chiude il romanzo con l\'ideale dell\'ostrica rovesciato. La roba mostra l\'ossessione per i beni materiali.' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'Verga vs Zola: stessa impersonalità, ragioni opposte (pessimismo vs metodo scientifico). Verga vs Manzoni: stesso interesse per le classi umili, nessuna Provvidenza. Verga vs D\'Annunzio: l\'io cancellato vs l\'io esaltato. Verga vs Pascoli: il nido come sopravvivenza biologica vs il nido come rifugio affettivo.' },
+      'vita-catania': { label: 'Vita', title: 'Catania e proprietà terriera', text: 'Verga nasce il 2 settembre 1840 a Catania da una famiglia di proprietari terrieri della piccola borghesia agraria siciliana. Questa radice sociale — il galantuomo del Sud, conservatore, legato alla terra — condiziona tutta la sua visione del mondo: il fatalismo, l\'immobilità, il pessimismo.' },
+      'vita-svolta': { label: 'Vita', title: 'La svolta verista del 1878', text: 'Dopo i romanzi mondani (Eva, 1873; Eros, 1875; Tigre reale, 1875), la pubblicazione di Rosso Malpelo nel 1878 segna la svolta definitiva verso il Verismo. Dal 1893, dopo Mastro-don Gesualdo (1889), ritorno a Catania e silenzio letterario totale durato quasi trent\'anni.' },
+      'poetica-impersonalita': { label: 'Poetica', title: 'Impersonalità', text: 'Lo scrittore si eclissa dall\'opera: il testo sembra essersi fatto da sé. La mano dell\'autore deve essere assolutamente invisibile. Non è obiettività scientifica come in Zola: è la conseguenza filosofica del pessimismo verghiano. Poiché non si può modificare il reale, il giudizio morale è vuoto.' },
+      'poetica-regressione': { label: 'Poetica', title: 'Regressione del narratore', text: 'L\'autore non descrive i personaggi dall\'alto: si immerge nella loro mentalità, nel loro linguaggio, nella loro logica — anche quando è circolare, superstiziosa, primitiva. Questo produce il discorso indiretto libero (DIL): pensieri e parole senza virgolette né verba dicendi.' },
+      'poetica-ostrica': { label: 'Poetica', title: 'Ideale dell\'ostrica', text: 'Da Fantasticheria (1880): l\'unica strategia di sopravvivenza per i deboli è restare attaccati al proprio ambiente natale come l\'ostrica allo scoglio. Chi si stacca viene divorato dal pesce vorace (la borghesia, il progresso). Non è esaltazione della povertà: è una legge biologica della sopravvivenza.' },
+      'opere-malavoglia': { label: 'Opere', title: 'I Malavoglia', text: 'Primo romanzo del Ciclo dei Vinti (1881). Ambientato ad Aci Trezza. La famiglia Toscano (soprannominata Malavoglia) perde la casa del nespolo dopo il naufragio della Provvidenza. Chi resta (Alessi) sopravvive; chi parte (\'Ntoni, Lia) si perde. L\'ideale dell\'ostrica applicato narrativamente.' },
+      'opere-gesualdo': { label: 'Opere', title: 'Mastro-don Gesualdo', text: 'Secondo romanzo del Ciclo dei Vinti (1889). Gesualdo Motta, ex manovale arricchito, sposa Bianca Trao (nobile decaduta) per scalare la gerarchia. Muore solo e trattato come un servo. Il titolo rivela la tragedia: Mastro (plebeo) + Don (notabile) = due identità incompatibili.' },
+      'testi-malpelo': { label: 'Testi', title: 'Rosso Malpelo', text: 'Da Vita dei campi (1880). Il testo che inaugura il Verismo di Verga. La prima riga è già un esempio perfetto di narratore regredito: logica circolare (capelli rossi → cattivo → capelli rossi), narratore collettivo, straniamento. Malpelo è l\'escluso assoluto — per nascita, non per colpa.' },
+      'testi-fiumana': { label: 'Testi', title: 'La fiumana del progresso', text: 'Prefazione ai Malavoglia (1881), manifesto del Ciclo dei Vinti. Il progresso è come una fiumana: grandioso da lontano, devastante da vicino. I vinti sono i detriti lasciati sulla riva. Lo scrittore non ha il diritto di giudicare: può solo descrivere senza passione.' },
+      'testi-ntoni': { label: 'Testi', title: 'L\'addio di \'Ntoni', text: 'Finale dei Malavoglia, cap. XV. \'Ntoni torna di notte, il cane non lo riconosce. La casa è diventata veleno. «Ora che so ogni cosa devo andarmene»: la conoscenza del mondo è una condanna. Il mare «senza paese» è l\'unico elemento che capisce \'Ntoni — anch\'esso senza radici.' },
+      'confronti-zola': { label: 'Confronti', title: 'Verga vs Zola', text: 'Entrambi cercano l\'impersonalità, ma per ragioni diverse: Zola per metodo scientifico (il médecin devant son malade), Verga per conseguenza filosofica del pessimismo. Zola crede nel progresso e nella riforma sociale; Verga è radicalmente pessimista. La Francia industriale vs la Sicilia agraria.' },
+      'confronti-dannunzio': { label: 'Confronti', title: 'Verga vs D\'Annunzio', text: 'Sono opposti assoluti: D\'Annunzio mette l\'io al centro di ogni opera; Verga lo cancella. D\'Annunzio canta la forza e il trionfo; Verga descrive la miseria e la sconfitta. D\'Annunzio è ottimista pagano; Verga è pessimista laico. Entrambi siciliani d\'origine, ma con visioni della Sicilia diametralmente opposte.' }
+    };
+
+    function showNode(key) {
+      const node = NODES[key];
+      if (!node) return;
+      document.getElementById('tip-label').textContent = node.label || '';
+      document.getElementById('tip-title').textContent = node.title || '';
+      document.getElementById('tip-text').textContent = node.text || '';
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeTip() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeTip(); });
+  </script>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>
