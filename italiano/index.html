@@ -1,181 +1,392 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portale Maturità — Guide allo Studio</title>
-  <meta name="description" content="Portale di studio per la Maturità: guide complete per ogni materia, quiz interattivi e mappe concettuali.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1210'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E❧%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/portal.css">
+  <title>Italiano · Maturità — Saba, Ungaretti, Montale, Svevo, Pirandello</title>
+  <meta name="description"
+    content="Studio completo di Italiano per la maturità: cinque autori del Novecento, cinque guide, cinque quiz interattivi.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  <!-- ══ TOPBAR ══ -->
-  <header class="p-topbar">
-    <div class="p-brand"><span>❧</span>Studio · Maturità</div>
-    <div class="p-topbar-right">
-      <a href="contattaci.html" class="p-nav-link">Contattaci</a>
+  <div class="prog-wrap">
+    <div class="prog-bar" id="pb"></div>
+  </div>
+
+  <!-- ============================ TOPBAR ============================ -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="topbar-brand">
+        <span class="dot"></span>
+        <span><span class="full">Italiano · </span>Maturità</span>
+      </a>
+      <nav class="topbar-links">
+        <a class="topbar-link active" href="index.html">Home</a>
+        <a class="topbar-link" href="#autori">Autori</a>
+        <a class="topbar-link" href="#mappe">Mappe</a>
+        <a class="topbar-link" href="#sul-progetto">Progetto</a>
+        <a class="topbar-link cta" href="quiz/quiz.html">Quiz</a>
+      </nav>
     </div>
   </header>
 
-  <!-- ══ HERO ══ -->
-  <section class="p-hero">
-    <div class="p-hero-left">
-      <span class="p-hero-eyebrow">Portale di studio · Quinta superiore</span>
-      <h1 class="p-hero-h1">Guide alla<br><em>Maturità</em></h1>
-      <p class="p-hero-tagline">Schede complete, quiz interattivi e mappe concettuali per prepararti al meglio all'esame di stato.</p>
-    </div>
-    <div class="p-hero-stat">
-      <div class="p-hero-stat-num">6</div>
-      <span class="p-hero-stat-label">Materie previste</span>
-    </div>
-  </section>
+  <main class="home-wrap">
 
-  <!-- ══ SEZIONE MATERIE ══ -->
-  <div class="p-section-header">
-    <span class="p-section-label">Materie</span>
-    <div class="p-section-rule"></div>
-    <span class="p-section-count">1 disponibile · 5 in arrivo</span>
-  </div>
-
-  <div class="p-grid">
-
-    <!-- 01 · Italiano — DISPONIBILE -->
-    <a class="p-card active" href="italiano/italiano.html">
-      <div class="p-card-stripe" style="background:#7A2235;"></div>
-      <div class="p-card-body">
-        <div class="p-card-num" style="color:#7A2235;">01 · Italiano</div>
-        <div class="p-card-name">Letteratura Italiana</div>
-        <div class="p-card-desc">9 autori · 10 correnti · 800+ quiz · mappe concettuali</div>
-      </div>
-      <div class="p-card-footer">
-        <span class="p-card-badge available">Disponibile</span>
-        <span class="p-card-arrow" style="color:#7A2235;">→</span>
-      </div>
-    </a>
-
-    <!-- 02 · Inglese — COMING -->
-    <div class="p-card coming">
-      <div class="p-card-stripe" style="background:#2A6B3A;"></div>
-      <div class="p-card-body">
-        <div class="p-card-num" style="color:#2A6B3A;">02 · Inglese</div>
-        <div class="p-card-name">Inglese</div>
-        <div class="p-card-desc">Contenuti in arrivo</div>
-      </div>
-      <div class="p-card-footer">
-        <span class="p-card-badge coming">In arrivo</span>
-        <span class="p-card-arrow" style="color:#2A6B3A;">→</span>
-      </div>
-    </div>
-
-    <!-- 03 · Sistemi — COMING -->
-    <div class="p-card coming">
-      <div class="p-card-stripe" style="background:#1A5C8A;"></div>
-      <div class="p-card-body">
-        <div class="p-card-num" style="color:#1A5C8A;">03 · Sistemi</div>
-        <div class="p-card-name">Sistemi e Reti</div>
-        <div class="p-card-desc">Contenuti in arrivo</div>
-      </div>
-      <div class="p-card-footer">
-        <span class="p-card-badge coming">In arrivo</span>
-        <span class="p-card-arrow" style="color:#1A5C8A;">→</span>
-      </div>
-    </div>
-
-    <!-- 04 · Informatica — COMING -->
-    <div class="p-card coming">
-      <div class="p-card-stripe" style="background:#1A4A6B;"></div>
-      <div class="p-card-body">
-        <div class="p-card-num" style="color:#1A4A6B;">04 · Informatica</div>
-        <div class="p-card-name">Informatica</div>
-        <div class="p-card-desc">Contenuti in arrivo</div>
-      </div>
-      <div class="p-card-footer">
-        <span class="p-card-badge coming">In arrivo</span>
-        <span class="p-card-arrow" style="color:#1A4A6B;">→</span>
-      </div>
-    </div>
-
-    <!-- 05 · Storia — COMING -->
-    <div class="p-card coming">
-      <div class="p-card-stripe" style="background:#B85C1A;"></div>
-      <div class="p-card-body">
-        <div class="p-card-num" style="color:#B85C1A;">05 · Storia</div>
-        <div class="p-card-name">Storia</div>
-        <div class="p-card-desc">Contenuti in arrivo</div>
-      </div>
-      <div class="p-card-footer">
-        <span class="p-card-badge coming">In arrivo</span>
-        <span class="p-card-arrow" style="color:#B85C1A;">→</span>
-      </div>
-    </div>
-
-    <!-- 06 · Scienze — COMING -->
-    <div class="p-card coming">
-      <div class="p-card-stripe" style="background:#7A6B1A;"></div>
-      <div class="p-card-body">
-        <div class="p-card-num" style="color:#7A6B1A;">06 · Scienze</div>
-        <div class="p-card-name">Scienze</div>
-        <div class="p-card-desc">Contenuti in arrivo</div>
-      </div>
-      <div class="p-card-footer">
-        <span class="p-card-badge coming">In arrivo</span>
-        <span class="p-card-arrow" style="color:#7A6B1A;">→</span>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ══ FOOTER ══ -->
-  <footer class="p-footer">
-    <div class="p-footer-inner">
-
-      <!-- Brand -->
-      <div class="p-footer-brand-block">
-        <span class="p-footer-logo"><span>❧</span>Studio · Maturità</span>
-        <p class="p-footer-tagline">Portale di studio per la Maturità: schede complete, quiz interattivi e mappe concettuali per prepararsi al meglio all'esame di stato.</p>
-        <a href="mailto:guidaallamaturita@gmail.com" class="p-footer-email-link">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-          guidaallamaturita@gmail.com
+    <!-- ============================ HERO ============================ -->
+    <section class="home-hero">
+      <span class="home-hero-eyebrow ai">Studio completo · Letteratura italiana del Novecento</span>
+      <h1 class="ai d1">Cinque <em>voci</em><br>per la maturità</h1>
+      <div class="home-hero-rule ai d2"></div>
+      <p class="home-hero-sub ai d2">
+        cinque guide complete e cinque quiz interattivi su <em>Saba</em>, <em>Ungaretti</em>,
+        <em>Montale</em>, <em>Svevo</em> e <em>Pirandello</em>.
+        Tutto quello che ti serve, riorganizzato come una vera applicazione.
+      </p>
+      <div class="home-hero-actions ai d3">
+        <a href="#autori" class="btn primary">
+          Esplora gli autori
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="quiz/quiz.html" class="btn secondary">
+          Vai ai quiz
         </a>
       </div>
+    </section>
 
-      <!-- Navigazione -->
-      <div>
-        <div class="p-footer-col-title">Sezioni</div>
-        <nav class="p-footer-nav">
-          <a href="index.html">Portale</a>
-          <a href="italiano/italiano.html">Italiano</a>
-          <a href="contattaci.html">Contattaci</a>
-        </nav>
+    <!-- ============================ FEATURES ============================ -->
+    <section class="home-section" style="border-top:none; padding-top:0;">
+      <div class="home-features ai d4">
+        <div class="feature">
+          <div class="feature-num">5</div>
+          <div class="feature-label">Autori</div>
+          <div class="feature-desc">Saba, Ungaretti, Montale, Svevo, Pirandello — tutto il programma.</div>
+        </div>
+        <div class="feature">
+          <div class="feature-num">150</div>
+          <div class="feature-label">Domande</div>
+          <div class="feature-desc">30 per autore: scelta multipla, vero/falso e domande aperte.</div>
+        </div>
+        <div class="feature">
+          <div class="feature-num">20+</div>
+          <div class="feature-label">Testi analizzati</div>
+          <div class="feature-desc">Parafrasi verso per verso, figure retoriche, temi chiave.</div>
+        </div>
+        <div class="feature">
+          <div class="feature-num">∞</div>
+          <div class="feature-label">Ripasso</div>
+          <div class="feature-desc">Naviga, ripeti i quiz, salva i record personali.</div>
+        </div>
       </div>
+    </section>
 
-      <!-- Info -->
-      <div>
-        <div class="p-footer-col-title">Informazioni</div>
-        <div class="p-footer-info">
-          <span class="p-footer-info-item">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.93 11 19.79 19.79 0 01.86 2.38 2 2 0 012.83.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
-            Risposta entro 24 ore
-          </span>
-          <span class="p-footer-info-item">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            Aggiornato per l'a.s. 2025–26
-          </span>
-          <span class="p-footer-info-item">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Contenuti verificati
-          </span>
+    <!-- ============================ AUTORI ============================ -->
+    <section class="home-section" id="autori">
+      <div class="home-section-head">
+        <div>
+          <div class="home-section-eyebrow">01 · Le guide</div>
+          <h2 class="home-section-title">Gli <em>autori</em></h2>
+          <p class="home-section-sub">Una scheda completa per ciascuno: vita, poetica, opere, testi, confronti.</p>
         </div>
       </div>
 
-    </div>
-    <div class="p-footer-bottom">
-      <span class="p-footer-copy">© 2025 Studio · Maturità — Tutti i diritti riservati</span>
-      <span class="p-footer-copy">Fatto con ❤ per la Maturità italiana</span>
+      <div class="authors-grid">
+
+        <!-- SABA -->
+        <a class="author-card saba" href="saba/">
+          <span class="author-card-initial">S</span>
+          <div class="author-card-meta">Trieste · 1883–1957</div>
+          <div class="author-card-name">Umberto<br><em>Saba</em></div>
+          <div class="author-card-dates">Il Canzoniere · poesia onesta</div>
+          <div class="author-card-tagline">La poesia onesta, le trite parole, lo scandaglio dell'inconscio. Trieste come
+            specchio dell'anima.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic">Canzoniere</span>
+            <span class="author-card-topic">Trieste</span>
+            <span class="author-card-topic">Psicanalisi</span>
+          </div>
+          <div class="author-card-cta">
+            Apri la guida
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <!-- UNGARETTI -->
+        <a class="author-card ungaretti" href="pages/ungaretti.html">
+          <span class="author-card-initial">U</span>
+          <div class="author-card-meta">Alessandria · 1888–1970</div>
+          <div class="author-card-name">Giuseppe<br><em>Ungaretti</em></div>
+          <div class="author-card-dates">Vita d'un uomo · illuminazione</div>
+          <div class="author-card-tagline">La parola come lampo che svela la verità nascosta. Dal Carso al porto
+            sepolto.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic">L'Allegria</span>
+            <span class="author-card-topic">Carso</span>
+            <span class="author-card-topic">Analogia</span>
+          </div>
+          <div class="author-card-cta">
+            Apri la guida
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <!-- MONTALE -->
+        <a class="author-card montale" href="pages/montale.html">
+          <span class="author-card-initial">M</span>
+          <div class="author-card-meta">Genova · 1896–1981</div>
+          <div class="author-card-name">Eugenio<br><em>Montale</em></div>
+          <div class="author-card-dates">Ossi di seppia · male di vivere</div>
+          <div class="author-card-tagline">Il correlativo oggettivo, il muro, la divina Indifferenza. Anti-vate per
+            scelta.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic">Correlativo</span>
+            <span class="author-card-topic">Clizia</span>
+            <span class="author-card-topic">Satura</span>
+          </div>
+          <div class="author-card-cta">
+            Apri la guida
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <!-- SVEVO -->
+        <a class="author-card svevo" href="svevo/">
+          <span class="author-card-initial">S</span>
+          <div class="author-card-meta">Trieste · 1861–1928</div>
+          <div class="author-card-name">Italo<br><em>Svevo</em></div>
+          <div class="author-card-dates">La coscienza di Zeno · inettitudine</div>
+          <div class="author-card-tagline">L'inetto come forma di lucidità. La scrittura come autoanalisi, oltre la
+            psicoanalisi.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic">Zeno</span>
+            <span class="author-card-topic">Inettitudine</span>
+            <span class="author-card-topic">Freud</span>
+          </div>
+          <div class="author-card-cta">
+            Apri la guida
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <!-- PIRANDELLO -->
+        <a class="author-card pirandello" href="pages/pirandello.html">
+          <span class="author-card-initial">P</span>
+          <div class="author-card-meta">Agrigento · 1867–1936</div>
+          <div class="author-card-name">Luigi<br><em>Pirandello</em></div>
+          <div class="author-card-dates">Sei personaggi · maschere senza volto</div>
+          <div class="author-card-tagline">L'identità come finzione, la vita come forma impossibile. Umorismo:
+            avvertimento e sentimento del contrario.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic">Maschera</span>
+            <span class="author-card-topic">Umorismo</span>
+            <span class="author-card-topic">Teatro</span>
+          </div>
+          <div class="author-card-cta">
+            Apri la guida
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============================ MAPPE CONCETTUALI ============================ -->
+    <section class="home-section" id="mappe">
+      <div class="home-section-head">
+        <div>
+          <div class="home-section-eyebrow">02 · Mappe concettuali</div>
+          <h2 class="home-section-title">Le <em>mappe</em></h2>
+          <p class="home-section-sub">Tre mappe interattive per orientarsi nella poetica di Saba, Ungaretti e Montale.
+          </p>
+        </div>
+        <a href="pages/mappe_concettuali.html" class="btn secondary" style="align-self:flex-end;">
+          Apri le mappe
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="authors-grid" style="grid-template-columns: repeat(3,1fr);">
+
+        <a class="author-card saba" href="pages/mappe_concettuali.html#saba" style="text-decoration:none;">
+          <span class="author-card-initial">S</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">Umberto<br><em>Saba</em></div>
+          <div class="author-card-dates">21 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">Poesia onesta, Trieste, la scissione interiore, lo scandaglio dell'inconscio.
+          </div>
+          <div class="author-card-topics">
+            <span class="author-card-topic">Vita</span>
+            <span class="author-card-topic">Poetica</span>
+            <span class="author-card-topic">Testi</span>
+          </div>
+          <div class="author-card-cta">
+            Vedi la mappa
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <a class="author-card ungaretti" href="pages/mappe_concettuali.html#ungaretti" style="text-decoration:none;">
+          <span class="author-card-initial">U</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">Giuseppe<br><em>Ungaretti</em></div>
+          <div class="author-card-dates">22 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">La parola come illuminazione, il porto sepolto, le tre raccolte.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic">Vita</span>
+            <span class="author-card-topic">Poetica</span>
+            <span class="author-card-topic">Testi</span>
+          </div>
+          <div class="author-card-cta">
+            Vedi la mappa
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <a class="author-card montale" href="pages/mappe_concettuali.html#montale" style="text-decoration:none;">
+          <span class="author-card-initial">M</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">Eugenio<br><em>Montale</em></div>
+          <div class="author-card-dates">23 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">Il male di vivere, il correlativo oggettivo, le quattro raccolte.</div>
+          <div class="author-card-topics">
+            <span class="author-card-topic">Vita</span>
+            <span class="author-card-topic">Poetica</span>
+            <span class="author-card-topic">Testi</span>
+          </div>
+          <div class="author-card-cta">
+            Vedi la mappa
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============================ QUIZ CTA ============================ -->
+    <section class="home-section" id="quiz" style="border-top:none;">
+      <div class="quiz-cta">
+        <div class="quiz-cta-content">
+          <div class="quiz-cta-eyebrow">03 · Verifica</div>
+          <h2>Metti alla prova<br>quello che <em>sai</em></h2>
+          <p>
+            Cinque quiz interattivi, uno per autore. Scegli modalità rapida o completa,
+            attiva il timer, salva il tuo record personale. Tutto offline, tutto immediato.
+          </p>
+          <a href="quiz/quiz.html" class="quiz-cta-btn">
+            Entra nei quiz
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        <div class="quiz-cta-visual">
+          <div class="pile">
+            <div class="pile-card">S</div>
+            <div class="pile-card">U</div>
+            <div class="pile-card">M</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="home-section" id="sul-progetto">
+      <div class="home-section-head">
+        <div>
+          <div class="home-section-eyebrow">04 · Il progetto</div>
+          <h2 class="home-section-title">Una <em>web app</em>, non un foglio Word</h2>
+          <p class="home-section-sub">Tutto quello che ti serve in un unico posto, organizzato come un'applicazione
+            moderna.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card c-rose">
+          <div class="card-icon">📖</div>
+          <div class="card-title">Sei guide complete</div>
+          <div class="card-subtitle">Vita · poetica · opere · testi · confronti</div>
+          <div class="card-body">
+            Ogni autore ha la sua scheda navigabile per sezioni, con poesie analizzate verso per verso,
+            parafrasi, figure retoriche e parole chiave per l'orale.
+          </div>
+        </div>
+        <div class="card c-gold">
+          <div class="card-icon">🎯</div>
+          <div class="card-title">Quiz interattivi</div>
+          <div class="card-subtitle">30 domande per autore · 150 totali</div>
+          <div class="card-body">
+            Scelta multipla, vero/falso e domande aperte. Modalità completa, rapida,
+            solo MC o difficile. Timer opzionale, mappa domande, revisione finale.
+          </div>
+        </div>
+        <div class="card c-teal">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">Tutto offline</div>
+          <div class="card-subtitle">Nessuna connessione richiesta</div>
+          <div class="card-body">
+            Il sito è interamente statico: HTML + CSS + JS puri. I record personali
+            sono salvati nel tuo browser, non su un server.
+          </div>
+        </div>
+      </div>
+
+      <div class="box-quote" style="margin-top:36px;">
+        «Ciò che non siamo, ciò che non vogliamo.»
+        <span class="label">— EUGENIO MONTALE, NON CHIEDERCI LA PAROLA —</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>
+        <strong
+          style="color:var(--carta); font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic;">Italiano
+          · Maturità</strong>
+        <div style="opacity:.7; margin-top:4px;">Studio del Novecento letterario italiano.</div>
+      </div>
+      <div style="display:flex; gap:18px; flex-wrap:wrap;">
+        <a href="saba/">Saba</a>
+        <a href="pages/ungaretti.html">Ungaretti</a>
+        <a href="pages/montale.html">Montale</a>
+        <a href="svevo/">Svevo</a>
+        <a href="pages/pirandello.html">Pirandello</a>
+        <a href="pages/mappe_concettuali.html">Mappe</a>
+        <a href="quiz/quiz.html">Quiz</a>
+      </div>
     </div>
   </footer>
 
-  <script src="js/portal.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

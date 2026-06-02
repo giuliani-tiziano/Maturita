@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mappe Concettuali · Saba · Ungaretti · Montale</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── ROOT ─────────────────────────────────────────────── */
+:root{
+  --carta:#f4ecd8; --carta-2:#ede2c6; --carta-3:#e3d4b0;
+  --ink:#1a1612; --ink2:#3a3128; --ink-light:#5a4e3e;
+  --red:#7a1f1f; --red-dark:#5a1414; --red-light:#a83a3a;
+  --gold:#b88a3e; --gold-light:#d4a84e;
+  --green:#4a6b3a; --green-bg:#e8f0dc; --green-dark:#2d4a22;
+  --gray:#8a7d6a; --gray-light:#c8bfb0;
+  --sh:0 2px 12px rgba(26,22,18,.08);
+  --sh-md:0 4px 22px rgba(26,22,18,.13);
+  --sh-lg:0 8px 32px rgba(26,22,18,.15);
+  --r:6px; --r-md:8px; --r-lg:12px;
+  --t-f:150ms ease; --t-m:280ms ease; --t-s:480ms cubic-bezier(.22,1,.36,1);
+  --accent:#7a1f1f; --accent-dark:#5a1414; --accent-light:#a83a3a;
+}
+body.ungaretti{ --accent:#2d5a87; --accent-dark:#1d4267; --accent-light:#4d7ba8; }
+body.montale  { --accent:#5a6b3a; --accent-dark:#3e4a26; --accent-light:#7a8c5a; }
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--carta);
+  background-image:radial-gradient(at 20% 10%,rgba(184,138,62,.06) 0%,transparent 50%),radial-gradient(at 80% 90%,rgba(122,31,31,.04) 0%,transparent 50%);
+  color:var(--ink); line-height:1.65; min-height:100vh; overflow-x:hidden;
+  transition:--accent var(--t-s);
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ── TOPBAR ───────────────────────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:200;
+  background:rgba(26,22,18,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(184,138,62,.2);
+}
+.topbar-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;gap:20px;padding:14px 24px;
+}
+.topbar-brand{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1.25rem;font-weight:600;color:var(--carta);
+  display:flex;align-items:center;gap:8px;text-decoration:none;
+}
+.topbar-brand .dot{display:inline-block;width:6px;height:6px;background:var(--gold);border-radius:50%;}
+.topbar-links{margin-left:auto;display:flex;gap:4px;align-items:center;}
+.topbar-link{
+  background:none;border:none;color:rgba(244,236,216,.6);
+  font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;
+  padding:7px 14px;border-radius:100px;cursor:pointer;transition:all var(--t-m);text-decoration:none;
+}
+.topbar-link:hover{color:var(--carta);background:rgba(255,255,255,.06);}
+.topbar-link.active{color:var(--gold);background:rgba(184,138,62,.1);}
+
+/* ── NAV SEZIONE ──────────────────────────────────────── */
+.nav{position:sticky;top:49px;z-index:99;background:var(--ink);border-bottom:2px solid var(--accent);transition:border-color var(--t-s);}
+.nav-inner{display:flex;overflow-x:auto;scrollbar-width:none;max-width:1080px;margin:0 auto;padding:0 12px;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-btn{
+  background:none;border:none;color:rgba(244,236,216,.5);
+  font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.05em;
+  padding:.85rem 1.1rem;cursor:pointer;white-space:nowrap;
+  border-bottom:2px solid transparent;margin-bottom:-2px;
+  transition:color var(--t-f),border-color var(--t-f);
+}
+.nav-btn:hover{color:var(--carta);}
+.nav-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+/* ── CONTAINER ────────────────────────────────────────── */
+.container{max-width:1080px;margin:0 auto;padding:40px 20px 100px;}
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero{text-align:center;padding:64px 20px 48px;border-bottom:1px solid rgba(26,22,18,.15);margin-bottom:48px;position:relative;}
+.hero::before{content:'';position:absolute;top:22px;left:50%;transform:translateX(-50%);width:50px;height:1px;background:var(--red);}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:16px;display:inline-block;}
+.hero-rule{width:60px;height:1px;background:linear-gradient(90deg,var(--red),var(--gold));margin:0 auto 16px;}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink2);font-size:1.15rem;max-width:560px;margin:0 auto 10px;}
+
+/* ── SECTION SYSTEM ───────────────────────────────────── */
+.section{display:none;}
+.section.active{display:block;animation:fadeIn .35s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.section-title{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.6rem);
+  font-weight:600;color:var(--ink);border-bottom:2px solid var(--accent);
+  padding-bottom:14px;margin-bottom:8px;transition:border-color var(--t-s);
+}
+.section-sub{
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--accent);font-style:normal;margin-bottom:28px;
+  transition:color var(--t-s);
+}
+
+/* ── BOX INFO SEZIONE ─────────────────────────────────── */
+.info-strip{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
+.info-chip{
+  display:flex;align-items:center;gap:8px;
+  background:var(--carta-2);border:1px solid rgba(26,22,18,.08);
+  border-radius:100px;padding:6px 14px;
+  font-size:12px;color:var(--ink2);
+}
+.info-chip strong{color:var(--ink);font-weight:700;}
+
+/* ── AUTHOR SELECTOR (HOME) ───────────────────────────── */
+.author-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px 0;}
+.author-btn{
+  background:var(--carta-2);border:1.5px solid rgba(26,22,18,.1);
+  border-radius:var(--r-md);padding:28px 22px 22px;
+  cursor:pointer;transition:all var(--t-s);text-align:left;
+  position:relative;overflow:hidden;
+}
+.author-btn::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  transition:height var(--t-m);
+}
+.author-btn.saba::before  {background:linear-gradient(90deg,var(--red-dark),var(--red),var(--gold));}
+.author-btn.ung::before   {background:linear-gradient(90deg,#1d4267,#2d5a87,#6ca8d8);}
+.author-btn.mon::before   {background:linear-gradient(90deg,#3e4a26,#5a6b3a,#a8ba7a);}
+.author-btn:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);background:white;}
+.author-btn:hover::before{height:6px;}
+.author-btn.saba:hover{border-color:var(--red);}
+.author-btn.ung:hover {border-color:#2d5a87;}
+.author-btn.mon:hover {border-color:#5a6b3a;}
+.author-initial{
+  font-family:'Cormorant Garamond',serif;font-size:4.5rem;
+  font-weight:300;font-style:italic;color:rgba(26,22,18,.07);
+  line-height:1;position:absolute;top:12px;right:18px;user-select:none;
+}
+.author-meta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;margin-bottom:10px;}
+.author-btn.saba .author-meta{color:var(--red);}
+.author-btn.ung  .author-meta{color:#2d5a87;}
+.author-btn.mon  .author-meta{color:#5a6b3a;}
+.author-name{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;line-height:1;color:var(--ink);margin-bottom:6px;}
+.author-name em{font-style:italic;}
+.author-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--ink-light);line-height:1.4;margin-bottom:14px;}
+.author-nodes{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gray);letter-spacing:.08em;}
+.author-btn.saba .author-nodes{color:var(--red);}
+.author-btn.ung  .author-nodes{color:#2d5a87;}
+.author-btn.mon  .author-nodes{color:#5a6b3a;}
+
+/* ── QUOTE BLOCK ──────────────────────────────────────── */
+.quote-block{
+  border-left:4px solid var(--red);padding:16px 20px;
+  background:#fbeaea;border-radius:0 var(--r) var(--r) 0;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1.1rem;color:var(--ink2);line-height:1.7;margin:22px 0;
+}
+.quote-block cite{display:block;margin-top:8px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-style:normal;font-family:'JetBrains Mono',monospace;color:var(--gray);}
+
+/* ── FOOTER QUOTE ─────────────────────────────────────── */
+.footer-quote{
+  text-align:center;margin-top:40px;padding:32px 24px 20px;
+  border-top:1px solid rgba(26,22,18,.15);
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  color:var(--gray);font-size:14px;line-height:1.7;
+}
+.footer-quote cite{display:block;font-family:'JetBrains Mono',monospace;font-style:normal;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--red-light);margin-top:8px;}
+
+/* ── MAP AREA (griglia concettuale) ──────────────────── */
+.map-area{margin-bottom:32px;}
+.map-area-hd{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 14px;
+  background:var(--carta-2);border-radius:var(--r);
+  border-left:3px solid var(--accent);
+  margin-bottom:12px;
+  transition:border-color var(--t-s);
+}
+.map-area-num{
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;
+  transition:color var(--t-s);
+}
+.map-area-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-weight:600;color:var(--ink);
+}
+.map-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;}
+
+/* ── MAP CARD ─────────────────────────────────────────── */
+.map-card{
+  background:var(--carta-2);border:1.5px solid rgba(26,22,18,.1);
+  border-radius:var(--r);padding:14px 16px;
+  cursor:pointer;transition:all var(--t-m);box-shadow:var(--sh);user-select:none;
+}
+.map-card:hover{transform:translateY(-2px);box-shadow:var(--sh-lg);}
+.map-card.root{
+  background:var(--ink);border:none;border-radius:var(--r-md);
+  grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:flex-start;
+  gap:16px;padding:18px 22px;box-shadow:var(--sh-lg);
+}
+.map-card.root:hover{transform:scale(1.01);}
+.map-card.l1{border-top:3px solid var(--accent);}
+.map-card.l2{border-left:3px solid var(--accent);}
+.map-card.l3{border-left:2px solid var(--gray-light);background:var(--carta);font-size:.9rem;}
+.map-card.tag-gold{border-top-color:var(--gold)!important;border-left-color:var(--gold)!important;}
+.map-card.tag-green{border-top-color:var(--green)!important;border-left-color:var(--green)!important;}
+
+/* ── NODE CONTENT ─────────────────────────────────────── */
+.node-label{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:4px;
+  transition:color var(--t-s);
+}
+.node-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-weight:600;line-height:1.2;color:var(--ink);
+}
+.node-body{font-size:12px;color:var(--ink2);line-height:1.45;margin-top:4px;}
+.node-pill{
+  display:inline-block;margin-top:5px;margin-right:3px;
+  background:rgba(122,31,31,.1);color:var(--red-dark);
+  padding:1px 7px;border-radius:100px;
+  font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.05em;
+}
+
+/* root card overrides */
+.map-card.root .node-label{color:var(--gold);}
+.map-card.root .node-title{color:var(--carta);font-size:1.3rem;}
+.map-card.root .node-body{color:rgba(244,236,216,.75);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:.95rem;}
+.map-card.root .node-pill{background:rgba(184,138,62,.2);color:var(--gold-light);}
+/* tag overrides */
+.map-card.tag-gold .node-label{color:var(--gold)!important;}
+.map-card.tag-green .node-label{color:var(--green-dark)!important;}
+
+/* ── TOOLTIP ──────────────────────────────────────────── */
+.tooltip{
+  display:none;position:fixed;z-index:500;
+  background:var(--ink);color:var(--carta);
+  border-radius:var(--r-md);padding:18px 20px;
+  max-width:320px;width:90vw;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+  pointer-events:none;
+}
+.tooltip.show{display:block;animation:fadeIn .2s ease;}
+.tooltip-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-light);font-weight:600;margin-bottom:6px;}
+.tooltip-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--gold);margin-bottom:8px;line-height:1.2;}
+.tooltip-text{font-size:13px;line-height:1.6;color:rgba(244,236,216,.85);font-family:'Cormorant Garamond',serif;font-style:italic;}
+.tooltip-close{
+  position:absolute;top:10px;right:12px;
+  background:none;border:none;color:rgba(244,236,216,.4);
+  font-size:18px;cursor:pointer;pointer-events:all;
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:all var(--t-f);
+}
+.tooltip-close:hover{background:rgba(255,255,255,.1);color:var(--carta);}
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media(max-width:720px){
+  .author-selector{grid-template-columns:1fr;}
+  .topbar-inner{padding:11px 14px;gap:12px;}
+  .topbar-link{padding:6px 10px;font-size:12px;}
+  .container{padding:24px 14px 60px;}
+  .map-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+}
+@media(max-width:500px){
+  .topbar-brand .full{display:none;}
+  .info-strip{gap:8px;}
+  .map-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="topbar-brand">
+      <span class="dot"></span>
+      <span class="full">Italiano &middot; Maturit&agrave;</span>
+    </a>
+    <div class="topbar-links">
+      <a class="topbar-link" href="../index.html">Home</a>
+      <button class="topbar-link" id="lnk-saba" onclick="activateAuthor('saba')">Saba</button>
+      <button class="topbar-link" id="lnk-ungaretti" onclick="activateAuthor('ungaretti')">Ungaretti</button>
+      <button class="topbar-link" id="lnk-montale" onclick="activateAuthor('montale')">Montale</button>
+    </div>
+  </div>
+</nav>
+
+<nav class="nav" id="sub-nav" style="display:none">
+  <div class="nav-inner" id="sub-nav-inner"></div>
+</nav>
+
+<div class="container">
+
+<!-- ══════════════════ HOME ══════════════════ -->
+<div class="section active" id="sec-home">
+  <div class="hero">
+    <span class="eyebrow">Mappe Concettuali &middot; Letteratura del Novecento</span>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,7vw,4.8rem);font-weight:600;color:var(--ink);margin-bottom:12px;letter-spacing:-.02em;">
+      Saba <em style="font-style:italic;color:var(--red)">&middot;</em> Ungaretti <em style="font-style:italic;color:var(--red)">&middot;</em> Montale
+    </h1>
+    <div class="hero-rule"></div>
+    <p class="hero-tagline">Tre mappe concettuali interattive per orientarsi &mdash; e non perdersi &mdash; in vista della Maturit&agrave;.</p>
+  </div>
+
+  <div class="info-strip">
+    <div class="info-chip"><strong>3</strong> mappe interattive</div>
+    <div class="info-chip"><strong>60+</strong> schede cliccabili</div>
+    <div class="info-chip">Tooltip con spiegazioni</div>
+    <div class="info-chip">Responsive mobile</div>
+  </div>
+
+  <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--ink2);margin-bottom:26px;line-height:1.65;">
+    Scegli un autore per vedere la sua mappa concettuale completa. Ogni scheda &egrave; <strong>cliccabile</strong>: un tooltip mostra la spiegazione approfondita. Le aree tematiche mostrano i rapporti tra vita, poetica, opere e testi.
+  </p>
+
+  <div class="author-selector">
+    <div class="author-btn saba" onclick="activateAuthor('saba')">
+      <span class="author-initial">S</span>
+      <div class="author-meta">Mappa concettuale</div>
+      <div class="author-name">Umberto<br><em>Saba</em></div>
+      <div class="author-tagline">La poesia onesta, Trieste, la scissione interiore, il Canzoniere.</div>
+      <div class="author-nodes">21 schede &middot; 5 aree tematiche</div>
+    </div>
+    <div class="author-btn ung" onclick="activateAuthor('ungaretti')">
+      <span class="author-initial">U</span>
+      <div class="author-meta">Mappa concettuale</div>
+      <div class="author-name">Giuseppe<br><em>Ungaretti</em></div>
+      <div class="author-tagline">La parola come illuminazione, il porto sepolto, le tre raccolte.</div>
+      <div class="author-nodes">22 schede &middot; 5 aree tematiche</div>
+    </div>
+    <div class="author-btn mon" onclick="activateAuthor('montale')">
+      <span class="author-initial">M</span>
+      <div class="author-meta">Mappa concettuale</div>
+      <div class="author-name">Eugenio<br><em>Montale</em></div>
+      <div class="author-tagline">Il male di vivere, il correlativo oggettivo, le quattro raccolte.</div>
+      <div class="author-nodes">23 schede &middot; 6 aree tematiche</div>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    &laquo;Ho attraversata tutta la citt&agrave;.&raquo; &nbsp;&middot;&nbsp; &laquo;M&rsquo;illumino d&rsquo;immenso.&raquo; &nbsp;&middot;&nbsp; &laquo;Ci&ograve; che non siamo, ci&ograve; che non vogliamo.&raquo;
+    <cite>&mdash; Saba, Trieste &nbsp;&middot;&nbsp; Ungaretti, Mattina &nbsp;&middot;&nbsp; Montale, Non chiederci la parola</cite>
+  </div>
+</div>
+
+<!-- ══════════════════ SABA ══════════════════ -->
+<div class="section" id="sec-saba">
+  <div class="section-title">Mappa concettuale &mdash; Umberto Saba</div>
+  <div class="section-sub">Trieste 1883 &middot; Gorizia 1957</div>
+
+  <div class="info-strip">
+    <div class="info-chip">Clicca su ogni scheda per la spiegazione</div>
+    <div class="info-chip">Bordeaux = concetto cardine</div>
+    <div class="info-chip">Oro = poetica / stile</div>
+    <div class="info-chip">Verde = opera / testo</div>
+  </div>
+
+  <!-- ROOT -->
+  <div class="map-area" style="margin-bottom:20px">
+    <div class="map-grid">
+      <div class="map-card root" onclick="showTip(event,'Autore','Umberto Saba','Vero nome Umberto Poli. Pseudonimo dal 1910: dal cognome della balia (Saber) o da «saba» = pane/nonno in ebraico. Nasce a Trieste (Impero austro-ungarico) nel 1883. Muore a Gorizia nel 1957.')">
+        <div>
+          <div class="node-label">Autore</div>
+          <div class="node-title">Umberto Saba</div>
+          <div class="node-body">Trieste 1883 &mdash; Gorizia 1957</div>
+        </div>
+        <div><span class="node-pill">poesia onesta</span><span class="node-pill">Canzoniere</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VITA -->
+  <div class="map-area" id="saba-vita">
+    <div class="map-area-hd">
+      <span class="map-area-num">01</span>
+      <span class="map-area-name">Vita</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1" onclick="showTip(event,'Vita','I traumi fondativi','Padre (Ugo Poli) abbandona la famiglia prima della nascita. Madre ebrea severa e opprimente. Balia slovena Peppa Gabrovich: la «madre lieta». Questa triplice ferita genera le nevrosi che alimentano tutta la poesia.')">
+        <div class="node-label">01 &middot; Vita</div>
+        <div class="node-title">I traumi fondativi</div>
+        <div class="node-body">Padre assente &middot; madre mesta &middot; balia gioiosa</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Vita','Scissione dell\'io','Il cuore scisso: da una parte la balia (madre di gioia), dall\'altra la madre (madre mesta). Questa frattura è la radice della nevrosi e attraversa tutto il Canzoniere. «O mio cuore, dal nascere in due scisso.»')">
+        <div class="node-label">conflitto</div>
+        <div class="node-title">Scissione dell&rsquo;io</div>
+        <div class="node-body">Pesantezza vs. Leggerezza</div>
+      </div>
+      <div class="map-card l2 tag-gold" onclick="showTip(event,'Vita','Psicoanalisi','Dal 1929 terapia con Edoardo Weiss (allievo di Freud) a Trieste. Contini lo definisce «psicanalitico prima della psicanalisi». La poesia come scandaglio è perfettamente sovrapponibile al metodo freudiano.')">
+        <div class="node-label">1929</div>
+        <div class="node-title">Psicoanalisi</div>
+        <div class="node-body">Weiss &middot; Freud &middot; traumi rimossi</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Vita','Trieste','Città di confine culturale (italiano, austriaco, ebraico, slavo). Scontrosa grazia: riservata ma affascinante. Specchio dell\'identità del poeta. «La mia città che in ogni parte è viva / ha il cantuccio a me fatto.»')">
+        <div class="node-label">città</div>
+        <div class="node-title">Trieste</div>
+        <div class="node-body">scontrosa grazia &middot; identit&agrave; &middot; cantuccio</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Vita','Leggi razziali 1938','In quanto ebreo, le leggi razziali lo costringono a cedere la libreria e a fuggire. Trova rifugio a Firenze grazie a Montale. Questo periodo segna profondamente il Terzo volume del Canzoniere.')">
+        <div class="node-label">1938</div>
+        <div class="node-title">Leggi razziali</div>
+        <div class="node-body">Ebraismo &middot; fuga &middot; Montale lo ospita</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POETICA -->
+  <div class="map-area" id="saba-poetica">
+    <div class="map-area-hd">
+      <span class="map-area-num">02</span>
+      <span class="map-area-name">Poetica</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1 tag-gold" onclick="showTip(event,'Poetica','Poesia onesta','Dal saggio «Quello che resta da fare ai poeti» (1911). La poesia deve dire la verità senza mascherarla. Il poeta è ricercatore di verità, non letterato di professione. Contro il preziosismo di D\'Annunzio, l\'obscurità degli Ermetici, il frammentismo vociano.')">
+        <div class="node-label">02 &middot; Poetica</div>
+        <div class="node-title">Poesia onesta</div>
+        <div class="node-body">&laquo;dire la verit&agrave; senza mascherarla&raquo;</div>
+      </div>
+      <div class="map-card l2 tag-gold" onclick="showTip(event,'Poetica','Scandaglio','Strumento che si cala in mare per misurare la profondità. Metafora della poesia: scende nell\'interiorità, sonda l\'inconscio. «Amai la verità che giace al fondo» (Amai). Il fondo è ciò che lo scandaglio raggiunge.')">
+        <div class="node-label">metafora</div>
+        <div class="node-title">Scandaglio</div>
+        <div class="node-body">poesia come immersione nell&rsquo;interiorit&agrave;</div>
+      </div>
+      <div class="map-card l2 tag-gold" onclick="showTip(event,'Poetica','Trite parole','«Amai trite parole che non uno osava.» Usare parole comuni (amore, fiore, vita) è un atto di coraggio contro l\'oscurità novecentesca. La rima fiore/amore, banale per il Novecento, è per Saba «la più antica difficile del mondo».')">
+        <div class="node-label">lessico</div>
+        <div class="node-title">Trite parole</div>
+        <div class="node-body">coraggio della semplicit&agrave; &middot; vs ermetismo</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Poetica','Struttura tripartita','Struttura tipica delle liriche: spunto narrativo → descrizione → riflessione conclusiva con valore di sentenza. Si oppone al frammentismo vociano e apre/chiude ogni componimento in modo organico.')">
+        <div class="node-label">struttura</div>
+        <div class="node-title">Struttura tripartita</div>
+        <div class="node-body">narrativo &rarr; desc. &rarr; sentenza</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Poetica','Linea antinovecentistica','Contro: ermetismo (oscurità), vocianesimo (frammento), futurismo (avanguardia). Verso: Petrarca, Leopardi, Foscolo. «Moderno in modo quasi sconcertante pur restando nella tradizione» (Solmi).')">
+        <div class="node-label">posizione</div>
+        <div class="node-title">Anti-novecentismo</div>
+        <div class="node-body">tradizione italiana &middot; Petrarca &middot; Leopardi</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPERE -->
+  <div class="map-area" id="saba-opere">
+    <div class="map-area-hd">
+      <span class="map-area-num">03</span>
+      <span class="map-area-name">Opere</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1 tag-green" onclick="showTip(event,'Opere','Il Canzoniere','Raccolta di tutta la produzione (1900–1954). Saba lo definisce «romanzo psicologico in versi». Tre volumi per 25 sezioni. Prima edizione 1921 (accolta con indifferenza); definitiva 1961. Il titolo dichiara fedeltà a Petrarca.')">
+        <div class="node-label">03 &middot; Opera</div>
+        <div class="node-title">Il Canzoniere</div>
+        <div class="node-body">1921&ndash;1961 &middot; 3 volumi &middot; 25 sezioni</div>
+      </div>
+      <div class="map-card l2 tag-green" onclick="showTip(event,'Opere','Storia e cronistoria','1948, sotto pseudonimo Giuseppe Carimandrei. Saba commenta il proprio Canzoniere in terza persona. Rarissimo nella letteratura italiana: il poeta spiega se stesso. Rivendica di essere «moderno in modo quasi sconcertante».')">
+        <div class="node-label">1948</div>
+        <div class="node-title">Storia e cronistoria</div>
+        <div class="node-body">autocommento &middot; Carimandrei</div>
+      </div>
+      <div class="map-card l2 tag-green" onclick="showTip(event,'Opere','Ernesto','Romanzo incompiuto (scritto 1953, pub. postumo 1975). Protagonista Ernesto, 16 anni, Trieste fine Ottocento. Iniziazione sentimentale e sessuale. Tema: assenza del padre, rapporto con la madre, ricerca di affetto.')">
+        <div class="node-label">postumo 1975</div>
+        <div class="node-title">Ernesto</div>
+        <div class="node-body">romanzo &middot; formazione &middot; autobiografico</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Opere','Scorciatoie e raccontini','1946. Prosa a metà tra aforisma e apologo: brevissimi («scorciatoie») e brevi («raccontini»). Ironici, taglienti. Influenza di Freud e Nietzsche. Indagine interiore e critica dell\'attualità.')">
+        <div class="node-label">1946</div>
+        <div class="node-title">Scorciatoie</div>
+        <div class="node-body">aforismi &middot; ironia &middot; Freud + Nietzsche</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTI -->
+  <div class="map-area" id="saba-testi">
+    <div class="map-area-hd">
+      <span class="map-area-num">04</span>
+      <span class="map-area-name">Testi</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1" onclick="showTip(event,'Testi','I 7 testi del programma','Amai · A mia moglie · La capra · Trieste · Città vecchia · Mio padre è stato per me l\'assassino · La vera causa (Ernesto). Tutti dal Canzoniere tranne l\'ultimo, che è da Ernesto.')">
+        <div class="node-label">04 &middot; Testi</div>
+        <div class="node-title">7 testi del programma</div>
+        <div class="node-body">Canzoniere + Ernesto</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','Amai','Dichiarazione di poetica: «Amai trite parole che non uno osava. M\'incantò la rima fiore / amore». Tre anafore (Amai·Amai·Amo). La «buona carta» = l\'eredità poetica lasciata al lettore. La «verità al fondo» come scandaglio.')">
+        <div class="node-label">Mediterranee</div>
+        <div class="node-title">Amai</div>
+        <div class="node-body">poesia onesta &middot; scandaglio &middot; verit&agrave;</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','La capra','«Il dolore è eterno, ha una voce e non varia.» Il belato uguale della capra = dolore universale. «Viso semita» = identificazione ebraica. Eco leopardiana: pessimismo cosmico e solidarietà tra le creature.')">
+        <div class="node-label">Casa e campagna</div>
+        <div class="node-title">La capra</div>
+        <div class="node-body">dolore eterno &middot; viso semita &middot; fratellanza</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','Trieste','«Scontrosa grazia» = ossimoro. La città come specchio dell\'anima: riservata ma piena di vita. Il cantuccio = spazio di solitudine e appartenenza. L\'aria natia tormentosa è l\'identità del poeta.')">
+        <div class="node-label">Trieste e una donna</div>
+        <div class="node-title">Trieste</div>
+        <div class="node-body">scontrosa grazia &middot; cantuccio &middot; ossimoro</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Testo','A mia moglie','La moglie Lina paragonata a 7 femmine animali (gallina, giovenca, cagna, coniglia, rondine, formica, ape). Struttura ripetitiva = preghiera di elogio (eco del Cantico delle Creature). Violazione del tabù: cifra antipoetica è elogio massimo.')">
+        <div class="node-label">Casa e campagna</div>
+        <div class="node-title">A mia moglie</div>
+        <div class="node-body">7 animali &middot; litania &middot; Lina</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Testo','Città vecchia','Saba cammina tra prostitute, ubriachi, marinai. «Mi so fraternamente vicino.» Antitesi detrito/infinito: nei reietti si agita il Signore come nel poeta. La città vecchia come inconscio.')">
+        <div class="node-label">Canzoniere</div>
+        <div class="node-title">Citt&agrave; vecchia</div>
+        <div class="node-body">fratellanza &middot; detrito/infinito &middot; sacro</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFRONTI -->
+  <div class="map-area" id="saba-confronti">
+    <div class="map-area-hd">
+      <span class="map-area-num">05</span>
+      <span class="map-area-name">Confronti e sintesi</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1" onclick="showTip(event,'Confronti','Saba vs. Novecento','vs. Ungaretti: entrambi autobiografici, ma Ungaretti cerca l\'illuminazione; Saba cerca l\'onestà. vs. Montale: entrambi dolore esistenziale, ma Saba accetta la vita pienamente; Montale diagnostica il male senza riscatto. vs. Vociani: rifiuta il frammento aperto. vs. Ermetici: rifiuta l\'oscurità.')">
+        <div class="node-label">05 &middot; Confronti</div>
+        <div class="node-title">Posizione nel Novecento</div>
+        <div class="node-body">vs Ungaretti (illuminazione) &middot; vs Montale (accettazione) &middot; vs Ermetici (chiarezza)</div>
+      </div>
+      <div class="map-card l2 tag-gold" onclick="showTip(event,'Sintesi','Le 5 parole-chiave di Saba','① Poesia onesta — la verità senza maschere. ② Scandaglio — immersione nell\'interiorità. ③ Scissione — il cuore diviso in due. ④ Canzoniere — romanzo psicologico in versi. ⑤ Trieste — scontrosa grazia, specchio dell\'anima.')">
+        <div class="node-label">sintesi</div>
+        <div class="node-title">5 parole-chiave</div>
+        <div class="node-body">onesta &middot; scandaglio &middot; scissione &middot; Canzoniere &middot; scontrosa grazia</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-quote">
+    &laquo;Amai trite parole che non uno / osava. M&rsquo;incant&ograve; la rima fiore / amore, / la pi&ugrave; antica, difficile del mondo.&raquo;
+    <cite>&mdash; Umberto Saba, Amai</cite>
+  </div>
+</div><!-- /sec-saba -->
+
+<!-- ══════════════════ UNGARETTI ══════════════════ -->
+<div class="section" id="sec-ungaretti">
+  <div class="section-title">Mappa concettuale &mdash; Giuseppe Ungaretti</div>
+  <div class="section-sub">Alessandria d&rsquo;Egitto 1888 &middot; Milano 1970</div>
+
+  <div class="info-strip">
+    <div class="info-chip">Clicca su ogni scheda per la spiegazione</div>
+    <div class="info-chip">Blu = concetto cardine</div>
+    <div class="info-chip">Oro = poetica / stile</div>
+    <div class="info-chip">Verde = opera / testo</div>
+  </div>
+
+  <!-- ROOT -->
+  <div class="map-area" style="margin-bottom:20px">
+    <div class="map-grid">
+      <div class="map-card root" onclick="showTip(event,'Autore','Giuseppe Ungaretti','Nasce l\'8 febbraio 1888 ad Alessandria d\'Egitto da genitori lucchesi. Il padre muore quando è piccolo. Studia alla Sorbona (1912). Trincea sul Carso (1915-18). Muore a Milano il 1° giugno 1970. L\'intera raccolta si intitola Vita d\'un uomo.')">
+        <div>
+          <div class="node-label">Autore</div>
+          <div class="node-title">Giuseppe Ungaretti</div>
+          <div class="node-body">Alessandria d&rsquo;Egitto 1888 &mdash; Milano 1970</div>
+        </div>
+        <div><span class="node-pill">illuminazione</span><span class="node-pill">porto sepolto</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VITA -->
+  <div class="map-area" id="ung-vita">
+    <div class="map-area-hd">
+      <span class="map-area-num">01</span>
+      <span class="map-area-name">Vita</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1" onclick="showTip(event,'Vita','I 3 traumi fondativi','① Esilio originario: nasce in Egitto da italiani, sempre nomade, sempre «altrove». ② La trincea (1915-18): evento centrale — da qui nasce tutto il primo stile. ③ Morte del figlio Antonietto (1939): lutto privato che ispira Il dolore.')">
+        <div class="node-label">01 &middot; Vita</div>
+        <div class="node-title">3 traumi fondativi</div>
+        <div class="node-body">Egitto &middot; Carso &middot; Antonietto</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Vita','Alessandria d\'Egitto','Città cosmopolita: arabo, francese, italiano, greco. Il porto, il deserto, il Nilo. «Lutto costante» per il padre morto. Leggenda del porto sepolto sotto le acque. Sorbona 1912: Bergson, simbolisti (Baudelaire, Mallarmé, Rimbaud), Apollinaire.')">
+        <div class="node-label">origini</div>
+        <div class="node-title">Alessandria + Parigi</div>
+        <div class="node-body">cosmopolita &middot; Sorbona &middot; simbolisti</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Vita','Trincea sul Carso','Si arruola volontario 1915. Combatte sul Carso. Scrive su pezzettini di carta e cartine di sigarette. L\'ufficiale Ettore Serra le pubblica: Il porto sepolto (1916, 80 copie). La guerra obbliga a una poesia ridotta all\'osso: niente fronzoli, solo l\'essenziale.')">
+        <div class="node-label">1915&ndash;1918</div>
+        <div class="node-title">Trincea sul Carso</div>
+        <div class="node-body">volontario &middot; Serra &middot; Il porto sepolto</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Vita','Identità nomade','I quattro fiumi = quattro identità: Isonzo (trincea, italiano per scelta), Serchio (radici toscane), Nilo (infanzia egiziana), Senna (maturità parigina). Sempre «altrove». La poesia come ricerca di un\'identità attraverso la memoria.')">
+        <div class="node-label">identit&agrave;</div>
+        <div class="node-title">Identit&agrave; nomade</div>
+        <div class="node-body">Egitto &middot; Toscana &middot; Parigi &middot; Carso</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POETICA -->
+  <div class="map-area" id="ung-poetica">
+    <div class="map-area-hd">
+      <span class="map-area-num">02</span>
+      <span class="map-area-name">Poetica</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1 tag-gold" onclick="showTip(event,'Poetica','Parola come illuminazione','La parola poetica non descrive: è un lampo che fa apparire la verità nascosta. Come un lampo in una stanza buia illumina tutto per un istante. Da Rimbaud (Illuminations). Per questo le poesie sono brevissime: non si può prolungare il lampo.')">
+        <div class="node-label">02 &middot; Poetica</div>
+        <div class="node-title">Parola = illuminazione</div>
+        <div class="node-body">&laquo;un lampo che svela la verit&agrave;&raquo;</div>
+      </div>
+      <div class="map-card l2 tag-gold" onclick="showTip(event,'Poetica','Porto sepolto','Leggenda di Alessandria: porto antico sepolto sotto le acque del Nilo. Metafora del fare poetico: il poeta si immerge nell\'abisso interiore, raggiunge la verità nascosta, riemerge con i canti. Ma resta sempre un «inesauribile segreto».')">
+        <div class="node-label">metafora</div>
+        <div class="node-title">Porto sepolto</div>
+        <div class="node-body">abisso &middot; verit&agrave; &middot; inesauribile segreto</div>
+      </div>
+      <div class="map-card l2 tag-gold" onclick="showTip(event,'Poetica','Unanimismo','Dal latino unus + animus = una sola anima. Il poeta parla per tutti gli uomini: esprime ciò che tutti sentono ma non riescono a dire. In Soldati il «si sta» impersonale vale per tutta l\'umanità, non solo per i soldati. Deriva dall\'ambiente parigino.')">
+        <div class="node-label">concetto</div>
+        <div class="node-title">Unanimismo</div>
+        <div class="node-body">&laquo;si sta&raquo; impersonale &middot; parla per tutti</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Poetica','Stile prima fase (Allegria)','① Versi brevissimi / verso-parola. ② Spazi bianchi = silenzio da cui emerge la parola (Mallarmé). ③ Niente punteggiatura. ④ Analogie (figura preferita): immagini lontane accostate. ⑤ Luogo + data sotto ogni poesia.')">
+        <div class="node-label">stile Allegria</div>
+        <div class="node-title">5 caratteristiche</div>
+        <div class="node-body">verso-parola &middot; spazi bianchi &middot; analogia</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Poetica','Analogia','La figura preferita di Ungaretti. Metafora ancora più ardita: accosta due immagini lontanissime senza legame logico evidente. Il lettore deve «saltare» da una all\'altra. Es: «bocca digrignata / volta al plenilunio» (bocca di un cadavere = luna piena).')">
+        <div class="node-label">figura retorica</div>
+        <div class="node-title">Analogia</div>
+        <div class="node-body">immagini lontane &middot; il &laquo;salto&raquo; interpretativo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPERE -->
+  <div class="map-area" id="ung-opere">
+    <div class="map-area-hd">
+      <span class="map-area-num">03</span>
+      <span class="map-area-name">Opere</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1 tag-green" onclick="showTip(event,'Opere','Le tre fasi / tre raccolte','Fase 1 — L\'Allegria (1916-31): guerra, parola pura. Fase 2 — Sentimento del tempo (1933): Roma, tempo, mito. Fase 3 — Il dolore (1947): lutto privato (Antonietto) + storico (guerra). Edizione definitiva: Vita d\'un uomo (Mondadori 1969).')">
+        <div class="node-label">03 &middot; Opere</div>
+        <div class="node-title">3 fasi / 3 raccolte</div>
+        <div class="node-body">Allegria &middot; Sentimento &middot; Dolore</div>
+      </div>
+      <div class="map-card l2 tag-green" onclick="showTip(event,'Opera','L\'Allegria (1931)','Nasce come Il porto sepolto (1916). Poi Allegria di naufragi (1919) — ossimoro: la gioia del naufrago sopravvissuto. Edizione definitiva 1931: L\'Allegria. 5 sezioni. Il libro più importante, da cui vengono 6 delle 7 poesie.')">
+        <div class="node-label">1916 &rarr; 1931</div>
+        <div class="node-title">L&rsquo;Allegria</div>
+        <div class="node-body">ossimoro &middot; naufrago &middot; porto sepolto</div>
+      </div>
+      <div class="map-card l2 tag-green" onclick="showTip(event,'Opera','Sentimento del tempo (1933)','Tutto cambia rispetto all\'Allegria: versi lunghi, punteggiatura torna, lessico aulico, modelli = Petrarca/Leopardi/Dante/Góngora. Temi: tempo, mito, caducità, Dio. Ispirerà l\'Ermetismo (Quasimodo, Luzi, Gatto).')">
+        <div class="node-label">1933</div>
+        <div class="node-title">Sentimento del tempo</div>
+        <div class="node-body">lessico aulico &middot; classici &middot; ermetismo</div>
+      </div>
+      <div class="map-card l2 tag-green" onclick="showTip(event,'Opera','Il dolore (1947)','Due dolori fusi: privato (morte di Antonietto 1939, fratello Costantino 1937) e storico (Seconda guerra mondiale). Stile: tono elegiaco, meditativo, sintassi rigorosa. «Fu la cosa più tremenda della mia vita.» Contiene Non gridate più.')">
+        <div class="node-label">1947</div>
+        <div class="node-title">Il dolore</div>
+        <div class="node-body">Antonietto &middot; guerra &middot; elegia</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTI -->
+  <div class="map-area" id="ung-testi">
+    <div class="map-area-hd">
+      <span class="map-area-num">04</span>
+      <span class="map-area-name">Testi</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1" onclick="showTip(event,'Testi','7 testi del programma','Veglia · Fratelli · Il porto sepolto · Soldati · I fiumi · Mattina · Non gridate più. Le prime 6 dall\'Allegria. L\'ultima da Il dolore.')">
+        <div class="node-label">04 &middot; Testi</div>
+        <div class="node-title">7 testi</div>
+        <div class="node-body">6 dall&rsquo;Allegria + Non gridate pi&ugrave;</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','Mattina','«M\'illumino / d\'immenso.» Due versi-parola. Immenso = in-mensus = ciò che non si può misurare = l\'infinito. Il poeta si fonde con l\'assoluto in un istante di grazia mistica laica. Titolo originario: «Cielo e mare».')">
+        <div class="node-label">Allegria</div>
+        <div class="node-title">Mattina</div>
+        <div class="node-body">verso-parola &middot; illuminazione &middot; infinito</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','Soldati','«Si sta come / d\'autunno / sugli alberi / le foglie.» Similitudine inversa (soggetto implicito). «Si sta» impersonale = unanimismo. La precarietà universale: tutti siamo foglie pronte a cadere.')">
+        <div class="node-label">Allegria</div>
+        <div class="node-title">Soldati</div>
+        <div class="node-body">similitudine inversa &middot; unanimismo &middot; precariet&agrave;</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','Veglia','Tutta la notte accanto al cadavere del compagno «massacrato» — e scrive lettere d\'amore. Paradosso: la morte amplifica la vita. «Non sono mai stato / tanto / attaccato alla vita.» Il «tanto» isolato = massima concentrazione emotiva.')">
+        <div class="node-label">Allegria</div>
+        <div class="node-title">Veglia</div>
+        <div class="node-body">paradosso vita/morte &middot; &laquo;tanto&raquo; &middot; lettere</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','I fiumi','4 fiumi = 4 identità: Isonzo (trincea), Serchio (origini toscane), Nilo (infanzia), Senna (Parigi). «Docile fibra dell\'universo.» La vita = «corolla di tenebre» = ossimoro.')">
+        <div class="node-label">Allegria</div>
+        <div class="node-title">I fiumi</div>
+        <div class="node-body">4 fiumi &middot; identit&agrave; &middot; corolla di tenebre</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Testo','Non gridate più','Da Il dolore. «Cessate d\'uccidere i morti» = ossimoro/adynaton: i morti non si possono uccidere ancora. Ma si può tradirli col rumore, con la retorica. Solo il silenzio permette di ascoltare l\'«impercettibile sussurro» dell\'erba.')">
+        <div class="node-label">Il dolore</div>
+        <div class="node-title">Non gridate pi&ugrave;</div>
+        <div class="node-body">ossimoro &middot; silenzio &middot; poesia civile</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFRONTI -->
+  <div class="map-area" id="ung-confronti">
+    <div class="map-area-hd">
+      <span class="map-area-num">05</span>
+      <span class="map-area-name">Confronti e sintesi</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1" onclick="showTip(event,'Confronti','Ungaretti nel Novecento','vs. Saba: entrambi autobiografici, ma Saba cerca l\'onestà; Ungaretti cerca l\'illuminazione. vs. Montale: Ungaretti ha epifanie di senso; Montale ha scacco permanente. vs. Ermetici: Sentimento del tempo diventa il loro modello diretto. vs. Simbolismo: eredita la parola pura di Mallarmé.')">
+        <div class="node-label">05 &middot; Confronti</div>
+        <div class="node-title">Posizione nel Novecento</div>
+        <div class="node-body">vs Saba (onest&agrave;) &middot; vs Montale (scacco) &middot; ispira Ermetismo</div>
+      </div>
+      <div class="map-card l2 tag-gold" onclick="showTip(event,'Sintesi','5 parole-chiave di Ungaretti','① Porto sepolto — la verità nascosta in fondo all\'animo. ② Illuminazione — la parola come lampo. ③ Unanimismo — il poeta parla per tutti. ④ Analogia — figura retorica preferita. ⑤ Verso-parola — la parola isolata nello spazio bianco.')">
+        <div class="node-label">sintesi</div>
+        <div class="node-title">5 parole-chiave</div>
+        <div class="node-body">porto sepolto &middot; illuminazione &middot; unanimismo &middot; analogia &middot; verso-parola</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-quote">
+    &laquo;Di questa poesia / mi resta / quel nulla / d&rsquo;inesauribile segreto.&raquo;
+    <cite>&mdash; Giuseppe Ungaretti, Il porto sepolto</cite>
+  </div>
+</div><!-- /sec-ungaretti -->
+
+<!-- ══════════════════ MONTALE ══════════════════ -->
+<div class="section" id="sec-montale">
+  <div class="section-title">Mappa concettuale &mdash; Eugenio Montale</div>
+  <div class="section-sub">Genova 1896 &middot; Milano 1981</div>
+
+  <div class="info-strip">
+    <div class="info-chip">Clicca su ogni scheda per la spiegazione</div>
+    <div class="info-chip">Verde = concetto cardine</div>
+    <div class="info-chip">Oro = poetica / stile</div>
+    <div class="info-chip">Blu = figure femminili</div>
+  </div>
+
+  <!-- ROOT -->
+  <div class="map-area" style="margin-bottom:20px">
+    <div class="map-grid">
+      <div class="map-card root" onclick="showTip(event,'Autore','Eugenio Montale','Nasce a Genova nel 1896, ultimo di 5 figli. Formazione autodidatta. Estati a Monterosso (Cinque Terre): il paesaggio ligure entra nella poesia. Senatore a vita 1967. Nobel 1975. Muore a Milano 1981. Moralista laico per eccellenza del Novecento.')">
+        <div>
+          <div class="node-label">Autore</div>
+          <div class="node-title">Eugenio Montale</div>
+          <div class="node-body">Genova 1896 &mdash; Milano 1981</div>
+        </div>
+        <div><span class="node-pill">male di vivere</span><span class="node-pill">correlativo</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VITA -->
+  <div class="map-area" id="mon-vita">
+    <div class="map-area-hd">
+      <span class="map-area-num">01</span>
+      <span class="map-area-name">Vita</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1" onclick="showTip(event,'Vita','Tappe fondamentali','1925: Ossi di seppia (Gobetti). 1929-38: Direttore Gabinetto Vieusseux, Firenze. 1933: incontra Irma Brandeis (Clizia). 1938: licenziato per rifiuto PNF; Clizia torna in USA. 1943-45: protegge ebrei a Firenze, attivo nel CLN. 1948: Milano, Corriere della Sera. 1975: Nobel.')">
+        <div class="node-label">01 &middot; Vita</div>
+        <div class="node-title">Tappe fondamentali</div>
+        <div class="node-body">Gobetti &middot; Vieusseux &middot; CLN &middot; Nobel</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Vita','Liguria e paesaggio','Estati a Monterosso al mare (Cinque Terre). Muri scalcinati, prati polverosi, il sole che brucia, il mare. Questo paesaggio arido si incide come correlativo oggettivo dell\'aridità interiore. Da qui nasce l\'immagine del muro con i cocci aguzzi (Meriggiare).')">
+        <div class="node-label">origini</div>
+        <div class="node-title">Liguria</div>
+        <div class="node-body">Monterosso &middot; muri &middot; paesaggio arido</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Vita','Antifascismo','1925: firma Manifesto antifascista Croce. Pubblica con Gobetti (editore ucciso dai fascisti). 1938: licenziato dal Vieusseux per rifiuto di iscriversi al PNF. 1943-45: ospita Saba, altri ebrei, attivo nel CLN.')">
+        <div class="node-label">posizione</div>
+        <div class="node-title">Antifascismo</div>
+        <div class="node-body">Gobetti &middot; PNF rifiutato &middot; CLN &middot; Saba</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIGURE FEMMINILI -->
+  <div class="map-area" id="mon-figure">
+    <div class="map-area-hd">
+      <span class="map-area-num">02</span>
+      <span class="map-area-name">Figure femminili</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1" onclick="showTip(event,'Figure femminili','Le 4 figure femminili','Clizia (Irma Brandeis) · Volpe (Maria Luisa Spaziani) · Mosca (Drusilla Tanzi) · Arletta (Anna degli Uberti). Non sono solo donne amate: sono allegorie di esigenze interiori che cambiano di raccolta in raccolta.')">
+        <div class="node-label">figure</div>
+        <div class="node-title">4 figure femminili</div>
+        <div class="node-body">Clizia &middot; Volpe &middot; Mosca &middot; Arletta</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Figura','Clizia — Irma Brandeis','Studiosa americana di Dante, ebrea, conosciuta a Firenze 1933. Torna in USA per leggi razziali 1938. Nelle Occasioni: donna-angelo sul modello di Beatrice dantesca. Nella Bufera: messaggera cosmica quasi cristologica (girasole che si sacrifica).')">
+        <div class="node-label">Occasioni + Bufera</div>
+        <div class="node-title">Clizia</div>
+        <div class="node-body">donna-angelo &middot; Beatrice &middot; girasole &middot; salvezza</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Figura','Mosca — Drusilla Tanzi','Convivente dal 1939, moglie dal 1962. Soprannome per la miopia forte (occhiali spessi = occhi di mosca). Guida pratica e quotidiana: «radar spirituale» infallibile. Morta nel 1963 → sblocca gli Xenia (Satura). Rovescia l\'immagine di Clizia: non sublime ma domestica.')">
+        <div class="node-label">Satura / Xenia</div>
+        <div class="node-title">Mosca</div>
+        <div class="node-body">miopia &middot; radar spirituale &middot; Xenia &middot; quotidiana</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Figura','Volpe — Maria Luisa Spaziani','Poetessa, incontrata negli anni 50. Incarna l\'eros e la vitalità: anti-Clizia. Nella Bufera e altri: sensualità contro spiritualità. «La volpe» = astuzia e istinto. Breve ma intensa presenza nella raccolta.')">
+        <div class="node-label">La Bufera</div>
+        <div class="node-title">Volpe</div>
+        <div class="node-body">eros &middot; anti-Clizia &middot; vitalit&agrave;</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POETICA -->
+  <div class="map-area" id="mon-poetica">
+    <div class="map-area-hd">
+      <span class="map-area-num">03</span>
+      <span class="map-area-name">Poetica</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1 tag-gold" onclick="showTip(event,'Poetica','Correlativo oggettivo','Da T.S. Eliot (La terra desolata, 1922). Oggetto fisico concreto che «contiene» l\'emozione senza nominarla. Es: rivo strozzato + foglia riarsa + cavallo stramazzato = male di vivere. Differenza: in Pascoli l\'oggetto è proiezione soggettiva; in Montale mantiene la sua densità fisica.')">
+        <div class="node-label">03 &middot; Poetica</div>
+        <div class="node-title">Correlativo oggettivo</div>
+        <div class="node-body">T.S. Eliot &middot; oggetto = emozione &middot; senza nominarla</div>
+      </div>
+      <div class="map-card l2 tag-gold" onclick="showTip(event,'Poetica','Male di vivere','Tema centrale di tutta l\'opera. L\'esistenza è una prigione: il muro invalicabile (Meriggiare). La natura è indifferente al dolore umano. Nessuna ideologia o fede può liberare l\'uomo. Non nasce dagli eventi storici: è «connaturato all\'esistenza».')">
+        <div class="node-label">tema centrale</div>
+        <div class="node-title">Male di vivere</div>
+        <div class="node-body">prigione &middot; muro &middot; nessun riscatto</div>
+      </div>
+      <div class="map-card l2 tag-gold" onclick="showTip(event,'Poetica','Il varco','Ricerca ossessiva — quasi sempre fallita — di una via di fuga o di senso. Es: profumo dei limoni (I limoni), carrucola nel pozzo (memoria), Clizia (Non recidere). Il varco è sempre precario e si richiude. Lo «scacco» è la condizione normale dell\'uomo.')">
+        <div class="node-label">tentativo</div>
+        <div class="node-title">Il varco</div>
+        <div class="node-body">via di fuga &middot; quasi sempre fallita &middot; scacco</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Poetica','Divina Indifferenza','La natura non partecipa al dolore umano. La statua, la nuvola, il falco alto levato non soffrono. È il rovesciamento della pathetic fallacy romantica (Leopardi/Pascoli/D\'Annunzio proiettavano stati d\'animo nella natura). L\'unica «grazia»: non essere toccati.')">
+        <div class="node-label">concetto</div>
+        <div class="node-title">Divina Indifferenza</div>
+        <div class="node-body">no pathetic fallacy &middot; natura estranea &middot; &laquo;grazia&raquo;</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Poetica','Anti-Vate','Contro D\'Annunzio: rifiuta l\'eloquenza del poeta-vate. Contro Pascoli: rifiuta la proiezione soggettiva. Contro il Simbolismo francese: rifiuta la parola magica. Obiettivo: «torcere il collo all\'eloquenza, magari a rischio di una controeloquenza».')">
+        <div class="node-label">posizione</div>
+        <div class="node-title">Anti-Vate</div>
+        <div class="node-body">vs D&rsquo;Annunzio &middot; vs Pascoli &middot; controeloquenza</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPERE -->
+  <div class="map-area" id="mon-opere">
+    <div class="map-area-hd">
+      <span class="map-area-num">04</span>
+      <span class="map-area-name">Opere</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1 tag-green" onclick="showTip(event,'Opere','Le 4 raccolte','Ossi di seppia (1925) · Le occasioni (1939) · La bufera e altro (1956) · Satura (1971). Evoluzione: dal muro al diario. 15 anni di silenzio tra Bufera e Satura — sbloccato dalla morte di Mosca (1963).')">
+        <div class="node-label">04 &middot; Opere</div>
+        <div class="node-title">4 raccolte</div>
+        <div class="node-body">1925 &middot; 1939 &middot; 1956 &middot; 1971</div>
+      </div>
+      <div class="map-card l2 tag-green" onclick="showTip(event,'Opera','Ossi di seppia (1925)','Residui calcarei di molluschi = uomo spogliato di illusioni. Doppia valenza: galleggia (armonia) o è arenato (esilio, aridità). Stile: aspra musicalità, lessico basso e tecnico, «storta sillaba e secca come un ramo». Paesaggio ligure come correlativo del male di vivere.')">
+        <div class="node-label">1925</div>
+        <div class="node-title">Ossi di seppia</div>
+        <div class="node-body">residui &middot; muro &middot; paesaggio ligure &middot; storta sillaba</div>
+      </div>
+      <div class="map-card l2 tag-green" onclick="showTip(event,'Opera','Le occasioni (1939)','«Occasioni» = lampi di vita vissuta, flash improvvisi che aprono un varco. Sezione centrale: i Mottetti (20 brevi poesie per Clizia assente). Lingua più oscura e aristocratica; vicino all\'ermetismo.')">
+        <div class="node-label">1939</div>
+        <div class="node-title">Le occasioni</div>
+        <div class="node-body">flash &middot; Mottetti &middot; Clizia &middot; ermetismo</div>
+      </div>
+      <div class="map-card l2 tag-green" onclick="showTip(event,'Opera','La bufera e altro (1956)','«La bufera» = Seconda guerra mondiale e guerra cosmica. Include Finisterre (1943-45). Clizia diventa figura cristologica. Compare Volpe (anti-Clizia). Plurilinguismo: termini quotidiani + biblico-religiosi.')">
+        <div class="node-label">1956</div>
+        <div class="node-title">La bufera e altro</div>
+        <div class="node-body">guerra cosmica &middot; Clizia cristologica &middot; plurilinguismo</div>
+      </div>
+      <div class="map-card l2 tag-green" onclick="showTip(event,'Opera','Satura (1971)','3 significati: satura lanx (varietà) + satira (tono ironico) + sazietà. Rottura totale con l\'allegorismo: stile prosastico, colloquiale, diaristico. Contiene gli Xenia (28 poesie per Mosca morta).')">
+        <div class="node-label">1971</div>
+        <div class="node-title">Satura</div>
+        <div class="node-body">Xenia &middot; ironia &middot; prosa &middot; Mosca &middot; 3 significati</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTI -->
+  <div class="map-area" id="mon-testi">
+    <div class="map-area-hd">
+      <span class="map-area-num">05</span>
+      <span class="map-area-name">Testi</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1" onclick="showTip(event,'Testi','6 testi del programma','Non chiederci la parola · Spesso il male di vivere · Meriggiare pallido e assorto · Cigola la carrucola nel pozzo · Non recidere, forbice, quel volto · Ho sceso, dandoti il braccio.')">
+        <div class="node-label">05 &middot; Testi</div>
+        <div class="node-title">6 testi</div>
+        <div class="node-body">4 Ossi + 1 Occasioni + 1 Satura</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','Non chiederci la parola','Manifesto poetico. «Ciò che non siamo, ciò che non vogliamo» = definizione per esclusione. La poesia non illumina, non salva. «Storta sillaba e secca come un ramo» = metafora negativa della parola. Contro il poeta-vate di D\'Annunzio.')">
+        <div class="node-label">Ossi di seppia</div>
+        <div class="node-title">Non chiederci la parola</div>
+        <div class="node-body">manifesto &middot; negazione &middot; anti-vate</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','Spesso il male di vivere','Struttura simmetrica: 3 correlativi del male (rivo strozzato, foglia riarsa, cavallo stramazzato) + 3 correlativi della divina Indifferenza (statua, nuvola, falco). Rovesciamento pathetic fallacy romantica.')">
+        <div class="node-label">Ossi di seppia</div>
+        <div class="node-title">Spesso il male di vivere</div>
+        <div class="node-body">correlativi &middot; divina Indifferenza &middot; simmetria</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','Meriggiare pallido e assorto','Il muro con i cocci aguzzi = esistenza come prigione invalicabile. Le formiche = correlativo del vano affaccendarsi degli uomini. Il mare lontano intravisto = barlume del varco, subito chiuso.')">
+        <div class="node-label">Ossi di seppia</div>
+        <div class="node-title">Meriggiare</div>
+        <div class="node-body">muro &middot; formiche &middot; varco impossibile</div>
+      </div>
+      <div class="map-card l2" onclick="showTip(event,'Testo','Cigola la carrucola','Il pozzo = inconscio/memoria. La carrucola = meccanismo della memoria. L\'immagine nel secchio = volto amato. Ma si deforma, sfuma, «appartiene a un altro»: il pozzo «torna a essere muto». Varco della memoria che fallisce = scacco.')">
+        <div class="node-label">Ossi di seppia</div>
+        <div class="node-title">Cigola la carrucola</div>
+        <div class="node-body">pozzo &middot; memoria &middot; scacco &middot; si deforma</div>
+      </div>
+      <div class="map-card l3" onclick="showTip(event,'Testo','Ho sceso, dandoti il braccio','Dagli Xenia (Satura). Per Mosca morta. Paradosso: lei miope vedeva meglio di lui. «Le sole vere pupille, sebbene tanto offuscate, erano le tue.» Stile totalmente prosastico. Rovescia l\'immagine di Clizia: grandezza nella prosaicità.')">
+        <div class="node-label">Satura &mdash; Xenia</div>
+        <div class="node-title">Ho sceso, dandoti il braccio</div>
+        <div class="node-body">Mosca &middot; miopia = vera visione &middot; prosaico</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFRONTI -->
+  <div class="map-area" id="mon-confronti">
+    <div class="map-area-hd">
+      <span class="map-area-num">06</span>
+      <span class="map-area-name">Confronti e sintesi</span>
+    </div>
+    <div class="map-grid">
+      <div class="map-card l1" onclick="showTip(event,'Confronti','Montale nel Novecento','vs Ungaretti: Ungaretti ha epifanie (illuminazione); Montale ha scacco permanente. vs Saba: Saba accetta pienamente la vita; Montale diagnostica il male come irrisolvibile. vs D\'Annunzio: Anti-Vate radicale. vs Leopardi: stesso pessimismo cosmico, ma Montale non canta nemmeno la speranza vana.')">
+        <div class="node-label">06 &middot; Confronti</div>
+        <div class="node-title">Posizione nel Novecento</div>
+        <div class="node-body">vs Ungaretti (scacco) &middot; vs Saba (nessuna accettazione) &middot; vs D&rsquo;Annunzio (anti-vate)</div>
+      </div>
+      <div class="map-card l2 tag-gold" onclick="showTip(event,'Sintesi','5 parole-chiave di Montale','① Correlativo oggettivo — oggetto che contiene l\'emozione. ② Male di vivere — condizione irrisolvibile. ③ Varco — tentativo (quasi sempre fallito) di fuga. ④ Divina Indifferenza — natura estranea al dolore. ⑤ Anti-Vate — rifiuto del poeta-profeta.')">
+        <div class="node-label">sintesi</div>
+        <div class="node-title">5 parole-chiave</div>
+        <div class="node-body">correlativo &middot; male di vivere &middot; varco &middot; indifferenza &middot; anti-vate</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-quote">
+    &laquo;Codesto solo oggi possiamo dirti, / ci&ograve; che non siamo, ci&ograve; che non vogliamo.&raquo;
+    <cite>&mdash; Eugenio Montale, Non chiederci la parola</cite>
+  </div>
+</div><!-- /sec-montale -->
+
+</div><!-- /container -->
+
+<!-- TOOLTIP -->
+<div class="tooltip" id="tooltip">
+  <button class="tooltip-close" onclick="closeTip()">&times;</button>
+  <div class="tooltip-label" id="tip-label"></div>
+  <div class="tooltip-title" id="tip-title"></div>
+  <div class="tooltip-text"  id="tip-text"></div>
+</div>
+
+<script>
+/* ── STATO ───────────────────────────────────────────── */
+let currentAuthor = null;
+
+/* ── NAVIGAZIONE SEZIONI ─────────────────────────────── */
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+
+  document.querySelectorAll('.topbar-link').forEach(l => l.classList.remove('active'));
+  const m = {home: 0, saba: 1, ungaretti: 2, montale: 3};
+  document.querySelectorAll('.topbar-link')[m[id] ?? 0].classList.add('active');
+
+  const subNav = document.getElementById('sub-nav');
+  if (id === 'home') {
+    subNav.style.display = 'none';
+    document.body.className = '';
+  } else {
+    subNav.style.display = 'block';
+    buildSubNav(id);
+    applyAuthorTheme(id);
+  }
+
+  closeTip();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function activateAuthor(a) {
+  currentAuthor = a;
+  showSection(a);
+}
+
+function applyAuthorTheme(author) {
+  document.body.className = author;
+  document.querySelector('.nav').style.borderBottomColor =
+    author === 'saba' ? 'var(--red)' :
+    author === 'ungaretti' ? '#2d5a87' : '#5a6b3a';
+}
+
+function buildSubNav(author) {
+  const labels = {
+    saba:       ['Vita','Poetica','Opere','Testi','Confronti'],
+    ungaretti:  ['Vita','Poetica','Opere','Testi','Confronti'],
+    montale:    ['Vita','Figure femminili','Poetica','Opere','Testi','Confronti']
+  }[author] || [];
+
+  const inner = document.getElementById('sub-nav-inner');
+  inner.innerHTML = labels.map((l, i) =>
+    `<button class="nav-btn ${i===0?'active':''}" onclick="scrollToArea(this,'${author}',${i})">${l}</button>`
+  ).join('');
+}
+
+function scrollToArea(btn, author, idx) {
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const areaIds = {
+    saba:      ['saba-vita','saba-poetica','saba-opere','saba-testi','saba-confronti'],
+    ungaretti: ['ung-vita','ung-poetica','ung-opere','ung-testi','ung-confronti'],
+    montale:   ['mon-vita','mon-figure','mon-poetica','mon-opere','mon-testi','mon-confronti']
+  }[author] || [];
+
+  const el = document.getElementById(areaIds[idx]);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── TOOLTIP ─────────────────────────────────────────── */
+function showTip(event, label, title, text) {
+  event.stopPropagation();
+  const tip = document.getElementById('tooltip');
+  document.getElementById('tip-label').textContent = label;
+  document.getElementById('tip-title').textContent = title;
+  document.getElementById('tip-text').textContent  = text;
+
+  const W = window.innerWidth, H = window.innerHeight;
+  tip.style.display = 'block';
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+
+  let x = event.clientX + 14;
+  let y = event.clientY + 14;
+  if (x + tw > W - 10) x = event.clientX - tw - 14;
+  if (y + th > H - 10) y = H - th - 10;
+  if (x < 10) x = 10;
+  if (y < 10) y = 10;
+
+  tip.style.left = x + 'px';
+  tip.style.top  = y + 'px';
+  tip.classList.add('show');
+  tip.style.pointerEvents = 'all';
+}
+
+function closeTip() {
+  const tip = document.getElementById('tooltip');
+  tip.classList.remove('show');
+  tip.style.display = 'none';
+  tip.style.pointerEvents = 'none';
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.tooltip') && !e.target.closest('.map-card')) closeTip();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTip(); });
+
+/* Init */
+window.addEventListener('load', () => {
+  const anchor = window.location.hash.replace('#', '');
+  if (['saba', 'ungaretti', 'montale'].includes(anchor)) {
+    activateAuthor(anchor);
+  } else {
+    showSection('home');
+  }
+});
+</script>
+</body>
+</html>
