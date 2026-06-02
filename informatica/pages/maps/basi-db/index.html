@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basi di Dati — Mappa WBS · Informatica</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .map-overlay { display:none; position:fixed; inset:0; background:rgba(15,46,66,.55); z-index:500; align-items:center; justify-content:center; padding:1rem; }
+    .map-overlay.show { display:flex; }
+    .map-modal { background:var(--paper); border:1px solid var(--color-primary); padding:2rem 2rem 1.5rem; max-width:480px; width:100%; max-height:80vh; overflow-y:auto; position:relative; }
+    .modal-close { position:absolute; top:.8rem; right:1rem; font-family:var(--serif); font-size:1.4rem; color:var(--ink-soft); background:none; border:none; cursor:pointer; line-height:1; }
+    .modal-close:hover { color:var(--color-deep); }
+    .modal-label { font-family:var(--sans); font-weight:500; font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--color-primary); margin-bottom:.5rem; }
+    .modal-title { font-family:var(--serif); font-style:italic; font-weight:500; font-size:1.6rem; color:var(--color-deep); margin-bottom:.8rem; line-height:1.1; }
+    .modal-text { font-family:var(--sans); font-weight:300; font-size:.92rem; color:var(--ink-soft); line-height:1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">← Portale</a>
+      <a href="../../../informatica.html" class="topbar-brand">Informatica</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../argomenti.html">Argomenti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn active">M1 · Basi di Dati</button>
+      <button class="nav-btn" onclick="location.href='../php/'">M2 · PHP</button>
+      <button class="nav-btn" onclick="location.href='../javascript/'">M3 · JavaScript</button>
+      <button class="nav-btn" onclick="location.href='../sql/'">M4 · SQL</button>
+      <button class="nav-btn" onclick="location.href='../webapp/'">M5 · App Web</button>
+      <button class="nav-btn" onclick="location.href='../progettazione/'">M6 · Progettazione DB</button>
+      <button class="nav-btn" onclick="location.href='../sicurezza/'">M7 · Sicurezza</button>
+      <button class="nav-btn" onclick="location.href='../algoritmi/'">M8 · Algoritmi</button>
+      <button class="nav-btn" onclick="location.href='../api-rest/'">M9 · API REST</button>
+      <button class="nav-btn" onclick="location.href='../db-avanzato/'">M10 · DB Avanzato</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS · Modulo 1</div>
+        <h2>Basi di Dati <em>e Algebra Relazionale</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: DBMS, architettura, struttura relazionale, vincoli e algebra.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;" aria-label="Mappa WBS Basi di Dati">
+          <style>
+            .node { cursor:pointer; }
+            .node-root rect { fill:var(--color-deep); }
+            .node-root text { fill:#fff; }
+            .node-l1 rect { fill:var(--color-primary); }
+            .node-l1 text { fill:#fff; }
+            .node-l2 rect { fill:var(--beige-mid); stroke:var(--rule-soft); stroke-width:1; }
+            .node-l2 text { fill:var(--ink); }
+            .node rect { transition:filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter:brightness(1.12); }
+            .node:focus { outline:none; }
+          </style>
+
+          <g transform="translate(260,0)">
+
+            <!-- Connessioni root → L1 -->
+            <path d="M 225,438 C 271,438 319,100 319,100" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,269 319,269" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,438 319,438" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,606 319,606" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,775 319,775" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+            <!-- Connessioni L1 → L2 -->
+            <path d="M 519,100 C 584,100 650,71 650,71" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,100 C 584,100 650,129 650,129" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,269 C 584,269 650,211 650,211" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,269 C 584,269 650,269 650,269" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,269 C 584,269 650,326 650,326" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,438 C 584,438 650,409 650,409" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,438 C 584,438 650,466 650,466" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,606 C 584,606 650,549 650,549" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,606 C 584,606 650,606 650,606" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,606 C 584,606 650,664 650,664" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,775 C 584,775 650,746 650,746" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,775 C 584,775 650,804 650,804" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+            <!-- ROOT -->
+            <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+              <rect x="25" y="400" width="200" height="75" rx="7"/>
+              <text>
+                <tspan x="125" y="434" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">Basi di Dati</tspan>
+                <tspan x="125" y="454" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">MODELLO RELAZIONALE</tspan>
+              </text>
+            </g>
+
+            <!-- L1 -->
+            <g class="node node-l1" onclick="showNode('dbms')" tabindex="0" role="button"><rect x="319" y="72" width="200" height="55" rx="5"/><text><tspan x="419" y="106" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · DBMS</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('architettura')" tabindex="0" role="button"><rect x="319" y="241" width="200" height="55" rx="5"/><text><tspan x="419" y="275" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · ARCHITETTURA</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('relazioni')" tabindex="0" role="button"><rect x="319" y="410" width="200" height="55" rx="5"/><text><tspan x="419" y="444" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · RELAZIONI</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('vincoli')" tabindex="0" role="button"><rect x="319" y="578" width="200" height="55" rx="5"/><text><tspan x="419" y="613" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · VINCOLI</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('algebra')" tabindex="0" role="button"><rect x="319" y="747" width="200" height="55" rx="5"/><text><tspan x="419" y="781" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · ALGEBRA REL.</tspan></text></g>
+
+            <!-- L2 - DBMS -->
+            <g class="node node-l2" onclick="showNode('sist-info')" tabindex="0" role="button"><rect x="650" y="48" width="238" height="48" rx="4"/><text><tspan x="769" y="68" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Sistema informativo</tspan><tspan x="769" y="86" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">vs sistema informatico</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('funzioni-dbms')" tabindex="0" role="button"><rect x="650" y="105" width="238" height="48" rx="4"/><text><tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Funzioni del DBMS</tspan><tspan x="769" y="143" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">DDL · DML · ACID · accessi</tspan></text></g>
+
+            <!-- L2 - ARCHITETTURA -->
+            <g class="node node-l2" onclick="showNode('ansi')" tabindex="0" role="button"><rect x="650" y="188" width="238" height="48" rx="4"/><text><tspan x="769" y="208" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">ANSI/SPARC — 3 livelli</tspan><tspan x="769" y="226" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">esterno · logico · fisico</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('indipendenza')" tabindex="0" role="button"><rect x="650" y="245" width="238" height="48" rx="4"/><text><tspan x="769" y="265" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Indipendenza dei dati</tspan><tspan x="769" y="283" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">logica e fisica</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('phpma')" tabindex="0" role="button"><rect x="650" y="302" width="238" height="48" rx="4"/><text><tspan x="769" y="322" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">phpMyAdmin</tspan><tspan x="769" y="340" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">interfaccia grafica per MySQL</tspan></text></g>
+
+            <!-- L2 - RELAZIONI -->
+            <g class="node node-l2" onclick="showNode('struttura')" tabindex="0" role="button"><rect x="650" y="385" width="238" height="48" rx="4"/><text><tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Schema e istanza</tspan><tspan x="769" y="423" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">grado (colonne) · cardinalità (righe)</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('chiavi')" tabindex="0" role="button"><rect x="650" y="442" width="238" height="48" rx="4"/><text><tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Gerarchia delle chiavi</tspan><tspan x="769" y="480" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">superchiave → candidata → PK → FK</tspan></text></g>
+
+            <!-- L2 - VINCOLI -->
+            <g class="node node-l2" onclick="showNode('vdominio')" tabindex="0" role="button"><rect x="650" y="525" width="238" height="48" rx="4"/><text><tspan x="769" y="545" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Vincoli di dominio</tspan><tspan x="769" y="563" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">tipo · CHECK · NOT NULL · UNIQUE</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('vref')" tabindex="0" role="button"><rect x="650" y="582" width="238" height="48" rx="4"/><text><tspan x="769" y="602" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Integrità referenziale</tspan><tspan x="769" y="620" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">FK · CASCADE · RESTRICT · SET NULL</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('null')" tabindex="0" role="button"><rect x="650" y="640" width="238" height="48" rx="4"/><text><tspan x="769" y="660" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Valore NULL</tspan><tspan x="769" y="678" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">assenza di informazione · IS NULL</tspan></text></g>
+
+            <!-- L2 - ALGEBRA -->
+            <g class="node node-l2" onclick="showNode('alg-ins')" tabindex="0" role="button"><rect x="650" y="722" width="238" height="48" rx="4"/><text><tspan x="769" y="742" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Operatori insiemistici</tspan><tspan x="769" y="760" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">∪ ∩ − × (schemi compatibili)</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('alg-rel')" tabindex="0" role="button"><rect x="650" y="780" width="238" height="48" rx="4"/><text><tspan x="769" y="800" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Operatori relazionali</tspan><tspan x="769" y="818" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">σ→WHERE · π→SELECT · ⋈→JOIN</tspan></text></g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root:       { label:'Modulo 1', title:'Basi di Dati e Modello Relazionale', text:'Il modello relazionale organizza i dati in tabelle (relazioni) composte da righe (tuple) e colonne (attributi). Ogni relazione ha uno schema fisso e un\'istanza variabile. Il DBMS è il software che gestisce il ciclo di vita dei dati garantendo integrità, sicurezza e accesso concorrente.' },
+      dbms:       { label:'Area 1', title:'DBMS', text:'Database Management System: sistema software che crea, organizza e interroga basi di dati. Fornisce: DDL per definire strutture, DML per manipolare dati, controllo accessi, garanzia dei vincoli di integrità, gestione delle transazioni (ACID), recupero da guasti.' },
+      architettura:{ label:'Area 2', title:'Architettura ANSI/SPARC', text:'Separa la gestione dei dati in tre livelli indipendenti: esterno (le viste che ogni utente vede), logico (lo schema globale del database), fisico (come i dati sono scritti su disco). I due strati di indipendenza permettono di modificare la struttura fisica senza toccare le applicazioni.' },
+      relazioni:  { label:'Area 3', title:'Struttura delle relazioni', text:'Una relazione ha schema fisso (nome + attributi + domini) e istanza variabile (le tuple attuali). Il grado è il numero di colonne. La cardinalità è il numero di righe. Le chiavi identificano univocamente ogni tupla: superchiave → candidata (minimale) → primaria (NOT NULL) → esterna (FK).' },
+      vincoli:    { label:'Area 4', title:'Vincoli di integrità', text:'I vincoli garantiscono la correttezza dei dati. Intra-relazionali: dominio (tipo + CHECK), unicità (PRIMARY KEY, UNIQUE), NOT NULL. Inter-relazionali: integrità referenziale (FK deve puntare a PK esistente). Regole su violazione FK: CASCADE, RESTRICT, SET NULL, SET DEFAULT.' },
+      algebra:    { label:'Area 5', title:'Algebra Relazionale', text:'Linguaggio formale procedurale alla base di SQL. Due categorie: operatori insiemistici (∪ ∩ − ×, richiedono schemi compatibili) e operatori relazionali (σ selezione, π proiezione, ⋈ join, ρ ridenominazione). L\'algebra è procedurale (specifica come); SQL è dichiarativo (specifica cosa).' },
+      'sist-info':{ label:'DBMS', title:'Sistema informatico vs informativo', text:'Sistema informativo: insieme di risorse umane, organizzative e tecnologiche per raccogliere, elaborare e distribuire informazioni in un\'organizzazione. Sistema informatico: la sola componente tecnologica (hardware + software). Il sistema informatico è un sottoinsieme del sistema informativo.' },
+      'funzioni-dbms':{ label:'DBMS', title:'Funzioni principali del DBMS', text:'DDL (Data Definition Language): definisce la struttura. DML (Data Manipulation Language): inserisce, modifica, elimina, interroga i dati. Gestione accessi e sicurezza. Garanzia dei vincoli di integrità. Transazioni ACID (Atomicità, Consistenza, Isolamento, Durabilità). Recupero da guasti.' },
+      ansi:       { label:'Architettura', title:'Architettura ANSI/SPARC — 3 livelli', text:'Livello esterno: le viste specifiche di ogni utente/applicazione — ognuno vede solo i dati di sua pertinenza. Livello logico/concettuale: lo schema globale del DB, indipendente dall\'implementazione fisica. Livello fisico/interno: come i dati sono fisicamente memorizzati su disco.' },
+      indipendenza:{ label:'Architettura', title:'Indipendenza dei dati', text:'Indipendenza logica: le applicazioni al livello esterno non dipendono dalla struttura del livello logico — posso aggiungere colonne senza toccare le applicazioni. Indipendenza fisica: lo schema logico non dipende da come i dati sono fisicamente organizzati su disco — posso cambiare l\'archiviazione senza toccare lo schema.' },
+      phpma:      { label:'Architettura', title:'phpMyAdmin', text:'Interfaccia web grafica per amministrare database MySQL/MariaDB. Permette di creare/modificare tabelle, eseguire query SQL, importare ed esportare dati, gestire utenti e permessi — tutto senza usare la riga di comando. Strumento fondamentale in ambiente di sviluppo PHP+MySQL.' },
+      struttura:  { label:'Relazioni', title:'Schema e istanza di una relazione', text:'Schema (statico): nome della relazione + lista degli attributi + domini — la struttura, relativamente stabile nel tempo. Istanza (dinamica): l\'insieme delle tuple presenti in un dato momento — cambia ad ogni INSERT, UPDATE, DELETE. Grado = numero di attributi (colonne). Cardinalità = numero di tuple (righe).' },
+      chiavi:     { label:'Relazioni', title:'Gerarchia delle chiavi', text:'Superchiave: uno o più attributi che identificano univocamente ogni tupla. Chiave candidata: superchiave minimale — non si può togliere nessun attributo senza perdere l\'univocità. Chiave primaria: la candidata scelta come identificatore principale, non può essere NULL. Chiave esterna: attributo che referenzia la PK di un\'altra relazione.' },
+      vdominio:   { label:'Vincoli', title:'Vincoli di dominio e colonna', text:'Dominio: specifica i valori ammissibili per un attributo — tipo di dato (INT, VARCHAR, DATE), range (CHECK voto BETWEEN 18 AND 30), valori fissi (ENUM). NOT NULL: l\'attributo deve avere sempre un valore. UNIQUE: i valori devono essere distinti nella colonna. DEFAULT: valore predefinito se non specificato.' },
+      vref:       { label:'Vincoli', title:'Integrità referenziale e regole FK', text:'La chiave esterna deve puntare a un valore che esiste come PK nella tabella referenziata, oppure essere NULL (se permesso). Regole su violazione: CASCADE — la modifica/cancellazione si propaga ai figli. RESTRICT (NO ACTION) — blocca l\'operazione. SET NULL — la FK diventa NULL. SET DEFAULT — la FK prende il valore di default.' },
+      null:       { label:'Vincoli', title:'Il valore NULL', text:'NULL indica assenza di informazione o valore sconosciuto. NON è zero, non è stringa vuota, non è false. Non si può confrontare con = (NULL = NULL è FALSE!): si usa IS NULL e IS NOT NULL. Effetti nelle query: funzioni aggregate ignorano i NULL, i JOIN li escludono, ORDER BY li posiziona all\'inizio o alla fine.' },
+      'alg-ins':  { label:'Algebra', title:'Operatori insiemistici', text:'Richiedono relazioni con lo stesso schema (stesso numero e tipo di attributi). Unione (∪): tutte le tuple di A e di B, senza duplicati → UNION. Intersezione (∩): solo tuple presenti in entrambe → INTERSECT. Differenza (−): tuple di A non presenti in B → EXCEPT / NOT IN. Prodotto cartesiano (×): tutte le combinazioni possibili → FROM A, B.' },
+      'alg-rel':  { label:'Algebra', title:'Operatori relazionali', text:'Selezione (σ condizione(R)): filtra le righe secondo una condizione — riduzione orizzontale → WHERE. Proiezione (π attributi(R)): seleziona colonne, elimina duplicati — riduzione verticale → SELECT. Join (R ⋈ condizione S): combina righe di due relazioni secondo una condizione → JOIN...ON. Ridenominazione (ρ): rinomina attributi o relazioni → AS.' }
+    };
+
+    function showNode(key) {
+      var n = NODES[key]; if (!n) return;
+      document.getElementById('tip-label').textContent = n.label || '';
+      document.getElementById('tip-title').textContent = n.title || '';
+      document.getElementById('tip-text').textContent  = n.text  || '';
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeTip() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeTip(); });
+  </script>
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

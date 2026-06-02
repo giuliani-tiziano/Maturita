@@ -11,7 +11,11 @@
     "javascript":       "JavaScript lato Client",
     "sql":              "SQL",
     "applicazioni-web": "Applicazioni Web",
-    "progettazione-db": "Progettazione DB"
+    "progettazione-db": "Progettazione DB",
+    "sicurezza":        "Sicurezza Web",
+    "algoritmi":        "Algoritmi e Strutture Dati",
+    "api-rest":         "API REST",
+    "db-avanzato":      "DB Avanzato"
   };
 
   let deck = [];

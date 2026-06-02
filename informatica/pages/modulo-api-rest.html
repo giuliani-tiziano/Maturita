@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 9 · API REST — Informatica · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E9%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    code, pre { font-family: 'Courier New', Courier, monospace; }
+    pre { background: var(--beige-mid); padding: 1rem 1.2rem; border-radius: 4px; font-size: .84rem; overflow-x: auto; line-height: 1.6; border-left: 3px solid var(--color-primary); }
+    code { background: var(--beige-mid); padding: .1rem .3rem; border-radius: 2px; font-size: .88rem; }
+    .method-table th { background: var(--color-deep); color: var(--paper); padding: .6rem 1rem; font-family: var(--sans); font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; text-align: left; }
+    .method-table td { padding: .6rem 1rem; border-bottom: 1px solid var(--rule); font-size: .9rem; }
+    .method-table tr:nth-child(even) td { background: var(--beige-light); }
+  </style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../index.html" class="topbar-back">← Portale</a>
+    <a href="../informatica.html" class="topbar-brand">Informatica</a>
+  </div>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="argomenti.html">Argomenti</a>
+    <a class="topbar-link" href="mappe.html">Mappe</a>
+    <a class="topbar-link" href="flashcard.html">Flashcard</a>
+    <a class="topbar-link cta" href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+    <button class="nav-btn" data-sec="principi">Principi REST</button>
+    <button class="nav-btn" data-sec="metodi">Metodi HTTP</button>
+    <button class="nav-btn" data-sec="autenticazione">Autenticazione</button>
+    <button class="nav-btn" data-sec="consumare">Consumare API</button>
+    <button class="nav-btn" data-sec="costruire">Costruire API PHP</button>
+    <button class="nav-btn" data-sec="quiz-mini">Mini-quiz</button>
+  </div>
+</nav>
+
+<!-- ══ PANORAMICA ══ -->
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Informatica · Modulo 9</div>
+      <h1 class="title">API REST<br><em>e Architetture Moderne</em></h1>
+      <p class="subtitle">Come progettare, consumare e proteggere API web RESTful.</p>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="section-header" style="margin-top:0;"><div class="section-tag">Cos'è una API</div></div>
+        <p>Un'<strong>API</strong> (Application Programming Interface) è un contratto che definisce come due applicazioni si scambiano dati e funzionalità. Una <strong>REST API</strong> usa HTTP come protocollo e JSON come formato dati.</p>
+        <p>Esempio: quando un'app meteo mostra le previsioni, chiama un'API del servizio meteorologico che risponde con dati JSON.</p>
+        <div class="box-concetto">
+          <h4>Argomenti del modulo</h4>
+          <ul class="clean">
+            <li>REST: principi e vincoli architetturali</li>
+            <li>Metodi HTTP: GET, POST, PUT, PATCH, DELETE</li>
+            <li>Status codes: 200, 201, 400, 401, 403, 404, 500</li>
+            <li>JSON come formato di scambio dati</li>
+            <li>Autenticazione: API Key e JWT</li>
+            <li>Consumare API: PHP (cURL) e JS (fetch)</li>
+            <li>Costruire una REST API semplice in PHP</li>
+            <li>CORS e problematiche cross-origin</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <pre>// Esempio di risposta JSON da una REST API
+// GET /api/utenti/42
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 42,
+  "nome": "Mario",
+  "cognome": "Rossi",
+  "email": "mario@example.com",
+  "ruolo": "admin",
+  "creato_il": "2024-01-15T10:30:00Z"
+}
+
+// GET /api/utenti  → lista tutti gli utenti
+// POST /api/utenti → crea nuovo utente
+// PUT  /api/utenti/42 → aggiorna utente 42
+// DELETE /api/utenti/42 → elimina utente 42</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRINCIPI REST ══ -->
+<section class="section" id="principi">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 9 · Architettura</div>
+      <h1 class="title">Principi<br><em>REST</em></h1>
+    </div>
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">I 6 vincoli REST (Fielding, 2000)</div></div>
+    <div class="grid-2">
+      <div>
+        <div class="tl-item" style="padding-bottom:1.5rem;">
+          <span class="tl-year">1</span><div class="tl-title">Stateless</div>
+          <div class="tl-body">Ogni richiesta contiene TUTTE le informazioni necessarie. Il server non mantiene stato del client. Il token di autenticazione va in ogni richiesta.</div>
+        </div>
+        <div class="tl-item" style="padding-bottom:1.5rem;">
+          <span class="tl-year">2</span><div class="tl-title">Client-Server</div>
+          <div class="tl-body">Separazione delle responsabilità: il client gestisce la UI, il server i dati. Possono evolvere indipendentemente.</div>
+        </div>
+        <div class="tl-item" style="padding-bottom:1.5rem;">
+          <span class="tl-year">3</span><div class="tl-title">Uniform Interface</div>
+          <div class="tl-body">URL identifica la risorsa, metodo HTTP l'azione. Interfaccia standardizzata per tutti i client.</div>
+        </div>
+      </div>
+      <div>
+        <div class="tl-item" style="padding-bottom:1.5rem;">
+          <span class="tl-year">4</span><div class="tl-title">Cacheable</div>
+          <div class="tl-body">Le risposte devono indicare se sono cacheable. Migliora le performance evitando richieste inutili.</div>
+        </div>
+        <div class="tl-item" style="padding-bottom:1.5rem;">
+          <span class="tl-year">5</span><div class="tl-title">Layered System</div>
+          <div class="tl-body">Il client non sa se comunica col server finale o con proxy/load balancer intermedi.</div>
+        </div>
+        <div class="tl-item" style="padding-bottom:1.5rem;">
+          <span class="tl-year">6</span><div class="tl-title">Code on Demand (opzionale)</div>
+          <div class="tl-body">Il server può inviare codice eseguibile al client (es. JavaScript). L'unico vincolo opzionale.</div>
+        </div>
+      </div>
+    </div>
+    <div class="section-header"><div class="section-tag">Design URL — best practice</div></div>
+    <pre>// Risorse al plurale, lowercase, con trattino
+GET    /api/utenti          → lista utenti
+POST   /api/utenti          → crea utente
+GET    /api/utenti/42       → dettaglio utente 42
+PUT    /api/utenti/42       → aggiorna utente 42
+PATCH  /api/utenti/42       → aggiorna parzialmente
+DELETE /api/utenti/42       → elimina utente 42
+
+// Risorse annidate:
+GET    /api/utenti/42/ordini  → ordini dell'utente 42
+POST   /api/utenti/42/ordini  → crea ordine per utente 42
+
+// Filtri via query params (non nell'URL):
+GET    /api/utenti?ruolo=admin&pagina=2&limit=10
+
+// MAI usare verbi nell'URL:
+// SBAGLIATO: /api/getUtente, /api/creaOrdine
+// GIUSTO:    GET /api/utenti,  POST /api/ordini</pre>
+  </div>
+</section>
+
+<!-- ══ METODI HTTP ══ -->
+<section class="section" id="metodi">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 9 · HTTP</div>
+      <h1 class="title">Metodi <em>HTTP</em><br>e Status Codes</h1>
+    </div>
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">Metodi HTTP in dettaglio</div></div>
+    <div class="table-wrap">
+      <table class="method-table">
+        <thead><tr><th>Metodo</th><th>Uso</th><th>Idempotente</th><th>Body richiesta</th><th>Status risposta</th></tr></thead>
+        <tbody>
+          <tr><td><strong>GET</strong></td><td>Legge una risorsa</td><td>Sì</td><td>No</td><td>200 OK</td></tr>
+          <tr><td><strong>POST</strong></td><td>Crea una risorsa</td><td>No</td><td>Sì (JSON/form)</td><td>201 Created</td></tr>
+          <tr><td><strong>PUT</strong></td><td>Sostituisce intera risorsa</td><td>Sì</td><td>Sì (tutti i campi)</td><td>200 OK / 204</td></tr>
+          <tr><td><strong>PATCH</strong></td><td>Aggiorna parzialmente</td><td>Dipende</td><td>Sì (campi da aggiornare)</td><td>200 OK</td></tr>
+          <tr><td><strong>DELETE</strong></td><td>Elimina una risorsa</td><td>Sì</td><td>No</td><td>204 No Content</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section-header"><div class="section-tag">Status Codes principali</div></div>
+    <div class="grid-3">
+      <div class="box-concetto">
+        <h4>2xx — Successo</h4>
+        <ul class="clean">
+          <li><strong>200 OK</strong> — richiesta riuscita</li>
+          <li><strong>201 Created</strong> — risorsa creata (POST)</li>
+          <li><strong>204 No Content</strong> — ok, nessun corpo (DELETE)</li>
+        </ul>
+      </div>
+      <div class="box-concetto">
+        <h4>4xx — Errore client</h4>
+        <ul class="clean">
+          <li><strong>400</strong> Bad Request — input non valido</li>
+          <li><strong>401</strong> Unauthorized — non autenticato</li>
+          <li><strong>403</strong> Forbidden — non autorizzato</li>
+          <li><strong>404</strong> Not Found — risorsa non esiste</li>
+          <li><strong>429</strong> Too Many Requests</li>
+        </ul>
+      </div>
+      <div class="box-concetto">
+        <h4>5xx — Errore server</h4>
+        <ul class="clean">
+          <li><strong>500</strong> Internal Server Error</li>
+          <li><strong>503</strong> Service Unavailable</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AUTENTICAZIONE ══ -->
+<section class="section" id="autenticazione">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 9 · Sicurezza</div>
+      <h1 class="title">Autenticazione<br><em>nelle API</em></h1>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="section-header" style="margin-top:0;"><div class="section-tag">API Key</div></div>
+        <p>Stringa segreta assegnata ad ogni client. Semplice da implementare, adatta per API machine-to-machine.</p>
+        <pre>// Client: invia l'API key nell'header
+// (non nell'URL — verrebbe logata)
+GET /api/dati
+X-API-Key: abc123secretkey456
+
+// Server PHP: verifica
+$key = $_SERVER['HTTP_X_API_KEY'] ?? '';
+if (!validateApiKey($key)) {
+    http_response_code(401);
+    echo json_encode(['error' => 'Unauthorized']);
+    exit;
+}</pre>
+      </div>
+      <div>
+        <div class="section-header" style="margin-top:0;"><div class="section-tag">JWT — JSON Web Token</div></div>
+        <p>Token firmato digitalmente. Struttura: <code>Header.Payload.Signature</code> (Base64URL). Il server verifica la firma senza consultare il DB → stateless.</p>
+        <pre>// Struttura JWT decodificata:
+// Header:
+{"alg": "HS256", "typ": "JWT"}
+
+// Payload (claim):
+{
+  "sub": "42",           // user ID
+  "nome": "Mario Rossi",
+  "ruolo": "admin",
+  "iat": 1700000000,     // issued at
+  "exp": 1700086400      // expiration
+}
+
+// Il client invia nelle richieste:
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...
+
+// Server PHP legge:
+$authHeader = $_SERVER['HTTP_AUTHORIZATION'];
+$token = str_replace('Bearer ', '', $authHeader);
+// Verifica firma con libreria JWT</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONSUMARE API ══ -->
+<section class="section" id="consumare">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 9 · Client</div>
+      <h1 class="title">Consumare<br><em>API esterne</em></h1>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="section-header" style="margin-top:0;"><div class="section-tag">PHP — cURL</div></div>
+        <pre>// GET request con cURL
+function apiGet(string $url, string $token = ''): array {
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+        CURLOPT_URL            => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT        => 10,
+        CURLOPT_HTTPHEADER     => [
+            'Accept: application/json',
+            'Authorization: Bearer ' . $token,
+        ],
+        CURLOPT_SSL_VERIFYPEER => true,
+    ]);
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($httpCode !== 200) {
+        throw new Exception("API error: $httpCode");
+    }
+    return json_decode($response, true);
+}
+
+// POST request
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS,
+    json_encode(['nome' => 'Mario']));
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json'
+]);</pre>
+      </div>
+      <div>
+        <div class="section-header" style="margin-top:0;"><div class="section-tag">JavaScript — fetch()</div></div>
+        <pre>// GET con fetch (Promise)
+fetch('/api/utenti/42', {
+  headers: {
+    'Authorization': 'Bearer ' + token,
+    'Accept': 'application/json'
+  }
+})
+.then(response => {
+  if (!response.ok)
+    throw new Error('HTTP ' + response.status);
+  return response.json();
+})
+.then(data => aggiornaUI(data))
+.catch(err => console.error(err));
+
+// POST con fetch
+fetch('/api/utenti', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + token
+  },
+  body: JSON.stringify({
+    nome: 'Mario',
+    email: 'mario@example.com'
+  })
+})
+.then(r => r.json())
+.then(nuovoUtente => console.log(nuovoUtente));</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COSTRUIRE API ══ -->
+<section class="section" id="costruire">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 9 · Server</div>
+      <h1 class="title">Costruire una<br><em>REST API in PHP</em></h1>
+    </div>
+    <pre>// api.php — API REST semplice per la risorsa "utenti"
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *'); // CORS
+
+$method = $_SERVER['REQUEST_METHOD'];
+// URL: /api.php?risorsa=utenti&id=42
+$risorsa = $_GET['risorsa'] ?? '';
+$id      = isset($_GET['id']) ? intval($_GET['id']) : null;
+
+// Connessione DB
+$conn = new mysqli('localhost', 'user', 'pwd', 'db');
+if ($conn->connect_error) {
+    http_response_code(500);
+    echo json_encode(['error' => 'DB connection failed']);
+    exit;
+}
+
+if ($risorsa === 'utenti') {
+    switch ($method) {
+
+        case 'GET':
+            if ($id) {
+                // GET /api.php?risorsa=utenti&id=42
+                $stmt = $conn->prepare(
+                    "SELECT id, nome, email FROM utenti WHERE id = ?"
+                );
+                $stmt->bind_param('i', $id);
+                $stmt->execute();
+                $utente = $stmt->get_result()->fetch_assoc();
+                if (!$utente) {
+                    http_response_code(404);
+                    echo json_encode(['error' => 'Non trovato']);
+                } else {
+                    echo json_encode($utente);
+                }
+            } else {
+                // GET /api.php?risorsa=utenti → lista
+                $result = $conn->query(
+                    "SELECT id, nome, email FROM utenti"
+                );
+                echo json_encode($result->fetch_all(MYSQLI_ASSOC));
+            }
+            break;
+
+        case 'POST':
+            // Legge il body JSON
+            $body = json_decode(file_get_contents('php://input'), true);
+            if (!$body || !isset($body['nome'], $body['email'])) {
+                http_response_code(400);
+                echo json_encode(['error' => 'Dati mancanti']);
+                break;
+            }
+            $stmt = $conn->prepare(
+                "INSERT INTO utenti (nome, email) VALUES (?, ?)"
+            );
+            $stmt->bind_param('ss', $body['nome'], $body['email']);
+            $stmt->execute();
+            http_response_code(201); // Created
+            echo json_encode(['id' => $conn->insert_id, ...$body]);
+            break;
+
+        case 'DELETE':
+            if (!$id) { http_response_code(400); break; }
+            $stmt = $conn->prepare(
+                "DELETE FROM utenti WHERE id = ?"
+            );
+            $stmt->bind_param('i', $id);
+            $stmt->execute();
+            http_response_code(204); // No Content
+            break;
+
+        default:
+            http_response_code(405); // Method Not Allowed
+            echo json_encode(['error' => 'Metodo non supportato']);
+    }
+}
+$conn->close();</pre>
+  </div>
+</section>
+
+<!-- ══ MINI-QUIZ ══ -->
+<section class="section" id="quiz-mini">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 9 · Verifica</div>
+      <h1 class="title">Mini-<em>quiz</em></h1>
+    </div>
+    <div class="quiz">
+      <div class="quiz-lbl">API REST · 4 domande</div>
+      <div class="qd" data-correct="1">
+        <p class="q">1. Un'API REST deve essere stateless. Questo significa:</p>
+        <div class="qopts">
+          <button class="qo">Il server non può usare un database</button>
+          <button class="qo">Ogni richiesta contiene tutte le info necessarie, il server non mantiene sessioni client</button>
+          <button class="qo">Il client non può inviare dati al server</button>
+          <button class="qo">L'API risponde sempre con lo stesso JSON</button>
+        </div><div class="qfb"></div>
+      </div>
+      <div class="qd" data-correct="0">
+        <p class="q">2. Quale status code è corretto per una POST che crea una risorsa?</p>
+        <div class="qopts">
+          <button class="qo">201 Created</button><button class="qo">200 OK</button>
+          <button class="qo">204 No Content</button><button class="qo">301 Redirect</button>
+        </div><div class="qfb"></div>
+      </div>
+      <div class="qd" data-correct="2">
+        <p class="q">3. Dove si mette il Bearer token nelle richieste API?</p>
+        <div class="qopts">
+          <button class="qo">Nel body JSON</button>
+          <button class="qo">Nell'URL come query parameter</button>
+          <button class="qo">Nell'header Authorization: Bearer &lt;token&gt;</button>
+          <button class="qo">Nel nome del file richiesto</button>
+        </div><div class="qfb"></div>
+      </div>
+      <div class="qd" data-correct="1">
+        <p class="q">4. Per leggere il body JSON di una richiesta POST in PHP si usa:</p>
+        <div class="qopts">
+          <button class="qo">$_POST['body']</button>
+          <button class="qo">json_decode(file_get_contents('php://input'), true)</button>
+          <button class="qo">$_SERVER['HTTP_BODY']</button>
+          <button class="qo">json_get_body()</button>
+        </div><div class="qfb"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-quote-final">
+    «Il Web è più un'invenzione sociale che tecnica. L'ho progettato per un effetto sociale.»
+    <cite>— Tim Berners-Lee, inventore del World Wide Web</cite>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M8 Algoritmi e Strutture Dati -- Mappa WBS Informatica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .map-overlay{display:none;position:fixed;inset:0;background:rgba(15,46,66,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}
+    .map-overlay.show{display:flex;}
+    .map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}
+    .modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;line-height:1;}
+    .modal-close:hover{color:var(--color-deep);}
+    .modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}
+    .modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;line-height:1.1;}
+    .modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&larr; Portale</a>
+      <a href="../../../informatica.html" class="topbar-brand">Informatica</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../argomenti.html">Argomenti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../basi-db/'">M1 - Basi di Dati</button>
+      <button class="nav-btn" onclick="location.href='../php/'">M2 - PHP</button>
+      <button class="nav-btn" onclick="location.href='../javascript/'">M3 - JavaScript</button>
+      <button class="nav-btn" onclick="location.href='../sql/'">M4 - SQL</button>
+      <button class="nav-btn" onclick="location.href='../webapp/'">M5 - App Web</button>
+      <button class="nav-btn" onclick="location.href='../progettazione/'">M6 - Progettazione DB</button>
+      <button class="nav-btn" onclick="location.href='../sicurezza/'">M7 - Sicurezza</button>
+      <button class="nav-btn active">M8 - Algoritmi</button>
+      <button class="nav-btn" onclick="location.href='../api-rest/'">M9 - API REST</button>
+      <button class="nav-btn" onclick="location.href='../db-avanzato/'">M10 - DB Avanzato</button>
+    </div>
+  </nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS &middot; Modulo 8</div>
+        <h2><em>Algoritmi e Strutture Dati</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Complessità, strutture dati, ordinamento e ricerca.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;">
+          <style>
+            .node{cursor:pointer;} .node-root rect{fill:var(--color-deep);} .node-root text{fill:#fff;}
+            .node-l1 rect{fill:var(--color-primary);} .node-l1 text{fill:#fff;}
+            .node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;} .node-l2 text{fill:var(--ink);}
+            .node rect{transition:filter 150ms ease;} .node:hover rect,.node:focus rect{filter:brightness(1.12);} .node:focus{outline:none;}
+          </style>
+          <g transform="translate(260,0)">
+            <path d="M 225,438 C 271,438 319,99 319,99" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,268 319,268" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,437 319,437" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,605 319,605" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,774 319,774" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 519,99 C 584,99 650,72 650,72" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,99 C 584,99 650,129 650,129" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,268 C 584,268 650,212 650,212" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,268 C 584,268 650,269 650,269" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,268 C 584,268 650,326 650,326" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,437 C 584,437 650,409 650,409" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,437 C 584,437 650,466 650,466" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,605 C 584,605 650,549 650,549" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,605 C 584,605 650,606 650,606" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,774 C 584,774 650,746 650,746" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,774 C 584,774 650,804 650,804" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+            <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+              <rect x="25" y="400" width="200" height="75" rx="7"/>
+              <text><tspan x="125" y="428" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Algoritmi e Struttur</tspan><tspan x="125" y="450" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" letter-spacing="0.06em">MODULO 8</tspan></text>
+            </g>
+
+            <g class="node node-l1" onclick="showNode('complessita')" tabindex="0" role="button"><rect x="319" y="72" width="200" height="55" rx="5"/><text><tspan x="419" y="106" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · COMPLESSITA'</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('strutture')" tabindex="0" role="button"><rect x="319" y="241" width="200" height="55" rx="5"/><text><tspan x="419" y="275" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · STRUTTURE DATI</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('ordinamento')" tabindex="0" role="button"><rect x="319" y="410" width="200" height="55" rx="5"/><text><tspan x="419" y="444" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · ORDINAMENTO</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('ricerca')" tabindex="0" role="button"><rect x="319" y="578" width="200" height="55" rx="5"/><text><tspan x="419" y="612" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · RICERCA</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('hashing')" tabindex="0" role="button"><rect x="319" y="747" width="200" height="55" rx="5"/><text><tspan x="419" y="781" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · HASHING</tspan></text></g>
+
+            <g class="node node-l2" onclick="showNode('big-o')" tabindex="0" role="button"><rect x="650" y="48" width="238" height="48" rx="4"/><text><tspan x="769" y="68" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Big-O notation</tspan><tspan x="769" y="86" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">limite superiore asintotico</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('casi')" tabindex="0" role="button"><rect x="650" y="105" width="238" height="48" rx="4"/><text><tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Casi m/m/p</tspan><tspan x="769" y="143" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">migliore medio peggiore</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('array-lista')" tabindex="0" role="button"><rect x="650" y="188" width="238" height="48" rx="4"/><text><tspan x="769" y="208" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Array e Liste</tspan><tspan x="769" y="226" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">O(1) accesso vs O(n)</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('stack-queue')" tabindex="0" role="button"><rect x="650" y="245" width="238" height="48" rx="4"/><text><tspan x="769" y="265" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Stack e Queue</tspan><tspan x="769" y="283" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">LIFO - FIFO</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('bst')" tabindex="0" role="button"><rect x="650" y="302" width="238" height="48" rx="4"/><text><tspan x="769" y="322" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Alberi BST</tspan><tspan x="769" y="340" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">O(log n) medio</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('bubble')" tabindex="0" role="button"><rect x="650" y="385" width="238" height="48" rx="4"/><text><tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Bubble Sort O(n2)</tspan><tspan x="769" y="423" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">scambia coppie adiacenti</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('merge')" tabindex="0" role="button"><rect x="650" y="442" width="238" height="48" rx="4"/><text><tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Merge Sort O(n log n)</tspan><tspan x="769" y="480" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">divide et impera - stabile</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('lineare')" tabindex="0" role="button"><rect x="650" y="525" width="238" height="48" rx="4"/><text><tspan x="769" y="545" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Ricerca lineare O(n)</tspan><tspan x="769" y="563" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">scorre tutto - no ordinamento</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('binaria')" tabindex="0" role="button"><rect x="650" y="582" width="238" height="48" rx="4"/><text><tspan x="769" y="602" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Ricerca binaria O(log n)</tspan><tspan x="769" y="620" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">array ORDINATO - dimezza spazio</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('hash-fn')" tabindex="0" role="button"><rect x="650" y="722" width="238" height="48" rx="4"/><text><tspan x="769" y="742" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Funzione hash</tspan><tspan x="769" y="760" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">chiave to indice bucket</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('collisioni')" tabindex="0" role="button"><rect x="650" y="780" width="238" height="48" rx="4"/><text><tspan x="769" y="800" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Collisioni</tspan><tspan x="769" y="818" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">chaining - open addressing</tspan></text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    var NODES = {
+      'root':{label:'Modulo 8',title:'Algoritmi e Strutture Dati',text:'Un algoritmo e\' una sequenza finita di istruzioni per risolvere un problema. La struttura dati e\' l\'organizzazione in memoria dei dati. La scelta giusta puo\' fare la differenza tra O(n) e O(n^2) - fattori di milioni per input grandi.'},
+      'complessita':{label:'Area 1',title:'Complessita' algoritmica',text:'Big-O descrive come cresce il tempo/spazio al crescere di n. O(1)=costante, O(log n)=logaritmico (binaria), O(n)=lineare, O(n log n)=merge sort, O(n^2)=bubble sort. Si usa quasi sempre il caso peggiore come garanzia di performance.'},
+      'strutture':{label:'Area 2',title:'Strutture dati',text:'Array: accesso O(1), inserimento in mezzo O(n). Lista collegata: inserimento O(1) con puntatore, ricerca O(n). Stack LIFO: push/pop O(1). Queue FIFO: enqueue/dequeue O(1). BST: ricerca O(log n) medio, O(n) peggiore.'},
+      'ordinamento':{label:'Area 3',title:'Algoritmi di ordinamento',text:'Bubble Sort: O(n^2) sempre, semplice. Selection Sort: O(n^2) sempre, poche scritture. Merge Sort: O(n log n) sempre, stabile, richiede O(n) spazio extra. Quick Sort: O(n log n) medio, O(n^2) peggiore, in-place.'},
+      'ricerca':{label:'Area 4',title:'Ricerca',text:'Ricerca lineare: O(n), funziona su qualsiasi array. Ricerca binaria: O(log n), richiede array ordinato. Per 1.000.000 elementi: lineare fino a 1M confronti, binaria solo 20. Per n grandi e dati ordinati, la binaria e\' molto superiore.'},
+      'hashing':{label:'Area 5',title:'Tabelle Hash',text:'Funzione hash mappa chiave su indice bucket. Complessita\' media O(1) per inserimento, ricerca, cancellazione. Collisioni inevitabili: chaining (lista per bucket) o open addressing. In PHP gli array sono gia\' hash map native con O(1).'},
+      'big-o':{label:'Complessita'',title:'Big-O notation',text:'Limite superiore asintotico - non misura tempi reali ma tendenze di crescita. O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(2^n). Si usa il caso peggiore come garanzia di performance.'},
+      'casi':{label:'Complessita'',title:'Casi di complessita'',text:'Migliore (Omega): input ideale. Medio (Theta): input casuale. Peggiore (O): input avverso - la garanzia. Esempio ricerca lineare: migliore O(1) (elemento in pos 0), medio O(n/2), peggiore O(n) (non trovato).'},
+      'array-lista':{label:'Strutture',title:'Array vs Lista collegata',text:'Array: memoria contigua, accesso O(1) per indice, inserimento in mezzo O(n). Lista: nodi con puntatori, inserimento O(1) con puntatore, accesso O(n). Array preferito se si accede per indice; lista se si inserisce spesso in mezzo.'},
+      'stack-queue':{label:'Strutture',title:'Stack (LIFO) e Queue (FIFO)',text:'Stack: Last In First Out - push (cima), pop (cima). Usi: call stack, undo/redo. Queue: First In First Out - enqueue (fondo), dequeue (testa). Usi: coda stampa, richieste HTTP, BFS nei grafi.'},
+      'bst':{label:'Strutture',title:'Albero binario di ricerca',text:'Proprieta\' BST: sottoalbero sinistro < nodo < sottoalbero destro. Ricerca O(log n) caso medio. Caso peggiore O(n) se albero degenerato. BST bilanciati (AVL, Red-Black) garantiscono O(log n) sempre.'},
+      'bubble':{label:'Ordinamento',title:'Bubble Sort',text:'Confronta coppie adiacenti, scambia se fuori ordine, ripete n volte. Complessita\' O(n^2) caso medio e peggiore. Il piu\' semplice da capire. Con ottimizzazione: O(n) se l\'array e\' gia\' ordinato.'},
+      'merge':{label:'Ordinamento',title:'Merge Sort',text:'Divide l\'array a meta\' ricorsivamente fino a n=1, poi fonde in ordine. Sempre O(n log n) - stabile e prevedibile. Svantaggio: richiede O(n) spazio extra per l\'array temporaneo di fusione.'},
+      'lineare':{label:'Ricerca',title:'Ricerca lineare',text:'Scorre l\'array dall\'inizio alla fine fino a trovare l\'elemento. Non richiede ordinamento. O(n) nel caso peggiore. Unica opzione per strutture non ordinate o senza accesso random.'},
+      'binaria':{label:'Ricerca',title:'Ricerca binaria',text:'RICHIEDE array ordinato! Confronta con il centro: se uguale trovato, se minore cerca a sinistra, se maggiore a destra. O(log n). Per n=1.000.000: max 20 confronti. Inutile fare sort prima di una singola ricerca.'},
+      'hash-fn':{label:'Hashing',title:'Funzione hash',text:'Mappa una chiave a un intero (indice bucket). Una buona funzione hash distribuisce uniformemente le chiavi. In PHP gli array associativi sono gia\' hash map: accesso O(1) con $arr[\'chiave\'].'},
+      'collisioni':{label:'Hashing',title:'Gestione delle collisioni',text:'Chaining: ogni bucket ha una lista - semplice, performance degrada con liste lunghe. Open addressing: cerca il prossimo slot libero - meno memoria ma richiede load factor basso (< 0.7). Performance media O(1) in entrambi i casi.'},
+    };
+    function showNode(k){var n=NODES[k];if(!n)return;document.getElementById('tip-label').textContent=n.label;document.getElementById('tip-title').textContent=n.title;document.getElementById('tip-text').textContent=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeTip(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTip();});
+  </script>
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

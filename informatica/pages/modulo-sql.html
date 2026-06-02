@@ -47,7 +47,7 @@
   <div class="container">
 
     <div class="hero">
-      <div class="eyebrow">Informatica · Modulo 4 · Feb–Apr 2026</div>
+      <div class="eyebrow">Informatica · Modulo 4</div>
       <h1 class="title">SQL<br><em>il linguaggio dei dati</em></h1>
       <p class="subtitle">Dal DDL per creare strutture, al DML per manipolare dati, fino a JOIN, subquery e oggetti avanzati.</p>
     </div>
@@ -279,7 +279,7 @@ SELECT s.nome, c.titolo, i.data_iscrizione
 FROM Studenti s
 JOIN Iscrizioni i ON s.id = i.id_studente
 JOIN Corsi c ON i.id_corso = c.id
-WHERE c.anno = 2026;</pre>
+WHERE c.anno = 2024;</pre>
       </div>
     </div>
 
@@ -321,7 +321,7 @@ SELECT nome, 'Professore' AS ruolo FROM Professori;
 -- UNION ALL: mantiene duplicati (più veloce)
 SELECT id_prodotto FROM Ordini_2024
 UNION ALL
-SELECT id_prodotto FROM Ordini_2025;</pre>
+SELECT id_prodotto FROM Ordini_2024;</pre>
         <p>Requisiti: stesso numero di colonne, tipi compatibili. Il nome delle colonne viene preso dalla prima SELECT.</p>
       </div>
     </div>

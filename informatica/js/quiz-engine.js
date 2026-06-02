@@ -16,8 +16,8 @@
       bodyClass: 'basi-di-dati',
       storageKey: 'q_basi_best',
       storageTot: 'q_basi_best_total',
-      footerQuote: '«Un database ben progettato è la fondamenta di ogni applicazione affidabile.»',
-      footerCite: '— Informatica · Maturità'
+      footerQuote: '«In Dio ci fidiamo; tutti gli altri portino dati.»',
+      footerCite: '— W. Edwards Deming, statistico e padre della gestione della qualità'
     },
     "php": {
       key: 'php',
@@ -26,8 +26,8 @@
       bodyClass: 'php',
       storageKey: 'q_php_best',
       storageTot: 'q_php_best_total',
-      footerQuote: '«Il server elabora, il client visualizza. PHP è il ponte.»',
-      footerCite: '— Architettura web'
+      footerQuote: '«Non sono un vero programmatore. Assemblo cose finché funzionano, poi vado avanti.»',
+      footerCite: '— Rasmus Lerdorf, creatore di PHP'
     },
     "javascript": {
       key: 'javascript',
@@ -36,8 +36,8 @@
       bodyClass: 'javascript',
       storageKey: 'q_js_best',
       storageTot: 'q_js_best_total',
-      footerQuote: '«Il DOM è la rappresentazione vivente della pagina — JavaScript ne è l\'animatore.»',
-      footerCite: '— Sviluppo web moderno'
+      footerQuote: '«JavaScript è il linguaggio di programmazione più frainteso al mondo.»',
+      footerCite: '— Douglas Crockford, autore di "JavaScript: The Good Parts"'
     },
     "sql": {
       key: 'sql',
@@ -46,8 +46,8 @@
       bodyClass: 'sql',
       storageKey: 'q_sql_best',
       storageTot: 'q_sql_best_total',
-      footerQuote: '«SQL è il linguaggio universale dei dati strutturati.»',
-      footerCite: '— Edgar F. Codd'
+      footerQuote: '«I programmatori scadenti si preoccupano del codice. I buoni si preoccupano delle strutture dati e delle loro relazioni.»',
+      footerCite: '— Linus Torvalds, creatore del kernel Linux'
     },
     "applicazioni-web": {
       key: 'applicazioni-web',
@@ -56,8 +56,8 @@
       bodyClass: 'applicazioni-web',
       storageKey: 'q_appweb_best',
       storageTot: 'q_appweb_best_total',
-      footerQuote: '«L\'integrazione è l\'arte: PHP pensa, JavaScript agisce, MySQL ricorda.»',
-      footerCite: '— Sviluppo web integrato'
+      footerQuote: '«Il Web è più un\'invenzione sociale che tecnica. L\'ho progettato per un effetto sociale — per aiutare le persone a lavorare insieme — non come giocattolo tecnologico.»',
+      footerCite: '— Tim Berners-Lee, inventore del World Wide Web'
     },
     "progettazione-db": {
       key: 'progettazione-db',
@@ -66,8 +66,48 @@
       bodyClass: 'progettazione-db',
       storageKey: 'q_progdb_best',
       storageTot: 'q_progdb_best_total',
-      footerQuote: '«Una buona progettazione del database vale più di mille ottimizzazioni successive.»',
-      footerCite: '— Principio di progettazione'
+      footerQuote: '«Ci sono solo due cose difficili in informatica: l\'invalidazione della cache e dare nomi alle cose.»',
+      footerCite: '— Phil Karlton, ingegnere software Netscape'
+    },
+    "sicurezza": {
+      key: 'sicurezza',
+      name: 'Sicurezza Web',
+      short: 'Sicurezza',
+      bodyClass: 'sicurezza',
+      storageKey: 'q_sicurezza_best',
+      storageTot: 'q_sicurezza_best_total',
+      footerQuote: '«La sicurezza non è un prodotto, ma un processo.»',
+      footerCite: '— Bruce Schneier, crittografo e esperto di sicurezza'
+    },
+    "algoritmi": {
+      key: 'algoritmi',
+      name: 'Algoritmi e Strutture Dati',
+      short: 'Algoritmi',
+      bodyClass: 'algoritmi',
+      storageKey: 'q_algoritmi_best',
+      storageTot: 'q_algoritmi_best_total',
+      footerQuote: '«Un algoritmo deve essere visto per essere creduto.»',
+      footerCite: '— Donald Knuth, autore di "The Art of Computer Programming"'
+    },
+    "api-rest": {
+      key: 'api-rest',
+      name: 'API REST',
+      short: 'API REST',
+      bodyClass: 'api-rest',
+      storageKey: 'q_apirest_best',
+      storageTot: 'q_apirest_best_total',
+      footerQuote: '«Il Web è più un\'invenzione sociale che tecnica. L\'ho progettato per un effetto sociale.»',
+      footerCite: '— Tim Berners-Lee, inventore del World Wide Web'
+    },
+    "db-avanzato": {
+      key: 'db-avanzato',
+      name: 'DB Avanzato',
+      short: 'DB Avanzato',
+      bodyClass: 'db-avanzato',
+      storageKey: 'q_dbavanz_best',
+      storageTot: 'q_dbavanz_best_total',
+      footerQuote: '«Senza dati sei solo un\'altra persona con un\'opinione.»',
+      footerCite: '— W. Edwards Deming, statistico e teorico della qualità'
     }
   };
 

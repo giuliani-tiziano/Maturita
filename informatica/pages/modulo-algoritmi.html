@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 8 · Algoritmi — Informatica · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E8%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    code, pre { font-family: 'Courier New', Courier, monospace; }
+    pre { background: var(--beige-mid); padding: 1rem 1.2rem; border-radius: 4px; font-size: .84rem; overflow-x: auto; line-height: 1.6; border-left: 3px solid var(--color-primary); }
+    code { background: var(--beige-mid); padding: .1rem .3rem; border-radius: 2px; font-size: .88rem; }
+    .complexity-table { width:100%; border-collapse:collapse; margin:1.5rem 0; }
+    .complexity-table th { background:var(--color-deep); color:var(--paper); padding:.7rem 1rem; text-align:left; font-family:var(--sans); font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; }
+    .complexity-table td { padding:.65rem 1rem; border-bottom:1px solid var(--rule); font-size:.9rem; }
+    .complexity-table tr:nth-child(even) td { background:var(--beige-light); }
+    .good { color:#27ae60; font-weight:500; }
+    .medium { color:#e67e22; font-weight:500; }
+    .bad { color:#c0392b; font-weight:500; }
+  </style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../index.html" class="topbar-back">← Portale</a>
+    <a href="../informatica.html" class="topbar-brand">Informatica</a>
+  </div>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="argomenti.html">Argomenti</a>
+    <a class="topbar-link" href="mappe.html">Mappe</a>
+    <a class="topbar-link" href="flashcard.html">Flashcard</a>
+    <a class="topbar-link cta" href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+    <button class="nav-btn" data-sec="complessita">Complessità</button>
+    <button class="nav-btn" data-sec="strutture">Strutture dati</button>
+    <button class="nav-btn" data-sec="ordinamento">Ordinamento</button>
+    <button class="nav-btn" data-sec="ricerca">Ricerca e Hash</button>
+    <button class="nav-btn" data-sec="quiz-mini">Mini-quiz</button>
+  </div>
+</nav>
+
+<!-- ══ PANORAMICA ══ -->
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Informatica · Modulo 8</div>
+      <h1 class="title">Algoritmi e<br><em>Strutture Dati</em></h1>
+      <p class="subtitle">Complessità computazionale, strutture fondamentali e algoritmi classici.</p>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="section-header" style="margin-top:0;">
+          <div class="section-tag">Cos'è un algoritmo</div>
+        </div>
+        <p>Un algoritmo è una sequenza finita di istruzioni non ambigue che risolvono un problema. La <strong>struttura dati</strong> è l'organizzazione in memoria dei dati su cui l'algoritmo opera. La scelta di struttura e algoritmo giusti può fare la differenza tra un programma lento e uno veloce di ordini di grandezza.</p>
+        <div class="box-concetto">
+          <h4>Argomenti del modulo</h4>
+          <ul class="clean">
+            <li>Complessità algoritmica: Big-O, casi migliore/medio/peggiore</li>
+            <li>Array, liste collegate, stack, queue</li>
+            <li>Alberi binari di ricerca (BST)</li>
+            <li>Tabelle hash e funzioni hash</li>
+            <li>Ordinamento: bubble, selection, merge, quick sort</li>
+            <li>Ricerca lineare e binaria</li>
+            <li>Grafi: cenni</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>Tabella riassuntiva complessità</h4>
+          <table class="complexity-table">
+            <tr><th>Notazione</th><th>Nome</th><th>Esempio</th></tr>
+            <tr><td class="good">O(1)</td><td>Costante</td><td>Accesso array per indice</td></tr>
+            <tr><td class="good">O(log n)</td><td>Logaritmico</td><td>Ricerca binaria</td></tr>
+            <tr><td class="medium">O(n)</td><td>Lineare</td><td>Ricerca lineare</td></tr>
+            <tr><td class="medium">O(n log n)</td><td>Linearitmico</td><td>Merge sort</td></tr>
+            <tr><td class="bad">O(n²)</td><td>Quadratico</td><td>Bubble sort</td></tr>
+            <tr><td class="bad">O(2ⁿ)</td><td>Esponenziale</td><td>Fibonacci ricorsivo</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMPLESSITÀ ══ -->
+<section class="section" id="complessita">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 8 · Teoria</div>
+      <h1 class="title">Complessità<br><em>algoritmica</em></h1>
+    </div>
+
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">Notazione Big-O</div></div>
+    <p>Big-O descrive il <strong>limite superiore asintotico</strong> della complessità al crescere dell'input <em>n</em>. Non misura tempi reali (dipendono dall'hardware) ma come cresce il tempo/spazio.</p>
+
+    <div class="grid-2">
+      <div>
+        <h3>Casi migliore, medio, peggiore</h3>
+        <ul class="clean">
+          <li><strong>Caso migliore</strong> (Ω, Omega): input ideale. Ricerca lineare: elemento in posizione 0 → O(1).</li>
+          <li><strong>Caso medio</strong> (Θ, Theta): input casuale. Ricerca lineare: elemento a metà → O(n/2) = O(n).</li>
+          <li><strong>Caso peggiore</strong> (O, Big-O): input avverso. Ricerca lineare: elemento non trovato → O(n).</li>
+        </ul>
+        <p>La notazione Big-O si usa quasi sempre per il <strong>caso peggiore</strong>: è la garanzia di performance.</p>
+      </div>
+      <div>
+        <pre>// Esempi di complessità in JavaScript
+
+// O(1) — costante
+function primoElemento(arr) {
+  return arr[0]; // indipendente da arr.length
+}
+
+// O(n) — lineare
+function cercaLineare(arr, target) {
+  for (let x of arr) {  // scorre tutto l'array
+    if (x === target) return true;
+  }
+  return false;
+}
+
+// O(n²) — quadratico (due cicli annidati)
+function haaDuplicati(arr) {
+  for (let i = 0; i &lt; arr.length; i++)
+    for (let j = i+1; j &lt; arr.length; j++)
+      if (arr[i] === arr[j]) return true;
+  return false;
+}
+// Versione O(n) con Set:
+// return arr.length !== new Set(arr).size;</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STRUTTURE DATI ══ -->
+<section class="section" id="strutture">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 8 · Strutture</div>
+      <h1 class="title">Strutture<br><em>dati</em></h1>
+    </div>
+
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">Array</div></div>
+    <div class="grid-2">
+      <div>
+        <p>Sequenza di elementi in <strong>memoria contigua</strong>, accessibili per indice. L'indirizzo dell'elemento <em>i</em> = base + i × dimensione_tipo → accesso O(1).</p>
+        <p>Inserimento/cancellazione in mezzo: O(n) perché bisogna spostare gli elementi successivi.</p>
+      </div>
+      <div>
+        <pre>// Array in PHP
+$arr = [10, 20, 30, 40, 50];
+echo $arr[2];  // 30 → O(1)
+
+// Inserzione in mezzo → O(n)
+array_splice($arr, 2, 0, [25]);
+// [10,20,25,30,40,50]
+
+// In JavaScript
+const arr = [1, 2, 3];
+arr.push(4);    // O(1) in coda
+arr.unshift(0); // O(n) in testa</pre>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-tag">Stack (LIFO) e Queue (FIFO)</div></div>
+    <div class="grid-2">
+      <div>
+        <p><strong>Stack</strong> — Last In, First Out:</p>
+        <pre>// PHP Stack
+$stack = [];
+array_push($stack, 'A'); // push
+array_push($stack, 'B');
+array_push($stack, 'C');
+$top = array_pop($stack); // pop → 'C'
+// Usi: call stack, undo/redo, parsing</pre>
+      </div>
+      <div>
+        <p><strong>Queue</strong> — First In, First Out:</p>
+        <pre>// PHP Queue
+$queue = [];
+array_push($queue, 'A');   // enqueue
+array_push($queue, 'B');
+array_push($queue, 'C');
+$front = array_shift($queue); // dequeue → 'A'
+// Usi: coda stampa, richieste web, BFS</pre>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-tag">Albero binario di ricerca (BST)</div></div>
+    <div class="grid-2">
+      <div>
+        <p>Ogni nodo ha al massimo 2 figli. <strong>Proprietà BST</strong>: sottoalbero sinistro &lt; nodo &lt; sottoalbero destro.</p>
+        <p>Ricerca: O(log n) caso medio, O(n) caso peggiore (albero degenerato). BST bilanciati (AVL, Red-Black) garantiscono O(log n) sempre.</p>
+      </div>
+      <div>
+        <pre>// BST — pseudocodice ricerca
+function cerca(nodo, valore):
+  if nodo == null:
+    return null      // non trovato
+
+  if valore == nodo.valore:
+    return nodo      // trovato!
+
+  if valore &lt; nodo.valore:
+    return cerca(nodo.sinistra, valore)
+  else:
+    return cerca(nodo.destra, valore)
+
+// Ogni livello dimezza lo spazio → O(log n)</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ORDINAMENTO ══ -->
+<section class="section" id="ordinamento">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 8 · Algoritmi</div>
+      <h1 class="title">Algoritmi di<br><em>Ordinamento</em></h1>
+    </div>
+
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">Bubble Sort — O(n²)</div></div>
+    <div class="grid-2">
+      <div>
+        <p>Confronta coppie adiacenti e le scambia se fuori ordine. Ripete n passate. Semplice da capire, inefficiente per dati grandi.</p>
+        <pre>// Bubble Sort in PHP
+function bubbleSort(array $arr): array {
+  $n = count($arr);
+  for ($i = 0; $i &lt; $n - 1; $i++) {
+    for ($j = 0; $j &lt; $n - $i - 1; $j++) {
+      if ($arr[$j] > $arr[$j + 1]) {
+        // Scambia
+        [$arr[$j], $arr[$j+1]] =
+        [$arr[$j+1], $arr[$j]];
+      }
+    }
+  }
+  return $arr;
+}</pre>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>Confronto algoritmi</h4>
+          <table class="complexity-table">
+            <tr><th>Algoritmo</th><th>Medio</th><th>Peggiore</th><th>Stabile</th></tr>
+            <tr><td>Bubble Sort</td><td class="bad">O(n²)</td><td class="bad">O(n²)</td><td>Sì</td></tr>
+            <tr><td>Selection Sort</td><td class="bad">O(n²)</td><td class="bad">O(n²)</td><td>No</td></tr>
+            <tr><td>Merge Sort</td><td class="good">O(n log n)</td><td class="good">O(n log n)</td><td>Sì</td></tr>
+            <tr><td>Quick Sort</td><td class="good">O(n log n)</td><td class="bad">O(n²)</td><td>No</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-tag">Merge Sort — O(n log n) garantito</div></div>
+    <div class="grid-2">
+      <div>
+        <p><strong>Divide et impera</strong>: divide l'array a metà ricorsivamente finché ci sono array da 1 elemento, poi fonde (merge) le coppie mantenendo l'ordine. Stabile, sempre O(n log n), richiede O(n) spazio extra.</p>
+      </div>
+      <div>
+        <pre>// Merge Sort in JavaScript
+function mergeSort(arr) {
+  if (arr.length &lt;= 1) return arr;
+
+  const mid = Math.floor(arr.length / 2);
+  const left  = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
+
+  return merge(left, right);
+}
+
+function merge(left, right) {
+  const result = [];
+  let i = 0, j = 0;
+  while (i &lt; left.length && j &lt; right.length) {
+    if (left[i] &lt;= right[j])
+      result.push(left[i++]);
+    else
+      result.push(right[j++]);
+  }
+  return [...result, ...left.slice(i),
+                     ...right.slice(j)];
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RICERCA E HASH ══ -->
+<section class="section" id="ricerca">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 8 · Ricerca</div>
+      <h1 class="title">Ricerca<br><em>e Tabelle Hash</em></h1>
+    </div>
+
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">Ricerca Binaria — O(log n)</div></div>
+    <div class="grid-2">
+      <div>
+        <p>Funziona <strong>solo su array ordinati</strong>. Ad ogni passo dimezza lo spazio di ricerca: confronta con il centro, va a destra o sinistra.</p>
+        <pre>// Ricerca binaria in PHP
+function ricercaBinaria(array $arr, $target): int {
+  $sx = 0;
+  $dx = count($arr) - 1;
+
+  while ($sx &lt;= $dx) {
+    $mid = intdiv($sx + $dx, 2);
+
+    if ($arr[$mid] === $target)
+      return $mid;          // trovato!
+    elseif ($arr[$mid] &lt; $target)
+      $sx = $mid + 1;       // cerca a destra
+    else
+      $dx = $mid - 1;       // cerca a sinistra
+  }
+  return -1; // non trovato
+}
+// Per 1.000.000 elementi: max 20 confronti!</pre>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>Prerequisito fondamentale</h4>
+          <p>L'array DEVE essere ordinato. Se non lo è, ordinarlo prima costa O(n log n) — perde senso per una singola ricerca. Utile quando si fanno molte ricerche sullo stesso array già ordinato.</p>
+        </div>
+        <div class="box-concetto">
+          <h4>Ricerca lineare vs binaria</h4>
+          <p>Lineare O(n): funziona su qualsiasi array, ma lenta per n grandi. Binaria O(log n): velocissima, ma richiede ordinamento. Per n=1.000.000: lineare fino a 1.000.000 confronti, binaria solo 20.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-tag">Tabelle Hash</div></div>
+    <div class="grid-2">
+      <div>
+        <p>Una <strong>funzione hash</strong> mappa una chiave a un indice (bucket) in un array. Permette inserimento, ricerca e cancellazione in O(1) nel caso medio.</p>
+        <p><strong>Collisione</strong>: due chiavi diverse producono lo stesso hash. Strategie: <em>chaining</em> (lista per bucket) o <em>open addressing</em> (cerca il prossimo slot libero).</p>
+      </div>
+      <div>
+        <pre>// Hash table in PHP: già built-in come array!
+// Gli array PHP sono hash map.
+
+$tabella = [];
+$tabella['mario'] = 25;    // insert O(1)
+$eta = $tabella['mario'];  // lookup O(1)
+unset($tabella['mario']);   // delete O(1)
+isset($tabella['mario']);   // exist O(1)
+
+// In JavaScript: Map o oggetto {}
+const map = new Map();
+map.set('mario', 25);
+map.get('mario'); // 25
+map.has('luigi'); // false</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MINI-QUIZ ══ -->
+<section class="section" id="quiz-mini">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 8 · Verifica</div>
+      <h1 class="title">Mini-<em>quiz</em></h1>
+    </div>
+    <div class="quiz">
+      <div class="quiz-lbl">Algoritmi · 4 domande</div>
+      <div class="qd" data-correct="2">
+        <p class="q">1. Qual è la complessità di accesso per indice in un array?</p>
+        <div class="qopts">
+          <button class="qo">O(n)</button><button class="qo">O(log n)</button>
+          <button class="qo">O(1)</button><button class="qo">O(n²)</button>
+        </div><div class="qfb"></div>
+      </div>
+      <div class="qd" data-correct="0">
+        <p class="q">2. La ricerca binaria richiede che l'array sia:</p>
+        <div class="qopts">
+          <button class="qo">Ordinato</button><button class="qo">Non ordinato</button>
+          <button class="qo">Di dimensione pari</button><button class="qo">Senza duplicati</button>
+        </div><div class="qfb"></div>
+      </div>
+      <div class="qd" data-correct="1">
+        <p class="q">3. Quale struttura dati usa il principio LIFO?</p>
+        <div class="qopts">
+          <button class="qo">Queue</button><button class="qo">Stack</button>
+          <button class="qo">BST</button><button class="qo">Array</button>
+        </div><div class="qfb"></div>
+      </div>
+      <div class="qd" data-correct="2">
+        <p class="q">4. Merge Sort ha sempre complessità:</p>
+        <div class="qopts">
+          <button class="qo">O(n)</button><button class="qo">O(n²)</button>
+          <button class="qo">O(n log n)</button><button class="qo">O(log n)</button>
+        </div><div class="qfb"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-quote-final">
+    «Un algoritmo deve essere visto per essere creduto.»
+    <cite>— Donald Knuth, autore di "The Art of Computer Programming"</cite>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

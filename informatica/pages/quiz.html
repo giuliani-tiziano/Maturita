@@ -81,6 +81,10 @@
       <a class="page-sidebar-item" href="#sql">M4 · SQL</a>
       <a class="page-sidebar-item" href="#applicazioni-web">M5 · App Web</a>
       <a class="page-sidebar-item" href="#progettazione-db">M6 · Progettazione DB</a>
+      <a class="page-sidebar-item" href="#sicurezza">M7 · Sicurezza</a>
+      <a class="page-sidebar-item" href="#algoritmi">M8 · Algoritmi</a>
+      <a class="page-sidebar-item" href="#api-rest">M9 · API REST</a>
+      <a class="page-sidebar-item" href="#db-avanzato">M10 · DB Avanzato</a>
     </aside>
 
     <main class="page-main">
@@ -145,6 +149,42 @@
           <span class="author-card-cta link-arrow">Inizia</span>
         </div>
 
+        <div class="author-card quiz-card" id="sicurezza" onclick="openQuizModal('sicurezza','Sicurezza Web')">
+          <span class="author-card-initial">SEC</span>
+          <div class="author-card-meta">Quiz · M7 · Sicurezza</div>
+          <div class="author-card-name"><em>Sicurezza Web</em></div>
+          <div class="author-card-tagline">CIA, SQL Injection, XSS, CSRF, bcrypt, sessioni, HTTPS.</div>
+          <div class="quiz-card-count">15 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="algoritmi" onclick="openQuizModal('algoritmi','Algoritmi e Strutture Dati')">
+          <span class="author-card-initial">Σ</span>
+          <div class="author-card-meta">Quiz · M8 · Algoritmi</div>
+          <div class="author-card-name"><em>Algoritmi</em></div>
+          <div class="author-card-tagline">Big-O, array, stack, queue, BST, sort, ricerca binaria, hash.</div>
+          <div class="quiz-card-count">15 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="api-rest" onclick="openQuizModal('api-rest','API REST')">
+          <span class="author-card-initial">API</span>
+          <div class="author-card-meta">Quiz · M9 · API REST</div>
+          <div class="author-card-name"><em>API REST</em></div>
+          <div class="author-card-tagline">Principi REST, HTTP, status codes, JWT, cURL, fetch().</div>
+          <div class="quiz-card-count">15 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="db-avanzato" onclick="openQuizModal('db-avanzato','DB Avanzato')">
+          <span class="author-card-initial">Ω</span>
+          <div class="author-card-meta">Quiz · M10 · DB Avanzato</div>
+          <div class="author-card-name"><em>DB Avanzato</em></div>
+          <div class="author-card-tagline">ACID, transazioni, indici, EXPLAIN, NoSQL, ORM, backup.</div>
+          <div class="quiz-card-count">15 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
       </div>
 
     </main>
@@ -152,8 +192,8 @@
 
   <footer class="site-footer">
     <div class="footer-quote-final">
-      «La conoscenza si dimostra nell'applicazione, non nella memorizzazione.»
-      <cite>— Informatica · Maturità</cite>
+      «Il debug è due volte più difficile che scrivere il codice. Quindi, se scrivi il codice più brillante possibile, per definizione non sei abbastanza bravo da fare il debug.»
+      <cite>— Brian W. Kernighan, co-creatore del linguaggio C</cite>
     </div>
   </footer>
 
@@ -294,6 +334,7 @@
 
 <!-- ══ DATI QUIZ ══ -->
 <script src="../js/quiz-data.js"></script>
+<script src="../js/quiz-data-new.js"></script>
 <script src="../js/quiz-data-extra.js"></script>
 
 <!-- ══ MOTORE + MAIN ══ -->
