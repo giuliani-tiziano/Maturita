@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript — Mappa WBS · Informatica</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='36' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EJS%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .map-overlay{display:none;position:fixed;inset:0;background:rgba(15,46,66,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}
+    .map-overlay.show{display:flex;}
+    .map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}
+    .modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;line-height:1;}
+    .modal-close:hover{color:var(--color-deep);}
+    .modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}
+    .modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;line-height:1.1;}
+    .modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">← Portale</a>
+      <a href="../../../informatica.html" class="topbar-brand">Informatica</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../argomenti.html">Argomenti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../basi-db/'">M1 · Basi di Dati</button>
+      <button class="nav-btn" onclick="location.href='../php/'">M2 · PHP</button>
+      <button class="nav-btn active">M3 · JavaScript</button>
+      <button class="nav-btn" onclick="location.href='../sql/'">M4 · SQL</button>
+      <button class="nav-btn" onclick="location.href='../webapp/'">M5 · App Web</button>
+      <button class="nav-btn" onclick="location.href='../progettazione/'">M6 · Progettazione DB</button>
+      <button class="nav-btn" onclick="location.href='../sicurezza/'">M7 · Sicurezza</button>
+      <button class="nav-btn" onclick="location.href='../algoritmi/'">M8 · Algoritmi</button>
+      <button class="nav-btn" onclick="location.href='../api-rest/'">M9 · API REST</button>
+      <button class="nav-btn" onclick="location.href='../db-avanzato/'">M10 · DB Avanzato</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS · Modulo 3</div>
+        <h2>JavaScript <em>lato client</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: DOM, eventi, manipolazione dinamica, AJAX, JSON e debugging.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;" aria-label="Mappa WBS JavaScript">
+          <style>
+            .node{cursor:pointer;} .node-root rect{fill:var(--color-deep);} .node-root text{fill:#fff;}
+            .node-l1 rect{fill:var(--color-primary);} .node-l1 text{fill:#fff;}
+            .node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;} .node-l2 text{fill:var(--ink);}
+            .node rect{transition:filter 150ms ease;} .node:hover rect,.node:focus rect{filter:brightness(1.12);} .node:focus{outline:none;}
+          </style>
+          <g transform="translate(260,0)">
+            <path d="M 225,438 C 271,438 319,100 319,100" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,269 319,269" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,438 319,438" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,606 319,606" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,775 319,775" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 519,100 C 584,100 650,71 650,71" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,100 C 584,100 650,129 650,129" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,269 C 584,269 650,211 650,211" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,269 C 584,269 650,269 650,269" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,269 C 584,269 650,326 650,326" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,438 C 584,438 650,409 650,409" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,438 C 584,438 650,466 650,466" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,606 C 584,606 650,549 650,549" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,606 C 584,606 650,606 650,606" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,606 C 584,606 650,664 650,664" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,775 C 584,775 650,746 650,746" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,775 C 584,775 650,804 650,804" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+            <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+              <rect x="25" y="400" width="200" height="75" rx="7"/>
+              <text><tspan x="125" y="430" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">JavaScript</tspan><tspan x="125" y="452" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">LATO CLIENT</tspan></text>
+            </g>
+
+            <g class="node node-l1" onclick="showNode('dom')" tabindex="0" role="button"><rect x="319" y="72" width="200" height="55" rx="5"/><text><tspan x="419" y="106" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · DOM</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('eventi')" tabindex="0" role="button"><rect x="319" y="241" width="200" height="55" rx="5"/><text><tspan x="419" y="275" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · EVENTI</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('manip')" tabindex="0" role="button"><rect x="319" y="410" width="200" height="55" rx="5"/><text><tspan x="419" y="444" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · MANIPOLAZIONE</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('ajax')" tabindex="0" role="button"><rect x="319" y="578" width="200" height="55" rx="5"/><text><tspan x="419" y="613" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · AJAX E JSON</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('debug')" tabindex="0" role="button"><rect x="319" y="747" width="200" height="55" rx="5"/><text><tspan x="419" y="781" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · DEBUGGING</tspan></text></g>
+
+            <g class="node node-l2" onclick="showNode('selezione')" tabindex="0" role="button"><rect x="650" y="48" width="238" height="48" rx="4"/><text><tspan x="769" y="68" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Selezione nodi</tspan><tspan x="769" y="86" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">getElementById · querySelector</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('creazione')" tabindex="0" role="button"><rect x="650" y="105" width="238" height="48" rx="4"/><text><tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Creazione e rimozione</tspan><tspan x="769" y="143" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">createElement · appendChild · remove</tspan></text></g>
+
+            <g class="node node-l2" onclick="showNode('addevent')" tabindex="0" role="button"><rect x="650" y="188" width="238" height="48" rx="4"/><text><tspan x="769" y="208" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">addEventListener</tspan><tspan x="769" y="226" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">click · submit · keydown · load</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('bubbling')" tabindex="0" role="button"><rect x="650" y="245" width="238" height="48" rx="4"/><text><tspan x="769" y="265" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Event bubbling</tspan><tspan x="769" y="283" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">propagazione · stopPropagation</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('prevent')" tabindex="0" role="button"><rect x="650" y="302" width="238" height="48" rx="4"/><text><tspan x="769" y="322" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">preventDefault</tspan><tspan x="769" y="340" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">blocca comportamento default</tspan></text></g>
+
+            <g class="node node-l2" onclick="showNode('contenuto')" tabindex="0" role="button"><rect x="650" y="385" width="238" height="48" rx="4"/><text><tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Modifica contenuto</tspan><tspan x="769" y="423" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">textContent · innerHTML · setAttribute</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('tabelle')" tabindex="0" role="button"><rect x="650" y="442" width="238" height="48" rx="4"/><text><tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Tabelle dinamiche</tspan><tspan x="769" y="480" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">table · tbody · tr · td via JS</tspan></text></g>
+
+            <g class="node node-l2" onclick="showNode('xhr')" tabindex="0" role="button"><rect x="650" y="525" width="238" height="48" rx="4"/><text><tspan x="769" y="545" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">XMLHttpRequest</tspan><tspan x="769" y="563" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">open · send · readyState · status</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('json-js')" tabindex="0" role="button"><rect x="650" y="582" width="238" height="48" rx="4"/><text><tspan x="769" y="602" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">JSON</tspan><tspan x="769" y="620" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">JSON.parse · JSON.stringify</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('valform')" tabindex="0" role="button"><rect x="650" y="640" width="238" height="48" rx="4"/><text><tspan x="769" y="660" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Validazione form</tspan><tspan x="769" y="678" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">lato client · non è sicurezza</tspan></text></g>
+
+            <g class="node node-l2" onclick="showNode('console')" tabindex="0" role="button"><rect x="650" y="722" width="238" height="48" rx="4"/><text><tspan x="769" y="742" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Console e log</tspan><tspan x="769" y="760" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">console.log · error · table</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('devtools')" tabindex="0" role="button"><rect x="650" y="780" width="238" height="48" rx="4"/><text><tspan x="769" y="800" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">DevTools</tspan><tspan x="769" y="818" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Sources · Network · Elements</tspan></text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    var NODES = {
+      root:      {label:'Modulo 3', title:'JavaScript lato Client', text:'JavaScript è il linguaggio di programmazione del browser: esegue nel client senza comunicare con il server. Può manipolare il DOM (struttura HTML della pagina), reagire agli eventi utente, validare form e fare richieste asincrone al server via AJAX — tutto senza ricaricare la pagina.'},
+      dom:       {label:'Area 1', title:'Document Object Model', text:'Il DOM è la rappresentazione ad albero della pagina HTML creata dal browser in memoria. Ogni elemento HTML è un nodo. JS può selezionare nodi (getElementById, querySelector), creare nuovi elementi (createElement), modificarli (textContent, innerHTML), aggiungerli al DOM (appendChild), rimuoverli (remove). Ogni modifica si riflette istantaneamente nella pagina.'},
+      eventi:    {label:'Area 2', title:'Gestione degli eventi', text:'Gli eventi sono azioni che accadono nella pagina: click, submit, keydown, DOMContentLoaded. addEventListener("evento", funzione) registra un handler senza sovrascrivere quelli esistenti. Event bubbling: l\'evento risale dal nodo colpito fino a document. stopPropagation() ferma la propagazione. preventDefault() blocca il comportamento default del browser.'},
+      manip:     {label:'Area 3', title:'Manipolazione dinamica', text:'Modificare il DOM: textContent (testo puro, sicuro contro XSS), innerHTML (HTML, usare solo con dati controllati), setAttribute(nome, valore), classList.add/remove/toggle/contains. Creare elementi: createElement("div") poi appendChild() o insertBefore(). Rimuovere: element.remove() o parent.removeChild(figlio). Stili inline: element.style.color = "red".'},
+      ajax:      {label:'Area 4', title:'AJAX e JSON', text:'AJAX (Asynchronous JavaScript And XML): aggiorna parti della pagina senza ricaricarla. Flusso: creare XHR → open(metodo, url, true) → onreadystatechange → send(). Quando readyState===4 && status===200: risposta ricevuta → JSON.parse(xhr.responseText) → aggiornare DOM. Per POST: setRequestHeader("Content-Type","application/x-www-form-urlencoded") + send("k=v").'},
+      debug:     {label:'Area 5', title:'Debugging e DevTools', text:'Chrome DevTools (F12): strumento fondamentale. Console: console.log (stampa), console.error (errore), console.table (array/oggetti). Sources: aprire un file JS → cliccare numero di riga per aggiungere breakpoint → F8 resume, F10 step over. Network: tutte le richieste HTTP/AJAX con payload e risposta. Elements: DOM live, modificabile direttamente.'},
+      selezione: {label:'DOM', title:'Selezione di nodi DOM', text:'document.getElementById("id"): seleziona l\'elemento con quell\'ID (restituisce un singolo elemento). document.querySelector("selettore CSS"): primo elemento che corrisponde al selettore. document.querySelectorAll("selettore"): NodeList di tutti gli elementi. document.getElementsByClassName("classe"): HTMLCollection per classe. document.getElementsByTagName("tag"): per tipo di tag.'},
+      creazione: {label:'DOM', title:'Creazione e rimozione nodi', text:'Creare: const el = document.createElement("div") → imposta textContent/innerHTML/attributi → parent.appendChild(el). Oppure parent.insertBefore(el, riferimento) per posizione precisa. Rimuovere: el.remove() (moderno) o parent.removeChild(el) (classico). Clonare: el.cloneNode(true) (con figli) o false (solo il nodo). Frammento: DocumentFragment per batch insert.'},
+      addevent:  {label:'Eventi', title:'addEventListener', text:'Sintassi: element.addEventListener("evento", funzione, useCapture). useCapture=false (default) = fase di bubble. true = fase di cattura. Si possono registrare più handler per lo stesso evento sullo stesso elemento. Rimuovere: removeEventListener("evento", stessaFunzione). Delegazione: registrare il handler sul genitore e usare event.target per identificare il figlio cliccato.'},
+      bubbling:  {label:'Eventi', title:'Event bubbling e propagazione', text:'Quando un evento si verifica su un elemento, prima si gestisce su quell\'elemento (fase di target), poi risale verso i genitori fino a document (bubbling). Utile per delegazione: invece di registrare click su 100 elementi figli, registrare un solo handler sul genitore. event.stopPropagation() ferma il bubbling. event.stopImmediatePropagation() ferma anche gli altri handler sull\'elemento.'},
+      prevent:   {label:'Eventi', title:'preventDefault', text:'Blocca il comportamento predefinito del browser per quell\'evento. Esempi: form submit → preventDefault() per gestire con AJAX invece del reload. Link click → preventDefault() per navigazione custom. event.preventDefault() si chiama dentro il handler. Nota: non ferma il bubbling (per quello serve stopPropagation). DOMContentLoaded: DOM pronto (senza immagini). window.onload: tutto caricato.'},
+      contenuto: {label:'Manipolazione', title:'Modifica contenuto e attributi', text:'textContent: legge/imposta il testo dell\'elemento (sicuro, non interpreta HTML). innerHTML: legge/imposta HTML interno (interpreta tag — rischio XSS con input utente!). setAttribute("nome","val"): imposta attributo. getAttribute("nome"): legge attributo. removeAttribute("nome"): rimuove. classList.add("classe"), remove(), toggle(), contains() per gestire le classi CSS. style.property per stili inline.'},
+      tabelle:   {label:'Manipolazione', title:'Costruzione tabelle dinamiche', text:'Struttura: table > thead/tbody > tr > th/td. Esempio: const tbody = document.getElementById("corpo"); dati.forEach(riga => { const tr = document.createElement("tr"); Object.values(riga).forEach(v => { const td = document.createElement("td"); td.textContent = v; tr.appendChild(td); }); tbody.appendChild(tr); }). Per aggiornare: tbody.innerHTML = "" per svuotare, poi ripopolarlo. Evitare innerHTML con dati utente.'},
+      xhr:       {label:'AJAX', title:'XMLHttpRequest', text:'const xhr = new XMLHttpRequest(); xhr.open("GET","api.php?id=1",true); xhr.onreadystatechange = function(){ if(xhr.readyState===4 && xhr.status===200){ var data = JSON.parse(xhr.responseText); aggiornaDom(data); }}; xhr.send(); Per POST: xhr.open("POST","api.php",true); xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded"); xhr.send("id=1&nome=Mario"); readyState: 0=UNSENT, 1=OPENED, 2=HEADERS_RECEIVED, 3=LOADING, 4=DONE.'},
+      'json-js': {label:'AJAX', title:'JSON in JavaScript', text:'JSON.parse(stringa): converte una stringa JSON in un oggetto/array JavaScript. Lancia SyntaxError se la stringa non è JSON valido — wrappare in try/catch. JSON.stringify(oggetto): converte un oggetto/array JS in una stringa JSON. Opzioni: JSON.stringify(obj, null, 2) per formattazione leggibile. Limitazioni: JSON non supporta undefined, funzioni, Date native (diventano stringhe).'},
+      valform:   {label:'AJAX', title:'Validazione form lato client', text:'Controllo dei campi PRIMA dell\'invio al server: campi obbligatori, formato email (regex), lunghezza minima/massima, conferma password. HTML5: required, type="email", minlength, pattern. JS: intercettare submit → preventDefault() → validare → se ok, inviare via AJAX. IMPORTANTE: la validazione client-side migliora l\'UX ma NON garantisce sicurezza — serve sempre validazione server-side.'},
+      console:   {label:'Debugging', title:'Console e strumenti di log', text:'console.log(valore): stampa in console. console.error(msg): stampa in rosso con stack trace. console.warn(msg): avviso in giallo. console.table(array): visualizza array/oggetti in tabella. console.group()/groupEnd(): raggruppa output. console.time("nome")/timeEnd("nome"): misura il tempo di esecuzione. debugger: keyword che sospende l\'esecuzione come un breakpoint — funziona solo con DevTools aperto.'},
+      devtools:  {label:'Debugging', title:'Chrome DevTools (F12)', text:'Elements: DOM live — modificabile. Stili CSS ispezionabili e modificabili in tempo reale. Console: errori JS, log, esecuzione di codice interattivo. Sources: codice sorgente, breakpoints (clic sul numero di riga), F8 resume, F10 step over, F11 step into. Network: ogni richiesta HTTP con metodo, URL, status, payload, risposta. Application: localStorage, sessionStorage, cookie, Service Workers.'}
+    };
+    function showNode(k){var n=NODES[k];if(!n)return;document.getElementById('tip-label').textContent=n.label;document.getElementById('tip-title').textContent=n.title;document.getElementById('tip-text').textContent=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeTip(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTip();});
+  </script>
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

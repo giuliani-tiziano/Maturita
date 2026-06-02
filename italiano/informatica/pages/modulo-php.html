@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 2 · PHP — Informatica · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E2%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    code, pre { font-family: 'Courier New', Courier, monospace; }
+    pre { background: var(--beige-mid); padding: 1rem 1.2rem; border-radius: 4px; font-size: .84rem; overflow-x: auto; line-height: 1.6; border-left: 3px solid var(--color-primary); }
+    code { background: var(--beige-mid); padding: .1rem .3rem; border-radius: 2px; font-size: .88rem; }
+  </style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../index.html" class="topbar-back">← Portale</a>
+    <a href="../informatica.html" class="topbar-brand">Informatica</a>
+  </div>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="argomenti.html">Argomenti</a>
+    <a class="topbar-link" href="mappe.html">Mappe</a>
+    <a class="topbar-link" href="flashcard.html">Flashcard</a>
+    <a class="topbar-link cta" href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+    <button class="nav-btn" data-sec="sintassi">Sintassi base</button>
+    <button class="nav-btn" data-sec="array-funzioni">Array e Funzioni</button>
+    <button class="nav-btn" data-sec="form-sessioni">Form, Sessioni, Sicurezza</button>
+    <button class="nav-btn" data-sec="db-json">DB e JSON</button>
+    <button class="nav-btn" data-sec="quiz-mini">Mini-quiz</button>
+  </div>
+</nav>
+
+<!-- ══ PANORAMICA ══ -->
+<section class="section active" id="panoramica">
+  <div class="container">
+
+    <div class="hero">
+      <div class="eyebrow">Informatica · Modulo 2</div>
+      <h1 class="title">PHP<br><em>lato server</em></h1>
+      <p class="subtitle">Il linguaggio server-side che dà vita alle applicazioni web dinamiche.</p>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="section-header" style="margin-top:0;">
+          <div class="section-tag">Architettura client/server</div>
+        </div>
+        <p>Il browser (client) invia una richiesta HTTP al server web. Il server esegue PHP, che elabora la logica, interroga MySQL, genera HTML dinamico e restituisce la risposta. Il client vede solo l'HTML — mai il codice PHP sorgente.</p>
+        <p>PHP vive sul server: ha accesso al filesystem, al database, alle sessioni. JavaScript vive nel browser: ha accesso al DOM, agli eventi, all'interfaccia utente.</p>
+        <div class="box-concetto">
+          <h4>Argomenti del modulo</h4>
+          <ul class="clean">
+            <li>Architettura client/server e ruolo di PHP; phpMyAdmin</li>
+            <li>Variabili ($), costanti, tipi di dato, operatori, espressioni</li>
+            <li>Scope e variabili superglobali</li>
+            <li>if/else/switch/ternario · for/while/do-while/foreach</li>
+            <li>Array indicizzati, associativi, funzioni su array</li>
+            <li>Funzioni personalizzate e anonime</li>
+            <li>Stringhe, date, formattazione output</li>
+            <li>Espressioni regolari (preg_*)</li>
+            <li>GET e POST · cookie e sessioni</li>
+            <li>Autenticazione e hashing (password_hash/verify)</li>
+            <li>Gestione file (fopen, fread, fwrite…)</li>
+            <li>JSON (json_encode/decode)</li>
+            <li>MySQLi (connessione, query, prepared statements)</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="box-frase">
+          «PHP genera HTML. HTML è quello che vede l'utente. Il codice che genera quell'HTML non si vede mai.»
+          <span class="label">— Fondamento del web server-side</span>
+        </div>
+        <div class="box-concetto">
+          <h4>phpMyAdmin</h4>
+          <p>Interfaccia web grafica per gestire MySQL senza usare la riga di comando. Permette di: creare/eliminare database e tabelle, eseguire query SQL, importare/esportare dati (CSV, SQL), gestire utenti e permessi. Usato ampiamente in sviluppo; in produzione si preferisce un accesso più controllato.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SINTASSI BASE ══ -->
+<section class="section" id="sintassi">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 02</div>
+      <h2>Sintassi base</h2>
+    </div>
+    <p class="section-sub">Variabili, costanti, tipi, operatori, scope, superglobali, strutture di controllo.</p>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Variabili, costanti e tipi di dato <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p>Le variabili iniziano sempre con <code>$</code> e sono <strong>case-sensitive</strong>: <code>$nome</code> e <code>$Nome</code> sono variabili diverse. PHP è a tipizzazione debole: il tipo è determinato automaticamente dal contesto.</p>
+        <p>Tipi principali: <code>int</code>, <code>float</code>, <code>string</code>, <code>bool</code>, <code>array</code>, <code>null</code>.</p>
+        <pre>$nome = "Mario";           // string
+$eta  = 20;               // int
+$voto = 27.5;             // float
+$prom = true;             // bool
+$nulla = null;            // null
+
+define('MAX_VOTO', 30);   // costante (maiuscolo per convenzione)
+const MIN_VOTO = 18;      // alternativa moderna</pre>
+        <p>Operatori: aritmetici (<code>+ - * / % **</code>), confronto (<code>== === != !== &lt; &gt; &lt;= &gt;=</code>), logici (<code>&amp;&amp; || !</code>), stringa (<code>.</code> concatenazione), ternario (<code>$a ? $b : $c</code>), Elvis (<code>$a ?: $b</code>).</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Scope e variabili superglobali <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p>In PHP le variabili hanno scope locale per default. Una variabile definita fuori da una funzione non è accessibile dentro (e viceversa). Per accedere a variabili globali dentro una funzione:</p>
+        <pre>$contatore = 0;
+
+function incrementa() {
+    global $contatore;  // dichiara globale
+    $contatore++;
+}
+// oppure: $GLOBALS['contatore']++;</pre>
+        <p><strong>Superglobali</strong> — accessibili ovunque senza dichiarare global:</p>
+        <table>
+          <thead><tr><th>Superglobale</th><th>Contenuto</th></tr></thead>
+          <tbody>
+            <tr><td><code>$_GET</code></td><td>Parametri della query string URL</td></tr>
+            <tr><td><code>$_POST</code></td><td>Dati inviati con method="post"</td></tr>
+            <tr><td><code>$_SESSION</code></td><td>Dati di sessione (lato server)</td></tr>
+            <tr><td><code>$_COOKIE</code></td><td>Cookie inviati dal browser</td></tr>
+            <tr><td><code>$_FILES</code></td><td>File caricati tramite form</td></tr>
+            <tr><td><code>$_SERVER</code></td><td>Info sul server e sulla richiesta (IP, URL, metodo HTTP…)</td></tr>
+            <tr><td><code>$_REQUEST</code></td><td>GET + POST + COOKIE insieme (sconsigliato per sicurezza)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Strutture di controllo <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <div class="grid-2">
+          <div>
+            <p><strong>Selezione:</strong></p>
+            <pre>if ($voto >= 60) {
+    echo "Promosso";
+} elseif ($voto >= 18) {
+    echo "Ammesso";
+} else {
+    echo "Rimandato";
+}
+
+// Switch
+switch ($giorno) {
+    case "Lun": echo "Lunedì"; break;
+    default: echo "Altro giorno";
+}
+
+// Operatore ternario
+$msg = ($voto >= 60) ? "OK" : "No";</pre>
+          </div>
+          <div>
+            <p><strong>Iterazione:</strong></p>
+            <pre>// for — indice noto
+for ($i = 0; $i < 10; $i++) { ... }
+
+// while — condizione
+while ($i > 0) { $i--; }
+
+// do-while — almeno una volta
+do { ... } while ($condizione);
+
+// foreach — array (INDISPENSABILE)
+foreach ($studenti as $nome) {
+    echo $nome;
+}
+// con chiave:
+foreach ($dati as $k => $v) {
+    echo "$k: $v";
+}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ ARRAY E FUNZIONI ══ -->
+<section class="section" id="array-funzioni">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 03</div>
+      <h2>Array e Funzioni</h2>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Array indicizzati e associativi <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <div class="grid-2">
+          <div>
+            <p><strong>Array indicizzato</strong> (chiavi numeriche automatiche):</p>
+            <pre>$voti = [28, 30, 25, 27];
+echo $voti[0];  // 28
+$voti[] = 29;   // aggiunge in coda</pre>
+          </div>
+          <div>
+            <p><strong>Array associativo</strong> (chiavi stringa):</p>
+            <pre>$studente = [
+    'nome'    => 'Mario',
+    'cognome' => 'Rossi',
+    'voto'    => 28
+];
+echo $studente['nome'];  // Mario</pre>
+          </div>
+        </div>
+        <p><strong>Funzioni principali:</strong> <code>count()</code> (dimensione), <code>array_push/pop()</code> (aggiunta/rimozione in coda), <code>array_shift/unshift()</code> (testa), <code>sort()/rsort()</code> (ordina valori), <code>asort()/ksort()</code> (mantiene chiavi), <code>in_array()</code> (cerca valore), <code>array_key_exists()</code> (cerca chiave), <code>array_merge()</code> (unisce), <code>array_map()</code> (trasforma), <code>array_filter()</code> (filtra), <code>implode()</code> (array→stringa), <code>explode()</code> (stringa→array).</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Funzioni personalizzate e anonime <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>// Funzione con parametri e valore di ritorno
+function calcolaMedia(array $voti): float {
+    return array_sum($voti) / count($voti);
+}
+echo calcolaMedia([28, 30, 25]);  // 27.67
+
+// Parametri opzionali con default
+function saluta(string $nome, string $titolo = "Sig."): string {
+    return "Buongiorno, $titolo $nome!";
+}
+
+// Funzione anonima (lambda)
+$doppio = function(int $n): int { return $n * 2; };
+echo $doppio(5);  // 10
+
+// Arrow function (PHP 7.4+)
+$triplo = fn($n) => $n * 3;
+
+// Passaggio per riferimento
+function incrementa(int &$n): void { $n++; }
+$x = 5;
+incrementa($x);
+echo $x;  // 6</pre>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Stringhe, date e espressioni regolari <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p><strong>Stringhe:</strong> <code>strlen()</code>, <code>strtolower/strtoupper()</code>, <code>trim()</code>, <code>str_replace()</code>, <code>substr()</code>, <code>strpos()</code>, <code>sprintf()</code> (formattazione).</p>
+        <p><strong>Date:</strong> <code>date('d/m/Y')</code>, <code>time()</code> (timestamp), <code>mktime()</code>, <code>strtotime()</code>.</p>
+        <p><strong>Espressioni regolari (PCRE):</strong></p>
+        <pre>preg_match('/^\d{3}-\d{4}$/', $tel)  // verifica pattern
+preg_replace('/[^a-z0-9]/i', '', $s) // sostituisce
+preg_split('/,\s*/', $lista)          // divide stringa</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FORM, SESSIONI, SICUREZZA ══ -->
+<section class="section" id="form-sessioni">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 04</div>
+      <h2>Form, Sessioni e Sicurezza</h2>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">GET vs POST — quando usare quale <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <table>
+          <thead><tr><th>Aspetto</th><th>GET</th><th>POST</th></tr></thead>
+          <tbody>
+            <tr><td>Dati</td><td>Nell'URL: <code>?nome=Mario&eta=20</code></td><td>Nel body HTTP (invisibili)</td></tr>
+            <tr><td>Sicurezza</td><td>Visibili nella barra, nella cronologia, nei log</td><td>Non visibili nell'URL</td></tr>
+            <tr><td>Limite</td><td>~2 KB</td><td>Nessun limite pratico</td></tr>
+            <tr><td>Idempotente</td><td>Sì — ripetere non cambia nulla</td><td>No — ripetere può creare duplicati</td></tr>
+            <tr><td>Uso</td><td>Ricerche, filtri, navigazione, link condivisibili</td><td>Login, registrazione, upload, modifica dati</td></tr>
+          </tbody>
+        </table>
+        <pre>// Ricezione lato PHP
+$nome = $_POST['nome'] ?? '';           // POST
+$cerca = $_GET['q'] ?? '';              // GET
+
+// SEMPRE validare e sanitizzare l'input
+$nome_sicuro = htmlspecialchars($nome); // previene XSS
+$nome_db = mysqli_real_escape_string($conn, $nome); // vecchio modo
+// Meglio: prepared statements (vedi sezione DB)</pre>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Cookie e sessioni <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <div class="grid-2">
+          <div>
+            <p><strong>Cookie</strong> (dati sul client):</p>
+            <pre>// Imposta cookie (scade tra 7 giorni)
+setcookie('tema', 'dark',
+    time() + 7*24*3600, '/', '', true, true);
+// path, secure, httpOnly
+
+// Leggi cookie
+$tema = $_COOKIE['tema'] ?? 'light';
+
+// Elimina cookie
+setcookie('tema', '', time()-1);</pre>
+          </div>
+          <div>
+            <p><strong>Sessione</strong> (dati sul server):</p>
+            <pre>session_start(); // SEMPRE prima di tutto
+
+// Salva dato di sessione
+$_SESSION['user_id'] = 42;
+$_SESSION['nome'] = 'Mario';
+
+// Leggi
+$id = $_SESSION['user_id'] ?? null;
+
+// Distruggi al logout
+session_destroy();
+unset($_SESSION);</pre>
+          </div>
+        </div>
+        <div class="box-concetto">
+          <h4>Differenza chiave</h4>
+          <p>I cookie sono memorizzati nel browser e inviati ad ogni richiesta HTTP. Le sessioni memorizzano i dati sul server e inviano al browser solo un piccolo <code>session_id</code> (via cookie PHPSESSID). Per dati sensibili, le sessioni sono più sicure.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Autenticazione e hashing delle password <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p><strong>Mai</strong> salvare password in chiaro nel database. Usare sempre l'hashing:</p>
+        <pre>// REGISTRAZIONE: hashing della password
+$hash = password_hash($password_input, PASSWORD_BCRYPT);
+// Salva $hash nel DB, non la password originale!
+
+// LOGIN: verifica
+$hash_dal_db = /* ... leggi dal DB ... */;
+if (password_verify($password_input, $hash_dal_db)) {
+    session_start();
+    $_SESSION['user_id'] = $utente['id'];
+    header('Location: dashboard.php');
+    exit;
+} else {
+    $errore = "Credenziali errate";
+}
+
+// LOGOUT
+session_start();
+session_destroy();
+header('Location: login.php');
+exit;</pre>
+        <div class="box-concetto">
+          <h4>Perché NON usare md5() o sha1()?</h4>
+          <p>md5() e sha1() sono algoritmi veloci: un attaccante può provare miliardi di hash al secondo (brute force / rainbow table). <code>password_hash()</code> usa bcrypt che è <em>volutamente lento</em> e aggiunge un <em>salt casuale automatico</em>. Non è possibile "invertire" bcrypt.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Gestione file <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>// Scrittura semplice (intero file)
+file_put_contents('log.txt', "Accesso: " . date('H:i:s') . "\n", FILE_APPEND);
+
+// Lettura semplice
+$contenuto = file_get_contents('config.txt');
+
+// Accesso sequenziale
+$handle = fopen('dati.csv', 'r');
+while (($riga = fgets($handle)) !== false) {
+    echo $riga;
+}
+fclose($handle);
+
+// Controllo esistenza e permessi
+if (file_exists($percorso) && is_readable($percorso)) { ... }</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ DB E JSON ══ -->
+<section class="section" id="db-json">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 05</div>
+      <h2>MySQLi e JSON</h2>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Connessione e query con MySQLi <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>// Connessione
+$conn = new mysqli('localhost', 'utente', 'password', 'db_nome');
+if ($conn->connect_error) {
+    die("Connessione fallita: " . $conn->connect_error);
+}
+$conn->set_charset('utf8mb4');
+
+// Query semplice (solo dati trusted, es. senza input utente)
+$result = $conn->query("SELECT * FROM studenti ORDER BY cognome");
+while ($riga = $result->fetch_assoc()) {
+    echo $riga['nome'] . " " . $riga['cognome'];
+}
+
+// Chiusura
+$conn->close();</pre>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Prepared statements — la difesa contro SQL Injection <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p>Quando si usano dati provenienti dall'utente (<code>$_POST</code>, <code>$_GET</code>), si devono SEMPRE usare i prepared statements:</p>
+        <pre>// SELECT con parametri
+$stmt = $conn->prepare("SELECT * FROM utenti WHERE email = ? AND attivo = ?");
+$stmt->bind_param("si", $email, $attivo); // s=string, i=int
+$stmt->execute();
+$result = $stmt->get_result();
+$utente = $result->fetch_assoc();
+$stmt->close();
+
+// INSERT con parametri
+$stmt = $conn->prepare("INSERT INTO studenti (nome, voto) VALUES (?, ?)");
+$stmt->bind_param("si", $nome, $voto);
+$stmt->execute();
+$id_inserito = $conn->insert_id; // ID dell'ultima riga inserita
+$stmt->close();</pre>
+        <div class="box-concetto">
+          <h4>Perché i prepared statements prevengono SQL injection?</h4>
+          <p>Il driver MySQL separa la struttura della query (<code>?</code>) dai parametri. I parametri vengono inviati al server <em>dopo</em> la compilazione della query: il server sa già che sono dati, non istruzioni SQL. Un input come <code>' OR '1'='1</code> viene trattato come semplice stringa, non come codice.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">JSON — scambio dati con JavaScript <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <p>JSON (JavaScript Object Notation) è il formato standard per scambiare dati tra PHP e JavaScript tramite AJAX:</p>
+        <pre>// PHP → JSON (risposta per richiesta AJAX)
+$dati = [
+    'studenti' => [
+        ['nome' => 'Mario', 'voto' => 28],
+        ['nome' => 'Luigi', 'voto' => 30]
+    ],
+    'totale' => 2
+];
+
+header('Content-Type: application/json');
+echo json_encode($dati);
+exit;
+
+// JSON → PHP (se ricevi JSON in input)
+$body = file_get_contents('php://input');
+$obj  = json_decode($body, true); // true = array associativo
+echo $obj['nome'];  // Mario</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ MINI-QUIZ ══ -->
+<section class="section" id="quiz-mini">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 06</div>
+      <h2>Mini-quiz · PHP</h2>
+    </div>
+
+    <div class="quiz">
+      <span class="quiz-lbl">Quiz inline · Modulo 2</span>
+      <h3>Rispondi alle domande</h3>
+
+      <div class="qd" data-correct="1">
+        <p class="q">1. Quale superglobale PHP contiene i dati inviati con un form method="post"?</p>
+        <div class="qopts">
+          <button class="qo">$_GET</button>
+          <button class="qo">$_POST</button>
+          <button class="qo">$_REQUEST</button>
+          <button class="qo">$_FORM</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="2">
+        <p class="q">2. Quale funzione PHP crea un hash sicuro di una password?</p>
+        <div class="qopts">
+          <button class="qo">md5()</button>
+          <button class="qo">sha256()</button>
+          <button class="qo">password_hash()</button>
+          <button class="qo">crypt()</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="0">
+        <p class="q">3. In PHP, le variabili definite dentro una funzione sono:</p>
+        <div class="qopts">
+          <button class="qo">Locali — non accessibili fuori dalla funzione</button>
+          <button class="qo">Globali — accessibili ovunque</button>
+          <button class="qo">Statiche — mantengono il valore tra le chiamate</button>
+          <button class="qo">Costanti — non modificabili</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="3">
+        <p class="q">4. Quale metodo HTTP è preferibile per inviare password di login?</p>
+        <div class="qopts">
+          <button class="qo">GET — i dati vanno nell'URL</button>
+          <button class="qo">HEAD — il più sicuro</button>
+          <button class="qo">PUT — per aggiornare risorse</button>
+          <button class="qo">POST — i dati vanno nel body HTTP</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="1">
+        <p class="q">5. I prepared statements prevengono SQL Injection perché:</p>
+        <div class="qopts">
+          <button class="qo">Cifrano la query con MD5</button>
+          <button class="qo">Separano la struttura della query dai dati: i parametri non possono diventare codice SQL</button>
+          <button class="qo">Eliminano tutti i caratteri speciali dall'input</button>
+          <button class="qo">Limitano la lunghezza dell'input dell'utente</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="2">
+        <p class="q">6. Quale funzione PHP converte un array in formato JSON?</p>
+        <div class="qopts">
+          <button class="qo">json_decode()</button>
+          <button class="qo">json_parse()</button>
+          <button class="qo">json_encode()</button>
+          <button class="qo">array_to_json()</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

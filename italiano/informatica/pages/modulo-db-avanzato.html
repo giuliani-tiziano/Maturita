@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 10 · DB Avanzato — Informatica · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='38' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E10%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    code, pre { font-family: 'Courier New', Courier, monospace; }
+    pre { background: var(--beige-mid); padding: 1rem 1.2rem; border-radius: 4px; font-size: .84rem; overflow-x: auto; line-height: 1.6; border-left: 3px solid var(--color-primary); }
+    code { background: var(--beige-mid); padding: .1rem .3rem; border-radius: 2px; font-size: .88rem; }
+  </style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../index.html" class="topbar-back">← Portale</a>
+    <a href="../informatica.html" class="topbar-brand">Informatica</a>
+  </div>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="argomenti.html">Argomenti</a>
+    <a class="topbar-link" href="mappe.html">Mappe</a>
+    <a class="topbar-link" href="flashcard.html">Flashcard</a>
+    <a class="topbar-link cta" href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+    <button class="nav-btn" data-sec="transazioni">Transazioni ACID</button>
+    <button class="nav-btn" data-sec="indici">Indici e EXPLAIN</button>
+    <button class="nav-btn" data-sec="backup">Backup</button>
+    <button class="nav-btn" data-sec="nosql">NoSQL</button>
+    <button class="nav-btn" data-sec="orm">ORM e Scalabilità</button>
+    <button class="nav-btn" data-sec="quiz-mini">Mini-quiz</button>
+  </div>
+</nav>
+
+<!-- ══ PANORAMICA ══ -->
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Informatica · Modulo 10</div>
+      <h1 class="title">Gestione avanzata<br><em>dei database</em></h1>
+      <p class="subtitle">Transazioni, performance, backup, NoSQL e architetture moderne.</p>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="section-header" style="margin-top:0;"><div class="section-tag">Oltre le basi SQL</div></div>
+        <p>Un database non serve solo a memorizzare e leggere dati: deve garantire <strong>consistenza anche in caso di errori</strong>, gestire accessi concorrenti, essere veloce con milioni di righe, e sopravvivere a guasti. Questo modulo copre gli strumenti avanzati per questi obiettivi.</p>
+        <div class="box-concetto">
+          <h4>Argomenti del modulo</h4>
+          <ul class="clean">
+            <li>Transazioni ACID: BEGIN, COMMIT, ROLLBACK</li>
+            <li>Isolamento e deadlock</li>
+            <li>Indici B-tree: creazione e impatto performance</li>
+            <li>EXPLAIN: leggere il query plan</li>
+            <li>Backup: mysqldump e strategie</li>
+            <li>NoSQL: MongoDB a confronto con SQL</li>
+            <li>ORM: concetto, pro e contro</li>
+            <li>Scalabilità verticale vs orizzontale</li>
+            <li>Replicazione database (cenni)</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>Le quattro proprietà ACID</h4>
+          <div class="tl-item" style="padding-bottom:1rem;">
+            <span class="tl-year">A</span><div class="tl-title">Atomicità</div>
+            <div class="tl-body">La transazione è indivisibile: tutto o niente. Un errore a metà → ROLLBACK automatico.</div>
+          </div>
+          <div class="tl-item" style="padding-bottom:1rem;">
+            <span class="tl-year">C</span><div class="tl-title">Consistenza</div>
+            <div class="tl-body">La transazione porta il DB da uno stato valido a un altro, rispettando tutti i vincoli.</div>
+          </div>
+          <div class="tl-item" style="padding-bottom:1rem;">
+            <span class="tl-year">I</span><div class="tl-title">Isolamento</div>
+            <div class="tl-body">Le transazioni concorrenti non si "vedono" a vicenda durante l'esecuzione.</div>
+          </div>
+          <div class="tl-item" style="padding-bottom:0;">
+            <span class="tl-year">D</span><div class="tl-title">Durabilità</div>
+            <div class="tl-body">Dopo COMMIT i dati persistono anche dopo crash (grazie al transaction log).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRANSAZIONI ══ -->
+<section class="section" id="transazioni">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 10 · ACID</div>
+      <h1 class="title">Transazioni<br><em>ACID</em></h1>
+    </div>
+
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">BEGIN, COMMIT, ROLLBACK</div></div>
+    <div class="grid-2">
+      <div>
+        <pre>-- Esempio: trasferimento bancario
+-- SENZA transazione: se il server crasha dopo
+-- il prelievo ma prima del deposito → denaro perso!
+
+START TRANSACTION;  -- o BEGIN
+
+  -- Preleva da conto A
+  UPDATE conti
+  SET saldo = saldo - 100
+  WHERE id = 1;
+
+  -- Deposita su conto B
+  UPDATE conti
+  SET saldo = saldo + 100
+  WHERE id = 2;
+
+COMMIT;  -- conferma entrambe le modifiche
+
+-- In caso di errore:
+-- ROLLBACK;  -- annulla tutto, nessuna modifica</pre>
+      </div>
+      <div>
+        <pre>// PHP con transazioni MySQLi
+$conn->begin_transaction(); // o query("BEGIN")
+
+try {
+    $stmt1 = $conn->prepare(
+        "UPDATE conti SET saldo=saldo-? WHERE id=?"
+    );
+    $stmt1->bind_param('ii', $importo, $id_da);
+    $stmt1->execute();
+
+    $stmt2 = $conn->prepare(
+        "UPDATE conti SET saldo=saldo+? WHERE id=?"
+    );
+    $stmt2->bind_param('ii', $importo, $id_a);
+    $stmt2->execute();
+
+    $conn->commit(); // tutto ok → salva
+    echo json_encode(['successo' => true]);
+
+} catch (Exception $e) {
+    $conn->rollback(); // errore → annulla
+    http_response_code(500);
+    echo json_encode(['errore' => $e->getMessage()]);
+}</pre>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-tag">Deadlock</div></div>
+    <div class="grid-2">
+      <div>
+        <p>Due transazioni si bloccano a vicenda aspettando risorse che l'altra tiene bloccate:</p>
+        <pre>-- T1 blocca Riga A, attende Riga B
+-- T2 blocca Riga B, attende Riga A
+-- → DEADLOCK! MySQL fa ROLLBACK del "victim"</pre>
+        <p>MySQL <strong>rilevazione automatica</strong>: il DBMS riconosce il ciclo e fa ROLLBACK della transazione "più giovane".</p>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>Prevenzione dei deadlock</h4>
+          <ul class="clean">
+            <li>Accedere sempre alle risorse nello stesso ordine</li>
+            <li>Tenere le transazioni il più brevi possibile</li>
+            <li>Usare SELECT ... FOR UPDATE solo dove necessario</li>
+            <li>Ridurre il livello di isolamento se possibile</li>
+            <li>Implementare retry logic nel codice applicativo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INDICI E EXPLAIN ══ -->
+<section class="section" id="indici">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 10 · Performance</div>
+      <h1 class="title">Indici<br><em>e EXPLAIN</em></h1>
+    </div>
+
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">Indici B-tree</div></div>
+    <div class="grid-2">
+      <div>
+        <p>Un indice è come l'indice analitico di un libro: invece di scorrere tutte le pagine (full table scan), MySQL salta direttamente alla posizione giusta.</p>
+        <pre>-- Creare un indice
+CREATE INDEX idx_cognome
+ON Studenti(cognome);
+
+-- Indice su più colonne (compound index)
+CREATE INDEX idx_nome_cognome
+ON Studenti(cognome, nome);
+
+-- Rimuovere un indice
+DROP INDEX idx_cognome ON Studenti;
+
+-- Gli indici su PK e FK sono creati automaticamente
+-- da InnoDB (non vanno creati manualmente)</pre>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>Quando creare un indice</h4>
+          <p><strong>SÌ</strong>: colonne usate frequentemente in WHERE, ORDER BY, GROUP BY, JOIN ON; alta cardinalità (es. email, codice fiscale).</p>
+          <p><strong>NO</strong>: bassa selettività (es. genere M/F — solo 2 valori); tabelle piccole; colonne raramente cercate; tabelle con molti INSERT/UPDATE frequenti.</p>
+        </div>
+        <div class="box-concetto">
+          <h4>Impatto performance</h4>
+          <p>Letture più veloci, scritture più lente. Ogni INSERT/UPDATE/DELETE deve aggiornare anche le strutture indice. Troppi indici = overhead inutile.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-tag">EXPLAIN — leggere il query plan</div></div>
+    <pre>-- Aggiungere EXPLAIN davanti a qualsiasi SELECT:
+EXPLAIN SELECT s.nome, s.cognome, c.titolo
+FROM Studenti s
+JOIN Iscrizioni i ON s.id = i.id_studente
+JOIN Corsi c ON i.id_corso = c.id
+WHERE s.cognome = 'Rossi';
+
+-- Output (colonne più importanti):
+-- type:    ALL (pericoloso!), ref, eq_ref, const, index
+-- key:     quale indice usa (NULL se nessuno!)
+-- rows:    stima righe esaminate (più basso = meglio)
+-- Extra:   Using filesort (lento!), Using temporary (lento!),
+--          Using index (veloce — index-only scan)</pre>
+    <div class="box-concetto">
+      <h4>Interpretare EXPLAIN</h4>
+      <ul class="clean">
+        <li><strong>type=ALL + rows alta</strong>: full table scan su tabella grande → aggiungere un indice</li>
+        <li><strong>key=NULL</strong>: MySQL non usa nessun indice → creare indice sulla colonna nel WHERE</li>
+        <li><strong>Using filesort</strong>: ordinamento non supportato dall'indice → creare indice su colonna ORDER BY</li>
+        <li><strong>type=const o eq_ref</strong>: lookup su PK o UNIQUE → ottimale, niente da fare</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BACKUP ══ -->
+<section class="section" id="backup">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 10 · Affidabilità</div>
+      <h1 class="title">Backup<br><em>e ripristino</em></h1>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="section-header" style="margin-top:0;"><div class="section-tag">mysqldump</div></div>
+        <pre># Backup completo del database
+mysqldump -u root -p nomeDB > backup.sql
+
+# Backup di tabelle specifiche
+mysqldump -u root -p nomeDB tabella1 tabella2 > partial.sql
+
+# Backup compresso (consigliato)
+mysqldump -u root -p nomeDB | gzip > backup.sql.gz
+
+# Backup di tutti i database
+mysqldump -u root -p --all-databases > all_dbs.sql
+
+# Ripristino
+mysql -u root -p nomeDB < backup.sql
+
+# Ripristino da compresso
+gunzip &lt; backup.sql.gz | mysql -u root -p nomeDB</pre>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>Contenuto del file .sql</h4>
+          <p>mysqldump produce un file SQL testuale leggibile con: istruzioni DROP TABLE IF EXISTS, CREATE TABLE con la struttura, INSERT INTO per tutti i dati. È sia schema che dati in un unico file.</p>
+        </div>
+        <div class="box-concetto">
+          <h4>Strategie di backup</h4>
+          <ul class="clean">
+            <li><strong>Full backup</strong>: copia tutto il DB → mysqldump</li>
+            <li><strong>Incremental</strong>: solo le modifiche dall'ultimo backup → binary log</li>
+            <li><strong>3-2-1 rule</strong>: 3 copie, 2 supporti diversi, 1 offsite</li>
+            <li>Pianificare backup automatici con cron</li>
+            <li>Testare regolarmente il ripristino!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NOSQL ══ -->
+<section class="section" id="nosql">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 10 · Alternative</div>
+      <h1 class="title">NoSQL<br><em>e MongoDB</em></h1>
+    </div>
+    <div class="section-header" style="margin-top:0;"><div class="section-tag">SQL vs NoSQL — confronto</div></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Caratteristica</th><th>SQL (MySQL)</th><th>NoSQL (MongoDB)</th></tr></thead>
+        <tbody>
+          <tr><td>Struttura dati</td><td>Tabelle con schema fisso</td><td>Documenti JSON flessibili</td></tr>
+          <tr><td>Schema</td><td>Rigido (ALTER TABLE per modificare)</td><td>Flessibile (schemaless)</td></tr>
+          <tr><td>Relazioni</td><td>JOIN tra tabelle</td><td>Embedding o referencing</td></tr>
+          <tr><td>Consistenza</td><td>ACID nativo</td><td>Eventual consistency (BASE)</td></tr>
+          <tr><td>Scalabilità</td><td>Verticale (più CPU/RAM)</td><td>Orizzontale (più server)</td></tr>
+          <tr><td>Query language</td><td>SQL standard</td><td>API proprietaria (find, aggregate…)</td></tr>
+          <tr><td>Ottimale per</td><td>Dati strutturati, relazioni complesse, transazioni</td><td>Big data, schemi variabili, alte scritture</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-header"><div class="section-tag">MongoDB — struttura e query base</div></div>
+    <div class="grid-2">
+      <div>
+        <pre>// MongoDB usa BSON (Binary JSON)
+// Database → Collections → Documents
+
+// Document di esempio nella collection "utenti":
+{
+  "_id": ObjectId("507f1f77bcf86cd799439011"),
+  "nome": "Mario Rossi",
+  "email": "mario@example.com",
+  "eta": 25,
+  "hobby": ["calcio", "lettura"],  // array
+  "indirizzo": {                    // documento annidato
+    "via": "Via Roma 1",
+    "citta": "Milano"
+  }
+}
+
+// I campi possono variare tra documenti
+// nella stessa collection!</pre>
+      </div>
+      <div>
+        <pre>// Query MongoDB (sintassi JavaScript)
+db.utenti.find({ eta: { $gt: 20 } })
+// equivalente SQL: SELECT * WHERE eta > 20
+
+db.utenti.findOne({ email: "mario@..." })
+// equivalente: SELECT * WHERE email=... LIMIT 1
+
+db.utenti.insertOne({
+  nome: "Luigi",
+  email: "luigi@example.com"
+})
+
+db.utenti.updateOne(
+  { _id: ObjectId("507f...") },
+  { $set: { eta: 26 } }
+)
+
+db.utenti.deleteOne({ _id: ObjectId("507f...") })</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ORM E SCALABILITÀ ══ -->
+<section class="section" id="orm">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 10 · Architetture</div>
+      <h1 class="title">ORM<br><em>e Scalabilità</em></h1>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="section-header" style="margin-top:0;"><div class="section-tag">ORM — Object-Relational Mapper</div></div>
+        <p>Un ORM mappa gli oggetti del linguaggio di programmazione alle tabelle del database, <strong>astraendo SQL</strong>.</p>
+        <pre>// Senza ORM (SQL diretto):
+$stmt = $conn->prepare("SELECT * FROM utenti WHERE id=?");
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$user = $stmt->get_result()->fetch_assoc();
+
+// Con ORM (es. Eloquent in Laravel):
+$user = User::find($id);
+$user->nome = 'Mario';
+$user->save(); // genera automaticamente UPDATE SQL
+
+// Relazioni:
+$ordini = $user->ordini; // lazy loading automatico</pre>
+        <div class="box-concetto">
+          <h4>Pro e contro degli ORM</h4>
+          <p><strong>Pro</strong>: sviluppo più rapido, meno boilerplate, portabilità tra DB, gestione automatica delle relazioni.</p>
+          <p><strong>Contro</strong>: query auto-generate possono essere inefficienti (N+1 problem), astrazione può nascondere problemi di performance, curva di apprendimento.</p>
+        </div>
+      </div>
+      <div>
+        <div class="section-header" style="margin-top:0;"><div class="section-tag">Scalabilità</div></div>
+        <div class="box-concetto">
+          <h4>Verticale (Scale Up)</h4>
+          <p>Aggiungere più CPU, RAM o storage al server esistente. Semplice ma ha un limite fisico e costi crescenti. Tradizionalmente usata con DB relazionali.</p>
+        </div>
+        <div class="box-concetto">
+          <h4>Orizzontale (Scale Out)</h4>
+          <p>Aggiungere più server. Richiede distribuzione dei dati. MongoDB e sistemi NoSQL sono progettati per questo. I DB relazionali possono scalare orizzontalmente con sharding o cluster.</p>
+        </div>
+        <div class="box-concetto">
+          <h4>Replicazione Master-Slave</h4>
+          <p>Il master gestisce le scritture. Gli slave ricevono copie sincronizzate e gestiscono le letture. Vantaggi: alta disponibilità, bilanciamento del carico in lettura, failover automatico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MINI-QUIZ ══ -->
+<section class="section" id="quiz-mini">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Modulo 10 · Verifica</div>
+      <h1 class="title">Mini-<em>quiz</em></h1>
+    </div>
+    <div class="quiz">
+      <div class="quiz-lbl">DB Avanzato · 4 domande</div>
+      <div class="qd" data-correct="2">
+        <p class="q">1. ROLLBACK in una transazione:</p>
+        <div class="qopts">
+          <button class="qo">Salva le modifiche parziali</button>
+          <button class="qo">Conferma tutte le operazioni</button>
+          <button class="qo">Annulla tutte le operazioni dall'ultima BEGIN</button>
+          <button class="qo">Crea un backup del database</button>
+        </div><div class="qfb"></div>
+      </div>
+      <div class="qd" data-correct="1">
+        <p class="q">2. EXPLAIN SELECT mostra:</p>
+        <div class="qopts">
+          <button class="qo">I dati restituiti dalla query</button>
+          <button class="qo">Il piano di esecuzione della query (tipo accesso, indici usati, righe stimate)</button>
+          <button class="qo">La documentazione della query</button>
+          <button class="qo">Le statistiche di utilizzo del database</button>
+        </div><div class="qfb"></div>
+      </div>
+      <div class="qd" data-correct="0">
+        <p class="q">3. Quale comando MySQL esporta un database in un file SQL?</p>
+        <div class="qopts">
+          <button class="qo">mysqldump -u root -p nomeDB > backup.sql</button>
+          <button class="qo">EXPORT DATABASE nomeDB TO 'backup.sql'</button>
+          <button class="qo">BACKUP TABLE * TO 'backup.sql'</button>
+          <button class="qo">mysql SAVE nomeDB > backup.sql</button>
+        </div><div class="qfb"></div>
+      </div>
+      <div class="qd" data-correct="2">
+        <p class="q">4. MongoDB differisce da MySQL principalmente perché:</p>
+        <div class="qopts">
+          <button class="qo">MongoDB non può memorizzare dati numerici</button>
+          <button class="qo">MongoDB non supporta le query</button>
+          <button class="qo">MongoDB usa documenti JSON flessibili senza schema fisso, invece di tabelle rigide</button>
+          <button class="qo">MongoDB richiede sempre più memoria di MySQL</button>
+        </div><div class="qfb"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-quote-final">
+    «Senza dati sei solo un'altra persona con un'opinione.»
+    <cite>— W. Edwards Deming, statistico e teorico della qualità</cite>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

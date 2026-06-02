@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M10 DB Avanzato -- Mappa WBS Informatica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .map-overlay{display:none;position:fixed;inset:0;background:rgba(15,46,66,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}
+    .map-overlay.show{display:flex;}
+    .map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}
+    .modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;line-height:1;}
+    .modal-close:hover{color:var(--color-deep);}
+    .modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}
+    .modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;line-height:1.1;}
+    .modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&larr; Portale</a>
+      <a href="../../../informatica.html" class="topbar-brand">Informatica</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../argomenti.html">Argomenti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../basi-db/'">M1 - Basi di Dati</button>
+      <button class="nav-btn" onclick="location.href='../php/'">M2 - PHP</button>
+      <button class="nav-btn" onclick="location.href='../javascript/'">M3 - JavaScript</button>
+      <button class="nav-btn" onclick="location.href='../sql/'">M4 - SQL</button>
+      <button class="nav-btn" onclick="location.href='../webapp/'">M5 - App Web</button>
+      <button class="nav-btn" onclick="location.href='../progettazione/'">M6 - Progettazione DB</button>
+      <button class="nav-btn" onclick="location.href='../sicurezza/'">M7 - Sicurezza</button>
+      <button class="nav-btn" onclick="location.href='../algoritmi/'">M8 - Algoritmi</button>
+      <button class="nav-btn" onclick="location.href='../api-rest/'">M9 - API REST</button>
+      <button class="nav-btn active">M10 - DB Avanzato</button>
+    </div>
+  </nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS &middot; Modulo 10</div>
+        <h2><em>DB Avanzato</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Transazioni ACID, indici, backup, NoSQL e ORM.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;">
+          <style>
+            .node{cursor:pointer;} .node-root rect{fill:var(--color-deep);} .node-root text{fill:#fff;}
+            .node-l1 rect{fill:var(--color-primary);} .node-l1 text{fill:#fff;}
+            .node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;} .node-l2 text{fill:var(--ink);}
+            .node rect{transition:filter 150ms ease;} .node:hover rect,.node:focus rect{filter:brightness(1.12);} .node:focus{outline:none;}
+          </style>
+          <g transform="translate(260,0)">
+            <path d="M 225,438 C 271,438 319,99 319,99" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,268 319,268" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,437 319,437" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,605 319,605" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 225,438 C 271,438 319,774 319,774" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <path d="M 519,99 C 584,99 650,72 650,72" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,99 C 584,99 650,129 650,129" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,268 C 584,268 650,212 650,212" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,268 C 584,268 650,269 650,269" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,268 C 584,268 650,326 650,326" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,437 C 584,437 650,409 650,409" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,437 C 584,437 650,466 650,466" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,605 C 584,605 650,549 650,549" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,605 C 584,605 650,606 650,606" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,774 C 584,774 650,746 650,746" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 519,774 C 584,774 650,804 650,804" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+            <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+              <rect x="25" y="400" width="200" height="75" rx="7"/>
+              <text><tspan x="125" y="428" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">DB Avanzato</tspan><tspan x="125" y="450" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" letter-spacing="0.06em">MODULO 10</tspan></text>
+            </g>
+
+            <g class="node node-l1" onclick="showNode('transazioni')" tabindex="0" role="button"><rect x="319" y="72" width="200" height="55" rx="5"/><text><tspan x="419" y="106" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · TRANSAZIONI</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('isolamento')" tabindex="0" role="button"><rect x="319" y="241" width="200" height="55" rx="5"/><text><tspan x="419" y="275" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · ISOLAMENTO</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('indici')" tabindex="0" role="button"><rect x="319" y="410" width="200" height="55" rx="5"/><text><tspan x="419" y="444" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · INDICI</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('nosql')" tabindex="0" role="button"><rect x="319" y="578" width="200" height="55" rx="5"/><text><tspan x="419" y="612" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · NOSQL</tspan></text></g>
+            <g class="node node-l1" onclick="showNode('architetture')" tabindex="0" role="button"><rect x="319" y="747" width="200" height="55" rx="5"/><text><tspan x="419" y="781" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · ARCHITETTURE</tspan></text></g>
+
+            <g class="node node-l2" onclick="showNode('acid')" tabindex="0" role="button"><rect x="650" y="48" width="238" height="48" rx="4"/><text><tspan x="769" y="68" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">ACID</tspan><tspan x="769" y="86" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">Atomicita' - Consistenza - Isolamento - Durabilita'</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('bcr')" tabindex="0" role="button"><rect x="650" y="105" width="238" height="48" rx="4"/><text><tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">BEGIN/COMMIT/ROLLBACK</tspan><tspan x="769" y="143" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">avvia - conferma - annulla</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('deadlock')" tabindex="0" role="button"><rect x="650" y="188" width="238" height="48" rx="4"/><text><tspan x="769" y="208" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Deadlock</tspan><tspan x="769" y="226" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">ciclo di attese reciproche</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('isolation')" tabindex="0" role="button"><rect x="650" y="245" width="238" height="48" rx="4"/><text><tspan x="769" y="265" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Livelli di isolamento</tspan><tspan x="769" y="283" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">READ COMMITTED - REPEATABLE READ</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('savepoint')" tabindex="0" role="button"><rect x="650" y="302" width="238" height="48" rx="4"/><text><tspan x="769" y="322" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">SAVEPOINT</tspan><tspan x="769" y="340" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">punto di ripristino parziale</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('btree')" tabindex="0" role="button"><rect x="650" y="385" width="238" height="48" rx="4"/><text><tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">B-tree index</tspan><tspan x="769" y="423" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">default InnoDB - range + equality</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('explain')" tabindex="0" role="button"><rect x="650" y="442" width="238" height="48" rx="4"/><text><tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">EXPLAIN</tspan><tspan x="769" y="480" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">type - key - rows - Extra</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('nosql-sql')" tabindex="0" role="button"><rect x="650" y="525" width="238" height="48" rx="4"/><text><tspan x="769" y="545" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">NoSQL vs SQL</tspan><tspan x="769" y="563" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">schema fisso vs flessibile</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('mongo')" tabindex="0" role="button"><rect x="650" y="582" width="238" height="48" rx="4"/><text><tspan x="769" y="602" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">MongoDB</tspan><tspan x="769" y="620" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">documenti BSON - collections</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('backup')" tabindex="0" role="button"><rect x="650" y="722" width="238" height="48" rx="4"/><text><tspan x="769" y="742" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Backup mysqldump</tspan><tspan x="769" y="760" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">export SQL - ripristino</tspan></text></g>
+            <g class="node node-l2" onclick="showNode('orm')" tabindex="0" role="button"><rect x="650" y="780" width="238" height="48" rx="4"/><text><tspan x="769" y="800" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">ORM</tspan><tspan x="769" y="818" text-anchor="middle" font-family="'Jost',system-ui,sans-serif" font-size="11" opacity="0.65">astrae SQL in oggetti</tspan></text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    var NODES = {
+      'root':{label:'Modulo 10',title:'Gestione avanzata dei database',text:'Transazioni per garantire consistenza, indici per le performance, backup per l\'affidabilita\', NoSQL come alternativa per certi casi d\'uso, ORM per lo sviluppo rapido, scalabilita\' per i grandi volumi. InnoDB in MySQL supporta tutto questo.'},
+      'transazioni':{label:'Area 1',title:'Transazioni ACID',text:'Una transazione e\' un gruppo di operazioni che devono essere eseguite tutte o nessuna. ACID: Atomicita\' (tutto o niente), Consistenza (stato valido), Isolamento (no interferenze), Durabilita\' (persiste dopo crash). InnoDB supporta ACID nativamente.'},
+      'isolamento':{label:'Area 2',title:'Isolamento e concorrenza',text:'Gestisce accessi concorrenti al DB. Livelli: READ UNCOMMITTED (dirty reads), READ COMMITTED (no dirty), REPEATABLE READ (default MySQL), SERIALIZABLE (massimo). Deadlock: due transazioni si bloccano. MySQL fa ROLLBACK del victim automaticamente.'},
+      'indici':{label:'Area 3',title:'Indici e ottimizzazione',text:'B-tree index: accesso rapido a range e eguaglianza. EXPLAIN mostra il piano: type=ALL e\' full scan pericoloso, key=NULL significa nessun indice usato. Aggiungere indici su colonne in WHERE/JOIN frequenti con alta cardinalita\'.'},
+      'nosql':{label:'Area 4',title:'NoSQL e MongoDB',text:'NoSQL per certi casi d\'uso: schema flessibile (schemaless), scalabilita\' orizzontale. MongoDB: documenti JSON/BSON, Collections invece di tabelle. SQL: schema fisso, ACID, JOIN. Non uno e\' superiore - diversi casi d\'uso.'},
+      'architetture':{label:'Area 5',title:'Backup, ORM e scalabilita'',text:'mysqldump per backup SQL. ORM astrae SQL in oggetti (Eloquent, Hibernate). Scalabilita\' verticale: piu\' CPU/RAM. Orizzontale: piu\' server. Replicazione master-slave per alta disponibilita\'.'},
+      'acid':{label:'Transazioni',title:'Proprieta' ACID',text:'Atomicita\': tutto o niente, ROLLBACK se errore. Consistenza: stato valido to stato valido, rispetta vincoli. Isolamento: transazioni concorrenti non si interferiscono. Durabilita\': dopo COMMIT i dati persistono anche dopo crash (transaction log).'},
+      'bcr':{label:'Transazioni',title:'BEGIN / COMMIT / ROLLBACK',text:'START TRANSACTION (BEGIN): avvia. COMMIT: conferma tutte le modifiche permanentemente. ROLLBACK: annulla tutto dall\'ultimo BEGIN. In PHP: $conn->begin_transaction(); try{...commit();}catch{rollback();}. Con SAVEPOINT per ripristini parziali.'},
+      'deadlock':{label:'Isolamento',title:'Deadlock',text:'T1 attende T2 e T2 attende T1 - ciclo. MySQL rileva automaticamente e fa ROLLBACK del victim (transazione piu\' giovane). Prevenzione: accedere alle risorse sempre nello stesso ordine, transazioni brevi, evitare SELECT FOR UPDATE non necessari.'},
+      'isolation':{label:'Isolamento',title:'Livelli di isolamento',text:'READ UNCOMMITTED: dirty reads possibili. READ COMMITTED: vede solo committed. REPEATABLE READ: default MySQL InnoDB, stessa riga stabile nella transazione. SERIALIZABLE: massimo isolamento, minima concorrenza - come esecuzione seriale.'},
+      'savepoint':{label:'Isolamento',title:'SAVEPOINT',text:'Punto di ripristino parziale dentro una transazione: SAVEPOINT sp1; ... ROLLBACK TO sp1 (torna a sp1 senza annullare tutto); RELEASE SAVEPOINT sp1 (rimuove il punto). Utile per transazioni complesse con parti recuperabili in caso di errore.'},
+      'btree':{label:'Indici',title:'B-tree index',text:'Struttura ad albero bilanciato default di InnoDB. Supporta: eguaglianza (=), range (<,>,BETWEEN), LIKE \'prefix%\', ORDER BY. NON supporta LIKE \'%suffix\'. Creato automaticamente su PK e FK. CREATE INDEX nome ON tabella(colonna) per aggiungerne.'},
+      'explain':{label:'Indici',title:'EXPLAIN',text:'EXPLAIN SELECT ... mostra: type (ALL=full scan pericoloso, ref/const=usa indice), key (quale indice, NULL se nessuno!), rows (stima righe - meno e\' meglio), Extra (Using filesort=lento, Using index=ottimale). Sintomo tipico: type=ALL con rows alto.'},
+      'nosql-sql':{label:'NoSQL',title:'SQL vs NoSQL',text:'SQL: schema fisso, ACID, JOIN, ottimale per dati strutturati e relazioni. NoSQL: schema flessibile, scalabilita\' orizzontale, ottimale per big data e schemi variabili. Non e\' una questione di quale sia migliore - scegliere in base al caso d\'uso specifico.'},
+      'mongo':{label:'NoSQL',title:'MongoDB',text:'Database to Collections to Documents (BSON/JSON). db.collection.find({campo:valore}) per query, insertOne, updateOne, deleteOne. Documenti nella stessa collection possono avere campi diversi - schema flessibile. _id generato automaticamente (ObjectId).'},
+      'backup':{label:'Architetture',title:'Backup con mysqldump',text:'mysqldump -u root -p nomeDB > backup.sql: export SQL con CREATE TABLE e INSERT. mysql -u root -p nomeDB < backup.sql: ripristino. Aggiungere | gzip per comprimere. --all-databases per backup completo. Pianificare con cron e testare regolarmente il ripristino!'},
+      'orm':{label:'Architetture',title:'ORM',text:'Mappa oggetti del linguaggio a tabelle DB astrandso SQL. Eloquent (Laravel PHP), SQLAlchemy (Python), Hibernate (Java). Pro: sviluppo rapido, meno codice SQL, portabilita\' tra DB. Contro: query generate possono essere inefficienti (N+1 problem).'},
+      'scala':{label:'Architetture',title:'Scalabilita' e replicazione',text:'Verticale: piu\' CPU/RAM allo stesso server - semplice ma limite fisico. Orizzontale: piu\' server in parallelo - NoSQL ottimizzato per questo. Replicazione master-slave: master gestisce scritture, slave letture. Alta disponibilita\' con failover automatico.'},
+    };
+    function showNode(k){var n=NODES[k];if(!n)return;document.getElementById('tip-label').textContent=n.label;document.getElementById('tip-title').textContent=n.title;document.getElementById('tip-text').textContent=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeTip(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTip();});
+  </script>
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

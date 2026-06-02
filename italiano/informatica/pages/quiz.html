@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — Informatica · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Griglia card ── */
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin: 1.5rem 0 2rem;
+    }
+    @media (max-width: 1100px) { .quiz-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .quiz-grid { grid-template-columns: 1fr; } }
+
+    .quiz-period-header { display: flex; align-items: center; gap: 1.2rem; margin-top: 2rem; margin-bottom: 1.2rem; }
+    .quiz-period-header:first-of-type { margin-top: 0; }
+    .quiz-period-label { font-family: var(--sans); font-size: 10px; letter-spacing: .36em; text-transform: uppercase; color: var(--color-primary); white-space: nowrap; flex-shrink: 0; }
+    .quiz-period-rule  { flex: 1; height: 1px; background: rgba(15,46,66,.18); }
+
+    .quiz-card-count     { font-family: var(--sans); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--color-primary); margin-bottom: .8rem; }
+
+    .author-card.quiz-card { cursor: pointer; user-select: none; }
+    .author-card.quiz-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+    /* ── Modal selezione modalità ── */
+    #qm-overlay {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(7,29,43,.72); align-items: center; justify-content: center; padding: 1rem;
+    }
+    #qm-overlay.visible { display: flex; }
+
+    #screen-home { padding: 0; align-items: stretch; text-align: initial; }
+  </style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<!-- ══ TOPBAR (sempre visibile) ══ -->
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../index.html" class="topbar-back">← Portale</a>
+    <a href="../informatica.html" class="topbar-brand">Informatica</a>
+  </div>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="argomenti.html">Argomenti</a>
+    <a class="topbar-link" href="mappe.html">Mappe</a>
+    <a class="topbar-link" href="flashcard.html">Flashcard</a>
+    <a class="topbar-link active cta" href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+
+<!-- ══════════════════════════════════════════
+     SCHERMATA 1 — HUB SELEZIONE MODULI
+══════════════════════════════════════════ -->
+<section class="screen active" id="screen-home">
+
+  <div class="hero-banner" data-initial="Q">
+    <div class="hero-banner-inner">
+      <div class="eyebrow">Home → Quiz</div>
+      <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Quiz</h1>
+      <p class="hero-banner-sub">Mettiti alla prova su ogni modulo del programma</p>
+    </div>
+  </div>
+
+  <div class="page-layout">
+
+    <aside class="page-sidebar">
+      <div class="page-sidebar-title">Moduli</div>
+      <a class="page-sidebar-item" href="#basi-di-dati">M1 · Basi di Dati</a>
+      <a class="page-sidebar-item" href="#php">M2 · PHP</a>
+      <a class="page-sidebar-item" href="#javascript">M3 · JavaScript</a>
+      <a class="page-sidebar-item" href="#sql">M4 · SQL</a>
+      <a class="page-sidebar-item" href="#applicazioni-web">M5 · App Web</a>
+      <a class="page-sidebar-item" href="#progettazione-db">M6 · Progettazione DB</a>
+      <a class="page-sidebar-item" href="#sicurezza">M7 · Sicurezza</a>
+      <a class="page-sidebar-item" href="#algoritmi">M8 · Algoritmi</a>
+      <a class="page-sidebar-item" href="#api-rest">M9 · API REST</a>
+      <a class="page-sidebar-item" href="#db-avanzato">M10 · DB Avanzato</a>
+    </aside>
+
+    <main class="page-main">
+
+      <div class="section-header" style="margin-top:0;">
+        <div class="section-tag">Per modulo</div>
+      </div>
+
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" id="basi-di-dati" onclick="openQuizModal('basi-di-dati','Basi di Dati')">
+          <span class="author-card-initial">DB</span>
+          <div class="author-card-meta">Quiz · M1 · Algebra Relazionale</div>
+          <div class="author-card-name"><em>Basi di Dati</em></div>
+          <div class="author-card-tagline">DBMS, chiavi, vincoli, algebra relazionale, ANSI/SPARC.</div>
+          <div class="quiz-card-count">55 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="php" onclick="openQuizModal('php','PHP lato Server')">
+          <span class="author-card-initial">PHP</span>
+          <div class="author-card-meta">Quiz · M2 · Server-side</div>
+          <div class="author-card-name"><em>PHP lato Server</em></div>
+          <div class="author-card-tagline">Sintassi, array, form, sessioni, MySQLi, autenticazione.</div>
+          <div class="quiz-card-count">55 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="javascript" onclick="openQuizModal('javascript','JavaScript lato Client')">
+          <span class="author-card-initial">JS</span>
+          <div class="author-card-meta">Quiz · M3 · Client-side</div>
+          <div class="author-card-name"><em>JavaScript</em></div>
+          <div class="author-card-tagline">DOM, eventi, AJAX, JSON, validazione, debugging.</div>
+          <div class="quiz-card-count">55 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="sql" onclick="openQuizModal('sql','SQL')">
+          <span class="author-card-initial">SQL</span>
+          <div class="author-card-meta">Quiz · M4 · DDL e DML</div>
+          <div class="author-card-name"><em>SQL</em></div>
+          <div class="author-card-tagline">DDL, DML, JOIN, subquery, aggregazioni, viste, trigger.</div>
+          <div class="quiz-card-count">55 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="applicazioni-web" onclick="openQuizModal('applicazioni-web','Applicazioni Web')">
+          <span class="author-card-initial">⚙</span>
+          <div class="author-card-meta">Quiz · M5 · Integrazione</div>
+          <div class="author-card-name"><em>Applicazioni Web</em></div>
+          <div class="author-card-tagline">Stack PHP+JS+MySQL, AJAX, sicurezza, CRUD, sviluppo.</div>
+          <div class="quiz-card-count">30 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="progettazione-db" onclick="openQuizModal('progettazione-db','Progettazione DB')">
+          <span class="author-card-initial">E/R</span>
+          <div class="author-card-meta">Quiz · M6 · E/R e normalizzazione</div>
+          <div class="author-card-name"><em>Progettazione DB</em></div>
+          <div class="author-card-tagline">Diagramma E/R, ISA, schema relazionale, 1NF/2NF/3NF.</div>
+          <div class="quiz-card-count">55 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="sicurezza" onclick="openQuizModal('sicurezza','Sicurezza Web')">
+          <span class="author-card-initial">SEC</span>
+          <div class="author-card-meta">Quiz · M7 · Sicurezza</div>
+          <div class="author-card-name"><em>Sicurezza Web</em></div>
+          <div class="author-card-tagline">CIA, SQL Injection, XSS, CSRF, bcrypt, sessioni, HTTPS.</div>
+          <div class="quiz-card-count">15 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="algoritmi" onclick="openQuizModal('algoritmi','Algoritmi e Strutture Dati')">
+          <span class="author-card-initial">Σ</span>
+          <div class="author-card-meta">Quiz · M8 · Algoritmi</div>
+          <div class="author-card-name"><em>Algoritmi</em></div>
+          <div class="author-card-tagline">Big-O, array, stack, queue, BST, sort, ricerca binaria, hash.</div>
+          <div class="quiz-card-count">15 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="api-rest" onclick="openQuizModal('api-rest','API REST')">
+          <span class="author-card-initial">API</span>
+          <div class="author-card-meta">Quiz · M9 · API REST</div>
+          <div class="author-card-name"><em>API REST</em></div>
+          <div class="author-card-tagline">Principi REST, HTTP, status codes, JWT, cURL, fetch().</div>
+          <div class="quiz-card-count">15 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+        <div class="author-card quiz-card" id="db-avanzato" onclick="openQuizModal('db-avanzato','DB Avanzato')">
+          <span class="author-card-initial">Ω</span>
+          <div class="author-card-meta">Quiz · M10 · DB Avanzato</div>
+          <div class="author-card-name"><em>DB Avanzato</em></div>
+          <div class="author-card-tagline">ACID, transazioni, indici, EXPLAIN, NoSQL, ORM, backup.</div>
+          <div class="quiz-card-count">15 domande</div>
+          <span class="author-card-cta link-arrow">Inizia</span>
+        </div>
+
+      </div>
+
+    </main>
+  </div><!-- /page-layout -->
+
+  <footer class="site-footer">
+    <div class="footer-quote-final">
+      «Il debug è due volte più difficile che scrivere il codice. Quindi, se scrivi il codice più brillante possibile, per definizione non sei abbastanza bravo da fare il debug.»
+      <cite>— Brian W. Kernighan, co-creatore del linguaggio C</cite>
+    </div>
+  </footer>
+
+</section><!-- /#screen-home -->
+
+
+<!-- ══════════════════════════════════════════
+     SCHERMATA 2 — QUIZ (domande)
+══════════════════════════════════════════ -->
+<section class="screen" id="screen-quiz">
+  <div class="quiz-header">
+    <div class="quiz-header-inner">
+      <button class="btn-home-q" onclick="QuizApp.confirmExit()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:.4rem"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Quiz
+      </button>
+      <div class="quiz-author-badge" id="quiz-author-label">—</div>
+      <div class="quiz-counter">Dom. <span id="qCur">1</span>/<span id="qTot">10</span></div>
+      <div class="q-prog-wrap"><div class="q-prog-fill" id="q-prog-fill"></div></div>
+      <div class="score-live">★ <span id="score-live">0</span></div>
+      <div class="timer-disp" id="timer-disp">20:00</div>
+    </div>
+  </div>
+
+  <div class="quiz-body">
+    <div class="q-card" id="q-card"></div>
+  </div>
+
+  <div class="q-map-bar">
+    <div class="q-map-inner">
+      <div class="q-map-lbl">Mappa domande</div>
+      <div class="q-dots" id="q-dots"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SCHERMATA 3 — RISULTATI
+══════════════════════════════════════════ -->
+<section class="screen" id="screen-results">
+  <div class="res-hero">
+    <div class="res-hero-inner">
+      <div class="res-eyebrow" id="res-eyebrow">Risultato Quiz</div>
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120" width="140" height="140">
+          <circle class="ring-bg" cx="60" cy="60" r="56"/>
+          <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="56"/>
+        </svg>
+        <div class="ring-txt">
+          <div class="ring-score" id="ring-score">0</div>
+          <div class="ring-total" id="ring-total">/10</div>
+        </div>
+      </div>
+      <div class="res-grade" id="res-grade">—</div>
+      <div class="res-msg" id="res-msg"></div>
+    </div>
+  </div>
+
+  <div class="res-body">
+    <div class="res-breakdown">
+      <div class="rb-card ok"><div class="rb-val" id="rb-ok">0</div><div class="rb-lbl">Corrette</div></div>
+      <div class="rb-card ko"><div class="rb-val" id="rb-ko">0</div><div class="rb-lbl">Errate</div></div>
+      <div class="rb-card op"><div class="rb-val" id="rb-op">0</div><div class="rb-lbl">Aperte</div></div>
+    </div>
+
+    <div class="rev-title">Revisione risposte</div>
+    <div class="rev-sub">Clicca su ogni domanda per vedere la risposta corretta e la spiegazione</div>
+    <div id="rev-list"></div>
+
+    <div class="res-actions">
+      <button class="btn-act primary" onclick="QuizApp.restartQuiz()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 4v6h6M23 20v-6h-6M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+        Ricomincia
+      </button>
+      <button class="btn-act secondary" onclick="QuizApp.goHome()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        Scegli altro quiz
+      </button>
+    </div>
+
+    <div class="best-record" id="best-record"></div>
+    <div class="footer-q" id="footer-q"></div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     MODAL SELEZIONE MODALITÀ
+══════════════════════════════════════════ -->
+<div id="qm-overlay" onclick="if(event.target===this)closeQuizModal()">
+  <div id="mode-panel">
+    <button class="panel-close" onclick="closeQuizModal()">&#x2715;</button>
+
+    <div id="panel-author-label"></div>
+
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:var(--ink);margin-bottom:22px;line-height:1.1;">
+      Scegli la <em style="font-style:italic;color:var(--color-deep);">modalità</em>
+    </h2>
+
+    <div class="mode-grid" id="qm-mode-grid">
+      <div class="mode-opt selected" data-mode="all" onclick="selectQuizMode(this)">
+        <div class="mode-opt-title">📚 Studio</div>
+        <div class="mode-opt-desc">10 domande miste (MC + V/F + Aperte)</div>
+      </div>
+      <div class="mode-opt" data-mode="quick" onclick="selectQuizMode(this)">
+        <div class="mode-opt-title">⚡ Rapido</div>
+        <div class="mode-opt-desc">10 domande veloci, tutte casuali</div>
+      </div>
+      <div class="mode-opt" data-mode="mc-only" onclick="selectQuizMode(this)">
+        <div class="mode-opt-title">🔵 Solo MC</div>
+        <div class="mode-opt-desc">Solo scelta multipla e Vero/Falso</div>
+      </div>
+      <div class="mode-opt" data-mode="hard" onclick="selectQuizMode(this)">
+        <div class="mode-opt-title">🔥 Aperte</div>
+        <div class="mode-opt-desc">Solo domande aperte (modalità esame)</div>
+      </div>
+    </div>
+
+    <div class="toggle-row">
+      <span>⏱ Timer 20 minuti</span>
+      <button class="toggle" id="panel-timer-toggle" onclick="toggleQuizTimer()"></button>
+      <span class="toggle-label" id="panel-timer-label">disattivato</span>
+    </div>
+
+    <div class="toggle-row">
+      <span>🔀 Ordine casuale</span>
+      <button class="toggle on" id="panel-shuffle-toggle" onclick="toggleQuizShuffle()"></button>
+    </div>
+
+    <button id="panel-start-btn" onclick="launchQuiz()">
+      Inizia il Quiz
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:.5rem"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+
+<!-- ══ DATI QUIZ ══ -->
+<script src="../js/quiz-data.js"></script>
+<script src="../js/quiz-data-new.js"></script>
+<script src="../js/quiz-data-extra.js"></script>
+
+<!-- ══ MOTORE + MAIN ══ -->
+<script src="../js/quiz-engine.js"></script>
+<script src="../js/main.js"></script>
+
+<script>
+/* ─────────────────────────────────────────────────────────────────
+   Modal selezione modalità
+───────────────────────────────────────────────────────────────── */
+var _qmKey   = '';
+var _qmMode  = 'all';
+var _qmTimer = false;
+var _qmShuf  = true;
+
+function openQuizModal(key, label) {
+  _qmKey   = key;
+  _qmMode  = 'all';
+  _qmTimer = false;
+  _qmShuf  = true;
+
+  document.querySelectorAll('#qm-mode-grid .mode-opt').forEach(function(el) {
+    el.classList.toggle('selected', el.dataset.mode === 'all');
+  });
+
+  var timerBtn = document.getElementById('panel-timer-toggle');
+  var timerLbl = document.getElementById('panel-timer-label');
+  if (timerBtn) timerBtn.classList.remove('on');
+  if (timerLbl) timerLbl.textContent = 'disattivato';
+
+  var shuffleBtn = document.getElementById('panel-shuffle-toggle');
+  if (shuffleBtn) shuffleBtn.classList.add('on');
+
+  var authorLbl = document.getElementById('panel-author-label');
+  if (authorLbl) authorLbl.textContent = label.toUpperCase();
+
+  document.getElementById('qm-overlay').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeQuizModal() {
+  document.getElementById('qm-overlay').classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+function selectQuizMode(el) {
+  document.querySelectorAll('#qm-mode-grid .mode-opt').forEach(function(o) {
+    o.classList.remove('selected');
+  });
+  el.classList.add('selected');
+  _qmMode = el.dataset.mode;
+}
+
+function toggleQuizTimer() {
+  _qmTimer = !_qmTimer;
+  var btn = document.getElementById('panel-timer-toggle');
+  var lbl = document.getElementById('panel-timer-label');
+  if (btn) btn.classList.toggle('on', _qmTimer);
+  if (lbl) lbl.textContent = _qmTimer ? '20 min' : 'disattivato';
+}
+
+function toggleQuizShuffle() {
+  _qmShuf = !_qmShuf;
+  var btn = document.getElementById('panel-shuffle-toggle');
+  if (btn) btn.classList.toggle('on', _qmShuf);
+}
+
+function launchQuiz() {
+  closeQuizModal();
+  setTimeout(function() {
+    if (window.QuizApp && window.QuizApp.startQuiz) {
+      window.QuizApp.startQuiz(_qmKey, _qmMode, _qmTimer, _qmShuf);
+    }
+  }, 60);
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeQuizModal();
+});
+</script>
+</body>
+</html>

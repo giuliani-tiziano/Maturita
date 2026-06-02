@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 4 · SQL — Informatica · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F2E42'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E4%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    code, pre { font-family: 'Courier New', Courier, monospace; }
+    pre { background: var(--beige-mid); padding: 1rem 1.2rem; border-radius: 4px; font-size: .84rem; overflow-x: auto; line-height: 1.6; border-left: 3px solid var(--color-primary); }
+    code { background: var(--beige-mid); padding: .1rem .3rem; border-radius: 2px; font-size: .88rem; }
+  </style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../index.html" class="topbar-back">← Portale</a>
+    <a href="../informatica.html" class="topbar-brand">Informatica</a>
+  </div>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="argomenti.html">Argomenti</a>
+    <a class="topbar-link" href="mappe.html">Mappe</a>
+    <a class="topbar-link" href="flashcard.html">Flashcard</a>
+    <a class="topbar-link cta" href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+    <button class="nav-btn" data-sec="ddl">DDL</button>
+    <button class="nav-btn" data-sec="select">SELECT avanzato</button>
+    <button class="nav-btn" data-sec="join">JOIN e Subquery</button>
+    <button class="nav-btn" data-sec="avanzato">Oggetti avanzati</button>
+    <button class="nav-btn" data-sec="quiz-mini">Mini-quiz</button>
+  </div>
+</nav>
+
+<!-- ══ PANORAMICA ══ -->
+<section class="section active" id="panoramica">
+  <div class="container">
+
+    <div class="hero">
+      <div class="eyebrow">Informatica · Modulo 4</div>
+      <h1 class="title">SQL<br><em>il linguaggio dei dati</em></h1>
+      <p class="subtitle">Dal DDL per creare strutture, al DML per manipolare dati, fino a JOIN, subquery e oggetti avanzati.</p>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="box-concetto">
+          <h4>DDL — Data Definition Language</h4>
+          <ul class="clean">
+            <li>CREATE TABLE · ALTER TABLE · DROP TABLE · TRUNCATE TABLE</li>
+            <li>Tipi di dato: INT, VARCHAR, TEXT, DATE, DATETIME, DECIMAL, BOOLEAN</li>
+            <li>Vincoli: NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT, AUTO_INCREMENT</li>
+          </ul>
+        </div>
+        <div class="box-concetto">
+          <h4>DML — Data Manipulation Language</h4>
+          <ul class="clean">
+            <li>INSERT INTO · UPDATE ... SET · DELETE FROM</li>
+            <li>SELECT con WHERE, ORDER BY, GROUP BY, HAVING, LIMIT, DISTINCT</li>
+            <li>Funzioni: COUNT, SUM, AVG, MAX, MIN · DATE_FORMAT(), IF(), CONCAT()</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>Query avanzate</h4>
+          <ul class="clean">
+            <li>INNER JOIN, LEFT JOIN — query multi-tabella</li>
+            <li>Subquery, ANY, ALL, IN, BETWEEN, BETWEEN</li>
+            <li>UNION vs UNION ALL</li>
+          </ul>
+        </div>
+        <div class="box-concetto">
+          <h4>Oggetti SQL</h4>
+          <ul class="clean">
+            <li>VIEW — tabella virtuale</li>
+            <li>Trigger — procedura automatica su eventi DML</li>
+            <li>Stored procedure — blocco SQL riutilizzabile</li>
+            <li>Indici — ottimizzazione delle ricerche</li>
+          </ul>
+        </div>
+        <div class="box-frase">
+          «SQL è il linguaggio con cui parli al database. Impararlo bene significa non aver mai paura dei dati.»
+          <span class="label">— Sviluppo web</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ DDL ══ -->
+<section class="section" id="ddl">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 02</div>
+      <h2>DDL — Definizione della struttura</h2>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">CREATE TABLE con vincoli <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>CREATE TABLE Studenti (
+    id        INT          AUTO_INCREMENT PRIMARY KEY,
+    matricola VARCHAR(10)  NOT NULL UNIQUE,
+    nome      VARCHAR(50)  NOT NULL,
+    cognome   VARCHAR(50)  NOT NULL,
+    email     VARCHAR(100) UNIQUE,
+    voto      INT          CHECK (voto BETWEEN 18 AND 30),
+    data_iscr DATE         DEFAULT (CURDATE()),
+    id_corso  INT,
+    FOREIGN KEY (id_corso) REFERENCES Corsi(id)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);</pre>
+        <p>Tipi di dato principali in MySQL:</p>
+        <table>
+          <thead><tr><th>Tipo</th><th>Uso</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td>INT / BIGINT</td><td>Numeri interi</td><td>BIGINT per ID molto grandi</td></tr>
+            <tr><td>VARCHAR(n)</td><td>Stringhe a lunghezza variabile</td><td>Max n caratteri</td></tr>
+            <tr><td>TEXT</td><td>Testi lunghi</td><td>No indice diretto</td></tr>
+            <tr><td>DATE</td><td>Solo data (YYYY-MM-DD)</td><td></td></tr>
+            <tr><td>DATETIME</td><td>Data e ora</td><td>YYYY-MM-DD HH:MM:SS</td></tr>
+            <tr><td>DECIMAL(p,s)</td><td>Numeri decimali precisi</td><td>p cifre totali, s decimali — per soldi!</td></tr>
+            <tr><td>BOOLEAN / TINYINT(1)</td><td>Vero/falso</td><td>0 = false, 1 = true</td></tr>
+            <tr><td>ENUM</td><td>Valori fissi</td><td>ENUM('A','B','C')</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">ALTER TABLE, DROP, TRUNCATE vs DELETE <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>-- Aggiungi colonna
+ALTER TABLE Studenti ADD COLUMN telefono VARCHAR(20);
+
+-- Modifica tipo colonna
+ALTER TABLE Studenti MODIFY COLUMN voto DECIMAL(4,2);
+
+-- Aggiungi vincolo
+ALTER TABLE Studenti ADD CONSTRAINT chk_voto CHECK (voto >= 18);
+
+-- Aggiungi indice
+ALTER TABLE Studenti ADD INDEX idx_cognome (cognome);
+
+-- Rinomina tabella
+ALTER TABLE Studenti RENAME TO Iscritti;
+
+-- Elimina tabella (struttura + dati)
+DROP TABLE IF EXISTS Studenti;
+
+-- Svuota tabella (mantiene struttura, azzera AUTO_INCREMENT)
+TRUNCATE TABLE Studenti;</pre>
+        <div class="box-concetto">
+          <h4>TRUNCATE vs DELETE FROM</h4>
+          <p>TRUNCATE: svuota la tabella in un'unica operazione, più veloce, azzera AUTO_INCREMENT, non loggabile riga per riga, non attiva trigger. DELETE FROM senza WHERE: elimina tutte le righe una per una, loggabile, attiva trigger, NON azzera AUTO_INCREMENT. Se usi una FK che referenzia la tabella, TRUNCATE potrebbe fallire.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SELECT AVANZATO ══ -->
+<section class="section" id="select">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 03</div>
+      <h2>SELECT avanzato</h2>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Sintassi completa SELECT e clausole <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>-- Struttura completa (ordine OBBLIGATORIO)
+SELECT [DISTINCT] colonne
+FROM tabella
+[WHERE condizione]
+[GROUP BY colonne]
+[HAVING condizione_gruppo]
+[ORDER BY colonne [ASC|DESC]]
+[LIMIT n [OFFSET m]];
+
+-- Esempio completo
+SELECT categoria, COUNT(*) AS totale, AVG(prezzo) AS prezzo_medio
+FROM Prodotti
+WHERE attivo = 1
+GROUP BY categoria
+HAVING totale > 5
+ORDER BY prezzo_medio DESC
+LIMIT 10;</pre>
+        <div class="box-concetto">
+          <h4>WHERE vs HAVING — differenza fondamentale</h4>
+          <p>WHERE filtra le <strong>righe singole</strong> PRIMA del raggruppamento — non può usare funzioni aggregate. HAVING filtra i <strong>gruppi</strong> DOPO GROUP BY — può usare COUNT, SUM, AVG ecc.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Funzioni di aggregazione e funzioni MySQL <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>-- Aggregazione
+SELECT COUNT(*) AS totale_righe FROM Ordini;
+SELECT COUNT(email) AS con_email FROM Utenti; -- ignora NULL
+SELECT SUM(importo) AS totale FROM Fatture;
+SELECT AVG(voto) AS media FROM Studenti WHERE voto IS NOT NULL;
+SELECT MAX(stipendio), MIN(stipendio) FROM Dipendenti;
+
+-- Funzioni su stringhe
+SELECT UPPER(nome), LOWER(cognome), LENGTH(email) FROM Utenti;
+SELECT CONCAT(nome, ' ', cognome) AS nominativo FROM Studenti;
+SELECT SUBSTRING(testo, 1, 100) AS estratto FROM Articoli;
+
+-- Funzioni su date
+SELECT DATE_FORMAT(data_nascita, '%d/%m/%Y') AS nata FROM Persone;
+SELECT YEAR(data_ordine), MONTH(data_ordine) FROM Ordini;
+SELECT DATEDIFF(NOW(), data_assunzione) AS giorni_azienda FROM Dipendenti;
+
+-- IF / CASE
+SELECT nome, IF(voto >= 60, 'Promosso', 'Bocciato') AS esito FROM Studenti;
+SELECT nome,
+    CASE WHEN voto >= 90 THEN 'Ottimo'
+         WHEN voto >= 70 THEN 'Buono'
+         ELSE 'Sufficiente' END AS livello
+FROM Studenti;</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ JOIN E SUBQUERY ══ -->
+<section class="section" id="join">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 04</div>
+      <h2>JOIN e Subquery</h2>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">INNER JOIN vs LEFT JOIN <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <table>
+          <thead><tr><th></th><th>INNER JOIN</th><th>LEFT JOIN</th></tr></thead>
+          <tbody>
+            <tr><td>Restituisce</td><td>Solo righe con corrispondenza in ENTRAMBE le tabelle</td><td>TUTTE le righe della tabella sinistra; NULL dove non c'è corrispondenza a destra</td></tr>
+            <tr><td>Uso</td><td>Quando la relazione è sempre presente (es. ordini con cliente esistente)</td><td>Quando voglio anche i record senza corrispondenza (es. clienti SENZA ordini)</td></tr>
+          </tbody>
+        </table>
+        <pre>-- INNER JOIN: ordini con dati cliente
+SELECT o.id, c.nome, o.importo
+FROM Ordini o
+INNER JOIN Clienti c ON o.id_cliente = c.id;
+
+-- LEFT JOIN: clienti CON O SENZA ordini
+SELECT c.nome, COUNT(o.id) AS num_ordini
+FROM Clienti c
+LEFT JOIN Ordini o ON c.id = o.id_cliente
+GROUP BY c.id, c.nome
+ORDER BY num_ordini DESC;
+
+-- JOIN multiplo (più tabelle)
+SELECT s.nome, c.titolo, i.data_iscrizione
+FROM Studenti s
+JOIN Iscrizioni i ON s.id = i.id_studente
+JOIN Corsi c ON i.id_corso = c.id
+WHERE c.anno = 2024;</pre>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Subquery — correlata e non correlata <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>-- Subquery non correlata (eseguita una volta)
+SELECT nome FROM Studenti
+WHERE voto > (SELECT AVG(voto) FROM Studenti);
+
+-- Subquery con IN
+SELECT nome FROM Prodotti
+WHERE id_categoria IN (SELECT id FROM Categorie WHERE attiva = 1);
+
+-- Subquery con EXISTS
+SELECT nome FROM Clienti c
+WHERE EXISTS (SELECT 1 FROM Ordini o WHERE o.id_cliente = c.id);
+
+-- Subquery correlata (eseguita per ogni riga esterna — più lenta)
+SELECT s.nome, s.voto
+FROM Studenti s
+WHERE s.voto = (SELECT MAX(s2.voto) FROM Studenti s2 WHERE s2.classe = s.classe);
+
+-- Operatori ANY e ALL
+SELECT nome FROM Studenti
+WHERE voto > ANY (SELECT voto FROM Studenti WHERE classe = 'A'); -- almeno uno
+WHERE voto > ALL (SELECT voto FROM Studenti WHERE classe = 'A'); -- tutti</pre>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">UNION — combinare risultati di più SELECT <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>-- UNION: elimina duplicati (più lento)
+SELECT nome, 'Studente' AS ruolo FROM Studenti
+UNION
+SELECT nome, 'Professore' AS ruolo FROM Professori;
+
+-- UNION ALL: mantiene duplicati (più veloce)
+SELECT id_prodotto FROM Ordini_2024
+UNION ALL
+SELECT id_prodotto FROM Ordini_2024;</pre>
+        <p>Requisiti: stesso numero di colonne, tipi compatibili. Il nome delle colonne viene preso dalla prima SELECT.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ OGGETTI AVANZATI ══ -->
+<section class="section" id="avanzato">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 05</div>
+      <h2>Viste, Trigger, Stored Procedure e Indici</h2>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">VIEW — tabella virtuale <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>-- Crea vista
+CREATE VIEW v_studenti_promossi AS
+    SELECT id, nome, cognome, voto
+    FROM Studenti
+    WHERE voto >= 60;
+
+-- Usa vista come una normale tabella
+SELECT * FROM v_studenti_promossi ORDER BY voto DESC;
+
+-- Elimina vista
+DROP VIEW IF EXISTS v_studenti_promossi;</pre>
+        <p>Vantaggi: semplifica query complesse, nasconde la struttura interna, può limitare i dati visibili. Limitazioni: VIEW con GROUP BY o UNION non è aggiornabile (no INSERT/UPDATE).</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">Trigger — procedura automatica su eventi DML <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>DELIMITER $$
+CREATE TRIGGER log_modifica_voto
+AFTER UPDATE ON Studenti
+FOR EACH ROW
+BEGIN
+    IF NEW.voto != OLD.voto THEN
+        INSERT INTO Log_Voti (id_studente, voto_old, voto_new, data_mod)
+        VALUES (OLD.id, OLD.voto, NEW.voto, NOW());
+    END IF;
+END$$
+DELIMITER ;</pre>
+        <p>Timing: BEFORE (prima dell'operazione) o AFTER (dopo). Evento: INSERT, UPDATE, DELETE. NEW = valori nuovi (dopo). OLD = valori vecchi (prima).</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-head" onclick="toggleAcc(this)">INSERT IGNORE e ON DUPLICATE KEY UPDATE <span class="acc-arrow">▼</span></button>
+      <div class="acc-body">
+        <pre>-- INSERT IGNORE: se c'è conflitto di chiave univoca, ignora silenziosamente
+INSERT IGNORE INTO Categorie (id, nome) VALUES (5, 'Elettronica');
+
+-- ON DUPLICATE KEY UPDATE: upsert — insert se non esiste, update se esiste
+INSERT INTO Visite (ip, count) VALUES ('192.168.1.1', 1)
+ON DUPLICATE KEY UPDATE count = count + 1;
+
+-- Esempio con più colonne
+INSERT INTO Prezzi (id_prod, data, prezzo) VALUES (10, CURDATE(), 29.99)
+ON DUPLICATE KEY UPDATE prezzo = VALUES(prezzo);</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ MINI-QUIZ ══ -->
+<section class="section" id="quiz-mini">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-tag">Sezione 06</div>
+      <h2>Mini-quiz · SQL</h2>
+    </div>
+
+    <div class="quiz">
+      <span class="quiz-lbl">Quiz inline · Modulo 4</span>
+      <h3>Rispondi alle domande</h3>
+
+      <div class="qd" data-correct="2">
+        <p class="q">1. Nella query con GROUP BY, la clausola HAVING serve a:</p>
+        <div class="qopts">
+          <button class="qo">Filtrare le righe prima del raggruppamento</button>
+          <button class="qo">Ordinare i gruppi in ordine alfabetico</button>
+          <button class="qo">Filtrare i gruppi dopo il raggruppamento (può usare COUNT, AVG ecc.)</button>
+          <button class="qo">Limitare il numero di righe restituite</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="0">
+        <p class="q">2. LEFT JOIN restituisce:</p>
+        <div class="qopts">
+          <button class="qo">Tutte le righe della tabella sinistra, NULL dove non c'è corrispondenza a destra</button>
+          <button class="qo">Solo le righe con corrispondenza in entrambe le tabelle</button>
+          <button class="qo">Tutte le righe di entrambe le tabelle</button>
+          <button class="qo">Le righe della tabella destra senza corrispondenza</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="1">
+        <p class="q">3. TRUNCATE TABLE differisce da DELETE FROM (senza WHERE) perché:</p>
+        <div class="qopts">
+          <button class="qo">DELETE è più veloce di TRUNCATE</button>
+          <button class="qo">TRUNCATE azzera AUTO_INCREMENT e non attiva trigger; DELETE opera riga per riga</button>
+          <button class="qo">TRUNCATE mantiene i dati, DELETE li elimina</button>
+          <button class="qo">Sono identici — usano lo stesso meccanismo interno</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="3">
+        <p class="q">4. Una VIEW in SQL è:</p>
+        <div class="qopts">
+          <button class="qo">Una copia fisica dei dati per velocizzare le query</button>
+          <button class="qo">Un indice su una o più colonne</button>
+          <button class="qo">Una procedura eseguita automaticamente su eventi DML</button>
+          <button class="qo">Una tabella virtuale definita da una query SQL salvata</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+      <div class="qd" data-correct="2">
+        <p class="q">5. Qual è la differenza tra UNION e UNION ALL?</p>
+        <div class="qopts">
+          <button class="qo">UNION mantiene i duplicati, UNION ALL li elimina</button>
+          <button class="qo">UNION funziona solo con 2 tabelle, UNION ALL con più tabelle</button>
+          <button class="qo">UNION elimina i duplicati (più lento); UNION ALL mantiene tutto (più veloce)</button>
+          <button class="qo">Non c'è differenza pratica</button>
+        </div>
+        <div class="qfb"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
