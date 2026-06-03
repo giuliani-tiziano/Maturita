@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crittografia — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E7%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="simmetrica">Simmetrica</button>
+  <button class="nav-btn" data-sec="asimmetrica">Asimmetrica</button>
+  <button class="nav-btn" data-sec="ibrido">Sistema Ibrido</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 7 (CLIL)</div><h1 class="title">Crittografia:<br><em>Principi e Crittografia Simmetrica</em></h1><p class="subtitle">I meccanismi fondamentali per proteggere le comunicazioni digitali.</p></div>
+    <div class="grid-2">
+      <div><p>La <strong>crittografia</strong> è la scienza di proteggere le informazioni trasformandole in una forma non leggibile da chi non possiede la chiave. È il fondamento della sicurezza digitale.</p>
+      <div class="box-concetto"><h4>4 Obiettivi della Crittografia</h4><ul class="clean">
+        <li><strong>Confidenzialità:</strong> solo il destinatario autorizzato può leggere il messaggio.</li>
+        <li><strong>Integrità:</strong> il messaggio non è stato alterato durante il trasporto.</li>
+        <li><strong>Autenticazione:</strong> verifica dell'identità del mittente.</li>
+        <li><strong>Non ripudio:</strong> il mittente non può negare di aver inviato il messaggio.</li>
+      </ul></div></div>
+      <div><div class="box-frase">«La crittografia non è solo matematica — è fiducia.»<span class="label">— Bruce Schneier, Applied Cryptography</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="simmetrica">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Crittografia Simmetrica</h2></div>
+    <p>Usa la <strong>stessa chiave segreta</strong> per cifrare e decifrare. Veloce ed efficiente per grandi quantità di dati. Problema principale: distribuzione sicura della chiave.</p>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Algoritmo</th><th>Chiave</th><th>Stato</th><th>Note</th></tr></thead><tbody>
+      <tr><td><strong>DES</strong></td><td>56 bit</td><td>⚠ Obsoleto</td><td>Violato con brute force nel 1999. Non usare.</td></tr>
+      <tr><td><strong>3DES</strong></td><td>112/168 bit</td><td>⚠ Legacy</td><td>Applica DES 3 volte. Lento. Deprecato.</td></tr>
+      <tr><td><strong>AES</strong></td><td>128/192/256 bit</td><td>✅ Standard</td><td>Standard NIST dal 2001. Sicuro ed efficiente.</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Perché DES è obsoleto</h4>
+      <p>DES usa una chiave di soli 56 bit → spazio delle chiavi: 2^56 ≈ 72 trilioni. Nel 1998 "Deep Crack" violò DES in 56 ore. Nel 1999, in 22 ore. Con hardware moderno: secondi. <strong>Non usare mai DES.</strong></p></div>
+  </div>
+</section>
+
+<section class="section" id="asimmetrica">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Crittografia Asimmetrica</h2></div>
+    <p>Usa una coppia di chiavi matematicamente correlate: <strong>chiave pubblica</strong> (distribuita liberamente) e <strong>chiave privata</strong> (segreta). Risolve il problema della distribuzione delle chiavi.</p>
+    <div class="box-concetto"><h4>Proprietà fondamentale</h4>
+      <p>Ciò che viene cifrato con la chiave pubblica può essere decifrato <strong>solo</strong> con la chiave privata corrispondente, e viceversa.</p>
+      <ul class="clean"><li><strong>Cifratura:</strong> mittente cifra con chiave pubblica del destinatario → solo il destinatario (con la privata) può decifrare → confidenzialità.</li><li><strong>Firma:</strong> mittente firma con la propria chiave privata → tutti possono verificare con la chiave pubblica del mittente → autenticazione e non ripudio.</li></ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>RSA</h4>
+      <p>L'algoritmo asimmetrico più diffuso. Basato sulla difficoltà di fattorizzare grandi numeri interi in fattori primi. Chiavi: 2048 o 4096 bit. Lento (~1000x rispetto ad AES). Usato per scambio chiavi, firma digitale, certificati SSL/TLS.</p></div>
+  </div>
+</section>
+
+<section class="section" id="ibrido">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>Sistema Ibrido</h2></div>
+    <p>Il sistema ibrido combina i vantaggi di entrambi i tipi di crittografia. Usato in <strong>SSL/TLS, IPsec, PGP</strong>.</p>
+    <div class="box-concetto"><h4>Come funziona</h4><ol>
+      <li><strong>Fase 1 (asimmetrica):</strong> si usa RSA/DH per scambiare in sicurezza una <em>chiave di sessione</em> simmetrica temporanea. L'asimmetrica è lenta ma sicura per piccole quantità di dati (la chiave).</li>
+      <li><strong>Fase 2 (simmetrica):</strong> tutta la comunicazione usa la chiave di sessione con AES. Molto veloce per grandi quantità di dati.</li>
+    </ol>
+    <p>Questo schema permette di avere la sicurezza dello scambio di chiavi asimmetrico con la velocità della cifratura simmetrica.</p></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«Qualsiasi persona può inventare un sistema crittografico tanto sicuro da non riuscire a decifrarlo da sola.»<cite>— Bruce Schneier</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

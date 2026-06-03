@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSL/TLS — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E10%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="handshake">Handshake</button>
+  <button class="nav-btn" data-sec="chiavi">Le 4 Chiavi</button>
+  <button class="nav-btn" data-sec="record">Record Layer</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 10 (CLIL)</div><h1 class="title">SSL/TLS<br><em>HTTPS e Handshake</em></h1><p class="subtitle">Il protocollo che rende sicure le comunicazioni su Internet.</p></div>
+    <div class="grid-2">
+      <div><p><strong>SSL/TLS</strong> è un protocollo crittografico che si inserisce tra il livello TCP e il livello applicativo (HTTP, FTP, SMTP…). Garantisce confidenzialità (cifratura), autenticazione (certificati) e integrità (MAC).</p>
+      <div class="box-concetto"><h4>SSL vs TLS</h4><ul class="clean">
+        <li>SSL 2.0, SSL 3.0: deprecati per vulnerabilità gravi.</li>
+        <li>TLS 1.0, TLS 1.1: deprecati (dal 2021 disabilitati nei browser).</li>
+        <li>TLS 1.2: ancora ampiamente usato.</li>
+        <li>TLS 1.3: standard attuale (2018) — più sicuro e più veloce.</li>
+      </ul></div></div>
+      <div><div class="box-concetto"><h4>Cipher Suite</h4><p>La cipher suite definisce l'insieme di algoritmi usati in SSL/TLS: scambio chiavi (RSA, DHE, ECDHE) + cifratura simmetrica (AES-256-GCM, ChaCha20) + hash per MAC (SHA-256, SHA-384). Negoziata durante l'handshake.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="handshake">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>SSL/TLS Handshake</h2></div>
+    <div class="box-concetto"><h4>Passi dettagliati dell'Handshake</h4><ol>
+      <li><strong>CLIENT HELLO:</strong> il client invia le cipher suite supportate + <em>nonce client</em> (byte casuali).</li>
+      <li><strong>SERVER HELLO:</strong> il server sceglie la cipher suite + invia <em>nonce server</em>.</li>
+      <li><strong>CERTIFICATO:</strong> il server invia il proprio certificato digitale X.509.</li>
+      <li><strong>(opzionale) RICHIESTA CERTIFICATO CLIENT:</strong> il server può richiedere autenticazione mutual.</li>
+      <li><strong>SERVER HELLO DONE:</strong> il server segnala la fine delle proposte.</li>
+      <li><strong>VERIFICA CERTIFICATO:</strong> il client verifica validità, CA fidata, firma, corrispondenza dominio.</li>
+      <li><strong>PRE-MASTER SECRET:</strong> il client genera bytes casuali, li cifra con la chiave pubblica del server (dal certificato), li invia.</li>
+      <li><strong>DECIFRATURA:</strong> il server decifra il pre-master secret con la propria chiave privata.</li>
+      <li><strong>MASTER SECRET:</strong> entrambi calcolano indipendentemente: <code>master_secret = f(pre_master_secret + nonce_client + nonce_server)</code></li>
+      <li><strong>4 CHIAVI DERIVATE</strong> dal master secret (vedi sezione successiva).</li>
+      <li><strong>CHANGE CIPHER SPEC + FINISHED:</strong> entrambi comunicano il passaggio alla comunicazione cifrata e si inviano il primo messaggio cifrato per verifica.</li>
+    </ol></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Sistema Ibrido in SSL/TLS</h4>
+      <p>L'handshake usa la crittografia asimmetrica (RSA o DH) solo per scambiare il pre-master secret. Tutta la comunicazione successiva usa AES con le chiavi di sessione. Combina sicurezza e prestazioni.</p></div>
+  </div>
+</section>
+
+<section class="section" id="chiavi">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Le 4 Chiavi SSL/TLS</h2></div>
+    <p>Dal master secret vengono derivate <strong>4 chiavi di sessione</strong>. La separazione per direzione aumenta la sicurezza.</p>
+    <div class="box-concetto"><ul class="clean">
+      <li><strong>Chiave di cifratura Client → Server:</strong> cifra i dati inviati dal client al server.</li>
+      <li><strong>Chiave di cifratura Server → Client:</strong> cifra i dati inviati dal server al client.</li>
+      <li><strong>Chiave MAC Client → Server:</strong> garantisce integrità dei dati inviati dal client.</li>
+      <li><strong>Chiave MAC Server → Client:</strong> garantisce integrità dei dati inviati dal server.</li>
+    </ul>
+    <p><strong>Perché 4 e non 1?</strong> Se un attaccante compromette una chiave di cifratura, non ottiene automaticamente la chiave MAC. La separazione tra funzioni e direzioni riduce il danno da una singola compromissione.</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Nonce — Numero usato una sola volta</h4>
+      <p>Il nonce client e il nonce server sono inclusi nel calcolo del master secret. Questo garantisce che ogni sessione SSL/TLS abbia chiavi di sessione uniche, anche tra gli stessi due endpoint. Previene gli attacchi replay.</p></div>
+  </div>
+</section>
+
+<section class="section" id="record">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>SSL Record Layer</h2></div>
+    <p>Il <strong>Record Layer</strong> è il livello inferiore di SSL/TLS che gestisce il trasporto effettivo dei dati.</p>
+    <div class="box-concetto"><h4>Funzionamento</h4><ol>
+      <li>Riceve i dati dall'applicazione (es. HTTP).</li>
+      <li>Frammenta in blocchi di dimensione massima.</li>
+      <li>Comprime (opzionale, raramente usato).</li>
+      <li>Aggiunge il MAC (calcolato con la chiave MAC di sessione) per l'integrità.</li>
+      <li>Cifra con la chiave di cifratura di sessione.</li>
+      <li>Aggiunge l'header SSL Record.</li>
+      <li>Invia via TCP.</li>
+    </ol>
+    <p>Il destinatario esegue il processo inverso: decifra, verifica il MAC, riassembla.</p></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«HTTPS non è un'opzione — è la norma.»<cite>— Let's Encrypt</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

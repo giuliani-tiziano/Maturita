@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud, Virtualizzazione e AD — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E16%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>.map-overlay{display:none;position:fixed;inset:0;background:rgba(8,69,80,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}.map-overlay.show{display:flex;}.map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}.modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;}.modal-close:hover{color:var(--color-deep);}.modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}.modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;}.modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}</style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+    <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a><a class="topbar-link active" href="../../pages/mappe.html">Mappe</a><a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a><a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a></nav>
+  </header>
+  <nav class="nav"><div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+    <button class="nav-btn" onclick="location.href='../arg-15-ids-ips/'">← Arg. 15</button>
+    <button class="nav-btn active">16 · Cloud/AD</button>
+    <button class="nav-btn" onclick="location.href='../arg-17-packet-tracer/'">Arg. 17 →</button>
+  </div></nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;"><div class="section-tag">Mappa WBS · Argomento 16</div><h2>Cloud, Virtualizzazione <em>e Active Directory</em></h2></div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: IaaS/PaaS/SaaS, hypervisor, RTO/RPO, backup 3-2-1, clustering, Active Directory.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 860" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--color-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--color-primary);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <g transform="translate(260,0)">
+            <path d="M -20,400 C 20,400 70,80 70,80" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,235 70,235" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,395 70,395" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,555 70,555" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,715 70,715" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M 250,80 C 285,80 330,38 330,38" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,95 330,95" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,152 330,152" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,235 C 285,235 330,198 330,198" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,235 C 285,235 330,252 330,252" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,395 C 285,395 330,352 330,352" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,395 C 285,395 330,405 330,405" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,395 C 285,395 330,462 330,462" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,512 330,512" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,565 330,565" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,622 330,622" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,715 C 285,715 330,672 330,672" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,715 C 285,715 330,725 330,725" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,715 C 285,715 330,782 330,782" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <g class="node node-root" onclick="openNode('root')" tabindex="0"><rect x="-220" y="370" width="200" height="60" rx="8"/><text x="-120" y="393" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:700;fill:white">Cloud, Virtualizzazione</text><text x="-120" y="411" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:700;fill:white">e Active Directory</text></g>
+            <g class="node node-l1" onclick="openNode('cloud')" tabindex="0"><rect x="70" y="55" width="180" height="52" rx="7"/><text x="160" y="86" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Cloud Services</text></g>
+            <g class="node node-l1" onclick="openNode('virt')" tabindex="0"><rect x="70" y="210" width="180" height="52" rx="7"/><text x="160" y="241" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Virtualizzazione</text></g>
+            <g class="node node-l1" onclick="openNode('dr')" tabindex="0"><rect x="70" y="370" width="180" height="52" rx="7"/><text x="160" y="401" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Disaster Recovery</text></g>
+            <g class="node node-l1" onclick="openNode('cluster')" tabindex="0"><rect x="70" y="530" width="180" height="52" rx="7"/><text x="160" y="561" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Clustering HA</text></g>
+            <g class="node node-l1" onclick="openNode('ad')" tabindex="0"><rect x="70" y="690" width="180" height="52" rx="7"/><text x="160" y="721" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Active Directory</text></g>
+            <g class="node node-l2" onclick="openNode('iaas')" tabindex="0"><rect x="330" y="15" width="175" height="42" rx="6"/><text x="418" y="40" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">IaaS: VM, storage, rete</text></g>
+            <g class="node node-l2" onclick="openNode('paas')" tabindex="0"><rect x="330" y="72" width="175" height="42" rx="6"/><text x="418" y="97" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">PaaS: piattaforma gestita</text></g>
+            <g class="node node-l2" onclick="openNode('saas')" tabindex="0"><rect x="330" y="129" width="175" height="42" rx="6"/><text x="418" y="154" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">SaaS: app complete browser</text></g>
+            <g class="node node-l2" onclick="openNode('hyp1')" tabindex="0"><rect x="330" y="175" width="175" height="42" rx="6"/><text x="418" y="200" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Type 1: bare metal ESXi</text></g>
+            <g class="node node-l2" onclick="openNode('hyp2')" tabindex="0"><rect x="330" y="229" width="175" height="42" rx="6"/><text x="418" y="254" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Type 2: hosted VirtualBox</text></g>
+            <g class="node node-l2" onclick="openNode('rto')" tabindex="0"><rect x="330" y="329" width="175" height="42" rx="6"/><text x="418" y="354" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">RTO: tempo ripristino</text></g>
+            <g class="node node-l2" onclick="openNode('rpo')" tabindex="0"><rect x="330" y="382" width="175" height="42" rx="6"/><text x="418" y="407" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">RPO: dati max persi</text></g>
+            <g class="node node-l2" onclick="openNode('backup321')" tabindex="0"><rect x="330" y="439" width="175" height="42" rx="6"/><text x="418" y="464" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Regola 3-2-1</text></g>
+            <g class="node node-l2" onclick="openNode('ha')" tabindex="0"><rect x="330" y="489" width="175" height="42" rx="6"/><text x="418" y="514" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Active-Passive failover</text></g>
+            <g class="node node-l2" onclick="openNode('lb')" tabindex="0"><rect x="330" y="542" width="175" height="42" rx="6"/><text x="418" y="567" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Active-Active load bal.</text></g>
+            <g class="node node-l2" onclick="openNode('no_backup')" tabindex="0"><rect x="330" y="599" width="175" height="42" rx="6"/><text x="418" y="624" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Cluster ≠ Backup!</text></g>
+            <g class="node node-l2" onclick="openNode('dc')" tabindex="0"><rect x="330" y="649" width="175" height="42" rx="6"/><text x="418" y="674" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">DC: Kerberos + LDAP</text></g>
+            <g class="node node-l2" onclick="openNode('gpo')" tabindex="0"><rect x="330" y="702" width="175" height="42" rx="6"/><text x="418" y="727" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">OU + GPO policy</text></g>
+            <g class="node node-l2" onclick="openNode('sso')" tabindex="0"><rect x="330" y="759" width="175" height="42" rx="6"/><text x="418" y="784" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">SSO + Azure AD cloud</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-label" id="modal-label"></div><div class="modal-title" id="modal-title"></div><div class="modal-text" id="modal-text"></div></div>
+  </div>
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes={
+      root:     {label:"Argomento 16",title:"Cloud, Virtualizzazione e Active Directory",text:"L'infrastruttura IT moderna si basa su cloud computing (scalabilità e flessibilità), virtualizzazione (efficienza e isolamento) e servizi di directory centralizzati (Active Directory per gestione utenti e policy). Questi pilastri permettono agli amministratori di rete di gestire ambienti complessi in modo efficiente."},
+      cloud:    {label:"Cloud",title:"Cloud Services",text:"Il cloud computing fornisce risorse IT come servizio. IaaS: infrastruttura virtuale (VM, storage, rete). PaaS: piattaforma di sviluppo gestita. SaaS: applicazioni complete accessibili via browser. Modello pay-as-you-go: si paga solo per ciò che si usa."},
+      virt:     {label:"Virtualizzazione",title:"Virtualizzazione",text:"La virtualizzazione permette di eseguire più sistemi operativi su un singolo hardware fisico tramite un hypervisor (VMM). Vantaggi: consolidamento server, risparmio energetico, isolamento, snapshot e backup rapidi, live migration senza downtime, provisioning in minuti."},
+      dr:       {label:"Disaster Recovery",title:"Disaster Recovery e Backup",text:"Il disaster recovery definisce come ripristinare i sistemi dopo un disastro. Metriche chiave: RTO e RPO. La regola 3-2-1 garantisce la sopravvivenza dei dati a guasti hardware, disastri fisici e ransomware. I backup devono essere testati regolarmente."},
+      cluster:  {label:"Clustering",title:"Clustering ad Alta Disponibilità",text:"Il clustering connette più server fisici (nodi) che appaiono come un'unica unità logica. Garantisce continuità del servizio in caso di guasto hardware. Active-Passive: un nodo attivo + uno standby. Active-Active: tutti attivi + load balancing. Importante: clustering NON è backup."},
+      ad:       {label:"Active Directory",title:"Active Directory",text:"Servizio Microsoft per la gestione centralizzata di utenti, computer, gruppi e policy. Il Domain Controller gestisce l'autenticazione (Kerberos/NTLM) e l'autorizzazione. GPO applicano policy automaticamente a tutti i PC del dominio. SSO permette un unico login per tutte le risorse."},
+      iaas:     {label:"IaaS",title:"Infrastructure as a Service",text:"Fornisce risorse di infrastruttura virtuale: VM, storage, rete. Il cliente gestisce il sistema operativo, il middleware e le applicazioni. Il provider gestisce l'hardware fisico e l'hypervisor. Esempi: AWS EC2, Azure Virtual Machines, Google Compute Engine."},
+      paas:     {label:"PaaS",title:"Platform as a Service",text:"Fornisce una piattaforma di sviluppo gestita: runtime, middleware, database, framework. Il cliente gestisce solo le applicazioni e i dati. Il provider gestisce tutto lo stack sottostante. Esempi: Heroku, Google App Engine, Azure App Service. Ideale per sviluppatori."},
+      saas:     {label:"SaaS",title:"Software as a Service",text:"Fornisce applicazioni complete accessibili via browser. Il cliente usa l'applicazione, il provider gestisce tutto. Nessuna installazione, aggiornamenti automatici. Esempi: Microsoft 365 (Exchange, Teams, SharePoint), Gmail, Salesforce, Zoom, Dropbox."},
+      hyp1:     {label:"Hypervisor Type 1",title:"Tipo 1 — Bare Metal",text:"L'hypervisor Type 1 (Bare Metal) si installa direttamente sull'hardware fisico, senza sistema operativo host sottostante. Prestazioni ottimali — accesso diretto all'hardware. Usato nei datacenter enterprise. Esempi: VMware ESXi, Microsoft Hyper-V, Proxmox VE, KVM (Linux)."},
+      hyp2:     {label:"Hypervisor Type 2",title:"Tipo 2 — Hosted",text:"L'hypervisor Type 2 si installa sopra un sistema operativo host (Windows, Linux, macOS). Meno performante del Type 1 (overhead aggiuntivo). Usato per sviluppo, testing, laboratori. Esempi: Oracle VirtualBox (gratuito), VMware Workstation, Parallels Desktop (macOS)."},
+      rto:      {label:"RTO",title:"RTO — Recovery Time Objective",text:"Tempo massimo tollerabile per ripristinare il sistema dopo un disastro. Es. RTO=4h: entro 4 ore dal guasto il sistema deve essere operativo. Un RTO basso richiede investimenti in ridondanza, failover automatico e sistemi di backup veloci."},
+      rpo:      {label:"RPO",title:"RPO — Recovery Point Objective",text:"Quantità massima di dati persi accettabile, espressa in tempo. Es. RPO=1h: si può perdere al massimo 1 ora di dati. Con RPO=1h, i backup devono essere eseguiti almeno ogni ora. Un RPO basso richiede backup frequenti o replica continua dei dati."},
+      backup321:{label:"Backup",title:"Regola 3-2-1",text:"3 copie totali dei dati. Su 2 tipi di supporto diversi (es. disco locale + NAS oppure disco + cloud). Con 1 copia fuori sede (cloud o datacenter secondario). Protegge da: guasto hardware (3 copie), guasto del tipo di media (2 media diversi), disastro fisico/ransomware (1 copia fuori sede)."},
+      ha:       {label:"HA",title:"Active-Passive — Failover",text:"In un cluster Active-Passive: un nodo (primario) è attivo e serve le richieste. Un nodo (secondario) è in standby e monitora il primario. Se il primario cade, il secondario rileva il guasto (heartbeat) e prende automaticamente il controllo (failover). Il downtime è minimo (secondi o minuti)."},
+      lb:       {label:"Load Balancing",title:"Active-Active — Load Balancing",text:"In un cluster Active-Active: tutti i nodi sono attivi e servono le richieste contemporaneamente. Il carico viene distribuito tra i nodi (load balancing). Se un nodo cade, gli altri si prendono il suo carico. Offre sia alta disponibilità che migliori prestazioni."},
+      no_backup:{label:"Importante ⚠",title:"Clustering NON è Backup",text:"Un cluster distribuisce il servizio su più nodi ma tutti accedono agli stessi dati condivisi. Un ransomware che cifra il filesystem cifra i dati su TUTTI i nodi simultaneamente. Un guasto logico (corruzione del database) colpisce tutti i nodi. Il backup è sempre necessario anche con clustering."},
+      dc:       {label:"AD",title:"Domain Controller",text:"Il Domain Controller (DC) è il server che ospita il database Active Directory. Gestisce: autenticazione degli utenti tramite Kerberos (protocollo moderno) o NTLM (legacy), autorizzazione, replica del database AD con altri DC. Ogni dominio deve avere almeno un DC. Per la ridondanza si usano più DC."},
+      gpo:      {label:"AD",title:"OU e GPO",text:"OU (Organizational Unit): contenitore logico per organizzare utenti e computer nel dominio (es. per reparto o sede). GPO (Group Policy Object): regole applicate automaticamente a tutti gli oggetti nell'OU: policy password, blocco USB, screensaver, software da installare, configurazione firewall Windows, reindirizzamento cartelle."},
+      sso:      {label:"AD",title:"SSO e Azure AD",text:"SSO (Single Sign-On): l'utente si autentica una sola volta e accede a tutte le risorse autorizzate senza re-autenticarsi. Implementato tramite Kerberos ticket in AD. Azure Active Directory: versione cloud-native di AD, usa OAuth 2.0 e SAML invece di Kerberos. Gestisce accesso ad applicazioni cloud (Office 365, Salesforce, ecc.)."}
+    };
+    function openNode(id){var n=nodes[id];if(!n)return;document.getElementById('modal-label').textContent=n.label;document.getElementById('modal-title').textContent=n.title;document.getElementById('modal-text').innerHTML=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeModal(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  </script>
+</body>
+</html>

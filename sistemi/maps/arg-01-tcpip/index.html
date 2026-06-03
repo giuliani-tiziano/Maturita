@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TCP/IP e Indirizzi IP — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .map-overlay { display:none; position:fixed; inset:0; background:rgba(8,69,80,.55); z-index:500; align-items:center; justify-content:center; padding:1rem; }
+    .map-overlay.show { display:flex; }
+    .map-modal { background:var(--paper); border:1px solid var(--color-primary); padding:2rem 2rem 1.5rem; max-width:480px; width:100%; max-height:80vh; overflow-y:auto; position:relative; }
+    .modal-close { position:absolute; top:.8rem; right:1rem; font-family:var(--serif); font-size:1.4rem; color:var(--ink-soft); background:none; border:none; cursor:pointer; line-height:1; }
+    .modal-close:hover { color:var(--color-deep); }
+    .modal-label { font-family:var(--sans); font-weight:500; font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--color-primary); margin-bottom:.5rem; }
+    .modal-title { font-family:var(--serif); font-style:italic; font-weight:500; font-size:1.6rem; color:var(--color-deep); margin-bottom:.8rem; line-height:1.1; }
+    .modal-text { font-family:var(--sans); font-weight:300; font-size:.92rem; color:var(--ink-soft); line-height:1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../index.html" class="topbar-back">← Portale</a>
+      <a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a>
+      <a class="topbar-link active" href="../../pages/mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+      <button class="nav-btn active">1 · TCP/IP</button>
+      <button class="nav-btn" onclick="location.href='../arg-02-subnetting/'">Arg. 2 →</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS · Argomento 1</div>
+        <h2>TCP/IP <em>e Indirizzi IP</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: modello TCP/IP, classi IP, indirizzi privati, TCP vs UDP, porte e IPv6.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 860" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;" aria-label="Mappa WBS TCP/IP e Indirizzi IP">
+          <style>
+            .node { cursor:pointer; }
+            .node-root rect { fill:var(--color-deep); }
+            .node-root text { fill:#fff; }
+            .node-l1 rect { fill:var(--color-primary); }
+            .node-l1 text { fill:#fff; }
+            .node-l2 rect { fill:var(--beige-mid); stroke:var(--rule-soft); stroke-width:1; }
+            .node-l2 text { fill:var(--ink); }
+            .node rect { transition:filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter:brightness(1.12); }
+            .node:focus { outline:none; }
+          </style>
+
+          <g transform="translate(260,0)">
+
+            <!-- Connessioni root → L1 -->
+            <path d="M -20,400 C 20,400 70,90 70,90" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,230 70,230" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,380 70,380" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,530 70,530" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,670 70,670" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+            <!-- Connessioni L1 → L2 -->
+            <path d="M 250,90 C 285,90 330,40 330,40" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,90 C 285,90 330,90 330,90" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,90 C 285,90 330,140 330,140" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,185 330,185" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,230 330,230" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,275 330,275" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,335 330,335" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,380 330,380" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,425 330,425" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,490 330,490" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,530 330,530" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,570 330,570" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,630 330,630" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,670 330,670" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,710 330,710" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+            <!-- ROOT -->
+            <g class="node node-root" onclick="openNode('root')" tabindex="0" role="button">
+              <rect x="-220" y="370" width="200" height="60" rx="8"/>
+              <text>
+                <tspan x="-120" y="392" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="16" font-weight="600" fill="white">TCP/IP</tspan>
+                <tspan x="-120" y="410" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" font-weight="500" letter-spacing="0.1em" fill="white">INDIRIZZI IP</tspan>
+              </text>
+            </g>
+
+            <!-- L1 -->
+            <g class="node node-l1" onclick="openNode('tcpip')" tabindex="0" role="button">
+              <rect x="70" y="64" width="180" height="52" rx="7"/>
+              <text x="160" y="95" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Modello TCP/IP</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('classi')" tabindex="0" role="button">
+              <rect x="70" y="204" width="180" height="52" rx="7"/>
+              <text x="160" y="235" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Classi IP</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('privati')" tabindex="0" role="button">
+              <rect x="70" y="354" width="180" height="52" rx="7"/>
+              <text x="160" y="385" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Indirizzi Privati</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('tcpudp')" tabindex="0" role="button">
+              <rect x="70" y="504" width="180" height="52" rx="7"/>
+              <text x="160" y="535" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">TCP vs UDP</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('porte')" tabindex="0" role="button">
+              <rect x="70" y="644" width="180" height="52" rx="7"/>
+              <text x="160" y="675" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Porte e IPv6</text>
+            </g>
+
+            <!-- L2 - Modello TCP/IP -->
+            <g class="node node-l2" onclick="openNode('l4livelli')" tabindex="0" role="button">
+              <rect x="330" y="16" width="175" height="42" rx="6"/>
+              <text x="418" y="42" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">4 Livelli TCP/IP</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('corrosi')" tabindex="0" role="button">
+              <rect x="330" y="66" width="175" height="42" rx="6"/>
+              <text x="418" y="92" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Corrispondenza OSI</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('incaps')" tabindex="0" role="button">
+              <rect x="330" y="116" width="175" height="42" rx="6"/>
+              <text x="418" y="142" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Incapsulamento</text>
+            </g>
+
+            <!-- L2 - Classi IP -->
+            <g class="node node-l2" onclick="openNode('classa')" tabindex="0" role="button">
+              <rect x="330" y="161" width="175" height="42" rx="6"/>
+              <text x="418" y="187" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Classe A (1-126 /8)</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('classb')" tabindex="0" role="button">
+              <rect x="330" y="206" width="175" height="42" rx="6"/>
+              <text x="418" y="232" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Classe B (128-191 /16)</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('classc')" tabindex="0" role="button">
+              <rect x="330" y="251" width="175" height="42" rx="6"/>
+              <text x="418" y="277" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Classe C (192-223 /24)</text>
+            </g>
+
+            <!-- L2 - Indirizzi Privati -->
+            <g class="node node-l2" onclick="openNode('rfc1918')" tabindex="0" role="button">
+              <rect x="330" y="311" width="175" height="42" rx="6"/>
+              <text x="418" y="337" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">RFC 1918</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('rangeprivati')" tabindex="0" role="button">
+              <rect x="330" y="356" width="175" height="42" rx="6"/>
+              <text x="418" y="382" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">10.x / 172.16-31.x / 192.168.x</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('noinstrad')" tabindex="0" role="button">
+              <rect x="330" y="401" width="175" height="42" rx="6"/>
+              <text x="418" y="427" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Non instradabili</text>
+            </g>
+
+            <!-- L2 - TCP vs UDP -->
+            <g class="node node-l2" onclick="openNode('tcpaff')" tabindex="0" role="button">
+              <rect x="330" y="466" width="175" height="42" rx="6"/>
+              <text x="418" y="492" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">TCP: affidabile connesso</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('udpvel')" tabindex="0" role="button">
+              <rect x="330" y="506" width="175" height="42" rx="6"/>
+              <text x="418" y="532" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">UDP: veloce senza conn.</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('handshake')" tabindex="0" role="button">
+              <rect x="330" y="546" width="175" height="42" rx="6"/>
+              <text x="418" y="572" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">3-way handshake</text>
+            </g>
+
+            <!-- L2 - Porte e IPv6 -->
+            <g class="node node-l2" onclick="openNode('wellknown')" tabindex="0" role="button">
+              <rect x="330" y="606" width="175" height="42" rx="6"/>
+              <text x="418" y="632" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Well-known 0-1023</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('porteprinc')" tabindex="0" role="button">
+              <rect x="330" y="646" width="175" height="42" rx="6"/>
+              <text x="418" y="672" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Porte principali</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('ipv6')" tabindex="0" role="button">
+              <rect x="330" y="686" width="175" height="42" rx="6"/>
+              <text x="418" y="712" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">IPv6 128 bit</text>
+            </g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal">
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+      <div class="modal-label" id="modal-label"></div>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-text" id="modal-text"></div>
+    </div>
+  </div>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes = {
+      root:       { label:'Argomento 1', title:'TCP/IP e Indirizzi IP', text:'La suite TCP/IP è il fondamento di Internet. Definisce protocolli per l\'indirizzamento, il trasporto e il routing dei dati. Un indirizzo IPv4 è composto da 32 bit, suddivisi in parte di rete e parte host. La comprensione di TCP/IP è indispensabile per configurare e diagnosticare qualsiasi rete moderna.' },
+      tcpip:      { label:'Area 1', title:'Modello TCP/IP', text:'Il modello TCP/IP ha 4 livelli: Accesso alla Rete (L1-L2 OSI), Internet (L3), Trasporto (L4) e Applicazione (L5-L7). Nasce dal progetto ARPANET negli anni \'70. A differenza del modello OSI teorico, TCP/IP è il modello implementato realmente in Internet.' },
+      classi:     { label:'Area 2', title:'Classi IP', text:'Gli indirizzi IPv4 sono divisi in classi A, B, C, D ed E. La classe determina quanti bit sono dedicati alla rete e quanti agli host. La classe A supporta poche reti enormi, la C molte reti piccole. Le classi D ed E sono riservate a multicast e ricerca.' },
+      privati:    { label:'Area 3', title:'Indirizzi Privati RFC 1918', text:'Gli indirizzi privati non sono instradabili su Internet e possono essere riutilizzati liberamente nelle reti interne. RFC 1918 definisce tre range: 10.0.0.0/8, 172.16.0.0/12 e 192.168.0.0/16. Per uscire su Internet è necessario il NAT.' },
+      tcpudp:     { label:'Area 4', title:'TCP vs UDP', text:'TCP (Transmission Control Protocol) garantisce consegna ordinata e affidabile tramite acknowledge, ritrasmissioni e controllo di flusso. UDP (User Datagram Protocol) è leggero e senza connessione, adatto a streaming e DNS. TCP usa il 3-way handshake (SYN, SYN-ACK, ACK) per stabilire la connessione.' },
+      porte:      { label:'Area 5', title:'Porte e IPv6', text:'Le porte multiplexano i servizi sullo stesso indirizzo IP. Le porte 0-1023 sono well-known (HTTP 80, HTTPS 443, SSH 22, DNS 53). IPv6 usa indirizzi a 128 bit in notazione esadecimale, risolvendo l\'esaurimento degli IPv4. Introduce auto-configurazione SLAAC e non richiede NAT.' },
+      l4livelli:  { label:'Modello TCP/IP', title:'4 Livelli TCP/IP', text:'Livello Accesso alla Rete: gestisce la trasmissione fisica e il MAC addressing (Ethernet, Wi-Fi). Livello Internet: indirizzamento IP e routing. Livello Trasporto: TCP o UDP, porte, segmentazione. Livello Applicazione: protocolli come HTTP, DNS, SMTP, FTP, SSH.' },
+      corrosi:    { label:'Modello TCP/IP', title:'Corrispondenza con OSI', text:'Il modello OSI ha 7 livelli mentre TCP/IP ne ha 4. Il livello Applicazione TCP/IP corrisponde ai livelli 5-6-7 OSI. Il livello Trasporto corrisponde al livello 4 OSI. Il livello Internet corrisponde al livello 3 OSI. Il livello Accesso alla Rete comprende i livelli 1-2 OSI.' },
+      incaps:     { label:'Modello TCP/IP', title:'Incapsulamento', text:'Ogni livello aggiunge una propria intestazione (header) ai dati del livello superiore. L\'applicazione genera dati, il trasporto aggiunge l\'header TCP/UDP (segmento/datagramma), il livello Internet aggiunge l\'header IP (pacchetto), il livello accesso aggiunge header ed eventuale trailer (frame). La destinazione esegue il processo inverso (decapsulamento).' },
+      classa:     { label:'Classi IP', title:'Classe A — /8', text:'Gli indirizzi di Classe A vanno da 1.0.0.0 a 126.255.255.255 con maschera /8 (255.0.0.0). Il primo ottetto identifica la rete, gli altri tre gli host. Ogni rete di classe A può contenere fino a 16.777.214 host. L\'indirizzo 127.x.x.x è riservato per il loopback.' },
+      classb:     { label:'Classi IP', title:'Classe B — /16', text:'Gli indirizzi di Classe B vanno da 128.0.0.0 a 191.255.255.255 con maschera /16 (255.255.0.0). I primi due ottetti identificano la rete, gli ultimi due gli host. Ogni rete di classe B può contenere fino a 65.534 host.' },
+      classc:     { label:'Classi IP', title:'Classe C — /24', text:'Gli indirizzi di Classe C vanno da 192.0.0.0 a 223.255.255.255 con maschera /24 (255.255.255.0). I primi tre ottetti identificano la rete, l\'ultimo gli host. Ogni rete di classe C può contenere fino a 254 host. È la classe più comune nelle reti aziendali piccole.' },
+      rfc1918:    { label:'Indirizzi Privati', title:'RFC 1918', text:'RFC 1918 (1996) definisce i range di indirizzi IP privati non instradabili su Internet. Questi indirizzi possono essere utilizzati liberamente da chiunque nelle reti interne, risparmiando spazio di indirizzamento pubblico. Il documento è stato redatto per affrontare l\'esaurimento degli indirizzi IPv4.' },
+      rangeprivati:{ label:'Indirizzi Privati', title:'Range di indirizzi privati', text:'I tre range privati definiti da RFC 1918 sono: 10.0.0.0 – 10.255.255.255 (/8, classe A), 172.16.0.0 – 172.31.255.255 (/12, classe B) e 192.168.0.0 – 192.168.255.255 (/16, classe C). Il range 192.168.x.x è quello più usato nelle reti domestiche.' },
+      noinstrad:  { label:'Indirizzi Privati', title:'Non instradabili su Internet', text:'I router su Internet scartano automaticamente i pacchetti con indirizzi privati sorgente o destinazione. Per comunicare con Internet una rete privata deve usare il NAT (Network Address Translation) che traduce gli indirizzi privati in un indirizzo pubblico. Questo garantisce anche un minimo di sicurezza nascondendo la topologia interna.' },
+      tcpaff:     { label:'TCP vs UDP', title:'TCP: affidabile e orientato alla connessione', text:'TCP stabilisce una connessione prima di trasmettere dati, garantisce l\'ordine dei segmenti tramite numeri di sequenza, richiede acknowledgment (ACK) per ogni segmento e ritrasmette in caso di perdita. Include controllo di flusso (finestra scorrevole) e controllo della congestione.' },
+      udpvel:     { label:'TCP vs UDP', title:'UDP: veloce e senza connessione', text:'UDP non stabilisce una connessione e non garantisce la consegna né l\'ordine dei datagrammi. È ideale per applicazioni real-time come VoIP, streaming video, videoconferenze e DNS dove la velocità è prioritaria rispetto all\'affidabilità. Il suo overhead è minimo (header di soli 8 byte).' },
+      handshake:  { label:'TCP vs UDP', title:'3-way Handshake TCP', text:'Il 3-way handshake stabilisce una connessione TCP: 1) SYN: il client invia un segmento con flag SYN e il proprio numero di sequenza iniziale; 2) SYN-ACK: il server risponde confermando il SYN e inviando il proprio; 3) ACK: il client conferma il SYN del server. La connessione è ora stabilita.' },
+      wellknown:  { label:'Porte e IPv6', title:'Porte Well-Known (0-1023)', text:'Le porte 0-1023 sono riservate ai servizi di sistema e richiedono privilegi di root per essere usate. Le principali: 20-21 FTP, 22 SSH, 23 Telnet, 25 SMTP, 53 DNS, 80 HTTP, 110 POP3, 143 IMAP, 443 HTTPS, 3389 RDP.' },
+      porteprinc: { label:'Porte e IPv6', title:'Porte registrate e dinamiche', text:'Le porte 1024-49151 sono registrate (MySQL 3306, PostgreSQL 5432, MongoDB 27017). Le porte 49152-65535 sono dinamiche/effimere, assegnate temporaneamente dal sistema operativo ai client per identificare le connessioni in uscita. Una connessione è identificata dalla quadrupla IP_src:porta_src - IP_dst:porta_dst.' },
+      ipv6:       { label:'Porte e IPv6', title:'IPv6 — 128 bit', text:'IPv6 usa indirizzi a 128 bit scritti in 8 gruppi di 4 cifre esadecimali (es. 2001:0db8::1). Supporta 3,4×10³⁸ indirizzi, eliminando l\'esaurimento IPv4. Introduce SLAAC per l\'autoconfigurazione, IPsec nativo, indirizzi link-local (fe80::/10) e non richiede NAT. La coesistenza con IPv4 avviene tramite dual-stack e tunneling.' }
+    };
+    function openNode(id) {
+      var n = nodes[id]; if (!n) return;
+      document.getElementById('modal-label').textContent = n.label;
+      document.getElementById('modal-title').textContent = n.title;
+      document.getElementById('modal-text').innerHTML = n.text;
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeModal() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificati Digitali e PKI — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E9%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="certificato">Certificato X.509</button>
+  <button class="nav-btn" data-sec="ca">CA e PKI</button>
+  <button class="nav-btn" data-sec="verifica">Verifica Browser</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 9 (CLIL)</div><h1 class="title">Certificati Digitali<br><em>e PKI</em></h1><p class="subtitle">L'infrastruttura di fiducia che rende HTTPS sicuro.</p></div>
+    <div class="grid-2">
+      <div><p>Un <strong>certificato digitale</strong> risolve il problema del "come so che la chiave pubblica che mi è stata inviata appartiene davvero a chi dice di essere?" La risposta è la firma di un ente terzo di fiducia: la <strong>CA</strong> (Certification Authority).</p></div>
+      <div><div class="box-frase">«Un certificato digitale è la carta d'identità di Internet.»<span class="label">— Glossario PKI</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="certificato">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Certificato X.509</h2></div>
+    <p>Il formato standard per i certificati digitali è <strong>X.509</strong> (standard ITU-T). Contiene:</p>
+    <div class="box-concetto"><ul class="clean">
+      <li><strong>Identità del titolare</strong> (Subject): es. www.banca.it, oppure Mario Rossi</li>
+      <li><strong>Chiave pubblica del titolare</strong></li>
+      <li><strong>Periodo di validità</strong> (Not Before / Not After)</li>
+      <li><strong>Identità della CA emittente</strong> (Issuer)</li>
+      <li><strong>Firma digitale della CA</strong> sul certificato</li>
+      <li><strong>Numero seriale</strong> (univoco per la CA)</li>
+      <li><strong>Algoritmo di firma usato</strong> (es. SHA-256 with RSA)</li>
+      <li><strong>Subject Alternative Name (SAN)</strong>: domini aggiuntivi coperti</li>
+    </ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Tipi di certificato SSL</h4><div class="table-wrap"><table class="data-table"><thead><tr><th>Tipo</th><th>Validazione</th><th>Uso tipico</th></tr></thead><tbody>
+      <tr><td><strong>DV</strong> (Domain Validation)</td><td>Solo il controllo del dominio (automatico)</td><td>Blog, siti personali</td></tr>
+      <tr><td><strong>OV</strong> (Organization Validation)</td><td>Verifica dell'identità dell'organizzazione</td><td>Siti aziendali</td></tr>
+      <tr><td><strong>EV</strong> (Extended Validation)</td><td>Verifica legale approfondita, mostra il nome azienda nel browser</td><td>Banche, e-commerce</td></tr>
+    </tbody></table></div></div>
+  </div>
+</section>
+
+<section class="section" id="ca">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>CA e PKI</h2></div>
+    <p>La <strong>CA</strong> (Certification Authority) è un ente terzo di fiducia che emette, firma e revoca certificati digitali. La sua firma sul certificato garantisce: "questa chiave pubblica appartiene davvero a questa identità".</p>
+    <div class="box-concetto"><h4>Gerarchia CA</h4><ul class="clean">
+      <li><strong>Root CA:</strong> al vertice della gerarchia. Certificato auto-firmato. Pre-installata nel browser/OS (trust store). Se compromessa, tutta la PKI è compromessa.</li>
+      <li><strong>Intermediate CA:</strong> firmata dalla Root CA, emette i certificati agli utenti finali. Protegge la Root CA (offline).</li>
+    </ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>PKI</h4>
+      <p>La <strong>PKI</strong> (Public Key Infrastructure) è l'infrastruttura completa per la gestione dei certificati: CA, RA (Registration Authority), CRL, OCSP, standard X.509, politiche di sicurezza. Permette la comunicazione sicura su scala globale (HTTPS su Internet).</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>CRL e OCSP</h4><ul class="clean">
+      <li><strong>CRL</strong> (Certificate Revocation List): lista periodica di certificati revocati pubblicata dalla CA. Il client la scarica e la consulta.</li>
+      <li><strong>OCSP</strong> (Online Certificate Status Protocol): query in tempo reale per verificare lo stato di un certificato. Più efficiente della CRL.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="section" id="verifica">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>Come il Browser Verifica un Certificato SSL</h2></div>
+    <div class="box-concetto"><h4>4 Controlli del browser</h4><ol>
+      <li><strong>Data:</strong> la data corrente è dentro il periodo di validità (Not Before ≤ oggi ≤ Not After)?</li>
+      <li><strong>CA fidata:</strong> la CA firmataria è nella lista delle CA fidate del browser (trust store)?</li>
+      <li><strong>Firma:</strong> decifra la firma della CA con la chiave pubblica della CA → ottiene l'hash del certificato → confronta con hash calcolato → integrità e autenticità verificati.</li>
+      <li><strong>Dominio:</strong> il Common Name (CN) o il Subject Alternative Name (SAN) del certificato corrisponde al dominio nell'URL?</li>
+    </ol>
+    <p>Se tutti i 4 controlli passano → lucchetto verde + connessione HTTPS sicura.</p></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«La PKI è il sistema nervoso della fiducia digitale.»<cite>— NIST SP 800-32</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

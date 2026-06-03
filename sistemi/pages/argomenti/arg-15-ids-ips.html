@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDS, IPS e Sicurezza Perimetrale — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E15%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="ids-ips">IDS vs IPS</button>
+  <button class="nav-btn" data-sec="aaa">AAA</button>
+  <button class="nav-btn" data-sec="radius">RADIUS e TACACS+</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 15</div><h1 class="title">IDS, IPS<br><em>e Sicurezza Perimetrale</em></h1><p class="subtitle">Rilevamento, prevenzione e autenticazione nella rete.</p></div>
+    <div class="grid-2">
+      <div><p>La sicurezza perimetrale non si limita al firewall. <strong>IDS</strong> e <strong>IPS</strong> monitorano il traffico per rilevare/bloccare intrusioni. I protocolli <strong>AAA</strong> (RADIUS, TACACS+) gestiscono l'autenticazione e l'autorizzazione degli accessi.</p></div>
+      <div><div class="box-frase">«Rilevare è necessario; prevenire è meglio; entrambi sono indispensabili.»<span class="label">— NIST SP 800-94</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ids-ips">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>IDS vs IPS</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Caratteristica</th><th>IDS</th><th>IPS</th></tr></thead><tbody>
+      <tr><td>Azione</td><td>Solo allarme ⚠</td><td>Blocco attivo 🔒</td></tr>
+      <tr><td>Posizionamento</td><td>Passivo (port mirroring/TAP)</td><td>Inline (nel flusso del traffico)</td></tr>
+      <tr><td>Impatto prestazioni</td><td>Nessuno</td><td>Lieve latenza aggiuntiva</td></tr>
+      <tr><td>Falsi positivi</td><td>Allarme errato = nessun danno</td><td>Blocco errato = traffico legittimo bloccato</td></tr>
+      <tr><td>Autonomia</td><td>Richiede intervento umano</td><td>Può agire autonomamente</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>HIDS vs NIDS</h4><div class="table-wrap"><table class="data-table"><thead><tr><th></th><th>HIDS (Host-based)</th><th>NIDS (Network-based)</th></tr></thead><tbody>
+      <tr><td>Installazione</td><td>Agente su ogni host</td><td>Sensore di rete (SPAN/TAP)</td></tr>
+      <tr><td>Vede</td><td>Log, file, processi, traffico locale decifrato</td><td>Traffico di rete in tempo reale</td></tr>
+      <tr><td>Pro</td><td>Analizza attività locali nascoste al NIDS</td><td>Visibilità sull'intera rete</td></tr>
+      <tr><td>Contro</td><td>Scalabilità limitata (un agente per host)</td><td>Non vede traffico cifrato (senza SSL inspection)</td></tr>
+    </tbody></table></div></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Tecniche di rilevamento</h4><ul class="clean">
+      <li><strong>Anomaly Detection:</strong> definisce baseline normale, rileva deviazioni. Pro: rileva zero-day. Contro: molti falsi positivi.</li>
+      <li><strong>Signature-based (Misuse Detection):</strong> confronta con database di firme note. Pro: preciso. Contro: non rileva zero-day, richiede aggiornamento continuo.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="section" id="aaa">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>AAA — Authentication, Authorization, Accounting</h2></div>
+    <div class="box-concetto"><h4>Le 3 funzioni AAA</h4><ul class="clean">
+      <li><strong>Authentication (Autenticazione):</strong> verifica l'identità dell'utente. "Chi sei?" — username+password, certificati, biometria.</li>
+      <li><strong>Authorization (Autorizzazione):</strong> definisce i permessi dell'utente autenticato. "Cosa puoi fare?" — accesso a certe risorse, VLAN assegnata, comandi permessi.</li>
+      <li><strong>Accounting (Contabilità):</strong> registra le attività dell'utente. "Cosa hai fatto?" — log di login/logout, comandi eseguiti, dati trasferiti. Per audit e compliance.</li>
+    </ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>NAS (Network Access Server)</h4>
+      <p>Il NAS è l'intermediario tra il client e il server AAA. Il client (es. utente Wi-Fi, client VPN) invia le credenziali al NAS (es. Access Point, switch 802.1X, VPN concentrator), che le invia al server RADIUS/TACACS+ per la verifica.</p></div>
+  </div>
+</section>
+
+<section class="section" id="radius">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>RADIUS vs TACACS+</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Caratteristica</th><th>RADIUS</th><th>TACACS+</th></tr></thead><tbody>
+      <tr><td>Protocollo</td><td>UDP porta 1812 (auth) / 1813 (accounting)</td><td>TCP porta 49</td></tr>
+      <tr><td>Cifratura</td><td>Solo la password (resto in chiaro)</td><td>Intero payload cifrato</td></tr>
+      <tr><td>Separazione AAA</td><td>Combina autenticazione e autorizzazione</td><td>Separa completamente le 3 funzioni</td></tr>
+      <tr><td>Standard</td><td>Standard aperto (RFC)</td><td>Proprietario Cisco</td></tr>
+      <tr><td>Uso tipico</td><td>Wi-Fi enterprise (WPA2-Enterprise), VPN, 802.1X</td><td>Accesso amministrativo ai dispositivi Cisco</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Flusso RADIUS</h4><ol>
+      <li>Client (utente) invia credenziali al NAS (es. AP Wi-Fi).</li>
+      <li>Il NAS invia un Access-Request al server RADIUS.</li>
+      <li>Il server RADIUS verifica le credenziali (database locale, LDAP, AD).</li>
+      <li>RADIUS risponde con Access-Accept (+ attributi: VLAN, policy) o Access-Reject.</li>
+      <li>Il NAS concede o nega l'accesso al client.</li>
+    </ol></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«Autentica, autorizza, registra: il triangolo della sicurezza degli accessi.»<cite>— NIST SP 800-63</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

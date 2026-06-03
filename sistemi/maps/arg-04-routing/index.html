@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routing: Fondamenti e Algoritmi — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E4%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .map-overlay { display:none; position:fixed; inset:0; background:rgba(8,69,80,.55); z-index:500; align-items:center; justify-content:center; padding:1rem; }
+    .map-overlay.show { display:flex; }
+    .map-modal { background:var(--paper); border:1px solid var(--color-primary); padding:2rem 2rem 1.5rem; max-width:480px; width:100%; max-height:80vh; overflow-y:auto; position:relative; }
+    .modal-close { position:absolute; top:.8rem; right:1rem; font-family:var(--serif); font-size:1.4rem; color:var(--ink-soft); background:none; border:none; cursor:pointer; line-height:1; }
+    .modal-close:hover { color:var(--color-deep); }
+    .modal-label { font-family:var(--sans); font-weight:500; font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--color-primary); margin-bottom:.5rem; }
+    .modal-title { font-family:var(--serif); font-style:italic; font-weight:500; font-size:1.6rem; color:var(--color-deep); margin-bottom:.8rem; line-height:1.1; }
+    .modal-text { font-family:var(--sans); font-weight:300; font-size:.92rem; color:var(--ink-soft); line-height:1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../index.html" class="topbar-back">← Portale</a>
+      <a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a>
+      <a class="topbar-link active" href="../../pages/mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+      <button class="nav-btn" onclick="location.href='../arg-03-nat-icmp/'">← Arg. 3</button>
+      <button class="nav-btn active">4 · Routing</button>
+      <button class="nav-btn" onclick="location.href='../arg-05-rip/'">Arg. 5 →</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS · Argomento 4</div>
+        <h2>Routing <em>Fondamenti e Algoritmi</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: tabella di routing, routing statico, dinamico, Bellman-Ford e Dijkstra.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 860" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;" aria-label="Mappa WBS Routing Fondamenti Algoritmi">
+          <style>
+            .node { cursor:pointer; }
+            .node-root rect { fill:var(--color-deep); }
+            .node-root text { fill:#fff; }
+            .node-l1 rect { fill:var(--color-primary); }
+            .node-l1 text { fill:#fff; }
+            .node-l2 rect { fill:var(--beige-mid); stroke:var(--rule-soft); stroke-width:1; }
+            .node-l2 text { fill:var(--ink); }
+            .node rect { transition:filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter:brightness(1.12); }
+            .node:focus { outline:none; }
+          </style>
+
+          <g transform="translate(260,0)">
+            <!-- Connessioni root → L1 -->
+            <path d="M -20,400 C 20,400 70,90 70,90" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,230 70,230" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,380 70,380" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,530 70,530" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,670 70,670" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+            <!-- Connessioni L1 → L2 -->
+            <path d="M 250,90 C 285,90 330,40 330,40" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,90 C 285,90 330,90 330,90" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,90 C 285,90 330,140 330,140" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,185 330,185" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,230 330,230" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,275 330,275" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,335 330,335" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,380 330,380" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,425 330,425" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,490 330,490" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,530 330,530" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,570 330,570" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,630 330,630" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,670 330,670" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,710 330,710" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+            <!-- ROOT -->
+            <g class="node node-root" onclick="openNode('root')" tabindex="0" role="button">
+              <rect x="-220" y="370" width="200" height="60" rx="8"/>
+              <text>
+                <tspan x="-120" y="392" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="15" font-weight="600" fill="white">Routing</tspan>
+                <tspan x="-120" y="410" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" font-weight="500" letter-spacing="0.08em" fill="white">FONDAMENTI E ALGORITMI</tspan>
+              </text>
+            </g>
+
+            <!-- L1 -->
+            <g class="node node-l1" onclick="openNode('tabella')" tabindex="0" role="button">
+              <rect x="70" y="64" width="180" height="52" rx="7"/>
+              <text x="160" y="95" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Tabella di Routing</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('statico')" tabindex="0" role="button">
+              <rect x="70" y="204" width="180" height="52" rx="7"/>
+              <text x="160" y="235" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Routing Statico</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('dinamico')" tabindex="0" role="button">
+              <rect x="70" y="354" width="180" height="52" rx="7"/>
+              <text x="160" y="385" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Routing Dinamico</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('bellmanford')" tabindex="0" role="button">
+              <rect x="70" y="504" width="180" height="52" rx="7"/>
+              <text x="160" y="535" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Bellman-Ford (DV)</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('dijkstra')" tabindex="0" role="button">
+              <rect x="70" y="644" width="180" height="52" rx="7"/>
+              <text x="160" y="675" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Dijkstra (LS)</text>
+            </g>
+
+            <!-- L2 - Tabella di Routing -->
+            <g class="node node-l2" onclick="openNode('destmask')" tabindex="0" role="button">
+              <rect x="330" y="16" width="175" height="42" rx="6"/>
+              <text x="418" y="42" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Destinazione/Mask</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('nexthop')" tabindex="0" role="button">
+              <rect x="330" y="66" width="175" height="42" rx="6"/>
+              <text x="418" y="92" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Next-Hop</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('metrica')" tabindex="0" role="button">
+              <rect x="330" y="116" width="175" height="42" rx="6"/>
+              <text x="418" y="142" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Metrica / Interfaccia</text>
+            </g>
+
+            <!-- L2 - Routing Statico -->
+            <g class="node node-l2" onclick="openNode('manuale')" tabindex="0" role="button">
+              <rect x="330" y="161" width="175" height="42" rx="6"/>
+              <text x="418" y="187" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Configurazione manuale</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('prostatic')" tabindex="0" role="button">
+              <rect x="330" y="206" width="175" height="42" rx="6"/>
+              <text x="418" y="232" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Pro: semplice, zero overhead</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('constatic')" tabindex="0" role="button">
+              <rect x="330" y="251" width="175" height="42" rx="6"/>
+              <text x="418" y="277" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Contro: non adattivo</text>
+            </g>
+
+            <!-- L2 - Routing Dinamico -->
+            <g class="node node-l2" onclick="openNode('autoupdate')" tabindex="0" role="button">
+              <rect x="330" y="311" width="175" height="42" rx="6"/>
+              <text x="418" y="337" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Aggiornamento automatico</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('prodin')" tabindex="0" role="button">
+              <rect x="330" y="356" width="175" height="42" rx="6"/>
+              <text x="418" y="382" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Pro: adattivo e scalabile</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('condin')" tabindex="0" role="button">
+              <rect x="330" y="401" width="175" height="42" rx="6"/>
+              <text x="418" y="427" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Contro: overhead traffico</text>
+            </g>
+
+            <!-- L2 - Bellman-Ford -->
+            <g class="node node-l2" onclick="openNode('solovicini')" tabindex="0" role="button">
+              <rect x="330" y="466" width="175" height="42" rx="6"/>
+              <text x="418" y="492" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Conosce solo vicini</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('vettori')" tabindex="0" role="button">
+              <rect x="330" y="506" width="175" height="42" rx="6"/>
+              <text x="418" y="532" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Scambia vettori distanza</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('ripbf')" tabindex="0" role="button">
+              <rect x="330" y="546" width="175" height="42" rx="6"/>
+              <text x="418" y="572" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">RIP — O(V×E)</text>
+            </g>
+
+            <!-- L2 - Dijkstra -->
+            <g class="node node-l2" onclick="openNode('lsdb')" tabindex="0" role="button">
+              <rect x="330" y="606" width="175" height="42" rx="6"/>
+              <text x="418" y="632" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Mappa completa LSDB</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('spt')" tabindex="0" role="button">
+              <rect x="330" y="646" width="175" height="42" rx="6"/>
+              <text x="418" y="672" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">SPT percorso minimo</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('ospfdijk')" tabindex="0" role="button">
+              <rect x="330" y="686" width="175" height="42" rx="6"/>
+              <text x="418" y="712" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">OSPF — O(E log V)</text>
+            </g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal">
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+      <div class="modal-label" id="modal-label"></div>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-text" id="modal-text"></div>
+    </div>
+  </div>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes = {
+      root:        { label:'Argomento 4', title:'Routing: Fondamenti e Algoritmi', text:'Il routing è il processo con cui i router scelgono il percorso migliore per instradare i pacchetti IP verso la destinazione. Può essere statico (configurato manualmente) o dinamico (appreso tramite protocolli). Gli algoritmi fondamentali sono Bellman-Ford (Distance Vector) e Dijkstra (Link-State).' },
+      tabella:     { label:'Area 1', title:'Tabella di Routing', text:'La routing table è il database locale del router, consultato per ogni pacchetto in arrivo. Contiene voci con destinazione di rete/maschera, next-hop (prossimo router), metrica (costo del percorso) e interfaccia di uscita. Il router sceglie la voce con il prefisso più lungo (longest prefix match).' },
+      statico:     { label:'Area 2', title:'Routing Statico', text:'Le rotte statiche sono inserite manualmente dall\'amministratore con il comando "ip route". Non si aggiornano automaticamente al variare della topologia. Adatte a reti piccole o per definire rotte di default. Il vantaggio è la semplicità e l\'assenza di traffico overhead; lo svantaggio è la mancanza di adattamento ai guasti.' },
+      dinamico:    { label:'Area 3', title:'Routing Dinamico', text:'I protocolli di routing dinamico permettono ai router di scambiare informazioni sulla topologia e aggiornare automaticamente le tabelle. Si adattano ai cambiamenti della rete (link down, nuovi router). Generano traffico aggiuntivo (overhead) ma garantiscono convergenza automatica. Esempi: RIP, OSPF, BGP.' },
+      bellmanford: { label:'Area 4', title:'Algoritmo Bellman-Ford (Distance Vector)', text:'Ogni router conosce solo i vicini diretti e la distanza verso di loro. Scambia periodicamente il proprio vettore di distanza con i vicini. Ogni router aggiorna la propria tabella basandosi sui vettori ricevuti. Problemi: convergenza lenta, count-to-infinity. Usato da RIP.' },
+      dijkstra:    { label:'Area 5', title:'Algoritmo di Dijkstra (Link-State)', text:'Ogni router ha una mappa completa della rete (LSDB) ottenuta tramite flooding degli LSA. Esegue Dijkstra per calcolare lo Shortest Path Tree verso tutte le destinazioni. Convergenza rapida, nessun count-to-infinity. Complessità O(E log V). Usato da OSPF.' },
+      destmask:    { label:'Tabella Routing', title:'Destinazione e Maschera', text:'Ogni voce della routing table specifica la rete di destinazione e la sua maschera di sottorete. Il router confronta l\'IP destinazione del pacchetto con le voci della tabella usando il bitwise AND con la maschera. Vince la voce con il prefisso più lungo (longest prefix match — LPM).' },
+      nexthop:     { label:'Tabella Routing', title:'Next-Hop', text:'Il next-hop è l\'indirizzo IP del router successivo verso cui inviare il pacchetto. Se la rete di destinazione è direttamente connessa, non c\'è next-hop (consegna diretta). Per le reti remote, il next-hop è il router vicino che ci avvicina alla destinazione.' },
+      metrica:     { label:'Tabella Routing', title:'Metrica e Interfaccia di uscita', text:'La metrica quantifica il "costo" del percorso: RIP usa gli hop count, OSPF usa la larghezza di banda, EIGRP usa un composto di banda e ritardo. A parità di destinazione, il router preferisce la voce con metrica minore. L\'interfaccia di uscita indica da quale porta fisica inviare il pacchetto.' },
+      manuale:     { label:'Routing Statico', title:'Configurazione manuale', text:'Le rotte statiche si configurano con il comando Cisco "ip route [rete] [maschera] [next-hop o interfaccia]". Esempio: "ip route 192.168.2.0 255.255.255.0 10.0.0.2". La rotta di default è "ip route 0.0.0.0 0.0.0.0 [next-hop]" e indica dove mandare i pacchetti per destinazioni non in tabella.' },
+      prostatic:   { label:'Routing Statico', title:'Vantaggi del routing statico', text:'Configurazione semplice e prevedibile. Nessun overhead di traffico per scambio di aggiornamenti. Nessun consumo extra di CPU/RAM per algoritmi di routing. Adatto a piccole reti con topologia stabile, reti stub (con un solo percorso verso l\'esterno), e per definire rotte predefinite (default route).' },
+      constatic:   { label:'Routing Statico', title:'Svantaggi del routing statico', text:'Non si adatta automaticamente ai guasti della rete: se un link cade, il traffico continua ad essere inviato verso la rotta configurata anche se non funziona. Richiedere intervento manuale per ogni cambiamento topologico. Non scalabile per reti grandi con molte rotte da gestire.' },
+      autoupdate:  { label:'Routing Dinamico', title:'Aggiornamento automatico della topologia', text:'I protocolli di routing dinamico propagano informazioni sulla topologia tra i router. Quando un link cade o una nuova rete è aggiunta, l\'informazione si diffonde automaticamente e i router aggiornano le loro tabelle. Il tempo necessario perché tutti i router abbiano una visione coerente si chiama tempo di convergenza.' },
+      prodin:      { label:'Routing Dinamico', title:'Vantaggi del routing dinamico', text:'Adattamento automatico ai guasti: se un percorso diventa indisponibile, i router trovano automaticamente percorsi alternativi. Scalabile: funziona in reti con migliaia di router. Non richiede intervento manuale per ogni cambiamento. Esempi di protocolli: RIPv2, OSPF, EIGRP (IGP), BGP (EGP).' },
+      condin:      { label:'Routing Dinamico', title:'Svantaggi del routing dinamico', text:'Genera traffico overhead nella rete per scambiare aggiornamenti di routing. Richiede CPU e RAM per elaborare gli aggiornamenti e eseguire gli algoritmi. La configurazione è più complessa. Può essere vulnerabile ad attacchi se non autenticato. Richiede tempo per convergere dopo un cambio di topologia.' },
+      solovicini:  { label:'Bellman-Ford', title:'Conosce solo i vicini diretti', text:'Nei protocolli Distance Vector, ogni router conosce solo le reti direttamente connesse e i costi dei link verso i router vicini. Non ha una mappa completa della rete. La conoscenza globale emerge gradualmente attraverso lo scambio iterativo dei vettori di distanza tra vicini adiacenti.' },
+      vettori:     { label:'Bellman-Ford', title:'Scambio di vettori di distanza', text:'Ogni router invia periodicamente ai vicini il proprio vettore di distanza: una lista di tutte le destinazioni con la relativa metrica. I vicini aggiornano la propria tabella applicando la regola di Bellman-Ford: D(x,y) = min sui vicini v di [c(x,v) + D(v,y)]. Il processo converge iterativamente.' },
+      ripbf:       { label:'Bellman-Ford', title:'RIP usa Bellman-Ford', text:'RIP (Routing Information Protocol) implementa l\'algoritmo Bellman-Ford con hop count come metrica. La complessità temporale è O(V×E) dove V è il numero di nodi e E il numero di archi. La convergenza può essere lenta in reti grandi e soffre del problema count-to-infinity.' },
+      lsdb:        { label:'Dijkstra', title:'LSDB — Link State Database', text:'Nei protocolli Link-State, ogni router diffonde (flooding) i propri LSA (Link State Advertisement) a tutti i router della rete. Dopo il flooding, ogni router ha una mappa completa e identica della topologia nella propria LSDB. Su questa mappa viene poi eseguito l\'algoritmo di Dijkstra.' },
+      spt:         { label:'Dijkstra', title:'Shortest Path Tree', text:'Dijkstra calcola l\'albero dei cammini minimi (SPT) dal router sorgente verso tutte le destinazioni. Costruisce iterativamente l\'albero espandendo il nodo non ancora visitato con costo minore. Il risultato è l\'insieme dei percorsi ottimali verso ogni rete della topologia.' },
+      ospfdijk:    { label:'Dijkstra', title:'OSPF usa Dijkstra', text:'OSPF (Open Shortest Path First) implementa l\'algoritmo di Dijkstra. La complessità è O(E log V) con heap binario. Ogni volta che la topologia cambia (nuovo LSA ricevuto), OSPF riesegue Dijkstra sulla LSDB aggiornata. La convergenza è molto più rapida di RIP.' }
+    };
+    function openNode(id) {
+      var n = nodes[id]; if (!n) return;
+      document.getElementById('modal-label').textContent = n.label;
+      document.getElementById('modal-title').textContent = n.title;
+      document.getElementById('modal-text').innerHTML = n.text;
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeModal() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>

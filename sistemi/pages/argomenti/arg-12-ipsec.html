@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPsec — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E12%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="ah-esp">AH vs ESP</button>
+  <button class="nav-btn" data-sec="ike">IKE Fase 1 e 2</button>
+  <button class="nav-btn" data-sec="modalita">Modalità</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 12</div><h1 class="title">IPsec<br><em>Framework di Sicurezza IP</em></h1><p class="subtitle">Il protocollo di sicurezza standard per le VPN aziendali.</p></div>
+    <div class="grid-2">
+      <div><p><strong>IPsec</strong> è un framework di protocolli a Layer 3 che protegge qualsiasi comunicazione IP in modo <strong>trasparente alle applicazioni</strong>. Non è un singolo protocollo ma una suite che combina diversi componenti.</p>
+      <div class="box-concetto"><h4>4 Proprietà garantite da IPsec</h4><ul class="clean">
+        <li><strong>Riservatezza:</strong> i dati sono cifrati (ESP).</li>
+        <li><strong>Integrità:</strong> i dati non possono essere alterati senza rilevamento (AH o ESP).</li>
+        <li><strong>Autenticazione:</strong> verifica dell'identità delle parti (IKE).</li>
+        <li><strong>Anti-Replay:</strong> sequence number, protegge da attacchi replay.</li>
+      </ul></div></div>
+      <div><div class="box-concetto"><h4>Componenti IPsec</h4><ul class="clean">
+        <li>Protocolli: AH e ESP</li>
+        <li>Cifratura: DES (obsoleto), 3DES (legacy), AES</li>
+        <li>Hash/autenticazione: MD5 (sconsigliato), SHA-1, SHA-256/512</li>
+        <li>Scambio chiavi: Diffie-Hellman (Gruppo 14+ raccomandato)</li>
+        <li>Negoziazione: IKE (Internet Key Exchange)</li>
+      </ul></div></div>
+    </div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>SA (Security Association)</h4>
+      <p>Una SA è l'insieme di parametri e chiavi per proteggere il traffico in UNA direzione. Identificata da: SPI (Security Parameter Index) + IP destinazione + protocollo (AH o ESP). Per comunicazione bidirezionale servono 2 SA. Memorizzata nel SAD (Security Association Database).</p></div>
+  </div>
+</section>
+
+<section class="section" id="ah-esp">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>AH vs ESP</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Caratteristica</th><th>AH (Authentication Header)</th><th>ESP (Encapsulating Security Payload)</th></tr></thead><tbody>
+      <tr><td>Numero protocollo IP</td><td>51</td><td>50</td></tr>
+      <tr><td>Cifratura</td><td>❌ No</td><td>✅ Sì</td></tr>
+      <tr><td>Autenticazione</td><td>✅ Sì (include header IP)</td><td>✅ Sì (solo payload)</td></tr>
+      <tr><td>Compatibilità NAT</td><td>❌ Problemi (autentica header IP che NAT modifica)</td><td>✅ OK con NAT-T (UDP 4500)</td></tr>
+      <tr><td>Uso attuale</td><td>Raro</td><td>Standard per VPN moderne</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>NAT Traversal (NAT-T)</h4>
+      <p>ESP non è compatibile nativamente con NAT (NAT modifica gli header IP, invalidando l'autenticazione). NAT-T risolve il problema incapsulando ESP dentro UDP sulla porta 4500, permettendo a IPsec di funzionare attraverso i dispositivi NAT.</p></div>
+  </div>
+</section>
+
+<section class="section" id="ike">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>IKE — Internet Key Exchange</h2></div>
+    <p>IKE è il protocollo che negozia automaticamente le SA tra i due gateway IPsec. Senza IKE, ogni SA dovrebbe essere configurata manualmente. Usa UDP porta 500 (4500 con NAT-T).</p>
+    <div class="box-concetto"><h4>IKE Fase 1 — Crea il tunnel di gestione (ISAKMP SA)</h4><ol>
+      <li>Negoziazione parametri: algoritmo hash, gruppo DH, algoritmo cifratura, lifetime.</li>
+      <li>Scambio Diffie-Hellman: generazione del materiale crittografico condiviso.</li>
+      <li>Autenticazione: con PSK (Pre-Shared Key) o con certificati RSA.</li>
+    </ol>
+    <div class="table-wrap" style="margin-top:.8rem"><table class="data-table"><thead><tr><th>Modalità</th><th>Messaggi</th><th>Identità</th><th>Uso</th></tr></thead><tbody>
+      <tr><td>Main Mode</td><td>6 messaggi</td><td>Protetta (cifrata)</td><td>Site-to-site con IP fisso</td></tr>
+      <tr><td>Aggressive Mode</td><td>3 messaggi</td><td>In chiaro (meno sicura)</td><td>Remote-access con IP dinamico</td></tr>
+    </tbody></table></div></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>IKE Fase 2 — Quick Mode (3 messaggi)</h4>
+      <p>Dentro il tunnel sicuro di Fase 1, negozia le SA per il traffico dati reale: protocollo (AH/ESP), modalità (trasporto/tunnel), algoritmi, lifetime. Produce le coppie di SA usate da IPsec per proteggere il traffico effettivo.</p>
+      <p><strong>PFS (Perfect Forward Secrecy):</strong> esegue un nuovo scambio DH in Fase 2 per ogni SA. Chiavi indipendenti dalla Fase 1. Se una chiave è compromessa, non espone le sessioni passate o future.</p></div>
+  </div>
+</section>
+
+<section class="section" id="modalita">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>Modalità di Incapsulamento</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Caratteristica</th><th>Modalità Trasporto</th><th>Modalità Tunnel</th></tr></thead><tbody>
+      <tr><td>Header IP originale</td><td>Visibile (usato come header esterno)</td><td>Nascosto (nuovo header IP aggiunto)</td></tr>
+      <tr><td>Cosa protegge</td><td>Solo il payload IP</td><td>Header IP + payload (intero pacchetto)</td></tr>
+      <tr><td>Privacy IP originali</td><td>No — IP sorgente/destinazione visibili</td><td>Sì — IP originali nascosti</td></tr>
+      <tr><td>Overhead</td><td>Minore</td><td>Maggiore (header extra)</td></tr>
+      <tr><td>Uso tipico</td><td>Host-to-host (es. all'interno di una LAN)</td><td>VPN site-to-site tra gateway</td></tr>
+    </tbody></table></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«IPsec è il fondamento delle VPN aziendali sicure.»<cite>— IETF RFC 4301</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

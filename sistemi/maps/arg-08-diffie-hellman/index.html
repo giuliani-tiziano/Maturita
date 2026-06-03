@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diffie-Hellman, Hash, MAC, Firma — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E8%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>.map-overlay{display:none;position:fixed;inset:0;background:rgba(8,69,80,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}.map-overlay.show{display:flex;}.map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}.modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;}.modal-close:hover{color:var(--color-deep);}.modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}.modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;}.modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}</style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+    <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a><a class="topbar-link active" href="../../pages/mappe.html">Mappe</a><a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a><a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a></nav>
+  </header>
+  <nav class="nav"><div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+    <button class="nav-btn" onclick="location.href='../arg-07-crittografia/'">← Arg. 7</button>
+    <button class="nav-btn active">8 · DH/Hash/Firma</button>
+    <button class="nav-btn" onclick="location.href='../arg-09-pki/'">Arg. 9 →</button>
+  </div></nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;"><div class="section-tag">Mappa WBS · Argomento 8 (CLIL)</div><h2>Diffie-Hellman, Hash, <em>MAC e Firma Digitale</em></h2></div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: scambio chiavi DH, funzioni hash, MAC/HMAC, firma digitale, MFA.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 860" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--color-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--color-primary);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <g transform="translate(260,0)">
+            <path d="M -20,400 C 20,400 70,80 70,80" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,230 70,230" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,380 70,380" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,530 70,530" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,690 70,690" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M 250,80 C 285,80 330,40 330,40" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,95 330,95" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,150 330,150" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,230 C 285,230 330,195 330,195" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,230 C 285,230 330,250 330,250" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,230 C 285,230 330,305 330,305" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,380 C 285,380 330,345 330,345" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,380 C 285,380 330,395" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,530 C 285,530 330,495 330,495" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,530 C 285,530 330,545 330,545" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,530 C 285,530 330,600 330,600" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,690 C 285,690 330,650 330,650" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,690 C 285,690 330,705 330,705" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,690 C 285,690 330,760 330,760" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <g class="node node-root" onclick="openNode('root')" tabindex="0"><rect x="-220" y="370" width="200" height="60" rx="8"/><text x="-120" y="396" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:700;fill:white">DH · Hash · MAC</text><text x="-120" y="414" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:rgba(255,255,255,.8)">Firma Digitale · MFA</text></g>
+            <g class="node node-l1" onclick="openNode('dh')" tabindex="0"><rect x="70" y="55" width="180" height="52" rx="7"/><text x="160" y="86" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Diffie-Hellman</text></g>
+            <g class="node node-l1" onclick="openNode('hash')" tabindex="0"><rect x="70" y="205" width="180" height="52" rx="7"/><text x="160" y="236" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Hash Crittografico</text></g>
+            <g class="node node-l1" onclick="openNode('mac')" tabindex="0"><rect x="70" y="355" width="180" height="52" rx="7"/><text x="160" y="386" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">MAC e HMAC</text></g>
+            <g class="node node-l1" onclick="openNode('firma')" tabindex="0"><rect x="70" y="505" width="180" height="52" rx="7"/><text x="160" y="536" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Firma Digitale</text></g>
+            <g class="node node-l1" onclick="openNode('mfa')" tabindex="0"><rect x="70" y="665" width="180" height="52" rx="7"/><text x="160" y="696" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">MFA</text></g>
+            <g class="node node-l2" onclick="openNode('dh_canale')" tabindex="0"><rect x="330" y="17" width="175" height="42" rx="6"/><text x="418" y="42" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Scambio su canale pubblico</text></g>
+            <g class="node node-l2" onclick="openNode('dh_log')" tabindex="0"><rect x="330" y="72" width="175" height="42" rx="6"/><text x="418" y="97" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Basato log. discreto</text></g>
+            <g class="node node-l2" onclick="openNode('dh_uso')" tabindex="0"><rect x="330" y="127" width="175" height="42" rx="6"/><text x="418" y="152" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">IPsec IKE · TLS handshake</text></g>
+            <g class="node node-l2" onclick="openNode('hash_prop')" tabindex="0"><rect x="330" y="172" width="175" height="42" rx="6"/><text x="418" y="197" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">One-way · Effetto valanga</text></g>
+            <g class="node node-l2" onclick="openNode('sha256')" tabindex="0"><rect x="330" y="227" width="175" height="42" rx="6"/><text x="418" y="252" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">SHA-256 standard · MD5 depr.</text></g>
+            <g class="node node-l2" onclick="openNode('hash_uso')" tabindex="0"><rect x="330" y="282" width="175" height="42" rx="6"/><text x="418" y="307" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Integrità · Password · Firma</text></g>
+            <g class="node node-l2" onclick="openNode('mac_def')" tabindex="0"><rect x="330" y="322" width="175" height="42" rx="6"/><text x="418" y="347" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Hash + chiave segreta</text></g>
+            <g class="node node-l2" onclick="openNode('hmac')" tabindex="0"><rect x="330" y="372" width="175" height="42" rx="6"/><text x="418" y="397" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">HMAC-SHA256 in TLS/IPsec</text></g>
+            <g class="node node-l2" onclick="openNode('firma_priv')" tabindex="0"><rect x="330" y="472" width="175" height="42" rx="6"/><text x="418" y="497" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Hash cifrato con chiave priv.</text></g>
+            <g class="node node-l2" onclick="openNode('firma_ver')" tabindex="0"><rect x="330" y="522" width="175" height="42" rx="6"/><text x="418" y="547" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Verifica con chiave pub.</text></g>
+            <g class="node node-l2" onclick="openNode('nonrip')" tabindex="0"><rect x="330" y="577" width="175" height="42" rx="6"/><text x="418" y="602" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Non ripudio garantito</text></g>
+            <g class="node node-l2" onclick="openNode('mfa_cat')" tabindex="0"><rect x="330" y="627" width="175" height="42" rx="6"/><text x="418" y="652" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Knowledge/Possession/Inherence</text></g>
+            <g class="node node-l2" onclick="openNode('totp')" tabindex="0"><rect x="330" y="682" width="175" height="42" rx="6"/><text x="418" y="707" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">TOTP: OTP ogni 30s</text></g>
+            <g class="node node-l2" onclick="openNode('u2f')" tabindex="0"><rect x="330" y="737" width="175" height="42" rx="6"/><text x="418" y="762" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">U2F/FIDO2: YubiKey</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-label" id="modal-label"></div><div class="modal-title" id="modal-title"></div><div class="modal-text" id="modal-text"></div></div>
+  </div>
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes = {
+      root:      {label:"Argomento 8 (CLIL)",title:"DH, Hash, MAC e Firma Digitale",text:"Quattro meccanismi fondamentali della sicurezza: Diffie-Hellman per scambiare chiavi, Hash per garantire integrità, MAC per autenticare, Firma Digitale per non ripudio. Insieme costituiscono la base di SSL/TLS, IPsec e PKI."},
+      dh:        {label:"Diffie-Hellman",title:"Scambio Sicuro di Chiavi",text:"DH permette a due parti di derivare la stessa chiave segreta condivisa su un canale pubblico senza trasmetterla mai. Basato sulla difficoltà del problema del logaritmo discreto. Non è cifratura — è solo scambio di chiavi. Fondamentale in IPsec (IKE) e TLS."},
+      hash:      {label:"Hash",title:"Funzioni Hash Crittografiche",text:"Una funzione hash trasforma input di qualsiasi lunghezza in un digest di lunghezza fissa. Proprietà: deterministica, irreversibile (one-way), effetto valanga (1 bit diverso → output completamente diverso), resistenza alle collisioni."},
+      mac:       {label:"MAC",title:"Message Authentication Code",text:"Un MAC è un codice calcolato sul messaggio usando una chiave segreta condivisa. Garantisce integrità (il dato non è stato alterato) E autenticazione del mittente (solo chi ha la chiave può produrlo). Diverso dall'hash che non richiede chiave."},
+      firma:     {label:"Firma Digitale",title:"Autenticità e Non Ripudio",text:"La firma digitale permette di verificare l'identità del mittente e garantire che il messaggio non sia stato alterato. Solo chi ha la chiave privata può firmare; tutti possono verificare con la chiave pubblica. Garantisce il non ripudio."},
+      mfa:       {label:"MFA",title:"Multi-Factor Authentication",text:"L'autenticazione multi-fattore richiede 2+ fattori di categorie diverse: Knowledge (password/PIN), Possession (token/smartphone), Inherence (biometria). Un attaccante deve compromettere più categorie simultaneamente."},
+      dh_canale: {label:"DH",title:"Canale Pubblico",text:"Il paradosso di DH: due parti possono concordare una chiave segreta anche se tutte le comunicazioni sono intercettate. Alice e Bob scelgono valori privati, si scambiano valori intermedi pubblicamente, e derivano la stessa chiave senza mai trasmetterla."},
+      dh_log:    {label:"DH",title:"Logaritmo Discreto",text:"La sicurezza di DH si basa sulla difficoltà computazionale del problema del logaritmo discreto: dato g^x mod p (facile da calcolare), trovare x è computazionalmente impossibile per numeri grandi. Gruppi DH 14+ (2048 bit) sono raccomandati."},
+      dh_uso:    {label:"DH",title:"Dove si usa DH",text:"IPsec: nella Fase 1 di IKE per generare le chiavi ISAKMP. TLS: nelle cipher suite DHE/ECDHE per la Perfect Forward Secrecy. SSH: nella fase di key exchange. In tutti questi contesti DH risolve il problema della distribuzione delle chiavi."},
+      hash_prop: {label:"Hash",title:"Proprietà Fondamentali",text:"1. Deterministica: stesso input → stesso output. 2. One-way: impossibile invertire. 3. Effetto valanga: 1 bit diverso → ~50% bit dell'output cambia. 4. Resistenza alle collisioni: impossibile trovare due input con lo stesso hash."},
+      sha256:    {label:"SHA-256",title:"Standard Attuale: SHA-256",text:"SHA-256 (SHA-2 family): produce un digest di 256 bit. Standard sicuro attuale. MD5 (128 bit) e SHA-1 (160 bit) sono deprecati per uso crittografico — vulnerabili a collisioni. SHA-512 per applicazioni ad alta sicurezza."},
+      hash_uso:  {label:"Hash",title:"Applicazioni degli Hash",text:"Verifica integrità file (checksum). Hashing delle password (con salt: PBKDF2, bcrypt, scrypt). Firma digitale (si firma l'hash del messaggio, non il messaggio intero). Blockchain (ogni blocco include l'hash del precedente). MACs."},
+      mac_def:   {label:"MAC",title:"MAC = Hash + Chiave",text:"Un MAC combina il messaggio con una chiave segreta condivisa per produrre un tag di autenticazione. Il ricevente ricalcola il MAC con la stessa chiave e confronta. Se corrispondono: il messaggio è integro E proviene da chi ha la chiave."},
+      hmac:      {label:"HMAC",title:"HMAC: Hash-based MAC",text:"HMAC combina una chiave segreta con una funzione hash standard: HMAC(K, msg) = H((K⊕opad) || H((K⊕ipad) || msg)). HMAC-SHA256 è usato in SSL/TLS per ogni blocco di dati trasmesso, in IPsec per AH e in molti protocolli di autenticazione API."},
+      firma_priv:{label:"Firma",title:"Firma con Chiave Privata",text:"Processo di firma: 1) Calcola hash(messaggio) con SHA-256. 2) Cifra l'hash con la propria chiave PRIVATA → ottiene la firma. 3) Invia messaggio + firma. Solo chi possiede la chiave privata può creare la firma."},
+      firma_ver: {label:"Firma",title:"Verifica con Chiave Pubblica",text:"Processo di verifica: 1) Riceve messaggio + firma. 2) Decifra la firma con la chiave PUBBLICA del mittente → ottiene hash originale. 3) Calcola autonomamente hash(messaggio ricevuto). 4) Confronta: se coincidono → firma valida (autenticità + integrità)."},
+      nonrip:    {label:"Non Ripudio",title:"Non Ripudio",text:"Solo chi possiede la chiave privata può creare una firma valida che si verifica con la chiave pubblica corrispondente. Il mittente non può quindi negare di aver inviato il messaggio firmato — la firma è come una prova matematica della sua origine."},
+      mfa_cat:   {label:"MFA",title:"3 Categorie di Fattori",text:"Knowledge (qualcosa che SAI): password, PIN, risposta segreta. Possession (qualcosa che HAI): token hardware, smartphone, smart card. Inherence (qualcosa che SEI): impronta digitale, riconoscimento facciale, iride. MFA combina almeno 2 categorie diverse."},
+      totp:      {label:"TOTP",title:"Time-based OTP",text:"TOTP (RFC 6238): codice a 6 cifre derivato da chiave segreta + timestamp corrente (a step di 30 secondi). Usato da Google Authenticator, Microsoft Authenticator. Protegge da replay attack (il codice scade dopo 30s). Più sicuro dell'OTP via SMS."},
+      u2f:       {label:"U2F/FIDO2",title:"Chiave Hardware",text:"U2F/FIDO2 (es. YubiKey): chiave hardware fisica che firma una challenge del server con la propria chiave privata interna. Resistente al phishing: l'autenticazione è legata crittograficamente al dominio del sito (una YubiKey per google.com non funziona per un sito fake)."}
+    };
+    function openNode(id){var n=nodes[id];if(!n)return;document.getElementById('modal-label').textContent=n.label;document.getElementById('modal-title').textContent=n.title;document.getElementById('modal-text').innerHTML=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeModal(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  </script>
+</body>
+</html>

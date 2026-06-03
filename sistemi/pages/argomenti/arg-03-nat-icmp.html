@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAT, PAT e ICMP — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E3%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="nat">NAT</button>
+  <button class="nav-btn" data-sec="pat">PAT</button>
+  <button class="nav-btn" data-sec="icmp">ICMP</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 3</div><h1 class="title">NAT, PAT<br><em>e ICMP</em></h1><p class="subtitle">La traduzione degli indirizzi e il protocollo di diagnostica di rete.</p></div>
+    <div class="grid-2">
+      <div><p><strong>NAT</strong> (Network Address Translation) permette a dispositivi con IP privati di comunicare su Internet traducendo gli indirizzi. <strong>ICMP</strong> è il protocollo di diagnostica usato da <code>ping</code> e <code>traceroute</code>.</p>
+      <div class="box-concetto"><h4>Competenze acquisite</h4><ul class="clean"><li>Distinguere NAT statico, dinamico e PAT</li><li>Spiegare il funzionamento della tabella NAT</li><li>Descrivere i messaggi ICMP principali</li><li>Spiegare il ruolo del TTL e il funzionamento di traceroute</li></ul></div></div>
+      <div><div class="box-frase">«NAT ha salvato IPv4 dall'esaurimento, ma a un costo architetturale.»<span class="label">— IETF RFC 3022</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="nat">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>NAT — Network Address Translation</h2></div>
+    <p>NAT traduce gli indirizzi IP privati in indirizzi pubblici quando i pacchetti attraversano il router verso Internet.</p>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Tipo</th><th>Funzionamento</th><th>Uso tipico</th></tr></thead><tbody>
+      <tr><td><strong>NAT Statico</strong></td><td>Mappatura 1:1 fissa: un IP privato ↔ un IP pubblico</td><td>Server interni accessibili dall'esterno</td></tr>
+      <tr><td><strong>NAT Dinamico</strong></td><td>Pool di IP pubblici assegnati dinamicamente alle sessioni</td><td>Più host con pool limitato di IP pubblici</td></tr>
+      <tr><td><strong>PAT / NAT Overload</strong></td><td>Molti IP privati condividono un solo IP pubblico via porte diverse</td><td>Router domestici, quasi tutte le LAN</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Vantaggi e Svantaggi NAT</h4>
+      <ul class="clean"><li><strong>Pro:</strong> risparmio indirizzi IPv4; sicurezza (IP interni nascosti); indipendenza dall'ISP</li><li><strong>Contro:</strong> rompe il modello end-to-end; problemi con SIP/FTP; complicazioni per server interni; latenza aggiuntiva</li></ul></div>
+  </div>
+</section>
+
+<section class="section" id="pat">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>PAT — Port Address Translation</h2></div>
+    <p>PAT (anche chiamato NAT Overload) è il tipo più diffuso di NAT. Molti IP privati condividono un singolo IP pubblico, differenziati dalla porta TCP/UDP.</p>
+    <div class="box-concetto"><h4>Funzionamento PAT</h4>
+      <p>Il router mantiene una <strong>tabella NAT</strong> con le sessioni attive:</p>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>IP Privato</th><th>Porta priv.</th><th>IP Pubblico</th><th>Porta pub.</th><th>Protocollo</th></tr></thead><tbody>
+        <tr><td>192.168.1.5</td><td>12345</td><td>80.100.1.1</td><td>50001</td><td>TCP</td></tr>
+        <tr><td>192.168.1.7</td><td>32100</td><td>80.100.1.1</td><td>50002</td><td>TCP</td></tr>
+        <tr><td>192.168.1.8</td><td>45678</td><td>80.100.1.1</td><td>50003</td><td>UDP</td></tr>
+      </tbody></table></div>
+      <p>Quando arriva la risposta da Internet all'IP pubblico, il router consulta la tabella e la smista al client corretto in base alla porta pubblica.</p>
+    </div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Comando Cisco IOS per NAT/PAT</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">ip nat inside source list 1 interface fa0/0 overload
+!
+interface fa0/0
+ ip nat outside
+interface fa0/1
+ ip nat inside</pre>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="icmp">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>ICMP — Internet Control Message Protocol</h2></div>
+    <p>ICMP è un protocollo di supporto a IP che trasmette messaggi di controllo ed errore. Non trasporta dati utente ma è fondamentale per la diagnostica di rete.</p>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Tipo ICMP</th><th>Descrizione</th><th>Uso</th></tr></thead><tbody>
+      <tr><td>Echo Request / Reply</td><td>Richiesta/risposta eco</td><td>Comando <code>ping</code></td></tr>
+      <tr><td>Destination Unreachable</td><td>Destinazione non raggiungibile</td><td>Host/rete/porta non disponibile</td></tr>
+      <tr><td>Time Exceeded</td><td>TTL scaduto a 0</td><td>Usato da <code>traceroute</code></td></tr>
+      <tr><td>Redirect</td><td>Suggerisce un percorso migliore</td><td>Ottimizzazione routing</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>TTL e Traceroute</h4>
+      <p>Il campo <strong>TTL</strong> (Time To Live) dell'header IP viene decrementato di 1 da ogni router. Quando arriva a 0, il pacchetto viene scartato e il router invia un messaggio ICMP Time Exceeded all'origine.</p>
+      <p><strong>Traceroute</strong> sfrutta questo meccanismo: invia pacchetti con TTL=1, poi 2, poi 3… Ogni router che scarta il pacchetto rivela il proprio IP tramite ICMP Time Exceeded. Così si ricostruisce il percorso hop per hop.</p>
+    </div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«Ping è il primo strumento del networker. Semplice, universale, indispensabile.»<cite>— Cisco Networking Academy</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firewall e Architetture — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E13%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="tipologie">Tipologie</button>
+  <button class="nav-btn" data-sec="architetture">Architetture</button>
+  <button class="nav-btn" data-sec="limiti">Limiti</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 13</div><h1 class="title">Firewall e<br><em>Architetture di Rete</em></h1><p class="subtitle">La prima linea di difesa della rete perimetrale.</p></div>
+    <div class="grid-2">
+      <div><p>Un <strong>firewall</strong> è un dispositivo (hardware o software) che controlla il traffico di rete e decide cosa permettere o bloccare secondo una <strong>security policy</strong>.</p>
+      <div class="box-concetto"><h4>Zone di sicurezza</h4><ul class="clean">
+        <li><strong>Internet:</strong> rete esterna non fidata.</li>
+        <li><strong>DMZ</strong> (Demilitarized Zone): zona intermedia — server pubblici accessibili ma isolati dalla LAN.</li>
+        <li><strong>LAN interna:</strong> rete protetta, risorse riservate agli utenti fidati.</li>
+      </ul></div></div>
+      <div><div class="box-concetto"><h4>Policy di base</h4><ul class="clean">
+        <li><strong>Default-Deny:</strong> tutto vietato tranne il permesso esplicitamente. Più sicuro. Principio del minimo privilegio.</li>
+        <li><strong>Default-Allow:</strong> tutto permesso tranne il vietato. Sconsigliato.</li>
+      </ul></div><div class="box-frase">«Un firewall non è sufficiente. È il primo strato di difesa, non l'unico.»<span class="label">— SANS Institute, Defense in Depth</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tipologie">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Tipologie di Firewall</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Tipo</th><th>Layer OSI</th><th>Pro</th><th>Contro</th></tr></thead><tbody>
+      <tr><td><strong>Packet Filter</strong></td><td>L3</td><td>Velocissimo, semplice, basso overhead</td><td>Stateless, bypassabile con spoofing/frammentazione</td></tr>
+      <tr><td><strong>SPI</strong> (Stateful Packet Inspection)</td><td>L3-L4</td><td>Traccia connessioni (state table), molto sicuro</td><td>Non analizza contenuto applicativo</td></tr>
+      <tr><td><strong>Circuit-Level Gateway</strong></td><td>L5</td><td>Nasconde rete interna, bassa latenza</td><td>Non ispeziona payload</td></tr>
+      <tr><td><strong>Proxy / Application Gateway</strong></td><td>L7</td><td>Filtraggio profondo per contenuto, isola client/server</td><td>Lento, un proxy per ogni protocollo</td></tr>
+      <tr><td><strong>DPI</strong> (Deep Packet Inspection)</td><td>L3-L7</td><td>Analizza contenuto, rileva malware e violazioni policy</td><td>Alto overhead, non blocca zero-day</td></tr>
+      <tr><td><strong>NGFW</strong> (Next-Generation)</td><td>L3-L7</td><td>SPI+DPI+IDS/IPS+App-ID+SSL inspection, policy per utente</td><td>Costoso, complesso</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>SPI — State Table</h4>
+      <p>Il firewall SPI mantiene una <strong>state table</strong> con tutte le connessioni attive: IP/porta sorgente e destinazione, protocollo, stato TCP (SYN/ESTABLISHED/FIN), sequence number. Un pacchetto che non corrisponde a nessuna connessione aperta viene bloccato automaticamente.</p></div>
+  </div>
+</section>
+
+<section class="section" id="architetture">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Architetture di Firewall</h2></div>
+    <div class="box-concetto"><h4>DMZ — Demilitarized Zone</h4>
+      <p>La DMZ ospita i server pubblici (web, mail, DNS, FTP). Questi server sono raggiungibili da Internet ma sono isolati dalla LAN interna. Se un server DMZ viene compromesso, l'attaccante non ha accesso diretto alla LAN.</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Screened Subnet (la più sicura)</h4>
+      <p><code>Internet → Firewall esterno → DMZ → Firewall interno → LAN</code></p>
+      <p>Due firewall separati: il FW esterno protegge la DMZ da Internet; il FW interno protegge la LAN dalla DMZ. Anche se la DMZ è completamente compromessa, il firewall interno protegge la LAN.</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Bastion Host</h4>
+      <p>Server esposto rinforzato: SO hardened (servizi minimi, aggiornamenti continuativi), MFA obbligatoria, logging completo. Funziona come jump host controllato per l'accesso SSH alla rete interna.</p></div>
+  </div>
+</section>
+
+<section class="section" id="limiti">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>Limiti del Firewall</h2></div>
+    <div class="box-concetto"><ul class="clean">
+      <li>Non filtra il traffico che non lo attraversa (attacchi interni alla LAN).</li>
+      <li>Non protegge da insider threat (dipendenti malintenzionati).</li>
+      <li>Non ispeziona traffico cifrato senza SSL inspection.</li>
+      <li>Configurazione errata = falso senso di sicurezza.</li>
+      <li>Non rileva malware nel traffico applicativo legittimo (senza DPI).</li>
+    </ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Strategie complementari</h4><ul class="clean">
+      <li>IDS/IPS per rilevamento intrusioni</li>
+      <li>Antivirus/EDR sugli endpoint</li>
+      <li>Segmentazione della rete (VLAN)</li>
+      <li>VPN per accesso remoto sicuro</li>
+      <li>MFA per autenticazione forte</li>
+      <li>WAF per proteggere le web app</li>
+    </ul></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«La difesa in profondità è l'unica vera sicurezza.»<cite>— SANS Institute</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

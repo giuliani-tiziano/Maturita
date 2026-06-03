@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subnetting, VLSM e CIDR — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E2%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .map-overlay { display:none; position:fixed; inset:0; background:rgba(8,69,80,.55); z-index:500; align-items:center; justify-content:center; padding:1rem; }
+    .map-overlay.show { display:flex; }
+    .map-modal { background:var(--paper); border:1px solid var(--color-primary); padding:2rem 2rem 1.5rem; max-width:480px; width:100%; max-height:80vh; overflow-y:auto; position:relative; }
+    .modal-close { position:absolute; top:.8rem; right:1rem; font-family:var(--serif); font-size:1.4rem; color:var(--ink-soft); background:none; border:none; cursor:pointer; line-height:1; }
+    .modal-close:hover { color:var(--color-deep); }
+    .modal-label { font-family:var(--sans); font-weight:500; font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--color-primary); margin-bottom:.5rem; }
+    .modal-title { font-family:var(--serif); font-style:italic; font-weight:500; font-size:1.6rem; color:var(--color-deep); margin-bottom:.8rem; line-height:1.1; }
+    .modal-text { font-family:var(--sans); font-weight:300; font-size:.92rem; color:var(--ink-soft); line-height:1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../index.html" class="topbar-back">← Portale</a>
+      <a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a>
+      <a class="topbar-link active" href="../../pages/mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+      <button class="nav-btn" onclick="location.href='../arg-01-tcpip/'">← Arg. 1</button>
+      <button class="nav-btn active">2 · Subnetting</button>
+      <button class="nav-btn" onclick="location.href='../arg-03-nat-icmp/'">Arg. 3 →</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS · Argomento 2</div>
+        <h2>Subnetting <em>VLSM e CIDR</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: subnetting, formula host, VLSM, CIDR e wildcard mask.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 860" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;" aria-label="Mappa WBS Subnetting VLSM CIDR">
+          <style>
+            .node { cursor:pointer; }
+            .node-root rect { fill:var(--color-deep); }
+            .node-root text { fill:#fff; }
+            .node-l1 rect { fill:var(--color-primary); }
+            .node-l1 text { fill:#fff; }
+            .node-l2 rect { fill:var(--beige-mid); stroke:var(--rule-soft); stroke-width:1; }
+            .node-l2 text { fill:var(--ink); }
+            .node rect { transition:filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter:brightness(1.12); }
+            .node:focus { outline:none; }
+          </style>
+
+          <g transform="translate(260,0)">
+
+            <!-- Connessioni root → L1 -->
+            <path d="M -20,400 C 20,400 70,90 70,90" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,230 70,230" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,380 70,380" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,530 70,530" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,670 70,670" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+            <!-- Connessioni L1 → L2 -->
+            <path d="M 250,90 C 285,90 330,40 330,40" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,90 C 285,90 330,90 330,90" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,90 C 285,90 330,140 330,140" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,185 330,185" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,230 330,230" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,275 330,275" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,335 330,335" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,380 330,380" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,425 330,425" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,490 330,490" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,530 330,530" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,570 330,570" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,630 330,630" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,670 330,670" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,710 330,710" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+            <!-- ROOT -->
+            <g class="node node-root" onclick="openNode('root')" tabindex="0" role="button">
+              <rect x="-220" y="370" width="200" height="60" rx="8"/>
+              <text>
+                <tspan x="-120" y="392" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="15" font-weight="600" fill="white">Subnetting</tspan>
+                <tspan x="-120" y="410" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" font-weight="500" letter-spacing="0.1em" fill="white">VLSM E CIDR</tspan>
+              </text>
+            </g>
+
+            <!-- L1 -->
+            <g class="node node-l1" onclick="openNode('subnetting')" tabindex="0" role="button">
+              <rect x="70" y="64" width="180" height="52" rx="7"/>
+              <text x="160" y="95" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Subnetting</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('formula')" tabindex="0" role="button">
+              <rect x="70" y="204" width="180" height="52" rx="7"/>
+              <text x="160" y="235" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Formula Host</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('vlsm')" tabindex="0" role="button">
+              <rect x="70" y="354" width="180" height="52" rx="7"/>
+              <text x="160" y="385" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">VLSM</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('cidr')" tabindex="0" role="button">
+              <rect x="70" y="504" width="180" height="52" rx="7"/>
+              <text x="160" y="535" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">CIDR /n</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('wildcard')" tabindex="0" role="button">
+              <rect x="70" y="644" width="180" height="52" rx="7"/>
+              <text x="160" y="675" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Wildcard Mask</text>
+            </g>
+
+            <!-- L2 - Subnetting -->
+            <g class="node node-l2" onclick="openNode('dividere')" tabindex="0" role="button">
+              <rect x="330" y="16" width="175" height="42" rx="6"/>
+              <text x="418" y="42" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Dividere reti in sottoreti</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('broadcast')" tabindex="0" role="button">
+              <rect x="330" y="66" width="175" height="42" rx="6"/>
+              <text x="418" y="92" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Riduzione dominio broadcast</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('separazione')" tabindex="0" role="button">
+              <rect x="330" y="116" width="175" height="42" rx="6"/>
+              <text x="418" y="142" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Separazione logica</text>
+            </g>
+
+            <!-- L2 - Formula Host -->
+            <g class="node node-l2" onclick="openNode('formula2n')" tabindex="0" role="button">
+              <rect x="330" y="161" width="175" height="42" rx="6"/>
+              <text x="418" y="187" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">2^n - 2</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('bithost')" tabindex="0" role="button">
+              <rect x="330" y="206" width="175" height="42" rx="6"/>
+              <text x="418" y="232" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">n = bit host</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('esempio26')" tabindex="0" role="button">
+              <rect x="330" y="251" width="175" height="42" rx="6"/>
+              <text x="418" y="277" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Esempio: /26 = 62 host</text>
+            </g>
+
+            <!-- L2 - VLSM -->
+            <g class="node node-l2" onclick="openNode('maschere')" tabindex="0" role="button">
+              <rect x="330" y="311" width="175" height="42" rx="6"/>
+              <text x="418" y="337" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Maschere lunghezza variabile</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('ottimizz')" tabindex="0" role="button">
+              <rect x="330" y="356" width="175" height="42" rx="6"/>
+              <text x="418" y="382" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Ottimizzazione indirizzi</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('classless')" tabindex="0" role="button">
+              <rect x="330" y="401" width="175" height="42" rx="6"/>
+              <text x="418" y="427" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Richiede routing classless</text>
+            </g>
+
+            <!-- L2 - CIDR -->
+            <g class="node node-l2" onclick="openNode('notazione')" tabindex="0" role="button">
+              <rect x="330" y="466" width="175" height="42" rx="6"/>
+              <text x="418" y="492" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Notazione prefisso /n</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('superaclassi')" tabindex="0" role="button">
+              <rect x="330" y="506" width="175" height="42" rx="6"/>
+              <text x="418" y="532" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Supera classi fisse</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('aggreg')" tabindex="0" role="button">
+              <rect x="330" y="546" width="175" height="42" rx="6"/>
+              <text x="418" y="572" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Route aggregation</text>
+            </g>
+
+            <!-- L2 - Wildcard Mask -->
+            <g class="node node-l2" onclick="openNode('wcalcolo')" tabindex="0" role="button">
+              <rect x="330" y="606" width="175" height="42" rx="6"/>
+              <text x="418" y="632" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">255.255.255.255 - mask</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('wclogica')" tabindex="0" role="button">
+              <rect x="330" y="646" width="175" height="42" rx="6"/>
+              <text x="418" y="672" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">0=controlla, 1=ignora</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('wcspeciali')" tabindex="0" role="button">
+              <rect x="330" y="686" width="175" height="42" rx="6"/>
+              <text x="418" y="712" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">'any' e 'host'</text>
+            </g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal">
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+      <div class="modal-label" id="modal-label"></div>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-text" id="modal-text"></div>
+    </div>
+  </div>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes = {
+      root:         { label:'Argomento 2', title:'Subnetting, VLSM e CIDR', text:'Il subnetting divide una rete IP in sottoreti più piccole, migliorando l\'efficienza e la sicurezza. VLSM (Variable Length Subnet Masking) permette maschere di lunghezza variabile per ottimizzare l\'uso degli indirizzi. CIDR (Classless Inter-Domain Routing) supera le classi rigide con la notazione prefisso /n.' },
+      subnetting:   { label:'Area 1', title:'Subnetting', text:'Il subnetting prende bit dal campo host per creare il campo sottorete, dividendo una rete in segmenti più piccoli. Ogni sottorete ha il proprio indirizzo di rete, un range di host utilizzabili e un indirizzo broadcast. Riduce il traffico broadcast e permette la separazione logica tra reparti.' },
+      formula:      { label:'Area 2', title:'Formula per il calcolo degli host', text:'Il numero di host utilizzabili in una sottorete si calcola con 2^n - 2, dove n è il numero di bit riservati agli host. Si sottraggono 2 per l\'indirizzo di rete (tutti 0) e l\'indirizzo broadcast (tutti 1). Conoscere questa formula è fondamentale per progettare reti efficienti.' },
+      vlsm:         { label:'Area 3', title:'VLSM — Variable Length Subnet Masking', text:'VLSM permette di usare maschere di lunghezza diversa per sottoreti diverse all\'interno della stessa rete. Consente di allocare esattamente gli indirizzi necessari a ciascun segmento, eliminando gli sprechi tipici del subnetting classico. Richiede protocolli di routing classless come RIPv2 o OSPF.' },
+      cidr:         { label:'Area 4', title:'CIDR — Classless Inter-Domain Routing', text:'CIDR (RFC 1519, 1993) supera le classi A, B e C con la notazione /n che indica il numero di bit di rete. Permette blocchi di indirizzi di qualsiasi dimensione (potenza di 2). Abilita la route aggregation (supernetting) che riduce drasticamente le dimensioni delle tabelle di routing su Internet.' },
+      wildcard:     { label:'Area 5', title:'Wildcard Mask', text:'La wildcard mask è il complemento della subnet mask: 255.255.255.255 - subnet mask. I bit a 0 indicano le posizioni controllate (devono corrispondere), i bit a 1 indicano le posizioni ignorate. Usata in ACL Cisco e OSPF per specificare range di indirizzi. "host" equivale a 0.0.0.0, "any" a 255.255.255.255.' },
+      dividere:     { label:'Subnetting', title:'Dividere reti in sottoreti', text:'Si prendono bit dal campo host per creare un campo subnet-id. Ogni sottorete è identificata da un indirizzo di rete (bit host tutti a 0) e delimitata da un broadcast (bit host tutti a 1). Il numero di sottoreti create è 2^s dove s è il numero di bit presi per la subnet.' },
+      broadcast:    { label:'Subnetting', title:'Riduzione del dominio broadcast', text:'Il broadcast raggiunge tutti gli host della stessa subnet. Reti più piccole significano meno host che ricevono ogni broadcast, riducendo il traffico inutile. Un broadcast storm in una sottorete non si propaga alle altre, migliorando la stabilità complessiva.' },
+      separazione:  { label:'Subnetting', title:'Separazione logica', text:'Il subnetting permette di isolare logicamente i reparti aziendali (es. LAN amministrativa vs produzione vs server). I router separano le sottoreti applicando policy di routing e sicurezza. Questa separazione è il fondamento per applicare firewall e ACL tra segmenti di rete.' },
+      formula2n:    { label:'Formula Host', title:'Formula 2^n - 2', text:'2^n calcola il numero totale di combinazioni binarie con n bit. Si sottraggono 2 perché l\'indirizzo con tutti i bit host a 0 è l\'indirizzo di rete (identifica la subnet, non assegnabile) e l\'indirizzo con tutti i bit host a 1 è il broadcast (non assegnabile a un host).' },
+      bithost:      { label:'Formula Host', title:'n = numero di bit host', text:'Il numero di bit host n si calcola come 32 - prefisso CIDR. Una rete /24 ha n=8 bit host → 2^8 - 2 = 254 host. Una /26 ha n=6 → 2^6 - 2 = 62 host. Una /30 ha n=2 → 2^2 - 2 = 2 host (tipica per collegamenti punto-punto).' },
+      esempio26:    { label:'Formula Host', title:'Esempio pratico /26', text:'Una rete con maschera /26 (255.255.255.192) ha 6 bit host. Formula: 2^6 - 2 = 64 - 2 = 62 host utilizzabili. La subnet mask ha i primi 26 bit a 1 in binario. Prendendo 192.168.1.0/26, gli indirizzi host vanno da .1 a .62, il network è .0 e il broadcast è .63.' },
+      maschere:     { label:'VLSM', title:'Maschere di lunghezza variabile', text:'Con VLSM, una stessa rete madre può essere suddivisa in sottoreti con prefissi diversi. Ad esempio, da 192.168.1.0/24 si possono ricavare una sottorete /26 (62 host), due /28 (14 host) e una /30 (2 host per un link punto-punto). Ogni sottorete ha la maschera ottimale per le sue esigenze.' },
+      ottimizz:     { label:'VLSM', title:'Ottimizzazione degli indirizzi', text:'Senza VLSM si dovrebbe usare una maschera uguale per tutte le sottoreti, sprecando indirizzi. Con VLSM si assegna ogni blocco partendo dalle sottoreti più grandi verso le più piccole, usando lo spazio in modo efficiente. Fondamentale in ambienti con indirizzi IP scarsi.' },
+      classless:    { label:'VLSM', title:'Richiede routing classless', text:'I protocolli di routing classful (come RIPv1) non includono la maschera negli aggiornamenti, quindi non supportano VLSM. I protocolli classless (RIPv2, OSPF, EIGRP, BGP4) inviano la maschera insieme a ogni prefisso, rendendo possibile VLSM e CIDR.' },
+      notazione:    { label:'CIDR', title:'Notazione prefisso /n', text:'La notazione CIDR /n (slash n) indica il numero di bit impostati a 1 nella subnet mask. /24 corrisponde a 255.255.255.0, /16 a 255.255.0.0, /8 a 255.0.0.0. Può avere qualsiasi valore da /0 a /32, permettendo granularità impossibile con le classi A, B e C.' },
+      superaclassi: { label:'CIDR', title:'Superamento delle classi fisse', text:'Con le classi, una rete richiedeva /8, /16 o /24. CIDR permette qualsiasi prefisso, evitando sprechi enormi. Un\'organizzazione che necessita 500 indirizzi non deve prendere una classe B (/16 = 65.534 host): può ricevere un /23 (510 host). CIDR è fondamentale per la gestione moderna degli IP.' },
+      aggreg:       { label:'CIDR', title:'Route aggregation (supernetting)', text:'CIDR permette di aggregare più reti contigue in un\'unica voce di routing (supernet). Ad esempio, 192.168.0.0/24 e 192.168.1.0/24 possono essere annunciate come 192.168.0.0/23. Questo riduce drasticamente le dimensioni delle tabelle di routing dei router Internet (da milioni di voci a poche centinaia di migliaia).' },
+      wcalcolo:     { label:'Wildcard Mask', title:'Calcolo della wildcard mask', text:'La wildcard mask si ottiene sottraendo la subnet mask da 255.255.255.255. Esempio: subnet mask 255.255.255.0 → wildcard 0.0.0.255. Subnet mask 255.255.255.192 (/26) → wildcard 0.0.0.63. È il complemento bitwise della subnet mask.' },
+      wclogica:     { label:'Wildcard Mask', title:'Logica: 0=controlla, 1=ignora', text:'Nei bit della wildcard mask, lo 0 indica che il bit corrispondente dell\'indirizzo IP deve corrispondere esattamente (bit controllato). L\'1 indica che il bit può essere qualsiasi valore (bit ignorato). Questo permette di selezionare range di indirizzi non necessariamente allineati alle subnet mask standard.' },
+      wcspeciali:   { label:'Wildcard Mask', title:'Parole chiave "any" e "host"', text:'Cisco IOS offre due abbreviazioni: "host 192.168.1.1" equivale a "192.168.1.1 0.0.0.0" (corrisponde solo a quell\'indirizzo specifico). "any" equivale a "0.0.0.0 255.255.255.255" (corrisponde a qualsiasi indirizzo). Queste parole chiave rendono le ACL più leggibili.' }
+    };
+    function openNode(id) {
+      var n = nodes[id]; if (!n) return;
+      document.getElementById('modal-label').textContent = n.label;
+      document.getElementById('modal-title').textContent = n.title;
+      document.getElementById('modal-text').innerHTML = n.text;
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeModal() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>

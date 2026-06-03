@@ -4,11 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flashcard — Sistemi e Reti · Maturità</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230E3A57'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .quiz-card-count { font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.8rem; }
+    .fc-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:1.5rem 0 2rem; }
+    @media (max-width:1100px) { .fc-grid { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:600px)  { .fc-grid { grid-template-columns:1fr; } }
+    .quiz-period-header { display:flex;align-items:center;gap:1.2rem;margin:2rem 0 1.2rem; }
+    .quiz-period-header:first-of-type { margin-top:0; }
+    .quiz-period-label { font-family:var(--sans);font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--color-primary);white-space:nowrap;flex-shrink:0; }
+    .quiz-period-rule { flex:1;height:1px;background:rgba(14,58,87,.18); }
+    .author-card[onclick] { cursor:pointer; }
+
+    /* PLAYER OVERLAY */
+    #fc-overlay { display:none;position:fixed;inset:0;z-index:500;background:rgba(7,29,43,.80);align-items:center;justify-content:center;padding:1.5rem; }
+    #fc-overlay.show { display:flex; }
+    .fc-player { width:100%;max-width:640px; }
+    .fc-player-head { display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem; }
+    #fc-author-label { font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.4rem;color:var(--paper); }
+    #fc-counter { font-family:var(--sans);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(253,250,244,.6); }
+    .fc-close { background:none;border:none;color:rgba(253,250,244,.7);font-family:var(--serif);font-size:1.6rem;cursor:pointer;line-height:1; }
+    .fc-close:hover { color:var(--paper); }
+    .fc-prog { height:3px;background:rgba(253,250,244,.18);border-radius:2px;margin-bottom:1.2rem;overflow:hidden; }
+    #fc-prog-fill { height:100%;width:0;background:var(--gold);border-radius:2px;transition:width var(--t); }
+
+    .fc-card-scene { perspective:1400px;margin-bottom:1.4rem; }
+    #fc-card { position:relative;width:100%;min-height:280px;cursor:pointer;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,0,.2,1); }
+    #fc-card.flipped { transform:rotateY(180deg); }
+    .fc-face { position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 2rem;border-radius:var(--radius-lg);text-align:center;box-shadow:var(--shadow-lg); }
+    .fc-front { background:var(--paper);border:1px solid var(--rule); }
+    .fc-front-text { font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.4rem,3vw,2rem);color:var(--ink);line-height:1.25; }
+    .fc-back { background:var(--color-deep);transform:rotateY(180deg); }
+    .fc-back-text { font-family:var(--sans);font-weight:400;font-size:clamp(1rem,2vw,1.08rem);color:var(--paper);line-height:1.65; }
+    .fc-face-hint { position:absolute;bottom:1rem;font-family:var(--sans);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;opacity:.45; }
+    .fc-front .fc-face-hint { color:var(--ink-muted); }
+    .fc-back .fc-face-hint { color:var(--paper); }
+
+    .fc-controls { display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center; }
+    .fc-btn { font-family:var(--sans);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:.7rem 1.4rem;border-radius:var(--radius-xl);border:1px solid rgba(253,250,244,.3);background:transparent;color:var(--paper);cursor:pointer;transition:all var(--t); }
+    .fc-btn:hover { background:var(--paper);color:var(--color-deep);border-color:var(--paper); }
+    .fc-btn.primary { background:var(--gold);color:#1C1010;border-color:var(--gold); }
+    .fc-btn.primary:hover { background:var(--gold-light); }
+    #fc-shuffle.on { background:var(--gold);color:#1C1010;border-color:var(--gold); }
+  </style>
 </head>
 <body>
 
@@ -29,16 +71,260 @@
     <div class="hero-banner-inner">
       <div class="eyebrow">Home → Flashcard</div>
       <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Flashcard</h1>
-      <p class="hero-banner-sub">In arrivo — contenuti in preparazione</p>
+      <p class="hero-banner-sub">Ripassa ogni argomento: definizioni da un lato, risposta dall'altro</p>
     </div>
   </div>
 
-  <div style="max-width:700px; margin:4rem auto; padding:0 2rem; text-align:center;">
-    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.4rem; color:#1A5C8A;">Le flashcard sono in preparazione.</p>
-    <p style="margin-top:1rem; color:#6B4F4F;">Torna presto per le flashcard interattive di Sistemi e Reti.</p>
-    <a href="argomenti.html" style="display:inline-block; margin-top:2rem; font-family:'Jost',sans-serif; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:#1A5C8A; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px;">← Torna agli argomenti</a>
+  <div class="page-layout">
+
+    <aside class="page-sidebar">
+      <div class="page-sidebar-title">Indice</div>
+      <div class="sidebar-section-label">M1 · TCP/IP</div>
+      <a class="page-sidebar-item" href="#tcpip">1 · TCP/IP</a>
+      <a class="page-sidebar-item" href="#subnetting">2 · Subnetting</a>
+      <a class="page-sidebar-item" href="#nat-icmp">3 · NAT/ICMP</a>
+      <a class="page-sidebar-item" href="#routing">4 · Routing</a>
+      <a class="page-sidebar-item" href="#rip">5 · RIP</a>
+      <a class="page-sidebar-item" href="#ospf-bgp">6 · OSPF/BGP</a>
+      <div class="sidebar-section-label">M2 · Crittografia</div>
+      <a class="page-sidebar-item" href="#crittografia">7 · Crittografia</a>
+      <a class="page-sidebar-item" href="#diffie-hellman">8 · Hash/Firma</a>
+      <a class="page-sidebar-item" href="#pki">9 · PKI</a>
+      <a class="page-sidebar-item" href="#ssl-tls">10 · SSL/TLS</a>
+      <div class="sidebar-section-label">M3 · Sicurezza</div>
+      <a class="page-sidebar-item" href="#vpn">11 · VPN</a>
+      <a class="page-sidebar-item" href="#ipsec">12 · IPsec</a>
+      <a class="page-sidebar-item" href="#firewall">13 · Firewall</a>
+      <a class="page-sidebar-item" href="#acl">14 · ACL</a>
+      <a class="page-sidebar-item" href="#ids-ips">15 · IDS/IPS</a>
+      <div class="sidebar-section-label">M4 · Infrastruttura</div>
+      <a class="page-sidebar-item" href="#cloud">16 · Cloud/AD</a>
+      <a class="page-sidebar-item" href="#packet-tracer">17 · Packet Tracer</a>
+    </aside>
+
+    <main class="page-main">
+      <div class="section-header" style="margin-top:0;">
+        <div class="section-tag">Per argomento</div>
+      </div>
+      <p class="section-sub">Scegli un argomento e clicca «Inizia». Tocca la carta per girarla, usa le frecce per scorrere.</p>
+
+      <div class="quiz-period-header"><span class="quiz-period-label">M1 · TCP/IP e Routing</span><div class="quiz-period-rule"></div></div>
+      <div class="fc-grid">
+
+        <div class="author-card" id="tcpip" onclick="startFlashcards('tcpip')">
+          <span class="author-card-initial">IP</span>
+          <div class="author-card-meta">Flashcard · Arg. 1</div>
+          <div class="author-card-name"><em>TCP/IP e Indirizzi IP</em></div>
+          <div class="author-card-tagline">Classi IP, porte, TCP/UDP, IPv6, loopback, CIDR.</div>
+          <div class="quiz-card-count">12 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="subnetting" onclick="startFlashcards('subnetting')">
+          <span class="author-card-initial">/n</span>
+          <div class="author-card-meta">Flashcard · Arg. 2</div>
+          <div class="author-card-name"><em>Subnetting, VLSM e CIDR</em></div>
+          <div class="author-card-tagline">Formula host, VLSM, CIDR, wildcard, calcolo broadcast.</div>
+          <div class="quiz-card-count">8 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="nat-icmp" onclick="startFlashcards('nat-icmp')">
+          <span class="author-card-initial">NAT</span>
+          <div class="author-card-meta">Flashcard · Arg. 3</div>
+          <div class="author-card-name"><em>NAT, PAT e ICMP</em></div>
+          <div class="author-card-tagline">NAT statico/dinamico, PAT, tabella NAT, ICMP, TTL.</div>
+          <div class="quiz-card-count">8 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="routing" onclick="startFlashcards('routing')">
+          <span class="author-card-initial">RT</span>
+          <div class="author-card-meta">Flashcard · Arg. 4</div>
+          <div class="author-card-name"><em>Routing: Fondamenti e Algoritmi</em></div>
+          <div class="author-card-tagline">Tabella routing, Bellman-Ford, Dijkstra, IGP/EGP.</div>
+          <div class="quiz-card-count">10 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="rip" onclick="startFlashcards('rip')">
+          <span class="author-card-initial">RIP</span>
+          <div class="author-card-meta">Flashcard · Arg. 5</div>
+          <div class="author-card-name"><em>RIP</em></div>
+          <div class="author-card-tagline">Hop count, Split Horizon, Poisoned Reverse, timer, v1 vs v2.</div>
+          <div class="quiz-card-count">10 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="ospf-bgp" onclick="startFlashcards('ospf-bgp')">
+          <span class="author-card-initial">OSPF</span>
+          <div class="author-card-meta">Flashcard · Arg. 6</div>
+          <div class="author-card-name"><em>OSPF e BGP</em></div>
+          <div class="author-card-tagline">OSPF Link-State, LSA, LSDB, costo, Area 0, BGP Path Vector.</div>
+          <div class="quiz-card-count">8 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+      </div>
+
+      <div class="quiz-period-header"><span class="quiz-period-label">M2 · Crittografia (CLIL)</span><div class="quiz-period-rule"></div></div>
+      <div class="fc-grid">
+
+        <div class="author-card" id="crittografia" onclick="startFlashcards('crittografia')">
+          <span class="author-card-initial">CRIT</span>
+          <div class="author-card-meta">Flashcard · Arg. 7</div>
+          <div class="author-card-name"><em>Crittografia Simmetrica</em></div>
+          <div class="author-card-tagline">DES/AES/RSA, simmetrica vs asimmetrica, sistema ibrido.</div>
+          <div class="quiz-card-count">10 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="diffie-hellman" onclick="startFlashcards('diffie-hellman')">
+          <span class="author-card-initial">DH</span>
+          <div class="author-card-meta">Flashcard · Arg. 8</div>
+          <div class="author-card-name"><em>Diffie-Hellman, Hash, MAC, Firma</em></div>
+          <div class="author-card-tagline">DH, hash, MD5/SHA, MAC, HMAC, firma digitale, MFA, TOTP.</div>
+          <div class="quiz-card-count">12 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="pki" onclick="startFlashcards('pki')">
+          <span class="author-card-initial">PKI</span>
+          <div class="author-card-meta">Flashcard · Arg. 9</div>
+          <div class="author-card-name"><em>Certificati Digitali e PKI</em></div>
+          <div class="author-card-tagline">X.509, CA, Root CA, CRL, DV/OV/EV.</div>
+          <div class="quiz-card-count">8 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="ssl-tls" onclick="startFlashcards('ssl-tls')">
+          <span class="author-card-initial">TLS</span>
+          <div class="author-card-meta">Flashcard · Arg. 10</div>
+          <div class="author-card-name"><em>SSL/TLS</em></div>
+          <div class="author-card-tagline">SSL vs TLS, Handshake, 4 chiavi, Record Layer, cipher suite.</div>
+          <div class="quiz-card-count">12 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+      </div>
+
+      <div class="quiz-period-header"><span class="quiz-period-label">M3 · Sicurezza delle Reti</span><div class="quiz-period-rule"></div></div>
+      <div class="fc-grid">
+
+        <div class="author-card" id="vpn" onclick="startFlashcards('vpn')">
+          <span class="author-card-initial">VPN</span>
+          <div class="author-card-meta">Flashcard · Arg. 11</div>
+          <div class="author-card-name"><em>VPN</em></div>
+          <div class="author-card-tagline">Tunneling, remote-access/site-to-site, IPsec/SSL/WireGuard.</div>
+          <div class="quiz-card-count">10 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="ipsec" onclick="startFlashcards('ipsec')">
+          <span class="author-card-initial">IKE</span>
+          <div class="author-card-meta">Flashcard · Arg. 12</div>
+          <div class="author-card-name"><em>IPsec</em></div>
+          <div class="author-card-tagline">SA, IKE Fase 1/2, AH/ESP, trasporto/tunnel, PFS, NAT-T.</div>
+          <div class="quiz-card-count">14 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="firewall" onclick="startFlashcards('firewall')">
+          <span class="author-card-initial">FW</span>
+          <div class="author-card-meta">Flashcard · Arg. 13</div>
+          <div class="author-card-name"><em>Firewall e Architetture</em></div>
+          <div class="author-card-tagline">DMZ, SPI, Proxy, NGFW, DPI, Bastion Host, Screened Subnet.</div>
+          <div class="quiz-card-count">12 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="acl" onclick="startFlashcards('acl')">
+          <span class="author-card-initial">ACL</span>
+          <div class="author-card-meta">Flashcard · Arg. 14</div>
+          <div class="author-card-name"><em>ACL</em></div>
+          <div class="author-card-tagline">ACL Standard/Estesa, deny implicito, wildcard, posizionamento.</div>
+          <div class="quiz-card-count">12 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="ids-ips" onclick="startFlashcards('ids-ips')">
+          <span class="author-card-initial">IDS</span>
+          <div class="author-card-meta">Flashcard · Arg. 15</div>
+          <div class="author-card-name"><em>IDS, IPS e Sicurezza Perimetrale</em></div>
+          <div class="author-card-tagline">IDS/IPS, HIDS/NIDS, AAA, RADIUS, TACACS+, MFA, TOTP.</div>
+          <div class="quiz-card-count">14 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+      </div>
+
+      <div class="quiz-period-header"><span class="quiz-period-label">M4 · Infrastruttura IT e Laboratorio</span><div class="quiz-period-rule"></div></div>
+      <div class="fc-grid">
+
+        <div class="author-card" id="cloud" onclick="startFlashcards('cloud')">
+          <span class="author-card-initial">☁</span>
+          <div class="author-card-meta">Flashcard · Arg. 16</div>
+          <div class="author-card-name"><em>Cloud, Virtualizzazione e AD</em></div>
+          <div class="author-card-tagline">IaaS/PaaS/SaaS, hypervisor, RTO/RPO, backup, AD, GPO, SSO.</div>
+          <div class="quiz-card-count">14 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+        <div class="author-card" id="packet-tracer" onclick="startFlashcards('packet-tracer')">
+          <span class="author-card-initial">PT</span>
+          <div class="author-card-meta">Flashcard · Arg. 17</div>
+          <div class="author-card-name"><em>Laboratorio Packet Tracer</em></div>
+          <div class="author-card-tagline">Modalità IOS, comandi show, interfacce, RIP, ACL, NAT.</div>
+          <div class="quiz-card-count">8 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+
+      </div>
+
+    </main>
   </div>
 
+  <!-- PLAYER OVERLAY -->
+  <div id="fc-overlay">
+    <div class="fc-player">
+      <div class="fc-player-head">
+        <div id="fc-author-label">Argomento</div>
+        <div style="display:flex;align-items:center;gap:1rem;">
+          <span id="fc-counter">1 / 10</span>
+          <button class="fc-close" id="fc-close" aria-label="Chiudi">×</button>
+        </div>
+      </div>
+      <div class="fc-prog"><div id="fc-prog-fill"></div></div>
+      <div class="fc-card-scene">
+        <div id="fc-card">
+          <div class="fc-face fc-front">
+            <div class="fc-front-text" id="fc-front-text">Termine</div>
+            <div class="fc-face-hint">Tocca per girare</div>
+          </div>
+          <div class="fc-face fc-back">
+            <div class="fc-back-text" id="fc-back-text">Definizione</div>
+            <div class="fc-face-hint">Tocca per girare</div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="fc-btn" id="fc-prev">← Precedente</button>
+        <button class="fc-btn primary" id="fc-next">Prossima →</button>
+        <button class="fc-btn" id="fc-shuffle">🔀 Casuale</button>
+        <button class="fc-btn" id="fc-restart">↺ Ricomincia</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-quote-final">
+      «Ciò che non riesco a creare, non lo capisco.»
+      <cite>— Richard Feynman</cite>
+    </div>
+  </footer>
+
+  <script src="../js/flashcard-data.js"></script>
+  <script src="../js/flashcard-engine.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

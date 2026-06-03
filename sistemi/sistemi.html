@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistemi e Reti — Guida alla Maturità</title>
   <meta name="description" content="Studio completo di Sistemi e Reti per la maturità: TCP/IP, routing, crittografia, VPN, firewall e sicurezza delle reti. Quiz interattivi e flashcard.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230E3A57'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -39,40 +39,52 @@
         <span>per la Maturità</span>
       </h1>
       <div class="italiano-hero-rule"></div>
-      <p class="italiano-hero-tagline">Quattro moduli — dal livello di rete alla difesa perimetrale. TCP/IP, routing, crittografia CLIL, VPN, firewall e laboratorio Packet Tracer.</p>
+      <p class="italiano-hero-tagline">17 argomenti — dal livello IP alla difesa perimetrale. TCP/IP, routing, crittografia CLIL, VPN, IPsec, firewall, ACL, IDS/IPS e laboratorio Packet Tracer.</p>
       <div class="italiano-hero-actions">
         <a href="pages/argomenti.html" class="italiano-btn-gold">Esplora gli argomenti</a>
         <a href="pages/quiz.html" class="italiano-btn-ghost">Inizia il quiz</a>
       </div>
     </div>
 
-    <!-- Colonna destra — accesso rapido ai moduli -->
+    <!-- Colonna destra — argomenti in evidenza -->
     <div class="italiano-hero-right">
-      <div class="italiano-quick-label">Moduli — accesso rapido</div>
+      <div class="italiano-quick-label">Argomenti — accesso rapido</div>
       <div class="italiano-quick-list">
 
-        <a class="italiano-quick-item" href="pages/argomenti.html#mod1">
+        <a class="italiano-quick-item" href="pages/argomenti.html#arg1">
           <span class="italiano-quick-num">01</span>
-          <span class="italiano-quick-name">TCP/IP e Routing</span>
-          <span class="italiano-quick-tag">IP · NAT · OSPF</span>
+          <span class="italiano-quick-name">TCP/IP e Indirizzi IP</span>
+          <span class="italiano-quick-tag">Classi · Porte · TCP/UDP</span>
         </a>
 
-        <a class="italiano-quick-item" href="pages/argomenti.html#mod2">
-          <span class="italiano-quick-num">02</span>
-          <span class="italiano-quick-name">Crittografia</span>
-          <span class="italiano-quick-tag">CLIL · RSA · AES</span>
+        <a class="italiano-quick-item" href="pages/argomenti.html#arg5">
+          <span class="italiano-quick-num">05</span>
+          <span class="italiano-quick-name">RIP</span>
+          <span class="italiano-quick-tag">Hop count · Count-to-Infinity</span>
         </a>
 
-        <a class="italiano-quick-item" href="pages/argomenti.html#mod3">
-          <span class="italiano-quick-num">03</span>
-          <span class="italiano-quick-name">Sicurezza delle Reti</span>
-          <span class="italiano-quick-tag">VPN · Firewall · IDS</span>
+        <a class="italiano-quick-item" href="pages/argomenti.html#arg10">
+          <span class="italiano-quick-num">10</span>
+          <span class="italiano-quick-name">SSL/TLS</span>
+          <span class="italiano-quick-tag">Handshake · 4 chiavi · HTTPS</span>
         </a>
 
-        <a class="italiano-quick-item" href="pages/argomenti.html#mod4">
-          <span class="italiano-quick-num">04</span>
-          <span class="italiano-quick-name">Laboratorio</span>
-          <span class="italiano-quick-tag">Packet Tracer · Cisco</span>
+        <a class="italiano-quick-item" href="pages/argomenti.html#arg12">
+          <span class="italiano-quick-num">12</span>
+          <span class="italiano-quick-name">IPsec</span>
+          <span class="italiano-quick-tag">SA · IKE Fase 1/2 · AH/ESP</span>
+        </a>
+
+        <a class="italiano-quick-item" href="pages/argomenti.html#arg14">
+          <span class="italiano-quick-num">14</span>
+          <span class="italiano-quick-name">ACL</span>
+          <span class="italiano-quick-tag">Standard · Estesa · Wildcard</span>
+        </a>
+
+        <a class="italiano-quick-item" href="pages/argomenti.html#arg17">
+          <span class="italiano-quick-num">17</span>
+          <span class="italiano-quick-name">Packet Tracer</span>
+          <span class="italiano-quick-tag">IOS · Show · Ping · Debug</span>
         </a>
 
       </div>
@@ -83,35 +95,35 @@
   <!-- ══ SEZIONE INFERIORE ══ -->
   <div class="italiano-lower">
 
-    <!-- Sinistra — Argomenti principali -->
+    <!-- Sinistra — Argomenti principali per modulo -->
     <div class="italiano-correnti">
       <div class="italiano-section-head">
-        <span class="italiano-section-title">Argomenti principali</span>
-        <span class="italiano-section-count">4 moduli</span>
+        <span class="italiano-section-title">Programma per modulo</span>
+        <span class="italiano-section-count">4 moduli · 17 argomenti</span>
       </div>
       <div class="italiano-correnti-list">
 
-        <a class="italiano-corrente-item" href="pages/argomenti.html#mod1">
+        <a class="italiano-corrente-item" href="pages/argomenti.html#arg1">
           <span class="italiano-corrente-period">M1</span>
-          <span class="italiano-corrente-name">Il Livello di Rete e il Protocollo TCP/IP · Il Routing</span>
+          <span class="italiano-corrente-name">TCP/IP e Routing — TCP/IP, Subnetting VLSM, NAT/ICMP, Routing, RIP, OSPF/BGP</span>
           <span class="italiano-corrente-arrow">→</span>
         </a>
 
-        <a class="italiano-corrente-item" href="pages/argomenti.html#mod2">
+        <a class="italiano-corrente-item" href="pages/argomenti.html#arg7">
           <span class="italiano-corrente-period">M2</span>
-          <span class="italiano-corrente-name">Tecniche Crittografiche per la Protezione dei Dati (CLIL)</span>
+          <span class="italiano-corrente-name">Crittografia (CLIL) — Simmetrica/Asimmetrica, DH, Hash, MAC, Firma, PKI, SSL/TLS</span>
           <span class="italiano-corrente-arrow">→</span>
         </a>
 
-        <a class="italiano-corrente-item" href="pages/argomenti.html#mod3">
+        <a class="italiano-corrente-item" href="pages/argomenti.html#arg11">
           <span class="italiano-corrente-period">M3</span>
-          <span class="italiano-corrente-name">La Sicurezza delle Reti · La Difesa Perimetrale con i Firewall</span>
+          <span class="italiano-corrente-name">Sicurezza delle Reti — VPN, IPsec, Firewall, ACL, IDS/IPS, AAA, RADIUS</span>
           <span class="italiano-corrente-arrow">→</span>
         </a>
 
-        <a class="italiano-corrente-item" href="pages/argomenti.html#mod4">
+        <a class="italiano-corrente-item" href="pages/argomenti.html#arg16">
           <span class="italiano-corrente-period">M4</span>
-          <span class="italiano-corrente-name">Laboratorio — Packet Tracer (Cisco)</span>
+          <span class="italiano-corrente-name">Infrastruttura IT — Cloud/Virtualizzazione/AD, Laboratorio Packet Tracer</span>
           <span class="italiano-corrente-arrow">→</span>
         </a>
 
@@ -123,19 +135,19 @@
 
       <div class="italiano-stats-grid">
         <div class="italiano-stat">
-          <span class="italiano-stat-num">4</span>
-          <span class="italiano-stat-label">Moduli</span>
+          <span class="italiano-stat-num">17</span>
+          <span class="italiano-stat-label">Argomenti</span>
         </div>
         <div class="italiano-stat">
-          <span class="italiano-stat-num">—</span>
+          <span class="italiano-stat-num">150+</span>
           <span class="italiano-stat-label">Quiz</span>
         </div>
         <div class="italiano-stat">
-          <span class="italiano-stat-num">—</span>
+          <span class="italiano-stat-num">160+</span>
           <span class="italiano-stat-label">Flashcard</span>
         </div>
         <div class="italiano-stat">
-          <span class="italiano-stat-num">—</span>
+          <span class="italiano-stat-num">17</span>
           <span class="italiano-stat-label">Mappe</span>
         </div>
       </div>
@@ -147,6 +159,136 @@
 
     </div>
 
+  </div>
+
+  <!-- ══ GRIGLIA 17 ARGOMENTI ══ -->
+  <div style="max-width:1180px;margin:3rem auto;padding:0 2rem;">
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+      <span style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:#0E6B7A;flex-shrink:0">Tutti gli argomenti</span>
+      <div style="flex:1;height:1px;background:rgba(26,92,138,.2)"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;">
+
+      <a href="pages/argomenti/arg-01-tcpip.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">IP</span>
+        <div class="author-card-meta">Argomento 1</div>
+        <div class="author-card-name" style="font-size:1rem"><em>TCP/IP e IP</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-02-subnetting.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">/n</span>
+        <div class="author-card-meta">Argomento 2</div>
+        <div class="author-card-name" style="font-size:1rem"><em>Subnetting VLSM</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-03-nat-icmp.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">NAT</span>
+        <div class="author-card-meta">Argomento 3</div>
+        <div class="author-card-name" style="font-size:1rem"><em>NAT, PAT e ICMP</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-04-routing.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">RT</span>
+        <div class="author-card-meta">Argomento 4</div>
+        <div class="author-card-name" style="font-size:1rem"><em>Routing e Algoritmi</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-05-rip.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">RIP</span>
+        <div class="author-card-meta">Argomento 5</div>
+        <div class="author-card-name" style="font-size:1rem"><em>RIP</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-06-ospf-bgp.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">OSPF</span>
+        <div class="author-card-meta">Argomento 6</div>
+        <div class="author-card-name" style="font-size:1rem"><em>OSPF e BGP</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-07-crittografia.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">CRIT</span>
+        <div class="author-card-meta">Argomento 7</div>
+        <div class="author-card-name" style="font-size:1rem"><em>Crittografia</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-08-diffie-hellman.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">DH</span>
+        <div class="author-card-meta">Argomento 8</div>
+        <div class="author-card-name" style="font-size:1rem"><em>DH, Hash, Firma</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-09-pki.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">PKI</span>
+        <div class="author-card-meta">Argomento 9</div>
+        <div class="author-card-name" style="font-size:1rem"><em>Certificati e PKI</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-10-ssl-tls.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">TLS</span>
+        <div class="author-card-meta">Argomento 10</div>
+        <div class="author-card-name" style="font-size:1rem"><em>SSL/TLS</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-11-vpn.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">VPN</span>
+        <div class="author-card-meta">Argomento 11</div>
+        <div class="author-card-name" style="font-size:1rem"><em>VPN</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-12-ipsec.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">IKE</span>
+        <div class="author-card-meta">Argomento 12</div>
+        <div class="author-card-name" style="font-size:1rem"><em>IPsec</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-13-firewall.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">FW</span>
+        <div class="author-card-meta">Argomento 13</div>
+        <div class="author-card-name" style="font-size:1rem"><em>Firewall</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-14-acl.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">ACL</span>
+        <div class="author-card-meta">Argomento 14</div>
+        <div class="author-card-name" style="font-size:1rem"><em>ACL</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-15-ids-ips.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">IDS</span>
+        <div class="author-card-meta">Argomento 15</div>
+        <div class="author-card-name" style="font-size:1rem"><em>IDS, IPS, AAA</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-16-cloud.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">☁</span>
+        <div class="author-card-meta">Argomento 16</div>
+        <div class="author-card-name" style="font-size:1rem"><em>Cloud e AD</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+      <a href="pages/argomenti/arg-17-packet-tracer.html" class="author-card ai" style="text-decoration:none">
+        <span class="author-card-initial">PT</span>
+        <div class="author-card-meta">Argomento 17</div>
+        <div class="author-card-name" style="font-size:1rem"><em>Packet Tracer</em></div>
+        <div class="author-card-cta link-arrow">Studia</div>
+      </a>
+
+    </div>
   </div>
 
   <!-- ══ FOOTER ══ -->
@@ -162,6 +304,7 @@
       </div>
       <nav style="display:flex; gap:18px; flex-wrap:wrap;">
         <a href="pages/argomenti.html">Argomenti</a>
+        <a href="pages/mappe.html">Mappe</a>
         <a href="pages/flashcard.html">Flashcard</a>
         <a href="pages/quiz.html">Quiz</a>
         <a href="../index.html">Portale</a>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACL — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E14%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>.map-overlay{display:none;position:fixed;inset:0;background:rgba(8,69,80,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}.map-overlay.show{display:flex;}.map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}.modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;}.modal-close:hover{color:var(--color-deep);}.modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}.modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;}.modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}</style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+    <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a><a class="topbar-link active" href="../../pages/mappe.html">Mappe</a><a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a><a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a></nav>
+  </header>
+  <nav class="nav"><div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+    <button class="nav-btn" onclick="location.href='../arg-13-firewall/'">← Arg. 13</button>
+    <button class="nav-btn active">14 · ACL</button>
+    <button class="nav-btn" onclick="location.href='../arg-15-ids-ips/'">Arg. 15 →</button>
+  </div></nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;"><div class="section-tag">Mappa WBS · Argomento 14</div><h2>ACL <em>Access Control List</em></h2></div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: funzionamento, tipi, wildcard, posizionamento, sintassi Cisco.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 760" width="100%" style="display:block;min-height:680px;width:max(100%,1400px);margin:0 auto;">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--color-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--color-primary);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <g transform="translate(260,0)">
+            <path d="M -20,350 C 20,350 70,80 70,80" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,230 70,230" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,370 70,370" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,525 70,525" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M 250,80 C 285,80 330,38 330,38" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,95 330,95" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,152 330,152" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,230 C 285,230 330,193 330,193" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,230 C 285,230 330,248 330,248" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,312 330,312" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,365 330,365" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,420 330,420" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,525 C 285,525 330,487 330,487" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,525 C 285,525 330,540 330,540" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,525 C 285,525 330,598 330,598" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <g class="node node-root" onclick="openNode('root')" tabindex="0"><rect x="-220" y="320" width="200" height="60" rx="8"/><text x="-120" y="346" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:13px;font-weight:700;fill:white">ACL</text><text x="-120" y="364" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:rgba(255,255,255,.8)">Access Control List</text></g>
+            <g class="node node-l1" onclick="openNode('funz')" tabindex="0"><rect x="70" y="55" width="180" height="52" rx="7"/><text x="160" y="86" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Funzionamento</text></g>
+            <g class="node node-l1" onclick="openNode('tipi')" tabindex="0"><rect x="70" y="205" width="180" height="52" rx="7"/><text x="160" y="236" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Tipi di ACL</text></g>
+            <g class="node node-l1" onclick="openNode('wildcard')" tabindex="0"><rect x="70" y="345" width="180" height="52" rx="7"/><text x="160" y="376" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Wildcard Mask</text></g>
+            <g class="node node-l1" onclick="openNode('posiz')" tabindex="0"><rect x="70" y="500" width="180" height="52" rx="7"/><text x="160" y="531" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Posizionamento</text></g>
+            <g class="node node-l2" onclick="openNode('topdown')" tabindex="0"><rect x="330" y="15" width="175" height="42" rx="6"/><text x="418" y="40" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Top-down: prima match vince</text></g>
+            <g class="node node-l2" onclick="openNode('deny_imp')" tabindex="0"><rect x="330" y="72" width="175" height="42" rx="6"/><text x="418" y="97" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Deny implicito finale ⚠</text></g>
+            <g class="node node-l2" onclick="openNode('ordine')" tabindex="0"><rect x="330" y="129" width="175" height="42" rx="6"/><text x="418" y="154" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Specifiche prima di generali</text></g>
+            <g class="node node-l2" onclick="openNode('standard')" tabindex="0"><rect x="330" y="170" width="175" height="42" rx="6"/><text x="418" y="195" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Standard 1-99: solo sorgente</text></g>
+            <g class="node node-l2" onclick="openNode('estesa')" tabindex="0"><rect x="330" y="225" width="175" height="42" rx="6"/><text x="418" y="250" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Estesa 100-199: src+dst+porta</text></g>
+            <g class="node node-l2" onclick="openNode('wc_calc')" tabindex="0"><rect x="330" y="289" width="175" height="42" rx="6"/><text x="418" y="314" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">255.255.255.255 - mask</text></g>
+            <g class="node node-l2" onclick="openNode('wc_bit')" tabindex="0"><rect x="330" y="342" width="175" height="42" rx="6"/><text x="418" y="367" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">0=controlla · 1=ignora</text></g>
+            <g class="node node-l2" onclick="openNode('any_host')" tabindex="0"><rect x="330" y="397" width="175" height="42" rx="6"/><text x="418" y="422" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">'any' e 'host' keyword</text></g>
+            <g class="node node-l2" onclick="openNode('std_pos')" tabindex="0"><rect x="330" y="464" width="175" height="42" rx="6"/><text x="418" y="489" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Standard → vicino dest.</text></g>
+            <g class="node node-l2" onclick="openNode('ext_pos')" tabindex="0"><rect x="330" y="517" width="175" height="42" rx="6"/><text x="418" y="542" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Estesa → vicino sorgente</text></g>
+            <g class="node node-l2" onclick="openNode('dir')" tabindex="0"><rect x="330" y="575" width="175" height="42" rx="6"/><text x="418" y="600" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">in (prima routing) · out</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-label" id="modal-label"></div><div class="modal-title" id="modal-title"></div><div class="modal-text" id="modal-text"></div></div>
+  </div>
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes={
+      root:     {label:"Argomento 14",title:"ACL — Access Control List",text:"Le ACL sono liste di regole (ACE — Access Control Entry) applicate alle interfacce del router per filtrare il traffico in ingresso (inbound) o uscita (outbound). Funzioni: sicurezza (limitare accessi), ottimizzazione traffico, filtro per tipo di servizio."},
+      funz:     {label:"Funzionamento",title:"Come Funziona una ACL",text:"Le ACE vengono lette dall'alto verso il basso (top-down). La prima regola che corrisponde al pacchetto viene applicata (permit o deny) e il processing si ferma. Se nessuna regola corrisponde, si applica il deny implicito — tutto viene bloccato."},
+      tipi:     {label:"Tipi",title:"Tipi di ACL",text:"ACL Standard (1-99, 1300-1999): filtra solo l'indirizzo IP sorgente. Posizionare vicino alla destinazione. ACL Estesa (100-199, 2000-2699): filtra IP sorgente + IP destinazione + protocollo + porta. Posizionare vicino alla sorgente. ACL Nominativa: usa nome stringa."},
+      wildcard: {label:"Wildcard",title:"Wildcard Mask",text:"La wildcard mask indica quali bit dell'indirizzo IP devono essere controllati. Bit 0: controlla — il bit dell'indirizzo deve corrispondere. Bit 1: ignora — qualsiasi valore è accettato. Calcolo: 255.255.255.255 - subnet mask."},
+      posiz:    {label:"Posizionamento",title:"Dove Posizionare le ACL",text:"ACL Standard vicino alla destinazione: filtra solo sorgente, se messa vicino alla sorgente bloccherebbe anche il traffico verso altre destinazioni. ACL Estesa vicino alla sorgente: blocca il prima possibile, risparmia risorse di rete."},
+      topdown:  {label:"Top-Down",title:"Prima Match Vince",text:"Le ACE vengono confrontate in ordine. Appena si trova una corrispondenza (match), si applica l'azione (permit o deny) e il controllo si ferma — le ACE successive non vengono controllate. Le regole più specifiche devono quindi precedere quelle generali."},
+      deny_imp: {label:"Deny Implicito ⚠",title:"Il Deny Implicito",text:"Alla fine di ogni ACL Cisco c'è implicitamente un 'deny ip any any'. Se un pacchetto non corrisponde ad alcuna ACE esplicita, viene scartato. Molto importante: se si dimentica di aggiungere 'permit ip any any' alla fine, si blocca tutto il traffico non esplicitamente permesso."},
+      ordine:   {label:"Ordine",title:"Ordine delle Regole",text:"Le regole più specifiche devono precedere quelle generali. Esempio: se si vuole bloccare solo 192.168.1.5 e permettere il resto di 192.168.1.0/24, mettere prima 'deny host 192.168.1.5', poi 'permit 192.168.1.0 0.0.0.255'. Se l'ordine fosse invertito, il permit cattura tutto e il deny non viene mai eseguito."},
+      standard: {label:"ACL Standard",title:"ACL Standard (1-99)",text:"Filtra solo l'indirizzo IP sorgente. Esempio: 'access-list 10 deny host 192.168.1.100 / access-list 10 permit any'. Numeri: 1-99 e 1300-1999. Posizionare vicino alla destinazione perché non può specificare la destinazione e bloccherebbe tutto il traffico da quell'IP."},
+      estesa:   {label:"ACL Estesa",title:"ACL Estesa (100-199)",text:"Filtra su più campi: IP sorgente + IP destinazione + protocollo (tcp, udp, icmp, ip) + porta (eq, gt, lt, range). Esempio: 'access-list 110 deny tcp 10.0.0.0 0.255.255.255 any eq 23' blocca Telnet dalla rete 10.x. Numeri: 100-199 e 2000-2699."},
+      wc_calc:  {label:"Wildcard",title:"Calcolo della Wildcard",text:"Wildcard = 255.255.255.255 - subnet mask. Esempi: /24 → SM 255.255.255.0 → WC 0.0.0.255 (ultimi 8 bit liberi = qualsiasi host in quella rete). /16 → SM 255.255.0.0 → WC 0.0.255.255. /8 → WC 0.255.255.255."},
+      wc_bit:   {label:"Wildcard",title:"Bit 0 e Bit 1",text:"Bit 0 nella wildcard: controlla — il bit corrispondente dell'indirizzo IP deve essere uguale al bit dell'indirizzo di riferimento. Bit 1 nella wildcard: ignora — il bit corrispondente può essere 0 o 1 (qualsiasi valore). Non è il complemento della subnet mask ma ha una logica diversa."},
+      any_host: {label:"Keywords",title:"'any' e 'host'",text:"'any' è la abbreviazione di '0.0.0.0 255.255.255.255' — corrisponde a qualsiasi indirizzo IP. Usato come 'permit ip any any' per permettere tutto il traffico. 'host X.X.X.X' è la abbreviazione di 'X.X.X.X 0.0.0.0' — corrisponde esattamente a quell'IP."},
+      std_pos:  {label:"Posizionamento",title:"ACL Standard → Vicino alla Destinazione",text:"Se un'ACL Standard filtra solo la sorgente e viene applicata vicino alla sorgente, blocca il traffico verso TUTTE le destinazioni, non solo quella voluta. Posizionandola vicino alla destinazione, si limita l'effetto solo al traffico verso quella specifica rete."},
+      ext_pos:  {label:"Posizionamento",title:"ACL Estesa → Vicino alla Sorgente",text:"Un'ACL Estesa può specificare sia sorgente che destinazione, quindi è sicuro applicarla vicino alla sorgente. Questo permette di bloccare il traffico il prima possibile, senza consumare risorse di rete per pacchetti che verrebbero comunque bloccati all'uscita."},
+      dir:      {label:"Direzione",title:"Inbound vs Outbound",text:"Inbound (in): il pacchetto viene filtrato PRIMA del processo di routing — più efficiente perché i pacchetti bloccati non consumano risorse CPU per il routing. Outbound (out): filtrato DOPO il routing. Massimo una ACL per direzione per interfaccia."}
+    };
+    function openNode(id){var n=nodes[id];if(!n)return;document.getElementById('modal-label').textContent=n.label;document.getElementById('modal-title').textContent=n.title;document.getElementById('modal-text').innerHTML=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeModal(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  </script>
+</body>
+</html>

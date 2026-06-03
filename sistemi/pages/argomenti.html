@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Argomenti — Sistemi e Reti · Maturità</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230E3A57'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -12,7 +12,6 @@
 </head>
 <body>
 
-  <!-- ══ TOPBAR SPLIT ══ -->
   <header class="topbar topbar--split">
     <div class="topbar-brand-block">
       <a href="../../index.html" class="topbar-back">← Portale</a>
@@ -26,88 +25,210 @@
     </nav>
   </header>
 
-  <!-- ══ HERO BANNER ══ -->
   <div class="hero-banner" data-initial="A">
     <div class="hero-banner-inner">
       <div class="eyebrow">Home → Argomenti</div>
       <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Argomenti</h1>
-      <p class="hero-banner-sub">Quattro moduli — programma svolto · A.S. 2025-2026 · Classe 5IA</p>
+      <p class="hero-banner-sub">17 argomenti — programma svolto · A.S. 2025-2026 · Classe 5IA</p>
     </div>
   </div>
 
-  <!-- ══ LAYOUT SIDEBAR + MAIN ══ -->
   <div class="page-layout">
 
     <aside class="page-sidebar">
       <div class="page-sidebar-title">Moduli</div>
-      <a class="page-sidebar-item" href="#mod1">M1 · TCP/IP e Routing</a>
-      <a class="page-sidebar-item" href="#mod2">M2 · Crittografia (CLIL)</a>
-      <a class="page-sidebar-item" href="#mod3">M3 · Sicurezza e Firewall</a>
-      <a class="page-sidebar-item" href="#mod4">M4 · Laboratorio</a>
+      <div class="sidebar-section-label">M1 · TCP/IP e Routing</div>
+      <a class="page-sidebar-item" href="#arg1">1 · TCP/IP e IP</a>
+      <a class="page-sidebar-item" href="#arg2">2 · Subnetting/VLSM</a>
+      <a class="page-sidebar-item" href="#arg3">3 · NAT, PAT, ICMP</a>
+      <a class="page-sidebar-item" href="#arg4">4 · Routing</a>
+      <a class="page-sidebar-item" href="#arg5">5 · RIP</a>
+      <a class="page-sidebar-item" href="#arg6">6 · OSPF e BGP</a>
+      <div class="sidebar-section-label">M2 · Crittografia (CLIL)</div>
+      <a class="page-sidebar-item" href="#arg7">7 · Crittografia simm.</a>
+      <a class="page-sidebar-item" href="#arg8">8 · DH, Hash, MAC, Firma</a>
+      <a class="page-sidebar-item" href="#arg9">9 · PKI e Certificati</a>
+      <a class="page-sidebar-item" href="#arg10">10 · SSL/TLS</a>
+      <div class="sidebar-section-label">M3 · Sicurezza</div>
+      <a class="page-sidebar-item" href="#arg11">11 · VPN</a>
+      <a class="page-sidebar-item" href="#arg12">12 · IPsec</a>
+      <a class="page-sidebar-item" href="#arg13">13 · Firewall</a>
+      <a class="page-sidebar-item" href="#arg14">14 · ACL</a>
+      <a class="page-sidebar-item" href="#arg15">15 · IDS, IPS, AAA</a>
+      <div class="sidebar-section-label">M4 · Infrastruttura</div>
+      <a class="page-sidebar-item" href="#arg16">16 · Cloud e AD</a>
+      <a class="page-sidebar-item" href="#arg17">17 · Packet Tracer</a>
     </aside>
 
-    <!-- Main content -->
     <main class="page-main">
 
-      <div class="authors-grid ai" id="mod1" style="margin-top:0;">
+      <!-- ─ M1: TCP/IP e Routing ─ -->
+      <div class="section-header" style="margin-top:0;" id="arg1">
+        <div class="section-tag">M1 · TCP/IP e Routing</div>
+      </div>
 
-        <a class="author-card" href="#">
+      <div class="authors-grid ai">
+
+        <a class="author-card" href="argomenti/arg-01-tcpip.html">
           <span class="author-card-initial">IP</span>
-          <div class="author-card-meta">Modulo 1 — Parte A</div>
-          <div class="author-card-name">Il Livello di Rete<br><em>e il Protocollo TCP/IP</em></div>
-          <div class="author-card-tagline">TCP/IP e indirizzi IP, subnetting (VLSM e CIDR), configurazione host statica e dinamica, inoltro di pacchetti, NAT statico e dinamico, PAT, ICMP.</div>
+          <div class="author-card-meta">Argomento 1</div>
+          <div class="author-card-name">TCP/IP e<br><em>Indirizzi IP</em></div>
+          <div class="author-card-tagline">Modello TCP/IP, classi IP A/B/C, indirizzi privati, subnet mask, CIDR, IPv6, TCP vs UDP, porte well-known.</div>
           <div class="author-card-cta link-arrow">Studia</div>
         </a>
 
-        <a class="author-card" href="#">
+        <a class="author-card" href="argomenti/arg-02-subnetting.html" id="arg2">
+          <span class="author-card-initial">/n</span>
+          <div class="author-card-meta">Argomento 2</div>
+          <div class="author-card-name">Subnetting,<br><em>VLSM e CIDR</em></div>
+          <div class="author-card-tagline">Calcolo subnet, formula host 2^n-2, VLSM, CIDR, wildcard mask, esercizi pratici di subnetting.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-03-nat-icmp.html" id="arg3">
+          <span class="author-card-initial">NAT</span>
+          <div class="author-card-meta">Argomento 3</div>
+          <div class="author-card-name">NAT, PAT<br><em>e ICMP</em></div>
+          <div class="author-card-tagline">NAT statico/dinamico, PAT, tabella NAT, ICMP, ping, traceroute, TTL.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-04-routing.html" id="arg4">
           <span class="author-card-initial">RT</span>
-          <div class="author-card-meta">Modulo 1 — Parte B</div>
-          <div class="author-card-name">Il Routing<br><em>Protocolli e Algoritmi</em></div>
-          <div class="author-card-tagline">Fondamenti di routing, routing statico e dinamico, algoritmi di Dijkstra e Bellman-Ford, routing gerarchico: OSPF, RIP, BGP.</div>
+          <div class="author-card-meta">Argomento 4</div>
+          <div class="author-card-name">Routing:<br><em>Fondamenti e Algoritmi</em></div>
+          <div class="author-card-tagline">Tabella routing, next-hop, routing statico/dinamico, Bellman-Ford, Dijkstra, AS, IGP/EGP.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-05-rip.html" id="arg5">
+          <span class="author-card-initial">RIP</span>
+          <div class="author-card-meta">Argomento 5</div>
+          <div class="author-card-name">RIP<br><em>Routing Information Protocol</em></div>
+          <div class="author-card-tagline">Hop count, timer, Count-to-Infinity, Split Horizon, Poisoned Reverse, RIPv1 vs v2, comandi Cisco.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-06-ospf-bgp.html" id="arg6">
+          <span class="author-card-initial">OSPF</span>
+          <div class="author-card-meta">Argomento 6</div>
+          <div class="author-card-name">OSPF e BGP<br><em>(cenni)</em></div>
+          <div class="author-card-tagline">OSPF Link-State, LSA, LSDB, Dijkstra, costo, Area 0. BGP Path Vector, AS, confronto RIP/OSPF/BGP.</div>
           <div class="author-card-cta link-arrow">Studia</div>
         </a>
 
       </div>
 
-      <div class="authors-grid ai" id="mod2" style="margin-top:2rem;">
+      <!-- ─ M2: Crittografia ─ -->
+      <div class="section-header" id="arg7">
+        <div class="section-tag">M2 · Crittografia (CLIL)</div>
+      </div>
 
-        <a class="author-card" href="#">
-          <span class="author-card-initial">🔐</span>
-          <div class="author-card-meta">Modulo 2 (CLIL)</div>
-          <div class="author-card-name">Tecniche Crittografiche<br><em>per la Protezione dei Dati</em></div>
-          <div class="author-card-tagline">Principi di crittografia, crittografia simmetrica (DES, AES), crittografia asimmetrica RSA, algoritmo Diffie-Hellmann, firma digitale, certificati digitali, Hash, MAC e HMAC, autenticazione forte e debole.</div>
+      <div class="authors-grid ai">
+
+        <a class="author-card" href="argomenti/arg-07-crittografia.html">
+          <span class="author-card-initial">CRIT</span>
+          <div class="author-card-meta">Argomento 7</div>
+          <div class="author-card-name">Crittografia:<br><em>Principi e Simmetrica</em></div>
+          <div class="author-card-tagline">Obiettivi crittografia, simmetrica vs asimmetrica, DES, AES, RSA, sistema ibrido.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-08-diffie-hellman.html" id="arg8">
+          <span class="author-card-initial">DH</span>
+          <div class="author-card-meta">Argomento 8</div>
+          <div class="author-card-name">Diffie-Hellman,<br><em>Hash, MAC, Firma Digitale</em></div>
+          <div class="author-card-tagline">Scambio chiavi DH, funzioni hash, MD5/SHA, MAC, HMAC, firma digitale, MFA, TOTP, U2F.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-09-pki.html" id="arg9">
+          <span class="author-card-initial">PKI</span>
+          <div class="author-card-meta">Argomento 9</div>
+          <div class="author-card-name">Certificati Digitali<br><em>e PKI</em></div>
+          <div class="author-card-tagline">Certificato X.509, CA, Root CA, PKI, verifica certificato, CRL, OCSP, DV/OV/EV.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-10-ssl-tls.html" id="arg10">
+          <span class="author-card-initial">TLS</span>
+          <div class="author-card-meta">Argomento 10</div>
+          <div class="author-card-name">SSL/TLS<br><em>HTTPS e Handshake</em></div>
+          <div class="author-card-tagline">SSL vs TLS, HTTPS, Handshake step-by-step, pre-master secret, master secret, le 4 chiavi, cipher suite.</div>
           <div class="author-card-cta link-arrow">Studia</div>
         </a>
 
       </div>
 
-      <div class="authors-grid ai" id="mod3" style="margin-top:2rem;">
+      <!-- ─ M3: Sicurezza delle Reti ─ -->
+      <div class="section-header" id="arg11">
+        <div class="section-tag">M3 · Sicurezza delle Reti</div>
+      </div>
 
-        <a class="author-card" href="#">
+      <div class="authors-grid ai">
+
+        <a class="author-card" href="argomenti/arg-11-vpn.html">
           <span class="author-card-initial">VPN</span>
-          <div class="author-card-meta">Modulo 3 — Parte A</div>
-          <div class="author-card-name">La Sicurezza delle Reti<br><em>SSL/TLS e VPN</em></div>
-          <div class="author-card-tagline">Sicurezza nelle connessioni SSL/TLS, reti private virtuali (VPN): remote-access e site-to-site, sicurezza nelle VPN (autenticazione, integrità, riservatezza), protocolli IPsec e SSL/TLS a confronto.</div>
+          <div class="author-card-meta">Argomento 11</div>
+          <div class="author-card-name">VPN<br><em>Virtual Private Network</em></div>
+          <div class="author-card-tagline">Tunneling, remote-access vs site-to-site, IPsec/SSL/OpenVPN/WireGuard, confronto protocolli.</div>
           <div class="author-card-cta link-arrow">Studia</div>
         </a>
 
-        <a class="author-card" href="#">
+        <a class="author-card" href="argomenti/arg-12-ipsec.html" id="arg12">
+          <span class="author-card-initial">IKE</span>
+          <div class="author-card-meta">Argomento 12</div>
+          <div class="author-card-name">IPsec<br><em>Framework di sicurezza</em></div>
+          <div class="author-card-tagline">SA, IKE Fase 1/2, Main/Aggressive Mode, AH vs ESP, trasporto vs tunnel, PFS, NAT-T.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-13-firewall.html" id="arg13">
           <span class="author-card-initial">FW</span>
-          <div class="author-card-meta">Modulo 3 — Parte B</div>
-          <div class="author-card-name">La Difesa Perimetrale<br><em>con i Firewall</em></div>
-          <div class="author-card-tagline">Generalità sui firewall: packet filter, stateful inspection, circuit gateway, application proxy. DMZ, access list (ACL) standard ed estese, VPN, IDS e IPS.</div>
+          <div class="author-card-meta">Argomento 13</div>
+          <div class="author-card-name">Firewall<br><em>e Architetture di Rete</em></div>
+          <div class="author-card-tagline">DMZ, tipologie firewall, Packet Filter, SPI, Proxy, NGFW, DPI, Bastion Host, Screened Subnet.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-14-acl.html" id="arg14">
+          <span class="author-card-initial">ACL</span>
+          <div class="author-card-meta">Argomento 14</div>
+          <div class="author-card-name">ACL<br><em>Access Control List</em></div>
+          <div class="author-card-tagline">ACL Standard/Estesa/Nominativa, deny implicito, posizionamento, wildcard mask, sintassi Cisco IOS.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-15-ids-ips.html" id="arg15">
+          <span class="author-card-initial">IDS</span>
+          <div class="author-card-meta">Argomento 15</div>
+          <div class="author-card-name">IDS, IPS<br><em>e Sicurezza Perimetrale</em></div>
+          <div class="author-card-tagline">IDS/IPS passivo/attivo, HIDS/NIDS, anomaly/signature detection, AAA, RADIUS, TACACS+, MFA.</div>
           <div class="author-card-cta link-arrow">Studia</div>
         </a>
 
       </div>
 
-      <div class="authors-grid ai" id="mod4" style="margin-top:2rem;">
+      <!-- ─ M4: Infrastruttura IT ─ -->
+      <div class="section-header" id="arg16">
+        <div class="section-tag">M4 · Infrastruttura IT e Laboratorio</div>
+      </div>
 
-        <a class="author-card" href="#">
+      <div class="authors-grid ai">
+
+        <a class="author-card" href="argomenti/arg-16-cloud.html">
+          <span class="author-card-initial">☁</span>
+          <div class="author-card-meta">Argomento 16</div>
+          <div class="author-card-name">Cloud, Virtualizzazione<br><em>e Active Directory</em></div>
+          <div class="author-card-tagline">IaaS/PaaS/SaaS, hypervisor, RTO/RPO, backup 3-2-1, clustering HA, Active Directory, GPO, SSO.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="argomenti/arg-17-packet-tracer.html" id="arg17">
           <span class="author-card-initial">PT</span>
-          <div class="author-card-meta">Modulo 4 — Laboratorio</div>
-          <div class="author-card-name">Packet Tracer<br><em>Piattaforma Cisco</em></div>
-          <div class="author-card-tagline">Esercitazioni con il software di simulazione Packet Tracer (Cisco) sugli argomenti teorici: configurazione di reti, routing, NAT, ACL e protocolli di sicurezza.</div>
+          <div class="author-card-meta">Argomento 17</div>
+          <div class="author-card-name">Laboratorio<br><em>Packet Tracer (Cisco)</em></div>
+          <div class="author-card-tagline">Modalità IOS, comandi show, configurare interfacce/RIP/ACL/NAT, ping, traceroute, troubleshooting.</div>
           <div class="author-card-cta link-arrow">Studia</div>
         </a>
 

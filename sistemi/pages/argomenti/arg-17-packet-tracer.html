@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio Packet Tracer — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E17%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="modalita">Modalità IOS</button>
+  <button class="nav-btn" data-sec="comandi">Comandi</button>
+  <button class="nav-btn" data-sec="esercizi">Esercizi tipici</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 17</div><h1 class="title">Laboratorio<br><em>Packet Tracer (Cisco)</em></h1><p class="subtitle">Simulazione e configurazione di reti con Cisco IOS.</p></div>
+    <div class="grid-2">
+      <div><p><strong>Packet Tracer</strong> è il software di simulazione reti Cisco. Permette di configurare router, switch e host in un ambiente virtuale, verificando la connettività e testando le configurazioni teoriche.</p>
+      <div class="box-concetto"><h4>Competenze laboratoriali</h4><ul class="clean"><li>Configurare interfacce con IP e subnet mask</li><li>Configurare e verificare RIPv2</li><li>Configurare ACL standard ed estese</li><li>Configurare NAT/PAT</li><li>Verificare con ping, traceroute e comandi show</li></ul></div></div>
+      <div><div class="box-frase">«La pratica di laboratorio separa chi capisce da chi sa solo recitare.»<span class="label">— Cisco Networking Academy</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="modalita">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Modalità IOS</h2></div>
+    <div class="box-concetto"><h4>Gerarchia dei modi</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">Router>                     ! User EXEC (accesso base)
+Router> enable              ! Entra in Privileged EXEC
+Router#                     ! Privileged EXEC (# = privilegiato)
+Router# configure terminal  ! Entra in Global Configuration
+Router(config)#             ! Global Config (per configurare il dispositivo)
+Router(config)# interface fastEthernet 0/0
+Router(config-if)#          ! Interface Config (per configurare un'interfaccia)
+Router(config-if)# exit     ! Torna al livello precedente
+Router(config)# Ctrl+Z      ! Torna direttamente al Privileged EXEC</pre>
+    </div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Cavi in Packet Tracer</h4><ul class="clean">
+      <li><strong>Straight-through:</strong> dispositivi diversi (PC↔switch, router↔switch).</li>
+      <li><strong>Crossover:</strong> dispositivi dello stesso tipo (PC↔PC, switch↔switch, router↔router senza MDIX).</li>
+      <li><strong>Serial DCE:</strong> collegamento WAN seriale tra router (il lato DCE deve avere clock rate).</li>
+      <li><strong>Fiber:</strong> connessioni ad alta velocità (GigabitEthernet).</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="section" id="comandi">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Comandi Principali</h2></div>
+    <div class="box-concetto"><h4>Configurazione interfaccia</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">Router(config)# interface fastEthernet 0/0
+Router(config-if)# ip address 192.168.1.1 255.255.255.0
+Router(config-if)# no shutdown      ! Abilita l'interfaccia (disabilitata per default!)
+Router(config-if)# description LAN_PRINCIPALE  ! Opzionale, documenta l'interfaccia</pre>
+    </div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>RIP v2</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">Router(config)# router rip
+Router(config-router)# version 2
+Router(config-router)# network 192.168.1.0  ! Annuncia questa rete
+Router(config-router)# network 10.0.0.0
+Router(config-router)# no auto-summary      ! Fondamentale per VLSM</pre>
+    </div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Routing statico</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">Router(config)# ip route 10.0.0.0 255.255.255.0 192.168.1.254
+Router(config)# ip route 0.0.0.0 0.0.0.0 192.168.1.254  ! Default route</pre>
+    </div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>ACL</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">Router(config)# access-list 10 deny host 192.168.1.100
+Router(config)# access-list 10 permit any
+Router(config)# interface fa0/1
+Router(config-if)# ip access-group 10 out</pre>
+    </div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>NAT/PAT</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">Router(config)# access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)# ip nat inside source list 1 interface fa0/0 overload
+Router(config)# interface fa0/1
+Router(config-if)# ip nat inside
+Router(config)# interface fa0/0
+Router(config-if)# ip nat outside</pre>
+    </div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Comandi SHOW principali</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">show ip route              ! Tabella routing (C=connected, S=static, R=RIP)
+show ip protocols          ! Protocolli routing attivi, reti, timer
+show ip rip database       ! Database RIP con metriche
+show ip access-lists       ! ACL con contatori match
+show ip nat translations   ! Tabella NAT attiva
+show interfaces            ! Stato interfacce (up/down, IP, statistiche)
+show interfaces brief      ! Riepilogo rapido interfacce</pre>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="esercizi">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>Esercizi Tipici</h2></div>
+    <div class="box-concetto"><h4>Verifica della connettività</h4><ul class="clean">
+      <li><strong>ping [IP]</strong> — <code>!!!!!</code> = successo, <code>.....</code> = timeout, <code>U</code> = unreachable.</li>
+      <li><strong>traceroute [IP]</strong> — mostra il percorso hop per hop con RTT. <code>*</code> = no risposta.</li>
+      <li><strong>show ip route</strong> — verifica che le rotte siano presenti e correct.</li>
+      <li><strong>show interfaces fa0/0</strong> — deve mostrare "FastEthernet0/0 is up, line protocol is up".</li>
+    </ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Troubleshooting tipico</h4><ul class="clean">
+      <li>Interfaccia down → controllare <code>no shutdown</code> e cavo corretto.</li>
+      <li>Rotta mancante → verificare <code>network</code> in RIP o <code>ip route</code> per il routing statico.</li>
+      <li>ACL blocca traffico inaspettato → controllare <code>show ip access-lists</code> e l'ordine delle regole.</li>
+      <li>NAT non funziona → verificare <code>ip nat inside/outside</code> sulle interfacce corrette.</li>
+    </ul></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«Un router configurato male è peggio di un router spento.»<cite>— Cisco Networking Academy</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

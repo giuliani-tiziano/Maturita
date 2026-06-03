@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAT, PAT e ICMP — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E3%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .map-overlay { display:none; position:fixed; inset:0; background:rgba(8,69,80,.55); z-index:500; align-items:center; justify-content:center; padding:1rem; }
+    .map-overlay.show { display:flex; }
+    .map-modal { background:var(--paper); border:1px solid var(--color-primary); padding:2rem 2rem 1.5rem; max-width:480px; width:100%; max-height:80vh; overflow-y:auto; position:relative; }
+    .modal-close { position:absolute; top:.8rem; right:1rem; font-family:var(--serif); font-size:1.4rem; color:var(--ink-soft); background:none; border:none; cursor:pointer; line-height:1; }
+    .modal-close:hover { color:var(--color-deep); }
+    .modal-label { font-family:var(--sans); font-weight:500; font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--color-primary); margin-bottom:.5rem; }
+    .modal-title { font-family:var(--serif); font-style:italic; font-weight:500; font-size:1.6rem; color:var(--color-deep); margin-bottom:.8rem; line-height:1.1; }
+    .modal-text { font-family:var(--sans); font-weight:300; font-size:.92rem; color:var(--ink-soft); line-height:1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../index.html" class="topbar-back">← Portale</a>
+      <a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a>
+      <a class="topbar-link active" href="../../pages/mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+      <button class="nav-btn" onclick="location.href='../arg-02-subnetting/'">← Arg. 2</button>
+      <button class="nav-btn active">3 · NAT/ICMP</button>
+      <button class="nav-btn" onclick="location.href='../arg-04-routing/'">Arg. 4 →</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS · Argomento 3</div>
+        <h2>NAT, PAT <em>e ICMP</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: NAT statico, dinamico, PAT, vantaggi/svantaggi e ICMP.</p>
+
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 860" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;" aria-label="Mappa WBS NAT PAT ICMP">
+          <style>
+            .node { cursor:pointer; }
+            .node-root rect { fill:var(--color-deep); }
+            .node-root text { fill:#fff; }
+            .node-l1 rect { fill:var(--color-primary); }
+            .node-l1 text { fill:#fff; }
+            .node-l2 rect { fill:var(--beige-mid); stroke:var(--rule-soft); stroke-width:1; }
+            .node-l2 text { fill:var(--ink); }
+            .node rect { transition:filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter:brightness(1.12); }
+            .node:focus { outline:none; }
+          </style>
+
+          <g transform="translate(260,0)">
+            <!-- Connessioni root → L1 -->
+            <path d="M -20,400 C 20,400 70,90 70,90" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,230 70,230" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,380 70,380" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,530 70,530" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,670 70,670" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+            <!-- Connessioni L1 → L2 -->
+            <path d="M 250,90 C 285,90 330,40 330,40" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,90 C 285,90 330,90 330,90" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,90 C 285,90 330,140 330,140" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,185 330,185" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,230 330,230" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,230 C 285,230 330,275 330,275" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,335 330,335" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,380 330,380" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,380 C 285,380 330,425 330,425" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,490 330,490" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,530 330,530" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,530 C 285,530 330,570 330,570" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,630 330,630" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,670 330,670" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+            <path d="M 250,670 C 285,670 330,710 330,710" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+            <!-- ROOT -->
+            <g class="node node-root" onclick="openNode('root')" tabindex="0" role="button">
+              <rect x="-220" y="370" width="200" height="60" rx="8"/>
+              <text>
+                <tspan x="-120" y="392" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="16" font-weight="600" fill="white">NAT PAT</tspan>
+                <tspan x="-120" y="410" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" font-weight="500" letter-spacing="0.1em" fill="white">E ICMP</tspan>
+              </text>
+            </g>
+
+            <!-- L1 -->
+            <g class="node node-l1" onclick="openNode('natstat')" tabindex="0" role="button">
+              <rect x="70" y="64" width="180" height="52" rx="7"/>
+              <text x="160" y="95" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">NAT Statico</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('natdin')" tabindex="0" role="button">
+              <rect x="70" y="204" width="180" height="52" rx="7"/>
+              <text x="160" y="235" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">NAT Dinamico e PAT</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('vantaggi')" tabindex="0" role="button">
+              <rect x="70" y="354" width="180" height="52" rx="7"/>
+              <text x="160" y="385" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Vantaggi NAT</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('svantaggi')" tabindex="0" role="button">
+              <rect x="70" y="504" width="180" height="52" rx="7"/>
+              <text x="160" y="535" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">Svantaggi NAT</text>
+            </g>
+            <g class="node node-l1" onclick="openNode('icmp')" tabindex="0" role="button">
+              <rect x="70" y="644" width="180" height="52" rx="7"/>
+              <text x="160" y="675" text-anchor="middle" font-family="'Jost',sans-serif" font-size="11" font-weight="600" fill="white">ICMP</text>
+            </g>
+
+            <!-- L2 - NAT Statico -->
+            <g class="node node-l2" onclick="openNode('mapp11')" tabindex="0" role="button">
+              <rect x="330" y="16" width="175" height="42" rx="6"/>
+              <text x="418" y="42" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Mappatura 1:1 fissa</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('serverint')" tabindex="0" role="button">
+              <rect x="330" y="66" width="175" height="42" rx="6"/>
+              <text x="418" y="92" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Server interni esposti</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('privpub')" tabindex="0" role="button">
+              <rect x="330" y="116" width="175" height="42" rx="6"/>
+              <text x="418" y="142" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">IP privato ↔ IP pubblico</text>
+            </g>
+
+            <!-- L2 - NAT Dinamico / PAT -->
+            <g class="node node-l2" onclick="openNode('pool')" tabindex="0" role="button">
+              <rect x="330" y="161" width="175" height="42" rx="6"/>
+              <text x="418" y="187" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Pool IP pubblici</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('pat')" tabindex="0" role="button">
+              <rect x="330" y="206" width="175" height="42" rx="6"/>
+              <text x="418" y="232" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">PAT: molti host → 1 IP</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('tabnat')" tabindex="0" role="button">
+              <rect x="330" y="251" width="175" height="42" rx="6"/>
+              <text x="418" y="277" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Tabella NAT</text>
+            </g>
+
+            <!-- L2 - Vantaggi -->
+            <g class="node node-l2" onclick="openNode('risparmio')" tabindex="0" role="button">
+              <rect x="330" y="311" width="175" height="42" rx="6"/>
+              <text x="418" y="337" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Risparmio IPv4</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('nascosti')" tabindex="0" role="button">
+              <rect x="330" y="356" width="175" height="42" rx="6"/>
+              <text x="418" y="382" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">IP interni nascosti</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('indip')" tabindex="0" role="button">
+              <rect x="330" y="401" width="175" height="42" rx="6"/>
+              <text x="418" y="427" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Indipendenza ISP</text>
+            </g>
+
+            <!-- L2 - Svantaggi -->
+            <g class="node node-l2" onclick="openNode('endtoend')" tabindex="0" role="button">
+              <rect x="330" y="466" width="175" height="42" rx="6"/>
+              <text x="418" y="492" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Rompe end-to-end</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('sipftp')" tabindex="0" role="button">
+              <rect x="330" y="506" width="175" height="42" rx="6"/>
+              <text x="418" y="532" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Problemi SIP/FTP</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('portfwd')" tabindex="0" role="button">
+              <rect x="330" y="546" width="175" height="42" rx="6"/>
+              <text x="418" y="572" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Port forwarding</text>
+            </g>
+
+            <!-- L2 - ICMP -->
+            <g class="node node-l2" onclick="openNode('icmpl3')" tabindex="0" role="button">
+              <rect x="330" y="606" width="175" height="42" rx="6"/>
+              <text x="418" y="632" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Diagnostica L3</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('ping')" tabindex="0" role="button">
+              <rect x="330" y="646" width="175" height="42" rx="6"/>
+              <text x="418" y="672" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Ping: Echo Req/Reply</text>
+            </g>
+            <g class="node node-l2" onclick="openNode('traceroute')" tabindex="0" role="button">
+              <rect x="330" y="686" width="175" height="42" rx="6"/>
+              <text x="418" y="712" text-anchor="middle" font-family="'Jost',sans-serif" font-size="10" fill="var(--ink)">Traceroute + TTL</text>
+            </g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal">
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+      <div class="modal-label" id="modal-label"></div>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-text" id="modal-text"></div>
+    </div>
+  </div>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes = {
+      root:       { label:'Argomento 3', title:'NAT, PAT e ICMP', text:'NAT (Network Address Translation) traduce indirizzi IP privati in pubblici permettendo a reti interne di comunicare con Internet usando pochi IP pubblici. PAT (Port Address Translation) è la variante più comune che usa anche le porte per distinguere i flussi. ICMP è il protocollo di diagnostica di rete usato da ping e traceroute.' },
+      natstat:    { label:'Area 1', title:'NAT Statico', text:'Il NAT statico crea una mappatura permanente e fissa tra un indirizzo IP privato e uno pubblico. Ogni host interno ha sempre lo stesso IP pubblico. Usato per esporre server interni su Internet (web server, mail server) in modo prevedibile.' },
+      natdin:     { label:'Area 2', title:'NAT Dinamico e PAT', text:'Il NAT dinamico usa un pool di IP pubblici assegnati temporaneamente agli host interni. PAT (o NAT overload) mappa molti host interni su un singolo IP pubblico usando le porte per distinguere le sessioni. È la modalità usata in quasi tutti i router domestici e aziendali.' },
+      vantaggi:   { label:'Area 3', title:'Vantaggi del NAT', text:'NAT permette di utilizzare indirizzi privati internamente, risparmiando IP pubblici scarsi. Nasconde la topologia e gli indirizzi della rete interna, fornendo un minimo di sicurezza "per oscuramento". Permette di cambiare ISP senza dover rinumerare tutta la rete interna.' },
+      svantaggi:  { label:'Area 4', title:'Svantaggi del NAT', text:'NAT rompe il principio end-to-end di Internet: le connessioni non possono essere iniziate dall\'esterno senza port forwarding. Crea problemi con protocolli che incorporano l\'IP nel payload (SIP, FTP attivo). Aggiunge complessità e può essere un punto singolo di guasto.' },
+      icmp:       { label:'Area 5', title:'ICMP', text:'ICMP (Internet Control Message Protocol, RFC 792) opera al livello 3 (IP) per inviare messaggi di errore e diagnostica. Non trasporta dati utente ma messaggi di controllo. Esempi: destination unreachable, time exceeded, redirect. Usato da ping e traceroute per diagnosticare la raggiungibilità della rete.' },
+      mapp11:     { label:'NAT Statico', title:'Mappatura 1:1 fissa', text:'Ogni indirizzo IP privato interno è associato in modo permanente a un specifico indirizzo IP pubblico. La mappatura è configurata manualmente e non cambia. Esempio: il server web interno 192.168.1.10 è sempre raggiungibile dall\'esterno tramite l\'IP pubblico 203.0.113.10.' },
+      serverint:  { label:'NAT Statico', title:'Server interni esposti', text:'NAT statico è il metodo tradizionale per rendere raggiungibili dall\'Internet pubblica i server della rete interna: web server, mail server, server FTP. Per ogni servizio da esporre serve un IP pubblico dedicato, il che limita la scalabilità rispetto al port forwarding con PAT.' },
+      privpub:    { label:'NAT Statico', title:'IP privato ↔ IP pubblico', text:'Il router NAT mantiene una tabella di mappatura statica. Quando un pacchetto entra con destinazione l\'IP pubblico, il router modifica l\'header IP sostituendo l\'IP pubblico con il privato corrispondente. In uscita, l\'IP sorgente privato viene sostituito con il pubblico mappato.' },
+      pool:       { label:'NAT Dinamico', title:'Pool di IP pubblici', text:'Il NAT dinamico usa un gruppo (pool) di indirizzi IP pubblici. Quando un host interno inizia una connessione, gli viene assegnato temporaneamente un IP dal pool. Al termine della sessione, l\'IP torna disponibile. Il numero di sessioni simultanee è limitato dalla dimensione del pool.' },
+      pat:        { label:'NAT Dinamico', title:'PAT: molti host su un IP', text:'PAT (Port Address Translation), detto anche NAT overload, usa un singolo IP pubblico per tutti gli host interni. Distingue le sessioni tramite numeri di porta: ogni connessione interna ha una coppia (IP_pubblico:porta_pubblica) univoca. Permette a centinaia di host di condividere un solo IP pubblico.' },
+      tabnat:     { label:'NAT Dinamico', title:'Tabella NAT', text:'Il router mantiene una tabella NAT che registra ogni sessione attiva: IP_interno:porta_interna ↔ IP_pubblico:porta_pubblica. Quando arriva la risposta dall\'Internet, il router consulta la tabella per sapere a quale host interno deve consegnare il pacchetto.' },
+      risparmio:  { label:'Vantaggi NAT', title:'Risparmio degli indirizzi IPv4', text:'Grazie al NAT (soprattutto PAT) milioni di dispositivi in tutto il mondo condividono un numero limitato di indirizzi IPv4 pubblici. Senza NAT, l\'esaurimento degli indirizzi IPv4 (avvenuto ufficialmente nel 2011) avrebbe bloccato la crescita di Internet molto prima.' },
+      nascosti:   { label:'Vantaggi NAT', title:'IP interni nascosti', text:'Il NAT impedisce all\'esterno di vedere e raggiungere direttamente gli indirizzi IP interni. Un attaccante su Internet non può sapere quanti host ci sono nella rete interna né i loro indirizzi. Questo "security through obscurity" non sostituisce un firewall ma aggiunge un layer di protezione.' },
+      indip:      { label:'Vantaggi NAT', title:'Indipendenza dall\'ISP', text:'Con NAT, la rete interna usa indirizzi privati indipendenti dall\'ISP. Se si cambia provider, basta riconfigurare il router NAT con il nuovo IP pubblico, senza dover rinumerare tutti i dispositivi interni. Questo semplifica enormemente la gestione.' },
+      endtoend:   { label:'Svantaggi NAT', title:'Violazione del principio end-to-end', text:'Il modello originale di Internet prevedeva comunicazioni dirette tra endpoint. NAT crea un intermediario che modifica i pacchetti, rompendo questo principio. Le connessioni non possono essere iniziate dall\'esterno verso un host interno senza configurare esplicitamente il port forwarding.' },
+      sipftp:     { label:'Svantaggi NAT', title:'Problemi con SIP e FTP attivo', text:'Alcuni protocolli incorporano indirizzi IP nel payload dei dati (non solo nell\'header IP). SIP (VoIP) e FTP in modalità attiva sono esempi classici. Il NAT non traduce questi indirizzi nel payload, causando malfunzionamenti. Richiedono ALG (Application Layer Gateway) per funzionare correttamente.' },
+      portfwd:    { label:'Svantaggi NAT', title:'Port forwarding', text:'Per permettere connessioni dall\'esterno verso un server interno, bisogna configurare manualmente il port forwarding sul router: ogni richiesta su una porta pubblica specifica viene inoltrata a un host interno e porta determinati. Questa configurazione manuale è complessa e soggetta a errori.' },
+      icmpl3:     { label:'ICMP', title:'Protocollo di diagnostica L3', text:'ICMP (RFC 792) è integrato nel livello IP. Trasporta messaggi di errore (destination unreachable, time exceeded, redirect) e di diagnostica (echo request/reply). Non garantisce la consegna ed è connectionless. I pacchetti ICMP hanno header IP con protocollo numero 1.' },
+      ping:       { label:'ICMP', title:'Ping — Echo Request/Reply', text:'Ping invia messaggi ICMP Echo Request (tipo 8) alla destinazione, che risponde con Echo Reply (tipo 0). Misura l\'RTT (Round Trip Time) e verifica la raggiungibilità. Un ping che non riceve risposta può indicare: host irraggiungibile, firewall che blocca ICMP, o problema di routing.' },
+      traceroute: { label:'ICMP', title:'Traceroute e TTL', text:'Traceroute scopre il percorso di un pacchetto inviando datagrammi con TTL incrementale (1, 2, 3...). Ogni router decrementa il TTL di 1; quando raggiunge 0, restituisce un ICMP Time Exceeded rivelando il proprio IP. Traceroute ripete finché raggiunge la destinazione che risponde con ICMP Port Unreachable.' }
+    };
+    function openNode(id) {
+      var n = nodes[id]; if (!n) return;
+      document.getElementById('modal-label').textContent = n.label;
+      document.getElementById('modal-title').textContent = n.title;
+      document.getElementById('modal-text').innerHTML = n.text;
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeModal() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>

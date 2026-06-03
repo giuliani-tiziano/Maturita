@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routing: Fondamenti e Algoritmi — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E4%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="statico">Routing Statico/Dinamico</button>
+  <button class="nav-btn" data-sec="algoritmi">Algoritmi</button>
+  <button class="nav-btn" data-sec="igpegp">IGP ed EGP</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 4</div><h1 class="title">Routing:<br><em>Fondamenti e Algoritmi</em></h1><p class="subtitle">Come i pacchetti trovano il loro percorso attraverso la rete.</p></div>
+    <div class="grid-2">
+      <div><p>Il <strong>routing</strong> è il processo che permette a due nodi non direttamente connessi di comunicare attraverso una rete di router. Ogni router prende decisioni autonome basandosi sulla propria tabella di routing.</p>
+      <div class="box-concetto"><h4>Tabella di Routing — campi principali</h4><ul class="clean"><li><strong>Destinazione:</strong> rete o host di destinazione</li><li><strong>Subnet Mask:</strong> per identificare la rete</li><li><strong>Next-Hop:</strong> IP del prossimo router</li><li><strong>Interfaccia di uscita:</strong> interfaccia locale da usare</li><li><strong>Metrica:</strong> "costo" del percorso (usato per scegliere il migliore)</li></ul></div></div>
+      <div><div class="box-frase">«Il routing è l'arte di trovare il cammino migliore in un labirinto che cambia continuamente.»<span class="label">— IETF</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="statico">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Routing Statico vs Dinamico</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Caratteristica</th><th>Routing Statico</th><th>Routing Dinamico</th></tr></thead><tbody>
+      <tr><td>Configurazione</td><td>Manuale dall'amministratore</td><td>Automatica (protocolli)</td></tr>
+      <tr><td>Adattamento ai guasti</td><td>Non si adatta</td><td>Si adatta automaticamente</td></tr>
+      <tr><td>Scalabilità</td><td>Limitata (reti piccole)</td><td>Alta (reti grandi)</td></tr>
+      <tr><td>Overhead</td><td>Nessuno</td><td>Consumo banda e CPU</td></tr>
+      <tr><td>Sicurezza</td><td>Più controllabile</td><td>Più complesso da proteggere</td></tr>
+      <tr><td>Uso tipico</td><td>Reti semplici, default route</td><td>Reti enterprise, Internet</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Routing Statico — Cisco IOS</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">ip route [rete] [mask] [next-hop]
+! Esempio:
+ip route 10.0.0.0 255.255.255.0 192.168.1.1
+! Default route:
+ip route 0.0.0.0 0.0.0.0 192.168.1.254</pre>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="algoritmi">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Algoritmi di Routing</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Caratteristica</th><th>Bellman-Ford (Distance Vector)</th><th>Dijkstra (Link-State)</th></tr></thead><tbody>
+      <tr><td>Conoscenza della rete</td><td>Solo vicini diretti</td><td>Mappa completa (LSDB)</td></tr>
+      <tr><td>Informazioni scambiate</td><td>Vettori di distanza con vicini</td><td>LSA a tutta la rete (flooding)</td></tr>
+      <tr><td>Pesi negativi</td><td>Accettati</td><td>Non accettati</td></tr>
+      <tr><td>Complessità</td><td>O(V × E)</td><td>O(E log V) con heap</td></tr>
+      <tr><td>Convergenza</td><td>Lenta</td><td>Rapida</td></tr>
+      <tr><td>Protocollo</td><td>RIP, EIGRP (ibrido)</td><td>OSPF, IS-IS</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Bellman-Ford — funzionamento</h4>
+      <p>Ogni router conosce solo le distanze verso i vicini diretti. Invia il proprio vettore di distanze ai vicini. I vicini aggiornano la propria tabella se trovano un percorso più corto. Dopo alcune iterazioni converge. Problema: Count-to-Infinity quando un link cade.</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Dijkstra — funzionamento</h4>
+      <p>Ogni router riceve LSA da tutti gli altri e costruisce il LSDB (mappa completa). Calcola i percorsi minimi con Dijkstra: espande iterativamente il nodo con distanza minima. Risultato: un albero di percorsi minimi (Shortest Path Tree).</p></div>
+  </div>
+</section>
+
+<section class="section" id="igpegp">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>IGP, EGP e Autonomous System</h2></div>
+    <div class="box-concetto"><h4>Autonomous System (AS)</h4>
+      <p>Un <strong>AS</strong> è un insieme di reti IP sotto il controllo di una singola organizzazione con una politica di routing unificata. Identificato da un ASN (es. Google = AS15169). Gli AS sono i "mattoni" di Internet.</p></div>
+    <div class="table-wrap" style="margin-top:1rem"><table class="data-table"><thead><tr><th>Tipo</th><th>Dove opera</th><th>Metrica</th><th>Esempi</th></tr></thead><tbody>
+      <tr><td><strong>IGP</strong> (Interior Gateway Protocol)</td><td>Dentro un AS</td><td>Metrica tecnica (hop, costo)</td><td>RIP, OSPF, EIGRP</td></tr>
+      <tr><td><strong>EGP</strong> (Exterior Gateway Protocol)</td><td>Tra AS diversi</td><td>Policy (accordi commerciali)</td><td>BGP</td></tr>
+    </tbody></table></div>
+    <div class="box-frase" style="margin-top:1.5rem">«BGP è la colla che tiene insieme Internet — senza di esso, i router degli ISP non saprebbero come raggiungere le reti degli altri.»<span class="label">— Internet Architecture Board</span></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«Un router non sa dove finisce la rete — sa solo il prossimo passo.»<cite>— Principio del Next-Hop Routing</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

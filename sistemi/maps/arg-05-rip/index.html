@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIP — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E5%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .map-overlay{display:none;position:fixed;inset:0;background:rgba(8,69,80,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}
+    .map-overlay.show{display:flex;}
+    .map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}
+    .modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;line-height:1;}
+    .modal-close:hover{color:var(--color-deep);}
+    .modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}
+    .modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;line-height:1.1;}
+    .modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../index.html" class="topbar-back">← Portale</a>
+      <a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a>
+      <a class="topbar-link active" href="../../pages/mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav"><div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+    <button class="nav-btn" onclick="location.href='../arg-04-routing/'">← Arg. 4</button>
+    <button class="nav-btn active">5 · RIP</button>
+    <button class="nav-btn" onclick="location.href='../arg-06-ospf-bgp/'">Arg. 6 →</button>
+  </div></nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS · Argomento 5</div>
+        <h2>RIP <em>Routing Information Protocol</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per la sintesi: metrica hop count, timer, Count-to-Infinity, soluzioni e confronto v1/v2.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 860" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;" aria-label="Mappa WBS RIP">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--color-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--color-primary);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <g transform="translate(260,0)">
+            <!-- Root → L1 paths -->
+            <path d="M -20,400 C 20,400 70,90 70,90" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,240 70,240" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,400 70,400" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,555 70,555" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,710 70,710" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <!-- L1 → L2 paths -->
+            <path d="M 250,90 C 285,90 330,45 330,45" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,90 C 285,90 330,130 330,130" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,90 C 285,90 330,200 330,200" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,240 C 285,240 330,215 330,215" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,240 C 285,240 330,265 330,265" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,400 C 285,400 330,360 330,360" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,400 C 285,400 330,400 330,400" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,400 C 285,400 330,440 330,440" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,520 330,520" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,570 330,570" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,620 330,620" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,710 C 285,710 330,670 330,670" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,710 C 285,710 330,720 330,720" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,710 C 285,710 330,780 330,780" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <!-- Root -->
+            <g class="node node-root" onclick="openNode('root')" tabindex="0" role="button" aria-label="RIP">
+              <rect x="-220" y="370" width="200" height="60" rx="8"/>
+              <text x="-120" y="396" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:13px;font-weight:700;fill:white">RIP</text>
+              <text x="-120" y="416" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:rgba(255,255,255,.8)">Distance Vector · IGP</text>
+            </g>
+            <!-- L1: Metrica -->
+            <g class="node node-l1" onclick="openNode('metrica')" tabindex="0" role="button" aria-label="Metrica Hop Count">
+              <rect x="70" y="65" width="180" height="52" rx="7"/>
+              <text x="160" y="96" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Metrica Hop Count</text>
+            </g>
+            <!-- L1: Funzionamento -->
+            <g class="node node-l1" onclick="openNode('funz')" tabindex="0" role="button" aria-label="Funzionamento">
+              <rect x="70" y="215" width="180" height="52" rx="7"/>
+              <text x="160" y="246" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Funzionamento</text>
+            </g>
+            <!-- L1: Count-to-Infinity -->
+            <g class="node node-l1" onclick="openNode('cti')" tabindex="0" role="button" aria-label="Count-to-Infinity">
+              <rect x="70" y="375" width="180" height="52" rx="7"/>
+              <text x="160" y="406" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Count-to-Infinity</text>
+            </g>
+            <!-- L1: Soluzioni -->
+            <g class="node node-l1" onclick="openNode('sol')" tabindex="0" role="button" aria-label="Soluzioni">
+              <rect x="70" y="530" width="180" height="52" rx="7"/>
+              <text x="160" y="561" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Soluzioni</text>
+            </g>
+            <!-- L1: RIPv1 vs v2 -->
+            <g class="node node-l1" onclick="openNode('versioni')" tabindex="0" role="button" aria-label="RIPv1 vs RIPv2">
+              <rect x="70" y="685" width="180" height="52" rx="7"/>
+              <text x="160" y="716" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">RIPv1 vs RIPv2</text>
+            </g>
+            <!-- L2: Metrica -->
+            <g class="node node-l2" onclick="openNode('hopmax')" tabindex="0" role="button"><rect x="330" y="22" width="175" height="42" rx="6"/><text x="418" y="47" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Max 15 hop · 16 = ∞</text></g>
+            <g class="node node-l2" onclick="openNode('aggiornamento')" tabindex="0" role="button"><rect x="330" y="108" width="175" height="42" rx="6"/><text x="418" y="133" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Update ogni 30 secondi</text></g>
+            <g class="node node-l2" onclick="openNode('converge')" tabindex="0" role="button"><rect x="330" y="178" width="175" height="42" rx="6"/><text x="418" y="203" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Reti piccole/medie</text></g>
+            <!-- L2: Funzionamento -->
+            <g class="node node-l2" onclick="openNode('vicini')" tabindex="0" role="button"><rect x="330" y="192" width="175" height="42" rx="6"/><text x="418" y="217" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Conosce solo vicini</text></g>
+            <g class="node node-l2" onclick="openNode('timer')" tabindex="0" role="button"><rect x="330" y="242" width="175" height="42" rx="6"/><text x="418" y="267" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Timer: Update/Invalid/Flush</text></g>
+            <!-- L2: Count-to-Infinity -->
+            <g class="node node-l2" onclick="openNode('cti_desc')" tabindex="0" role="button"><rect x="330" y="338" width="175" height="42" rx="6"/><text x="418" y="363" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Link cade: metrica sale</text></g>
+            <g class="node node-l2" onclick="openNode('lenta')" tabindex="0" role="button"><rect x="330" y="378" width="175" height="42" rx="6"/><text x="418" y="403" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Convergenza lenta</text></g>
+            <g class="node node-l2" onclick="openNode('loop')" tabindex="0" role="button"><rect x="330" y="418" width="175" height="42" rx="6"/><text x="418" y="443" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Rischio routing loop</text></g>
+            <!-- L2: Soluzioni -->
+            <g class="node node-l2" onclick="openNode('split')" tabindex="0" role="button"><rect x="330" y="498" width="175" height="42" rx="6"/><text x="418" y="523" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Split Horizon</text></g>
+            <g class="node node-l2" onclick="openNode('poison')" tabindex="0" role="button"><rect x="330" y="548" width="175" height="42" rx="6"/><text x="418" y="573" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Poisoned Reverse</text></g>
+            <g class="node node-l2" onclick="openNode('triggered')" tabindex="0" role="button"><rect x="330" y="598" width="175" height="42" rx="6"/><text x="418" y="623" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Triggered Update</text></g>
+            <!-- L2: Versioni -->
+            <g class="node node-l2" onclick="openNode('v1')" tabindex="0" role="button"><rect x="330" y="648" width="175" height="42" rx="6"/><text x="418" y="673" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">v1: classful broadcast</text></g>
+            <g class="node node-l2" onclick="openNode('v2')" tabindex="0" role="button"><rect x="330" y="698" width="175" height="42" rx="6"/><text x="418" y="723" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">v2: classless 224.0.0.9</text></g>
+            <g class="node node-l2" onclick="openNode('autosummary')" tabindex="0" role="button"><rect x="330" y="758" width="175" height="42" rx="6"/><text x="418" y="783" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">no auto-summary</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-label" id="modal-label"></div>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-text" id="modal-text"></div>
+    </div>
+  </div>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes = {
+      root:       { label:"Argomento 5", title:"RIP", text:"Routing Information Protocol: protocollo IGP Distance Vector basato su Bellman-Ford. Usa l'hop count come metrica (numero di router attraversati). Adatto a reti di piccole-medie dimensioni con massimo 15 hop." },
+      metrica:    { label:"Metrica", title:"Hop Count", text:"RIP misura il percorso in base al numero di router (hop) attraversati. Valore minimo: 1 (rete connessa). Valore massimo: 15. Il valore 16 rappresenta l'infinito — la rete è irraggiungibile." },
+      funz:       { label:"Funzionamento", title:"Come funziona RIP", text:"All'avvio ogni router conosce solo le reti direttamente connesse. Ogni 30 secondi invia a tutti i vicini la propria tabella di routing (RIP Update). Il ricevente aggiunge 1 alla metrica di ogni rotta ricevuta e aggiorna se trova un percorso migliore. Dopo alcune iterazioni tutta la rete converge." },
+      cti:        { label:"Problema", title:"Count-to-Infinity", text:"Quando un link cade, i router non capiscono subito che la rete è irraggiungibile. Continuano ad annunciarla con metrica crescente (1→2→3…→16). Questo causa convergenza lenta e traffico inutile. È il problema principale di RIP." },
+      sol:        { label:"Soluzioni", title:"Soluzioni al Count-to-Infinity", text:"Tre meccanismi riducono l'impatto: Split Horizon, Poisoned Reverse e Triggered Update. Nessuno lo elimina completamente in topologie complesse con molti router." },
+      versioni:   { label:"Versioni", title:"RIPv1 vs RIPv2", text:"RIPv1 (classful): non include la subnet mask negli aggiornamenti → incompatibile con VLSM. Usa broadcast 255.255.255.255. RIPv2 (classless): include la subnet mask → supporta VLSM/CIDR. Usa multicast 224.0.0.9. Supporta autenticazione MD5 opzionale." },
+      hopmax:     { label:"Metrica", title:"Massimo 15 hop", text:"Il valore 16 rappresenta l'infinito in RIP. Questo limita RIP a reti con diametro massimo di 15 router — adatto a reti piccole, non scalabile per Internet o reti enterprise grandi." },
+      aggiornamento: { label:"Timer", title:"Update ogni 30 secondi", text:"RIP invia aggiornamenti periodici (RIP Update) ogni 30 secondi (Update Timer) a tutti i vicini diretti. Questo genera overhead periodico anche in assenza di cambiamenti nella rete." },
+      converge:   { label:"Scalabilità", title:"Reti piccole e medie", text:"Per la sua semplicità e i limiti di scalabilità (max 15 hop, convergenza lenta), RIP è adatto solo a reti di piccole e medie dimensioni. Per reti grandi si usa OSPF o EIGRP." },
+      vicini:     { label:"Distance Vector", title:"Conosce solo i vicini", text:"A differenza di OSPF (Link-State), RIP è Distance Vector: ogni router conosce solo le distanze verso le destinazioni, non la topologia completa. Scambia queste distanze con i vicini diretti." },
+      timer:      { label:"Timer RIP", title:"I 4 Timer di RIP", text:"Update Timer (30s): aggiornamenti periodici. Invalid Timer (180s): rotta marcata invalida (metrica=16) se nessun update. Holddown Timer (180s): attesa prima di accettare nuove info sulla rotta invalida. Flush Timer (240s): rimozione definitiva dalla tabella." },
+      cti_desc:   { label:"Count-to-Infinity", title:"La metrica sale lentamente", text:"Quando la rete X cade, il router R1 la rimuove dalla propria tabella. Ma il router R2 (che aveva imparato X da R1) continua ad annunciare X con metrica 2. R1 aggiorna la propria tabella con metrica 3 (da R2), e così via fino a 16." },
+      lenta:      { label:"Convergenza", title:"Convergenza lenta", text:"In RIP la convergenza (il tempo perché tutti i router abbiano la stessa visione della rete) può essere molto lenta dopo un guasto — potenzialmente minuti. OSPF converge in secondi perché usa flooding immediato dei LSA." },
+      loop:       { label:"Loop", title:"Rischio routing loop", text:"Senza Split Horizon o Poisoned Reverse, RIP può creare routing loop: A invia traffico per X a B, B lo rimanda ad A, e così via all'infinito. I pacchetti circolano finché il TTL non scade." },
+      split:      { label:"Soluzione", title:"Split Horizon", text:"Un router non ri-annuncia una rotta verso il router da cui l'ha appresa. Se R1 ha imparato 'rete X via R2', R1 non annuncia X a R2. Questo previene il Count-to-Infinity nei casi semplici (topologie a due nodi)." },
+      poison:     { label:"Soluzione", title:"Poisoned Reverse", text:"Variante di Split Horizon: invece di omettere la rotta, la ri-annuncia con metrica 16 (irraggiungibile) verso il router di origine. Più esplicito di Split Horizon, garantisce che R2 sappia immediatamente che X non è raggiungibile via R1." },
+      triggered:  { label:"Soluzione", title:"Triggered Update", text:"Al cambiamento di topologia (es. link cade), il router invia immediatamente un aggiornamento senza aspettare i 30 secondi del timer periodico. Accelera notevolmente la convergenza dopo un guasto. Definito in RFC 2091." },
+      v1:         { label:"RIPv1", title:"Classful e Broadcast", text:"RIPv1 non include la subnet mask negli aggiornamenti (classful). Non supporta VLSM né CIDR. Invia gli aggiornamenti in broadcast (255.255.255.255) a tutti gli host. Tutti i dispositivi sulla rete ricevono i messaggi RIP." },
+      v2:         { label:"RIPv2", title:"Classless e Multicast 224.0.0.9", text:"RIPv2 include la subnet mask negli aggiornamenti (classless). Supporta VLSM e CIDR. Usa multicast 224.0.0.9 — solo i router RIPv2 ricevono gli aggiornamenti. Supporta autenticazione in chiaro o MD5." },
+      autosummary:{ label:"Comando Cisco", title:"no auto-summary", text:"Con RIPv2, il comando 'no auto-summary' disabilita la summarizzazione automatica delle rotte alle classi di default. Senza questo comando, RIPv2 tronca le subnet alla classe naturale dell'indirizzo, perdendo le informazioni sulle sottoreti VLSM." }
+    };
+    function openNode(id) { var n=nodes[id]; if(!n) return; document.getElementById('modal-label').textContent=n.label; document.getElementById('modal-title').textContent=n.title; document.getElementById('modal-text').innerHTML=n.text; document.getElementById('map-overlay').classList.add('show'); }
+    function closeModal() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if(e.key==='Escape') closeModal(); });
+  </script>
+</body>
+</html>

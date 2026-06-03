@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crittografia — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E7%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>.map-overlay{display:none;position:fixed;inset:0;background:rgba(8,69,80,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}.map-overlay.show{display:flex;}.map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}.modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;line-height:1;}.modal-close:hover{color:var(--color-deep);}.modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}.modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;line-height:1.1;}.modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}</style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+    <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a><a class="topbar-link active" href="../../pages/mappe.html">Mappe</a><a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a><a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a></nav>
+  </header>
+  <nav class="nav"><div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+    <button class="nav-btn" onclick="location.href='../arg-06-ospf-bgp/'">← Arg. 6</button>
+    <button class="nav-btn active">7 · Crittografia</button>
+    <button class="nav-btn" onclick="location.href='../arg-08-diffie-hellman/'">Arg. 8 →</button>
+  </div></nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;"><div class="section-tag">Mappa WBS · Argomento 7 (CLIL)</div><h2>Crittografia <em>Principi e Algoritmi</em></h2></div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: obiettivi, simmetrica, asimmetrica, DES/AES/RSA, sistema ibrido.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 860" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;" aria-label="Mappa WBS Crittografia">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--color-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--color-primary);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <g transform="translate(260,0)">
+            <path d="M -20,400 C 20,400 70,80 70,80" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,230 70,230" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,390 70,390" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,550 70,550" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,710 70,710" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M 250,80 C 285,80 330,40 330,40" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,100 330,100" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,160 330,160" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,230 C 285,230 330,195 330,195" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,230 C 285,230 330,250 330,250" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,390 C 285,390 330,340 330,340" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,390 C 285,390 330,390 330,390" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,390 C 285,390 330,445 330,445" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,550 C 285,550 330,505 330,505" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,550 C 285,550 330,560 330,560" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,550 C 285,550 330,615 330,615" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,710 C 285,710 330,670 330,670" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,710 C 285,710 330,720 330,720" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,710 C 285,710 330,780 330,780" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <!-- Root -->
+            <g class="node node-root" onclick="openNode('root')" tabindex="0"><rect x="-220" y="370" width="200" height="60" rx="8"/><text x="-120" y="396" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:12px;font-weight:700;fill:white">Crittografia</text><text x="-120" y="414" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:9px;fill:rgba(255,255,255,.8)">Principi e Algoritmi</text></g>
+            <!-- L1 -->
+            <g class="node node-l1" onclick="openNode('obiettivi')" tabindex="0"><rect x="70" y="55" width="180" height="52" rx="7"/><text x="160" y="86" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Obiettivi</text></g>
+            <g class="node node-l1" onclick="openNode('simmetrica')" tabindex="0"><rect x="70" y="205" width="180" height="52" rx="7"/><text x="160" y="236" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Simmetrica</text></g>
+            <g class="node node-l1" onclick="openNode('algoritmi_simm')" tabindex="0"><rect x="70" y="365" width="180" height="52" rx="7"/><text x="160" y="396" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Algoritmi Simmetrici</text></g>
+            <g class="node node-l1" onclick="openNode('asimmetrica')" tabindex="0"><rect x="70" y="525" width="180" height="52" rx="7"/><text x="160" y="556" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Asimmetrica</text></g>
+            <g class="node node-l1" onclick="openNode('ibrido')" tabindex="0"><rect x="70" y="685" width="180" height="52" rx="7"/><text x="160" y="716" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Sistema Ibrido</text></g>
+            <!-- L2: Obiettivi -->
+            <g class="node node-l2" onclick="openNode('conf')" tabindex="0"><rect x="330" y="17" width="175" height="42" rx="6"/><text x="418" y="42" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Confidenzialità</text></g>
+            <g class="node node-l2" onclick="openNode('integ')" tabindex="0"><rect x="330" y="77" width="175" height="42" rx="6"/><text x="418" y="102" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Integrità</text></g>
+            <g class="node node-l2" onclick="openNode('nonrip')" tabindex="0"><rect x="330" y="137" width="175" height="42" rx="6"/><text x="418" y="162" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Autenticazione + Non ripudio</text></g>
+            <!-- L2: Simmetrica -->
+            <g class="node node-l2" onclick="openNode('stessa_chiave')" tabindex="0"><rect x="330" y="172" width="175" height="42" rx="6"/><text x="418" y="197" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Stessa chiave cifra/decifra</text></g>
+            <g class="node node-l2" onclick="openNode('prob_distr')" tabindex="0"><rect x="330" y="227" width="175" height="42" rx="6"/><text x="418" y="252" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Problema distribuzione chiave</text></g>
+            <!-- L2: Algoritmi -->
+            <g class="node node-l2" onclick="openNode('des')" tabindex="0"><rect x="330" y="317" width="175" height="42" rx="6"/><text x="418" y="342" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">DES 56 bit — obsoleto</text></g>
+            <g class="node node-l2" onclick="openNode('aes')" tabindex="0"><rect x="330" y="367" width="175" height="42" rx="6"/><text x="418" y="392" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">AES 128/192/256 — standard</text></g>
+            <g class="node node-l2" onclick="openNode('3des')" tabindex="0"><rect x="330" y="422" width="175" height="42" rx="6"/><text x="418" y="447" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">3DES — legacy lento</text></g>
+            <!-- L2: Asimmetrica -->
+            <g class="node node-l2" onclick="openNode('pubpriv')" tabindex="0"><rect x="330" y="482" width="175" height="42" rx="6"/><text x="418" y="507" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Coppia chiave pub/priv</text></g>
+            <g class="node node-l2" onclick="openNode('rsa')" tabindex="0"><rect x="330" y="537" width="175" height="42" rx="6"/><text x="418" y="562" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">RSA: fattorizzazione</text></g>
+            <g class="node node-l2" onclick="openNode('lenta')" tabindex="0"><rect x="330" y="592" width="175" height="42" rx="6"/><text x="418" y="617" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Lenta: non per grandi dati</text></g>
+            <!-- L2: Ibrido -->
+            <g class="node node-l2" onclick="openNode('fase1')" tabindex="0"><rect x="330" y="647" width="175" height="42" rx="6"/><text x="418" y="672" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Asimm.: scambia chiave sess.</text></g>
+            <g class="node node-l2" onclick="openNode('fase2')" tabindex="0"><rect x="330" y="697" width="175" height="42" rx="6"/><text x="418" y="722" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Simm.: cifra i dati</text></g>
+            <g class="node node-l2" onclick="openNode('uso')" tabindex="0"><rect x="330" y="757" width="175" height="42" rx="6"/><text x="418" y="782" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Usato in SSL/TLS, IPsec</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-label" id="modal-label"></div><div class="modal-title" id="modal-title"></div><div class="modal-text" id="modal-text"></div></div>
+  </div>
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes = {
+      root:        { label:"Argomento 7 (CLIL)", title:"Crittografia", text:"La crittografia è la scienza di proteggere le informazioni trasformandole in una forma non leggibile senza la chiave. Garantisce confidenzialità, integrità, autenticazione e non ripudio delle comunicazioni digitali." },
+      obiettivi:   { label:"Obiettivi", title:"4 Obiettivi della Crittografia", text:"Confidenzialità: solo il destinatario autorizzato può leggere il messaggio. Integrità: il messaggio non è stato alterato. Autenticazione: verifica dell'identità del mittente. Non ripudio: il mittente non può negare di aver inviato il messaggio." },
+      simmetrica:  { label:"Simmetrica", title:"Crittografia Simmetrica", text:"Usa la stessa chiave segreta per cifrare e decifrare. Vantaggi: molto veloce, efficiente per grandi quantità di dati (streaming, disco). Svantaggio principale: bisogna scambiarsi la chiave segreta in modo sicuro prima di comunicare." },
+      algoritmi_simm:{ label:"Algoritmi", title:"Algoritmi Simmetrici", text:"DES (1977): chiave 56 bit — obsoleto, violabile in ore. 3DES: applica DES 3 volte, più sicuro ma lento — legacy. AES (2001): standard attuale, chiavi 128/192/256 bit — molto sicuro ed efficiente su hardware e software moderni." },
+      asimmetrica: { label:"Asimmetrica", title:"Crittografia Asimmetrica", text:"Usa una coppia di chiavi matematicamente correlate: pubblica (distribuita liberamente) e privata (segreta). Ciò che viene cifrato con la chiave pubblica si decifra solo con la privata. Risolve il problema della distribuzione delle chiavi ma è molto più lenta della simmetrica." },
+      ibrido:      { label:"Sistema Ibrido", title:"Il Meglio dei Due Mondi", text:"I sistemi moderni combinano i due tipi: la crittografia asimmetrica (lenta) serve solo per scambiare in sicurezza una chiave simmetrica di sessione. Poi la crittografia simmetrica (veloce) cifra tutti i dati effettivi. Usato in SSL/TLS, IPsec, PGP." },
+      conf:        { label:"Obiettivo", title:"Confidenzialità", text:"Il messaggio cifrato è incomprensibile per chiunque non possieda la chiave di decifratura. Anche se un attaccante intercetta il traffico, non può leggere il contenuto." },
+      integ:       { label:"Obiettivo", title:"Integrità", text:"Garantisce che i dati non siano stati alterati durante il trasporto. Si ottiene con funzioni hash e MAC. Se anche un solo bit cambia, il ricevente lo rileva." },
+      nonrip:      { label:"Obiettivo", title:"Autenticazione e Non Ripudio", text:"Autenticazione: verifica che il messaggio provenga davvero da chi dice di averlo inviato. Non ripudio: il mittente non può negare di aver inviato il messaggio — garantito dalla firma digitale con chiave privata." },
+      stessa_chiave:{ label:"Simmetrica", title:"Stessa Chiave", text:"Il mittente cifra con la chiave K. Il destinatario decifra con la stessa chiave K. Entrambi devono condividere K in anticipo tramite un canale sicuro — questo è il 'problema della distribuzione delle chiavi'." },
+      prob_distr:  { label:"Problema", title:"Distribuzione delle Chiavi", text:"Come comunicare la chiave segreta K a un'altra parte senza che un intercettatore la catturi? Su un canale insicuro è impossibile con la sola crittografia simmetrica — si risolve con la crittografia asimmetrica (RSA) o con Diffie-Hellman." },
+      des:         { label:"DES", title:"DES — Obsoleto", text:"Data Encryption Standard (1977): chiave 56 bit, blocchi 64 bit. Violato nel 1999 in 22 ore dal progetto EFF. Con hardware moderno: minuti o secondi. Non utilizzare mai DES per applicazioni di sicurezza." },
+      aes:         { label:"AES", title:"AES — Standard Attuale", text:"Advanced Encryption Standard (2001): chiavi 128, 192 o 256 bit, blocchi 128 bit. Adottato da NIST come standard mondiale. Usato in WPA2/WPA3 (Wi-Fi), TLS, IPsec, FileVault (macOS), BitLocker (Windows), e miliardi di altri sistemi." },
+      '3des':      { label:"3DES", title:"Triple DES — Legacy", text:"Applica DES tre volte (Cifratura-Decifratura-Cifratura) con tre chiavi diverse (EDE). Chiave effettiva: 112 o 168 bit. Più sicuro di DES ma ~3 volte più lento. Considerato deprecato — usare AES." },
+      pubpriv:     { label:"Asimmetrica", title:"Coppia Chiave Pubblica/Privata", text:"La chiave pubblica si distribuisce liberamente: chiunque può cifrare un messaggio per te. Solo la tua chiave privata (segreta, non condivisa mai) può decifrarlo. Matematicamente correlate ma computazionalmente impossibile derivare la privata dalla pubblica." },
+      rsa:         { label:"RSA", title:"RSA — Algoritmo Più Diffuso", text:"RSA è basato sulla difficoltà computazionale di fattorizzare il prodotto di due grandi numeri primi. Chiavi tipiche: 2048 o 4096 bit. Lento (~1000x rispetto ad AES). Usato per scambio chiavi, firma digitale e certificati X.509." },
+      lenta:       { label:"Limite", title:"Asimmetrica è Lenta", text:"La crittografia asimmetrica è molto più lenta della simmetrica. Non si usa per cifrare grandi quantità di dati (es. l'intero traffico HTTPS). Si usa solo per: scambiare una chiave simmetrica di sessione, verificare l'identità (certificati), firmare digitalmente." },
+      fase1:       { label:"Sistema Ibrido", title:"Fase 1: Scambio Chiave (Asimmetrica)", text:"Si usa RSA o Diffie-Hellman per scambiare in sicurezza una chiave simmetrica di sessione (es. 256 bit AES). Questa fase è lenta ma riguarda solo una piccola quantità di dati (la chiave stessa)." },
+      fase2:       { label:"Sistema Ibrido", title:"Fase 2: Cifratura Dati (Simmetrica)", text:"Una volta che entrambe le parti hanno la chiave di sessione, tutta la comunicazione viene cifrata con AES. Questa fase è molto veloce e scala bene con qualsiasi quantità di dati." },
+      uso:         { label:"Applicazioni", title:"Dove si usa il Sistema Ibrido", text:"SSL/TLS (HTTPS): handshake asimmetrico → sessione simmetrica. IPsec: IKE (fase asimmetrica) → ESP (fase simmetrica). PGP/GPG (email cifrate): RSA per la chiave → AES per il messaggio. SSH: scambio chiavi DH → sessione AES." }
+    };
+    function openNode(id){var n=nodes[id];if(!n)return;document.getElementById('modal-label').textContent=n.label;document.getElementById('modal-title').textContent=n.title;document.getElementById('modal-text').innerHTML=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeModal(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  </script>
+</body>
+</html>

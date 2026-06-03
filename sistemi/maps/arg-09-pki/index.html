@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificati e PKI — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E9%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>.map-overlay{display:none;position:fixed;inset:0;background:rgba(8,69,80,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}.map-overlay.show{display:flex;}.map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}.modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;}.modal-close:hover{color:var(--color-deep);}.modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}.modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;}.modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}</style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+    <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a><a class="topbar-link active" href="../../pages/mappe.html">Mappe</a><a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a><a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a></nav>
+  </header>
+  <nav class="nav"><div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+    <button class="nav-btn" onclick="location.href='../arg-08-diffie-hellman/'">← Arg. 8</button>
+    <button class="nav-btn active">9 · PKI</button>
+    <button class="nav-btn" onclick="location.href='../arg-10-ssl-tls/'">Arg. 10 →</button>
+  </div></nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;"><div class="section-tag">Mappa WBS · Argomento 9 (CLIL)</div><h2>Certificati Digitali <em>e PKI</em></h2></div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: certificato X.509, CA, PKI, verifica browser, revoca.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 760" width="100%" style="display:block;min-height:680px;width:max(100%,1400px);margin:0 auto;">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--color-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--color-primary);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <g transform="translate(260,0)">
+            <path d="M -20,350 C 20,350 70,80 70,80" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,230 70,230" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,370 70,370" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,530 70,530" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M 250,80 C 285,80 330,40 330,40" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,95 330,95" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,152 330,152" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,230 C 285,230 330,197 330,197" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,230 C 285,230 330,252 330,252" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,322 330,322" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,375 330,375" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,427 330,427" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,480 330,480" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,530 C 285,530 330,502 330,502" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,530 C 285,530 330,555 330,555" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,530 C 285,530 330,610 330,610" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <g class="node node-root" onclick="openNode('root')" tabindex="0"><rect x="-220" y="320" width="200" height="60" rx="8"/><text x="-120" y="346" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:12px;font-weight:700;fill:white">Certificati e PKI</text><text x="-120" y="364" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:rgba(255,255,255,.8)">Infrastruttura di fiducia</text></g>
+            <g class="node node-l1" onclick="openNode('x509')" tabindex="0"><rect x="70" y="55" width="180" height="52" rx="7"/><text x="160" y="86" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Certificato X.509</text></g>
+            <g class="node node-l1" onclick="openNode('ca')" tabindex="0"><rect x="70" y="205" width="180" height="52" rx="7"/><text x="160" y="236" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">CA (Cert. Authority)</text></g>
+            <g class="node node-l1" onclick="openNode('verifica')" tabindex="0"><rect x="70" y="345" width="180" height="52" rx="7"/><text x="160" y="376" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Verifica Browser</text></g>
+            <g class="node node-l1" onclick="openNode('revoca')" tabindex="0"><rect x="70" y="505" width="180" height="52" rx="7"/><text x="160" y="536" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Revoca e Tipi</text></g>
+            <g class="node node-l2" onclick="openNode('x509_cont')" tabindex="0"><rect x="330" y="17" width="175" height="42" rx="6"/><text x="418" y="42" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">ID titolare + chiave pubblica</text></g>
+            <g class="node node-l2" onclick="openNode('x509_firma')" tabindex="0"><rect x="330" y="72" width="175" height="42" rx="6"/><text x="418" y="97" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Firma digitale della CA</text></g>
+            <g class="node node-l2" onclick="openNode('x509_val')" tabindex="0"><rect x="330" y="129" width="175" height="42" rx="6"/><text x="418" y="154" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Periodo di validità</text></g>
+            <g class="node node-l2" onclick="openNode('rootca')" tabindex="0"><rect x="330" y="174" width="175" height="42" rx="6"/><text x="418" y="199" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Root CA auto-firmata</text></g>
+            <g class="node node-l2" onclick="openNode('intermca')" tabindex="0"><rect x="330" y="229" width="175" height="42" rx="6"/><text x="418" y="254" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Intermediate CA</text></g>
+            <g class="node node-l2" onclick="openNode('ver_data')" tabindex="0"><rect x="330" y="299" width="175" height="42" rx="6"/><text x="418" y="324" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">1. Validità data</text></g>
+            <g class="node node-l2" onclick="openNode('ver_ca')" tabindex="0"><rect x="330" y="352" width="175" height="42" rx="6"/><text x="418" y="377" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">2. CA nel trust store</text></g>
+            <g class="node node-l2" onclick="openNode('ver_firma')" tabindex="0"><rect x="330" y="404" width="175" height="42" rx="6"/><text x="418" y="429" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">3. Verifica firma CA</text></g>
+            <g class="node node-l2" onclick="openNode('ver_dom')" tabindex="0"><rect x="330" y="457" width="175" height="42" rx="6"/><text x="418" y="482" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">4. Dominio CN/SAN</text></g>
+            <g class="node node-l2" onclick="openNode('crl')" tabindex="0"><rect x="330" y="479" width="175" height="42" rx="6"/><text x="418" y="504" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">CRL lista revocati</text></g>
+            <g class="node node-l2" onclick="openNode('ocsp')" tabindex="0"><rect x="330" y="532" width="175" height="42" rx="6"/><text x="418" y="557" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">OCSP real-time</text></g>
+            <g class="node node-l2" onclick="openNode('tipi')" tabindex="0"><rect x="330" y="587" width="175" height="42" rx="6"/><text x="418" y="612" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">DV / OV / EV</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-label" id="modal-label"></div><div class="modal-title" id="modal-title"></div><div class="modal-text" id="modal-text"></div></div>
+  </div>
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes={
+      root:      {label:"Argomento 9",title:"Certificati Digitali e PKI",text:"Un certificato digitale associa una chiave pubblica all'identità del suo proprietario, firmato da una CA (ente terzo di fiducia). La PKI è l'infrastruttura completa che gestisce emissione, distribuzione e revoca dei certificati."},
+      x509:      {label:"Certificato",title:"Standard X.509",text:"X.509 è lo standard ITU-T per i certificati a chiave pubblica. Contiene: identità del titolare (Subject CN/SAN), chiave pubblica del titolare, periodo di validità (Not Before / Not After), identità della CA emittente, firma digitale della CA, numero seriale."},
+      ca:        {label:"CA",title:"Certification Authority",text:"Ente terzo di fiducia che emette, firma e revoca certificati digitali. La sua firma sul certificato garantisce: 'questa chiave pubblica appartiene davvero a questa identità'. Gerarchia: Root CA → Intermediate CA → certificati utenti finali."},
+      verifica:  {label:"Verifica",title:"4 Controlli del Browser",text:"Il browser verifica ogni certificato HTTPS con 4 controlli: 1) Data valida, 2) CA nel trust store, 3) Firma CA valida, 4) Dominio nel CN/SAN corrisponde all'URL. Se tutti passano → lucchetto verde."},
+      revoca:    {label:"Revoca",title:"Revoca dei Certificati",text:"Un certificato può essere revocato prima della scadenza (es. chiave privata compromessa, cambio organizzazione). Meccanismi: CRL (lista periodica scaricabile) o OCSP (query online in tempo reale). Tipi di certificato: DV (Domain), OV (Organization), EV (Extended)."},
+      x509_cont: {label:"X.509",title:"Contenuto del Certificato",text:"Un certificato X.509 contiene: Subject (identità titolare: CN, O, OU, C), chiave pubblica e algoritmo, Issuer (identità della CA), periodo validità, numero seriale univoco, Subject Alternative Names (SAN) per domini aggiuntivi, algoritmo della firma."},
+      x509_firma:{label:"Firma CA",title:"Firma Digitale della CA",text:"La CA firma il certificato con la propria chiave privata. Chiunque può verificare la firma con la chiave pubblica della CA (disponibile nel certificato della CA stessa). Questa catena di firme costituisce la 'chain of trust' (catena di fiducia)."},
+      x509_val:  {label:"Validità",title:"Periodo di Validità",text:"Ogni certificato ha una data di inizio (Not Before) e una data di fine (Not After). I certificati TLS/HTTPS hanno tipicamente validità di 1 anno (dal 2020, massimo 398 giorni per Safari/Chrome). Alla scadenza deve essere rinnovato."},
+      rootca:    {label:"Root CA",title:"Root CA Auto-Firmata",text:"La Root CA è al vertice della gerarchia PKI. Il suo certificato è auto-firmato (firmato da sé stessa). È pre-installata nel trust store del sistema operativo e dei browser. Se una Root CA viene compromessa, tutta la PKI da essa dipendente è compromessa."},
+      intermca:  {label:"Intermediate CA",title:"CA Intermedie",text:"Le CA intermedie sono firmate dalla Root CA e emettono i certificati agli utenti finali. L'uso di CA intermedie protegge la Root CA (che può essere tenuta offline): se una CA intermedia è compromessa, si revoca solo quella senza intaccare la Root CA."},
+      ver_data:  {label:"Controllo 1",title:"Validità della Data",text:"Il browser controlla che la data corrente sia compresa nel periodo di validità del certificato (tra Not Before e Not After). Un certificato scaduto o non ancora valido causa un errore nel browser."},
+      ver_ca:    {label:"Controllo 2",title:"CA nel Trust Store",text:"Il browser controlla che la CA firmataria (o una della catena di CA fino alla Root) sia presente nel suo trust store — la lista di CA fidate pre-installata nel browser o nel sistema operativo. Una CA sconosciuta causa un avviso di sicurezza."},
+      ver_firma: {label:"Controllo 3",title:"Verifica Firma CA",text:"Il browser decifra la firma digitale della CA usando la chiave pubblica della CA (dal trust store). Confronta il risultato con l'hash del certificato calcolato localmente. Se coincidono, il certificato non è stato alterato e proviene davvero da quella CA."},
+      ver_dom:   {label:"Controllo 4",title:"Corrispondenza Dominio",text:"Il browser verifica che il dominio nel URL (es. www.banca.it) corrisponda al Common Name (CN) o a uno dei Subject Alternative Names (SAN) nel certificato. Questo previene gli attacchi man-in-the-middle con certificati validi per altri domini."},
+      crl:       {label:"Revoca",title:"CRL (Certificate Revocation List)",text:"Lista pubblicata periodicamente dalla CA di tutti i certificati revocati prima della scadenza. Il client la scarica e consulta localmente. Svantaggio: può essere obsoleta (pubblicata ogni ore/giorni) e di grandi dimensioni per CA molto attive."},
+      ocsp:      {label:"Revoca",title:"OCSP (Online Certificate Status Protocol)",text:"Alternativa alla CRL: il browser invia una query al server OCSP della CA per sapere in tempo reale se il certificato è ancora valido. Risposta: Good, Revoked, Unknown. Più aggiornato della CRL ma richiede connessione alla CA."},
+      tipi:      {label:"Tipi",title:"DV, OV ed EV",text:"DV (Domain Validation): verifica automatica del controllo del dominio. OV (Organization Validation): verifica dell'identità legale dell'organizzazione. EV (Extended Validation): verifica approfondita, mostra il nome dell'azienda nel browser — usato da banche e siti ad alta sicurezza."}
+    };
+    function openNode(id){var n=nodes[id];if(!n)return;document.getElementById('modal-label').textContent=n.label;document.getElementById('modal-title').textContent=n.title;document.getElementById('modal-text').innerHTML=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeModal(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  </script>
+</body>
+</html>

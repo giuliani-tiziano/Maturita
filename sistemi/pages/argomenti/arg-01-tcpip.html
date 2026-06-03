@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TCP/IP e Indirizzi IP — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../../index.html" class="topbar-back">← Portale</a>
+    <a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a>
+  </div>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="../argomenti.html">Argomenti</a>
+    <a class="topbar-link" href="../mappe.html">Mappe</a>
+    <a class="topbar-link" href="../flashcard.html">Flashcard</a>
+    <a class="topbar-link cta" href="../quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+    <button class="nav-btn" data-sec="modello">Modello TCP/IP</button>
+    <button class="nav-btn" data-sec="indirizzi">Indirizzi IP</button>
+    <button class="nav-btn" data-sec="trasporto">TCP vs UDP</button>
+    <button class="nav-btn" data-sec="porte">Porte</button>
+    <button class="nav-btn" data-sec="ipv6">IPv6</button>
+  </div>
+</nav>
+
+<!-- ══ PANORAMICA ══ -->
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Sistemi e Reti · Argomento 1</div>
+      <h1 class="title">TCP/IP e<br><em>Indirizzi IP</em></h1>
+      <p class="subtitle">Il fondamento di qualsiasi comunicazione su Internet.</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Di cosa si tratta</div>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <p>Il modello <strong>TCP/IP</strong> è l'architettura di protocolli che governa la comunicazione su Internet. Ogni dispositivo connesso usa questi protocolli per inviare e ricevere dati.</p>
+        <p>L'<strong>indirizzamento IP</strong> assegna un identificatore univoco a ogni interfaccia di rete. Capire le classi IP, gli indirizzi privati e la subnet mask è fondamentale per qualsiasi lavoro di rete.</p>
+        <div class="box-concetto">
+          <h4>Competenze acquisite</h4>
+          <ul class="clean">
+            <li>Descrivere i 4 livelli del modello TCP/IP e la loro corrispondenza con OSI</li>
+            <li>Classificare un indirizzo IP nelle classi A, B, C</li>
+            <li>Riconoscere indirizzi privati e pubblici</li>
+            <li>Differenziare TCP da UDP con esempi pratici</li>
+            <li>Conoscere le porte well-known principali</li>
+            <li>Spiegare le motivazioni del passaggio a IPv6</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="box-concetto">
+          <h4>Temi chiave</h4>
+          <ul class="clean">
+            <li>Modello TCP/IP: 4 livelli e corrispondenza con OSI</li>
+            <li>Protocollo IP: indirizzamento IPv4</li>
+            <li>Classi A, B, C; indirizzi privati RFC 1918</li>
+            <li>Subnet mask in notazione decimale e CIDR</li>
+            <li>Indirizzi speciali: loopback, broadcast, rete</li>
+            <li>TCP vs UDP: differenze e uso tipico</li>
+            <li>Porte: well-known, registered, dynamic</li>
+            <li>IPv6: formato e motivazioni</li>
+          </ul>
+        </div>
+        <div class="box-frase">
+          «TCP/IP è il linguaggio comune di Internet — senza di esso, nessuna comunicazione è possibile.»
+          <span class="label">— Vint Cerf & Bob Kahn, padri di Internet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MODELLO TCP/IP ══ -->
+<section class="section" id="modello">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">01</div>
+      <h2>Il Modello TCP/IP</h2>
+    </div>
+
+    <p>Il modello <strong>TCP/IP</strong> (Transmission Control Protocol / Internet Protocol) è un modello a 4 livelli che descrive come i dati vengono trasmessi su Internet. È il modello pratico su cui Internet è costruita.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Livello TCP/IP</th><th>Corrispondenza OSI</th><th>Protocolli principali</th><th>Funzione</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>4. Applicazione</strong></td><td>Livelli 5-6-7 OSI</td><td>HTTP, HTTPS, FTP, DNS, SMTP, SSH</td><td>Interfaccia con le applicazioni</td></tr>
+          <tr><td><strong>3. Trasporto</strong></td><td>Livello 4 OSI</td><td>TCP, UDP</td><td>Comunicazione end-to-end, porte</td></tr>
+          <tr><td><strong>2. Internet</strong></td><td>Livello 3 OSI</td><td>IP, ICMP, ARP</td><td>Indirizzamento logico, routing</td></tr>
+          <tr><td><strong>1. Accesso alla rete</strong></td><td>Livelli 1-2 OSI</td><td>Ethernet, Wi-Fi, PPP</td><td>Trasmissione fisica, MAC address</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-concetto" style="margin-top:1.5rem">
+      <h4>Incapsulamento</h4>
+      <p>Ogni livello aggiunge il proprio header ai dati: dati applicazione → segmento TCP (+ header TCP) → pacchetto IP (+ header IP) → frame Ethernet (+ header/trailer). Il processo inverso alla ricezione si chiama de-incapsulamento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INDIRIZZI IP ══ -->
+<section class="section" id="indirizzi">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">02</div>
+      <h2>Indirizzi IP</h2>
+    </div>
+
+    <p>Un <strong>indirizzo IPv4</strong> è un numero a 32 bit scritto in notazione decimale puntata: quattro ottetti separati da punti (es. <code>192.168.1.100</code>). Ogni indirizzo identifica un'interfaccia di rete.</p>
+
+    <h3 style="margin-top:1.5rem">Classi di indirizzi</h3>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Classe</th><th>Range</th><th>Maschera default</th><th>N° host per rete</th><th>Uso tipico</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>A</strong></td><td>1.0.0.0 — 126.255.255.255</td><td>/8 (255.0.0.0)</td><td>~16 milioni</td><td>Grandi organizzazioni</td></tr>
+          <tr><td><strong>B</strong></td><td>128.0.0.0 — 191.255.255.255</td><td>/16 (255.255.0.0)</td><td>~65.534</td><td>Medie organizzazioni</td></tr>
+          <tr><td><strong>C</strong></td><td>192.0.0.0 — 223.255.255.255</td><td>/24 (255.255.255.0)</td><td>254</td><td>Piccole reti LAN</td></tr>
+          <tr><td><strong>D</strong></td><td>224.0.0.0 — 239.255.255.255</td><td>—</td><td>—</td><td>Multicast</td></tr>
+          <tr><td><strong>E</strong></td><td>240.0.0.0 — 255.255.255.255</td><td>—</td><td>—</td><td>Sperimentale/riservato</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:1.5rem">Indirizzi privati (RFC 1918)</h3>
+    <p>Non instradabili su Internet, usati nelle reti locali con NAT:</p>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Range privato</th><th>Classe</th><th>Notazione CIDR</th></tr></thead>
+        <tbody>
+          <tr><td>10.0.0.0 — 10.255.255.255</td><td>A</td><td>10.0.0.0/8</td></tr>
+          <tr><td>172.16.0.0 — 172.31.255.255</td><td>B</td><td>172.16.0.0/12</td></tr>
+          <tr><td>192.168.0.0 — 192.168.255.255</td><td>C</td><td>192.168.0.0/16</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:1.5rem">Indirizzi speciali</h3>
+    <div class="box-concetto">
+      <ul class="clean">
+        <li><strong>Loopback:</strong> 127.0.0.1 (qualsiasi 127.x.x.x) — pacchetti tornano allo stesso host. Usato per test locali.</li>
+        <li><strong>Indirizzo di rete:</strong> bit host tutti a 0 (es. 192.168.1.0/24). Non assegnabile agli host.</li>
+        <li><strong>Broadcast:</strong> bit host tutti a 1 (es. 192.168.1.255/24). Raggiungerebbe tutti gli host della rete.</li>
+        <li><strong>0.0.0.0:</strong> "qualsiasi interfaccia" — usato in configurazioni di routing.</li>
+        <li><strong>255.255.255.255:</strong> broadcast limitato — tutti gli host della rete locale.</li>
+      </ul>
+    </div>
+
+    <h3 style="margin-top:1.5rem">Subnet Mask e CIDR</h3>
+    <p>La <strong>subnet mask</strong> separa la parte rete dalla parte host. I bit a 1 identificano la rete, i bit a 0 identificano l'host.</p>
+    <p>La notazione <strong>CIDR</strong> (Classless Inter-Domain Routing) usa il formato <code>/n</code> dove <em>n</em> è il numero di bit della parte rete: es. <code>192.168.1.0/24</code> = subnet mask 255.255.255.0.</p>
+  </div>
+</section>
+
+<!-- ══ TCP vs UDP ══ -->
+<section class="section" id="trasporto">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">03</div>
+      <h2>TCP vs UDP</h2>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Caratteristica</th><th>TCP</th><th>UDP</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Connessione</td><td>Orientato alla connessione (3-way handshake)</td><td>Senza connessione</td></tr>
+          <tr><td>Affidabilità</td><td>Garantita (conferma ricezione)</td><td>Non garantita</td></tr>
+          <tr><td>Ordine</td><td>Dati in ordine</td><td>Ordine non garantito</td></tr>
+          <tr><td>Controllo flusso</td><td>Sì</td><td>No</td></tr>
+          <tr><td>Velocità</td><td>Più lento (overhead)</td><td>Più veloce e leggero</td></tr>
+          <tr><td>Header</td><td>20+ byte</td><td>8 byte</td></tr>
+          <tr><td>Uso tipico</td><td>HTTP/S, FTP, SSH, SMTP, e-mail</td><td>DNS, DHCP, streaming, gaming, VoIP</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-concetto" style="margin-top:1.5rem">
+      <h4>Three-Way Handshake TCP</h4>
+      <p>Prima di trasmettere dati, TCP stabilisce una connessione in 3 passi:</p>
+      <ol>
+        <li><strong>SYN:</strong> il client invia un segmento SYN al server per iniziare la connessione.</li>
+        <li><strong>SYN-ACK:</strong> il server risponde con SYN-ACK (sincronizzazione + conferma).</li>
+        <li><strong>ACK:</strong> il client invia ACK per confermare la ricezione del SYN-ACK.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PORTE ══ -->
+<section class="section" id="porte">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">04</div>
+      <h2>Porte</h2>
+    </div>
+
+    <p>Le <strong>porte</strong> sono numeri a 16 bit (0–65535) che identificano uno specifico processo o servizio su un host. Permettono il multiplexing: più comunicazioni su un singolo indirizzo IP.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Range</th><th>Nome</th><th>Descrizione</th></tr></thead>
+        <tbody>
+          <tr><td>0 — 1023</td><td>Well-known</td><td>Servizi standard, assegnati da IANA. Root necessario per aprirle.</td></tr>
+          <tr><td>1024 — 49151</td><td>Registered</td><td>Registrate presso IANA per applicazioni specifiche.</td></tr>
+          <tr><td>49152 — 65535</td><td>Dynamic / Ephemeral</td><td>Porte temporanee assegnate automaticamente dal client.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:1.5rem">Porte well-known principali</h3>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Porta</th><th>Protocollo</th><th>Servizio</th></tr></thead>
+        <tbody>
+          <tr><td>20/21</td><td>TCP</td><td>FTP (dati/controllo)</td></tr>
+          <tr><td>22</td><td>TCP</td><td>SSH (Secure Shell)</td></tr>
+          <tr><td>23</td><td>TCP</td><td>Telnet (non sicuro)</td></tr>
+          <tr><td>25</td><td>TCP</td><td>SMTP (invio email)</td></tr>
+          <tr><td>53</td><td>UDP/TCP</td><td>DNS</td></tr>
+          <tr><td>67/68</td><td>UDP</td><td>DHCP (server/client)</td></tr>
+          <tr><td>80</td><td>TCP</td><td>HTTP</td></tr>
+          <tr><td>110</td><td>TCP</td><td>POP3</td></tr>
+          <tr><td>143</td><td>TCP</td><td>IMAP</td></tr>
+          <tr><td>443</td><td>TCP</td><td>HTTPS</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IPv6 ══ -->
+<section class="section" id="ipv6">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">05</div>
+      <h2>IPv6</h2>
+    </div>
+
+    <p>IPv4 ha circa <strong>4,3 miliardi</strong> di indirizzi (2³²), ormai insufficienti per il numero di dispositivi connessi. <strong>IPv6</strong> usa 128 bit → <strong>3,4 × 10³⁸</strong> indirizzi — essenzialmente inesauribili.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Caratteristica</th><th>IPv4</th><th>IPv6</th></tr></thead>
+        <tbody>
+          <tr><td>Lunghezza indirizzo</td><td>32 bit</td><td>128 bit</td></tr>
+          <tr><td>Formato</td><td>Decimale puntato (es. 192.168.1.1)</td><td>Esadecimale con : (es. 2001:db8::1)</td></tr>
+          <tr><td>Indirizzi disponibili</td><td>~4,3 miliardi</td><td>3,4 × 10³⁸</td></tr>
+          <tr><td>Configurazione</td><td>DHCP o manuale</td><td>SLAAC (autoconfigurazione) o DHCPv6</td></tr>
+          <tr><td>Header</td><td>Variabile (20-60 byte)</td><td>Fisso (40 byte) + extension headers</td></tr>
+          <tr><td>NAT</td><td>Necessario</td><td>Non necessario</td></tr>
+          <tr><td>Sicurezza</td><td>IPsec opzionale</td><td>IPsec integrato (nativo)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-concetto" style="margin-top:1.5rem">
+      <h4>Formato indirizzo IPv6</h4>
+      <p>8 gruppi da 4 cifre esadecimali separate da <code>:</code></p>
+      <p><code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code></p>
+      <p>Abbreviazioni: gruppi di tutti 0 → <code>::</code> (una sola volta nell'indirizzo). Zeri iniziali nei gruppi si omettono.</p>
+      <p><code>2001:db8::1</code> (forma abbreviata)</p>
+    </div>
+
+    <div class="box-frase">
+      «IPv6 non è solo più indirizzi — è una rete progettata per il futuro.»
+      <span class="label">— Internet Society</span>
+    </div>
+
+    <div class="res-actions" style="margin-top:2rem">
+      <a href="../quiz.html" class="btn-act primary" onclick="event.preventDefault(); window.location.href='../quiz.html'; setTimeout(()=>{ if(window.openQuizModal) openQuizModal('tcpip','TCP/IP e Indirizzi IP'); },200);">Inizia il Quiz →</a>
+      <a href="../flashcard.html" class="btn-act secondary">Flashcard →</a>
+      <a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-quote-final">
+    «In ogni grande rete, TCP/IP è la lingua franca.»
+    <cite>— Vint Cerf</cite>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>

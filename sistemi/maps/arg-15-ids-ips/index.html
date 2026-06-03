@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDS, IPS e Sicurezza Perimetrale — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E15%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>.map-overlay{display:none;position:fixed;inset:0;background:rgba(8,69,80,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}.map-overlay.show{display:flex;}.map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}.modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;}.modal-close:hover{color:var(--color-deep);}.modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}.modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;}.modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}</style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+    <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a><a class="topbar-link active" href="../../pages/mappe.html">Mappe</a><a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a><a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a></nav>
+  </header>
+  <nav class="nav"><div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+    <button class="nav-btn" onclick="location.href='../arg-14-acl/'">← Arg. 14</button>
+    <button class="nav-btn active">15 · IDS/IPS</button>
+    <button class="nav-btn" onclick="location.href='../arg-16-cloud/'">Arg. 16 →</button>
+  </div></nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;"><div class="section-tag">Mappa WBS · Argomento 15</div><h2>IDS, IPS <em>e Sicurezza Perimetrale</em></h2></div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: IDS/IPS passivo/attivo, HIDS/NIDS, rilevamento, AAA, RADIUS, TACACS+.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 860" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--color-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--color-primary);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <g transform="translate(260,0)">
+            <path d="M -20,400 C 20,400 70,80 70,80" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,235 70,235" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,395 70,395" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,555 70,555" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,715 70,715" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M 250,80 C 285,80 330,38 330,38" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,95 330,95" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,152 330,152" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,235 C 285,235 330,198 330,198" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,235 C 285,235 330,252 330,252" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,395 C 285,395 330,352 330,352" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,395 C 285,395 330,405 330,405" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,395 C 285,395 330,462 330,462" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,512 330,512" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,565 330,565" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,622 330,622" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,715 C 285,715 330,672 330,672" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,715 C 285,715 330,725 330,725" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,715 C 285,715 330,782 330,782" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <g class="node node-root" onclick="openNode('root')" tabindex="0"><rect x="-220" y="370" width="200" height="60" rx="8"/><text x="-120" y="393" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:700;fill:white">IDS, IPS e</text><text x="-120" y="411" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:700;fill:white">Sicurezza Perimetrale</text></g>
+            <g class="node node-l1" onclick="openNode('ids')" tabindex="0"><rect x="70" y="55" width="180" height="52" rx="7"/><text x="160" y="86" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">IDS (Passivo)</text></g>
+            <g class="node node-l1" onclick="openNode('ips')" tabindex="0"><rect x="70" y="210" width="180" height="52" rx="7"/><text x="160" y="241" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">IPS (Attivo)</text></g>
+            <g class="node node-l1" onclick="openNode('rilevamento')" tabindex="0"><rect x="70" y="370" width="180" height="52" rx="7"/><text x="160" y="401" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Tecniche Rilevamento</text></g>
+            <g class="node node-l1" onclick="openNode('aaa')" tabindex="0"><rect x="70" y="530" width="180" height="52" rx="7"/><text x="160" y="561" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">AAA</text></g>
+            <g class="node node-l1" onclick="openNode('protocolli')" tabindex="0"><rect x="70" y="690" width="180" height="52" rx="7"/><text x="160" y="721" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">RADIUS e TACACS+</text></g>
+            <g class="node node-l2" onclick="openNode('ids_pass')" tabindex="0"><rect x="330" y="15" width="175" height="42" rx="6"/><text x="418" y="40" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Rileva e segnala solo</text></g>
+            <g class="node node-l2" onclick="openNode('hids')" tabindex="0"><rect x="330" y="72" width="175" height="42" rx="6"/><text x="418" y="97" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">HIDS: su singolo host</text></g>
+            <g class="node node-l2" onclick="openNode('nids')" tabindex="0"><rect x="330" y="129" width="175" height="42" rx="6"/><text x="418" y="154" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">NIDS: port mirroring</text></g>
+            <g class="node node-l2" onclick="openNode('ips_inline')" tabindex="0"><rect x="330" y="175" width="175" height="42" rx="6"/><text x="418" y="200" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Inline: blocco attivo</text></g>
+            <g class="node node-l2" onclick="openNode('ips_azioni')" tabindex="0"><rect x="330" y="229" width="175" height="42" rx="6"/><text x="418" y="254" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Drop/Reset/Block IP</text></g>
+            <g class="node node-l2" onclick="openNode('anomaly')" tabindex="0"><rect x="330" y="329" width="175" height="42" rx="6"/><text x="418" y="354" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Anomaly: baseline+FP</text></g>
+            <g class="node node-l2" onclick="openNode('signature')" tabindex="0"><rect x="330" y="382" width="175" height="42" rx="6"/><text x="418" y="407" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Signature: firme note</text></g>
+            <g class="node node-l2" onclick="openNode('zerod')" tabindex="0"><rect x="330" y="439" width="175" height="42" rx="6"/><text x="418" y="464" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Zero-day vs accuratezza</text></g>
+            <g class="node node-l2" onclick="openNode('auth')" tabindex="0"><rect x="330" y="489" width="175" height="42" rx="6"/><text x="418" y="514" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Authentication: chi sei?</text></g>
+            <g class="node node-l2" onclick="openNode('authz')" tabindex="0"><rect x="330" y="542" width="175" height="42" rx="6"/><text x="418" y="567" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Authorization: cosa puoi?</text></g>
+            <g class="node node-l2" onclick="openNode('account')" tabindex="0"><rect x="330" y="599" width="175" height="42" rx="6"/><text x="418" y="624" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Accounting: cosa hai fatto?</text></g>
+            <g class="node node-l2" onclick="openNode('radius')" tabindex="0"><rect x="330" y="649" width="175" height="42" rx="6"/><text x="418" y="674" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">RADIUS: UDP 1812/1813</text></g>
+            <g class="node node-l2" onclick="openNode('tacacs')" tabindex="0"><rect x="330" y="702" width="175" height="42" rx="6"/><text x="418" y="727" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">TACACS+: TCP 49, tutto cif.</text></g>
+            <g class="node node-l2" onclick="openNode('mfa')" tabindex="0"><rect x="330" y="759" width="175" height="42" rx="6"/><text x="418" y="784" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">MFA: TOTP + U2F</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-label" id="modal-label"></div><div class="modal-title" id="modal-title"></div><div class="modal-text" id="modal-text"></div></div>
+  </div>
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes={
+      root:      {label:"Argomento 15",title:"IDS, IPS e Sicurezza Perimetrale",text:"La sicurezza perimetrale non si limita al firewall. IDS e IPS rilevano e prevengono le intrusioni. AAA (con RADIUS e TACACS+) gestisce autenticazione, autorizzazione e registrazione degli accessi. MFA rafforza l'autenticazione con più fattori."},
+      ids:       {label:"IDS",title:"IDS — Intrusion Detection System",text:"Sistema PASSIVO di rilevamento intrusioni. Analizza il traffico o i log di sistema, rileva comportamenti sospetti e genera allarmi. NON blocca il traffico — l'intervento umano è necessario. Posizionato fuori dal percorso del traffico (via port mirroring). Nessun impatto sulle prestazioni di rete."},
+      ips:       {label:"IPS",title:"IPS — Intrusion Prevention System",text:"Sistema ATTIVO di prevenzione intrusioni. Posizionato INLINE nel percorso del traffico — tutto il traffico passa attraverso l'IPS. Rileva E blocca il traffico malevolo in tempo reale. Azioni: drop pacchetti, TCP reset, blocco IP sorgente. Lieve impatto sulle prestazioni di rete."},
+      rilevamento:{label:"Rilevamento",title:"Tecniche di Rilevamento",text:"Anomaly Detection: definisce una baseline del comportamento normale e rileva deviazioni significative. Signature-based (Misuse Detection): confronta il traffico con database di firme di attacchi noti. Ogni tecnica ha vantaggi e svantaggi — spesso usate in combinazione."},
+      aaa:       {label:"AAA",title:"Authentication, Authorization, Accounting",text:"Il modello AAA gestisce l'accesso alle risorse di rete in tre fasi: Authentication (chi sei?), Authorization (cosa puoi fare?), Accounting (cosa hai fatto?). Implementato con protocolli come RADIUS o TACACS+. Fondamentale per il controllo degli accessi e la compliance."},
+      protocolli:{label:"Protocolli",title:"RADIUS vs TACACS+",text:"RADIUS: standard aperto, UDP 1812/1813, cifra solo la password. Usato per Wi-Fi enterprise (WPA2-Enterprise), VPN, 802.1X. TACACS+: proprietario Cisco, TCP 49, cifra l'intero payload. Separa completamente le 3 funzioni AAA. Usato per accesso amministrativo ai dispositivi Cisco."},
+      ids_pass:  {label:"IDS",title:"Passivo: Solo Rileva",text:"L'IDS non è nel percorso del traffico: riceve una copia del traffico via port mirroring (SPAN su switch) o TAP hardware. Non può bloccare nulla — genera solo allarmi che devono essere analizzati da un analista di sicurezza. Falso positivo = allarme indesiderato ma il traffico scorre."},
+      hids:      {label:"HIDS",title:"HIDS — Host-Based IDS",text:"Installato come agente su ogni singolo host. Monitora: log di sistema e applicazioni, integrità dei file critici (tripwire), processi in esecuzione, chiamate di sistema, traffico di rete locale già decifrato. Vede attività locali invisibili al NIDS. Scalabilità limitata (un agente per ogni host)."},
+      nids:      {label:"NIDS",title:"NIDS — Network-Based IDS",text:"Sensore di rete che analizza il traffico in tempo reale. Connesso via port mirroring (SPAN) sullo switch o TAP ottico/passivo. Visibilità su tutta la rete con un solo sensore. Svantaggio: non vede il traffico cifrato (HTTPS, VPN) senza SSL inspection."},
+      ips_inline:{label:"IPS",title:"IPS Inline",text:"L'IPS è inserito fisicamente nel percorso del traffico: tutto il traffico deve passare attraverso l'IPS prima di arrivare a destinazione. Questo permette di bloccare il traffico malevolo in tempo reale, prima che raggiunga il bersaglio."},
+      ips_azioni:{label:"IPS",title:"Azioni dell'IPS",text:"Quando rileva un attacco: Drop dei pacchetti malevoli. TCP Reset: invia RST a entrambi gli endpoint per chiudere la connessione. Blocco IP sorgente (temporaneo o permanente). Avviso all'amministratore via email/SNMP. Log per audit. Modifica dei pacchetti (rate limiting)."},
+      anomaly:   {label:"Anomaly",title:"Anomaly Detection",text:"Definisce una baseline del comportamento normale della rete (es. traffico medio, protocolli usati, orari di accesso). Rileva deviazioni significative dalla baseline come potenziali intrusioni. Vantaggio: può rilevare attacchi zero-day non ancora catalogati. Svantaggio: molti falsi positivi (comportamenti legittimi inusuali vengono segnalati)."},
+      signature: {label:"Signature",title:"Signature-Based (Misuse Detection)",text:"Confronta il traffico con un database di firme di attacchi noti (simile agli antivirus). Vantaggio: alta precisione, pochi falsi positivi, rileva attacchi noti con certezza. Svantaggio: non può rilevare attacchi zero-day (non ancora nel database). Richiede aggiornamento continuo del database delle firme."},
+      zerod:     {label:"Zero-Day",title:"Zero-Day vs Accuratezza",text:"Il dilemma del rilevamento: Anomaly Detection può rilevare zero-day ma genera molti falsi positivi (costosi da analizzare). Signature Detection è preciso ma cieco agli zero-day. La soluzione è usare entrambe le tecniche in combinazione, con un SOC (Security Operations Center) che analizza gli allarmi."},
+      auth:      {label:"Authentication",title:"Authentication — Chi Sei?",text:"La prima funzione AAA verifica l'identità dell'utente. Metodi: username+password, certificati digitali, smart card, biometria. Il NAS (Network Access Server — es. AP Wi-Fi, switch, VPN concentrator) raccoglie le credenziali e le invia al server AAA (RADIUS/TACACS+) per la verifica."},
+      authz:     {label:"Authorization",title:"Authorization — Cosa Puoi Fare?",text:"La seconda funzione AAA definisce i permessi dell'utente autenticato. Esempi: accesso solo a determinate VLAN, limitazione della larghezza di banda, permessi sui comandi del router (TACACS+), accesso a determinate applicazioni. In RADIUS viene comunicata tramite attributi nella risposta Access-Accept."},
+      account:   {label:"Accounting",title:"Accounting — Cosa Hai Fatto?",text:"La terza funzione AAA registra tutte le attività dell'utente autenticato: orari di login/logout, durata della sessione, IP assegnato, dati trasferiti, comandi eseguiti (TACACS+), risorse accedute. Fondamentale per compliance, audit, risoluzione dei problemi e rilevamento anomalie."},
+      radius:    {label:"RADIUS",title:"RADIUS",text:"Remote Authentication Dial-In User Service. UDP porte 1812 (autenticazione) e 1813 (accounting). Cifra solo la password nella richiesta (il resto del payload è in chiaro). Standard aperto (RFC 2865). Usato per: Wi-Fi WPA2-Enterprise (EAP), VPN, 802.1X port-based access control."},
+      tacacs:    {label:"TACACS+",title:"TACACS+",text:"Terminal Access Controller Access-Control System Plus. Proprietario Cisco. TCP porta 49. Cifra l'INTERO payload della comunicazione (più sicuro di RADIUS). Separa completamente Authentication, Authorization e Accounting — ogni funzione è indipendente. Usato per accesso amministrativo SSH ai dispositivi Cisco (router, switch, firewall)."},
+      mfa:       {label:"MFA",title:"Multi-Factor Authentication",text:"L'MFA richiede 2+ fattori di categorie diverse: Knowledge (password/PIN), Possession (token hardware/smartphone), Inherence (biometria). TOTP (Google Authenticator): codice a 6 cifre che cambia ogni 30 secondi. U2F/FIDO2 (YubiKey): resistente al phishing. SMS OTP: comodo ma vulnerabile a SIM swapping."}
+    };
+    function openNode(id){var n=nodes[id];if(!n)return;document.getElementById('modal-label').textContent=n.label;document.getElementById('modal-title').textContent=n.title;document.getElementById('modal-text').innerHTML=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeModal(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  </script>
+</body>
+</html>

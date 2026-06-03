@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diffie-Hellman, Hash, MAC, Firma Digitale — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E8%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="dh">Diffie-Hellman</button>
+  <button class="nav-btn" data-sec="hash">Hash</button>
+  <button class="nav-btn" data-sec="mac">MAC e HMAC</button>
+  <button class="nav-btn" data-sec="firma">Firma Digitale</button>
+  <button class="nav-btn" data-sec="mfa">MFA</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 8 (CLIL)</div><h1 class="title">Diffie-Hellman, Hash,<br><em>MAC e Firma Digitale</em></h1><p class="subtitle">I mattoni della sicurezza delle comunicazioni moderne.</p></div>
+    <div class="grid-2">
+      <div><p>Questo argomento copre i meccanismi crittografici usati per: scambiare chiavi (DH), garantire l'integrità dei dati (hash), autenticare il mittente (MAC, firma digitale) e proteggere l'accesso (MFA).</p></div>
+      <div><div class="box-frase">«La firma digitale è il notaio dell'era digitale.»<span class="label">— Whitfield Diffie</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="dh">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Diffie-Hellman (DH)</h2></div>
+    <p>DH è un algoritmo per lo <strong>scambio sicuro di chiavi</strong> su un canale pubblico. Permette a due parti di derivare la stessa chiave segreta condivisa senza trasmetterla mai in chiaro. Basato sulla difficoltà del <strong>logaritmo discreto</strong>.</p>
+    <div class="box-concetto"><h4>DH non è cifratura</h4><p>DH non cifra dati: serve solo per concordare una chiave simmetrica in modo sicuro. Una volta concordata la chiave, si usa AES per cifrare i dati effettivi. Usato in: IPsec (IKE), SSL/TLS handshake, SSH.</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Gruppi DH in IPsec</h4><div class="table-wrap"><table class="data-table"><thead><tr><th>Gruppo</th><th>Dimensione chiave</th><th>Sicurezza</th></tr></thead><tbody>
+      <tr><td>DH 1</td><td>768 bit</td><td>⚠ Debole</td></tr>
+      <tr><td>DH 2</td><td>1024 bit</td><td>⚠ Debole</td></tr>
+      <tr><td>DH 14</td><td>2048 bit</td><td>✅ Raccomandato</td></tr>
+      <tr><td>DH 19/20</td><td>ECDH 256/384 bit</td><td>✅ Moderno</td></tr>
+    </tbody></table></div></div>
+  </div>
+</section>
+
+<section class="section" id="hash">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Funzioni Hash</h2></div>
+    <p>Una funzione hash trasforma input di qualsiasi lunghezza in un output di lunghezza fissa (digest/impronte digitale).</p>
+    <div class="box-concetto"><h4>4 Proprietà fondamentali</h4><ul class="clean">
+      <li><strong>Deterministica:</strong> stesso input → sempre stesso output.</li>
+      <li><strong>A senso unico:</strong> dall'hash è computazionalmente impossibile risalire all'input.</li>
+      <li><strong>Effetto valanga:</strong> anche un solo bit di differenza nell'input produce un output completamente diverso (~50% bit cambiati).</li>
+      <li><strong>Resistenza alle collisioni:</strong> computazionalmente impossibile trovare due input diversi con lo stesso hash.</li>
+    </ul></div>
+    <div class="table-wrap" style="margin-top:1rem"><table class="data-table"><thead><tr><th>Algoritmo</th><th>Output</th><th>Stato</th></tr></thead><tbody>
+      <tr><td>MD5</td><td>128 bit</td><td>⚠ Vulnerabile (collisioni). Non per sicurezza.</td></tr>
+      <tr><td>SHA-1</td><td>160 bit</td><td>⚠ Deprecato</td></tr>
+      <tr><td>SHA-256</td><td>256 bit</td><td>✅ Standard attuale</td></tr>
+      <tr><td>SHA-512</td><td>512 bit</td><td>✅ Alta sicurezza</td></tr>
+    </tbody></table></div>
+    <p style="margin-top:1rem">Usi: verifica integrità file, hashing password (con salt), firma digitale.</p>
+  </div>
+</section>
+
+<section class="section" id="mac">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>MAC e HMAC</h2></div>
+    <p>Un <strong>MAC</strong> (Message Authentication Code) è un codice calcolato su un messaggio usando una <strong>chiave segreta condivisa</strong>. Garantisce integrità AND autenticazione (a differenza dell'hash che garantisce solo integrità).</p>
+    <div class="box-concetto"><h4>HMAC</h4>
+      <p>HMAC (Hash-based MAC) combina una chiave segreta con una funzione hash. Es. HMAC-SHA256 = SHA-256 + chiave. Resistente agli attacchi extension-length. Standard per SSL/TLS e IPsec.</p>
+      <p>Differenza hash vs MAC: l'hash è pubblico (chiunque può calcolarlo), il MAC richiede la chiave → autenticazione.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="firma">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">04</div><h2>Firma Digitale</h2></div>
+    <p>La firma digitale garantisce <strong>autenticità, integrità e non ripudio</strong> del messaggio.</p>
+    <div class="box-concetto"><h4>Step-by-step</h4><ol>
+      <li>Il mittente calcola <strong>hash(messaggio)</strong> con SHA-256.</li>
+      <li>Cifra l'hash con la propria <strong>chiave PRIVATA</strong> → ottiene la firma digitale.</li>
+      <li>Invia messaggio + firma al destinatario.</li>
+      <li>Il destinatario decifra la firma con la <strong>chiave PUBBLICA</strong> del mittente → ottiene l'hash originale.</li>
+      <li>Ricalcola indipendentemente hash(messaggio ricevuto).</li>
+      <li>Confronta: se i due hash <strong>coincidono</strong> → firma valida (autenticità + integrità + non ripudio).</li>
+    </ol>
+    <p><strong>Perché non ripudio?</strong> Solo chi possiede la chiave privata può creare una firma valida. Il mittente non può negare di averla firmata.</p></div>
+  </div>
+</section>
+
+<section class="section" id="mfa">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">05</div><h2>MFA — Multi-Factor Authentication</h2></div>
+    <p>L'<strong>MFA</strong> richiede 2 o più fattori di autenticazione di categorie diverse. Anche se un fattore è compromesso, gli altri proteggono l'account.</p>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Categoria</th><th>Tipo</th><th>Esempi</th></tr></thead><tbody>
+      <tr><td>Knowledge</td><td>Qualcosa che SAI</td><td>Password, PIN, risposta segreta</td></tr>
+      <tr><td>Possession</td><td>Qualcosa che HAI</td><td>Token hardware, smartphone, smart card</td></tr>
+      <tr><td>Inherence</td><td>Qualcosa che SEI</td><td>Impronta digitale, volto, iride</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>TOTP e U2F</h4><ul class="clean">
+      <li><strong>TOTP</strong> (RFC 6238): codice a 6 cifre derivato da chiave segreta + timestamp corrente. Cambia ogni 30s. Google Authenticator, Microsoft Authenticator. Protegge da replay attack.</li>
+      <li><strong>U2F/FIDO2</strong>: chiave hardware fisica (YubiKey). Resistente al phishing: l'autenticazione è legata al dominio specifico del sito.</li>
+      <li><strong>SMS OTP</strong>: codice via SMS. Pratico ma vulnerabile a SIM swapping. Meno sicuro di TOTP.</li>
+    </ul></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«La firma digitale garantisce integrità e autenticità senza richiedersi di incontrarsi fisicamente.»<cite>— Diffie & Hellman, 1976</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

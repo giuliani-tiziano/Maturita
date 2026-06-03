@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIP — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E5%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="funzionamento">Funzionamento</button>
+  <button class="nav-btn" data-sec="problemi">Count-to-Infinity</button>
+  <button class="nav-btn" data-sec="versioni">RIPv1 vs RIPv2</button>
+  <button class="nav-btn" data-sec="comandi">Comandi Cisco</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 5</div><h1 class="title">RIP<br><em>Routing Information Protocol</em></h1><p class="subtitle">Il protocollo Distance Vector più semplice per reti di piccole dimensioni.</p></div>
+    <div class="grid-2">
+      <div><p>RIP è un <strong>protocollo IGP di tipo Distance Vector</strong> basato sull'algoritmo di Bellman-Ford. Usa l'<strong>hop count</strong> come metrica: il numero di router attraversati per raggiungere la destinazione. È adatto a reti piccole e medie (max 15 hop).</p>
+      <div class="box-concetto"><h4>Caratteristiche principali</h4><ul class="clean"><li>Metrica: hop count (max 15 · 16 = irraggiungibile)</li><li>Aggiornamenti periodici ogni 30 secondi</li><li>Tipo: Distance Vector (Bellman-Ford)</li><li>Classificazione: IGP</li><li>Adatto a reti piccole/medie</li></ul></div></div>
+      <div><div class="box-frase">«RIP è l'introduzione al routing dinamico: semplice da capire, limitato in scala.»<span class="label">— Cisco Networking Academy</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="funzionamento">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Funzionamento RIP</h2></div>
+    <div class="box-concetto"><h4>Processo passo a passo</h4><ol>
+      <li>All'avvio, ogni router conosce solo le reti direttamente connesse (metrica 1).</li>
+      <li>Ogni 30 secondi, invia un <strong>RIP Update</strong> ai vicini con la propria tabella di routing.</li>
+      <li>Il router ricevente aggiunge <strong>1 alla metrica</strong> di ogni rotta ricevuta.</li>
+      <li>Aggiorna la propria tabella se trova un percorso con metrica inferiore.</li>
+      <li>Dopo alcuni cicli, tutti i router convergono con informazioni complete sulla rete.</li>
+    </ol></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Timer RIP</h4><div class="table-wrap"><table class="data-table"><thead><tr><th>Timer</th><th>Valore</th><th>Funzione</th></tr></thead><tbody>
+      <tr><td>Update Timer</td><td>30s</td><td>Frequenza degli aggiornamenti periodici</td></tr>
+      <tr><td>Invalid Timer</td><td>180s</td><td>Rotta marcata invalida (metrica=16) se nessun update</td></tr>
+      <tr><td>Holddown Timer</td><td>180s</td><td>Attesa prima di accettare nuove info sulla rotta invalida</td></tr>
+      <tr><td>Flush Timer</td><td>240s</td><td>Rimozione definitiva della rotta dalla tabella</td></tr>
+    </tbody></table></div></div>
+  </div>
+</section>
+
+<section class="section" id="problemi">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Count-to-Infinity e Soluzioni</h2></div>
+    <p>Il <strong>Count-to-Infinity</strong> è il problema principale di RIP: quando un link cade, i router continuano ad annunciare la rotta con metrica crescente (1→2→3…→16) finché non raggiungono il valore "infinito" (16).</p>
+    <div class="box-concetto"><h4>Soluzioni</h4>
+      <ul class="clean">
+        <li><strong>Split Horizon:</strong> un router non ri-annuncia una rotta verso il router da cui l'ha appresa. Se R1 ha imparato "rete X via R2", R1 non annuncia "rete X" a R2.</li>
+        <li><strong>Poisoned Reverse:</strong> variante di Split Horizon: invece di omettere la rotta, la ri-annuncia con metrica 16 verso il router di origine. Più esplicito e veloce.</li>
+        <li><strong>Triggered Update:</strong> al cambiamento di topologia, invia immediatamente un aggiornamento senza aspettare i 30 secondi periodici. Accelera notevolmente la convergenza.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="versioni">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>RIPv1 vs RIPv2</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Caratteristica</th><th>RIPv1</th><th>RIPv2</th></tr></thead><tbody>
+      <tr><td>Tipo</td><td>Classful</td><td>Classless</td></tr>
+      <tr><td>Subnet mask negli update</td><td>No</td><td>Sì</td></tr>
+      <tr><td>VLSM/CIDR</td><td>Non supportato</td><td>Supportato</td></tr>
+      <tr><td>Invio aggiornamenti</td><td>Broadcast (255.255.255.255)</td><td>Multicast (224.0.0.9)</td></tr>
+      <tr><td>Autenticazione</td><td>No</td><td>Sì (testo chiaro o MD5)</td></tr>
+      <tr><td>Standard</td><td>RFC 1058</td><td>RFC 2453</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section class="section" id="comandi">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">04</div><h2>Comandi Cisco IOS per RIP</h2></div>
+    <div class="box-concetto"><h4>Configurazione RIPv2</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">Router(config)# router rip
+Router(config-router)# version 2
+Router(config-router)# network 192.168.1.0
+Router(config-router)# network 10.0.0.0
+Router(config-router)# no auto-summary</pre>
+    </div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Verifica RIP</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#084550;color:#C9A84C;border-radius:8px">show ip protocols     ! Protocolli attivi, reti, timer
+show ip route         ! Tabella routing (R = rotte RIP)
+show ip rip database  ! Database RIP con metriche e next-hop
+debug ip rip          ! Messaggi RIP in tempo reale (disab. con: no debug ip rip)</pre>
+    </div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«RIP è semplice come 1, 2, 3… ma si ferma a 15.»<cite>— Cisco Press, CCNA Guide</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

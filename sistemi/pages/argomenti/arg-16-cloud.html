@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud, Virtualizzazione e Active Directory — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E16%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="cloud">Cloud</button>
+  <button class="nav-btn" data-sec="virt">Virtualizzazione</button>
+  <button class="nav-btn" data-sec="backup">DR e Backup</button>
+  <button class="nav-btn" data-sec="ad">Active Directory</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 16</div><h1 class="title">Cloud, Virtualizzazione<br><em>e Active Directory</em></h1><p class="subtitle">L'infrastruttura IT moderna: dal datacenter al cloud.</p></div>
+    <div class="grid-2">
+      <div><p>L'infrastruttura IT moderna si basa su <strong>cloud computing</strong>, <strong>virtualizzazione</strong> e gestione centralizzata delle identità (<strong>Active Directory</strong>). Questi tre pilastri permettono scalabilità, efficienza e sicurezza.</p></div>
+      <div><div class="box-frase">«Il cloud non è il futuro — è il presente.»<span class="label">— Gartner, 2023</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cloud">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Cloud Computing</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Modello</th><th>Il fornitore gestisce</th><th>Il cliente gestisce</th><th>Esempi</th></tr></thead><tbody>
+      <tr><td><strong>IaaS</strong> (Infrastructure as a Service)</td><td>Hardware, rete, hypervisor, storage</td><td>SO, middleware, applicazioni</td><td>AWS EC2, Azure VM, GCP Compute</td></tr>
+      <tr><td><strong>PaaS</strong> (Platform as a Service)</td><td>IaaS + SO + middleware + runtime</td><td>Solo le applicazioni e i dati</td><td>Heroku, Google App Engine, Azure App Service</td></tr>
+      <tr><td><strong>SaaS</strong> (Software as a Service)</td><td>Tutto lo stack, incluse le applicazioni</td><td>Solo l'uso dell'applicazione</td><td>Office 365, Gmail, Salesforce, Zoom</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>On-Premise vs Cloud</h4><div class="table-wrap"><table class="data-table"><thead><tr><th></th><th>On-Premise</th><th>Cloud</th></tr></thead><tbody>
+      <tr><td>Costi iniziali</td><td>Alti (hardware)</td><td>Bassi (pay-as-you-go)</td></tr>
+      <tr><td>Controllo</td><td>Massimo</td><td>Limitato (dipende dal fornitore)</td></tr>
+      <tr><td>Scalabilità</td><td>Lenta (acquisto HW)</td><td>Immediata</td></tr>
+      <tr><td>Responsabilità sicurezza</td><td>Totale (azienda)</td><td>Condivisa (modello shared responsibility)</td></tr>
+    </tbody></table></div></div>
+  </div>
+</section>
+
+<section class="section" id="virt">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Virtualizzazione</h2></div>
+    <p>La virtualizzazione permette di eseguire più sistemi operativi su un singolo hardware fisico tramite un <strong>hypervisor</strong> (VMM — Virtual Machine Monitor).</p>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Tipo</th><th>Funzionamento</th><th>Esempi</th><th>Uso</th></tr></thead><tbody>
+      <tr><td><strong>Type 1 (Bare Metal)</strong></td><td>Direttamente sull'hardware fisico — massime prestazioni</td><td>VMware ESXi, Microsoft Hyper-V, Proxmox</td><td>Datacenter enterprise</td></tr>
+      <tr><td><strong>Type 2 (Hosted)</strong></td><td>Sopra un OS host (Windows/Linux)</td><td>VirtualBox, VMware Workstation</td><td>Desktop, sviluppo, testing</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Vantaggi della virtualizzazione</h4><ul class="clean">
+      <li>Consolidamento server (meno HW fisico)</li><li>Risparmio energetico</li><li>Isolamento dei sistemi</li><li>Snapshot e backup rapidi</li><li>Live migration senza downtime</li><li>Provisioning rapido (VM in minuti)</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="section" id="backup">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>Disaster Recovery e Backup</h2></div>
+    <div class="box-concetto"><h4>RTO e RPO</h4><ul class="clean">
+      <li><strong>RTO</strong> (Recovery Time Objective): tempo massimo per ripristinare il sistema. Es. RTO=4h: il sistema deve essere operativo entro 4 ore dal guasto.</li>
+      <li><strong>RPO</strong> (Recovery Point Objective): quantità massima di dati persi accettabile. Es. RPO=1h: backup ogni ora — si perderà al massimo 1 ora di dati.</li>
+    </ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Regola 3-2-1</h4><p>3 copie dei dati · 2 supporti diversi (es. disco + nastro) · 1 copia fuori sede (cloud o sede secondaria). Protegge da: guasto hardware, disastri fisici, ransomware.</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Tipi di Backup</h4><div class="table-wrap"><table class="data-table"><thead><tr><th>Tipo</th><th>Cosa salva</th><th>Velocità backup</th><th>Ripristino</th></tr></thead><tbody>
+      <tr><td><strong>Full</strong></td><td>Tutti i dati</td><td>Lento</td><td>Semplice (1 backup)</td></tr>
+      <tr><td><strong>Incrementale</strong></td><td>Modifiche dall'ultimo backup (any)</td><td>Veloce</td><td>Complesso (full + tutti inc)</td></tr>
+      <tr><td><strong>Differenziale</strong></td><td>Modifiche dall'ultimo Full</td><td>Medio</td><td>Medio (full + 1 diff)</td></tr>
+    </tbody></table></div></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Clustering HA ≠ Backup!</h4><p>Il clustering (Active-Passive, Active-Active) garantisce alta disponibilità: se un nodo cade, il servizio continua. Ma tutti i nodi accedono agli stessi dati — un ransomware li cifra su tutti i nodi. Il backup è separato e indispensabile.</p></div>
+  </div>
+</section>
+
+<section class="section" id="ad">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">04</div><h2>Active Directory</h2></div>
+    <p><strong>Active Directory</strong> è il servizio Microsoft per la gestione centralizzata di utenti, computer, gruppi e policy di sicurezza in un'organizzazione.</p>
+    <div class="box-concetto"><h4>Componenti principali</h4><ul class="clean">
+      <li><strong>Domain Controller (DC):</strong> server con il database AD. Gestisce autenticazione (Kerberos/NTLM) e autorizzazione.</li>
+      <li><strong>Domain:</strong> raggruppamento logico con un'unica policy di sicurezza.</li>
+      <li><strong>OU (Organizational Unit):</strong> contenitore per organizzare utenti/computer (es. per reparto).</li>
+      <li><strong>GPO (Group Policy Object):</strong> regole applicate automaticamente — blocco USB, screensaver, Windows Update, policy password.</li>
+      <li><strong>Forest/Tree:</strong> struttura gerarchica di più domini.</li>
+      <li><strong>SSO (Single Sign-On):</strong> un login per accedere a tutte le risorse autorizzate.</li>
+      <li><strong>LDAP:</strong> protocollo per interrogare la directory (porta 389/636).</li>
+      <li><strong>Kerberos:</strong> protocollo di autenticazione interno ad AD.</li>
+    </ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Azure AD</h4>
+      <p>Versione cloud-native di Active Directory. Usa OAuth 2.0 e SAML invece di Kerberos. Gestisce accesso a applicazioni cloud e smart working. Non è una replica di AD on-premise — è un servizio IAM cloud.</p></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«L'infrastruttura IT è lo scheletro dell'azienda digitale.»<cite>— Gartner IT Glossary</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

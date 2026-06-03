@@ -2,15 +2,39 @@
 @import url('../../informatica/css/style.css');
 
 :root {
-  --color-primary: #1A5C8A;
-  --color-deep:    #0E3A57;
-  --color-light:   #2A80BA;
+  --color-primary: #0E6B7A;
+  --color-deep:    #084550;
+  --color-light:   #1A8FA0;
 
   --bordeaux-mid:   var(--color-primary);
   --bordeaux-deep:  var(--color-deep);
   --bordeaux-light: var(--color-light);
 
-  --rule:           rgba(14, 58, 87, .22);
+  --rule:           rgba(8, 69, 80, .22);
   --grad-editorial: linear-gradient(90deg, var(--color-deep) 0%, var(--gold) 50%, var(--color-primary) 100%);
-  --grad-hero:      linear-gradient(160deg, var(--color-deep) 0%, #061520 100%);
+  --grad-hero:      linear-gradient(160deg, var(--color-deep) 0%, #030f12 100%);
+}
+
+/* ── Dark mode: sovrascrive i beige hardcoded di Informatica con varianti teal ── */
+[data-theme="dark"] {
+  --beige-light:  #0E6B7A;   /* body bg = teal primario */
+  --beige-mid:    #084550;   /* sidebar, nav = teal deep */
+  --beige-dark:   #04303A;   /* superfici incassate */
+}
+
+[data-theme="dark"] .topbar-brand-block,
+[data-theme="dark"] .topbar--split {
+  background: #04303A;
+}
+
+[data-theme="dark"] body {
+  background: #0E6B7A;
+}
+
+[data-theme="dark"] .page-main {
+  background: #084550;
+}
+
+[data-theme="dark"] .page-sidebar {
+  background: #04303A;
 }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPsec — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E12%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>.map-overlay{display:none;position:fixed;inset:0;background:rgba(8,69,80,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}.map-overlay.show{display:flex;}.map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}.modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;}.modal-close:hover{color:var(--color-deep);}.modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}.modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;}.modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}</style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+    <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a><a class="topbar-link active" href="../../pages/mappe.html">Mappe</a><a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a><a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a></nav>
+  </header>
+  <nav class="nav"><div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+    <button class="nav-btn" onclick="location.href='../arg-11-vpn/'">← Arg. 11</button>
+    <button class="nav-btn active">12 · IPsec</button>
+    <button class="nav-btn" onclick="location.href='../arg-13-firewall/'">Arg. 13 →</button>
+  </div></nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;"><div class="section-tag">Mappa WBS · Argomento 12</div><h2>IPsec <em>SA, IKE e Modalità</em></h2></div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: SA/SAD, IKE Fase 1 e 2, AH vs ESP, modalità trasporto/tunnel, PFS.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 860" width="100%" style="display:block;min-height:760px;width:max(100%,1400px);margin:0 auto;">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--color-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--color-primary);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <g transform="translate(260,0)">
+            <path d="M -20,400 C 20,400 70,80 70,80" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,235 70,235" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,395 70,395" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,555 70,555" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,400 C 20,400 70,715 70,715" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M 250,80 C 285,80 330,38 330,38" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,95 330,95" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,152 330,152" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,235 C 285,235 330,198 330,198" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,235 C 285,235 330,252 330,252" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,235 C 285,235 330,308 330,308" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,395 C 285,395 330,352 330,352" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,395 C 285,395 330,405 330,405" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,395 C 285,395 330,462 330,462" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,512 330,512" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,555 C 285,555 330,565 330,565" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,715 C 285,715 330,672 330,672" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,715 C 285,715 330,725 330,725" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,715 C 285,715 330,782 330,782" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <g class="node node-root" onclick="openNode('root')" tabindex="0"><rect x="-220" y="370" width="200" height="60" rx="8"/><text x="-120" y="396" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:13px;font-weight:700;fill:white">IPsec</text><text x="-120" y="414" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:rgba(255,255,255,.8)">Framework sicurezza L3</text></g>
+            <g class="node node-l1" onclick="openNode('sa')" tabindex="0"><rect x="70" y="55" width="180" height="52" rx="7"/><text x="160" y="86" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">SA e SAD</text></g>
+            <g class="node node-l1" onclick="openNode('ike1')" tabindex="0"><rect x="70" y="210" width="180" height="52" rx="7"/><text x="160" y="241" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">IKE Fase 1</text></g>
+            <g class="node node-l1" onclick="openNode('ike2')" tabindex="0"><rect x="70" y="370" width="180" height="52" rx="7"/><text x="160" y="401" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">IKE Fase 2</text></g>
+            <g class="node node-l1" onclick="openNode('ah_esp')" tabindex="0"><rect x="70" y="530" width="180" height="52" rx="7"/><text x="160" y="561" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">AH vs ESP</text></g>
+            <g class="node node-l1" onclick="openNode('modalita')" tabindex="0"><rect x="70" y="690" width="180" height="52" rx="7"/><text x="160" y="721" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Modalità</text></g>
+            <g class="node node-l2" onclick="openNode('sa_def')" tabindex="0"><rect x="330" y="15" width="175" height="42" rx="6"/><text x="418" y="40" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Canale in UNA direzione</text></g>
+            <g class="node node-l2" onclick="openNode('sa_spi')" tabindex="0"><rect x="330" y="72" width="175" height="42" rx="6"/><text x="418" y="97" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">SPI + IP dest + protocollo</text></g>
+            <g class="node node-l2" onclick="openNode('sa_2')" tabindex="0"><rect x="330" y="129" width="175" height="42" rx="6"/><text x="418" y="154" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">2 SA per bidirezionale</text></g>
+            <g class="node node-l2" onclick="openNode('ike1_neg')" tabindex="0"><rect x="330" y="175" width="175" height="42" rx="6"/><text x="418" y="200" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">ISAKMP SA: tunnel gestione</text></g>
+            <g class="node node-l2" onclick="openNode('main')" tabindex="0"><rect x="330" y="229" width="175" height="42" rx="6"/><text x="418" y="254" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Main Mode: 6 msg sicuro</text></g>
+            <g class="node node-l2" onclick="openNode('aggr')" tabindex="0"><rect x="330" y="285" width="175" height="42" rx="6"/><text x="418" y="310" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Aggressive Mode: 3 msg</text></g>
+            <g class="node node-l2" onclick="openNode('quick')" tabindex="0"><rect x="330" y="329" width="175" height="42" rx="6"/><text x="418" y="354" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Quick Mode: 3 msg</text></g>
+            <g class="node node-l2" onclick="openNode('sa_dati')" tabindex="0"><rect x="330" y="382" width="175" height="42" rx="6"/><text x="418" y="407" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">SA per traffico dati</text></g>
+            <g class="node node-l2" onclick="openNode('pfs')" tabindex="0"><rect x="330" y="439" width="175" height="42" rx="6"/><text x="418" y="464" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">PFS: nuovo DH per ogni SA</text></g>
+            <g class="node node-l2" onclick="openNode('ah')" tabindex="0"><rect x="330" y="489" width="175" height="42" rx="6"/><text x="418" y="514" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">AH: auth solo, no NAT</text></g>
+            <g class="node node-l2" onclick="openNode('esp')" tabindex="0"><rect x="330" y="542" width="175" height="42" rx="6"/><text x="418" y="567" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">ESP: cifratura+auth, NAT-T</text></g>
+            <g class="node node-l2" onclick="openNode('trasporto')" tabindex="0"><rect x="330" y="649" width="175" height="42" rx="6"/><text x="418" y="674" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Trasporto: solo payload</text></g>
+            <g class="node node-l2" onclick="openNode('tunnel')" tabindex="0"><rect x="330" y="702" width="175" height="42" rx="6"/><text x="418" y="727" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Tunnel: intero pacchetto</text></g>
+            <g class="node node-l2" onclick="openNode('natt')" tabindex="0"><rect x="330" y="759" width="175" height="42" rx="6"/><text x="418" y="784" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">NAT-T: UDP 4500</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-label" id="modal-label"></div><div class="modal-title" id="modal-title"></div><div class="modal-text" id="modal-text"></div></div>
+  </div>
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes={
+      root:    {label:"Argomento 12",title:"IPsec",text:"IPsec è un framework di protocolli a Layer 3 che protegge qualsiasi comunicazione IP in modo trasparente alle applicazioni. Garantisce Riservatezza (cifratura ESP), Integrità (HMAC), Autenticazione (IKE), Anti-Replay (sequence number)."},
+      sa:      {label:"SA",title:"Security Association",text:"Una SA è l'insieme di parametri e chiavi per proteggere il traffico in UNA direzione: algoritmo di cifratura e chiave, algoritmo HMAC e chiave, modalità (trasporto/tunnel), lifetime. Identificata univocamente da: SPI + IP destinazione + protocollo (AH o ESP)."},
+      ike1:    {label:"IKE Fase 1",title:"IKE Fase 1 — ISAKMP SA",text:"Crea un tunnel di gestione sicuro (ISAKMP SA) per proteggere le negoziazioni successive. Passi: 1) Negoziazione parametri (hash, gruppo DH, cifratura, lifetime). 2) Scambio DH per generare materiale crittografico. 3) Autenticazione reciproca (PSK o certificati RSA)."},
+      ike2:    {label:"IKE Fase 2",title:"IKE Fase 2 — Quick Mode",text:"Dentro il tunnel sicuro di Fase 1, negozia le SA per il traffico dati reale. 3 messaggi (Quick Mode). Parametri: protocollo (AH o ESP), modalità (trasporto o tunnel), algoritmi di cifratura/HMAC, lifetime delle SA. Produce una coppia di SA (una per direzione)."},
+      ah_esp:  {label:"Protocolli",title:"AH vs ESP",text:"AH (IP 51): autentica l'intero pacchetto incluso l'header IP. NO cifratura. Non compatibile con NAT (NAT modifica l'header IP autenticato). ESP (IP 50): cifra e autentica il payload. Compatibile con NAT tramite NAT-T. ESP è lo standard per le VPN moderne."},
+      modalita:{label:"Modalità",title:"Modalità Trasporto vs Tunnel",text:"Modalità Trasporto: protegge solo il payload, l'header IP originale è visibile. Usata per host-to-host. Modalità Tunnel: incapsula tutto il pacchetto originale in un nuovo pacchetto IP. Gli IP originali sono nascosti. Standard per VPN site-to-site tra gateway."},
+      sa_def:  {label:"SA",title:"Una SA per Direzione",text:"Una SA protegge il traffico in una sola direzione. Per una comunicazione bidirezionale (A↔B) servono almeno 2 SA: una per A→B e una per B→A. In presenza di AH e ESP insieme servono 4 SA (una per protocollo per direzione)."},
+      sa_spi:  {label:"SA",title:"Identificazione della SA",text:"Ogni SA è identificata univocamente dalla terna: SPI (Security Parameter Index — numero a 32 bit) + Indirizzo IP destinazione + Protocollo (AH o ESP). L'SPI è incluso in ogni pacchetto protetto, permettendo al destinatario di trovare la SA corretta nel SAD."},
+      sa_2:    {label:"SAD",title:"SAD — Security Association Database",text:"Il SAD (Security Association Database) è il database dove IPsec memorizza tutte le SA attive: parametri, chiavi, algoritmi, SPI, lifetime rimanente. Il kernel lo consulta per ogni pacchetto da proteggere (in uscita) o da verificare (in ingresso)."},
+      ike1_neg:{label:"IKE Fase 1",title:"ISAKMP SA",text:"L'ISAKMP SA è il tunnel di gestione creato in IKE Fase 1. È bidirezionale (unica SA per entrambe le direzioni). Protegge le comunicazioni IKE Fase 2. Parametri tipici: AES-256 per la cifratura, SHA-256 per l'HMAC, DH Gruppo 14 (2048 bit) per lo scambio di chiavi."},
+      main:    {label:"Main Mode",title:"Main Mode — 6 Messaggi",text:"6 scambi di messaggi: 3 per negoziare i parametri (proposta/risposta), 2 per lo scambio DH (valori pubblici), 1 per l'autenticazione (identità cifrate). L'identità delle parti è protetta dalla cifratura DH. Usato per VPN site-to-site con IP fisso."},
+      aggr:    {label:"Aggressive Mode",title:"Aggressive Mode — 3 Messaggi",text:"3 messaggi invece di 6: negoziazione parametri, DH e identità tutto in un solo scambio. Più veloce ma le identità viaggiano in chiaro. Usato per remote-access VPN con IP dinamico (il client non conosce il proprio IP pubblico in anticipo)."},
+      quick:   {label:"IKE Fase 2",title:"Quick Mode — 3 Messaggi",text:"La fase di negoziazione delle SA per il traffico dati: 3 messaggi protetti dal tunnel ISAKMP. Negozia: protocollo (AH/ESP), modalità (trasporto/tunnel), algoritmi, lifetime. Con PFS, esegue un nuovo scambio DH per generare chiavi indipendenti dalla Fase 1."},
+      sa_dati: {label:"IKE Fase 2",title:"SA per il Traffico Dati",text:"Le SA create in IKE Fase 2 sono quelle che ESP/AH usa per proteggere il traffico dati reale (non le comunicazioni IKE). Hanno una lifetime più breve (es. 1 ora o 4 GB di dati). Alla scadenza, IKE Fase 2 ne negozia automaticamente di nuove."},
+      pfs:     {label:"PFS",title:"Perfect Forward Secrecy",text:"Con PFS attivo, IKE Fase 2 esegue un nuovo scambio Diffie-Hellman per ogni set di SA, generando chiavi indipendenti dalla Fase 1. Se un attaccante compromette la chiave di Fase 1, non può decifrare il traffico dati delle sessioni passate o future."},
+      ah:      {label:"AH",title:"AH — Authentication Header",text:"Protocollo IP numero 51. Autentica l'intero pacchetto (header IP + payload) ma NON cifra i dati. Problema con NAT: NAT modifica gli indirizzi IP nell'header, invalidando l'autenticazione. Usato raramente nelle VPN moderne per questo motivo."},
+      esp:     {label:"ESP",title:"ESP — Encapsulating Security Payload",text:"Protocollo IP numero 50. Cifra il payload e lo autentica (non l'header IP esterno). Compatibile con NAT tramite NAT-T. È il protocollo standard per le VPN IPsec moderne. Combina riservatezza (AES) e integrità (HMAC) in un unico protocollo."},
+      trasporto:{label:"Modalità",title:"Modalità Trasporto",text:"L'header IP originale rimane visibile (usato come header esterno). IPsec protegge solo il payload (dati). Overhead minore. Usato tipicamente per connessioni sicure host-to-host all'interno di una rete (es. tra due server nella stessa LAN)."},
+      tunnel:  {label:"Modalità",title:"Modalità Tunnel",text:"L'intero pacchetto originale (header IP + payload) viene protetto da IPsec e incapsulato in un nuovo pacchetto IP con nuovi indirizzi. Gli indirizzi IP originali sono nascosti — solo i gateway VPN sono visibili. Standard per VPN site-to-site tra gateway."},
+      natt:    {label:"NAT-T",title:"NAT Traversal — UDP 4500",text:"NAT-T permette a IPsec/ESP di funzionare attraverso dispositivi NAT. Incapsula i pacchetti ESP dentro UDP sulla porta 4500. IKE usa normalmente UDP 500, ma passa a UDP 4500 quando rileva NAT. IKEv2 supporta NAT-T nativamente senza configurazione aggiuntiva."}
+    };
+    function openNode(id){var n=nodes[id];if(!n)return;document.getElementById('modal-label').textContent=n.label;document.getElementById('modal-title').textContent=n.title;document.getElementById('modal-text').innerHTML=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeModal(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  </script>
+</body>
+</html>

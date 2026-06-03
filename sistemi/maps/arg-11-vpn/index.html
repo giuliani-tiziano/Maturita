@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VPN — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E11%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>.map-overlay{display:none;position:fixed;inset:0;background:rgba(8,69,80,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}.map-overlay.show{display:flex;}.map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}.modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;}.modal-close:hover{color:var(--color-deep);}.modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}.modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;}.modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}</style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+    <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a><a class="topbar-link active" href="../../pages/mappe.html">Mappe</a><a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a><a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a></nav>
+  </header>
+  <nav class="nav"><div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+    <button class="nav-btn" onclick="location.href='../arg-10-ssl-tls/'">← Arg. 10</button>
+    <button class="nav-btn active">11 · VPN</button>
+    <button class="nav-btn" onclick="location.href='../arg-12-ipsec/'">Arg. 12 →</button>
+  </div></nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;"><div class="section-tag">Mappa WBS · Argomento 11</div><h2>VPN <em>Virtual Private Network</em></h2></div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: tunneling, tipologie, protocolli, sicurezza VPN.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 760" width="100%" style="display:block;min-height:680px;width:max(100%,1400px);margin:0 auto;">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--color-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--color-primary);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <g transform="translate(260,0)">
+            <path d="M -20,350 C 20,350 70,80 70,80" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,225 70,225" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,370 70,370" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,525 70,525" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M 250,80 C 285,80 330,40 330,40" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,97 330,97" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 285,80 330,155 330,155" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,225 C 285,225 330,190 330,190" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,225 C 285,225 330,248 330,248" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,312 330,312" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,362 330,362" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,415 330,415" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 285,370 330,470 330,470" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,525 C 285,525 330,492 330,492" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,525 C 285,525 330,545 330,545" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,525 C 285,525 330,600 330,600" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <g class="node node-root" onclick="openNode('root')" tabindex="0"><rect x="-220" y="320" width="200" height="60" rx="8"/><text x="-120" y="346" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:13px;font-weight:700;fill:white">VPN</text><text x="-120" y="364" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:rgba(255,255,255,.8)">Tunnel crittografato</text></g>
+            <g class="node node-l1" onclick="openNode('tunneling')" tabindex="0"><rect x="70" y="55" width="180" height="52" rx="7"/><text x="160" y="86" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Tunneling</text></g>
+            <g class="node node-l1" onclick="openNode('tipologie')" tabindex="0"><rect x="70" y="200" width="180" height="52" rx="7"/><text x="160" y="231" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Tipologie VPN</text></g>
+            <g class="node node-l1" onclick="openNode('protocolli')" tabindex="0"><rect x="70" y="345" width="180" height="52" rx="7"/><text x="160" y="376" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Protocolli VPN</text></g>
+            <g class="node node-l1" onclick="openNode('sicurezza')" tabindex="0"><rect x="70" y="500" width="180" height="52" rx="7"/><text x="160" y="531" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Sicurezza VPN</text></g>
+            <g class="node node-l2" onclick="openNode('tun_inc')" tabindex="0"><rect x="330" y="17" width="175" height="42" rx="6"/><text x="418" y="42" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Incapsulamento IP-in-IP</text></g>
+            <g class="node node-l2" onclick="openNode('tun_cifr')" tabindex="0"><rect x="330" y="74" width="175" height="42" rx="6"/><text x="418" y="99" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Dati cifrati nel tunnel</text></g>
+            <g class="node node-l2" onclick="openNode('tun_gw')" tabindex="0"><rect x="330" y="132" width="175" height="42" rx="6"/><text x="418" y="157" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Gateway → de-incapsula</text></g>
+            <g class="node node-l2" onclick="openNode('remote')" tabindex="0"><rect x="330" y="167" width="175" height="42" rx="6"/><text x="418" y="192" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Remote-Access: utente→rete</text></g>
+            <g class="node node-l2" onclick="openNode('site')" tabindex="0"><rect x="330" y="225" width="175" height="42" rx="6"/><text x="418" y="250" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Site-to-Site: sede↔sede</text></g>
+            <g class="node node-l2" onclick="openNode('ipsec_vpn')" tabindex="0"><rect x="330" y="289" width="175" height="42" rx="6"/><text x="418" y="314" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">IPsec: L3 trasparente</text></g>
+            <g class="node node-l2" onclick="openNode('ssl_vpn')" tabindex="0"><rect x="330" y="339" width="175" height="42" rx="6"/><text x="418" y="364" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">SSL/TLS: L7 via browser</text></g>
+            <g class="node node-l2" onclick="openNode('openvpn')" tabindex="0"><rect x="330" y="392" width="175" height="42" rx="6"/><text x="418" y="417" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">OpenVPN open source</text></g>
+            <g class="node node-l2" onclick="openNode('wg')" tabindex="0"><rect x="330" y="447" width="175" height="42" rx="6"/><text x="418" y="472" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">WireGuard moderno leggero</text></g>
+            <g class="node node-l2" onclick="openNode('auth')" tabindex="0"><rect x="330" y="469" width="175" height="42" rx="6"/><text x="418" y="494" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Autenticazione PSK/cert.</text></g>
+            <g class="node node-l2" onclick="openNode('integ')" tabindex="0"><rect x="330" y="522" width="175" height="42" rx="6"/><text x="418" y="547" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Integrità HMAC</text></g>
+            <g class="node node-l2" onclick="openNode('riserv')" tabindex="0"><rect x="330" y="577" width="175" height="42" rx="6"/><text x="418" y="602" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Riservatezza AES</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-label" id="modal-label"></div><div class="modal-title" id="modal-title"></div><div class="modal-text" id="modal-text"></div></div>
+  </div>
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes={
+      root:     {label:"Argomento 11",title:"VPN",text:"Una VPN (Virtual Private Network) crea un tunnel crittografato su reti pubbliche (Internet), permettendo comunicazioni private come se si fosse su una rete dedicata. Obiettivi: riservatezza, integrità, autenticazione, accesso remoto sicuro."},
+      tunneling:{label:"Tunneling",title:"Cos'è il Tunneling",text:"Il tunneling incapsula il pacchetto originale (con indirizzi IP privati) dentro un nuovo pacchetto con indirizzi IP pubblici. Il pacchetto cifrato viene instradato su Internet fino al gateway VPN di destinazione, che lo de-incapsula e lo decifra."},
+      tipologie:{label:"Tipologie",title:"Tipologie di VPN",text:"Remote-Access VPN: un singolo utente (es. lavoratore da casa) si connette alla rete aziendale. Site-to-Site VPN: due sedi aziendali sono collegate permanentemente tramite tunnel. Entrambe usano tunneling e cifratura, ma differiscono nel caso d'uso."},
+      protocolli:{label:"Protocolli",title:"Protocolli VPN",text:"IPsec: L3, trasparente alle applicazioni, alta sicurezza — standard per site-to-site. SSL/TLS: L7, funziona via browser, ideale per remote-access. OpenVPN: open source, flessibile, cross-platform. WireGuard: moderno, leggero, alte prestazioni."},
+      sicurezza:{label:"Sicurezza",title:"Sicurezza nelle VPN",text:"Una VPN garantisce tre proprietà di sicurezza: Autenticazione (chi può connettersi — PSK o certificati), Integrità (i dati non vengono alterati nel tunnel — HMAC), Riservatezza (i dati sono cifrati — AES)."},
+      tun_inc:  {label:"Tunneling",title:"Incapsulamento",text:"Il pacchetto originale (con IP privato sorgente e destinazione) viene cifrato e incapsulato nel payload di un nuovo pacchetto IP con indirizzi pubblici. I router di Internet vedono solo il pacchetto esterno e lo instradano normalmente."},
+      tun_cifr: {label:"Tunneling",title:"Cifratura nel Tunnel",text:"I dati nel tunnel sono cifrati con un algoritmo simmetrico (es. AES-256). Anche se un attaccante intercetta il traffico sulla rete pubblica, vede solo dati cifrati incomprensibili. La chiave è negoziata nell'handshake VPN (IPsec IKE o TLS)."},
+      tun_gw:   {label:"Tunneling",title:"Gateway VPN",text:"Il gateway VPN (concentratore) all'estremità del tunnel: riceve il pacchetto esterno, de-incapsula, decifra il pacchetto originale e lo consegna alla rete interna. Il client ricevente non sa che i dati hanno viaggiato su Internet cifrati."},
+      remote:   {label:"Remote-Access",title:"Remote-Access VPN",text:"Un singolo utente si connette alla rete aziendale da remoto (casa, hotel, aeroporto). Il client VPN (software sul PC/smartphone) stabilisce il tunnel verso il concentratore VPN aziendale. L'utente accede alle risorse come se fosse in ufficio."},
+      site:     {label:"Site-to-Site",title:"Site-to-Site VPN",text:"Collega permanentemente due sedi aziendali attraverso Internet. I gateway VPN di entrambe le sedi stabiliscono e mantengono il tunnel. Tutto il traffico inter-sede passa automaticamente nel tunnel, trasparente agli utenti. Sostituisce le costose linee WAN dedicate."},
+      ipsec_vpn:{label:"IPsec",title:"IPsec VPN",text:"IPsec opera a Layer 3: protegge qualsiasi comunicazione IP in modo trasparente alle applicazioni. Usa IKE per negoziare le SA, ESP per cifrare il traffico. Standard per VPN site-to-site aziendali. Più complesso da configurare di SSL."},
+      ssl_vpn:  {label:"SSL/TLS VPN",title:"SSL/TLS VPN",text:"Opera a Layer 7: può funzionare via browser HTTPS senza richiedere un client VPN dedicato. Attraversa facilmente i firewall (usa porta 443). Ideale per remote-access da qualsiasi dispositivo. Configurazione più semplice di IPsec."},
+      openvpn:  {label:"OpenVPN",title:"OpenVPN",text:"VPN open source basata su SSL/TLS. Flessibile: supporta TCP e UDP, qualsiasi porta. Cross-platform (Windows, Linux, macOS, Android, iOS). Usa certificati X.509 o PSK. File di configurazione .ovpn distribuibili agli utenti."},
+      wg:       {label:"WireGuard",title:"WireGuard",text:"Protocollo VPN moderno (2020), open source. Codice base minimo (~4000 righe vs 400.000 di OpenVPN). Crittografia moderna: ChaCha20-Poly1305, Curve25519, BLAKE2s. Nativamente nel kernel Linux 5.6+. Alta performance su dispositivi con poca CPU."},
+      auth:     {label:"Sicurezza",title:"Autenticazione VPN",text:"Chi può connettersi? Metodi di autenticazione: PSK (Pre-Shared Key) — semplice ma meno scalabile; Certificati X.509 — più sicuro e scalabile; Username+password via RADIUS/LDAP; MFA — combinazione di più fattori. I certificati offrono la massima sicurezza per VPN aziendali."},
+      integ:    {label:"Sicurezza",title:"Integrità nel Tunnel",text:"L'integrità garantisce che i dati non siano stati alterati durante il transito nel tunnel. Realizzata con HMAC (Hash-based MAC): ogni pacchetto include un tag calcolato con una chiave MAC condivisa. Se il tag non corrisponde, il pacchetto viene scartato."},
+      riserv:   {label:"Sicurezza",title:"Riservatezza dei Dati",text:"La riservatezza garantisce che nessun terzo possa leggere i dati nel tunnel. Realizzata con cifratura simmetrica: AES-256 (standard), ChaCha20 (WireGuard). La chiave di cifratura viene negoziata nell'handshake e cambia periodicamente (rekeying)."}
+    };
+    function openNode(id){var n=nodes[id];if(!n)return;document.getElementById('modal-label').textContent=n.label;document.getElementById('modal-title').textContent=n.title;document.getElementById('modal-text').innerHTML=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeModal(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSPF e BGP — Mappa WBS · Sistemi e Reti</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E6%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>.map-overlay{display:none;position:fixed;inset:0;background:rgba(8,69,80,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}.map-overlay.show{display:flex;}.map-modal{background:var(--paper);border:1px solid var(--color-primary);padding:2rem 2rem 1.5rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;position:relative;}.modal-close{position:absolute;top:.8rem;right:1rem;font-family:var(--serif);font-size:1.4rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;line-height:1;}.modal-close:hover{color:var(--color-deep);}.modal-label{font-family:var(--sans);font-weight:500;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.5rem;}.modal-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;color:var(--color-deep);margin-bottom:.8rem;line-height:1.1;}.modal-text{font-family:var(--sans);font-weight:300;font-size:.92rem;color:var(--ink-soft);line-height:1.7;}</style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+    <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../../pages/argomenti.html">Argomenti</a><a class="topbar-link active" href="../../pages/mappe.html">Mappe</a><a class="topbar-link" href="../../pages/flashcard.html">Flashcard</a><a class="topbar-link cta" href="../../pages/quiz.html">Quiz</a></nav>
+  </header>
+  <nav class="nav"><div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../pages/mappe.html'">← Mappe</button>
+    <button class="nav-btn" onclick="location.href='../arg-05-rip/'">← Arg. 5</button>
+    <button class="nav-btn active">6 · OSPF/BGP</button>
+    <button class="nav-btn" onclick="location.href='../arg-07-crittografia/'">Arg. 7 →</button>
+  </div></nav>
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;"><div class="section-tag">Mappa WBS · Argomento 6</div><h2>OSPF <em>e BGP (cenni)</em></h2></div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi: OSPF Link-State, LSA, LSDB, Dijkstra, aree, confronto RIP/OSPF/BGP.</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 760" width="100%" style="display:block;min-height:680px;width:max(100%,1400px);margin:0 auto;" aria-label="Mappa WBS OSPF e BGP">
+          <style>.node{cursor:pointer;}.node-root rect{fill:var(--color-deep);}.node-root text{fill:#fff;}.node-l1 rect{fill:var(--color-primary);}.node-l1 text{fill:#fff;}.node-l2 rect{fill:var(--beige-mid);stroke:var(--rule-soft);stroke-width:1;}.node-l2 text{fill:var(--ink);}.node rect{transition:filter 150ms ease;}.node:hover rect,.node:focus rect{filter:brightness(1.12);}.node:focus{outline:none;}</style>
+          <g transform="translate(260,0)">
+            <path d="M -20,350 C 20,350 70,80 70,80" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,220 70,220" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,370 70,370" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M -20,350 C 20,350 70,530 70,530" stroke="var(--color-light)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M 250,80 C 290,80 330,45 330,45" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 290,80 330,100 330,100" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,80 C 290,80 330,155 330,155" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,220 C 290,220 330,195 330,195" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,220 C 290,220 330,250 330,250" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 290,370 330,335 330,335" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 290,370 330,385 330,385" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,370 C 290,370 330,435 330,435" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,530 C 290,530 330,495 330,495" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,530 C 290,530 330,545 330,545" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M 250,530 C 290,530 330,600 330,600" stroke="var(--color-light)" stroke-width="1" fill="none" opacity="0.5"/>
+            <!-- Root -->
+            <g class="node node-root" onclick="openNode('root')" tabindex="0">
+              <rect x="-220" y="320" width="200" height="60" rx="8"/>
+              <text x="-120" y="346" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:13px;font-weight:700;fill:white">OSPF e BGP</text>
+              <text x="-120" y="366" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:rgba(255,255,255,.8)">IGP/EGP Link-State/Path Vector</text>
+            </g>
+            <!-- L1 nodes -->
+            <g class="node node-l1" onclick="openNode('lsa')" tabindex="0"><rect x="70" y="55" width="180" height="52" rx="7"/><text x="160" y="86" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">LSA e LSDB</text></g>
+            <g class="node node-l1" onclick="openNode('dijkstra')" tabindex="0"><rect x="70" y="195" width="180" height="52" rx="7"/><text x="160" y="226" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Dijkstra e Metrica</text></g>
+            <g class="node node-l1" onclick="openNode('aree')" tabindex="0"><rect x="70" y="345" width="180" height="52" rx="7"/><text x="160" y="376" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">Aree e Struttura</text></g>
+            <g class="node node-l1" onclick="openNode('bgp')" tabindex="0"><rect x="70" y="505" width="180" height="52" rx="7"/><text x="160" y="536" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;fill:white">BGP (cenni)</text></g>
+            <!-- L2 -->
+            <g class="node node-l2" onclick="openNode('lsa_desc')" tabindex="0"><rect x="330" y="22" width="175" height="42" rx="6"/><text x="418" y="47" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">LSA flooding a tutta la rete</text></g>
+            <g class="node node-l2" onclick="openNode('lsdb_desc')" tabindex="0"><rect x="330" y="77" width="175" height="42" rx="6"/><text x="418" y="102" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">LSDB mappa completa</text></g>
+            <g class="node node-l2" onclick="openNode('aggiornamenti')" tabindex="0"><rect x="330" y="132" width="175" height="42" rx="6"/><text x="418" y="157" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Solo al cambio topologico</text></g>
+            <g class="node node-l2" onclick="openNode('costo')" tabindex="0"><rect x="330" y="172" width="175" height="42" rx="6"/><text x="418" y="197" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Costo = banda rif / banda</text></g>
+            <g class="node node-l2" onclick="openNode('spt')" tabindex="0"><rect x="330" y="227" width="175" height="42" rx="6"/><text x="418" y="252" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">SPT percorso minimo</text></g>
+            <g class="node node-l2" onclick="openNode('area0')" tabindex="0"><rect x="330" y="312" width="175" height="42" rx="6"/><text x="418" y="337" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Area 0 backbone</text></g>
+            <g class="node node-l2" onclick="openNode('aree_satellite')" tabindex="0"><rect x="330" y="362" width="175" height="42" rx="6"/><text x="418" y="387" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Aree satellite → riducono LSDB</text></g>
+            <g class="node node-l2" onclick="openNode('scalabile')" tabindex="0"><rect x="330" y="412" width="175" height="42" rx="6"/><text x="418" y="437" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Scalabile reti grandi</text></g>
+            <g class="node node-l2" onclick="openNode('bgp_egp')" tabindex="0"><rect x="330" y="472" width="175" height="42" rx="6"/><text x="418" y="497" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">EGP tra AS diversi</text></g>
+            <g class="node node-l2" onclick="openNode('bgp_path')" tabindex="0"><rect x="330" y="522" width="175" height="42" rx="6"/><text x="418" y="547" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Path Vector: lista AS</text></g>
+            <g class="node node-l2" onclick="openNode('bgp_policy')" tabindex="0"><rect x="330" y="577" width="175" height="42" rx="6"/><text x="418" y="602" text-anchor="middle" style="font-family:'Jost',sans-serif;font-size:10px;fill:var(--ink)">Policy-based routing</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <div class="map-overlay" id="map-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="map-modal"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-label" id="modal-label"></div><div class="modal-title" id="modal-title"></div><div class="modal-text" id="modal-text"></div></div>
+  </div>
+  <script src="../../js/main.js"></script>
+  <script>
+    var nodes = {
+      root:         { label:"Argomento 6", title:"OSPF e BGP", text:"OSPF (Open Shortest Path First) è un protocollo IGP Link-State che usa l'algoritmo di Dijkstra per calcolare i percorsi minimi. BGP (Border Gateway Protocol) è l'EGP Path Vector usato per il routing tra Autonomous System su Internet." },
+      lsa:          { label:"OSPF", title:"LSA e LSDB", text:"LSA (Link State Advertisement): ogni router invia ai tutti gli altri informazioni sullo stato dei propri link (vicini, costo, interfacce). LSDB (Link State Database): il database che ogni router OSPF costruisce raccogliendo tutti i LSA — rappresenta la mappa completa della rete." },
+      dijkstra:     { label:"OSPF", title:"Dijkstra e Metrica", text:"Ogni router esegue l'algoritmo di Dijkstra sul proprio LSDB per calcolare l'albero dei percorsi minimi (SPT). La metrica di OSPF è il costo: costo = banda di riferimento / banda interfaccia. Interfacce più veloci hanno costo minore." },
+      aree:         { label:"OSPF", title:"Struttura Gerarchica con Aree", text:"OSPF usa una struttura ad aree per scalare su reti grandi. L'Area 0 (backbone) è obbligatoria: tutte le altre aree devono connettersi ad essa. Questa gerarchia riduce la dimensione del LSDB e il traffico LSA." },
+      bgp:          { label:"BGP", title:"Border Gateway Protocol", text:"BGP è il protocollo di routing di Internet. È un EGP (Exterior Gateway Protocol) di tipo Path Vector: scambia interi percorsi (lista degli AS attraversati). Le decisioni di routing sono basate su policy aziendali e accordi commerciali, non solo sulla metrica tecnica." },
+      lsa_desc:     { label:"LSA", title:"Flooding degli LSA", text:"Quando un router OSPF rileva un cambiamento (link down/up), invia immediatamente un LSA a tutti i router della propria area tramite flooding. Ogni router ri-trasmette il LSA su tutte le interfacce tranne quella di ricezione." },
+      lsdb_desc:    { label:"LSDB", title:"Mappa Completa della Rete", text:"Tutti i router OSPF nella stessa area hanno un LSDB identico — una mappa completa della topologia. A differenza di RIP (Distance Vector), ogni router 'vede' l'intera rete e calcola autonomamente i percorsi ottimali." },
+      aggiornamenti:{ label:"Aggiornamenti", title:"Solo al Cambio Topologico", text:"A differenza di RIP che invia aggiornamenti ogni 30 secondi, OSPF invia aggiornamenti solo quando cambia la topologia (link down, link up, cambio metrica). Questo rende OSPF molto più efficiente in termini di consumo di banda." },
+      costo:        { label:"Metrica", title:"Costo Basato sulla Banda", text:"Costo OSPF = banda di riferimento / banda interfaccia. Banda di riferimento default: 100 Mbps. FastEthernet (100 Mbps) → costo 1. Ethernet (10 Mbps) → costo 10. SerialLink (1.544 Mbps) → costo ~64. Il percorso con costo totale minore è il migliore." },
+      spt:          { label:"Dijkstra", title:"Shortest Path Tree", text:"L'algoritmo di Dijkstra calcola l'albero dei percorsi minimi (SPT) dalla prospettiva del router locale. Espande iterativamente il nodo con distanza minima, garantendo percorsi ottimali. Complessità O(E log V) con heap." },
+      area0:        { label:"Area 0", title:"Backbone OSPF", text:"L'Area 0 è il nucleo obbligatorio di una rete OSPF multi-area. Tutte le altre aree devono essere fisicamente connesse all'Area 0 (direttamente o tramite virtual link). Il traffico tra aree diverse transita sempre per l'Area 0." },
+      aree_satellite:{ label:"Aree", title:"Aree Satellite", text:"Le aree satellite (Area 1, Area 2, …) sono connesse all'Area 0. Ogni area mantiene il proprio LSDB ridotto — solo i LSA della propria area. I router di confine area (ABR) scambiano informazioni sintetizzate con l'Area 0, riducendo il traffico." },
+      scalabile:    { label:"Scalabilità", title:"OSPF è Scalabile", text:"OSPF può gestire reti molto grandi grazie alla struttura gerarchica ad aree, al supporto nativo di VLSM/CIDR, agli aggiornamenti solo al cambio e alla convergenza rapida (secondi vs minuti di RIP)." },
+      bgp_egp:      { label:"BGP", title:"EGP tra AS Diversi", text:"BGP è il protocollo usato tra Autonomous System (AS) diversi. Ogni ISP gestisce uno o più AS con il proprio BGP. I router di frontiera (BGP peers) si scambiano le tabelle di routing degli AS rispettivi tramite sessioni TCP sulla porta 179." },
+      bgp_path:     { label:"Path Vector", title:"Lista degli AS Attraversati", text:"BGP usa il Path Vector: ogni annuncio include l'AS_PATH, la lista completa degli AS attraversati. Questo permette di prevenire i loop (se un router vede il proprio ASN nel path, scarta l'annuncio) e di implementare policy di routing." },
+      bgp_policy:   { label:"BGP", title:"Routing Basato su Policy", text:"A differenza di IGP che ottimizzano la metrica tecnica, BGP considera accordi commerciali, geopolitica e preferenze degli operatori. Un ISP può preferire un percorso più lungo ma economicamente vantaggioso a uno più corto ma costoso." }
+    };
+    function openNode(id){var n=nodes[id];if(!n)return;document.getElementById('modal-label').textContent=n.label;document.getElementById('modal-title').textContent=n.title;document.getElementById('modal-text').innerHTML=n.text;document.getElementById('map-overlay').classList.add('show');}
+    function closeModal(){document.getElementById('map-overlay').classList.remove('show');}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  </script>
+</body>
+</html>

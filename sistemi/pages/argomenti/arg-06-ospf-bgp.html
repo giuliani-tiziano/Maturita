@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSPF e BGP — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E6%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="ospf">OSPF</button>
+  <button class="nav-btn" data-sec="bgp">BGP (cenni)</button>
+  <button class="nav-btn" data-sec="confronto">Confronto</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 6</div><h1 class="title">OSPF e BGP<br><em>(cenni)</em></h1><p class="subtitle">I protocolli di routing per reti scalabili e per Internet.</p></div>
+    <div class="grid-2">
+      <div><p><strong>OSPF</strong> (Open Shortest Path First) è il protocollo IGP Link-State più usato nelle reti enterprise. <strong>BGP</strong> (Border Gateway Protocol) è l'EGP che regge il routing di Internet.</p>
+      <div class="box-concetto"><h4>Confronto con RIP</h4><ul class="clean"><li>OSPF: Link-State vs RIP Distance Vector</li><li>OSPF: Dijkstra vs RIP Bellman-Ford</li><li>OSPF: costo (banda) vs RIP hop count</li><li>OSPF: convergenza rapida vs RIP lenta (30s)</li><li>OSPF: scalabile per grandi reti vs RIP max 15 hop</li></ul></div></div>
+      <div><div class="box-frase">«OSPF è il protocollo di routing per eccellenza nelle reti enterprise moderne.»<span class="label">— John Moy, autore dello standard OSPF</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ospf">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>OSPF — Open Shortest Path First</h2></div>
+    <div class="box-concetto"><h4>Funzionamento OSPF</h4><ol>
+      <li>Ogni router invia <strong>LSA</strong> (Link State Advertisement) con le informazioni sui propri link a tutta la rete (flooding).</li>
+      <li>Ogni router costruisce il <strong>LSDB</strong> (Link State Database) — una mappa completa della topologia.</li>
+      <li>Ogni router applica l'<strong>algoritmo di Dijkstra</strong> sul proprio LSDB per calcolare l'albero dei percorsi minimi (SPT).</li>
+      <li>I risultati dell'SPT popolano la tabella di routing.</li>
+    </ol></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Caratteristiche OSPF</h4><ul class="clean">
+      <li><strong>Metrica — Costo:</strong> costo = banda riferimento / banda interfaccia. FastEthernet (100 Mbps) = 1; Ethernet (10 Mbps) = 10.</li>
+      <li><strong>Aggiornamenti:</strong> solo al cambiamento di topologia (non periodici come RIP) → molto più efficiente.</li>
+      <li><strong>Struttura gerarchica:</strong> Area 0 (backbone) + aree satellite → riduce il LSDB.</li>
+      <li><strong>VLSM/CIDR:</strong> supporto nativo (classless).</li>
+      <li><strong>Convergenza rapida:</strong> aggiornamenti immediati al cambio topologico.</li>
+    </ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Area 0 e struttura gerarchica</h4>
+      <p>OSPF usa una struttura ad aree: l'<strong>Area 0</strong> (backbone) è il centro. Tutte le altre aree devono connettersi all'Area 0. Questa struttura riduce la dimensione del LSDB e il traffico LSA, permettendo la scalabilità su reti molto grandi.</p></div>
+  </div>
+</section>
+
+<section class="section" id="bgp">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>BGP — Border Gateway Protocol (cenni)</h2></div>
+    <p>BGP è il <strong>protocollo di routing di Internet</strong>. È un EGP di tipo <strong>Path Vector</strong> usato tra AS (Autonomous System) diversi.</p>
+    <div class="box-concetto"><h4>Caratteristiche BGP</h4><ul class="clean">
+      <li><strong>Path Vector:</strong> scambia interi percorsi (lista AS traversati — AS_PATH), non solo distanze.</li>
+      <li><strong>Policy-based:</strong> le decisioni di routing sono basate su policy (accordi commerciali, preferenze), non solo sulla metrica tecnica.</li>
+      <li><strong>Loop prevention:</strong> se un AS vede il proprio ASN nel path, scarta l'annuncio.</li>
+      <li><strong>Complessità:</strong> configurato manualmente dagli operatori di rete degli ISP.</li>
+      <li><strong>Convergenza lenta:</strong> per design (stabilità sopra velocità).</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="section" id="confronto">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>Confronto RIP / OSPF / BGP</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Caratteristica</th><th>RIP</th><th>OSPF</th><th>BGP</th></tr></thead><tbody>
+      <tr><td>Tipo</td><td>IGP Distance Vector</td><td>IGP Link-State</td><td>EGP Path Vector</td></tr>
+      <tr><td>Algoritmo</td><td>Bellman-Ford</td><td>Dijkstra</td><td>Path Vector</td></tr>
+      <tr><td>Metrica</td><td>Hop count (max 15)</td><td>Costo (banda)</td><td>Policy</td></tr>
+      <tr><td>Scala</td><td>Piccole reti</td><td>Grandi reti</td><td>Internet</td></tr>
+      <tr><td>Aggiornamenti</td><td>Periodici (30s)</td><td>Solo al cambio</td><td>Solo al cambio</td></tr>
+      <tr><td>Convergenza</td><td>Lenta</td><td>Rapida</td><td>Lenta (policy)</td></tr>
+      <tr><td>VLSM/CIDR</td><td>Solo RIPv2</td><td>Sì (nativo)</td><td>Sì</td></tr>
+    </tbody></table></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«OSPF vede la rete come è. BGP vede la rete come dovrebbe essere.»<cite>— Network Engineer's Handbook</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>
