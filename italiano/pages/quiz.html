@@ -7,8 +7,33 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%235C1A28'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Griglia card quiz ── */
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin: 1.5rem 0 2rem;
+    }
+    @media (max-width: 1100px) { .quiz-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .quiz-grid { grid-template-columns: 1fr; } }
+
+    /* ── Header di periodo ── */
+    .quiz-period-header { display: flex; align-items: center; gap: 1.2rem; margin-top: 2rem; margin-bottom: 1.2rem; }
+    .quiz-period-header:first-of-type { margin-top: 0; }
+    .quiz-period-label { font-family: var(--sans); font-size: 10px; letter-spacing: .36em; text-transform: uppercase; color: var(--bordeaux-mid); white-space: nowrap; flex-shrink: 0; }
+    .quiz-period-rule  { flex: 1; height: 1px; background: var(--rule); }
+
+    /* ── Card quiz ── */
+    .author-card.quiz-card { cursor: pointer; user-select: none; }
+    .author-card.quiz-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .quiz-card-best { font-family: var(--sans); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: .4rem; min-height: 1em; }
+
+    /* ── Home screen: niente padding, allineamento stretch come informatica ── */
+    #screen-home { padding: 0; align-items: stretch; text-align: initial; }
+  </style>
 </head>
 <body>
 
@@ -21,282 +46,415 @@
     <a href="../italiano.html" class="topbar-brand">Letteratura Italiana</a>
   </div>
   <nav class="topbar-nav topbar-links">
-    <a class="topbar-link" href="../pages/autori.html">Autori</a>
-    <a class="topbar-link" href="../pages/correnti.html">Correnti</a>
-    <a class="topbar-link" href="../pages/mappe.html">Mappe</a>
-    <a class="topbar-link" href="../pages/timeline.html">Timeline</a>
-    <a class="topbar-link" href="../pages/flashcard.html">Flashcard</a>
-    <a class="topbar-link active cta" href="../pages/quiz.html">Quiz</a>
+    <a class="topbar-link" href="autori.html">Autori</a>
+    <a class="topbar-link" href="correnti.html">Correnti</a>
+    <a class="topbar-link" href="mappe.html">Mappe</a>
+    <a class="topbar-link" href="timeline.html">Timeline</a>
+    <a class="topbar-link" href="flashcard.html">Flashcard</a>
+    <a class="topbar-link active cta" href="quiz.html">Quiz</a>
   </nav>
 </header>
 
-<!-- ══════════ SCREEN HOME ══════════ -->
+
+<!-- ══════════════════════════════════════════
+     SCHERMATA 1 — HUB SELEZIONE
+══════════════════════════════════════════ -->
 <section class="screen active" id="screen-home">
-  <div class="home-inner">
-    <span class="home-eyebrow" style="display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bordeaux-mid);margin-bottom:1.5rem;">
-      Verifica · Letteratura italiana dell'Otto e Novecento
-    </span>
-    <h1 class="home-title" style="font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,5vw,3.8rem);margin-bottom:.8rem;color:var(--ink);">
-      Scegli il <em style="color:var(--bordeaux-deep);">quiz</em>
-    </h1>
-    <p style="font-family:var(--serif);font-style:italic;color:var(--ink-soft);max-width:52ch;margin-bottom:2.5rem;font-size:1.05rem;line-height:1.55;">
-      Autori e correnti letterarie · ogni avvio estrae 10 domande casuali dalla banca,
-      con scelta multipla, vero/falso e domande aperte con auto-valutazione.
-    </p>
 
-    <div style="margin-bottom:2rem;">
-      <a href="../pages/quiz.html" class="btn primary" style="display:inline-flex;align-items:center;gap:.6rem;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Torna alla selezione autori
-      </a>
+  <div class="hero-banner" data-initial="Q">
+    <div class="hero-banner-inner">
+      <div class="eyebrow">Home → Quiz</div>
+      <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Quiz</h1>
+      <p class="hero-banner-sub">Mettiti alla prova su autori e correnti letterarie · 10 domande casuali per avvio</p>
     </div>
+  </div>
 
-    <!-- Griglia autori rapida (fallback se si arriva senza hash) -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:2rem;max-width:1080px;">
+  <div class="page-layout">
 
-      <!-- AUTORI -->
-      <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding-bottom:.5rem;border-bottom:1px solid var(--rule);">Autori · Ottocento</div>
+    <aside class="page-sidebar">
+      <div class="page-sidebar-title">Selezione</div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('carducci')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">C</span>
-        <div class="author-card-meta">Odi barbare · Nobel 1906</div>
-        <div class="author-card-name">Giosuè<br><em>Carducci</em></div>
-        <div class="author-card-cta" id="best-carducci"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      <div class="sidebar-section-label">Autori · Ottocento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-ottocento">Carducci</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-ottocento">Verga</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-ottocento">Pascoli</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-ottocento">D'Annunzio</a>
 
-      <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding:.8rem 0 .5rem;border-bottom:1px solid var(--rule);margin-top:.5rem;">Autori · Novecento</div>
+      <div class="sidebar-section-label mt">Autori · Primo Novecento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-primo-novecento">Marinetti</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-primo-novecento">Pirandello</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-primo-novecento">Svevo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-primo-novecento">Ungaretti</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-primo-novecento">Saba</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-primo-novecento">Montale</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-primo-novecento">Campana</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-primo-novecento">Quasimodo</a>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('marinetti')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">M</span>
-        <div class="author-card-meta">Manifesto · paroliberismo</div>
-        <div class="author-card-name">Filippo Tommaso<br><em>Marinetti</em></div>
-        <div class="author-card-cta" id="best-marinetti"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      <div class="sidebar-section-label mt">Autori · Secondo Novecento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-secondo-novecento">Fenoglio</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-secondo-novecento">Pavese</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-secondo-novecento">Pasolini</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-secondo-novecento">Calvino</a>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('saba')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">S</span>
-        <div class="author-card-meta">Canzoniere · poesia onesta</div>
-        <div class="author-card-name">Umberto<br><em>Saba</em></div>
-        <div class="author-card-cta" id="best-saba"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      <div class="sidebar-section-label mt">Correnti · Ottocento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-ottocento">Carduccianesimo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-ottocento">Naturalismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-ottocento">Verismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-ottocento">Decadentismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-ottocento">Simbolismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-ottocento">Estetismo</a>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('ungaretti')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">U</span>
-        <div class="author-card-meta">L'Allegria · parola-lampo</div>
-        <div class="author-card-name">Giuseppe<br><em>Ungaretti</em></div>
-        <div class="author-card-cta" id="best-ungaretti"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      <div class="sidebar-section-label mt">Correnti · Primo Novecento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-primo-novecento">Futurismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-primo-novecento">Crepuscolarismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-primo-novecento">Vociani</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-primo-novecento">Ermetismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-primo-novecento">Antinovecentismo</a>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('montale')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">M</span>
-        <div class="author-card-meta">Ossi di seppia · il muro</div>
-        <div class="author-card-name">Eugenio<br><em>Montale</em></div>
-        <div class="author-card-cta" id="best-montale"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      <div class="sidebar-section-label mt">Correnti · Secondo Novecento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-secondo-novecento">Neorealismo</a>
+    </aside>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('svevo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">S</span>
-        <div class="author-card-meta">Coscienza di Zeno · inetto</div>
-        <div class="author-card-name">Italo<br><em>Svevo</em></div>
-        <div class="author-card-cta" id="best-svevo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+    <main class="page-main">
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('pirandello')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">P</span>
-        <div class="author-card-meta">Sei personaggi · umorismo</div>
-        <div class="author-card-name">Luigi<br><em>Pirandello</em></div>
-        <div class="author-card-cta" id="best-pirandello"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      <!-- ── Sub-tab Autori / Correnti ── -->
+      <div class="poem-tabs">
+        <button class="ptab active" data-poem="autori">Autori</button>
+        <button class="ptab" data-poem="correnti">Correnti</button>
+      </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('dannunzio')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">D</span>
-        <div class="author-card-meta">Alcyone · superuomo</div>
-        <div class="author-card-name">Gabriele<br><em>D'Annunzio</em></div>
-        <div class="author-card-cta" id="best-dannunzio"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      <!-- ══ PANNELLO AUTORI ══ -->
+      <div class="poem-panel active" id="poem-autori">
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('pascoli')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">P</span>
-        <div class="author-card-meta">Myricae · fanciullino</div>
-        <div class="author-card-name">Giovanni<br><em>Pascoli</em></div>
-        <div class="author-card-cta" id="best-pascoli"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      <!-- ─── Autori · Ottocento ─── -->
+      <div class="quiz-period-header" id="quiz-a-ottocento">
+        <span class="quiz-period-label">Autori · Ottocento</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('verga')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">V</span>
-        <div class="author-card-meta">Malavoglia · i vinti</div>
-        <div class="author-card-name">Giovanni<br><em>Verga</em></div>
-        <div class="author-card-cta" id="best-verga"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('carducci')">
+          <span class="author-card-initial">C</span>
+          <div class="author-card-meta">Classicismo · 1835–1907</div>
+          <div class="author-card-name">Giosuè <em>Carducci</em></div>
+          <div class="author-card-tagline">Odi barbare, poeta vate, Nobel 1906, positivismo laico.</div>
+          <div class="quiz-card-best" id="best-carducci"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('campana')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">C</span>
-        <div class="author-card-meta">Canti orfici · orfismo</div>
-        <div class="author-card-name">Dino<br><em>Campana</em></div>
-        <div class="author-card-cta" id="best-campana"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('verga')">
+          <span class="author-card-initial">V</span>
+          <div class="author-card-meta">Verismo · 1840–1922</div>
+          <div class="author-card-name">Giovanni <em>Verga</em></div>
+          <div class="author-card-tagline">Impersonalità, fiumana del progresso, ideale dell'ostrica.</div>
+          <div class="quiz-card-best" id="best-verga"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('quasimodo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">Q</span>
-        <div class="author-card-meta">Ed è subito sera · Nobel</div>
-        <div class="author-card-name">Salvatore<br><em>Quasimodo</em></div>
-        <div class="author-card-cta" id="best-quasimodo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('pascoli')">
+          <span class="author-card-initial">P</span>
+          <div class="author-card-meta">Simbolismo · 1855–1912</div>
+          <div class="author-card-name">Giovanni <em>Pascoli</em></div>
+          <div class="author-card-tagline">Il fanciullino, il nido, fonosimbolismo, reale minimo.</div>
+          <div class="quiz-card-best" id="best-pascoli"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding:.8rem 0 .5rem;border-bottom:1px solid var(--rule);margin-top:.5rem;">Autori · Secondo Novecento</div>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('dannunzio')">
+          <span class="author-card-initial">D</span>
+          <div class="author-card-meta">Decadentismo · 1863–1938</div>
+          <div class="author-card-name">Gabriele <em>D'Annunzio</em></div>
+          <div class="author-card-tagline">Panismo, superuomo, estetismo, vita come opera d'arte.</div>
+          <div class="quiz-card-best" id="best-dannunzio"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('fenoglio')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">F</span>
-        <div class="author-card-meta">Resistenza anti-retorica</div>
-        <div class="author-card-name">Beppe<br><em>Fenoglio</em></div>
-        <div class="author-card-cta" id="best-fenoglio"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('pavese')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">P</span>
-        <div class="author-card-meta">Luna e falò · mito</div>
-        <div class="author-card-name">Cesare<br><em>Pavese</em></div>
-        <div class="author-card-cta" id="best-pavese"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      <!-- ─── Autori · Primo Novecento ─── -->
+      <div class="quiz-period-header" id="quiz-a-primo-novecento">
+        <span class="quiz-period-label">Autori · Primo Novecento</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('pasolini')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">P</span>
-        <div class="author-card-meta">Ragazzi di vita · corsaro</div>
-        <div class="author-card-name">Pier Paolo<br><em>Pasolini</em></div>
-        <div class="author-card-cta" id="best-pasolini"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('marinetti')">
+          <span class="author-card-initial">M</span>
+          <div class="author-card-meta">Futurismo · 1876–1944</div>
+          <div class="author-card-name">F.T. <em>Marinetti</em></div>
+          <div class="author-card-tagline">Manifesto del Futurismo, parole in libertà, Zang Tumb Tuum.</div>
+          <div class="quiz-card-best" id="best-marinetti"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('calvino')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">C</span>
-        <div class="author-card-meta">Città invisibili · leggerezza</div>
-        <div class="author-card-name">Italo<br><em>Calvino</em></div>
-        <div class="author-card-cta" id="best-calvino"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('pirandello')">
+          <span class="author-card-initial">P</span>
+          <div class="author-card-meta">Teatro · 1867–1936</div>
+          <div class="author-card-name">Luigi <em>Pirandello</em></div>
+          <div class="author-card-tagline">Umorismo, forma e vita, relativismo, maschera e identità.</div>
+          <div class="quiz-card-best" id="best-pirandello"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <!-- CORRENTI -->
-      <div style="grid-column:1/-1;font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bordeaux-mid);padding:.8rem 0 .5rem;border-bottom:1px solid var(--rule);margin-top:1.5rem;">Correnti letterarie</div>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('svevo')">
+          <span class="author-card-initial">S</span>
+          <div class="author-card-meta">Modernismo · 1861–1928</div>
+          <div class="author-card-name">Italo <em>Svevo</em></div>
+          <div class="author-card-tagline">L'inetto, monologo interiore, La coscienza di Zeno.</div>
+          <div class="quiz-card-best" id="best-svevo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('carduccianesimo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">C</span>
-        <div class="author-card-meta">Carducci · classicismo civile</div>
-        <div class="author-card-name">Il <em>Carduccianesimo</em></div>
-        <div class="author-card-cta" id="best-carduccianesimo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('ungaretti')">
+          <span class="author-card-initial">U</span>
+          <div class="author-card-meta">Ermetismo · 1888–1970</div>
+          <div class="author-card-name">Giuseppe <em>Ungaretti</em></div>
+          <div class="author-card-tagline">La parola come lampo, il porto sepolto, L'Allegria.</div>
+          <div class="quiz-card-best" id="best-ungaretti"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('naturalismo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">N</span>
-        <div class="author-card-meta">Zola · positivismo</div>
-        <div class="author-card-name">Il <em>Naturalismo</em></div>
-        <div class="author-card-cta" id="best-naturalismo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('saba')">
+          <span class="author-card-initial">S</span>
+          <div class="author-card-meta">Antinovecentismo · 1883–1957</div>
+          <div class="author-card-name">Umberto <em>Saba</em></div>
+          <div class="author-card-tagline">Poesia onesta, Trieste, il Canzoniere, psicoanalisi.</div>
+          <div class="quiz-card-best" id="best-saba"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('verismo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">V</span>
-        <div class="author-card-meta">Verga · impersonalità</div>
-        <div class="author-card-name">Il <em>Verismo</em></div>
-        <div class="author-card-cta" id="best-verismo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('montale')">
+          <span class="author-card-initial">M</span>
+          <div class="author-card-meta">Ermetismo · 1896–1981</div>
+          <div class="author-card-name">Eugenio <em>Montale</em></div>
+          <div class="author-card-tagline">Male di vivere, correlativo oggettivo, quattro raccolte.</div>
+          <div class="quiz-card-best" id="best-montale"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('decadentismo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">D</span>
-        <div class="author-card-meta">Baudelaire · simbolo</div>
-        <div class="author-card-name">Il <em>Decadentismo</em></div>
-        <div class="author-card-cta" id="best-decadentismo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('campana')">
+          <span class="author-card-initial">C</span>
+          <div class="author-card-meta">Vociani · 1885–1932</div>
+          <div class="author-card-name">Dino <em>Campana</em></div>
+          <div class="author-card-tagline">Poesia orfica, Canti orfici, L'invetriata, visione.</div>
+          <div class="quiz-card-best" id="best-campana"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('simbolismo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">S</span>
-        <div class="author-card-meta">Mallarmé · suggestione</div>
-        <div class="author-card-name">Il <em>Simbolismo</em></div>
-        <div class="author-card-cta" id="best-simbolismo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('quasimodo')">
+          <span class="author-card-initial">Q</span>
+          <div class="author-card-meta">Ermetismo · 1901–1968</div>
+          <div class="author-card-name">Salvatore <em>Quasimodo</em></div>
+          <div class="author-card-tagline">Fase ermetica, poesia civile, Nobel 1959, Ed è subito sera.</div>
+          <div class="quiz-card-best" id="best-quasimodo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('estetismo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">E</span>
-        <div class="author-card-meta">Wilde · arte per l'arte</div>
-        <div class="author-card-name">L'<em>Estetismo</em></div>
-        <div class="author-card-cta" id="best-estetismo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('futurismo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">F</span>
-        <div class="author-card-meta">Marinetti · velocità</div>
-        <div class="author-card-name">Il <em>Futurismo</em></div>
-        <div class="author-card-cta" id="best-futurismo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      <!-- ─── Autori · Secondo Novecento ─── -->
+      <div class="quiz-period-header" id="quiz-a-secondo-novecento">
+        <span class="quiz-period-label">Autori · Secondo Novecento</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('crepuscolarismo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">C</span>
-        <div class="author-card-meta">Gozzano · tono dimesso</div>
-        <div class="author-card-name">Il <em>Crepuscolarismo</em></div>
-        <div class="author-card-cta" id="best-crepuscolarismo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('fenoglio')">
+          <span class="author-card-initial">F</span>
+          <div class="author-card-meta">Neorealismo · 1922–1963</div>
+          <div class="author-card-name">Beppe <em>Fenoglio</em></div>
+          <div class="author-card-tagline">Anti-retorica, Langhe, Una questione privata.</div>
+          <div class="quiz-card-best" id="best-fenoglio"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('vociani')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">V</span>
-        <div class="author-card-meta">La Voce · frammento</div>
-        <div class="author-card-name">I <em>Vociani</em></div>
-        <div class="author-card-cta" id="best-vociani"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('pavese')">
+          <span class="author-card-initial">P</span>
+          <div class="author-card-meta">Neorealismo · 1908–1950</div>
+          <div class="author-card-name">Cesare <em>Pavese</em></div>
+          <div class="author-card-tagline">Mito, ritorno impossibile, La luna e i falò.</div>
+          <div class="quiz-card-best" id="best-pavese"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('ermetismo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">E</span>
-        <div class="author-card-meta">Ungaretti · parola assoluta</div>
-        <div class="author-card-name">L'<em>Ermetismo</em></div>
-        <div class="author-card-cta" id="best-ermetismo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('pasolini')">
+          <span class="author-card-initial">P</span>
+          <div class="author-card-meta">Neorealismo · 1922–1975</div>
+          <div class="author-card-name">Pier Paolo <em>Pasolini</em></div>
+          <div class="author-card-tagline">Sottoproletariato, omologazione, Le ceneri di Gramsci.</div>
+          <div class="quiz-card-best" id="best-pasolini"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('antinovecentismo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">A</span>
-        <div class="author-card-meta">Saba · chiarezza</div>
-        <div class="author-card-name">Linea <em>antinovecentista</em></div>
-        <div class="author-card-cta" id="best-antinovecentismo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('calvino')">
+          <span class="author-card-initial">C</span>
+          <div class="author-card-meta">Neorealismo · 1923–1985</div>
+          <div class="author-card-name">Italo <em>Calvino</em></div>
+          <div class="author-card-tagline">Leggerezza, fiaba filosofica, Le città invisibili.</div>
+          <div class="quiz-card-best" id="best-calvino"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
-      <button class="author-card" onclick="QuizApp.openAuthorPanel('neorealismo')" style="cursor:pointer;text-align:left;">
-        <span class="author-card-initial">N</span>
-        <div class="author-card-meta">Pavese · Calvino · testimonianza</div>
-        <div class="author-card-name">Il <em>Neorealismo</em></div>
-        <div class="author-card-cta" id="best-neorealismo"></div>
-        <div class="author-card-cta">Avvia quiz →</div>
-      </button>
+      </div>
 
-    </div><!-- /grid -->
+      </div><!-- /poem-autori -->
 
-    <div class="home-quote" id="home-q-quote" style="display:none;">
-      <cite id="home-q-cite"></cite>
+      <!-- ══ PANNELLO CORRENTI ══ -->
+      <div class="poem-panel" id="poem-correnti">
+
+      <!-- ─── Correnti · Ottocento ─── -->
+      <div class="quiz-period-header" id="quiz-c-ottocento">
+        <span class="quiz-period-label">Correnti · Ottocento</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('carduccianesimo')">
+          <span class="author-card-initial">C</span>
+          <div class="author-card-meta">Corrente · 1860–1907</div>
+          <div class="author-card-name">Il <em>Carduccianesimo</em></div>
+          <div class="author-card-tagline">Classicismo civile, positivismo laico, poeta vate.</div>
+          <div class="quiz-card-best" id="best-carduccianesimo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('naturalismo')">
+          <span class="author-card-initial">N</span>
+          <div class="author-card-meta">Corrente · 1860–1890 ca.</div>
+          <div class="author-card-name">Il <em>Naturalismo</em></div>
+          <div class="author-card-tagline">Determinismo, Zola, romanzo sperimentale, impersonalità.</div>
+          <div class="quiz-card-best" id="best-naturalismo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('verismo')">
+          <span class="author-card-initial">V</span>
+          <div class="author-card-meta">Corrente · 1870–1900 ca.</div>
+          <div class="author-card-name">Il <em>Verismo</em></div>
+          <div class="author-card-tagline">Regressione narratore, fiumana del progresso, Verga.</div>
+          <div class="quiz-card-best" id="best-verismo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('decadentismo')">
+          <span class="author-card-initial">D</span>
+          <div class="author-card-meta">Corrente · 1880–1920 ca.</div>
+          <div class="author-card-name">Il <em>Decadentismo</em></div>
+          <div class="author-card-tagline">Corrispondenze, sinestesia, spleen, Baudelaire.</div>
+          <div class="quiz-card-best" id="best-decadentismo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('simbolismo')">
+          <span class="author-card-initial">S</span>
+          <div class="author-card-meta">Corrente · 1886 ca.</div>
+          <div class="author-card-name">Il <em>Simbolismo</em></div>
+          <div class="author-card-tagline">La musica prima di tutto. Verlaine, Rimbaud, Mallarmé.</div>
+          <div class="quiz-card-best" id="best-simbolismo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('estetismo')">
+          <span class="author-card-initial">E</span>
+          <div class="author-card-meta">Corrente · 1880–1900 ca.</div>
+          <div class="author-card-name">L'<em>Estetismo</em></div>
+          <div class="author-card-tagline">La vita come opera d'arte, il dandy, Oscar Wilde.</div>
+          <div class="quiz-card-best" id="best-estetismo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+      </div>
+
+      <!-- ─── Correnti · Primo Novecento ─── -->
+      <div class="quiz-period-header" id="quiz-c-primo-novecento">
+        <span class="quiz-period-label">Correnti · Primo Novecento</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('futurismo')">
+          <span class="author-card-initial">F</span>
+          <div class="author-card-meta">Corrente · 1909 ca.</div>
+          <div class="author-card-name">Il <em>Futurismo</em></div>
+          <div class="author-card-tagline">Rottura con la tradizione, velocità, guerra, Marinetti.</div>
+          <div class="quiz-card-best" id="best-futurismo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('crepuscolarismo')">
+          <span class="author-card-initial">C</span>
+          <div class="author-card-meta">Corrente · 1900–1915 ca.</div>
+          <div class="author-card-name">Il <em>Crepuscolarismo</em></div>
+          <div class="author-card-tagline">Tono dimesso, anti-eroico, buone cose di pessimo gusto.</div>
+          <div class="quiz-card-best" id="best-crepuscolarismo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('vociani')">
+          <span class="author-card-initial">V</span>
+          <div class="author-card-meta">Corrente · 1908–1916 ca.</div>
+          <div class="author-card-name">I <em>Vociani</em></div>
+          <div class="author-card-tagline">Il frammento come forma, La Voce, Campana, Sbarbaro.</div>
+          <div class="quiz-card-best" id="best-vociani"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('ermetismo')">
+          <span class="author-card-initial">E</span>
+          <div class="author-card-meta">Corrente · 1920–1945 ca.</div>
+          <div class="author-card-name">L'<em>Ermetismo</em></div>
+          <div class="author-card-tagline">La parola come lampo, Quasimodo, Luzi, Ungaretti.</div>
+          <div class="quiz-card-best" id="best-ermetismo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('antinovecentismo')">
+          <span class="author-card-initial">A</span>
+          <div class="author-card-meta">Corrente · 1920–1960 ca.</div>
+          <div class="author-card-name">Linea <em>antinovecentista</em></div>
+          <div class="author-card-tagline">La difficile semplicità contro l'oscurità ermetica, Saba.</div>
+          <div class="quiz-card-best" id="best-antinovecentismo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+      </div>
+
+      <!-- ─── Correnti · Secondo Novecento ─── -->
+      <div class="quiz-period-header" id="quiz-c-secondo-novecento">
+        <span class="quiz-period-label">Correnti · Secondo Novecento</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('neorealismo')">
+          <span class="author-card-initial">N</span>
+          <div class="author-card-meta">Corrente · 1945–1955 ca.</div>
+          <div class="author-card-name">Il <em>Neorealismo</em></div>
+          <div class="author-card-tagline">Testimonianza, impegno civile, il popolo, Pavese, Calvino.</div>
+          <div class="quiz-card-best" id="best-neorealismo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+      </div>
+
+      </div><!-- /poem-correnti -->
+
+    </main>
+  </div><!-- /page-layout -->
+
+  <footer class="site-footer">
+    <div class="footer-quote-final">
+      «Bisogna fare della propria vita come si fa un'opera d'arte.»
+      <cite>— Gabriele D'Annunzio, <em>Il piacere</em></cite>
     </div>
-  </div><!-- /home-inner -->
-</section>
+  </footer>
 
-<!-- ══════════ SCREEN QUIZ ══════════ -->
+</section><!-- /#screen-home -->
+
+
+<!-- ══════════════════════════════════════════
+     SCHERMATA 2 — QUIZ (domande)
+══════════════════════════════════════════ -->
 <section class="screen" id="screen-quiz">
   <div class="quiz-header">
     <div class="quiz-header-inner">
@@ -324,7 +482,10 @@
   </div>
 </section>
 
-<!-- ══════════ SCREEN RESULTS ══════════ -->
+
+<!-- ══════════════════════════════════════════
+     SCHERMATA 3 — RISULTATI
+══════════════════════════════════════════ -->
 <section class="screen" id="screen-results">
   <div class="res-hero">
     <div class="res-hero-inner">
@@ -371,7 +532,10 @@
   </div>
 </section>
 
-<!-- ══════════ MODAL MODALITÀ ══════════ -->
+
+<!-- ══════════════════════════════════════════
+     MODAL MODALITÀ
+══════════════════════════════════════════ -->
 <div id="mode-overlay">
   <div id="mode-panel">
     <button class="panel-close" onclick="QuizApp.closePanel()">×</button>
@@ -416,6 +580,7 @@
     </button>
   </div>
 </div>
+
 
 <!-- ══ DATI QUIZ — AUTORI ══ -->
 <script src="../js/quiz-data.js"></script>

@@ -1,0 +1,16 @@
+/* Sistemi e Reti — sovrascrive solo le variabili colore rispetto al CSS base */
+@import url('../../informatica/css/style.css');
+
+:root {
+  --color-primary: #1A5C8A;
+  --color-deep:    #0E3A57;
+  --color-light:   #2A80BA;
+
+  --bordeaux-mid:   var(--color-primary);
+  --bordeaux-deep:  var(--color-deep);
+  --bordeaux-light: var(--color-light);
+
+  --rule:           rgba(14, 58, 87, .22);
+  --grad-editorial: linear-gradient(90deg, var(--color-deep) 0%, var(--gold) 50%, var(--color-primary) 100%);
+  --grad-hero:      linear-gradient(160deg, var(--color-deep) 0%, #061520 100%);
+}

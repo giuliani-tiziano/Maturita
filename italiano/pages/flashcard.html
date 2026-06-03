@@ -107,33 +107,59 @@
 
     <aside class="page-sidebar">
       <div class="page-sidebar-title">Indice</div>
-      <div class="sidebar-section-label">Ottocento</div>
-      <a class="page-sidebar-item" href="#carducci">Carducci</a>
-      <a class="page-sidebar-item" href="#verga">Verga</a>
-      <a class="page-sidebar-item" href="#pascoli">Pascoli</a>
-      <a class="page-sidebar-item" href="#dannunzio">D'Annunzio</a>
-      <div class="sidebar-section-label mt">Primo Novecento</div>
-      <a class="page-sidebar-item" href="#marinetti">Marinetti</a>
-      <a class="page-sidebar-item" href="#pirandello">Pirandello</a>
-      <a class="page-sidebar-item" href="#svevo">Svevo</a>
-      <a class="page-sidebar-item" href="#ungaretti">Ungaretti</a>
-      <a class="page-sidebar-item" href="#saba">Saba</a>
-      <a class="page-sidebar-item" href="#montale">Montale</a>
-      <a class="page-sidebar-item" href="#campana">Campana</a>
-      <a class="page-sidebar-item" href="#quasimodo">Quasimodo</a>
-      <div class="sidebar-section-label mt">Secondo Novecento</div>
-      <a class="page-sidebar-item" href="#fenoglio">Fenoglio</a>
-      <a class="page-sidebar-item" href="#pavese">Pavese</a>
-      <a class="page-sidebar-item" href="#pasolini">Pasolini</a>
-      <a class="page-sidebar-item" href="#calvino">Calvino</a>
+
+      <div class="sidebar-section-label">Autori · Ottocento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#carducci">Carducci</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#verga">Verga</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#pascoli">Pascoli</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#dannunzio">D'Annunzio</a>
+
+      <div class="sidebar-section-label mt">Autori · Primo Novecento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#marinetti">Marinetti</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#pirandello">Pirandello</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#svevo">Svevo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#ungaretti">Ungaretti</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#saba">Saba</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#montale">Montale</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#campana">Campana</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quasimodo">Quasimodo</a>
+
+      <div class="sidebar-section-label mt">Autori · Secondo Novecento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fenoglio">Fenoglio</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#pavese">Pavese</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#pasolini">Pasolini</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#calvino">Calvino</a>
+
+      <div class="sidebar-section-label mt">Correnti · Ottocento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-carduccianesimo">Carduccianesimo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-naturalismo">Naturalismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-verismo">Verismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-decadentismo">Decadentismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-simbolismo">Simbolismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-estetismo">Estetismo</a>
+
+      <div class="sidebar-section-label mt">Correnti · Primo Novecento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-futurismo">Futurismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-crepuscolarismo">Crepuscolarismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-vociani">Vociani</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-ermetismo">Ermetismo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-antinovecentismo">Antinovecentismo</a>
+
+      <div class="sidebar-section-label mt">Correnti · Secondo Novecento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#fc-neorealismo">Neorealismo</a>
     </aside>
 
     <main class="page-main">
 
-      <div class="section-header" style="margin-top:0;">
-        <div class="section-tag">Per autore</div>
+      <!-- ── Sub-tab Autori / Correnti ── -->
+      <div class="poem-tabs">
+        <button class="ptab active" data-poem="fc-autori">Autori</button>
+        <button class="ptab" data-poem="fc-correnti">Correnti</button>
       </div>
-      <p class="section-sub">Scegli un autore e clicca su «Inizia». Tocca la carta per girarla, usa le frecce per scorrere.</p>
+
+      <!-- ══ PANNELLO AUTORI ══ -->
+      <div class="poem-panel active" id="poem-fc-autori">
+      <p class="section-sub" style="margin-top:1.5rem;">Scegli un autore e clicca su «Inizia». Tocca la carta per girarla, usa le frecce per scorrere.</p>
 
       <!-- Ottocento -->
       <div class="quiz-period-header"><span class="quiz-period-label">Ottocento</span><div class="quiz-period-rule"></div></div>
@@ -277,6 +303,125 @@
           <span class="author-card-cta link-arrow">Inizia →</span>
         </div>
       </div>
+
+      </div><!-- /poem-fc-autori -->
+
+      <!-- ══ PANNELLO CORRENTI ══ -->
+      <div class="poem-panel" id="poem-fc-correnti">
+      <p class="section-sub" style="margin-top:1.5rem;">Scegli una corrente e clicca su «Inizia». 15 carte per corrente, dalla fondazione all'eredità.</p>
+
+      <!-- Correnti · Ottocento -->
+      <div class="quiz-period-header"><span class="quiz-period-label">Ottocento</span><div class="quiz-period-rule"></div></div>
+      <div class="fc-grid">
+        <div class="author-card" id="fc-carduccianesimo" onclick="startFlashcards('carduccianesimo')">
+          <span class="author-card-initial">C</span>
+          <div class="author-card-meta">Corrente · 800</div>
+          <div class="author-card-name"><em>Carduccianesimo</em></div>
+          <div class="author-card-tagline">Classicismo civile, poeta vate, Odi barbare, Nobel 1906.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+        <div class="author-card" id="fc-naturalismo" onclick="startFlashcards('naturalismo')">
+          <span class="author-card-initial">N</span>
+          <div class="author-card-meta">Corrente · 800</div>
+          <div class="author-card-name"><em>Naturalismo</em></div>
+          <div class="author-card-tagline">Zola, determinismo, romanzo sperimentale, classe operaia.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+        <div class="author-card" id="fc-verismo" onclick="startFlashcards('verismo')">
+          <span class="author-card-initial">V</span>
+          <div class="author-card-meta">Corrente · 800</div>
+          <div class="author-card-name"><em>Verismo</em></div>
+          <div class="author-card-tagline">Verga, regressione narratore, ciclo dei vinti, Sud.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+        <div class="author-card" id="fc-decadentismo" onclick="startFlashcards('decadentismo')">
+          <span class="author-card-initial">D</span>
+          <div class="author-card-meta">Corrente · 800</div>
+          <div class="author-card-name"><em>Decadentismo</em></div>
+          <div class="author-card-tagline">Baudelaire, corrispondenze, sinestesia, irrazionale.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+        <div class="author-card" id="fc-simbolismo" onclick="startFlashcards('simbolismo')">
+          <span class="author-card-initial">S</span>
+          <div class="author-card-meta">Corrente · 800</div>
+          <div class="author-card-name"><em>Simbolismo</em></div>
+          <div class="author-card-tagline">Verlaine, Rimbaud, Mallarmé, musica prima di tutto.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+        <div class="author-card" id="fc-estetismo" onclick="startFlashcards('estetismo')">
+          <span class="author-card-initial">E</span>
+          <div class="author-card-meta">Corrente · 800</div>
+          <div class="author-card-name"><em>Estetismo</em></div>
+          <div class="author-card-tagline">Wilde, Pater, il dandy, vita come opera d'arte.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+      </div>
+
+      <!-- Correnti · Primo Novecento -->
+      <div class="quiz-period-header"><span class="quiz-period-label">Primo Novecento</span><div class="quiz-period-rule"></div></div>
+      <div class="fc-grid">
+        <div class="author-card" id="fc-futurismo" onclick="startFlashcards('futurismo')">
+          <span class="author-card-initial">F</span>
+          <div class="author-card-meta">Corrente · 900</div>
+          <div class="author-card-name"><em>Futurismo</em></div>
+          <div class="author-card-tagline">Marinetti, velocità, paroliberismo, rottura totale.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+        <div class="author-card" id="fc-crepuscolarismo" onclick="startFlashcards('crepuscolarismo')">
+          <span class="author-card-initial">C</span>
+          <div class="author-card-meta">Corrente · 900</div>
+          <div class="author-card-name"><em>Crepuscolarismo</em></div>
+          <div class="author-card-tagline">Gozzano, tono dimesso, buone cose di pessimo gusto.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+        <div class="author-card" id="fc-vociani" onclick="startFlashcards('vociani')">
+          <span class="author-card-initial">V</span>
+          <div class="author-card-meta">Corrente · 900</div>
+          <div class="author-card-name"><em>Vociani</em></div>
+          <div class="author-card-tagline">La Voce, frammento, Sbarbaro, Rebora, Campana.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+        <div class="author-card" id="fc-ermetismo" onclick="startFlashcards('ermetismo')">
+          <span class="author-card-initial">E</span>
+          <div class="author-card-meta">Corrente · 900</div>
+          <div class="author-card-name"><em>Ermetismo</em></div>
+          <div class="author-card-tagline">Parola pura, analogia, Quasimodo, Luzi, Firenze.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+        <div class="author-card" id="fc-antinovecentismo" onclick="startFlashcards('antinovecentismo')">
+          <span class="author-card-initial">A</span>
+          <div class="author-card-meta">Corrente · 900</div>
+          <div class="author-card-name">Linea <em>antinovecentista</em></div>
+          <div class="author-card-tagline">Saba, Caproni, difficile semplicità, poesia onesta.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+      </div>
+
+      <!-- Correnti · Secondo Novecento -->
+      <div class="quiz-period-header"><span class="quiz-period-label">Secondo Novecento</span><div class="quiz-period-rule"></div></div>
+      <div class="fc-grid">
+        <div class="author-card" id="fc-neorealismo" onclick="startFlashcards('neorealismo')">
+          <span class="author-card-initial">N</span>
+          <div class="author-card-meta">Corrente · 900</div>
+          <div class="author-card-name"><em>Neorealismo</em></div>
+          <div class="author-card-tagline">Testimonianza, Resistenza, Calvino, Pavese, Levi.</div>
+          <div class="quiz-card-count">15 carte</div>
+          <span class="author-card-cta link-arrow">Inizia →</span>
+        </div>
+      </div>
+
+      </div><!-- /poem-fc-correnti -->
 
     </main>
   </div>

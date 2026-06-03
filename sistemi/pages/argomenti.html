@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Argomenti — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230E3A57'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ══ TOPBAR SPLIT ══ -->
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../index.html" class="topbar-back">← Portale</a>
+      <a href="../sistemi.html" class="topbar-brand">Sistemi e Reti</a>
+    </div>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link active" href="argomenti.html">Argomenti</a>
+      <a class="topbar-link" href="mappe.html">Mappe</a>
+      <a class="topbar-link" href="flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- ══ HERO BANNER ══ -->
+  <div class="hero-banner" data-initial="A">
+    <div class="hero-banner-inner">
+      <div class="eyebrow">Home → Argomenti</div>
+      <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Argomenti</h1>
+      <p class="hero-banner-sub">Quattro moduli — programma svolto · A.S. 2025-2026 · Classe 5IA</p>
+    </div>
+  </div>
+
+  <!-- ══ LAYOUT SIDEBAR + MAIN ══ -->
+  <div class="page-layout">
+
+    <aside class="page-sidebar">
+      <div class="page-sidebar-title">Moduli</div>
+      <a class="page-sidebar-item" href="#mod1">M1 · TCP/IP e Routing</a>
+      <a class="page-sidebar-item" href="#mod2">M2 · Crittografia (CLIL)</a>
+      <a class="page-sidebar-item" href="#mod3">M3 · Sicurezza e Firewall</a>
+      <a class="page-sidebar-item" href="#mod4">M4 · Laboratorio</a>
+    </aside>
+
+    <!-- Main content -->
+    <main class="page-main">
+
+      <div class="authors-grid ai" id="mod1" style="margin-top:0;">
+
+        <a class="author-card" href="#">
+          <span class="author-card-initial">IP</span>
+          <div class="author-card-meta">Modulo 1 — Parte A</div>
+          <div class="author-card-name">Il Livello di Rete<br><em>e il Protocollo TCP/IP</em></div>
+          <div class="author-card-tagline">TCP/IP e indirizzi IP, subnetting (VLSM e CIDR), configurazione host statica e dinamica, inoltro di pacchetti, NAT statico e dinamico, PAT, ICMP.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="#">
+          <span class="author-card-initial">RT</span>
+          <div class="author-card-meta">Modulo 1 — Parte B</div>
+          <div class="author-card-name">Il Routing<br><em>Protocolli e Algoritmi</em></div>
+          <div class="author-card-tagline">Fondamenti di routing, routing statico e dinamico, algoritmi di Dijkstra e Bellman-Ford, routing gerarchico: OSPF, RIP, BGP.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+      </div>
+
+      <div class="authors-grid ai" id="mod2" style="margin-top:2rem;">
+
+        <a class="author-card" href="#">
+          <span class="author-card-initial">🔐</span>
+          <div class="author-card-meta">Modulo 2 (CLIL)</div>
+          <div class="author-card-name">Tecniche Crittografiche<br><em>per la Protezione dei Dati</em></div>
+          <div class="author-card-tagline">Principi di crittografia, crittografia simmetrica (DES, AES), crittografia asimmetrica RSA, algoritmo Diffie-Hellmann, firma digitale, certificati digitali, Hash, MAC e HMAC, autenticazione forte e debole.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+      </div>
+
+      <div class="authors-grid ai" id="mod3" style="margin-top:2rem;">
+
+        <a class="author-card" href="#">
+          <span class="author-card-initial">VPN</span>
+          <div class="author-card-meta">Modulo 3 — Parte A</div>
+          <div class="author-card-name">La Sicurezza delle Reti<br><em>SSL/TLS e VPN</em></div>
+          <div class="author-card-tagline">Sicurezza nelle connessioni SSL/TLS, reti private virtuali (VPN): remote-access e site-to-site, sicurezza nelle VPN (autenticazione, integrità, riservatezza), protocolli IPsec e SSL/TLS a confronto.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+        <a class="author-card" href="#">
+          <span class="author-card-initial">FW</span>
+          <div class="author-card-meta">Modulo 3 — Parte B</div>
+          <div class="author-card-name">La Difesa Perimetrale<br><em>con i Firewall</em></div>
+          <div class="author-card-tagline">Generalità sui firewall: packet filter, stateful inspection, circuit gateway, application proxy. DMZ, access list (ACL) standard ed estese, VPN, IDS e IPS.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+      </div>
+
+      <div class="authors-grid ai" id="mod4" style="margin-top:2rem;">
+
+        <a class="author-card" href="#">
+          <span class="author-card-initial">PT</span>
+          <div class="author-card-meta">Modulo 4 — Laboratorio</div>
+          <div class="author-card-name">Packet Tracer<br><em>Piattaforma Cisco</em></div>
+          <div class="author-card-tagline">Esercitazioni con il software di simulazione Packet Tracer (Cisco) sugli argomenti teorici: configurazione di reti, routing, NAT, ACL e protocolli di sicurezza.</div>
+          <div class="author-card-cta link-arrow">Studia</div>
+        </a>
+
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-quote-final">
+      «La sicurezza non è un prodotto, è un processo.»
+      <cite>— Bruce Schneier</cite>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
