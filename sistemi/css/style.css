@@ -1,10 +1,13 @@
-/* Sistemi e Reti — sovrascrive solo le variabili colore rispetto al CSS base */
+/* ═══════════════════════════════════════════════════════════════
+   Sistemi e Reti — override colori sul CSS base di Informatica
+   ═══════════════════════════════════════════════════════════════ */
 @import url('../../informatica/css/style.css');
 
+/* ── TOKEN COLORE MATERIA (light mode) ── */
 :root {
-  --color-primary: #0E6B7A;
-  --color-deep:    #084550;
-  --color-light:   #1A8FA0;
+  --color-primary: #0E6B7A;   /* teal primario */
+  --color-deep:    #084550;   /* teal scuro */
+  --color-light:   #1A8FA0;   /* teal chiaro */
 
   --bordeaux-mid:   var(--color-primary);
   --bordeaux-deep:  var(--color-deep);
@@ -12,29 +15,241 @@
 
   --rule:           rgba(8, 69, 80, .22);
   --grad-editorial: linear-gradient(90deg, var(--color-deep) 0%, var(--gold) 50%, var(--color-primary) 100%);
-  --grad-hero:      linear-gradient(160deg, var(--color-deep) 0%, #030f12 100%);
+
+  /* Hero banner: colore piatto teal + texture diagonale rafforzata */
+  --grad-hero: var(--color-primary);
+  --texture-diag: repeating-linear-gradient(
+    -45deg,
+    transparent           0,
+    transparent           12px,
+    rgba(255,255,255,.04) 12px,
+    rgba(255,255,255,.04) 13px
+  );
 }
 
-/* ── Dark mode: sovrascrive i beige hardcoded di Informatica con varianti teal ── */
+/* ══ TOPBAR LIGHT MODE ══
+   Nav links area = teal chiaro (#1A8FA0)
+   Brand block (← Portale · Sistemi e Reti) = teal primario (#0E6B7A) */
+.topbar--split {
+  background: var(--color-light);   /* #1A8FA0 */
+}
+.topbar-brand-block {
+  background: var(--color-primary); /* #0E6B7A */
+}
+
+/* Migliora contrasto link topbar su sfondo teal chiaro */
+.topbar--split .topbar-link {
+  color: rgba(255, 255, 255, .82);
+}
+.topbar--split .topbar-link:hover,
+.topbar--split .topbar-link.active {
+  color: #fff;
+}
+.topbar--split .topbar-link.cta {
+  color: var(--gold) !important;
+  border-color: rgba(201,168,76,.55);
+}
+.topbar-back {
+  color: rgba(255, 255, 255, .65) !important;
+}
+.topbar-back:hover {
+  color: #fff !important;
+}
+.topbar--split .topbar-brand {
+  color: #fff !important;
+}
+
+/* ══ BARRA NAV INTERNA (sezioni argomento) — light mode ══ */
+.nav {
+  background: var(--color-deep);
+}
+.nav-btn {
+  color: rgba(255, 255, 255, .62);
+}
+.nav-btn:hover {
+  color: rgba(255, 255, 255, .92);
+  background: rgba(255, 255, 255, .08);
+}
+.nav-btn.active {
+  color: #fff;
+  background: rgba(255, 255, 255, .14);
+}
+
+/* ══ DARK MODE ══ */
 [data-theme="dark"] {
-  --beige-light:  #0E6B7A;   /* body bg = teal primario */
-  --beige-mid:    #084550;   /* sidebar, nav = teal deep */
-  --beige-dark:   #04303A;   /* superfici incassate */
+  /* Scala teal per dark mode:
+     beige-light = corpo pagina     → teal primario
+     beige-mid   = sidebar/nav/nav  → teal scuro
+     beige-dark  = card/superfici   → teal molto scuro  */
+  --beige-light:  #0E6B7A;
+  --beige-mid:    #084550;
+  --beige-dark:   #04303A;
+
+  /* Sovrascrivi i colori testo dark-mode ereditati da Informatica
+     (che usano beige/oro su navy — qui servono chiari su teal) */
+  --color-primary: #5EC4D4;   /* teal chiaro acceso per accenti */
+  --color-light:   #8ED8E4;   /* teal molto chiaro */
+  --color-deep:    #ddf3f7;   /* quasi bianco-teal per titoli */
+  --bordeaux-mid:  var(--color-primary);
+  --bordeaux-deep: var(--color-deep);
 }
 
-[data-theme="dark"] .topbar-brand-block,
+/* Topbar dark mode: nav = teal primario, brand = teal scuro */
 [data-theme="dark"] .topbar--split {
-  background: #04303A;
+  background: #0E6B7A !important;
+}
+[data-theme="dark"] .topbar-brand-block {
+  background: #084550 !important;
 }
 
-[data-theme="dark"] body {
-  background: #0E6B7A;
+/* Body e layout aree */
+[data-theme="dark"] body                { background: #0E6B7A; }
+[data-theme="dark"] .page-main          { background: #084550; }
+[data-theme="dark"] .page-sidebar       { background: #04303A; }
+[data-theme="dark"] .nav                { background: #084550 !important; }
+[data-theme="dark"] .section            { background: #0E6B7A; }
+
+/* Hero banner dark */
+[data-theme="dark"] .hero-banner {
+  background: #084550 !important;
 }
 
-[data-theme="dark"] .page-main {
+/* ── DARK MODE: testo nelle sezioni argomento ── */
+[data-theme="dark"] .box-concetto,
+[data-theme="dark"] .box-frase {
   background: #084550;
+  border-color: rgba(255,255,255,.15);
+  color: #f0ece4;
+}
+[data-theme="dark"] .box-concetto h4  { color: #8ED8E4; }
+[data-theme="dark"] .box-frase        { color: rgba(240,236,228,.75); }
+[data-theme="dark"] .box-concetto p,
+[data-theme="dark"] .box-concetto li  { color: #e0d8cc; }
+[data-theme="dark"] .box-concetto strong { color: #f0ece4; }
+
+[data-theme="dark"] pre {
+  background: #02202a !important;
+  color: #5EC4D4 !important;
 }
 
-[data-theme="dark"] .page-sidebar {
-  background: #04303A;
+/* ── DARK MODE: tabelle ── */
+[data-theme="dark"] table th {
+  background: #04303A !important;
+  color: #8ED8E4 !important;
+  border-color: rgba(255,255,255,.12) !important;
+}
+[data-theme="dark"] table td {
+  background: #084550 !important;
+  color: #f0ece4 !important;
+  border-color: rgba(255,255,255,.08) !important;
+}
+[data-theme="dark"] .data-table tbody tr:nth-child(even) td {
+  background: #04303A !important;
+}
+
+/* ── DARK MODE: SVG MAPPE WBS ──
+   Problema: in dark-mode da Informatica, --color-primary → oro #C9A84C
+   e --color-deep → beige caldo #E8C8A0.  I nodi SVG usano quelle variabili
+   e diventano invisibili/sbagliati su sfondo teal.
+   Soluzione: forza i colori corretti con !important. */
+
+/* Nodo radice (root) */
+[data-theme="dark"] .node-root rect,
+[data-theme="dark"] .node-center rect {
+  fill: #04303A !important;
+  stroke: #5EC4D4 !important;
+  stroke-width: 1.5px !important;
+}
+[data-theme="dark"] .node-root text,
+[data-theme="dark"] .node-center text {
+  fill: #ddf3f7 !important;
+}
+
+/* Nodi L1 */
+[data-theme="dark"] .node-l1 rect {
+  fill: #084550 !important;
+  stroke: #5EC4D4 !important;
+  stroke-width: 1px !important;
+}
+[data-theme="dark"] .node-l1 text {
+  fill: #ddf3f7 !important;
+}
+
+/* Nodi L2 */
+[data-theme="dark"] .node-l2 rect {
+  fill: #04303A !important;
+  stroke: rgba(94,196,212,.35) !important;
+  stroke-width: 1px !important;
+}
+[data-theme="dark"] .node-l2 text {
+  fill: #e0d8cc !important;
+}
+
+/* Connettori SVG */
+[data-theme="dark"] .node:hover rect,
+[data-theme="dark"] .node:focus rect {
+  filter: brightness(1.25) !important;
+}
+
+/* Testo SVG generico nei nodi */
+[data-theme="dark"] svg text[style*="fill:var(--ink)"] {
+  fill: #e0d8cc !important;
+}
+
+/* ── DARK MODE: card author in argomenti/mappe/quiz ── */
+[data-theme="dark"] .author-card {
+  background: #04303A !important;
+  border-color: rgba(94,196,212,.2) !important;
+}
+[data-theme="dark"] .author-card-tagline {
+  color: rgba(224,216,204,.75) !important;
+}
+[data-theme="dark"] .author-card-dates {
+  color: rgba(224,216,204,.6) !important;
+}
+
+/* ── DARK MODE: sidebar e nav items ── */
+[data-theme="dark"] .page-sidebar-item {
+  color: rgba(224,216,204,.7) !important;
+}
+[data-theme="dark"] .page-sidebar-item:hover {
+  color: #8ED8E4 !important;
+}
+[data-theme="dark"] .sidebar-section-label {
+  color: rgba(224,216,204,.45) !important;
+}
+[data-theme="dark"] .page-sidebar-title {
+  color: var(--gold) !important;
+}
+
+/* ── DARK MODE: quiz card ── */
+[data-theme="dark"] .quiz-card-count {
+  color: #5EC4D4 !important;
+}
+[data-theme="dark"] .quiz-period-label {
+  color: #5EC4D4 !important;
+}
+[data-theme="dark"] .quiz-period-rule {
+  background: rgba(94,196,212,.25) !important;
+}
+
+/* ── DARK MODE: map modal ── */
+[data-theme="dark"] .map-modal {
+  background: #04303A !important;
+  border-color: rgba(94,196,212,.3) !important;
+}
+[data-theme="dark"] .modal-title {
+  color: #ddf3f7 !important;
+}
+[data-theme="dark"] .modal-text {
+  color: #e0d8cc !important;
+}
+[data-theme="dark"] .modal-label {
+  color: #5EC4D4 !important;
+}
+[data-theme="dark"] .modal-close {
+  color: rgba(224,216,204,.6) !important;
+}
+[data-theme="dark"] .modal-close:hover {
+  color: #ddf3f7 !important;
 }
