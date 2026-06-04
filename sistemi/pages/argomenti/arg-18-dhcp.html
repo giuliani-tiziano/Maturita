@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DHCP — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E18%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="funz">Funzionamento</button>
+  <button class="nav-btn" data-sec="config">Configurazione</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 18</div><h1 class="title">DHCP<br><em>Dynamic Host Configuration Protocol</em></h1><p class="subtitle">Assegnazione automatica degli indirizzi IP nella rete.</p></div>
+    <div class="grid-2">
+      <div><p>DHCP è un protocollo client-server che assegna automaticamente indirizzi IP e parametri di rete (subnet mask, default gateway, DNS) agli host. Elimina la necessità di configurazione manuale su ogni dispositivo.</p>
+      <div class="box-concetto"><h4>Parametri assegnati da DHCP</h4><ul class="clean">
+        <li><strong>Indirizzo IP:</strong> da un pool (scope)</li>
+        <li><strong>Subnet mask:</strong> es. 255.255.255.0</li>
+        <li><strong>Default gateway:</strong> IP del router</li>
+        <li><strong>DNS server:</strong> IP del server DNS</li>
+        <li><strong>Lease time:</strong> durata della concessione</li>
+      </ul></div></div>
+      <div><div class="box-frase">«DHCP è il postino della rete: consegna gli indirizzi senza che nessuno li chieda direttamente.»<span class="label">— Cisco Networking Academy</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="funz">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Il Processo DORA</h2></div>
+    <p>Il processo DHCP usa 4 messaggi broadcast in sequenza, detto <strong>DORA</strong>:</p>
+    <div class="box-concetto"><ol>
+      <li><strong>DHCP Discover:</strong> il client invia un broadcast cercando un server DHCP disponibile.</li>
+      <li><strong>DHCP Offer:</strong> il server risponde con un'offerta di indirizzo IP e parametri.</li>
+      <li><strong>DHCP Request:</strong> il client accetta l'offerta e richiede ufficialmente l'indirizzo.</li>
+      <li><strong>DHCP Acknowledge (ACK):</strong> il server conferma l'assegnazione. Il client può ora usare l'IP.</li>
+    </ol></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Lease e Rinnovo</h4>
+      <p>La <strong>lease</strong> è la durata temporanea dell'indirizzo assegnato. Al 50% del lease il client tenta il rinnovo (unicast al server). Al 87.5% prova di nuovo. All'87.5% fallito, cerca un nuovo server con broadcast. Alla scadenza, l'IP torna nel pool.</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>DHCP Relay Agent</h4>
+      <p>I router non inoltrano i broadcast. In reti con subnet multiple, si configura un <strong>DHCP Relay Agent</strong> su ogni router: converte i DHCP Discover broadcast in unicast verso il server DHCP centrale. Cisco IOS: <code>ip helper-address [IP_server]</code> sull'interfaccia.</p></div>
+  </div>
+</section>
+
+<section class="section" id="config">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Configurazione Cisco IOS</h2></div>
+    <div class="box-concetto"><h4>DHCP Server su Cisco IOS</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#02202a;color:#5EC4D4;border-radius:8px">! Escludere IP riservati (gateway, server)
+ip dhcp excluded-address 192.168.1.1 192.168.1.10
+
+! Definire lo scope (pool)
+ip dhcp pool LAN_POOL
+  network 192.168.1.0 255.255.255.0
+  default-router 192.168.1.1
+  dns-server 8.8.8.8 8.8.4.4
+  lease 7              ! 7 giorni
+
+! Verifica
+show ip dhcp binding   ! IP assegnati
+show ip dhcp pool      ! statistiche pool</pre>
+    </div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>DHCP Relay Agent</h4>
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#02202a;color:#5EC4D4;border-radius:8px">interface fa0/0
+  ip helper-address 10.0.0.1  ! IP del DHCP server</pre>
+    </div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«DHCP automatizza ciò che manualmente sarebbe impossibile gestire.»<cite>— RFC 2131</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

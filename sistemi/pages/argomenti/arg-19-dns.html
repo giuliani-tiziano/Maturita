@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNS — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E19%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="gerarchia">Gerarchia</button>
+  <button class="nav-btn" data-sec="record">Record DNS</button>
+  <button class="nav-btn" data-sec="risoluzione">Risoluzione</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 19</div><h1 class="title">DNS<br><em>Domain Name System</em></h1><p class="subtitle">Il "registro telefonico" di Internet: traduce nomi in indirizzi IP.</p></div>
+    <div class="grid-2">
+      <div><p>Il DNS traduce i nomi di dominio (es. www.google.com) in indirizzi IP (es. 142.250.180.46). È un sistema distribuito e gerarchico — nessun singolo server conosce tutti i nomi.</p>
+      <div class="box-concetto"><h4>Perché il DNS è fondamentale</h4><ul class="clean">
+        <li>Gli IP cambiano, i nomi restano stabili</li>
+        <li>Load balancing: un nome → più IP</li>
+        <li>Un IP → più nomi (virtual hosting)</li>
+        <li>Porta UDP/TCP 53</li>
+      </ul></div></div>
+      <div><div class="box-frase">«Il DNS è la colonna vertebrale di Internet — senza di esso, non si naviga.»<span class="label">— Internet Engineering Task Force</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gerarchia">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Gerarchia DNS</h2></div>
+    <div class="box-concetto"><p>Il DNS è organizzato in livelli:</p><ul class="clean">
+      <li><strong>Root (.):</strong> 13 root server gestiti da IANA. Conoscono i server TLD.</li>
+      <li><strong>TLD (Top-Level Domain):</strong> .com, .it, .org, .net — gestiti da ICANN/NIR. Conoscono i server authoritative.</li>
+      <li><strong>Authoritative DNS:</strong> server che conosce i record di una zona specifica (es. google.com). Risposta definitiva.</li>
+      <li><strong>DNS Ricorsivo/Resolver:</strong> il server DNS dell'ISP o di Google (8.8.8.8) che fa le query per conto del client.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="section" id="record">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Tipi di Record DNS</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Record</th><th>Funzione</th><th>Esempio</th></tr></thead><tbody>
+      <tr><td><strong>A</strong></td><td>Nome → IP (IPv4)</td><td>www.google.com → 142.250.x.x</td></tr>
+      <tr><td><strong>AAAA</strong></td><td>Nome → IP (IPv6)</td><td>www.google.com → 2a00::x</td></tr>
+      <tr><td><strong>CNAME</strong></td><td>Alias → nome canonico</td><td>mail.esempio.it → esempio.it</td></tr>
+      <tr><td><strong>MX</strong></td><td>Mail server del dominio</td><td>esempio.it → mail.esempio.it (prio 10)</td></tr>
+      <tr><td><strong>NS</strong></td><td>Name server autoritativo della zona</td><td>esempio.it → ns1.provider.com</td></tr>
+      <tr><td><strong>PTR</strong></td><td>IP → Nome (reverse DNS)</td><td>142.250.x.x → www.google.com</td></tr>
+      <tr><td><strong>TXT</strong></td><td>Testo generico (SPF, DKIM, verifica)</td><td>v=spf1 include:google.com ~all</td></tr>
+      <tr><td><strong>SOA</strong></td><td>Start of Authority — info sulla zona</td><td>serial, refresh, retry, expire</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section class="section" id="risoluzione">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>Risoluzione DNS: Ricorsiva vs Iterativa</h2></div>
+    <div class="box-concetto"><h4>Risoluzione Ricorsiva (client → resolver)</h4>
+      <p>Il client invia la query al resolver (es. 8.8.8.8) e ASPETTA la risposta completa. Il resolver fa tutto il lavoro.</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Risoluzione Iterativa (resolver → server autoritativi)</h4>
+      <ol>
+        <li>Resolver → Root: "chi sa di .com?" → Root risponde con i TLD servers</li>
+        <li>Resolver → TLD .com: "chi sa di google.com?" → risponde con ns1.google.com</li>
+        <li>Resolver → ns1.google.com: "qual è l'IP di www.google.com?" → risponde con 142.250.x.x</li>
+        <li>Resolver → Client: "ecco l'IP + TTL"</li>
+      </ol>
+      <p>Il risultato viene <strong>cachato</strong> per il valore del TTL (Time To Live) del record.</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Sicurezza DNS</h4><ul class="clean">
+      <li><strong>DNS Poisoning (Cache Poisoning):</strong> iniettare risposte false nella cache del resolver → utente reindirizzato a siti malevoli.</li>
+      <li><strong>DNSSEC:</strong> firma crittografica dei record DNS per garantirne l'autenticità.</li>
+      <li><strong>DNS over HTTPS (DoH):</strong> cifra le query DNS dentro HTTPS — privacy.</li>
+    </ul></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«DNS è la traduzione tra il linguaggio umano e quello delle macchine.»<cite>— Paul Mockapetris, inventore del DNS</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

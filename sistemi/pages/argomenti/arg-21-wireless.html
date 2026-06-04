@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reti Wireless 802.11 — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E21%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="standard">Standard 802.11</button>
+  <button class="nav-btn" data-sec="sicurezza">Sicurezza Wi-Fi</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 21</div><h1 class="title">Reti Wireless<br><em>802.11 e WPA2/WPA3</em></h1><p class="subtitle">Le reti Wi-Fi: standard, topologie e sicurezza.</p></div>
+    <div class="grid-2">
+      <div><p>Le reti wireless usano onde radio invece dei cavi. Lo standard <strong>IEEE 802.11</strong> definisce le specifiche delle reti Wi-Fi.</p>
+      <div class="box-concetto"><h4>Componenti</h4><ul class="clean">
+        <li><strong>AP (Access Point):</strong> collegamento tra rete wireless e LAN cablata</li>
+        <li><strong>BSS (Basic Service Set):</strong> singolo AP + client associati</li>
+        <li><strong>SSID:</strong> nome della rete wireless (max 32 caratteri)</li>
+        <li><strong>BSSID:</strong> MAC address dell'AP</li>
+        <li><strong>ESS:</strong> più BSS con lo stesso SSID → roaming</li>
+        <li><strong>Canale:</strong> frequenza radio usata (2.4 GHz o 5 GHz)</li>
+      </ul></div></div>
+      <div><div class="box-frase">«Il Wi-Fi ha reso la rete invisibile — e per questo ancora più importante capirla.»<span class="label">— IEEE 802.11 Working Group</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="standard">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>Standard 802.11</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Standard</th><th>Frequenza</th><th>Velocità max</th><th>Note</th></tr></thead><tbody>
+      <tr><td>802.11b</td><td>2.4 GHz</td><td>11 Mbps</td><td>Obsoleto</td></tr>
+      <tr><td>802.11g</td><td>2.4 GHz</td><td>54 Mbps</td><td>Obsoleto</td></tr>
+      <tr><td>802.11n (Wi-Fi 4)</td><td>2.4/5 GHz</td><td>600 Mbps</td><td>MIMO, molto diffuso</td></tr>
+      <tr><td>802.11ac (Wi-Fi 5)</td><td>5 GHz</td><td>3.5 Gbps</td><td>MU-MIMO, beamforming</td></tr>
+      <tr><td>802.11ax (Wi-Fi 6)</td><td>2.4/5/6 GHz</td><td>9.6 Gbps</td><td>OFDMA, ambienti affollati</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>2.4 GHz vs 5 GHz</h4><div class="table-wrap"><table class="data-table"><thead><tr><th></th><th>2.4 GHz</th><th>5 GHz</th></tr></thead><tbody>
+      <tr><td>Portata</td><td>Maggiore</td><td>Minore</td></tr>
+      <tr><td>Velocità</td><td>Minore</td><td>Maggiore</td></tr>
+      <tr><td>Interferenze</td><td>Molte (microonde, BT)</td><td>Meno</td></tr>
+      <tr><td>Canali non sovrapposti</td><td>3 (1,6,11)</td><td>23+</td></tr>
+    </tbody></table></div></div>
+  </div>
+</section>
+
+<section class="section" id="sicurezza">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Sicurezza Wi-Fi</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Protocollo</th><th>Anno</th><th>Cifratura</th><th>Stato</th></tr></thead><tbody>
+      <tr><td><strong>WEP</strong></td><td>1997</td><td>RC4 (40/104 bit)</td><td>⚠ Violato — non usare</td></tr>
+      <tr><td><strong>WPA</strong></td><td>2003</td><td>TKIP + RC4</td><td>⚠ Deprecato</td></tr>
+      <tr><td><strong>WPA2-Personal</strong></td><td>2004</td><td>AES-CCMP (PSK)</td><td>✅ Ancora usato</td></tr>
+      <tr><td><strong>WPA2-Enterprise</strong></td><td>2004</td><td>AES-CCMP (802.1X)</td><td>✅ Standard aziendale</td></tr>
+      <tr><td><strong>WPA3-Personal</strong></td><td>2018</td><td>AES + SAE</td><td>✅ Moderno</td></tr>
+      <tr><td><strong>WPA3-Enterprise</strong></td><td>2018</td><td>AES-256 (802.1X)</td><td>✅ Alta sicurezza</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>WPA2-Personal vs WPA2-Enterprise</h4><ul class="clean">
+      <li><strong>Personal (PSK):</strong> una sola password condivisa tra tutti gli utenti. Semplice ma meno sicuro — se la password è compromessa, tutti sono a rischio.</li>
+      <li><strong>Enterprise (802.1X + RADIUS):</strong> ogni utente ha le proprie credenziali. L'AP verifica tramite RADIUS/AD. Revoca individuale possibile. Standard aziendale raccomandato.</li>
+    </ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Attacchi Wi-Fi comuni</h4><ul class="clean">
+      <li><strong>Rogue AP:</strong> AP malevolo che imita una rete legittima (Evil Twin)</li>
+      <li><strong>Deauthentication attack:</strong> forza la disconnessione dei client tramite frame deauth spoofati</li>
+      <li><strong>KRACK:</strong> vulnerabilità nel 4-way handshake WPA2 (aggiornamenti necessari)</li>
+      <li><strong>Wardriving:</strong> scansione di reti Wi-Fi da un veicolo in movimento</li>
+    </ul></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«WPA3 è il passo avanti che WEP ci ha insegnato essere necessario.»<cite>— Wi-Fi Alliance</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

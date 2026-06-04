@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protocolli Email SMTP IMAP POP3 — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E22%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="protocolli">SMTP / IMAP / POP3</button>
+  <button class="nav-btn" data-sec="sicurezza">Sicurezza Email</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 22</div><h1 class="title">Protocolli Email<br><em>SMTP, IMAP e POP3</em></h1><p class="subtitle">I protocolli che governano l'invio e la ricezione delle email.</p></div>
+    <div class="grid-2">
+      <div><p>Il sistema email usa tre protocolli distinti: <strong>SMTP</strong> per l'invio, <strong>IMAP</strong> per l'accesso alle email sul server, <strong>POP3</strong> per il download in locale. Tutti operano su TCP.</p>
+      <div class="box-concetto"><h4>Architettura email</h4><ul class="clean">
+        <li><strong>MUA (Mail User Agent):</strong> il client email (Outlook, Thunderbird, Gmail web)</li>
+        <li><strong>MTA (Mail Transfer Agent):</strong> il server che instrada l'email (Postfix, sendmail)</li>
+        <li><strong>MDA (Mail Delivery Agent):</strong> consegna nella casella dell'utente</li>
+      </ul></div></div>
+      <div><div class="box-frase">«L'email è la prova che le comunicazioni asincrone possono durare decenni.»<span class="label">— RFC 5321 (SMTP)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="protocolli">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>SMTP, IMAP e POP3</h2></div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>Protocollo</th><th>Porta</th><th>Funzione</th><th>Caratteristica</th></tr></thead><tbody>
+      <tr><td><strong>SMTP</strong></td><td>25 (server-server), 587 (client-server)</td><td>Invio email</td><td>Relay tra MTA, autenticazione con STARTTLS</td></tr>
+      <tr><td><strong>SMTPS</strong></td><td>465</td><td>SMTP cifrato</td><td>SSL/TLS nativo</td></tr>
+      <tr><td><strong>POP3</strong></td><td>110</td><td>Scarica email sul client</td><td>Rimuove dal server (default), accesso offline</td></tr>
+      <tr><td><strong>POP3S</strong></td><td>995</td><td>POP3 cifrato</td><td>SSL/TLS</td></tr>
+      <tr><td><strong>IMAP</strong></td><td>143</td><td>Accesso email sul server</td><td>Sincronizzato, email resta sul server, multi-dispositivo</td></tr>
+      <tr><td><strong>IMAPS</strong></td><td>993</td><td>IMAP cifrato</td><td>SSL/TLS — standard moderno</td></tr>
+    </tbody></table></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>IMAP vs POP3</h4><div class="table-wrap"><table class="data-table"><thead><tr><th></th><th>IMAP</th><th>POP3</th></tr></thead><tbody>
+      <tr><td>Email sul server</td><td>Sì — sincronizzata</td><td>No — scaricata e rimossa</td></tr>
+      <tr><td>Multi-dispositivo</td><td>Sì (smartphone + PC vedono le stesse mail)</td><td>No (solo su un dispositivo)</td></tr>
+      <tr><td>Accesso offline</td><td>Parziale (cache)</td><td>Sì (tutto scaricato)</td></tr>
+      <tr><td>Uso tipico</td><td>Standard moderno</td><td>Legacy, connessione saltuaria</td></tr>
+    </tbody></table></div></div>
+  </div>
+</section>
+
+<section class="section" id="sicurezza">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Sicurezza Email</h2></div>
+    <div class="box-concetto"><h4>Autenticazione email (anti-spam)</h4><ul class="clean">
+      <li><strong>SPF (Sender Policy Framework):</strong> record DNS TXT che elenca i server autorizzati a inviare email per quel dominio. Previene il spoofing.</li>
+      <li><strong>DKIM (DomainKeys Identified Mail):</strong> firma digitale aggiunta agli header email. Il destinatario verifica la firma con la chiave pubblica nel DNS.</li>
+      <li><strong>DMARC (Domain-based Message Authentication):</strong> policy che dice ai server riceventi cosa fare con le email che falliscono SPF/DKIM (quarantine, reject).</li>
+    </ul></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Vulnerabilità email</h4><ul class="clean">
+      <li><strong>Phishing:</strong> email fraudolente che imitano mittenti legittimi per rubare credenziali.</li>
+      <li><strong>Spoofing:</strong> falsificare l'indirizzo mittente (contrastato da SPF/DKIM).</li>
+      <li><strong>Email in chiaro:</strong> senza TLS, le email viaggiano non cifrate — intercettabili.</li>
+      <li><strong>S/MIME / PGP:</strong> cifratura end-to-end delle email (mittente ↔ destinatario).</li>
+    </ul></div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«L'email senza SPF è una cartolina postale: chiunque può leggere e falsificare il mittente.»<cite>— IETF RFC 7208</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

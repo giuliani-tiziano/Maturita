@@ -16,8 +16,8 @@
   --rule:           rgba(8, 69, 80, .22);
   --grad-editorial: linear-gradient(90deg, var(--color-deep) 0%, var(--gold) 50%, var(--color-primary) 100%);
 
-  /* Hero banner: colore piatto teal + texture diagonale rafforzata */
-  --grad-hero: var(--color-primary);
+  /* Hero banner: teal scuro (#084550) = stesso colore della topbar */
+  --grad-hero: var(--color-deep);
   --texture-diag: repeating-linear-gradient(
     -45deg,
     transparent           0,
@@ -28,13 +28,12 @@
 }
 
 /* ══ TOPBAR LIGHT MODE ══
-   Nav links area = teal chiaro (#1A8FA0)
-   Brand block (← Portale · Sistemi e Reti) = teal primario (#0E6B7A) */
+   Topbar uniforme = stesso colore dell'hero banner = #084550 */
 .topbar--split {
-  background: var(--color-light);   /* #1A8FA0 */
+  background: var(--color-deep); /* #084550 */
 }
 .topbar-brand-block {
-  background: var(--color-primary); /* #0E6B7A */
+  background: var(--color-deep); /* #084550 — stesso colore, nessuna linea di separazione */
 }
 
 /* Migliora contrasto link topbar su sfondo teal chiaro */
@@ -94,12 +93,13 @@
   --bordeaux-deep: var(--color-deep);
 }
 
-/* Topbar dark mode: nav = teal primario, brand = teal scuro */
+/* Topbar dark mode: teal molto scuro uniforme (#04303A)
+   Stesso colore per entrambe le sezioni — nessuna linea di separazione */
 [data-theme="dark"] .topbar--split {
-  background: #0E6B7A !important;
+  background: #04303A !important;
 }
 [data-theme="dark"] .topbar-brand-block {
-  background: #084550 !important;
+  background: #04303A !important;
 }
 
 /* Body e layout aree */

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VLAN — Sistemi e Reti · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23084550'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='44' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3E20%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block"><a href="../../../index.html" class="topbar-back">← Portale</a><a href="../../sistemi.html" class="topbar-brand">Sistemi e Reti</a></div>
+  <nav class="topbar-nav topbar-links"><a class="topbar-link" href="../argomenti.html">Argomenti</a><a class="topbar-link" href="../mappe.html">Mappe</a><a class="topbar-link" href="../flashcard.html">Flashcard</a><a class="topbar-link cta" href="../quiz.html">Quiz</a></nav>
+</header>
+<nav class="nav"><div class="nav-inner">
+  <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
+  <button class="nav-btn" data-sec="802q">802.1Q Trunking</button>
+  <button class="nav-btn" data-sec="routing">Inter-VLAN Routing</button>
+  <button class="nav-btn" data-sec="config">Configurazione</button>
+</div></nav>
+
+<section class="section active" id="panoramica">
+  <div class="container">
+    <div class="hero"><div class="eyebrow">Sistemi e Reti · Argomento 20</div><h1 class="title">VLAN<br><em>Virtual Local Area Network</em></h1><p class="subtitle">Segmentazione logica della rete su infrastruttura fisica condivisa.</p></div>
+    <div class="grid-2">
+      <div><p>Una <strong>VLAN</strong> è un dominio di broadcast logico creato sullo switch. Permette di segmentare una rete fisica in più reti logiche isolate, indipendentemente dalla topologia fisica.</p>
+      <div class="box-concetto"><h4>Vantaggi VLAN</h4><ul class="clean">
+        <li><strong>Sicurezza:</strong> isolamento del traffico tra reparti</li>
+        <li><strong>Performance:</strong> riduzione del dominio di broadcast</li>
+        <li><strong>Flessibilità:</strong> organizzazione logica indipendente dalla fisica</li>
+        <li><strong>Gestione:</strong> policy diverse per ogni VLAN</li>
+      </ul></div></div>
+      <div><div class="box-concetto"><h4>Esempio pratico</h4><p>Un'azienda con Uffici, Server e VoIP sullo stesso switch fisico. Tre VLAN separate: VLAN 10 (Uffici), VLAN 20 (Server), VLAN 30 (VoIP). Il traffico di ogni VLAN è isolato dagli altri.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="802q">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">01</div><h2>802.1Q Trunking</h2></div>
+    <p>Per trasportare traffico di più VLAN su un singolo cavo tra switch (o switch-router), si usa il <strong>trunk</strong>.</p>
+    <div class="box-concetto"><h4>Access vs Trunk Port</h4><div class="table-wrap"><table class="data-table"><thead><tr><th>Tipo</th><th>Funzione</th><th>Tag 802.1Q</th><th>Uso</th></tr></thead><tbody>
+      <tr><td><strong>Access port</strong></td><td>Appartiene a UNA sola VLAN</td><td>Rimuove il tag (traffico non taggato verso host)</td><td>Collegamento PC, stampanti, AP</td></tr>
+      <tr><td><strong>Trunk port</strong></td><td>Trasporta PIÙ VLAN</td><td>Aggiunge tag 802.1Q (4 byte) con VLAN ID</td><td>Switch-Switch, Switch-Router</td></tr>
+    </tbody></table></div></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Header 802.1Q</h4>
+      <p>Il tag 802.1Q viene inserito nell'header Ethernet dopo i MAC address: 4 byte con TPID (0x8100) + TCI (PCP 3 bit + DEI 1 bit + VLAN ID 12 bit). VLAN ID: 1-4094. La VLAN nativa (default VLAN 1) passa senza tag.</p></div>
+  </div>
+</section>
+
+<section class="section" id="routing">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">02</div><h2>Inter-VLAN Routing</h2></div>
+    <p>Gli host in VLAN diverse NON possono comunicare direttamente — servono indirizzi IP diversi e un router. Due approcci:</p>
+    <div class="box-concetto"><h4>Router-on-a-Stick</h4>
+      <p>Un solo collegamento fisico switch-router configurato come trunk. Il router crea subinterface logiche (una per VLAN) con l'IP gateway di ogni VLAN. Cisco: <code>interface fa0/0.10</code> + <code>encapsulation dot1Q 10</code>.</p></div>
+    <div class="box-concetto" style="margin-top:1rem"><h4>Layer 3 Switch (MLS)</h4>
+      <p>Uno switch multilayer (Layer 3) può fare routing direttamente tra VLAN con <strong>Switch Virtual Interface (SVI)</strong>: <code>interface vlan 10</code> + <code>ip address 192.168.10.1 255.255.255.0</code>. Più efficiente del router-on-a-stick.</p></div>
+  </div>
+</section>
+
+<section class="section" id="config">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">03</div><h2>Configurazione Cisco IOS</h2></div>
+    <div class="box-concetto">
+      <pre style="font-family:'Courier New',monospace;font-size:.85rem;padding:1rem;background:#02202a;color:#5EC4D4;border-radius:8px">! Creare le VLAN
+vlan 10
+  name UFFICI
+vlan 20
+  name SERVER
+
+! Porta access (host)
+interface fa0/1
+  switchport mode access
+  switchport access vlan 10
+
+! Porta trunk (verso altro switch/router)
+interface gi0/1
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20
+
+! Verifica
+show vlan brief
+show interfaces trunk</pre>
+    </div>
+    <div class="res-actions" style="margin-top:2rem"><a href="../quiz.html" class="btn-act primary">Inizia il Quiz →</a><a href="../flashcard.html" class="btn-act secondary">Flashcard →</a><a href="../argomenti.html" class="btn-act secondary">← Tutti gli argomenti</a></div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-quote-final">«Le VLAN separano il traffico senza separare i cavi.»<cite>— IEEE 802.1Q</cite></div></footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

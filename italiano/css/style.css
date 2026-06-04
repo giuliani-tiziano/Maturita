@@ -326,7 +326,7 @@ a:hover { background-size: 100% 1px; color: var(--bordeaux-mid); }
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   counter-reset: navcount;
-  padding: 0 1.5rem;
+  padding: 0;
 }
 .nav-inner::-webkit-scrollbar { display: none; }
 .nav-btn {
@@ -362,7 +362,7 @@ a:hover { background-size: 100% 1px; color: var(--bordeaux-mid); }
   border-bottom-color: var(--gold);
 }
 
-@media (max-width: 899px) { .nav-inner { padding: 0 1rem; } }
+@media (max-width: 899px) { .nav-inner { padding: 0; } }
 body:has(.nav) { padding-top: calc(var(--top-h) + var(--nav-h) + 2px); }
 
 @media (min-width: 900px) {
