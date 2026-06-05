@@ -53,6 +53,45 @@
     }
     .tl-legend span { display: inline-flex; align-items: center; gap: .4rem; }
     .tl-legend i { width: 14px; height: 10px; border-radius: 2px; display: inline-block; }
+    .tl-scroll-hint {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      #tl-scroll {
+        max-height: calc(100vh - var(--top-h, 52px) - 120px);
+        overflow-x: auto;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      #tl-svg { min-width: 900px; }
+      .tl-controls {
+        padding: .6rem 1rem;
+        gap: .4rem;
+        flex-wrap: wrap;
+      }
+      .tl-filter {
+        font-size: 9px;
+        padding: 5px 9px;
+        letter-spacing: .1em;
+      }
+      .tl-zoom { margin-left: 0; }
+      .tl-legend {
+        padding: .75rem 1rem;
+        gap: .75rem;
+        font-size: 10px;
+      }
+      .tl-scroll-hint {
+        display: block;
+        text-align: center;
+        font-family: var(--sans);
+        font-size: 10px;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+        padding: .4rem;
+        background: var(--beige-light);
+      }
+    }
   </style>
 </head>
 <body>
@@ -63,6 +102,9 @@
       <a href="../../index.html" class="topbar-back">← Portale</a>
       <a href="../italiano.html" class="topbar-brand">Letteratura Italiana</a>
     </div>
+    <button class="topbar-hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <nav class="topbar-nav topbar-links">
       <a class="topbar-link" href="autori.html">Autori</a>
       <a class="topbar-link" href="correnti.html">Correnti</a>
@@ -97,6 +139,7 @@
   </div>
 
   <!-- ══ TIMELINE SVG ══ -->
+  <div class="tl-scroll-hint">← Scorri orizzontalmente →</div>
   <div id="tl-scroll">
     <svg id="tl-svg" aria-label="Linea del tempo 1850–1960"></svg>
     <div id="tl-tooltip"></div>

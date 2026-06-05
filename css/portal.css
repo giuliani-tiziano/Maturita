@@ -489,7 +489,22 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 640px) {
   .p-hero { grid-template-columns: 1fr; gap: 2rem; padding: calc(var(--top-h) + 3rem) 1.2rem 3rem; }
   .p-hero-h1 { font-size: clamp(3rem, 12vw, 72px); }
-  .p-grid { grid-template-columns: 1fr; padding: 0 1.2rem; }
+  .p-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: .65rem;
+    padding: 0 .9rem 3rem;
+  }
+  .p-card-body { padding: .9rem .85rem .6rem; }
+  .p-card-name { font-size: .95rem; line-height: 1.2; }
+  .p-card-desc { font-size: .7rem; line-height: 1.4; }
+  .p-card-num  { font-size: .65rem; }
+  .p-card-footer { padding: .5rem .85rem .75rem; }
+  .p-card-badge { font-size: .6rem; padding: 3px 8px; }
   .p-section-header { padding: 0 1.2rem; }
   .p-topbar { padding: 0 1.2rem; }
+}
+@media (max-width: 400px) {
+  /* Brand + "Contattaci" su riga singola senza overflow */
+  .p-brand { font-size: 13px; }
+  .p-nav-link { font-size: .62rem; letter-spacing: .18em; }
 }

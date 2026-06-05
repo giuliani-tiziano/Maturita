@@ -114,7 +114,7 @@
       1,"La suggestione: la poesia simbolista non da il significato ma lo allude, lo evoca, lo lascia risuonare. Il lettore deve partecipare attivamente. Mallarme: 'nominare un oggetto significa sopprimere i tre quarti del piacere della poesia.' Suggerire e piu potente di nominare."),
 
     mc("si25","Glossario","Cosa e la 'corrispondenza' in senso simbolista?",
-      ["Le lettere scambiate tra poeti","Il legame nascosto tra mondo fisico e spirituale e tra diverse sfere sensoriali, rivelato dall'arte","Un sistema di rima alternata","Un tipo di enjambement"),
+      ["Le lettere scambiate tra poeti","Il legame nascosto tra mondo fisico e spirituale e tra diverse sfere sensoriali, rivelato dall'arte","Un sistema di rima alternata","Un tipo di enjambement"],
       1,"Le corrispondenze (da Baudelaire): rete di richiami nascosti tra il mondo fisico e quello spirituale e tra le diverse sfere sensoriali (sinestesia). Il Simbolismo sistematizza questa intuizione: la Natura e un sistema di simboli dove tutto 'si risponde'. L'artista e colui che sa leggere e tradurre questo sistema."),
 
     tf("si26","Origini","Il Simbolismo e una corrente del tutto autonoma dal Decadentismo.",

@@ -253,3 +253,11 @@
 [data-theme="dark"] .modal-close:hover {
   color: #ddf3f7 !important;
 }
+
+/* ── Hamburger dark mode: --color-deep diventa #ddf3f7 (quasi bianco) → dropdown illeggibile ── */
+@media (max-width: 768px) {
+  [data-theme="dark"] .topbar-nav.topbar-links { background: #04303A; }
+  [data-theme="dark"] .topbar-links .topbar-link { color: rgba(255,255,255,.88); border-bottom-color: rgba(255,255,255,.12); }
+  [data-theme="dark"] .topbar-links .topbar-link.active { color: #fff; }
+  [data-theme="dark"] .topbar-links .topbar-link.cta { color: #fff; background: rgba(255,255,255,.18); }
+}

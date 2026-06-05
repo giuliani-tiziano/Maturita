@@ -263,6 +263,11 @@
     if (q.type === 'mc' || q.type === 'tf') {
       html += '<div class="answers">';
       const letters = ['A','B','C','D'];
+      if (!q.options || !Array.isArray(q.options)) {
+        console.warn('[quiz] domanda senza options:', q);
+        card.innerHTML = html + `<p style="padding:1rem;font-size:.85rem;color:var(--ink-muted)">Domanda non disponibile — passa alla prossima.</p>`;
+        return;
+      }
       q.options.forEach((opt, i) => {
         let cls = '';
         if (ans.answered) {

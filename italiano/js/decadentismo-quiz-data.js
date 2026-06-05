@@ -48,7 +48,7 @@
 
     /* ── POETICA ── */
     mc("de08","Poetica","Cosa sono le 'corrispondenze' secondo Baudelaire?",
-      ["Le lettere scambiate tra poeti decadenti","I legami nascosti tra il mondo fisico e quello spirituale, e tra le diverse sfere sensoriali","Le rime interne di un sonetto","I rimandi intertestuali tra le poesie"),
+      ["Le lettere scambiate tra poeti decadenti","I legami nascosti tra il mondo fisico e quello spirituale, e tra le diverse sfere sensoriali","Le rime interne di un sonetto","I rimandi intertestuali tra le poesie"],
       1,"Le corrispondenze baudelairiane: rete di richiami nascosti tra mondo fisico e spirituale e tra diverse sfere sensoriali. La Natura e un sistema di simboli ('foresta di simboli') dove tutto si risponde — i profumi, i colori e i suoni."),
 
     mc("de09","Poetica","Cosa e la 'sinestesia' nei Decadenti?",
@@ -102,7 +102,7 @@
       2,"Arte poetica (scritta 1874, pubblicata 1882) di Verlaine: 'De la musique avant toute chose' — la musica prima di tutto. La vaghezza, l'imprecisione, il rifiuto dell'eloquenza: principi che diventano il manifesto del Simbolismo."),
 
     mc("de21","Opere","Il ritratto di Dorian Gray di Oscar Wilde (1890) e il romanzo estetista piu famoso. Qual e il suo tema centrale?",
-      ["Il tema dell'eredita e della famiglia aristocratica","Il culto della bellezza come unica morale: Dorian vende l'anima per restare giovane e bello mentre il ritratto si corrompe al suo posto","La critica alla societa vittoriana attraverso la parodia","La vita degli artisti parigini"),
+      ["Il tema dell'eredita e della famiglia aristocratica","Il culto della bellezza come unica morale: Dorian vende l'anima per restare giovane e bello mentre il ritratto si corrompe al suo posto","La critica alla societa vittoriana attraverso la parodia","La vita degli artisti parigini"],
       1,"Dorian Gray firma un patto: il suo ritratto invecchiera e si degradera al suo posto. La giovinezza e la bellezza fisica sono i beni supremi; l'anima non conta. Ma il romanzo mostra anche le conseguenze devastanti di questo culto: Dorian muore distruggendo il ritratto."),
 
     mc("de22","Opere","A chi e dedicato il sottotitolo in tedesco dei Canti orfici di Campana?",
@@ -124,7 +124,7 @@
 
     /* ── TESTI ── */
     mc("de26","Testi","Nella prima quartina di Corrispondenze, cosa rappresenta la 'foresta di simboli'?",
-      ["Una vera foresta dove il poeta passeggia","La Natura come sistema di segni che l'artista — a differenza dell'uomo comune — sa leggere e interpretare","Una metafora della confusione urbana moderna","I libri di una biblioteca"),
+      ["Una vera foresta dove il poeta passeggia","La Natura come sistema di segni che l'artista — a differenza dell'uomo comune — sa leggere e interpretare","Una metafora della confusione urbana moderna","I libri di una biblioteca"],
       1,"La 'foresta di simboli' della prima quartina di Corrispondenze: la Natura non e realta meccanica ma un tempio di segni che rimandano a realta piu profonde. L'artista e colui che sa leggere questi simboli — a differenza dell'uomo comune che li attraversa inconsapevolmente."),
 
     mc("de27","Testi","Nei versi 9-14 di Corrispondenze, la sinestesia 'profumi dolci come gli oboe' unisce quali sfere sensoriali?",
@@ -136,7 +136,7 @@
       1,"Des Esseintes costruisce un universo artificiale totale: sostituisce ogni elemento naturale con un artefatto piu raffinato. Le tartarughe ricoperte di gemme muoiono — il peso dell'oro le uccide. E il Decadentismo portato all'assurdo: il culto dell'artificio come rifiuto totale della natura."),
 
     mc("de29","Testi","Quale lirica di Baudelaire descrive il poeta come un uccello maestoso che cammina goffamente tra gli uomini?",
-      ["Corrispondenze","L'albatro","Spleen IV","La strega"),
+      ["Corrispondenze","L'albatro","Spleen IV","La strega"],
       1,"L'albatro (L'albatros): l'uccello del mare e maestoso in volo (come il poeta nell'ispirazione) ma goffo e ridicolo sul ponte della nave (come il poeta nella vita quotidiana). E la metafora piu celebre della figura del 'poeta maledetto' incompreso dalla societa."),
 
     /* ── GLOSSARIO ── */

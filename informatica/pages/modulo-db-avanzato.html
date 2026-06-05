@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -23,6 +23,9 @@
     <a href="../../index.html" class="topbar-back">← Portale</a>
     <a href="../informatica.html" class="topbar-brand">Informatica</a>
   </div>
+  <button class="topbar-hamburger" aria-label="Apri menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <nav class="topbar-nav topbar-links">
     <a class="topbar-link" href="argomenti.html">Argomenti</a>
     <a class="topbar-link" href="mappe.html">Mappe</a>
@@ -33,6 +36,7 @@
 
 <nav class="nav">
   <div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='argomenti.html'">&#x2190; Argomenti</button>
     <button class="nav-btn active" data-sec="panoramica">Panoramica</button>
     <button class="nav-btn" data-sec="transazioni">Transazioni ACID</button>
     <button class="nav-btn" data-sec="indici">Indici e EXPLAIN</button>
