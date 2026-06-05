@@ -379,9 +379,12 @@
   </footer>
 
   <script src="js/portal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
   (function () {
     "use strict";
+
+    emailjs.init("UYSvoKs8GWyVBa9Yy");
 
     /* ── Materia "Altro" ── */
     var selMateria = document.getElementById("ct-materia");
@@ -421,7 +424,7 @@
       });
     });
 
-    /* ── Submit → mailto: ── */
+    /* ── Submit → EmailJS ── */
     document.getElementById("ct-form").addEventListener("submit", function (e) {
       e.preventDefault();
       var email    = document.getElementById("ct-email").value.trim();
@@ -439,26 +442,33 @@
       var tipo    = document.getElementById("ct-tipo").value || "Non specificato";
       var valut   = currentVal ? labels[currentVal] + " (" + currentVal + "/5)" : "Non valutata";
 
-      var subj = "[Maturità] " + oggetto;
-      var body = [
-        "Da: " + email,
-        "Materia: " + materia,
-        "Tipo di richiesta: " + tipo,
-        "Valutazione app: " + valut,
-        "",
-        "--- Messaggio ---",
-        messaggio
-      ].join("\n");
+      var btn = document.querySelector(".ct-submit");
+      btn.disabled = true;
+      btn.textContent = "Invio in corso…";
 
-      window.location.href = "mailto:guidaallamaturita@gmail.com"
-        + "?subject=" + encodeURIComponent(subj)
-        + "&body="    + encodeURIComponent(body);
+      var now = new Date();
+      var time = now.toLocaleDateString("it-IT", { day:"2-digit", month:"long", year:"numeric" })
+               + " " + now.toLocaleTimeString("it-IT", { hour:"2-digit", minute:"2-digit" });
 
-      setTimeout(function () {
+      emailjs.send("service_abc123", "template_2bk5mhh", {
+        subject:     "[Maturità] " + oggetto,
+        from_email:  email,
+        name:        email,
+        time:        time,
+        materia:     materia,
+        tipo:        tipo,
+        valutazione: valut,
+        message:     messaggio
+      }).then(function () {
         document.getElementById("ct-feedback").classList.add("show");
         document.getElementById("ct-form").style.opacity = ".4";
         document.getElementById("ct-form").style.pointerEvents = "none";
-      }, 400);
+      }).catch(function (err) {
+        alert("Errore durante l'invio. Riprova o scrivici direttamente a guidaallamaturita@gmail.com");
+        btn.disabled = false;
+        btn.innerHTML = 'Invia messaggio <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+        console.error("EmailJS error:", err);
+      });
     });
 
   })();
