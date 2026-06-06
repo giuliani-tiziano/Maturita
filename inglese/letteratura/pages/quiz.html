@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz · English Literature — Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A4A2A'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .quiz-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 1.5rem 0 2rem; }
+    @media (max-width: 1100px) { .quiz-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .quiz-grid { grid-template-columns: 1fr; } }
+    .quiz-period-header { display: flex; align-items: center; gap: 1.2rem; margin-top: 2rem; margin-bottom: 1.2rem; }
+    .quiz-period-header:first-of-type { margin-top: 0; }
+    .quiz-period-label { font-family: var(--sans); font-size: 10px; letter-spacing: .36em; text-transform: uppercase; color: var(--bordeaux-mid); white-space: nowrap; flex-shrink: 0; }
+    .quiz-period-rule  { flex: 1; height: 1px; background: var(--rule); }
+    .author-card.quiz-card { cursor: pointer; user-select: none; }
+    .author-card.quiz-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .quiz-card-best { font-family: var(--sans); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: .4rem; min-height: 1em; }
+    #screen-home { padding: 0; align-items: stretch; text-align: initial; }
+  </style>
+</head>
+<body>
+
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<!-- ══ TOPBAR ══ -->
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../inglese.html" class="topbar-back">← English Hub</a>
+    <a href="../letteratura.html" class="topbar-brand">English Literature</a>
+  </div>
+  <button class="topbar-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="autori.html">Authors</a>
+    <a class="topbar-link" href="correnti.html">Movements</a>
+    <a class="topbar-link" href="mappe.html">Maps</a>
+    <a class="topbar-link" href="timeline.html">Timeline</a>
+    <a class="topbar-link" href="flashcard.html">Flashcards</a>
+    <a class="topbar-link active cta" href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+
+<!-- ══ SCREEN 1 — SELECTION HUB ══ -->
+<section class="screen active" id="screen-home">
+
+  <div class="hero-banner" data-initial="Q">
+    <div class="hero-banner-inner">
+      <div class="eyebrow">Home → Quiz</div>
+      <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Quiz</h1>
+      <p class="hero-banner-sub">Test yourself on authors and literary movements · 10 random questions per session</p>
+    </div>
+  </div>
+
+  <div class="page-layout">
+
+    <aside class="page-sidebar">
+      <div class="page-sidebar-title">Selection</div>
+
+      <div class="sidebar-section-label">Authors · Romanticism</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-romanticism">Blake</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-romanticism">Wordsworth</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-romanticism">Byron</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-romanticism">Mary Shelley</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-romanticism">Shakespeare</a>
+
+      <div class="sidebar-section-label mt">Authors · Victorian</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-victorian">Dickens</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-victorian">Wilde</a>
+
+      <div class="sidebar-section-label mt">Authors · Modernism</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-modernism">Woolf</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-modernism">Joyce</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-modernism">T.S. Eliot</a>
+
+      <div class="sidebar-section-label mt">Authors · Post-War</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-postwar">Orwell</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-postwar">Golding</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-postwar">Beckett</a>
+
+      <div class="sidebar-section-label mt">Movements</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-movements">Romanticism</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-movements">Modernism</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-movements">Victorianism</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-movements">Dystopia</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-c-movements">Gothic Novel</a>
+    </aside>
+
+    <main class="page-main">
+
+      <!-- Sub-tabs -->
+      <div class="poem-tabs">
+        <button class="ptab active" data-poem="autori">Authors</button>
+        <button class="ptab" data-poem="correnti">Movements</button>
+      </div>
+
+      <!-- ══ AUTHORS PANEL ══ -->
+      <div class="poem-panel active" id="poem-autori">
+
+      <!-- Romanticism & Gothic -->
+      <div class="quiz-period-header" id="quiz-a-romanticism">
+        <span class="quiz-period-label">Authors · Romanticism &amp; Gothic</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('blake')">
+          <span class="author-card-initial">B</span>
+          <div class="author-card-meta">Pre-Romanticism · 1757–1827</div>
+          <div class="author-card-name">William <em>Blake</em></div>
+          <div class="author-card-tagline">Songs of Innocence/Experience, the Tyger, visionary symbolism.</div>
+          <div class="quiz-card-best" id="best-blake"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('wordsworth')">
+          <span class="author-card-initial">W</span>
+          <div class="author-card-meta">Romanticism · 1770–1850</div>
+          <div class="author-card-name">William <em>Wordsworth</em></div>
+          <div class="author-card-tagline">Lyrical Ballads, nature, the Sublime, Romantic manifesto.</div>
+          <div class="quiz-card-best" id="best-wordsworth"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('byron')">
+          <span class="author-card-initial">B</span>
+          <div class="author-card-meta">Romanticism · 1788–1824</div>
+          <div class="author-card-name">Lord <em>Byron</em></div>
+          <div class="author-card-tagline">Byronic hero, Childe Harold, Don Juan, Villa Diodati.</div>
+          <div class="quiz-card-best" id="best-byron"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('shelley')">
+          <span class="author-card-initial">S</span>
+          <div class="author-card-meta">Gothic / Romanticism · 1797–1851</div>
+          <div class="author-card-name">Mary <em>Shelley</em></div>
+          <div class="author-card-tagline">Frankenstein, The Modern Prometheus, the birth of sci-fi.</div>
+          <div class="quiz-card-best" id="best-shelley"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('shakespeare')">
+          <span class="author-card-initial">S</span>
+          <div class="author-card-meta">Elizabethan · 1564–1616</div>
+          <div class="author-card-name">William <em>Shakespeare</em></div>
+          <div class="author-card-tagline">Hamlet, the sonnets, Globe Theatre, Elizabethan drama.</div>
+          <div class="quiz-card-best" id="best-shakespeare"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+      </div>
+
+      <!-- Victorian -->
+      <div class="quiz-period-header" id="quiz-a-victorian">
+        <span class="quiz-period-label">Authors · Victorian Age</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('dickens')">
+          <span class="author-card-initial">D</span>
+          <div class="author-card-meta">Victorian · 1812–1870</div>
+          <div class="author-card-name">Charles <em>Dickens</em></div>
+          <div class="author-card-tagline">Oliver Twist, Great Expectations, serial novel, social critique.</div>
+          <div class="quiz-card-best" id="best-dickens"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('wilde')">
+          <span class="author-card-initial">W</span>
+          <div class="author-card-meta">Aestheticism · 1854–1900</div>
+          <div class="author-card-name">Oscar <em>Wilde</em></div>
+          <div class="author-card-tagline">Dorian Gray, Earnest, Art for Art's Sake, the dandy and trial.</div>
+          <div class="quiz-card-best" id="best-wilde"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+      </div>
+
+      <!-- Modernism -->
+      <div class="quiz-period-header" id="quiz-a-modernism">
+        <span class="quiz-period-label">Authors · Modernism</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('woolf')">
+          <span class="author-card-initial">W</span>
+          <div class="author-card-meta">Modernism · 1882–1941</div>
+          <div class="author-card-name">Virginia <em>Woolf</em></div>
+          <div class="author-card-tagline">Stream of consciousness, Mrs Dalloway, A Room of One's Own.</div>
+          <div class="quiz-card-best" id="best-woolf"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('joyce')">
+          <span class="author-card-initial">J</span>
+          <div class="author-card-meta">Modernism · 1882–1941</div>
+          <div class="author-card-name">James <em>Joyce</em></div>
+          <div class="author-card-tagline">Dubliners, epiphany, paralysis, Ulysses, Irish exile.</div>
+          <div class="quiz-card-best" id="best-joyce"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('eliot')">
+          <span class="author-card-initial">E</span>
+          <div class="author-card-meta">Modernism · 1888–1965</div>
+          <div class="author-card-name">T.S. <em>Eliot</em></div>
+          <div class="author-card-tagline">The Waste Land, Prufrock, objective correlative, Nobel 1948.</div>
+          <div class="quiz-card-best" id="best-eliot"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+      </div>
+
+      <!-- Post-War -->
+      <div class="quiz-period-header" id="quiz-a-postwar">
+        <span class="quiz-period-label">Authors · Post-War · Dystopia · Absurd</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('orwell')">
+          <span class="author-card-initial">O</span>
+          <div class="author-card-meta">Dystopia · 1903–1950</div>
+          <div class="author-card-name">George <em>Orwell</em></div>
+          <div class="author-card-tagline">Animal Farm, 1984, Big Brother, Newspeak, doublethink.</div>
+          <div class="quiz-card-best" id="best-orwell"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('golding')">
+          <span class="author-card-initial">G</span>
+          <div class="author-card-meta">Allegory · 1911–1993</div>
+          <div class="author-card-name">William <em>Golding</em></div>
+          <div class="author-card-tagline">Lord of the Flies, civilisation vs savagery, Nobel 1983.</div>
+          <div class="quiz-card-best" id="best-golding"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('beckett')">
+          <span class="author-card-initial">B</span>
+          <div class="author-card-meta">Theatre of Absurd · 1906–1989</div>
+          <div class="author-card-name">Samuel <em>Beckett</em></div>
+          <div class="author-card-tagline">Waiting for Godot, "Nothing to be done", Nobel 1969.</div>
+          <div class="quiz-card-best" id="best-beckett"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+      </div>
+
+      </div><!-- /poem-autori -->
+
+      <!-- ══ MOVEMENTS PANEL ══ -->
+      <div class="poem-panel" id="poem-correnti">
+
+      <div class="quiz-period-header" id="quiz-c-movements">
+        <span class="quiz-period-label">Literary Movements</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('romanticism')">
+          <span class="author-card-initial" style="background:#2A6B3A">R</span>
+          <div class="author-card-meta">Movement · 1785–1830</div>
+          <div class="author-card-name"><em>Romanticism</em></div>
+          <div class="author-card-tagline">Imagination, Sublime, nature, Blake, Wordsworth, Coleridge.</div>
+          <div class="quiz-card-best" id="best-romanticism"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('victorianism')">
+          <span class="author-card-initial" style="background:#7A4A1A">V</span>
+          <div class="author-card-meta">Movement · 1837–1901</div>
+          <div class="author-card-name"><em>Victorian Age</em></div>
+          <div class="author-card-tagline">Industrialisation, social realism, the serial novel, Darwin.</div>
+          <div class="quiz-card-best" id="best-victorianism"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('modernism')">
+          <span class="author-card-initial" style="background:#1A5C8A">M</span>
+          <div class="author-card-meta">Movement · 1900–1940</div>
+          <div class="author-card-name"><em>Modernism</em></div>
+          <div class="author-card-tagline">Stream of consciousness, fragmentation, WWI trauma, epiphany.</div>
+          <div class="quiz-card-best" id="best-modernism"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('dystopia')">
+          <span class="author-card-initial" style="background:#7A1A1A">D</span>
+          <div class="author-card-meta">Movement · 1932–1970</div>
+          <div class="author-card-name"><em>Dystopian Fiction</em></div>
+          <div class="author-card-tagline">1984 vs Brave New World, totalitarianism, surveillance state.</div>
+          <div class="quiz-card-best" id="best-dystopia"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('gothicnovel')">
+          <span class="author-card-initial" style="background:#3A3A7A">G</span>
+          <div class="author-card-meta">Movement · 1764–1850</div>
+          <div class="author-card-name"><em>Gothic Novel</em></div>
+          <div class="author-card-tagline">Terror, the supernatural, the double, Frankenstein, Dracula.</div>
+          <div class="quiz-card-best" id="best-gothicnovel"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+      </div>
+
+      </div><!-- /poem-correnti -->
+
+    </main>
+  </div><!-- /page-layout -->
+
+  <footer class="site-footer">
+    <div class="footer-quote-final">
+      "The answer is never the answer. What's really interesting is the mystery."
+      <cite>— Ken Kesey</cite>
+    </div>
+  </footer>
+
+</section><!-- /#screen-home -->
+
+
+<!-- ══ SCREEN 2 — QUIZ (questions) ══ -->
+<section class="screen" id="screen-quiz">
+  <div class="quiz-header">
+    <div class="quiz-header-inner">
+      <button class="btn-home-q" onclick="QuizApp.confirmExit()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:.4rem;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Quiz
+      </button>
+      <div class="quiz-author-badge" id="quiz-author-label">—</div>
+      <div class="quiz-counter">Q. <span id="qCur">1</span>/<span id="qTot">10</span></div>
+      <div class="q-prog-wrap"><div class="q-prog-fill" id="q-prog-fill"></div></div>
+      <div class="score-live">★ <span id="score-live">0</span></div>
+      <div class="timer-disp" id="timer-disp">20:00</div>
+    </div>
+  </div>
+
+  <div class="quiz-body">
+    <div class="q-card" id="q-card"></div>
+  </div>
+
+  <div class="q-map-bar">
+    <div class="q-map-inner">
+      <div class="q-map-lbl">Question map</div>
+      <div class="q-dots" id="q-dots"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SCREEN 3 — RESULTS ══ -->
+<section class="screen" id="screen-results">
+  <div class="res-hero">
+    <div class="res-hero-inner">
+      <div class="res-eyebrow" id="res-eyebrow">Quiz Result</div>
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120" width="140" height="140">
+          <circle class="ring-bg" cx="60" cy="60" r="56"/>
+          <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="56"/>
+        </svg>
+        <div class="ring-txt">
+          <div class="ring-score" id="ring-score">0</div>
+          <div class="ring-total" id="ring-total">/10</div>
+        </div>
+      </div>
+      <div class="res-grade" id="res-grade">—</div>
+      <div class="res-msg" id="res-msg"></div>
+    </div>
+  </div>
+
+  <div class="res-body">
+    <div class="res-breakdown">
+      <div class="rb-card ok"><div class="rb-val" id="rb-ok">0</div><div class="rb-lbl">Correct</div></div>
+      <div class="rb-card ko"><div class="rb-val" id="rb-ko">0</div><div class="rb-lbl">Wrong</div></div>
+      <div class="rb-card op"><div class="rb-val" id="rb-op">0</div><div class="rb-lbl">Open</div></div>
+    </div>
+
+    <div class="rev-title">Review answers</div>
+    <div class="rev-sub">Click each question to see the correct answer and explanation</div>
+    <div id="rev-list"></div>
+
+    <div class="res-actions">
+      <button class="btn-act primary" onclick="QuizApp.restartQuiz()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 4v6h6M23 20v-6h-6M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+        Restart
+      </button>
+      <button class="btn-act secondary" onclick="QuizApp.goHome()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        Choose another quiz
+      </button>
+    </div>
+
+    <div class="best-record" id="best-record"></div>
+    <div class="footer-q" id="footer-q"></div>
+  </div>
+</section>
+
+
+<!-- ══ MODAL — Mode selection ══ -->
+<div id="mode-overlay">
+  <div id="mode-panel">
+    <button class="panel-close" onclick="QuizApp.closePanel()">×</button>
+    <div id="panel-author-label">Author / Movement</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:var(--ink);margin-bottom:22px;line-height:1.1;">
+      Choose <em style="font-style:italic;color:var(--bordeaux-deep);">mode</em>
+    </h2>
+
+    <div class="mode-grid">
+      <div class="mode-opt selected" data-mode="all" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">📚 Random</div>
+        <div class="mode-opt-desc">10 mixed questions (MC + T/F + Open)</div>
+      </div>
+      <div class="mode-opt" data-mode="quick" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">⚡ Quick</div>
+        <div class="mode-opt-desc">10 fast random questions</div>
+      </div>
+      <div class="mode-opt" data-mode="mc-only" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">🔵 MC only</div>
+        <div class="mode-opt-desc">Multiple choice and True/False only</div>
+      </div>
+      <div class="mode-opt" data-mode="hard" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">🔥 Hard</div>
+        <div class="mode-opt-desc">True/False and open questions only</div>
+      </div>
+    </div>
+
+    <div class="toggle-row">
+      <span>⏱ Timer 20 minutes</span>
+      <button class="toggle" id="panel-timer-toggle" onclick="QuizApp.togglePanelTimer()"></button>
+      <span class="toggle-label" id="panel-timer-label">disabled</span>
+    </div>
+
+    <div class="toggle-row">
+      <span>🔀 Random order</span>
+      <button class="toggle on" id="panel-shuffle-toggle" onclick="QuizApp.togglePanelShuffle()"></button>
+    </div>
+
+    <button id="panel-start-btn" onclick="QuizApp.launchFromPanel()">
+      Start Quiz
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:.5rem"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+
+<!-- ══ QUIZ DATA ══ -->
+<script src="../js/quiz-data.js"></script>
+
+<!-- ══ ENGINE ══ -->
+<script src="../js/quiz-engine.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>

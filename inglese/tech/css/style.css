@@ -1,0 +1,86 @@
+/* ════════════════════════════════════════════════════════════════════════
+   Tech & Digital English — Foglio di stile
+   Importa il CSS di Letteratura, sovrascrive i token colore.
+   Verde tech #1A5C3A · Scuro #0F3A28 · Chiaro #2A7A4A
+   ════════════════════════════════════════════════════════════════════════ */
+
+@import url('../../letteratura/css/style.css');
+
+:root {
+  --color-primary: #1A5C3A;
+  --color-deep:    #0F3A28;
+  --color-light:   #2A7A4A;
+
+  --bordeaux-mid:   var(--color-primary);
+  --bordeaux-deep:  var(--color-deep);
+  --bordeaux-light: var(--color-light);
+
+  --rule:           rgba(15, 58, 40, .22);
+  --grad-editorial: linear-gradient(90deg, var(--color-deep) 0%, var(--gold) 50%, var(--color-primary) 100%);
+  --grad-hero:      linear-gradient(160deg, var(--color-deep) 0%, #071F16 100%);
+}
+
+.topbar--split {
+  background: var(--color-deep);
+}
+.topbar-brand-block {
+  background: var(--color-deep);
+}
+
+.hero-banner {
+  background: var(--grad-hero);
+}
+
+/* ── Topic cards ── */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.topic-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem 1.2rem;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.topic-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+.topic-num {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+.topic-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.topic-desc {
+  font-family: var(--sans);
+  font-size: .85rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+.topic-cta {
+  font-family: var(--sans);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-top: .4rem;
+}

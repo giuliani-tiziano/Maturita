@@ -1,0 +1,276 @@
+/* ══════════════════════════════════════════════════════════════
+   inglese-hub.css — Hub page for English Studies
+   Extends portal.css with hub-specific styles.
+   Primary: #2A6B3A (Literature) / #1A5C3A (Tech)
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  --hub-green: #2A6B3A;
+  --hub-green-deep: #1A4A2A;
+  --hub-green-light: #3A8A4A;
+  --hub-tech: #1A5C3A;
+  --gold: #C9A84C;
+  --paper: #FDFAF4;
+  --ink: #1C2A1C;
+}
+
+/* ── Dark mode tokens ── */
+[data-theme="dark"] {
+  --hub-bg: #0F2A18;
+  --hub-card-bg: #162A1E;
+  --hub-card-border: rgba(58,138,74,.25);
+  --hub-text: #e8f2ec;
+  --hub-muted: rgba(232,242,236,.6);
+}
+[data-theme="light"] {
+  --hub-bg: #F4F9F5;
+  --hub-card-bg: #FDFAF4;
+  --hub-card-border: rgba(42,107,58,.15);
+  --hub-text: #1C2A1C;
+  --hub-muted: rgba(28,42,28,.6);
+}
+
+/* ── TOPBAR ── */
+.hub-back-link {
+  color: rgba(253,250,244,.7);
+  text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  transition: color 200ms;
+}
+.hub-back-link:hover { color: #FDFAF4; }
+
+.hub-theme-btn {
+  background: none;
+  border: 1px solid rgba(253,250,244,.3);
+  border-radius: 50%;
+  color: rgba(253,250,244,.8);
+  width: 32px; height: 32px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 200ms;
+}
+.hub-theme-btn:hover { background: rgba(253,250,244,.15); color: #FDFAF4; }
+
+/* ── BODY ── */
+body {
+  background: var(--hub-bg, #F4F9F5);
+  min-height: 100vh;
+  padding-top: 62px;
+  font-family: 'Jost', system-ui, sans-serif;
+  color: var(--hub-text, #1C2A1C);
+  transition: background 250ms, color 250ms;
+}
+
+/* ── HERO ── */
+.hub-hero {
+  text-align: center;
+  padding: 4.5rem 2rem 3rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.hub-eyebrow {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: .7rem;
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  color: var(--hub-green);
+  margin-bottom: 1.2rem;
+}
+[data-theme="dark"] .hub-eyebrow { color: var(--hub-green-light, #3A8A4A); }
+
+.hub-h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--hub-text, #1C2A1C);
+  margin: 0 0 1.2rem;
+}
+.hub-h1 em {
+  font-style: italic;
+  color: var(--hub-green);
+}
+[data-theme="dark"] .hub-h1 em { color: var(--hub-green-light, #3A8A4A); }
+
+.hub-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--hub-muted, rgba(28,42,28,.6));
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+/* ── GRID: 2 card grandi ── */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: min(1100px, 92vw);
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+}
+@media (max-width: 768px) {
+  .hub-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+}
+
+/* ── HUB CARD ── */
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--hub-card-bg, #FDFAF4);
+  border: 1px solid var(--hub-card-border, rgba(42,107,58,.15));
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  box-shadow: 0 2px 12px rgba(28,42,28,.06);
+  position: relative;
+}
+.hub-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(28,42,28,.12);
+}
+.hub-card::before { display: none; }
+
+.hub-card-stripe {
+  height: 5px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.hub-card-body {
+  padding: 2.2rem 2rem 1.6rem;
+  flex: 1;
+}
+
+.hub-card-num {
+  font-family: 'Jost', sans-serif;
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  margin-bottom: .7rem;
+}
+
+.hub-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.05;
+  color: var(--hub-text, #1C2A1C);
+  margin-bottom: 1rem;
+  letter-spacing: -.01em;
+}
+.hub-card-name em {
+  font-style: italic;
+  color: var(--hub-green);
+}
+[data-theme="dark"] .hub-card-name { color: var(--hub-text, #e8f2ec); }
+[data-theme="dark"] .hub-card-name em { color: var(--hub-green-light, #3A8A4A); }
+
+.hub-card-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--hub-muted, rgba(28,42,28,.65));
+  line-height: 1.55;
+  margin-bottom: 1.6rem;
+}
+
+.hub-card-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+.hub-card-stats span {
+  font-family: 'Jost', sans-serif;
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .22rem .7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(42,107,58,.25);
+  color: var(--hub-green);
+  background: rgba(42,107,58,.06);
+}
+[data-theme="dark"] .hub-card-stats span {
+  border-color: rgba(58,138,74,.3);
+  color: var(--hub-green-light, #3A8A4A);
+  background: rgba(58,138,74,.08);
+}
+
+.hub-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem 1.4rem;
+  border-top: 1px solid rgba(42,107,58,.1);
+}
+[data-theme="dark"] .hub-card-footer { border-color: rgba(58,138,74,.15); }
+
+.hub-arrow {
+  font-size: 1.4rem;
+  transition: transform 250ms;
+  background: none !important;
+}
+.hub-card:hover .hub-arrow { transform: translateX(4px); }
+
+/* ── Badge reuse from portal.css ── */
+.p-card-badge {
+  font-family: 'Jost', sans-serif;
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .22rem .65rem;
+  border-radius: 20px;
+}
+.p-card-badge.available {
+  background: rgba(42,107,58,.12);
+  color: var(--hub-green);
+  border: 1px solid rgba(42,107,58,.3);
+}
+[data-theme="dark"] .p-card-badge.available {
+  background: rgba(58,138,74,.15);
+  color: var(--hub-green-light, #3A8A4A);
+  border-color: rgba(58,138,74,.35);
+}
+
+/* ── Dark mode body ── */
+[data-theme="dark"] body { background: #0F2A18; color: #e8f2ec; }
+[data-theme="dark"] .hub-card {
+  background: #162A1E;
+  border-color: rgba(58,138,74,.2);
+  box-shadow: 0 2px 12px rgba(0,0,0,.3);
+}
+[data-theme="dark"] .hub-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,.45);
+}
+
+/* ── P-TOPBAR override ── */
+.p-topbar {
+  background: #1A4A2A !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.8rem;
+  height: 62px;
+}
+.p-brand { display: flex; align-items: center; gap: .3rem; }
+
+@media (max-width: 600px) {
+  .hub-hero { padding: 3rem 1.2rem 2rem; }
+  .hub-h1 { font-size: clamp(2.4rem, 8vw, 3rem); }
+}

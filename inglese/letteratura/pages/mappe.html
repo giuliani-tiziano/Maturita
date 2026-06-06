@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept Maps — English Literature · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A4A2A'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .map-container { background: var(--paper); border: 1px solid var(--rule-soft); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2.5rem; overflow-x: auto; }
+    .map-container h3 { font-family: var(--sans); font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: var(--color-primary); margin: 0 0 1.5rem; }
+    .map-svg { display: block; max-width: 100%; }
+    /* ── NODE STYLES ── */
+    .map-node-center { fill: var(--color-primary); }
+    .map-node-secondary { fill: var(--color-deep); }
+    .map-node-tertiary { fill: var(--beige-mid); stroke: var(--rule); stroke-width: 1; }
+    .map-node-text { font-family: var(--sans); font-size: 12px; fill: var(--paper); font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+    .map-node-text-dark { font-family: var(--sans); font-size: 11px; fill: var(--ink); text-anchor: middle; dominant-baseline: central; }
+    .map-edge { stroke: var(--rule); stroke-width: 1.5; fill: none; }
+    .map-edge-label { font-family: var(--sans); font-size: 9px; fill: var(--ink-muted); text-anchor: middle; }
+    @media (max-width: 768px) {
+      .map-container { padding: 1rem; }
+      .map-svg { min-width: 600px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ TOPBAR ══ -->
+  <header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../inglese.html" class="topbar-back">← English Hub</a>
+      <a href="../letteratura.html" class="topbar-brand">English Literature</a>
+    </div>
+    <button class="topbar-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link" href="autori.html">Authors</a>
+      <a class="topbar-link" href="correnti.html">Movements</a>
+      <a class="topbar-link active" href="mappe.html">Maps</a>
+      <a class="topbar-link" href="timeline.html">Timeline</a>
+      <a class="topbar-link" href="flashcard.html">Flashcards</a>
+      <a class="topbar-link cta" href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- ══ HERO BANNER ══ -->
+  <div class="hero-banner" data-initial="M">
+    <div class="hero-banner-inner">
+      <div class="eyebrow">Home → Maps</div>
+      <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Concept Maps</h1>
+      <p class="hero-banner-sub">Visualise connections between movements, authors and texts · also see the <a href="timeline.html" style="color:var(--paper);text-decoration:underline;">interactive timeline</a></p>
+    </div>
+  </div>
+
+  <!-- ══ LAYOUT ══ -->
+  <div class="page-layout">
+
+    <aside class="page-sidebar">
+      <div class="page-sidebar-title">Available Maps</div>
+
+      <div class="sidebar-section-label">Authors</div>
+      <a class="page-sidebar-item" href="#map-orwell">Orwell</a>
+      <a class="page-sidebar-item" href="#map-shelley">Mary Shelley</a>
+      <a class="page-sidebar-item" href="#map-wilde">Wilde</a>
+      <a class="page-sidebar-item" href="#map-woolf">Woolf</a>
+      <a class="page-sidebar-item" href="#map-joyce">Joyce</a>
+      <a class="page-sidebar-item" href="#map-dickens">Dickens</a>
+
+      <div class="sidebar-section-label mt">Movements</div>
+      <a class="page-sidebar-item" href="#map-romanticism">Romanticism</a>
+      <a class="page-sidebar-item" href="#map-modernism">Modernism</a>
+      <a class="page-sidebar-item" href="#map-dystopia">Dystopia</a>
+
+      <div class="sidebar-section-label mt">Comparisons</div>
+      <a class="page-sidebar-item" href="#map-comparison">1984 vs Brave New World</a>
+      <a class="page-sidebar-item" href="#map-stream">Stream of Consciousness</a>
+    </aside>
+
+    <main class="page-main">
+
+      <!-- ══ MAP: ORWELL ══ -->
+      <div class="section-header" style="margin-top:0;" id="map-orwell">
+        <div class="section-tag">George Orwell</div>
+      </div>
+      <p class="section-sub map-mobile-hint">← Scroll horizontally on mobile →</p>
+      <div class="map-container">
+        <h3>Orwell — Life · Works · Themes</h3>
+        <svg class="map-svg" viewBox="0 0 780 340" xmlns="http://www.w3.org/2000/svg">
+          <!-- Edges -->
+          <line class="map-edge" x1="390" y1="170" x2="200" y2="100"/>
+          <line class="map-edge" x1="390" y1="170" x2="590" y2="100"/>
+          <line class="map-edge" x1="390" y1="170" x2="200" y2="240"/>
+          <line class="map-edge" x1="390" y1="170" x2="590" y2="240"/>
+          <line class="map-edge" x1="390" y1="170" x2="390" y2="290"/>
+          <!-- Center node -->
+          <ellipse cx="390" cy="170" rx="90" ry="40" class="map-node-center"/>
+          <text class="map-node-text" x="390" y="162">George</text>
+          <text class="map-node-text" x="390" y="178">Orwell</text>
+          <!-- Secondary nodes -->
+          <ellipse cx="200" cy="100" rx="80" ry="32" class="map-node-secondary"/>
+          <text class="map-node-text" x="200" y="100">Animal Farm</text>
+          <ellipse cx="590" cy="100" rx="80" ry="32" class="map-node-secondary"/>
+          <text class="map-node-text" x="590" y="100">Nineteen Eighty-Four</text>
+          <ellipse cx="200" cy="240" rx="80" ry="32" class="map-node-secondary"/>
+          <text class="map-node-text" x="200" y="240">Totalitarianism</text>
+          <ellipse cx="590" cy="240" rx="80" ry="32" class="map-node-secondary"/>
+          <text class="map-node-text" x="590" y="240">Doublethink</text>
+          <!-- Tertiary nodes -->
+          <rect x="310" y="268" width="160" height="30" rx="8" class="map-node-tertiary"/>
+          <text class="map-node-text-dark" x="390" y="283">Spanish Civil War</text>
+          <!-- Small nodes -->
+          <rect x="120" y="52" width="100" height="26" rx="6" fill="var(--gold)" opacity=".8"/>
+          <text class="map-node-text" x="170" y="65" font-size="10">Allegory 1945</text>
+          <rect x="470" y="52" width="100" height="26" rx="6" fill="var(--gold)" opacity=".8"/>
+          <text class="map-node-text" x="520" y="65" font-size="10">Big Brother 1949</text>
+          <rect x="100" y="196" width="120" height="26" rx="6" fill="var(--gold)" opacity=".8"/>
+          <text class="map-node-text" x="160" y="209" font-size="10">Stalinism/Russia</text>
+          <rect x="460" y="196" width="120" height="26" rx="6" fill="var(--gold)" opacity=".8"/>
+          <text class="map-node-text" x="520" y="209" font-size="10">Newspeak</text>
+        </svg>
+      </div>
+
+      <!-- ══ MAP: ROMANTICISM ══ -->
+      <div class="section-header" id="map-romanticism">
+        <div class="section-tag">Romanticism</div>
+      </div>
+      <div class="map-container">
+        <h3>Romanticism — Key Concepts</h3>
+        <svg class="map-svg" viewBox="0 0 780 320" xmlns="http://www.w3.org/2000/svg">
+          <!-- Edges -->
+          <line class="map-edge" x1="390" y1="160" x2="150" y2="80"/>
+          <line class="map-edge" x1="390" y1="160" x2="630" y2="80"/>
+          <line class="map-edge" x1="390" y1="160" x2="150" y2="240"/>
+          <line class="map-edge" x1="390" y1="160" x2="630" y2="240"/>
+          <line class="map-edge" x1="390" y1="160" x2="390" y2="60"/>
+          <!-- Center -->
+          <ellipse cx="390" cy="160" rx="90" ry="40" class="map-node-center"/>
+          <text class="map-node-text" x="390" y="160">Romanticism</text>
+          <!-- Branches -->
+          <ellipse cx="150" cy="80" rx="75" ry="32" class="map-node-secondary"/>
+          <text class="map-node-text" x="150" y="80">The Sublime</text>
+          <ellipse cx="630" cy="80" rx="75" ry="32" class="map-node-secondary"/>
+          <text class="map-node-text" x="630" y="80">Imagination</text>
+          <ellipse cx="150" cy="240" rx="75" ry="32" class="map-node-secondary"/>
+          <text class="map-node-text" x="150" y="240">Nature</text>
+          <ellipse cx="630" cy="240" rx="75" ry="32" class="map-node-secondary"/>
+          <text class="map-node-text" x="630" y="240">Emotion / Reason</text>
+          <rect x="305" y="32" width="170" height="28" rx="8" class="map-node-secondary"/>
+          <text class="map-node-text" x="390" y="46">Lyrical Ballads 1798</text>
+          <!-- Tertiary -->
+          <rect x="60" y="32" width="120" height="26" rx="6" class="map-node-tertiary"/>
+          <text class="map-node-text-dark" x="120" y="45" font-size="10">Wordsworth · Coleridge</text>
+          <rect x="600" y="32" width="120" height="26" rx="6" class="map-node-tertiary"/>
+          <text class="map-node-text-dark" x="660" y="45" font-size="10">Blake · Byron · Keats</text>
+          <rect x="60" y="192" width="120" height="26" rx="6" class="map-node-tertiary"/>
+          <text class="map-node-text-dark" x="120" y="205" font-size="10">French Revolution</text>
+          <rect x="560" y="192" width="140" height="26" rx="6" class="map-node-tertiary"/>
+          <text class="map-node-text-dark" x="630" y="205" font-size="10">Feeling over Logic</text>
+        </svg>
+      </div>
+
+      <!-- ══ MAP: MODERNISM ══ -->
+      <div class="section-header" id="map-modernism">
+        <div class="section-tag">Modernism</div>
+      </div>
+      <div class="map-container">
+        <h3>Modernism — Key Innovations</h3>
+        <svg class="map-svg" viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg">
+          <line class="map-edge" x1="390" y1="150" x2="140" y2="75"/>
+          <line class="map-edge" x1="390" y1="150" x2="640" y2="75"/>
+          <line class="map-edge" x1="390" y1="150" x2="140" y2="225"/>
+          <line class="map-edge" x1="390" y1="150" x2="640" y2="225"/>
+          <ellipse cx="390" cy="150" rx="90" ry="40" fill="#1A5C8A"/>
+          <text class="map-node-text" x="390" y="150">Modernism</text>
+          <ellipse cx="140" cy="75" rx="90" ry="32" fill="#1A4A6B"/>
+          <text class="map-node-text" x="140" y="75">Stream of Consciousness</text>
+          <ellipse cx="640" cy="75" rx="90" ry="32" fill="#1A4A6B"/>
+          <text class="map-node-text" x="640" y="67">Objective</text>
+          <text class="map-node-text" x="640" y="83">Correlative</text>
+          <ellipse cx="140" cy="225" rx="90" ry="32" fill="#1A4A6B"/>
+          <text class="map-node-text" x="140" y="225">Fragmentation</text>
+          <ellipse cx="640" cy="225" rx="90" ry="32" fill="#1A4A6B"/>
+          <text class="map-node-text" x="640" y="225">Epiphany</text>
+          <rect x="60" y="28" width="120" height="24" rx="6" class="map-node-tertiary"/>
+          <text class="map-node-text-dark" x="120" y="40" font-size="10">Woolf · Joyce · Eliot</text>
+          <rect x="560" y="28" width="120" height="24" rx="6" class="map-node-tertiary"/>
+          <text class="map-node-text-dark" x="620" y="40" font-size="10">T.S. Eliot's theory</text>
+          <rect x="56" y="178" width="130" height="24" rx="6" class="map-node-tertiary"/>
+          <text class="map-node-text-dark" x="121" y="190" font-size="10">WWI trauma · Collage</text>
+          <rect x="560" y="178" width="120" height="24" rx="6" class="map-node-tertiary"/>
+          <text class="map-node-text-dark" x="620" y="190" font-size="10">Joyce's Dubliners</text>
+        </svg>
+      </div>
+
+      <!-- ══ MAP: DYSTOPIA COMPARISON ══ -->
+      <div class="section-header" id="map-comparison">
+        <div class="section-tag">Comparison: 1984 vs Brave New World</div>
+      </div>
+      <div class="map-container">
+        <h3>Dystopia — Two Visions</h3>
+        <svg class="map-svg" viewBox="0 0 780 280" xmlns="http://www.w3.org/2000/svg">
+          <!-- 1984 side -->
+          <rect x="30" y="100" width="160" height="80" rx="10" fill="#7A1A1A"/>
+          <text class="map-node-text" x="110" y="133">Nineteen</text>
+          <text class="map-node-text" x="110" y="150">Eighty-Four</text>
+          <text class="map-node-text" x="110" y="167" font-size="10" opacity=".8">Orwell, 1949</text>
+          <!-- BNW side -->
+          <rect x="590" y="100" width="160" height="80" rx="10" fill="#1A5C8A"/>
+          <text class="map-node-text" x="670" y="133">Brave New</text>
+          <text class="map-node-text" x="670" y="150">World</text>
+          <text class="map-node-text" x="670" y="167" font-size="10" opacity=".8">Huxley, 1932</text>
+          <!-- Centre comparison -->
+          <ellipse cx="390" cy="140" rx="80" ry="36" fill="#4A1A4A"/>
+          <text class="map-node-text" x="390" y="134">Dystopian</text>
+          <text class="map-node-text" x="390" y="150">Fiction</text>
+          <!-- Lines -->
+          <line class="map-edge" x1="190" y1="140" x2="310" y2="140" stroke="rgba(255,255,255,.3)"/>
+          <line class="map-edge" x1="470" y1="140" x2="590" y2="140" stroke="rgba(255,255,255,.3)"/>
+          <!-- Feature boxes -->
+          <rect x="20" y="30" width="180" height="56" rx="8" fill="rgba(122,26,26,.35)"/>
+          <text class="map-node-text" x="110" y="48" font-size="10">Fear, pain, torture</text>
+          <text class="map-node-text" x="110" y="62" font-size="10">Big Brother watches</text>
+          <text class="map-node-text" x="110" y="76" font-size="10">Thought Police</text>
+          <rect x="580" y="30" width="180" height="56" rx="8" fill="rgba(26,92,138,.35)"/>
+          <text class="map-node-text" x="670" y="48" font-size="10">Pleasure, soma, conditioning</text>
+          <text class="map-node-text" x="670" y="62" font-size="10">Bokanovsky Process</text>
+          <text class="map-node-text" x="670" y="76" font-size="10">Ford as god</text>
+          <!-- Bottom boxes -->
+          <rect x="20" y="196" width="180" height="56" rx="8" fill="rgba(122,26,26,.35)"/>
+          <text class="map-node-text" x="110" y="214" font-size="10">Control through</text>
+          <text class="map-node-text" x="110" y="228" font-size="10">FORCE &amp; TERROR</text>
+          <text class="map-node-text" x="110" y="242" font-size="10">→ Stalinist USSR</text>
+          <rect x="580" y="196" width="180" height="56" rx="8" fill="rgba(26,92,138,.35)"/>
+          <text class="map-node-text" x="670" y="214" font-size="10">Control through</text>
+          <text class="map-node-text" x="670" y="228" font-size="10">PLEASURE &amp; DESIRE</text>
+          <text class="map-node-text" x="670" y="242" font-size="10">→ Consumer society</text>
+        </svg>
+      </div>
+
+      <!-- ══ MAP: STREAM OF CONSCIOUSNESS ══ -->
+      <div class="section-header" id="map-stream">
+        <div class="section-tag">Stream of Consciousness</div>
+      </div>
+      <div class="map-container">
+        <h3>Stream of Consciousness — Technique & Authors</h3>
+        <svg class="map-svg" viewBox="0 0 780 260" xmlns="http://www.w3.org/2000/svg">
+          <line class="map-edge" x1="390" y1="130" x2="140" y2="65"/>
+          <line class="map-edge" x1="390" y1="130" x2="640" y2="65"/>
+          <line class="map-edge" x1="390" y1="130" x2="140" y2="195"/>
+          <line class="map-edge" x1="390" y1="130" x2="640" y2="195"/>
+          <ellipse cx="390" cy="130" rx="110" ry="40" fill="#1A5C8A"/>
+          <text class="map-node-text" x="390" y="122">Stream of</text>
+          <text class="map-node-text" x="390" y="138">Consciousness</text>
+          <ellipse cx="140" cy="65" rx="80" ry="30" fill="#1A4A6B"/>
+          <text class="map-node-text" x="140" y="57">Virginia Woolf</text>
+          <text class="map-node-text" x="140" y="73" font-size="10">Mrs Dalloway (1925)</text>
+          <ellipse cx="640" cy="65" rx="80" ry="30" fill="#1A4A6B"/>
+          <text class="map-node-text" x="640" y="57">James Joyce</text>
+          <text class="map-node-text" x="640" y="73" font-size="10">Ulysses (1922)</text>
+          <ellipse cx="140" cy="195" rx="80" ry="30" fill="#2A6B3A"/>
+          <text class="map-node-text" x="140" y="187">Interior Monologue</text>
+          <text class="map-node-text" x="140" y="203" font-size="10">character's thoughts direct</text>
+          <ellipse cx="640" cy="195" rx="80" ry="30" fill="#2A6B3A"/>
+          <text class="map-node-text" x="640" y="187">Free Indirect</text>
+          <text class="map-node-text" x="640" y="203" font-size="10">Style (narrated thought)</text>
+        </svg>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-quote-final">
+      "I am not afraid of storms, for I am learning how to sail my ship."
+      <cite>— Louisa May Alcott, <em>Little Women</em></cite>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

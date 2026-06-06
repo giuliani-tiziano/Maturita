@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English — Study Guide · Maturità</title>
+  <meta name="description" content="English Study Guide for the Maturità: Literature and Tech & Digital English. Authors, movements, quiz, flashcards and mind maps.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A4A2A'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/portal.css">
+  <link rel="stylesheet" href="css/inglese-hub.css">
+</head>
+<body>
+
+  <!-- ══ TOPBAR ══ -->
+  <header class="p-topbar" style="background:#1A4A2A; border-bottom:2px solid #C9A84C;">
+    <div class="p-brand" style="color:#FDFAF4; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem;">
+      <a href="../index.html" class="hub-back-link">← Portale</a>
+      <span style="opacity:.45; margin:0 .6rem;">·</span>
+      <span>❧ English</span>
+    </div>
+    <div class="p-topbar-right">
+      <button class="hub-theme-btn" id="hub-theme" aria-label="Toggle dark mode">☾</button>
+    </div>
+  </header>
+
+  <!-- ══ HERO ══ -->
+  <section class="hub-hero">
+    <span class="hub-eyebrow">English · Fifth Year · Maturità</span>
+    <h1 class="hub-h1">English <em>Studies</em></h1>
+    <p class="hub-tagline">Two paths, one goal: mastering English for your final exam. Choose your section below.</p>
+  </section>
+
+  <!-- ══ DUE CARD GRANDI ══ -->
+  <div class="hub-grid">
+
+    <a class="hub-card" href="letteratura/letteratura.html">
+      <div class="hub-card-stripe" style="background:#2A6B3A;"></div>
+      <div class="hub-card-body">
+        <div class="hub-card-num" style="color:#2A6B3A;">Section A</div>
+        <div class="hub-card-name">English <em>Literature</em></div>
+        <div class="hub-card-desc">
+          From Romanticism to Dystopia — authors, movements, close reading and historical context.
+          George Orwell · Mary Shelley · Oscar Wilde · Virginia Woolf · James Joyce and more.
+        </div>
+        <div class="hub-card-stats">
+          <span>12+ Authors</span>
+          <span>8 Movements</span>
+          <span>300+ Quiz</span>
+          <span>Mind Maps</span>
+        </div>
+      </div>
+      <div class="hub-card-footer">
+        <span class="p-card-badge available">Available</span>
+        <span class="hub-arrow" style="color:#2A6B3A;">→</span>
+      </div>
+    </a>
+
+    <a class="hub-card" href="tech/tech.html">
+      <div class="hub-card-stripe" style="background:#1A5C3A;"></div>
+      <div class="hub-card-body">
+        <div class="hub-card-num" style="color:#1A5C3A;">Section B</div>
+        <div class="hub-card-name">Tech & <em>Digital English</em></div>
+        <div class="hub-card-desc">
+          Computer systems, networking, cybersecurity, programming and employment — all in English.
+          Technical vocabulary, reading comprehension and professional writing skills.
+        </div>
+        <div class="hub-card-stats">
+          <span>20 Topics</span>
+          <span>400+ Quiz</span>
+          <span>Flashcards</span>
+          <span>Mind Maps</span>
+        </div>
+      </div>
+      <div class="hub-card-footer">
+        <span class="p-card-badge available">Available</span>
+        <span class="hub-arrow" style="color:#1A5C3A;">→</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer style="background:#1A4A2A; color:rgba(253,250,244,.6); text-align:center; padding:2rem 1rem; font-family:'Jost',sans-serif; font-size:.8rem; letter-spacing:.1em; margin-top:4rem;">
+    <div style="margin-bottom:.5rem; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:rgba(253,250,244,.7);">
+      "The limits of my language mean the limits of my world." — Ludwig Wittgenstein
+    </div>
+    <div>English · Maturità</div>
+  </footer>
+
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', saved);
+      var btn = document.getElementById('hub-theme');
+      if (btn) btn.textContent = saved === 'dark' ? '☀' : '☾';
+      if (btn) btn.addEventListener('click', function() {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        btn.textContent = next === 'dark' ? '☀' : '☾';
+      });
+    })();
+  </script>
+</body>
+</html>

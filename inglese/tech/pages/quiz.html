@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — Tech & Digital English · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A5C3A'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='56' font-style='italic' fill='%23C9A84C' text-anchor='middle'%3EQ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .quiz-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 1.5rem 0 2rem; }
+    @media (max-width: 1100px) { .quiz-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .quiz-grid { grid-template-columns: 1fr; } }
+    .quiz-period-header { display: flex; align-items: center; gap: 1.2rem; margin-top: 2rem; margin-bottom: 1.2rem; }
+    .quiz-period-header:first-of-type { margin-top: 0; }
+    .quiz-period-label { font-family: var(--sans); font-size: 10px; letter-spacing: .36em; text-transform: uppercase; color: var(--color-primary); white-space: nowrap; flex-shrink: 0; }
+    .quiz-period-rule  { flex: 1; height: 1px; background: var(--rule); }
+    .author-card.quiz-card { cursor: pointer; user-select: none; }
+    .author-card.quiz-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .quiz-card-best { font-family: var(--sans); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--color-primary); margin-bottom: .4rem; min-height: 1em; }
+    #screen-home { padding: 0; align-items: stretch; text-align: initial; }
+  </style>
+</head>
+<body>
+
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<!-- ══ TOPBAR ══ -->
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../inglese.html" class="topbar-back">← English Hub</a>
+    <a href="../tech.html" class="topbar-brand">Tech &amp; Digital English</a>
+  </div>
+  <button class="topbar-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link" href="../tech.html">Home</a>
+    <a class="topbar-link" href="argomenti.html">Topics</a>
+    <a class="topbar-link" href="mappe.html">Maps</a>
+    <a class="topbar-link" href="flashcard.html">Flashcards</a>
+    <a class="topbar-link active cta" href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+
+<!-- ══ SCREEN 1 — SELECTION HUB ══ -->
+<section class="screen active" id="screen-home">
+
+  <div class="hero-banner" data-initial="Q">
+    <div class="hero-banner-inner">
+      <div class="eyebrow">Tech &amp; Digital English → Quiz</div>
+      <h1 class="hero-banner-name" style="font-size:clamp(2.8rem,6vw,3.6rem);">Quiz</h1>
+      <p class="hero-banner-sub">Test yourself on technical topics · 10 random questions per session</p>
+    </div>
+  </div>
+
+  <div class="page-layout">
+
+    <aside class="page-sidebar">
+      <div class="page-sidebar-title">Topics</div>
+      <div class="sidebar-section-label">Systems</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#sec-systems">Hardware</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#sec-systems">Operating Systems</a>
+      <div class="sidebar-section-label mt">Connectivity</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#sec-connectivity">Networks</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#sec-connectivity">Internet &amp; Web</a>
+      <div class="sidebar-section-label mt">Security</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#sec-security">Cybersecurity</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#sec-security">Privacy &amp; GDPR</a>
+      <div class="sidebar-section-label mt">Advanced</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#sec-advanced">AI &amp; ML</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#sec-advanced">Cloud Computing</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#sec-advanced">Emerging Tech</a>
+      <div class="sidebar-section-label mt">Professional</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#sec-professional">Employment in Tech</a>
+    </aside>
+
+    <main class="page-main">
+
+      <!-- ── SYSTEMS ── -->
+      <div class="quiz-period-header" id="sec-systems">
+        <span class="quiz-period-label">Systems</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('hardware')">
+          <span class="author-card-initial">H</span>
+          <div class="author-card-meta">Topic 01</div>
+          <div class="author-card-name"><em>Computer Hardware</em></div>
+          <div class="author-card-tagline">CPU, RAM, storage, Moore's Law, Von Neumann architecture.</div>
+          <div class="quiz-card-best" id="best-hardware"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('os')">
+          <span class="author-card-initial">O</span>
+          <div class="author-card-meta">Topic 02</div>
+          <div class="author-card-name"><em>Operating Systems</em></div>
+          <div class="author-card-tagline">Kernel, multitasking, processes, virtual memory, file systems.</div>
+          <div class="quiz-card-best" id="best-os"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+      </div>
+
+      <!-- ── CONNECTIVITY ── -->
+      <div class="quiz-period-header" id="sec-connectivity">
+        <span class="quiz-period-label">Connectivity</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('networks')">
+          <span class="author-card-initial">N</span>
+          <div class="author-card-meta">Topic 08</div>
+          <div class="author-card-name"><em>Computer Networks</em></div>
+          <div class="author-card-tagline">OSI model, TCP/IP, DNS, routers, switches, protocols.</div>
+          <div class="quiz-card-best" id="best-networks"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('internet')">
+          <span class="author-card-initial">W</span>
+          <div class="author-card-meta">Topic 09</div>
+          <div class="author-card-name"><em>Internet &amp; Web</em></div>
+          <div class="author-card-tagline">HTTP/HTTPS, URL, HTML/CSS/JS, cookies, web architecture.</div>
+          <div class="quiz-card-best" id="best-internet"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+      </div>
+
+      <!-- ── SECURITY ── -->
+      <div class="quiz-period-header" id="sec-security">
+        <span class="quiz-period-label">Security &amp; Privacy</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('cybersecurity')">
+          <span class="author-card-initial">C</span>
+          <div class="author-card-meta">Topic 11</div>
+          <div class="author-card-name"><em>Cybersecurity</em></div>
+          <div class="author-card-tagline">CIA triad, malware, phishing, encryption, firewalls, 2FA.</div>
+          <div class="quiz-card-best" id="best-cybersecurity"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('privacy')">
+          <span class="author-card-initial">P</span>
+          <div class="author-card-meta">Topic 18</div>
+          <div class="author-card-name"><em>Privacy &amp; GDPR</em></div>
+          <div class="author-card-tagline">GDPR rights, personal data, data breach, net neutrality.</div>
+          <div class="quiz-card-best" id="best-privacy"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+      </div>
+
+      <!-- ── ADVANCED ── -->
+      <div class="quiz-period-header" id="sec-advanced">
+        <span class="quiz-period-label">Advanced Topics</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('ai')">
+          <span class="author-card-initial">A</span>
+          <div class="author-card-meta">Topic 14</div>
+          <div class="author-card-name"><em>AI &amp; Machine Learning</em></div>
+          <div class="author-card-tagline">Turing Test, ML, neural networks, NLP, algorithm bias.</div>
+          <div class="quiz-card-best" id="best-ai"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('cloud')">
+          <span class="author-card-initial">C</span>
+          <div class="author-card-meta">Topic 13</div>
+          <div class="author-card-name"><em>Cloud Computing</em></div>
+          <div class="author-card-tagline">IaaS/PaaS/SaaS, virtualisation, containers, scalability.</div>
+          <div class="quiz-card-best" id="best-cloud"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('emerging')">
+          <span class="author-card-initial">E</span>
+          <div class="author-card-meta">Topic 20</div>
+          <div class="author-card-name"><em>Emerging Technologies</em></div>
+          <div class="author-card-tagline">Blockchain, VR/AR, quantum computing, smart contracts, 5G.</div>
+          <div class="quiz-card-best" id="best-emerging"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+      </div>
+
+      <!-- ── PROFESSIONAL ── -->
+      <div class="quiz-period-header" id="sec-professional">
+        <span class="quiz-period-label">Professional English</span>
+        <span class="quiz-period-rule"></span>
+      </div>
+      <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('employment')">
+          <span class="author-card-initial">E</span>
+          <div class="author-card-meta">Topic 19</div>
+          <div class="author-card-name"><em>Employment in Tech</em></div>
+          <div class="author-card-tagline">CV, cover letter, technical interviews, Agile, soft skills.</div>
+          <div class="quiz-card-best" id="best-employment"></div>
+          <span class="author-card-cta link-arrow">Start quiz</span>
+        </div>
+
+      </div>
+
+    </main>
+  </div><!-- /page-layout -->
+
+  <footer class="site-footer">
+    <div class="footer-quote-final">
+      "The advance of technology is based on making it fit in so that you don't really even notice it."
+      <cite>— Bill Gates</cite>
+    </div>
+  </footer>
+
+</section><!-- /#screen-home -->
+
+
+<!-- ══ SCREEN 2 — QUIZ (questions) ══ -->
+<section class="screen" id="screen-quiz">
+  <div class="quiz-header">
+    <div class="quiz-header-inner">
+      <button class="btn-home-q" onclick="QuizApp.confirmExit()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:.4rem;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Quiz
+      </button>
+      <div class="quiz-author-badge" id="quiz-author-label">—</div>
+      <div class="quiz-counter">Q. <span id="qCur">1</span>/<span id="qTot">10</span></div>
+      <div class="q-prog-wrap"><div class="q-prog-fill" id="q-prog-fill"></div></div>
+      <div class="score-live">★ <span id="score-live">0</span></div>
+      <div class="timer-disp" id="timer-disp">20:00</div>
+    </div>
+  </div>
+
+  <div class="quiz-body">
+    <div class="q-card" id="q-card"></div>
+  </div>
+
+  <div class="q-map-bar">
+    <div class="q-map-inner">
+      <div class="q-map-lbl">Question map</div>
+      <div class="q-dots" id="q-dots"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SCREEN 3 — RESULTS ══ -->
+<section class="screen" id="screen-results">
+  <div class="res-hero">
+    <div class="res-hero-inner">
+      <div class="res-eyebrow" id="res-eyebrow">Quiz Result</div>
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120" width="140" height="140">
+          <circle class="ring-bg" cx="60" cy="60" r="56"/>
+          <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="56"/>
+        </svg>
+        <div class="ring-txt">
+          <div class="ring-score" id="ring-score">0</div>
+          <div class="ring-total" id="ring-total">/10</div>
+        </div>
+      </div>
+      <div class="res-grade" id="res-grade">—</div>
+      <div class="res-msg" id="res-msg"></div>
+    </div>
+  </div>
+
+  <div class="res-body">
+    <div class="res-breakdown">
+      <div class="rb-card ok"><div class="rb-val" id="rb-ok">0</div><div class="rb-lbl">Correct</div></div>
+      <div class="rb-card ko"><div class="rb-val" id="rb-ko">0</div><div class="rb-lbl">Wrong</div></div>
+      <div class="rb-card op"><div class="rb-val" id="rb-op">0</div><div class="rb-lbl">Open</div></div>
+    </div>
+
+    <div class="rev-title">Review answers</div>
+    <div class="rev-sub">Click each question to see the correct answer and explanation</div>
+    <div id="rev-list"></div>
+
+    <div class="res-actions">
+      <button class="btn-act primary" onclick="QuizApp.restartQuiz()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 4v6h6M23 20v-6h-6M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+        Restart
+      </button>
+      <button class="btn-act secondary" onclick="QuizApp.goHome()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        Choose another quiz
+      </button>
+    </div>
+
+    <div class="best-record" id="best-record"></div>
+    <div class="footer-q" id="footer-q"></div>
+  </div>
+</section>
+
+
+<!-- ══ MODAL — Mode selection ══ -->
+<div id="mode-overlay">
+  <div id="mode-panel">
+    <button class="panel-close" onclick="QuizApp.closePanel()">×</button>
+    <div id="panel-author-label">Topic</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:var(--ink);margin-bottom:22px;line-height:1.1;">
+      Choose <em style="font-style:italic;color:var(--color-primary);">mode</em>
+    </h2>
+
+    <div class="mode-grid">
+      <div class="mode-opt selected" data-mode="all" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">💻 Random</div>
+        <div class="mode-opt-desc">10 mixed questions (MC + T/F + Open)</div>
+      </div>
+      <div class="mode-opt" data-mode="quick" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">⚡ Quick</div>
+        <div class="mode-opt-desc">10 fast random questions</div>
+      </div>
+      <div class="mode-opt" data-mode="mc-only" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">🔵 MC only</div>
+        <div class="mode-opt-desc">Multiple choice and True/False only</div>
+      </div>
+      <div class="mode-opt" data-mode="hard" onclick="QuizApp.selectMode(this)">
+        <div class="mode-opt-title">🔥 Hard</div>
+        <div class="mode-opt-desc">True/False and open questions only</div>
+      </div>
+    </div>
+
+    <div class="toggle-row">
+      <span>⏱ Timer 20 minutes</span>
+      <button class="toggle" id="panel-timer-toggle" onclick="QuizApp.togglePanelTimer()"></button>
+      <span class="toggle-label" id="panel-timer-label">disabled</span>
+    </div>
+
+    <div class="toggle-row">
+      <span>🔀 Random order</span>
+      <button class="toggle on" id="panel-shuffle-toggle" onclick="QuizApp.togglePanelShuffle()"></button>
+    </div>
+
+    <button id="panel-start-btn" onclick="QuizApp.launchFromPanel()">
+      Start Quiz
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:.5rem"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+
+<!-- ══ QUIZ DATA ══ -->
+<script src="../js/quiz-data.js"></script>
+
+<!-- ══ ENGINE (shared with letteratura) ══ -->
+<script src="../../letteratura/js/quiz-engine.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>
