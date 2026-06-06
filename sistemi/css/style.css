@@ -261,3 +261,17 @@
   [data-theme="dark"] .topbar-links .topbar-link.active { color: #fff; }
   [data-theme="dark"] .topbar-links .topbar-link.cta { color: #fff; background: rgba(255,255,255,.18); }
 }
+
+.map-mobile-hint { display: none; }
+@media (max-width: 768px) {
+  .map-mobile-hint {
+    display: block;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    padding: .3rem 0 .5rem;
+  }
+}

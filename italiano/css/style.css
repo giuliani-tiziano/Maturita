@@ -3926,4 +3926,18 @@ input:focus, select:focus, textarea:focus, .open-ta:focus { border-color: var(--
   }
 }
 
+.map-mobile-hint { display: none; }
+@media (max-width: 768px) {
+  .map-mobile-hint {
+    display: block;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    padding: .3rem 0 .5rem;
+  }
+}
+
 /* ══ END ══ */

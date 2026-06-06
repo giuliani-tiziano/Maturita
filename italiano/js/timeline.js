@@ -231,8 +231,8 @@
       render();
     });
   });
-  document.getElementById("tl-zoom-in").addEventListener("click", () => { pxPerYear = Math.min(40, pxPerYear + 4); render(); });
-  document.getElementById("tl-zoom-out").addEventListener("click", () => { pxPerYear = Math.max(7, pxPerYear - 4); render(); });
+  document.getElementById("tl-zoom-in").addEventListener("click",  () => { pxPerYear = Math.max(7,  pxPerYear - 4); render(); });
+  document.getElementById("tl-zoom-out").addEventListener("click", () => { pxPerYear = Math.min(40, pxPerYear + 4); render(); });
 
   render();
 })();
