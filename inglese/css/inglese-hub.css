@@ -274,3 +274,71 @@ body {
   .hub-hero { padding: 3rem 1.2rem 2rem; }
   .hub-h1 { font-size: clamp(2.4rem, 8vw, 3rem); }
 }
+
+/* ── Footer hub ── */
+.hub-footer {
+  background: #1A4A2A;
+  color: rgba(253,250,244,.65);
+  padding: 3rem 2rem 2rem;
+  margin-top: 4rem;
+  font-family: 'Jost', sans-serif;
+}
+
+.hub-footer .footer-quote-final {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(253,250,244,.75);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(201,168,76,.25);
+}
+
+.hub-footer .footer-quote-final cite {
+  display: block;
+  font-size: .85rem;
+  margin-top: .4rem;
+  opacity: .65;
+  font-style: normal;
+  letter-spacing: .06em;
+}
+
+.hub-footer .site-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hub-footer .site-footer-inner nav a {
+  color: rgba(253,250,244,.6);
+  text-decoration: none;
+  font-size: .82rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+
+.hub-footer .site-footer-inner nav a:hover {
+  color: #C9A84C;
+}
+
+[data-theme="dark"] .hub-footer {
+  background: #0A2010;
+  border-top: 1px solid rgba(201,168,76,.15);
+}
+
+@media (max-width: 640px) {
+  .hub-footer .site-footer-inner {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .hub-footer .site-footer-inner nav {
+    flex-direction: column;
+    gap: .6rem;
+  }
+}

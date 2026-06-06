@@ -4,7 +4,7 @@
    Verde primario #2A6B3A · Verde scuro #1A4A2A · Verde chiaro #3A8A4A
    ════════════════════════════════════════════════════════════════════════ */
 
-@import url('../../italiano/css/style.css');
+@import url('../../../italiano/css/style.css');
 
 /* ── TOKEN COLORE MATERIA (light mode) ── */
 :root {
