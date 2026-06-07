@@ -10,11 +10,15 @@
     dickens: "Charles Dickens", wilde: "Oscar Wilde", woolf: "Virginia Woolf",
     joyce: "James Joyce", blake: "William Blake", wordsworth: "William Wordsworth",
     byron: "Lord Byron", eliot: "T.S. Eliot", golding: "William Golding",
-    beckett: "Samuel Beckett",
+    beckett: "Samuel Beckett", tolkien: "J.R.R. Tolkien",
     romanticism: "Romanticism", pre_romanticism: "Pre-Romanticism",
     gothic: "The Gothic Novel", victorianism: "Victorian Age",
     aestheticism: "Aestheticism & Decadentism", modernism: "Modernism",
-    dystopia: "Dystopian Fiction", absurd: "Theatre of the Absurd"
+    dystopia: "Dystopian Fiction", absurd: "Theatre of the Absurd",
+    hardware: "Computer Hardware", os: "Operating Systems", networks: "Computer Networks",
+    cybersecurity: "Cybersecurity", internet: "Internet & Web", privacy: "Privacy & GDPR",
+    ai: "AI & Machine Learning", cloud: "Cloud Computing",
+    emerging: "Emerging Technologies", employment: "Employment in Tech"
   };
 
   let deck = [];        // carte correnti (eventualmente mescolate)

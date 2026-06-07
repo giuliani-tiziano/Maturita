@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Computing — Tech & Digital English · Maturità</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../../../../../index.html" class="topbar-back">← Portal</a>
+    <a href="../../../../tech.html" class="topbar-brand">Tech & Digital English</a>
+    <a href="../../argomenti.html" class="topbar-back-section">← Topics</a>
+  </div>
+  <button class="topbar-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link topbar-back-section-mobile" href="../../argomenti.html">← Back to Topics</a>
+    <hr class="topbar-nav-hr">
+    <a class="topbar-link active" href="../../argomenti.html">Topics</a>
+    <a class="topbar-link" href="../../flashcard.html">Flashcards</a>
+    <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+  </nav>
+</header>
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../argomenti.html'">← Topics</button>
+    <button class="nav-btn active" onclick="location.href='index.html'">Overview</button>
+    <button class="nav-btn" onclick="location.href='theory.html'">Theory</button>
+    <button class="nav-btn" onclick="location.href='examples.html'">Examples</button>
+    <button class="nav-btn" onclick="location.href='vocabulary.html'">Vocabulary</button>
+    <button class="nav-btn" onclick="location.href='exercises.html'">Exercises</button>
+  </div>
+</nav>
+<section class="section active">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Topic 13 · Emerging Technologies</div>
+      <h1 class="title">Cloud <em>Computing</em></h1>
+      <p class="subtitle">IaaS · PaaS · SaaS · AWS · Azure · Virtualisation · Scalability</p>
+    </div>
+    <div class="section-header"><div class="section-tag">Overview</div><h2>What is cloud computing?</h2></div>
+    <p><strong>Cloud computing</strong> is the delivery of computing services — servers, storage, databases, networking, software, analytics and intelligence — over the internet ("the cloud") on a pay-as-you-go basis. Instead of owning and maintaining physical data centres and servers, companies can rent access to anything from applications to storage from a cloud provider. Major providers: <strong>AWS</strong> (Amazon), <strong>Azure</strong> (Microsoft), <strong>Google Cloud</strong>.</p>
+    <div class="section-header"><div class="section-tag">Service Models</div><h2>IaaS · PaaS · SaaS</h2></div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>The three service models</h4>
+        <table style="width:100%;font-size:.88rem;border-collapse:collapse;">
+          <thead><tr><th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Model</th><th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Full name</th><th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Examples</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>IaaS</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Infrastructure as a Service</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">AWS EC2, Azure VMs</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>PaaS</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Platform as a Service</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Heroku, Google App Engine</td></tr>
+            <tr><td style="padding:.4rem;"><strong>SaaS</strong></td><td style="padding:.4rem;">Software as a Service</td><td style="padding:.4rem;">Gmail, Office 365, Salesforce</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:.8rem;font-size:.88rem;"><strong>IaaS</strong> — you manage OS and applications; the provider manages hardware. <strong>PaaS</strong> — you manage only applications; the provider manages everything else. <strong>SaaS</strong> — you just use the software; the provider manages everything.</p>
+      </div>
+      <div class="box-concetto ai">
+        <h4>Deployment models</h4>
+        <ul style="margin:0;padding-left:1.2em;font-size:.9rem;line-height:1.8;">
+          <li><strong>Public cloud</strong> — resources shared among many organisations; managed by provider (AWS, Azure). Most cost-effective; least control.</li>
+          <li><strong>Private cloud</strong> — dedicated infrastructure for one organisation; on-premises or hosted. More control; higher cost.</li>
+          <li><strong>Hybrid cloud</strong> — combination of public and private. Sensitive data on private; scalable workloads on public.</li>
+          <li><strong>Multi-cloud</strong> — using services from multiple providers to avoid vendor lock-in.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-header"><div class="section-tag">Key Concepts</div><h2>Virtualisation & scalability</h2></div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>Virtualisation</h4>
+        <p>The technology that makes cloud computing possible. A <strong>hypervisor</strong> (e.g., VMware, KVM) runs on physical hardware and creates multiple <strong>Virtual Machines (VMs)</strong>, each acting as an independent computer with its own OS. One physical server can run dozens of VMs simultaneously — maximising hardware utilisation.</p>
+        <p style="margin-top:.7rem;"><strong>Containers</strong> (Docker, Kubernetes) are lighter than VMs — they share the host OS kernel but isolate applications. Faster to start, more efficient.</p>
+      </div>
+      <div class="box-frase ai">
+        "The cloud is just someone else's computer."
+        <div class="box-frase-source">— Anonymous (popular tech saying)</div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer"><div class="footer-quote-final">"The cloud is just someone else's computer."<cite>— Anonymous</cite></div></footer>
+<script src="../../../../js/main.js"></script>
+</body>
+</html>

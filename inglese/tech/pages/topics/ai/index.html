@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI & Machine Learning — Tech & Digital English · Maturità</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../../../../../index.html" class="topbar-back">← Portal</a>
+    <a href="../../../../tech.html" class="topbar-brand">Tech & Digital English</a>
+    <a href="../../argomenti.html" class="topbar-back-section">← Topics</a>
+  </div>
+  <button class="topbar-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link topbar-back-section-mobile" href="../../argomenti.html">← Back to Topics</a>
+    <hr class="topbar-nav-hr">
+    <a class="topbar-link active" href="../../argomenti.html">Topics</a>
+    <a class="topbar-link" href="../../mappe.html">Maps</a>
+    <a class="topbar-link" href="../../flashcard.html">Flashcards</a>
+    <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../argomenti.html'">← Topics</button>
+    <button class="nav-btn active" onclick="location.href='index.html'">Overview</button>
+    <button class="nav-btn" onclick="location.href='theory.html'">Theory</button>
+    <button class="nav-btn" onclick="location.href='examples.html'">Examples</button>
+    <button class="nav-btn" onclick="location.href='vocabulary.html'">Vocabulary</button>
+    <button class="nav-btn" onclick="location.href='exercises.html'">Exercises</button>
+  </div>
+</nav>
+
+<section class="section active">
+  <div class="container">
+
+    <div class="hero">
+      <div class="eyebrow">Topic 14 · Emerging Technologies</div>
+      <h1 class="title">Artificial Intelligence <em>&amp; Machine Learning</em></h1>
+      <p class="subtitle">Turing Test · ML Types · Neural Networks · Ethics & Bias</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Overview</div>
+      <h2>What is Artificial Intelligence?</h2>
+    </div>
+    <p><strong>Artificial Intelligence (AI)</strong> is the field of computer science concerned with creating systems capable of performing tasks that normally require human intelligence — reasoning, learning, problem-solving, perception and language understanding. AI is not new (the term was coined in 1956) but recent advances in computing power and data availability have transformed it from a research curiosity into a technology reshaping every industry.</p>
+
+    <div class="section-header">
+      <div class="section-tag">History</div>
+      <h2>From the Turing Test to ChatGPT</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1950</div>
+        <div class="tl-title">The Turing Test — "Can machines think?"</div>
+        <div class="tl-body">Alan Turing proposed the "imitation game": if a machine can converse in a way indistinguishable from a human, it can be said to "think." The Turing Test remains the most famous benchmark in AI — though many argue it tests deception, not intelligence.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1956</div>
+        <div class="tl-title">Dartmouth Conference — AI is born as a field</div>
+        <div class="tl-body">John McCarthy coins the term "Artificial Intelligence." The optimism was enormous — researchers predicted human-level AI within 20 years. The first "AI winter" (lack of funding and progress) followed in the 1970s.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1997</div>
+        <div class="tl-title">Deep Blue defeats Kasparov at chess</div>
+        <div class="tl-body">IBM's Deep Blue became the first computer to defeat a world chess champion under standard conditions. A landmark moment — but Deep Blue used brute-force search, not learning.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2012</div>
+        <div class="tl-title">Deep Learning revolution — ImageNet</div>
+        <div class="tl-body">AlexNet, a deep convolutional neural network, dramatically outperforms all other systems at the ImageNet visual recognition challenge. The deep learning era begins: neural networks with many layers, trained on massive datasets.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2022–</div>
+        <div class="tl-title">Large Language Models — ChatGPT, GPT-4, Gemini</div>
+        <div class="tl-body">Generative AI reaches mainstream adoption. Large Language Models (LLMs) trained on vast text corpora can write, code, translate, and reason. Ethical debates about misinformation, copyright, job displacement and AI safety intensify.</div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Core Concepts</div>
+      <h2>Types of Machine Learning</h2>
+    </div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>Three main approaches</h4>
+        <ul style="margin:0;padding-left:1.2em;font-size:.9rem;line-height:1.8;">
+          <li><strong>Supervised learning</strong> — the model is trained on labelled data (inputs paired with correct outputs). Examples: image classification, spam detection, credit scoring.</li>
+          <li><strong>Unsupervised learning</strong> — the model finds patterns in unlabelled data. Examples: customer segmentation, anomaly detection, recommendation systems.</li>
+          <li><strong>Reinforcement learning</strong> — an agent learns by trial and error, receiving rewards for good actions. Examples: game-playing AI (AlphaGo), robotics, self-driving cars.</li>
+        </ul>
+      </div>
+      <div class="box-concetto ai">
+        <h4>Neural networks</h4>
+        <p>Inspired by the human brain, a neural network consists of <strong>layers of nodes</strong> (neurons) connected by weighted links. Data passes forward through the layers; the network learns by adjusting weights to minimise errors (backpropagation).</p>
+        <ul style="margin:.6rem 0 0;padding-left:1.2em;font-size:.9rem;line-height:1.7;">
+          <li><strong>Input layer</strong> — receives raw data</li>
+          <li><strong>Hidden layers</strong> — extract patterns (more layers = "deeper")</li>
+          <li><strong>Output layer</strong> — produces the result</li>
+        </ul>
+        <p style="margin-top:.7rem;font-size:.88rem;"><strong>Deep learning</strong> = neural networks with many hidden layers.</p>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Ethics</div>
+      <h2>Ethical concerns — AI and society</h2>
+    </div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>Key ethical issues</h4>
+        <ul style="margin:0;padding-left:1.2em;font-size:.9rem;line-height:1.8;">
+          <li><strong>Algorithmic bias</strong> — AI trained on biased data reproduces and amplifies discrimination (facial recognition failing on darker skin tones; hiring algorithms disadvantaging women).</li>
+          <li><strong>Accountability</strong> — when an AI system causes harm, who is responsible? The developer? The user? The company?</li>
+          <li><strong>Privacy</strong> — AI systems often require vast amounts of personal data for training.</li>
+          <li><strong>Job displacement</strong> — automation threatens repetitive jobs; new jobs emerge but the transition is unequal.</li>
+          <li><strong>Deepfakes</strong> — AI-generated synthetic media enabling disinformation and identity fraud.</li>
+        </ul>
+      </div>
+      <div class="box-frase ai">
+        "The question is not whether machines can think, but whether men do."
+        <div class="box-frase-source">— B.F. Skinner</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-quote-final">
+    "The question is not whether machines can think, but whether men do."
+    <cite>— B.F. Skinner</cite>
+  </div>
+</footer>
+<script src="../../../../js/main.js"></script>
+</body>
+</html>

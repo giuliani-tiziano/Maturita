@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internet & Web — Tech & Digital English · Maturità</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../../../../../index.html" class="topbar-back">← Portal</a>
+    <a href="../../../../tech.html" class="topbar-brand">Tech & Digital English</a>
+    <a href="../../argomenti.html" class="topbar-back-section">← Topics</a>
+  </div>
+  <button class="topbar-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link topbar-back-section-mobile" href="../../argomenti.html">← Back to Topics</a>
+    <hr class="topbar-nav-hr">
+    <a class="topbar-link active" href="../../argomenti.html">Topics</a>
+    <a class="topbar-link" href="../../flashcard.html">Flashcards</a>
+    <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+  </nav>
+</header>
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../argomenti.html'">← Topics</button>
+    <button class="nav-btn active" onclick="location.href='index.html'">Overview</button>
+    <button class="nav-btn" onclick="location.href='theory.html'">Theory</button>
+    <button class="nav-btn" onclick="location.href='examples.html'">Examples</button>
+    <button class="nav-btn" onclick="location.href='vocabulary.html'">Vocabulary</button>
+    <button class="nav-btn" onclick="location.href='exercises.html'">Exercises</button>
+  </div>
+</nav>
+<section class="section active">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Topic 09 · Networking & Internet</div>
+      <h1 class="title">The Internet <em>&amp; the Web</em></h1>
+      <p class="subtitle">ARPANET · TCP/IP · DNS · HTTP/HTTPS · Tim Berners-Lee · Web 1.0 / 2.0 / 3.0</p>
+    </div>
+    <div class="section-header"><div class="section-tag">History</div><h2>From ARPANET to the World Wide Web</h2></div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">1969</div><div class="tl-title">ARPANET — the first internet</div><div class="tl-body">The US Department of Defense's Advanced Research Projects Agency creates ARPANET, connecting four universities (UCLA, Stanford, UCSB, Utah). The first message sent: "login" — the system crashed after "lo". ARPANET used packet switching: data is broken into packets, each routed independently.</div></div>
+      <div class="tl-item"><div class="tl-year">1983</div><div class="tl-title">TCP/IP becomes the standard protocol</div><div class="tl-body">TCP/IP replaces older protocols, creating the technical foundation of the modern internet. All devices on the internet use TCP/IP to communicate.</div></div>
+      <div class="tl-item"><div class="tl-year">1989–1991</div><div class="tl-title">Tim Berners-Lee invents the World Wide Web</div><div class="tl-body">At CERN, British scientist Tim Berners-Lee proposes a system of interlinked documents accessible via the internet — the World Wide Web. He creates HTTP (protocol), HTML (language), and the URL (address system). The first website goes live in 1991. The Web is NOT the internet — it is a service running on the internet.</div></div>
+      <div class="tl-item"><div class="tl-year">2004–</div><div class="tl-title">Web 2.0 — the social web</div><div class="tl-body">Web 2.0 marks the shift from static pages to dynamic, user-generated content: Facebook (2004), YouTube (2005), Twitter (2006). Users are no longer just consumers but producers of content.</div></div>
+    </div>
+    <div class="section-header"><div class="section-tag">Key Protocols</div><h2>How the web works — HTTP & DNS</h2></div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>HTTP & HTTPS</h4>
+        <p><strong>HTTP</strong> (HyperText Transfer Protocol) defines how web browsers and servers communicate. When you type a URL, your browser sends an HTTP request; the server responds with the page content.</p>
+        <p style="margin-top:.7rem;"><strong>HTTPS</strong> = HTTP + TLS encryption. The padlock icon in your browser confirms TLS is active: data between you and the server is encrypted. Essential for banking, e-commerce, login pages.</p>
+        <p style="margin-top:.7rem;font-size:.88rem;">HTTP methods: GET (retrieve), POST (send data), PUT (update), DELETE.</p>
+      </div>
+      <div class="box-concetto ai">
+        <h4>DNS — the internet's phone book</h4>
+        <p>The <strong>Domain Name System (DNS)</strong> translates human-readable domain names (google.com) into IP addresses (142.250.180.46) that computers use to find each other.</p>
+        <ol style="margin:.6rem 0 0;padding-left:1.2em;font-size:.88rem;line-height:1.7;">
+          <li>You type "google.com" in your browser.</li>
+          <li>Your computer asks a DNS resolver: "What is the IP of google.com?"</li>
+          <li>The resolver queries DNS servers and returns the IP.</li>
+          <li>Your browser connects to that IP — the Google server.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="box-frase ai" style="margin-top:2rem;">
+      "The web is more a social creation than a technical one. I designed it for a social effect — to help people work together."
+      <div class="box-frase-source">— Tim Berners-Lee</div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer"><div class="footer-quote-final">"The web is more a social creation than a technical one."<cite>— Tim Berners-Lee</cite></div></footer>
+<script src="../../../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operating Systems — Tech & Digital English · Maturità</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../../../../../index.html" class="topbar-back">← Portal</a>
+    <a href="../../../../tech.html" class="topbar-brand">Tech & Digital English</a>
+    <a href="../../argomenti.html" class="topbar-back-section">← Topics</a>
+  </div>
+  <button class="topbar-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link topbar-back-section-mobile" href="../../argomenti.html">← Back to Topics</a>
+    <hr class="topbar-nav-hr">
+    <a class="topbar-link active" href="../../argomenti.html">Topics</a>
+    <a class="topbar-link" href="../../flashcard.html">Flashcards</a>
+    <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+  </nav>
+</header>
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../argomenti.html'">← Topics</button>
+    <button class="nav-btn active" onclick="location.href='index.html'">Overview</button>
+    <button class="nav-btn" onclick="location.href='theory.html'">Theory</button>
+    <button class="nav-btn" onclick="location.href='examples.html'">Examples</button>
+    <button class="nav-btn" onclick="location.href='vocabulary.html'">Vocabulary</button>
+    <button class="nav-btn" onclick="location.href='exercises.html'">Exercises</button>
+  </div>
+</nav>
+<section class="section active">
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow">Topic 02 · Computing Fundamentals</div>
+      <h1 class="title"><em>Operating Systems</em></h1>
+      <p class="subtitle">Kernel · Process Management · File Systems · Linux · Windows · macOS</p>
+    </div>
+    <div class="section-header"><div class="section-tag">Overview</div><h2>What is an Operating System?</h2></div>
+    <p>An <strong>Operating System (OS)</strong> is system software that manages hardware resources and provides services for application software. Without an OS, every application would need to directly control the hardware — an impossible task. The OS acts as an intermediary between users, applications and hardware. Major examples: <strong>Windows</strong>, <strong>Linux</strong>, <strong>macOS</strong>, <strong>Android</strong>, <strong>iOS</strong>.</p>
+    <div class="grid-2" style="gap:24px;margin-top:1.5rem;">
+      <div class="box-concetto ai">
+        <h4>Core OS functions</h4>
+        <ul style="margin:0;padding-left:1.2em;font-size:.9rem;line-height:1.8;">
+          <li><strong>Process management</strong> — creates, schedules and terminates processes. Decides which process gets CPU time (scheduling algorithms: FIFO, Round Robin, Priority).</li>
+          <li><strong>Memory management</strong> — allocates RAM to processes; uses virtual memory (paging) to extend available memory using disk space.</li>
+          <li><strong>File management</strong> — organises data in files and directories; manages permissions (who can read/write/execute).</li>
+          <li><strong>I/O management</strong> — controls input and output devices via drivers.</li>
+          <li><strong>Security</strong> — user authentication, access control, process isolation.</li>
+        </ul>
+      </div>
+      <div class="box-concetto ai">
+        <h4>The kernel</h4>
+        <p>The <strong>kernel</strong> is the core of the OS — the part that directly interfaces with hardware. It runs in "kernel mode" with unrestricted access to hardware. Applications run in "user mode" with restricted access; they communicate with hardware only through the kernel (system calls).</p>
+        <p style="margin-top:.8rem;">Types of kernel architecture:</p>
+        <ul style="margin:.4rem 0 0;padding-left:1.2em;font-size:.88rem;line-height:1.7;">
+          <li><strong>Monolithic</strong> — all OS services in one large kernel (Linux)</li>
+          <li><strong>Microkernel</strong> — minimal kernel; services run in user space (minix)</li>
+          <li><strong>Hybrid</strong> — mix of both (Windows NT, macOS XNU)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-header"><div class="section-tag">Types</div><h2>Types of OS</h2></div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>By number of users / tasks</h4>
+        <table style="width:100%;font-size:.88rem;border-collapse:collapse;">
+          <thead><tr><th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Type</th><th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Description</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Single-user</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">One user at a time (old DOS)</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Multi-user</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Multiple simultaneous users (Linux servers)</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Multitasking</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Multiple processes "simultaneously" (all modern OS)</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Real-time</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Guaranteed response time (medical devices, industrial)</td></tr>
+            <tr><td style="padding:.4rem;">Distributed</td><td style="padding:.4rem;">Spread across multiple machines</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box-frase ai">
+        "Software is eating the world."
+        <div class="box-frase-source">— Marc Andreessen</div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer"><div class="footer-quote-final">"Software is eating the world."<cite>— Marc Andreessen</cite></div></footer>
+<script src="../../../../js/main.js"></script>
+</body>
+</html>

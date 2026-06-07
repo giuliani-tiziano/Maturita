@@ -121,7 +121,25 @@
       storageKey: ‘enlit_gothic_best’, storageTot: ‘enlit_gothic_best_total’,
       footerQuote: ‘"You have created a monster, and it will destroy you."’,
       footerCite: ‘— Mary Shelley, Frankenstein’
-    }
+    },
+    /* ── 20th CENTURY ── */
+    tolkien: {
+      key: ‘tolkien’, name: ‘J.R.R. Tolkien’, short: ‘Tolkien’, bodyClass: ‘tolkien’,
+      storageKey: ‘enlit_tolkien_best’, storageTot: ‘enlit_tolkien_best_total’,
+      footerQuote: ‘"Not all those who wander are lost."’,
+      footerCite: ‘— J.R.R. Tolkien, The Fellowship of the Ring’
+    },
+    /* ── TECH & DIGITAL ENGLISH TOPICS ── */
+    hardware:      { key:’hardware’,      name:’Computer Hardware’,     short:’Hardware’,      bodyClass:’topic-tech’, storageKey:’tech_hardware_best’,  storageTot:’tech_hardware_best_total’,  footerQuote:’"Any sufficiently advanced technology is indistinguishable from magic."’, footerCite:’— Arthur C. Clarke’ },
+    os:            { key:’os’,            name:’Operating Systems’,     short:’OS’,            bodyClass:’topic-tech’, storageKey:’tech_os_best’,        storageTot:’tech_os_best_total’,        footerQuote:’"Software is eating the world."’, footerCite:’— Marc Andreessen’ },
+    networks:      { key:’networks’,      name:’Computer Networks’,     short:’Networks’,      bodyClass:’topic-tech’, storageKey:’tech_networks_best’,  storageTot:’tech_networks_best_total’,  footerQuote:’"The Internet is the world\’s largest library."’, footerCite:’— Anonymous’ },
+    cybersecurity: { key:’cybersecurity’, name:’Cybersecurity’,         short:’Security’,      bodyClass:’topic-tech’, storageKey:’tech_cyber_best’,     storageTot:’tech_cyber_best_total’,     footerQuote:’"Security is a process, not a product."’, footerCite:’— Bruce Schneier’ },
+    internet:      { key:’internet’,      name:’Internet & Web’,        short:’Web’,           bodyClass:’topic-tech’, storageKey:’tech_internet_best’,  storageTot:’tech_internet_best_total’,  footerQuote:’"The web is more a social creation than a technical one."’, footerCite:’— Tim Berners-Lee’ },
+    privacy:       { key:’privacy’,       name:’Privacy & GDPR’,        short:’Privacy’,       bodyClass:’topic-tech’, storageKey:’tech_privacy_best’,   storageTot:’tech_privacy_best_total’,   footerQuote:’"Privacy is not something I am merely entitled to, it is an absolute prerequisite."’, footerCite:’— Marlon Brando’ },
+    ai:            { key:’ai’,            name:’AI & Machine Learning’, short:’AI & ML’,       bodyClass:’topic-tech’, storageKey:’tech_ai_best’,        storageTot:’tech_ai_best_total’,        footerQuote:’"The question is not whether machines can think, but whether men do."’, footerCite:’— B.F. Skinner’ },
+    cloud:         { key:’cloud’,         name:’Cloud Computing’,       short:’Cloud’,         bodyClass:’topic-tech’, storageKey:’tech_cloud_best’,     storageTot:’tech_cloud_best_total’,     footerQuote:’"The cloud is just someone else\’s computer."’, footerCite:’— Anonymous’ },
+    emerging:      { key:’emerging’,      name:’Emerging Technologies’, short:’Emerging Tech’, bodyClass:’topic-tech’, storageKey:’tech_emerging_best’,  storageTot:’tech_emerging_best_total’,  footerQuote:’"The future is already here — it\’s just not evenly distributed."’, footerCite:’— William Gibson’ },
+    employment:    { key:’employment’,    name:’Employment in Tech’,    short:’Employment’,    bodyClass:’topic-tech’, storageKey:’tech_employ_best’,    storageTot:’tech_employ_best_total’,    footerQuote:’"Choose a job you love and you will never have to work a day in your life."’, footerCite:’— Confucius’ }
   };
 
   /* ────────────────────────  STATO  ─────────────────────────────────── */
@@ -221,8 +239,12 @@
         shakespeare: '#7A4A1A', dickens: '#8B5E1A', wilde: '#8B7A2A',
         woolf: '#1A5C8A', joyce: '#1A4A6B', eliot: '#2d5a87',
         orwell: '#7A1A1A', golding: '#5C1A28', beckett: '#4A1A7A',
+        tolkien: '#7A5C1A',
         romanticism: '#2A6B3A', victorianism: '#7A4A1A', modernism: '#1A5C8A',
-        dystopia: '#7A1A1A', gothicnovel: '#3A3A7A'
+        dystopia: '#7A1A1A', gothicnovel: '#3A3A7A',
+        hardware: '#1A5C3A', os: '#1A5C3A', networks: '#1A5C3A', cybersecurity: '#1A5C3A',
+        internet: '#1A5C3A', privacy: '#1A5C3A', ai: '#1A5C3A', cloud: '#1A5C3A',
+        emerging: '#1A5C3A', employment: '#1A5C3A'
       })[authorKey] || 'var(--color-primary)');
       lbl.style.color = c;
     }
@@ -285,6 +307,15 @@
   function startQuiz(authorKey, mode, timerOn, shuffle) {
     const author = AUTHORS[authorKey];
     const data = (window.QUIZ_DATA || {})[authorKey] || [];
+
+    // Normalize legacy field names (q/opts/ans/expl → text/options/correct/explanation + type)
+    data.forEach(q => {
+      if (q.q      !== undefined && q.text        === undefined) q.text        = q.q;
+      if (q.opts   !== undefined && q.options     === undefined) q.options     = q.opts;
+      if (q.ans    !== undefined && q.correct     === undefined) q.correct     = q.ans;
+      if (q.expl   !== undefined && q.explanation === undefined) q.explanation = q.expl;
+      if (!q.type) q.type = 'mc';
+    });
 
     state.author = authorKey;
     state.mode = mode;

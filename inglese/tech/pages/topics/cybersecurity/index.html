@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity — Tech & Digital English · Maturità</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../../../../../index.html" class="topbar-back">← Portal</a>
+    <a href="../../../../tech.html" class="topbar-brand">Tech & Digital English</a>
+    <a href="../../argomenti.html" class="topbar-back-section">← Topics</a>
+  </div>
+  <button class="topbar-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link topbar-back-section-mobile" href="../../argomenti.html">← Back to Topics</a>
+    <hr class="topbar-nav-hr">
+    <a class="topbar-link active" href="../../argomenti.html">Topics</a>
+    <a class="topbar-link" href="../../mappe.html">Maps</a>
+    <a class="topbar-link" href="../../flashcard.html">Flashcards</a>
+    <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../argomenti.html'">← Topics</button>
+    <button class="nav-btn active" onclick="location.href='index.html'">Overview</button>
+    <button class="nav-btn" onclick="location.href='theory.html'">Theory</button>
+    <button class="nav-btn" onclick="location.href='examples.html'">Examples</button>
+    <button class="nav-btn" onclick="location.href='vocabulary.html'">Vocabulary</button>
+    <button class="nav-btn" onclick="location.href='exercises.html'">Exercises</button>
+  </div>
+</nav>
+
+<section class="section active">
+  <div class="container">
+
+    <div class="hero">
+      <div class="eyebrow">Topic 11 · Security</div>
+      <h1 class="title">Cybersecurity <em>&amp; Threats</em></h1>
+      <p class="subtitle">CIA Triad · Malware · Social Engineering · Defence Strategies</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Overview</div>
+      <h2>What is cybersecurity?</h2>
+    </div>
+    <p><strong>Cybersecurity</strong> is the practice of protecting computer systems, networks and data from digital attacks, theft and damage. As society becomes increasingly dependent on digital infrastructure — from banking and healthcare to critical national infrastructure — cybersecurity has become one of the most important fields in technology.</p>
+
+    <div class="section-header">
+      <div class="section-tag">Core Concept</div>
+      <h2>The CIA Triad</h2>
+    </div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>The three pillars of information security</h4>
+        <p>Every cybersecurity decision is measured against the <strong>CIA Triad</strong>:</p>
+        <ul style="margin:.6rem 0 0;padding-left:1.2em;font-size:.92rem;line-height:1.8;">
+          <li><strong>Confidentiality</strong> — data is accessible only to authorised users. Tools: encryption, access controls, passwords.</li>
+          <li><strong>Integrity</strong> — data is accurate and cannot be modified without authorisation. Tools: hashing, digital signatures, audit logs.</li>
+          <li><strong>Availability</strong> — systems and data are accessible when needed. Threats: DDoS attacks, hardware failure, ransomware.</li>
+        </ul>
+      </div>
+      <div class="box-frase ai">
+        "Security is a process, not a product."
+        <div class="box-frase-source">— Bruce Schneier, security expert</div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Threat Types</div>
+      <h2>Types of malware</h2>
+    </div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>Malicious software</h4>
+        <table style="width:100%;font-size:.88rem;border-collapse:collapse;">
+          <thead><tr>
+            <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Type</th>
+            <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">How it works</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Virus</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Attaches to files; spreads when files are shared</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Worm</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Self-replicates across networks without user action</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Trojan</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Disguises itself as legitimate software</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Ransomware</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Encrypts data; demands payment for decryption key</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Spyware</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Silently monitors and reports user activity</td></tr>
+            <tr><td style="padding:.4rem;"><strong>Rootkit</strong></td><td style="padding:.4rem;">Hides malicious processes at OS level</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box-concetto ai">
+        <h4>Social engineering attacks</h4>
+        <p>Many successful attacks exploit people, not technology:</p>
+        <ul style="margin:.5rem 0 0;padding-left:1.2em;font-size:.9rem;line-height:1.8;">
+          <li><strong>Phishing</strong> — fraudulent emails/websites mimicking trusted sources to steal credentials or install malware.</li>
+          <li><strong>Spear phishing</strong> — targeted phishing using personal information about the victim.</li>
+          <li><strong>Pretexting</strong> — creating a fabricated scenario to manipulate someone into revealing information.</li>
+          <li><strong>Vishing</strong> — voice phishing: phone calls impersonating banks, IT support etc.</li>
+          <li><strong>Baiting</strong> — leaving infected USB drives in public places.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Defence</div>
+      <h2>Defence strategies</h2>
+    </div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>Technical defences</h4>
+        <ul style="margin:0;padding-left:1.2em;font-size:.9rem;line-height:1.8;">
+          <li><strong>Firewall</strong> — monitors and filters incoming/outgoing network traffic based on rules.</li>
+          <li><strong>Antivirus/antimalware</strong> — detects and removes known malicious software.</li>
+          <li><strong>Encryption</strong> — makes data unreadable without the correct key.</li>
+          <li><strong>VPN</strong> (Virtual Private Network) — encrypts internet traffic, hiding it from ISPs and attackers.</li>
+          <li><strong>Two-factor authentication (2FA)</strong> — requires a second proof of identity (code, fingerprint).</li>
+          <li><strong>Patching</strong> — keeping software updated to fix known vulnerabilities.</li>
+        </ul>
+      </div>
+      <div class="box-concetto ai">
+        <h4>Exam tips — Cybersecurity</h4>
+        <p>Key points to remember for the exam:</p>
+        <ul style="margin:.5rem 0 0;padding-left:1.2em;font-size:.9rem;line-height:1.8;">
+          <li>Always define CIA before discussing specific threats.</li>
+          <li>Distinguish malware types by how they spread (self-replicating worm vs user-triggered virus).</li>
+          <li>Give real examples: WannaCry (2017 ransomware), Morris Worm (1988), Stuxnet (2010).</li>
+          <li>Link social engineering to the idea that humans are the weakest link.</li>
+          <li>Mention GDPR when discussing data breaches — legal obligations for companies.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-quote-final">
+    "Security is a process, not a product."
+    <cite>— Bruce Schneier</cite>
+  </div>
+</footer>
+<script src="../../../../js/main.js"></script>
+</body>
+</html>

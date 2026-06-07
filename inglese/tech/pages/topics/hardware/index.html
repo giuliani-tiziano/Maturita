@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Hardware — Tech & Digital English · Maturità</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../../../../../index.html" class="topbar-back">← Portal</a>
+    <a href="../../../../tech.html" class="topbar-brand">Tech & Digital English</a>
+    <a href="../../argomenti.html" class="topbar-back-section">← Topics</a>
+  </div>
+  <button class="topbar-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link topbar-back-section-mobile" href="../../argomenti.html">← Back to Topics</a>
+    <hr class="topbar-nav-hr">
+    <a class="topbar-link active" href="../../argomenti.html">Topics</a>
+    <a class="topbar-link" href="../../mappe.html">Maps</a>
+    <a class="topbar-link" href="../../flashcard.html">Flashcards</a>
+    <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../argomenti.html'">← Topics</button>
+    <button class="nav-btn active" onclick="location.href='index.html'">Overview</button>
+    <button class="nav-btn" onclick="location.href='theory.html'">Theory</button>
+    <button class="nav-btn" onclick="location.href='examples.html'">Examples</button>
+    <button class="nav-btn" onclick="location.href='vocabulary.html'">Vocabulary</button>
+    <button class="nav-btn" onclick="location.href='exercises.html'">Exercises</button>
+  </div>
+</nav>
+
+<section class="section active">
+  <div class="container">
+
+    <div class="hero">
+      <div class="eyebrow">Topic 01 · Computing Fundamentals</div>
+      <h1 class="title">Computer Hardware <em>&amp; Architecture</em></h1>
+      <p class="subtitle">CPU · RAM · Storage · Motherboard · Von Neumann Architecture · Moore's Law</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Overview</div>
+      <h2>What is computer hardware?</h2>
+    </div>
+    <p><strong>Hardware</strong> refers to the physical components of a computer system — the parts you can touch. It is distinguished from <strong>software</strong> (programs and operating systems) and <strong>firmware</strong> (software embedded in hardware). Understanding hardware is fundamental to all areas of IT: networking, cybersecurity, programming and systems administration all depend on knowing how the underlying machine works.</p>
+
+    <div class="grid-2" style="gap:24px; margin-top:1.5rem;">
+      <div class="box-concetto ai">
+        <h4>The five core components</h4>
+        <ol style="margin:0;padding-left:1.2em;font-size:.92rem;line-height:1.8;">
+          <li><strong>CPU</strong> (Central Processing Unit) — the processor: executes instructions.</li>
+          <li><strong>RAM</strong> (Random Access Memory) — volatile working memory.</li>
+          <li><strong>Storage</strong> — persistent memory: HDD, SSD, NVMe.</li>
+          <li><strong>Motherboard</strong> — the main circuit board connecting all components.</li>
+          <li><strong>I/O devices</strong> — input (keyboard, mouse) and output (monitor, printer).</li>
+        </ol>
+      </div>
+      <div class="box-concetto ai">
+        <h4>Von Neumann Architecture (1945)</h4>
+        <p>Proposed by John von Neumann, this architecture — still the basis of modern computers — has four units:</p>
+        <ul style="margin:.5rem 0 0;padding-left:1.2em;font-size:.9rem;line-height:1.7;">
+          <li><strong>ALU</strong> — Arithmetic Logic Unit: does calculations.</li>
+          <li><strong>Control Unit</strong> — fetches and decodes instructions.</li>
+          <li><strong>Memory</strong> — stores both data and instructions in the same space.</li>
+          <li><strong>I/O</strong> — communicates with the outside world.</li>
+        </ul>
+        <p style="margin-top:.8rem;font-size:.88rem;">The key feature: data and programs share the same memory — this is the "stored program" concept.</p>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Key Concept</div>
+      <h2>The CPU — fetch, decode, execute</h2>
+    </div>
+    <div class="grid-2" style="gap:24px;">
+      <div>
+        <p>The CPU operates in a continuous cycle called the <strong>fetch-decode-execute cycle</strong>:</p>
+        <ol style="line-height:2;">
+          <li><strong>Fetch</strong> — the Control Unit retrieves an instruction from RAM.</li>
+          <li><strong>Decode</strong> — the instruction is interpreted: what operation? what data?</li>
+          <li><strong>Execute</strong> — the ALU performs the operation.</li>
+          <li><strong>Store</strong> — the result is written back to RAM or a register.</li>
+        </ol>
+        <p>Speed is measured in <strong>GHz</strong> (gigahertz = billion cycles per second). A modern CPU performs billions of these cycles every second.</p>
+      </div>
+      <div class="box-concetto ai">
+        <h4>CPU specifications</h4>
+        <table style="width:100%;font-size:.88rem;border-collapse:collapse;">
+          <thead><tr>
+            <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Term</th>
+            <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Meaning</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Clock speed</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Instructions per second (GHz)</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Cores</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Independent processing units in one chip</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Cache</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Ultra-fast memory inside the CPU (L1/L2/L3)</td></tr>
+            <tr><td style="padding:.4rem;">Threads</td><td style="padding:.4rem;">Virtual cores via hyperthreading</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Key Concept</div>
+      <h2>Memory hierarchy</h2>
+    </div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>From fastest to slowest</h4>
+        <table style="width:100%;font-size:.87rem;border-collapse:collapse;">
+          <thead><tr>
+            <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Level</th>
+            <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Type</th>
+            <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Volatile?</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">L1/L2/L3 cache</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Inside CPU</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Yes</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">RAM</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Working memory</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Yes</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">SSD</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Flash storage</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">No</td></tr>
+            <tr><td style="padding:.4rem;">HDD</td><td style="padding:.4rem;">Magnetic disk</td><td style="padding:.4rem;">No</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box-concetto ai">
+        <h4>Moore's Law</h4>
+        <p>In 1965, Intel co-founder <strong>Gordon Moore</strong> observed that the number of transistors on a chip <strong>doubles approximately every two years</strong>, while costs fall. This "law" (actually an observation) drove exponential growth in computing power for 50 years.</p>
+        <p style="margin-top:.8rem;">Today Moore's Law is slowing: transistors are reaching the physical limits of silicon. The industry is exploring new approaches: 3D chip stacking, quantum computing, neuromorphic chips.</p>
+      </div>
+    </div>
+
+    <div class="box-frase ai" style="margin-top:2rem;">
+      "Any sufficiently advanced technology is indistinguishable from magic."
+      <div class="box-frase-source">— Arthur C. Clarke</div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-quote-final">
+    "Any sufficiently advanced technology is indistinguishable from magic."
+    <cite>— Arthur C. Clarke</cite>
+  </div>
+</footer>
+<script src="../../../../js/main.js"></script>
+</body>
+</html>

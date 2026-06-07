@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Networks — Tech & Digital English · Maturità</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../css/style.css">
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+
+<header class="topbar topbar--split">
+  <div class="topbar-brand-block">
+    <a href="../../../../../../index.html" class="topbar-back">← Portal</a>
+    <a href="../../../../tech.html" class="topbar-brand">Tech & Digital English</a>
+    <a href="../../argomenti.html" class="topbar-back-section">← Topics</a>
+  </div>
+  <button class="topbar-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topbar-nav topbar-links">
+    <a class="topbar-link topbar-back-section-mobile" href="../../argomenti.html">← Back to Topics</a>
+    <hr class="topbar-nav-hr">
+    <a class="topbar-link active" href="../../argomenti.html">Topics</a>
+    <a class="topbar-link" href="../../mappe.html">Maps</a>
+    <a class="topbar-link" href="../../flashcard.html">Flashcards</a>
+    <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn" onclick="location.href='../../argomenti.html'">← Topics</button>
+    <button class="nav-btn active" onclick="location.href='index.html'">Overview</button>
+    <button class="nav-btn" onclick="location.href='theory.html'">Theory</button>
+    <button class="nav-btn" onclick="location.href='examples.html'">Examples</button>
+    <button class="nav-btn" onclick="location.href='vocabulary.html'">Vocabulary</button>
+    <button class="nav-btn" onclick="location.href='exercises.html'">Exercises</button>
+  </div>
+</nav>
+
+<section class="section active">
+  <div class="container">
+
+    <div class="hero">
+      <div class="eyebrow">Topic 08 · Networking & Internet</div>
+      <h1 class="title">Computer <em>Networks</em></h1>
+      <p class="subtitle">LAN · WAN · OSI Model · TCP/IP · Topologies · Protocols</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Overview</div>
+      <h2>What is a computer network?</h2>
+    </div>
+    <p>A <strong>computer network</strong> is a set of devices (computers, servers, printers, smartphones) connected together to share resources and communicate. Networks are the foundation of the internet, cloud computing, email, streaming, and virtually every digital service. Understanding how data travels from one point to another — through protocols, packets and physical infrastructure — is essential for any IT professional.</p>
+
+    <div class="section-header">
+      <div class="section-tag">Network Types</div>
+      <h2>LAN, WAN, MAN</h2>
+    </div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>By geographical scope</h4>
+        <table style="width:100%;font-size:.88rem;border-collapse:collapse;">
+          <thead><tr>
+            <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Type</th>
+            <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Full name</th>
+            <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Scope</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">LAN</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Local Area Network</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Building / campus</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">MAN</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Metropolitan Area Network</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">City / region</td></tr>
+            <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">WAN</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Wide Area Network</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Country / global (internet)</td></tr>
+            <tr><td style="padding:.4rem;">PAN</td><td style="padding:.4rem;">Personal Area Network</td><td style="padding:.4rem;">Individual (Bluetooth)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box-concetto ai">
+        <h4>Network topologies</h4>
+        <ul style="margin:0;padding-left:1.2em;font-size:.9rem;line-height:1.8;">
+          <li><strong>Star</strong> — all devices connect to a central switch/hub. Most common in LANs. Single point of failure at the hub.</li>
+          <li><strong>Bus</strong> — all devices share a single cable. Simple but collision-prone; obsolete in modern networks.</li>
+          <li><strong>Ring</strong> — devices connected in a circular chain. Data travels in one direction. Used in some legacy token ring networks.</li>
+          <li><strong>Mesh</strong> — every device connected to every other. Highly redundant; used in critical infrastructure and Wi-Fi mesh systems.</li>
+          <li><strong>Hybrid</strong> — combinations of the above (most real networks).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Key Model</div>
+      <h2>The OSI Model — 7 layers</h2>
+    </div>
+    <div class="box-concetto ai">
+      <h4>Open Systems Interconnection model</h4>
+      <p>The OSI model is a conceptual framework dividing network communication into 7 layers. Each layer has a specific function and communicates only with the layers directly above and below it.</p>
+      <table style="width:100%;font-size:.87rem;border-collapse:collapse;margin-top:.8rem;">
+        <thead><tr>
+          <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">#</th>
+          <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Layer</th>
+          <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Function</th>
+          <th style="text-align:left;padding:.4rem;background:var(--color-deep);color:#fff;">Example</th>
+        </tr></thead>
+        <tbody>
+          <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">7</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Application</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">User-facing services</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">HTTP, FTP, SMTP, DNS</td></tr>
+          <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">6</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Presentation</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Data translation, encryption</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">SSL/TLS, JPEG, ASCII</td></tr>
+          <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">5</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Session</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Opens/closes connections</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">NetBIOS, RPC</td></tr>
+          <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">4</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Transport</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">End-to-end delivery</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">TCP, UDP</td></tr>
+          <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">3</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Network</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Routing between networks</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">IP, ICMP, routers</td></tr>
+          <tr><td style="padding:.4rem;border-bottom:1px solid var(--rule);">2</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);"><strong>Data Link</strong></td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Node-to-node transfer</td><td style="padding:.4rem;border-bottom:1px solid var(--rule);">Ethernet, MAC, switches</td></tr>
+          <tr><td style="padding:.4rem;">1</td><td style="padding:.4rem;"><strong>Physical</strong></td><td style="padding:.4rem;">Electrical signals, cables</td><td style="padding:.4rem;">Cables, hubs, Wi-Fi signals</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:.8rem;font-size:.88rem;">Memory aid: "Please Do Not Throw Sausage Pizza Away" (Physical, Data Link, Network, Transport, Session, Presentation, Application)</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-tag">Protocols</div>
+      <h2>TCP vs UDP</h2>
+    </div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="box-concetto ai">
+        <h4>TCP — Transmission Control Protocol</h4>
+        <p><strong>Reliable, ordered, connection-based.</strong> Before sending data, TCP establishes a connection via a "three-way handshake" (SYN → SYN-ACK → ACK). Data is guaranteed to arrive in order; lost packets are retransmitted.</p>
+        <p style="margin-top:.7rem;font-size:.88rem;"><strong>Used for:</strong> web browsing (HTTP/HTTPS), email, file transfers — where accuracy matters.</p>
+      </div>
+      <div class="box-concetto ai">
+        <h4>UDP — User Datagram Protocol</h4>
+        <p><strong>Fast, connectionless, unreliable.</strong> UDP sends packets without establishing a connection or guaranteeing delivery. If packets arrive out of order or are lost, they are not retransmitted.</p>
+        <p style="margin-top:.7rem;font-size:.88rem;"><strong>Used for:</strong> video streaming, online gaming, VoIP, DNS — where speed matters more than perfection.</p>
+      </div>
+    </div>
+
+    <div class="box-frase ai" style="margin-top:2rem;">
+      "The Internet is the world's largest library. It's just that all the books are on the floor."
+      <div class="box-frase-source">— John Allen Paulos</div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-quote-final">
+    "The Internet is the world's largest library."
+    <cite>— John Allen Paulos</cite>
+  </div>
+</footer>
+<script src="../../../../js/main.js"></script>
+</body>
+</html>

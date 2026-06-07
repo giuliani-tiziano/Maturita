@@ -224,8 +224,8 @@
   });
   const zoomIn  = document.getElementById("tl-zoom-in");
   const zoomOut = document.getElementById("tl-zoom-out");
-  if (zoomIn)  zoomIn.addEventListener("click",  () => { pxPerYear = Math.min(40, pxPerYear + 4); render(); });
-  if (zoomOut) zoomOut.addEventListener("click", () => { pxPerYear = Math.max(5,  pxPerYear - 4); render(); });
+  if (zoomIn)  zoomIn.addEventListener("click",  () => { pxPerYear = Math.max(5,  pxPerYear - 4); render(); });
+  if (zoomOut) zoomOut.addEventListener("click", () => { pxPerYear = Math.min(40, pxPerYear + 4); render(); });
 
   render();
 })();
