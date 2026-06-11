@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testi — Alessandro Manzoni · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .testo-dual { display: grid; grid-template-columns: 55fr 45fr; gap: 2.5rem; margin: 2rem 0 3rem; align-items: start; }
+    .td-original { background: var(--beige-mid); padding: 1.5rem 1.8rem; }
+    .td-original-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-original p { font-family: var(--serif); font-size: 1rem; line-height: 1.85; color: var(--ink); margin: 0 0 1rem; font-weight: 400; }
+    .td-original p:last-child { margin-bottom: 0; }
+    .td-comment { padding: 0 0 0 1.8rem; border-left: 2px solid var(--bordeaux-mid); }
+    .td-comment-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-note { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(28,16,16,.12); }
+    .td-note:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .td-note strong { display: block; font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bordeaux-deep); margin-bottom: .35rem; }
+    .td-note p { font-size: .92rem; color: var(--ink-soft); line-height: 1.65; margin: 0; }
+    .testo-badge { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--paper); background: var(--bordeaux-deep); padding: .2rem .7rem; margin-bottom: 1.2rem; }
+    .testo-titolo { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.9rem; color: var(--bordeaux-deep); margin-bottom: .3rem; line-height: 1.1; }
+    .testo-meta { font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1.5rem; }
+    @media (max-width: 768px) { .testo-dual { grid-template-columns: 1fr; } .td-comment { padding-left: 0; border-left: none; border-top: 2px solid var(--bordeaux-mid); padding-top: 1.5rem; margin-top: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+      <a href="../../autori.html" class="topbar-back-section">&#x2190; Autori</a>
+    </div>
+    <button class="topbar-hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link topbar-back-section-mobile" href="../../autori.html">&#x2190; Torna agli Autori</a>
+      <hr class="topbar-nav-hr">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../autori.html'">&#x2190; Autori</button>
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn active" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+    </div>
+  </nav>
+
+  <section class="section active" id="testi">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Step 04</div>
+        <h2>I testi: analisi <em>verso per verso</em> <span class="badge">60 MIN</span></h2>
+      </div>
+      <p class="section-sub">Quattro testi fondamentali. Originale a sinistra, parafrasi e analisi a destra.</p>
+
+      <div class="poem-tabs">
+        <button class="ptab active" onclick="showPoem('cinquemaggio')">Il cinque maggio</button>
+        <button class="ptab" onclick="showPoem('coroadelchi')">Coro dell'Adelchi</button>
+        <button class="ptab" onclick="showPoem('addiomonti')">Addio ai monti</button>
+        <button class="ptab" onclick="showPoem('innominato')">La conversione dell'Innominato</button>
+      </div>
+
+      <!-- IL CINQUE MAGGIO -->
+      <div id="poem-cinquemaggio" class="poem-panel active">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Il cinque maggio</div>
+        <div class="testo-meta">Ode · 1821 · Sulla morte di Napoleone</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (strofe I e VIII)</span>
+            <p>Ei fu. Siccome immobile,<br>dato il mortal sospiro,<br>stette la spoglia immemore<br>orba di tanto spiro,<br>così percossa, attonita<br>la terra al nunzio sta,</p>
+            <p>muta pensando all'ultima<br>ora dell'uom fatale;<br>né sa quando una simile<br>orma di piè mortale<br>la sua cruenta polvere<br>a calpestar verrà.</p>
+            <p>[…]<br>Ma più che il fallo, encomio<br>raccoglierà, che noma<br>colui che, primo, attonita<br>l'Europa udì quel nome,<br>quando dall'Alpi ascendere<br>lo vide, e plaudì.</p>
+            <p>[…]<br>E ripensò le mobili<br>tende, e i percossi valli,<br>e il lampo de' manipoli,<br>e l'onda dei cavalli,<br>e il concitato imperio<br>e il celere ubbidir.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Parafrasi strofa I</strong>
+              <p>Egli (Napoleone) morì. Come la spoglia mortale, dato l'ultimo respiro, rimase immobile, priva di quel grande spirito, così la terra, colpita dalla notizia, resta attonita.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Ei fu» — l'incipit assoluto</strong>
+              <p>L'apertura con il semplice «Ei fu» (egli fu, è morto) è di straordinaria forza: nessun nome, nessun titolo. La grandezza di Napoleone è tale da non aver bisogno di essere nominata; al contempo, il passato remoto «fu» segna la fine definitiva e irreversibile.</p>
+            </div>
+            <div class="td-note">
+              <strong>Né elogio né condanna: la sospensione del giudizio</strong>
+              <p>Manzoni rifiuta sia la retorica antinapoleonica (che vedeva in lui solo un tiranno) sia quella mitizzante (l'eroe assoluto). La storia umana — vittorie, sconfitte, imperi costruiti e distrutti — viene presentata come "vanagloria" terrena, di fronte a cui solo Dio può giudicare: «Ai posteri / l'ardua sentenza» (verso non riportato qui ma celeberrimo).</p>
+            </div>
+            <div class="td-note">
+              <strong>La memoria delle battaglie (ultima strofa riportata)</strong>
+              <p>Negli ultimi istanti di vita, Napoleone ripensa alla sua epopea militare (le tende mobili, i cavalli, gli ordini eseguiti all'istante): un'immagine di grandezza terrena che però, nel contesto dell'ode, è destinata a dissolversi. Solo nelle strofe finali (non riportate) interviene la fede, con l'invocazione alla Provvidenza che accoglie l'anima del condottiero pentito.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>Strofe di sei versi (sestine di settenari), schema metrico fisso, ritmo incalzante che imita l'agitazione e poi la quiete finale. Climax e accumulo di immagini per descrivere la grandezza di Napoleone, seguiti dal ribaltamento verso la dimensione religiosa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CORO DELL'ADELCHI -->
+      <div id="poem-coroadelchi" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Coro dell'atto III dell'Adelchi</div>
+        <div class="testo-meta">Tragedia · 1822 · «Dagli atrii muscosi, dai fori cadenti»</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (strofe iniziali)</span>
+            <p>Dagli atrii muscosi, dai fori cadenti,<br>dai boschi, dall'arse fucine stridenti,<br>dai solchi bagnati di servo sudor,<br>un volgo disperso repente si desta;</p>
+            <p>intende l'orecchio, solleva la testa<br>percosso da novo crescente romor;</p>
+            <p>e cerne, e dispera, e di feroci<br>destrieri al galoppo i calpesti1 ascoltando,<br>i guardi intend, esclamando: a noi<br>tolto non fia! il discendere ancora!</p>
+            <p>[…]<br>Sparsa le trecce morbide<br>sull'affannoso petto,<br>lenta le palme, e rorida<br>di morte il bianco aspetto,<br>giace la pia, col tenero<br>suo prediletto al fianco.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Parafrasi (prime strofe)</strong>
+              <p>Dai cortili coperti di muschio, dai luoghi pubblici in rovina, dai boschi, dalle fucine arse e stridenti, dai solchi bagnati dal sudore dei servi, una folla dispersa improvvisamente si sveglia; tende l'orecchio, alza la testa, colpita da un nuovo rumore crescente.</p>
+            </div>
+            <div class="td-note">
+              <strong>Il popolo italico come «volgo disperso»</strong>
+              <p>Il coro descrive il popolo italico al tempo della caduta dei Longobardi sotto i Franchi (VIII secolo): la folla, oppressa e dispersa, si illude per un momento che il cambio di dominazione (da Longobardi a Franchi) possa portare libertà — ma si tratta di una nuova illusione.</p>
+            </div>
+            <div class="td-note">
+              <strong>La riflessione sui «vinti» della storia</strong>
+              <p>Il vero tema del coro non è la lotta tra Longobardi e Franchi, ma la condizione permanente degli "umili": chiunque vinca tra i potenti, il popolo resta comunque sottomesso. È un'anticipazione, in chiave storica, del tema dei "vinti" che ritroveremo — sia pure con presupposti filosofici diversi — in autori successivi come Verga.</p>
+            </div>
+            <div class="td-note">
+              <strong>L'ultima immagine — Ermengarda</strong>
+              <p>L'ultima strofa riportata anticipa la morte di Ermengarda (sorella di Adelchi, ripudiata da Carlo Magno), figura di dolore innocente che muore di crepacuore: il suo destino personale si intreccia con quello collettivo del popolo, entrambi vittime di logiche di potere più grandi di loro.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>Coro tragico in metri vari (decasillabi e altri), con accumulo iniziale di immagini (anafora dei "dai...", "dai...", "dai...") che crea un effetto di risveglio corale. Tono epico-elegiaco, lontano sia dal trionfalismo sia dalla pura disperazione.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADDIO AI MONTI -->
+      <div id="poem-addiomonti" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">«Addio, monti sorgenti dall'acque...»</div>
+        <div class="testo-meta">Da <em>I Promessi Sposi</em>, cap. VIII · Lucia lascia il paese natale</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (adattamento in prosa)</span>
+            <p>«Addio, monti sorgenti dall'acque, ed elevati al cielo; cime ineguali, note a chi è cresciuto tra voi, e impresse nella sua mente, non meno che lo sia l'aspetto de' suoi più familiari […] Addio, casa natía, dove, sedendo, con un pensiero occulto, imparai a distinguere dal rumore dei passi comuni, il rumore d'un passo aspettato con un misterioso timore.»</p>
+            <p>«Addio, casa […] addio, chiesa, dove l'animo tornava tanto serenato alle funzioni, dove era promesso, fino dalla mia infanzia, un posto particolare per una delle due quando fosse venuto il giorno solenne […] Addio! Quante volte rivedendovi, non sarete più gli stessi! e nemmen io sarò più la stessa!»</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Contesto narrativo</strong>
+              <p>Lucia, in fuga verso Monza con la madre Agnese e fra Cristoforo, lascia per la prima volta il paese natale sul lago di Como. Il celebre passo (in realtà un brano in prosa, non poetico, ma trattato spesso come testo "lirico" per la sua intensità) esprime il distacco dal proprio mondo affettivo.</p>
+            </div>
+            <div class="td-note">
+              <strong>L'addio come perdita dell'innocenza</strong>
+              <p>Il paesaggio di montagna non è descritto in modo oggettivo, ma filtrato dallo sguardo emotivo di Lucia: ogni elemento (i monti, la casa, la chiesa) è carico di ricordi e affetti. L'allontanamento fisico coincide con la fine di un'epoca della vita — l'ultima frase («nemmen io sarò più la stessa») anticipa che Lucia, dopo le prove che dovrà affrontare, non sarà più la stessa persona.</p>
+            </div>
+            <div class="td-note">
+              <strong>La voce narrante e l'empatia</strong>
+              <p>Il narratore, pur restando "esterno", entra in piena sintonia con i sentimenti di Lucia, in uno dei rari momenti del romanzo in cui l'ironia abituale lascia spazio a una partecipazione emotiva diretta. È un esempio di come Manzoni sappia rappresentare la psicologia degli "umili" con dignità piena, senza sentimentalismo eccessivo né distacco freddo.</p>
+            </div>
+            <div class="td-note">
+              <strong>Stile</strong>
+              <p>Anafora di "addio" che scandisce il ritmo del passo. Periodare lungo, con subordinate che si accumulano per restituire il flusso dei ricordi. Lessico semplice ma evocativo, coerente con il programma manzoniano di una lingua "viva" e comprensibile.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LA CONVERSIONE DELL'INNOMINATO -->
+      <div id="poem-innominato" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">La conversione dell'Innominato</div>
+        <div class="testo-meta">Da <em>I Promessi Sposi</em>, capp. XXI-XXIII · Il momento della Provvidenza</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (sintesi del passo)</span>
+            <p>«[L'Innominato] passò così il rimanente della notte, in uno stato che si può chiamar di disperazione […] Una voce interna gli gridava ancora: e perché? […] "Eppure," prese a dire dentro di sé "se ci fosse quel Dio, quel giudice, quella vita avvenire... una pace! una sicurezza! oh che sicurezza!"»</p>
+            <p>«All'alba, vista la folla di popolo che acclamava al passaggio del cardinal Federigo, fu preso da un impulso improvviso, e si avviò verso il palazzotto del cardinale […] "Cosa son io! cosa voglio! sto qui dunque per aspettare che mi vengano a legar le mani?" […] e si trovò davanti al cardinale.»</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Analisi</span>
+            <div class="td-note">
+              <strong>Contesto narrativo</strong>
+              <p>L'Innominato, dopo aver fatto rapire Lucia su richiesta di don Rodrigo, trascorre una notte di tormento interiore. L'incontro con Lucia, la sua preghiera, e poi la vista della folla che acclama il cardinale Borromeo (in visita pastorale) lo spingono a una crisi che culmina nell'incontro diretto col cardinale.</p>
+            </div>
+            <div class="td-note">
+              <strong>La crisi come "lotta" interiore</strong>
+              <p>Manzoni descrive con grande finezza psicologica il conflitto tra l'identità consolidata dell'Innominato (potere, paura altrui, autonomia assoluta) e l'irruzione di un dubbio radicale: se esistesse Dio, e un giudizio dopo la morte, tutta la sua vita assumerebbe un significato diverso — e terribile.</p>
+            </div>
+            <div class="td-note">
+              <strong>La Provvidenza al lavoro</strong>
+              <p>La sequenza di eventi — il rapimento di Lucia, l'incontro con lei, la notte di tormento, la coincidenza della visita del cardinale proprio in quei giorni — non è casuale nella logica del romanzo: è la Provvidenza che usa anche le azioni malvagie (il rapimento) per condurre l'Innominato verso la conversione.</p>
+            </div>
+            <div class="td-note">
+              <strong>Conseguenze sulla trama</strong>
+              <p>La conversione dell'Innominato è il punto di svolta dell'intero romanzo: Lucia viene liberata, e da questo momento la vicenda si avvia (attraverso ulteriori peripezie, inclusa la peste) verso la risoluzione finale. È l'esempio più potente, nel romanzo, di come il "male" di un singolo individuo possa essere reintegrato in un disegno di bene complessivo.</p>
+            </div>
+            <div class="td-note">
+              <strong>Stile</strong>
+              <p>Uso del discorso indiretto libero per restituire i pensieri tumultuosi del personaggio. Alternanza di climax (l'agitazione crescente) e momenti di sospensione (l'alba, la folla, il silenzio prima della decisione). Il narratore mantiene un tono partecipe ma non sentimentale.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

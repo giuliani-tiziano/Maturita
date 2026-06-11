@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testi — Giacomo Leopardi · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .testo-dual { display: grid; grid-template-columns: 55fr 45fr; gap: 2.5rem; margin: 2rem 0 3rem; align-items: start; }
+    .td-original { background: var(--beige-mid); padding: 1.5rem 1.8rem; }
+    .td-original-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-original p { font-family: var(--serif); font-size: 1rem; line-height: 1.85; color: var(--ink); margin: 0 0 1rem; font-weight: 400; }
+    .td-original p:last-child { margin-bottom: 0; }
+    .td-comment { padding: 0 0 0 1.8rem; border-left: 2px solid var(--bordeaux-mid); }
+    .td-comment-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-note { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(28,16,16,.12); }
+    .td-note:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .td-note strong { display: block; font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bordeaux-deep); margin-bottom: .35rem; }
+    .td-note p { font-size: .92rem; color: var(--ink-soft); line-height: 1.65; margin: 0; }
+    .testo-badge { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--paper); background: var(--bordeaux-deep); padding: .2rem .7rem; margin-bottom: 1.2rem; }
+    .testo-titolo { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.9rem; color: var(--bordeaux-deep); margin-bottom: .3rem; line-height: 1.1; }
+    .testo-meta { font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1.5rem; }
+    @media (max-width: 768px) { .testo-dual { grid-template-columns: 1fr; } .td-comment { padding-left: 0; border-left: none; border-top: 2px solid var(--bordeaux-mid); padding-top: 1.5rem; margin-top: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+      <a href="../../autori.html" class="topbar-back-section">&#x2190; Autori</a>
+    </div>
+    <button class="topbar-hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link topbar-back-section-mobile" href="../../autori.html">&#x2190; Torna agli Autori</a>
+      <hr class="topbar-nav-hr">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../autori.html'">&#x2190; Autori</button>
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn active" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+    </div>
+  </nav>
+
+  <section class="section active" id="testi">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Step 04</div>
+        <h2>I testi: analisi <em>verso per verso</em> <span class="badge">60 MIN</span></h2>
+      </div>
+      <p class="section-sub">Quattro testi fondamentali. Originale a sinistra, parafrasi e analisi a destra.</p>
+
+      <div class="poem-tabs">
+        <button class="ptab active" onclick="showPoem('infinito')">L'infinito</button>
+        <button class="ptab" onclick="showPoem('silvia')">A Silvia</button>
+        <button class="ptab" onclick="showPoem('quiete')">La quiete dopo la tempesta</button>
+        <button class="ptab" onclick="showPoem('ginestra')">La ginestra (vv. iniziali)</button>
+      </div>
+
+      <!-- L'INFINITO -->
+      <div id="poem-infinito" class="poem-panel active">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">L'infinito</div>
+        <div class="testo-meta">Da <em>Canti</em> · 1819 · Piccolo idillio</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale</span>
+            <p>Sempre caro mi fu quest'ermo colle,<br>e questa siepe, che da tanta parte<br>dell'ultimo orizzonte il guardo esclude.<br>Ma sedendo e mirando, interminati</p>
+            <p>spazi di là da quella, e sovrumani<br>silenzi, e profondissima quiete<br>io nel pensier mi fingo; ove per poco<br>il cor non si spaura. E come il vento</p>
+            <p>odo stormir tra queste piante, io quello<br>infinito silenzio a questa voce<br>vo comparando: e mi sovvien l'eterno,<br>e le morte stagioni, e la presente</p>
+            <p>e viva, e il suon di lei. Così tra questa<br>immensità s'annega il pensier mio:<br>e il naufragar m'è dolce in questo mare.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Parafrasi vv. 1–8</strong>
+              <p>Mi fu sempre caro questo colle solitario, e questa siepe, che esclude la vista di gran parte dell'orizzonte più lontano. Ma stando seduto e guardando, immagino nel pensiero spazi interminati al di là di essa, e silenzi sovrumani, e una quiete profondissima — al punto che per poco il cuore non si spaventa.</p>
+            </div>
+            <div class="td-note">
+              <strong>Parafrasi vv. 8–15</strong>
+              <p>E come odo il vento stormire tra queste piante, vado paragonando quel silenzio infinito a questa voce: e mi vengono in mente l'eternità, le stagioni passate (morte) e quella presente e viva, e il suo suono. Così il mio pensiero si annega in questa immensità: e il naufragare mi è dolce in questo mare.</p>
+            </div>
+            <div class="td-note">
+              <strong>La siepe e la «teoria della visione»</strong>
+              <p>La siepe, ostacolo fisico alla vista, non limita ma genera l'infinito: impedendo di vedere "l'ultimo orizzonte", lascia che l'immaginazione costruisca uno spazio illimitato. È l'esempio perfetto della teoria del "vago e indefinito": ciò che non si vede è più suggestivo di ciò che si vede.</p>
+            </div>
+            <div class="td-note">
+              <strong>Lo «spazio» e il «tempo» infiniti</strong>
+              <p>Il movimento del componimento procede dallo spazio (gli "interminati spazi") al tempo ("l'eterno, e le morte stagioni, e la presente"): l'infinito non è solo geografico ma temporale, e il presente si dissolve nell'eternità.</p>
+            </div>
+            <div class="td-note">
+              <strong>Il «naufragio dolce» finale</strong>
+              <p>L'ultimo verso è tra i più celebri della letteratura italiana: «naufragar» evoca la perdita di sé, lo smarrimento — ma è "dolce". L'annullamento del pensiero individuale nell'immensità non è terrore ma piacere: è l'unico modo per sperimentare, per un istante, l'infinito altrimenti precluso all'uomo.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>15 endecasillabi sciolti, un unico periodo continuo con frequenti enjambement (es. «interminati / spazi», «il cor non si spaura»). Lessico del «vago e indefinito»: interminati, sovrumani, profondissima, infinito, immensità, eterno.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A SILVIA -->
+      <div id="poem-silvia" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">A Silvia</div>
+        <div class="testo-meta">Da <em>Canti</em> · 1828 · Grande idillio (canti pisano-recanatesi)</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (strofe I, II, VI)</span>
+            <p>Silvia, rimembri ancora<br>quel tempo della tua vita mortale,<br>quando beltà splendea<br>negli occhi tuoi ridenti e fuggitivi,<br>e tu, lieta e pensosa, il limitare<br>di gioventù salivi?</p>
+            <p>Sonavan le quiete<br>stanze, e le vie dintorno,<br>al tuo perpetuo canto,<br>allor che all'opre femminili intenta<br>sedevi, assai contenta<br>di quel vago avvenir che in mente avevi.</p>
+            <p>[…]<br>Anche peria fra poco<br>la speranza mia dolce: agli anni miei<br>anche negaro i fati<br>la giovanezza. Ahi come,<br>come passata sei,<br>cara compagna dell'età mia nova,<br>mia lacrimata speme!</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Parafrasi strofe I–II</strong>
+              <p>Silvia, ricordi ancora quel tempo della tua vita mortale, quando la bellezza splendeva nei tuoi occhi sorridenti e sfuggenti, e tu, allegra e pensierosa, salivi la soglia della giovinezza? Risuonavano le stanze tranquille e le vie circostanti del tuo canto continuo, mentre sedevi intenta ai lavori femminili, abbastanza contenta di quel vago futuro che avevi in mente.</p>
+            </div>
+            <div class="td-note">
+              <strong>Parafrasi strofa finale</strong>
+              <p>Anche la mia dolce speranza morì presto: anche a me il destino negò la giovinezza. Ahimè, come sei trascorsa, cara compagna della mia giovinezza, mia rimpianta speranza!</p>
+            </div>
+            <div class="td-note">
+              <strong>Silvia e la "speranza" del poeta</strong>
+              <p>Silvia (probabilmente ispirata a Teresa Fattorini, una giovane di Recanati morta di tisia) è insieme una persona reale e il simbolo della giovinezza, delle illusioni, delle speranze del poeta stesso. La sua morte fisica si intreccia con la "morte" delle speranze di Leopardi: due destini paralleli, entrambi traditi.</p>
+            </div>
+            <div class="td-note">
+              <strong>La rimembranza come struttura del testo</strong>
+              <p>Il componimento è costruito come un doppio movimento: dal presente (il ricordo) al passato (l'evocazione di Silvia viva e speranzosa), e poi di nuovo al presente, dove sia Silvia sia le speranze del poeta sono ormai "morte". Il ricordo della speranza è più dolente proprio perché ne richiama vividamente l'illusione perduta.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>Canzone libera in endecasillabi e settenari, senza schema fisso di rime. Apostrofe iniziale ("Silvia, rimembri ancora"). Climax emotivo dalla serenità del ricordo all'amarezza della perdita. Parallelismo tra il destino di Silvia e quello del poeta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LA QUIETE DOPO LA TEMPESTA -->
+      <div id="poem-quiete" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">La quiete dopo la tempesta</div>
+        <div class="testo-meta">Da <em>Canti</em> · 1829 · Grande idillio — il piacere come cessazione del dolore</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (strofe iniziale e finale)</span>
+            <p>Passata è la tempesta:<br>odo augelli far festa, e la gallina,<br>tornata in su la via,<br>che ripete il suo verso. Ecco il sereno<br>rompe là da ponente, alla montagna;<br>sgombrasi la campagna,<br>e chiaro nella valle il fiume appare.</p>
+            <p>[…]<br>Piacer figlio d'affanno;<br>gioia vana, ch'è frutto<br>del passato timore, onde si scosse<br>e paventò la morte<br>chi la vita abborria;<br>onde in lungo tormento,<br>fredde, mute, livide,<br>su l'uomo e su la terra<br>l'erbe, le acque, le belve, il sol vegliaro.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Parafrasi strofa iniziale</strong>
+              <p>La tempesta è passata: sento gli uccelli far festa, e la gallina, tornata sulla strada, che ripete il suo verso. Ecco che il sereno si apre da ponente, verso la montagna; la campagna si sgombra (dalle nuvole), e chiaro nella valle appare il fiume.</p>
+            </div>
+            <div class="td-note">
+              <strong>Parafrasi strofa finale</strong>
+              <p>Piacere figlio dell'affanno; gioia vana, che è frutto della paura passata, per cui ebbe un sussulto e temette la morte chi (durante la tempesta) detestava la vita; per cui, in un lungo tormento, fredde, mute, livide, sull'uomo e sulla terra vegliarono le erbe, le acque, le belve, il sole.</p>
+            </div>
+            <div class="td-note">
+              <strong>La gioia come «cessazione del dolore»</strong>
+              <p>Il testo è l'esempio perfetto della teoria del piacere: la gioia per il sereno dopo la tempesta non è un bene positivo, ma semplicemente la fine della paura. È "vana" perché non risolve nulla: la condizione di base (l'infelicità strutturale) resta identica, è solo temporaneamente sospesa.</p>
+            </div>
+            <div class="td-note">
+              <strong>Il rovesciamento finale (non riportato qui)</strong>
+              <p>Nelle strofe successive (non riportate), Leopardi generalizza: l'uomo considera "diletto" ogni sospensione del dolore, e definisce "piacer” questa tregua — ma una vita senza dolore alcuno (e quindi senza nemmeno questi "piaceri") sarebbe preferibile, se solo fosse possibile.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>Canzone libera, versi di lunghezza variabile. Forte impressionismo descrittivo nella prima strofa (suoni, luci, colori del paesaggio dopo la tempesta) in contrasto con l'astrazione filosofica della conclusione.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LA GINESTRA -->
+      <div id="poem-ginestra" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">La ginestra o il fiore del deserto (vv. iniziali)</div>
+        <div class="testo-meta">Da <em>Canti</em> · 1836 · Il testamento spirituale di Leopardi</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo (incipit, vv. 1–16 ca.)</span>
+            <p>Qui su l'arida schiena<br>del formidabil monte<br>sterminator Vesevo,<br>la qual null'altro allegra arbor né fiore,<br>tuoi cespi solitari intorno spargi,<br>odorata ginestra,<br>contenta dei deserti. Anco ti vidi<br>de' tuoi steli abbellir l'erme contrade<br>che cingon la cittade<br>la qual fu donna de' mortali un tempo,</p>
+            <p>e par che con la sua tristezza informi<br>lo spettator che mira<br>e pensa come tutto al mondo è burla,<br>fuor che il nostro dolor. Conosco anch'io<br>che del mortale stato<br>il fato e la sorte non miglior tener si possa.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Parafrasi</strong>
+              <p>Qui, sull'arido fianco del terribile monte sterminatore (il Vesuvio), che nessun'altra pianta o fiore rallegra, tu, profumata ginestra, spargi i tuoi cespugli solitari, contenta dei deserti. Ti ho vista anche abbellire con i tuoi steli le zone desolate che circondano la città (Pompei) che un tempo fu signora del mondo (Roma/l'impero), e sembra che con la sua tristezza essa comunichi a chi guarda e riflette come tutto al mondo sia inganno, tranne il nostro dolore. Anch'io so che alla condizione mortale non può toccare un destino migliore.</p>
+            </div>
+            <div class="td-note">
+              <strong>La ginestra come simbolo</strong>
+              <p>La ginestra cresce sulle pendici del Vesuvio, su un terreno reso sterile dalle eruzioni passate e minacciato da quelle future: è una pianta umile, fragile, ma capace di vivere e di profumare anche in un ambiente ostile. Diventa il simbolo dell'uomo che, consapevole della propria fragilità di fronte alla natura, non si illude né si dispera, ma continua a esistere con dignità.</p>
+            </div>
+            <div class="td-note">
+              <strong>Le rovine di Pompei e la storia</strong>
+              <p>Le rovine della città sepolta (Pompei, ai piedi del Vesuvio) mostrano come anche le civiltà più potenti ("donna de' mortali") siano destinate alla distruzione: la storia umana, di fronte alla potenza della natura, è ridotta a nulla. È la sintesi visiva del pessimismo cosmico.</p>
+            </div>
+            <div class="td-note">
+              <strong>Polemica contro l'ottimismo progressista (non riportata)</strong>
+              <p>Nel prosieguo del testo (non riportato), Leopardi attacca esplicitamente le "magnifiche sorti e progressive": l'ideologia ottocentesca del progresso illimitato, che a suo giudizio ignora la realtà della condizione umana di fronte alla natura indifferente.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>Canzone libera (la "canzone libera leopardiana"), endecasillabi e settenari senza schema fisso. Tono solenne, quasi oratorio, ma sorretto da un'argomentazione filosofica serrata: il "canto" diventa anche trattato etico-civile.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alessandro Manzoni — Mappa WBS · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .map-overlay { display: none; position: fixed; inset: 0; background: rgba(28,16,16,.55); z-index: 500; align-items: center; justify-content: center; padding: 1rem; }
+    .map-overlay.show { display: flex; }
+    .map-modal { background: var(--paper); border: 1px solid var(--bordeaux-mid); padding: 2rem 2rem 1.5rem; max-width: 480px; width: 100%; max-height: 80vh; overflow-y: auto; position: relative; }
+    .modal-close { position: absolute; top: .8rem; right: 1rem; font-family: var(--serif); font-size: 1.4rem; color: var(--ink-soft); background: none; border: none; cursor: pointer; line-height: 1; }
+    .modal-close:hover { color: var(--bordeaux-deep); }
+    .modal-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: .5rem; }
+    .modal-title { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.6rem; color: var(--bordeaux-deep); margin-bottom: .8rem; line-height: 1.1; }
+    .modal-text { font-family: var(--sans); font-weight: 300; font-size: .92rem; color: var(--ink-soft); line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+      <a href="../../mappe.html" class="topbar-back-section">&#x2190; Mappe</a>
+    </div>
+    <button class="topbar-hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link topbar-back-section-mobile" href="../../mappe.html">&#x2190; Torna alle Mappe</a>
+      <hr class="topbar-nav-hr">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link active" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../foscolo/index.html'">Mappa Foscolo</button>
+      <button class="nav-btn active">Mappa Manzoni</button>
+      <button class="nav-btn" onclick="location.href='../leopardi/index.html'">Mappa Leopardi</button>
+      <button class="nav-btn" onclick="location.href='../carducci/index.html'">Mappa Carducci</button>
+      <button class="nav-btn" onclick="location.href='../pascoli/index.html'">Mappa Pascoli</button>
+      <button class="nav-btn" onclick="location.href='../dannunzio/index.html'">Mappa D'Annunzio</button>
+    </div>
+  </nav>
+
+  <section class="section active">
+    <div class="container" style="max-width:none;width:100%;padding-left:0;padding-right:0;">
+      <div class="section-header" style="padding-left:2rem;">
+        <div class="section-tag">Mappa WBS</div>
+        <h2>Alessandro <em>Manzoni</em></h2>
+      </div>
+      <p class="section-sub" style="padding-left:2rem;">Clicca sui nodi per aprire la sintesi: vita, poetica, opere, testi e confronti.</p>
+
+      <p class="map-mobile-hint">&#x2190; Scorri per vedere tutta la mappa &#x2192;</p>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;width:100%;padding:0;">
+        <svg viewBox="0 0 1600 875" width="100%" style="display:block;min-height:800px;min-width:1100px;width:max(100%,1400px);margin:0 auto;" aria-label="Mappa WBS Alessandro Manzoni">
+          <style>
+            .node { cursor: pointer; }
+            .node-root rect { fill: var(--bordeaux-deep); }
+            .node-root text { fill: #fff; }
+            .node-l1 rect { fill: var(--bordeaux-mid); }
+            .node-l1 text { fill: #fff; }
+            .node-l2 rect { fill: var(--beige-mid); stroke: var(--rule-soft); stroke-width: 1; }
+            .node-l2 text { fill: var(--ink); }
+            .node rect { transition: filter 150ms ease; }
+            .node:hover rect, .node:focus rect { filter: brightness(1.12); }
+            .node:focus { outline: none; }
+          </style>
+
+          <g transform="translate(260,0)">
+
+          <!-- Connessioni root → L1 -->
+          <path d="M 225,438 C 271,438 319,100 319,100" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,269 319,269" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,438 319,438" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,606 319,606" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+          <path d="M 225,438 C 271,438 319,775 319,775" stroke="var(--bordeaux-light)" stroke-width="1.5" fill="none" opacity="0.55"/>
+
+          <!-- Connessioni L1 → L2 -->
+          <path d="M 519,100 C 584,100 650,71 650,71" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,100 C 584,100 650,129 650,129" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,211 650,211" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,269 650,269" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,269 C 584,269 650,326 650,326" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,409 650,409" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,438 C 584,438 650,466 650,466" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,549 650,549" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,606 650,606" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,606 C 584,606 650,664 650,664" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,775 C 584,775 650,746 650,746" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+          <path d="M 519,775 C 584,775 650,804 650,804" stroke="var(--bordeaux-light)" stroke-width="1" fill="none" opacity="0.45"/>
+
+          <!-- ROOT -->
+          <g class="node node-root" onclick="showNode('root')" tabindex="0" role="button">
+            <rect x="25" y="400" width="200" height="75" rx="7"/>
+            <text>
+              <tspan x="125" y="434" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="17" font-weight="600">Alessandro Manzoni</tspan>
+              <tspan x="125" y="454" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="12" letter-spacing="0.08em">1785 — 1873</tspan>
+            </text>
+          </g>
+
+          <!-- L1 -->
+          <g class="node node-l1" onclick="showNode('vita')" tabindex="0" role="button"><rect x="319" y="72" width="200" height="55" rx="5"/><text><tspan x="419" y="106" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">01 · VITA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('poetica')" tabindex="0" role="button"><rect x="319" y="241" width="200" height="55" rx="5"/><text><tspan x="419" y="275" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">02 · POETICA</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('opere')" tabindex="0" role="button"><rect x="319" y="410" width="200" height="55" rx="5"/><text><tspan x="419" y="444" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">03 · OPERE</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('testi')" tabindex="0" role="button"><rect x="319" y="578" width="200" height="55" rx="5"/><text><tspan x="419" y="613" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">04 · TESTI</tspan></text></g>
+          <g class="node node-l1" onclick="showNode('confronti')" tabindex="0" role="button"><rect x="319" y="747" width="200" height="55" rx="5"/><text><tspan x="419" y="781" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">05 · CONFRONTI</tspan></text></g>
+
+          <!-- L2 - VITA -->
+          <g class="node node-l2" onclick="showNode('vita-milano')" tabindex="0" role="button"><rect x="650" y="48" width="238" height="48" rx="4"/><text><tspan x="769" y="68" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Milano 1785 · formazione illuminista</tspan><tspan x="769" y="86" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">famiglia Beccaria · Parigi</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('vita-conversione')" tabindex="0" role="button"><rect x="650" y="105" width="238" height="48" rx="4"/><text><tspan x="769" y="125" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Conversione religiosa 1810</tspan><tspan x="769" y="143" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">dal deismo al cattolicesimo</tspan></text></g>
+
+          <!-- L2 - POETICA -->
+          <g class="node node-l2" onclick="showNode('poetica-romanticismo')" tabindex="0" role="button"><rect x="650" y="188" width="238" height="48" rx="4"/><text><tspan x="769" y="208" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Romanticismo cattolico-liberale</tspan><tspan x="769" y="226" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">vero storico e verosimile</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-provvidenza')" tabindex="0" role="button"><rect x="650" y="245" width="238" height="48" rx="4"/><text><tspan x="769" y="265" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Provvidenza</tspan><tspan x="769" y="283" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">disegno divino nella storia</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('poetica-lingua')" tabindex="0" role="button"><rect x="650" y="302" width="238" height="48" rx="4"/><text><tspan x="769" y="322" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Questione della lingua</tspan><tspan x="769" y="340" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">fiorentino dell'uso · sugo della storia</tspan></text></g>
+
+          <!-- L2 - OPERE -->
+          <g class="node node-l2" onclick="showNode('opere-promessisposi')" tabindex="0" role="button"><rect x="650" y="385" width="238" height="48" rx="4"/><text><tspan x="769" y="405" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">I Promessi Sposi (1827/1840-42)</tspan><tspan x="769" y="423" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Renzo, Lucia, Innominato, peste</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('opere-tragedie')" tabindex="0" role="button"><rect x="650" y="442" width="238" height="48" rx="4"/><text><tspan x="769" y="462" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Adelchi · Inni Sacri · odi civili</tspan><tspan x="769" y="480" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">coro Adelchi · Cinque maggio</tspan></text></g>
+
+          <!-- L2 - TESTI -->
+          <g class="node node-l2" onclick="showNode('testi-cinquemaggio')" tabindex="0" role="button"><rect x="650" y="525" width="238" height="48" rx="4"/><text><tspan x="769" y="545" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Il cinque maggio</tspan><tspan x="769" y="563" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Napoleone · ai posteri l'ardua sentenza</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-coro')" tabindex="0" role="button"><rect x="650" y="582" width="238" height="48" rx="4"/><text><tspan x="769" y="602" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Coro dell'Adelchi</tspan><tspan x="769" y="620" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">popolo italico · dominazioni</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('testi-addio')" tabindex="0" role="button"><rect x="650" y="640" width="238" height="48" rx="4"/><text><tspan x="769" y="660" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Addio ai monti / conversione Innominato</tspan><tspan x="769" y="678" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Lucia · narratore onnisciente</tspan></text></g>
+
+          <!-- L2 - CONFRONTI -->
+          <g class="node node-l2" onclick="showNode('confronti-verga')" tabindex="0" role="button"><rect x="650" y="722" width="238" height="48" rx="4"/><text><tspan x="769" y="742" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Manzoni vs Verga</tspan><tspan x="769" y="760" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">Provvidenza vs fiumana del progresso</tspan></text></g>
+          <g class="node node-l2" onclick="showNode('confronti-leopardi')" tabindex="0" role="button"><rect x="650" y="780" width="238" height="48" rx="4"/><text><tspan x="769" y="800" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-size="14" font-weight="600">Manzoni vs Leopardi</tspan><tspan x="769" y="818" text-anchor="middle" font-family="'Manrope',system-ui,sans-serif" font-size="11" opacity="0.65">fede vs materialismo · social catena</tspan></text></g>
+
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-overlay" id="map-overlay" onclick="closeTip()">
+    <div class="map-modal" id="map-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeTip()">&#x2715;</button>
+      <div class="modal-label" id="tip-label"></div>
+      <div class="modal-title" id="tip-title"></div>
+      <div class="modal-text" id="tip-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {
+      root: { label: 'Autore', title: 'Alessandro Manzoni', text: 'Alessandro Manzoni (1785–1873) nasce e muore a Milano. Dopo una formazione illuminista, vive una conversione religiosa nel 1810 che orienta tutta la sua opera successiva. Esponente del Romanticismo cattolico-liberale italiano, autore de I Promessi Sposi, primo grande romanzo storico italiano, fondato sul "vero" storico e sulla fede nella Provvidenza.' },
+      vita: { label: 'Categoria', title: 'Vita', text: 'Nasce nel 1785 a Milano, nipote di Cesare Beccaria. Trascorre un periodo a Parigi, dove si forma alla cultura illuminista e giansenista. Nel 1810 vive una conversione religiosa che lo porta dal deismo/scetticismo al cattolicesimo, esperienza fondamentale per tutta la sua opera successiva. Muore nel 1873 a Milano.' },
+      poetica: { label: 'Categoria', title: 'Poetica', text: 'Romanticismo cattolico-liberale: il romanzo storico unisce "vero" storico (documentazione rigorosa) e "verosimile" (vicende inventate ma plausibili). La Provvidenza agisce nella storia dando senso al dolore senza annullare la libertà umana. La questione della lingua si risolve con la scelta del fiorentino dell\'uso come lingua nazionale. Il narratore commenta i fatti e ne trae il "sugo della storia".' },
+      opere: { label: 'Categoria', title: 'Opere', text: 'I Promessi Sposi (1827, ed. definitiva 1840-42): romanzo storico ambientato nella Lombardia spagnola del 1628-30. Adelchi (1822): tragedia sulla caduta del regno longobardo, celebre per il coro "Dagli atrii muscosi". Inni Sacri (1812-15): poesia religiosa popolare. Odi civili: Marzo 1821 e Il cinque maggio (su Napoleone). Del romanzo storico (1850): riflessione critica sul genere.' },
+      testi: { label: 'Categoria', title: 'Testi', text: 'Il cinque maggio: sulla morte di Napoleone, sospende il giudizio storico-umano («Ai posteri / l\'ardua sentenza») per concentrarsi sulla sua conversione religiosa. Coro dell\'Adelchi: il popolo italico oppresso da dominazioni successive. Addio ai monti: Lucia lascia il paese natale. La conversione dell\'Innominato: episodio centrale dei Promessi Sposi.' },
+      confronti: { label: 'Categoria', title: 'Confronti', text: 'Manzoni vs Verga: Provvidenza che dà senso al dolore (Manzoni) vs "fiumana del progresso" che travolge i deboli senza giustizia (Verga). Manzoni vs Walter Scott: protagonisti popolani vs personaggi storici di rango. Manzoni vs Leopardi: fede e carità cristiana vs materialismo e "social catena" laica, ma entrambi propongono una forma di solidarietà come risposta al dolore.' },
+      'vita-milano': { label: 'Vita', title: 'Milano 1785 · formazione illuminista', text: 'Manzoni nasce nel 1785 a Milano, nipote del celebre giurista illuminista Cesare Beccaria. Trascorre un periodo importante a Parigi, dove entra in contatto con gli ambienti dell\'Illuminismo e del giansenismo, che influenzeranno la sua formazione intellettuale e morale prima della conversione religiosa.' },
+      'vita-conversione': { label: 'Vita', title: 'Conversione religiosa 1810', text: 'Nel 1810 Manzoni vive una conversione che lo porta dal deismo/scetticismo religioso a un cattolicesimo profondo e personale. Da questo momento la fede diventa il fondamento di tutta la sua riflessione: la Provvidenza, la carità, il senso del dolore umano. Da qui nascono gli Inni Sacri e, in seguito, I Promessi Sposi.' },
+      'poetica-romanticismo': { label: 'Poetica', title: 'Romanticismo cattolico-liberale', text: 'Manzoni applica al romanzo storico una distinzione fondamentale: il "vero" storico (fatti, personaggi e contesti rigorosamente documentati: editti spagnoli, cronache della peste) e il "verosimile" (vicende e personaggi inventati ma plausibili nel contesto). Questa fusione fonda il romanzo storico moderno italiano.' },
+      'poetica-provvidenza': { label: 'Poetica', title: 'Provvidenza', text: 'Per Manzoni la storia è governata da un disegno provvidenziale: Dio agisce attraverso le vicende umane, anche dolorose, senza però annullare la libertà delle persone. Il dolore degli umili (Renzo, Lucia, l\'Innominato) trova così un senso superiore, che non cancella la sofferenza ma la inserisce in un ordine più ampio.' },
+      'poetica-lingua': { label: 'Poetica', title: 'Questione della lingua', text: 'Manzoni risolve la questione della lingua scegliendo il fiorentino dell\'uso (parlato dalle persone colte di Firenze) come modello per una lingua nazionale comprensibile a tutti gli italiani. Il "sugo della storia" è la morale/insegnamento che il narratore, onnisciente e partecipe, trae dalla vicenda per il lettore.' },
+      'opere-promessisposi': { label: 'Opere', title: 'I Promessi Sposi (1827 / 1840-42)', text: 'Primo grande romanzo storico italiano, ambientato nella Lombardia spagnola del 1628-30. Renzo Tramaglino e Lucia Mondella, ostacolati da don Rodrigo, vivono vicende separate (il rapimento di Lucia da parte dell\'Innominato, che si converte; i tumulti milanesi per Renzo) fino al ricongiungimento dopo la peste del 1630. Temi: Provvidenza, critica del potere, dignità degli umili, fede e carità.' },
+      'opere-tragedie': { label: 'Opere', title: 'Adelchi · Inni Sacri · odi civili', text: 'Adelchi (1822): tragedia sulla caduta del regno longobardo sotto Carlo Magno; il celebre coro "Dagli atrii muscosi" descrive il popolo italico oppresso da dominazioni successive. Inni Sacri (1812-15): poesia religiosa popolare, fede come fondamento di una nuova comunità. Odi civili: Marzo 1821 (speranza patriottica) e Il cinque maggio (morte di Napoleone).' },
+      'testi-cinquemaggio': { label: 'Testi', title: 'Il cinque maggio', text: 'Ode sulla morte di Napoleone (1821). Manzoni non giudica l\'imperatore né come eroe né come tiranno, ma sospende il giudizio storico-umano («Ai posteri / l\'ardua sentenza») per concentrarsi sulla sua conversione religiosa finale, in cui vede il vero senso provvidenziale di una vita straordinaria.' },
+      'testi-coro': { label: 'Testi', title: "Coro dell'Adelchi", text: '«Dagli atrii muscosi, dai fori cadenti...»: il coro dell\'atto III dell\'Adelchi descrive il popolo italico, oppresso prima dai Romani, poi dai Longobardi, infine dai Franchi. I veri "vinti" della storia sono sempre gli umili, indipendentemente da chi vince le guerre tra potenti.' },
+      'testi-addio': { label: 'Testi', title: "Addio ai monti / conversione dell'Innominato", text: 'Addio ai monti: Lucia, in fuga dal suo paese natale sul lago di Como, saluta con commozione i luoghi della sua infanzia. La conversione dell\'Innominato: il potente signore feudale, dopo l\'incontro con Lucia e con il cardinale Borromeo, vive una crisi e una conversione religiosa che lo portano a liberarla — episodio centrale del romanzo.' },
+      'confronti-verga': { label: 'Confronti', title: 'Manzoni vs Verga', text: 'In Manzoni la storia è governata dalla Provvidenza, che dà senso anche al dolore degli umili (Renzo e Lucia trovano una nuova vita). In Verga la "fiumana del progresso" travolge senza pietà chi resta indietro: i "vinti" del Ciclo sono condannati senza appello, senza alcuna giustizia superiore. Anche il narratore cambia: onnisciente e commentatore in Manzoni, impersonale e "regredito" in Verga.' },
+      'confronti-leopardi': { label: 'Confronti', title: 'Manzoni vs Leopardi', text: 'Visioni del mondo opposte: provvidenziale (Manzoni) vs materialistica (Leopardi). Ma entrambi, da prospettive diverse, teorizzano una forma di solidarietà tra gli uomini come risposta al dolore: la carità cristiana manzoniana e la "social catena" laica leopardiana.' }
+    };
+
+    function showNode(key) {
+      const node = NODES[key];
+      if (!node) return;
+      document.getElementById('tip-label').textContent = node.label || '';
+      document.getElementById('tip-title').textContent = node.title || '';
+      document.getElementById('tip-text').textContent = node.text || '';
+      document.getElementById('map-overlay').classList.add('show');
+    }
+    function closeTip() { document.getElementById('map-overlay').classList.remove('show'); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeTip(); });
+  </script>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

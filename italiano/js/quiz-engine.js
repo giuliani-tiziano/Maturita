@@ -105,6 +105,21 @@
       bodyClass: "carducci", storageKey: "q_carducci_best", storageTot: "q_carducci_best_total",
       footerQuote: "«Meglio oprare che lamentarsi.»", footerCite: "— Giosuè Carducci"
     },
+    foscolo: {
+      key: "foscolo", name: "Ugo Foscolo", short: "Foscolo",
+      bodyClass: "foscolo", storageKey: "q_foscolo_best", storageTot: "q_foscolo_best_total",
+      footerQuote: "«Né più mai toccherò le sacre sponde…»", footerCite: "— Ugo Foscolo, A Zacinto"
+    },
+    leopardi: {
+      key: "leopardi", name: "Giacomo Leopardi", short: "Leopardi",
+      bodyClass: "leopardi", storageKey: "q_leopardi_best", storageTot: "q_leopardi_best_total",
+      footerQuote: "«E il naufragar m'è dolce in questo mare.»", footerCite: "— Giacomo Leopardi, L'infinito"
+    },
+    manzoni: {
+      key: "manzoni", name: "Alessandro Manzoni", short: "Manzoni",
+      bodyClass: "manzoni", storageKey: "q_manzoni_best", storageTot: "q_manzoni_best_total",
+      footerQuote: "«Ai posteri l'ardua sentenza.»", footerCite: "— Alessandro Manzoni, Il cinque maggio"
+    },
     marinetti: {
       key: "marinetti", name: "Filippo Tommaso Marinetti", short: "Marinetti",
       bodyClass: "marinetti", storageKey: "q_marinetti_best", storageTot: "q_marinetti_best_total",

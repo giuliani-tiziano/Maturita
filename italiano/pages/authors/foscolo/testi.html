@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testi — Ugo Foscolo · Maturità</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1612'/%3E%3Ctext x='50' y='66' font-family='Georgia, serif' font-size='52' font-style='italic' fill='%23b88a3e' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <style>
+    .testo-dual { display: grid; grid-template-columns: 55fr 45fr; gap: 2.5rem; margin: 2rem 0 3rem; align-items: start; }
+    .td-original { background: var(--beige-mid); padding: 1.5rem 1.8rem; }
+    .td-original-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-original p { font-family: var(--serif); font-size: 1rem; line-height: 1.85; color: var(--ink); margin: 0 0 1rem; font-weight: 400; }
+    .td-original p:last-child { margin-bottom: 0; }
+    .td-comment { padding: 0 0 0 1.8rem; border-left: 2px solid var(--bordeaux-mid); }
+    .td-comment-label { font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1rem; display: block; }
+    .td-note { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(28,16,16,.12); }
+    .td-note:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .td-note strong { display: block; font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bordeaux-deep); margin-bottom: .35rem; }
+    .td-note p { font-size: .92rem; color: var(--ink-soft); line-height: 1.65; margin: 0; }
+    .testo-badge { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--paper); background: var(--bordeaux-deep); padding: .2rem .7rem; margin-bottom: 1.2rem; }
+    .testo-titolo { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.9rem; color: var(--bordeaux-deep); margin-bottom: .3rem; line-height: 1.1; }
+    .testo-meta { font-family: var(--sans); font-weight: 500; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bordeaux-mid); margin-bottom: 1.5rem; }
+    @media (max-width: 768px) { .testo-dual { grid-template-columns: 1fr; } .td-comment { padding-left: 0; border-left: none; border-top: 2px solid var(--bordeaux-mid); padding-top: 1.5rem; margin-top: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="prog-wrap"><div class="prog-bar" id="pb"></div></div>
+<header class="topbar topbar--split">
+    <div class="topbar-brand-block">
+      <a href="../../../../index.html" class="topbar-back">&#x2190; Portale</a>
+      <a href="../../../italiano.html" class="topbar-brand">Letteratura Italiana</a>
+      <a href="../../autori.html" class="topbar-back-section">&#x2190; Autori</a>
+    </div>
+    <button class="topbar-hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="topbar-nav topbar-links">
+      <a class="topbar-link topbar-back-section-mobile" href="../../autori.html">&#x2190; Torna agli Autori</a>
+      <hr class="topbar-nav-hr">
+      <a class="topbar-link" href="../../autori.html">Autori</a>
+      <a class="topbar-link" href="../../correnti.html">Correnti</a>
+      <a class="topbar-link" href="../../mappe.html">Mappe</a>
+      <a class="topbar-link" href="../../timeline.html">Timeline</a>
+      <a class="topbar-link" href="../../flashcard.html">Flashcard</a>
+      <a class="topbar-link cta" href="../../quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-btn" onclick="location.href='../../autori.html'">&#x2190; Autori</button>
+      <button class="nav-btn" onclick="location.href='index.html'">Vita</button>
+      <button class="nav-btn" onclick="location.href='poetica.html'">Poetica &amp; Stile</button>
+      <button class="nav-btn" onclick="location.href='opere.html'">Opere</button>
+      <button class="nav-btn active" onclick="location.href='testi.html'">Testi</button>
+      <button class="nav-btn" onclick="location.href='confronti.html'">Confronti</button>
+    </div>
+  </nav>
+
+  <section class="section active" id="testi">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Step 04</div>
+        <h2>I testi: analisi <em>verso per verso</em> <span class="badge">60 MIN</span></h2>
+      </div>
+      <p class="section-sub">Quattro testi fondamentali. Originale a sinistra, parafrasi e analisi a destra.</p>
+
+      <div class="poem-tabs">
+        <button class="ptab active" onclick="showPoem('zacinto')">A Zacinto</button>
+        <button class="ptab" onclick="showPoem('sera')">Alla sera</button>
+        <button class="ptab" onclick="showPoem('fratello')">In morte del fratello Giovanni</button>
+        <button class="ptab" onclick="showPoem('sepolcri')">Dei Sepolcri (vv. 1–50)</button>
+      </div>
+
+      <!-- A ZACINTO -->
+      <div id="poem-zacinto" class="poem-panel active">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">A Zacinto</div>
+        <div class="testo-meta">Da <em>Sonetti</em> · 1802–03 · L'esilio senza ritorno</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale</span>
+            <p>Né più mai toccherò le sacre sponde<br>ove il mio corpo fanciulletto giacque,<br>Zacinto mia, che te specchi nell'onde<br>del greco mar da cui vergine nacque</p>
+            <p>Venere, e fea quelle isole feconde<br>col suo primo sorriso, onde non tacque<br>le tue limpide nubi e le tue fronde<br>l'inclito verso di colui che l'acque</p>
+            <p>cantò fatali, ed il diverso esiglio<br>per cui bello di fama e di sventura<br>baciò la sua petrosa Itaca Ulisse.</p>
+            <p>Tu non altro che il canto avrai del figlio,<br>o materna mia terra; a noi prescrisse<br>il fato illacrimata sepoltura.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Parafrasi quartine</strong>
+              <p>Non toccherò mai più le sacre coste dove il mio corpo da bambino visse, Zacinto mia, che ti specchi nelle onde del mare greco da cui nacque vergine Venere, e rese feconde quelle isole con il suo primo sorriso; per questo non tacque le tue limpide nuvole e i tuoi alberi il celebre verso di Omero, che cantò le acque fatali e il diverso esilio per cui Ulisse, reso celebre dalla fama e dalla sventura, baciò la sua pietrosa Itaca.</p>
+            </div>
+            <div class="td-note">
+              <strong>Parafrasi terzine</strong>
+              <p>Tu, terra materna, non avrai da me altro che il canto di tuo figlio: a noi (a me) il destino ha riservato una sepoltura senza pianto (lontano dalla patria, senza il compianto dei propri cari).</p>
+            </div>
+            <div class="td-note">
+              <strong>Il parallelo con Ulisse</strong>
+              <p>Foscolo si paragona a Ulisse, ma rovescia il mito: Ulisse, dopo mille peripezie, è tornato a baciare la sua «petrosa Itaca»; Foscolo, invece, non tornerà mai a Zacinto. Il "diverso esiglio" sottolinea proprio questa differenza: l'esilio di Foscolo è irreversibile.</p>
+            </div>
+            <div class="td-note">
+              <strong>«Illacrimata sepoltura» e il legame con i Sepolcri</strong>
+              <p>L'ultimo verso anticipa il tema centrale dei Sepolcri: la sepoltura senza il pianto e la cura dei propri cari è la condizione più triste per Foscolo, perché priva l'individuo della "corrispondenza d'amorosi sensi". L'unica eternità possibile resta il "canto", cioè la poesia.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>Sonetto (ABAB ABAB CDE CED). Sintassi fortemente ipotattica, con un unico periodo che si snoda per tutte le quartine. Riferimenti mitologici (Venere, Omero, Ulisse) come strumenti di nobilitazione classica del tema personale.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALLA SERA -->
+      <div id="poem-sera" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Alla sera</div>
+        <div class="testo-meta">Da <em>Sonetti</em> · 1802–03 · La morte come «fatal quiete»</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale</span>
+            <p>Forse perché della fatal quiete<br>tu sei l'imago a me sì cara vieni<br>o Sera! E quando ti corteggian liete<br>le nubi estive e i zeffiri sereni,</p>
+            <p>e quando dal nevoso aere inquiete<br>tenebre e lunghe all'universo meni<br>sempre scendi invocata, e le secrete<br>vie del mio cor soavemente tieni.</p>
+            <p>Vagar mi fai co' miei pensier su l'orme<br>che vanno al nulla eterno; e intanto fugge<br>questo reo tempo, e van con lui le torme</p>
+            <p>delle cure onde meco egli si strugge;<br>e mentre io guardo la tua pace, dorme<br>quello spirto guerrier ch'entro mi rugge.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Parafrasi quartine</strong>
+              <p>Forse perché sei l'immagine della morte ("fatal quiete"), tu mi sei così cara, o Sera! E sia quando le nuvole estive e i venti sereni ti accompagnano lieta, sia quando porti all'universo tenebre lunghe e inquiete da un cielo nevoso, tu scendi sempre invocata, e tieni dolcemente le vie segrete del mio cuore.</p>
+            </div>
+            <div class="td-note">
+              <strong>Parafrasi terzine</strong>
+              <p>Mi fai vagare con i pensieri sulle tracce che conducono al nulla eterno; e intanto fugge questo "tempo malvagio" (la vita), e con esso se ne vanno le schiere di affanni con cui si consuma; e mentre io contemplo la tua pace, si addormenta quello spirito combattivo che ringhia dentro di me.</p>
+            </div>
+            <div class="td-note">
+              <strong>La sera come immagine della morte</strong>
+              <p>La sera non è temuta ma desiderata: è "imago" (immagine) della "fatal quiete", cioè della morte. In una visione materialistica (nessuna vita ultraterrena), la morte è semplicemente pace, cessazione del tormento — non punizione né premio.</p>
+            </div>
+            <div class="td-note">
+              <strong>Il «reo tempo» e lo «spirto guerrier»</strong>
+              <p>Il "reo tempo" è la vita stessa, vissuta come tormento. Lo "spirto guerrier che dentro mi rugge" rappresenta l'inquietudine, le passioni, i conflitti interiori di Foscolo: solo davanti alla sera questo spirito agitato trova momentanea tregua.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>Sonetto (ABAB ABAB CDC DCD). Tono pacato e meditativo, in contrasto con la tensione interiore descritta. Climax discendente verso la quiete, che culmina nell'addormentarsi dello "spirto guerrier" nell'ultimo verso.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IN MORTE DEL FRATELLO GIOVANNI -->
+      <div id="poem-fratello" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">In morte del fratello Giovanni</div>
+        <div class="testo-meta">Da <em>Sonetti</em> · 1802–03 · Il lutto e l'esilio oltre la morte</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale</span>
+            <p>Un dì, s'io non andrò sempre fuggendo<br>di gente in gente, me vedrai seduto<br>su la tua pietra, o fratel mio, gemendo<br>il fior de' tuoi gentili anni caduto.</p>
+            <p>La madre or sol, suo dì tardo traendo,<br>parla di me col tuo cenere muto:<br>ma io deluse a voi le palme tendo;<br>e se da lunge i miei tetti saluto,</p>
+            <p>sento gli avversi Numi, e le secrete<br>cure che al viver tuo furon tempesta,<br>e prego anch'io nel tuo porto quiete.</p>
+            <p>Questo di tanti mali a me sol resta,<br>il volger gli occhi al ciel sereno e quete:<br>il mio pensier va sempre a te in cerca, o fratello,<br>finché si stanca, e poi si posa, e ride.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Parafrasi quartine</strong>
+              <p>Un giorno, se non andrò sempre vagando di nazione in nazione, mi vedrai seduto sulla tua tomba, o fratello mio, a piangere il fiore dei tuoi giovani anni caduto prematuramente. La madre, ormai sola, trascorrendo i suoi ultimi giorni, parla di me con le tue ceneri mute: ma io tendo le mani verso di voi invano; e se da lontano saluto la mia casa…</p>
+            </div>
+            <div class="td-note">
+              <strong>Parafrasi terzine</strong>
+              <p>… sento gli dèi avversi e le segrete inquietudini che furono tempesta per la tua vita, e prego anch'io di trovare quiete nel tuo "porto" (la morte). Questo solo mi resta, di tanti mali: rivolgere lo sguardo al cielo sereno; e il mio pensiero va sempre in cerca di te, o fratello, finché si stanca, si placa e — quasi — sorride.</p>
+            </div>
+            <div class="td-note">
+              <strong>Il tema dell'esilio oltre la morte</strong>
+              <p>Foscolo immagina di poter, un giorno, sedersi sulla tomba del fratello — ma solo "se non andrò sempre fuggendo di gente in gente": anche questo gesto minimo di pietà familiare gli è negato dall'esilio. La condizione dell'esule si proietta fin oltre la morte.</p>
+            </div>
+            <div class="td-note">
+              <strong>Il «porto» della morte</strong>
+              <p>La morte è di nuovo immaginata come "porto" — luogo di approdo e di pace dopo la tempesta della vita. Lo stesso desiderio di quiete che troviamo in Alla sera, qui applicato al destino tragico del fratello (suicida, come poi Jacopo Ortis).</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e figure</strong>
+              <p>Sonetto. Tono elegiaco e dimesso. Il lessico (pietra, cenere, porto, quiete) crea un campo semantico funereo che lega il testo agli altri Sonetti e ai Sepolcri.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEI SEPOLCRI -->
+      <div id="poem-sepolcri" class="poem-panel">
+        <div class="testo-badge">Testo chiave</div>
+        <div class="testo-titolo">Dei Sepolcri (vv. 1–50)</div>
+        <div class="testo-meta">Carme · 1807 · L'incipit: la tomba come illusione necessaria</div>
+        <div class="testo-dual">
+          <div class="td-original">
+            <span class="td-original-label">Testo originale (incipit)</span>
+            <p>All'ombra de' cipressi e dentro l'urne<br>confortate di pianto è forse il sonno<br>della morte men duro? Ove più il Sole<br>per me alla terra non fecondi questa<br>bella d'erbe famiglia e d'animali,</p>
+            <p>e quando vaghe di lusinghe innanzi<br>a me non danzeran l'ore future,<br>né da te, dolce amico, udrò più il verso<br>e la mesta armonia che lo governa,<br>né più nel cor mi parlerà lo spirto</p>
+            <p>delle vergini Muse e dell'amore,<br>unico spirto a mia vita raminga,<br>qual fia ristoro a' dì perduti un sasso<br>che distingua le mie dalle infinite<br>ossa che in terra e in mar semina morte?</p>
+            <p>[…] Sol chi non lascia eredità d'affetti<br>poca gioia ha dell'urna […]<br>Pietosa insania che fa quasi viva<br>la favilla che resta a noi del tutto.</p>
+          </div>
+          <div class="td-comment">
+            <span class="td-comment-label">Parafrasi e analisi</span>
+            <div class="td-note">
+              <strong>Domanda iniziale (vv. 1–15)</strong>
+              <p>Foscolo si chiede: all'ombra dei cipressi e dentro le urne confortate dal pianto dei propri cari, il sonno della morte è forse meno duro? Una volta morto, quando il sole non darà più vita a piante e animali per me, e le ore future non danzeranno più davanti a me ingannandomi con le loro promesse, né potrò più ascoltare i versi dell'amico (Pindemonte), né lo spirito delle Muse e dell'amore parlerà più al mio cuore — a cosa servirà una pietra tombale che distingua le mie ossa dalle infinite altre sparse dalla morte sulla terra e nel mare?</p>
+            </div>
+            <div class="td-note">
+              <strong>La tesi materialistica iniziale</strong>
+              <p>L'apertura sembra negare ogni valore alla tomba: se non c'è vita dopo la morte, una pietra in più o in meno non cambia nulla per il defunto. È la posizione del materialismo settecentesco (Ugo Foscolo cita esplicitamente l'amico Ippolito Pindemonte e l'opera "I sepolcri" di Pindemonte stesso come destinatario del carme).</p>
+            </div>
+            <div class="td-note">
+              <strong>«Pietosa insania» — la svolta</strong>
+              <p>Subito dopo, però, il carme introduce la "pietosa insania": anche se razionalmente la tomba "non serve" al morto, essa serve ai vivi — è un'illusione pietosa che mantiene viva, almeno nel cuore di chi resta, la "favilla" (la scintilla) di chi non c'è più. Da qui nascerà tutto il discorso sulla "corrispondenza d'amorosi sensi" che occupa la parte centrale del carme.</p>
+            </div>
+            <div class="td-note">
+              <strong>Metrica e stile</strong>
+              <p>Endecasillabi sciolti (senza rima), con enjambement frequentissimi che creano un flusso quasi prosastico ma di altissima densità. Sintassi ipotattica complessa: l'intero incipit è costruito come un'unica, lunga interrogativa retorica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

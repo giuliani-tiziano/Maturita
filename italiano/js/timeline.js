@@ -1,14 +1,19 @@
 /* =========================================================================
-   timeline.js — Linea del tempo interattiva 1850–1960 (JS puro, SVG)
+   timeline.js — Linea del tempo interattiva 1800–2000 (JS puro, SVG)
    4 livelli: Storia · Correnti · Autori · Opere
    ========================================================================= */
 (function () {
   "use strict";
 
   /* ── DATI ─────────────────────────────────────────────────────────── */
-  const YEAR_MIN = 1850, YEAR_MAX = 1960;
+  const YEAR_MIN = 1800, YEAR_MAX = 2000;
 
   const STORIA = [
+    { year: 1796, label: "Campagna d'Italia", desc: "Napoleone in Italia: speranze rivoluzionarie e nuove repubbliche." },
+    { year: 1797, label: "Campoformio", desc: "Trattato di Campoformio: Venezia ceduta all'Austria, delusione di Foscolo." },
+    { year: 1815, label: "Restaurazione", desc: "Congresso di Vienna: ritorno dell'Austria in Italia." },
+    { year: 1820, label: "Moti del '20-21", desc: "Moti liberali in Piemonte e nel Regno delle Due Sicilie." },
+    { year: 1848, label: "Moti del '48", desc: "Primavera dei popoli: rivoluzioni e prima guerra d'indipendenza." },
     { year: 1861, label: "Unità d'Italia", desc: "Proclamazione del Regno d'Italia (17 marzo 1861)." },
     { year: 1870, label: "Porta Pia", desc: "Breccia di Porta Pia: Roma capitale, fine dello Stato pontificio." },
     { year: 1882, label: "Triplice Alleanza", desc: "Patto difensivo tra Italia, Germania e Austria-Ungheria." },
@@ -38,6 +43,9 @@
   ];
 
   const AUTORI = [
+    { key: "foscolo",    name: "Foscolo",    birth: 1778, death: 1827 },
+    { key: "manzoni",    name: "Manzoni",    birth: 1785, death: 1873 },
+    { key: "leopardi",   name: "Leopardi",   birth: 1798, death: 1837 },
     { key: "carducci",   name: "Carducci",   birth: 1835, death: 1907 },
     { key: "verga",      name: "Verga",      birth: 1840, death: 1922 },
     { key: "pascoli",    name: "Pascoli",    birth: 1855, death: 1912 },
@@ -58,6 +66,18 @@
   ];
 
   const OPERE = [
+    { author: "foscolo", year: 1802, title: "Ultime lettere di Jacopo Ortis", desc: "Romanzo epistolare: delusione politica e amore infelice." },
+    { author: "foscolo", year: 1803, title: "Sonetti", desc: "A Zacinto, Alla sera, In morte del fratello Giovanni." },
+    { author: "foscolo", year: 1807, title: "Dei Sepolcri", desc: "Carme sulla funzione civile e affettiva delle tombe." },
+    { author: "manzoni", year: 1812, title: "Inni Sacri", desc: "Poesia religiosa popolare dopo la conversione." },
+    { author: "manzoni", year: 1821, title: "Il cinque maggio", desc: "Ode sulla morte di Napoleone: Ai posteri l'ardua sentenza." },
+    { author: "manzoni", year: 1822, title: "Adelchi", desc: "Tragedia storica: il coro Dagli atrii muscosi." },
+    { author: "manzoni", year: 1827, title: "I Promessi Sposi", desc: "Il romanzo storico: Renzo, Lucia, la Provvidenza, la peste." },
+    { author: "manzoni", year: 1840, title: "I Promessi Sposi (ed. definitiva)", desc: "Edizione quarantana: il fiorentino dell'uso." },
+    { author: "leopardi", year: 1819, title: "L'infinito", desc: "La siepe, l'immaginazione, il naufragar m'è dolce." },
+    { author: "leopardi", year: 1829, title: "A Silvia", desc: "La giovinezza spezzata, le illusioni perdute." },
+    { author: "leopardi", year: 1835, title: "Operette morali", desc: "Dialoghi filosofici dal tono ironico e paradossale." },
+    { author: "leopardi", year: 1836, title: "La ginestra", desc: "Il fiore del deserto: la social catena." },
     { author: "carducci", year: 1865, title: "Inno a Satana", desc: "Manifesto anticlericale e positivista: Satana come ragione umana." },
     { author: "carducci", year: 1877, title: "Odi barbare I", desc: "Prima serie: Alle fonti del Clitumno, la rivoluzione metrica." },
     { author: "carducci", year: 1887, title: "Rime nuove", desc: "Pianto antico, San Martino, Funere mersit acerbo." },

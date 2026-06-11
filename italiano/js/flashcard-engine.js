@@ -6,6 +6,7 @@
   "use strict";
 
   const AUTHOR_NAMES = {
+    foscolo: "Ugo Foscolo", manzoni: "Alessandro Manzoni", leopardi: "Giacomo Leopardi",
     verga: "Giovanni Verga", pascoli: "Giovanni Pascoli", dannunzio: "Gabriele D'Annunzio",
     pirandello: "Luigi Pirandello", svevo: "Italo Svevo", ungaretti: "Giuseppe Ungaretti",
     saba: "Umberto Saba", montale: "Eugenio Montale", campana: "Dino Campana",

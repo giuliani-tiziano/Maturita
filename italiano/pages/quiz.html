@@ -78,6 +78,9 @@
       <div class="page-sidebar-title">Selezione</div>
 
       <div class="sidebar-section-label">Autori · Ottocento</div>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-ottocento">Foscolo</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-ottocento">Manzoni</a>
+      <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-ottocento">Leopardi</a>
       <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-ottocento">Carducci</a>
       <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-ottocento">Verga</a>
       <a class="page-sidebar-item page-sidebar-sub" href="#quiz-a-ottocento">Pascoli</a>
@@ -135,6 +138,33 @@
         <span class="quiz-period-rule"></span>
       </div>
       <div class="quiz-grid">
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('foscolo')">
+          <span class="author-card-initial">F</span>
+          <div class="author-card-meta">Neoclassicismo · 1778–1827</div>
+          <div class="author-card-name">Ugo <em>Foscolo</em></div>
+          <div class="author-card-tagline">Illusioni, carme dei Sepolcri, esilio, materialismo eroico.</div>
+          <div class="quiz-card-best" id="best-foscolo"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('manzoni')">
+          <span class="author-card-initial">M</span>
+          <div class="author-card-meta">Romanticismo cattolico · 1785–1873</div>
+          <div class="author-card-name">Alessandro <em>Manzoni</em></div>
+          <div class="author-card-tagline">Provvidenza, romanzo storico, vero e verosimile, I Promessi Sposi.</div>
+          <div class="quiz-card-best" id="best-manzoni"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
+
+        <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('leopardi')">
+          <span class="author-card-initial">L</span>
+          <div class="author-card-meta">Pessimismo cosmico · 1798–1837</div>
+          <div class="author-card-name">Giacomo <em>Leopardi</em></div>
+          <div class="author-card-tagline">Vago e indefinito, natura matrigna, teoria del piacere, social catena.</div>
+          <div class="quiz-card-best" id="best-leopardi"></div>
+          <span class="author-card-cta link-arrow">Avvia quiz</span>
+        </div>
 
         <div class="author-card quiz-card" onclick="QuizApp.openAuthorPanel('carducci')">
           <span class="author-card-initial">C</span>
@@ -587,6 +617,9 @@
 
 <!-- ══ DATI QUIZ — AUTORI ══ -->
 <script src="../js/quiz-data.js"></script>
+<script src="../js/foscolo-quiz-data.js"></script>
+<script src="../js/manzoni-quiz-data.js"></script>
+<script src="../js/leopardi-quiz-data.js"></script>
 <script src="../js/carducci-quiz-data.js"></script>
 <script src="../js/carduccianesimo-quiz-data.js"></script>
 <script src="../js/marinetti-quiz-data.js"></script>
