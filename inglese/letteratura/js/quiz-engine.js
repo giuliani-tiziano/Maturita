@@ -11,135 +11,135 @@
   const AUTHORS = {
     /* ── ROMANTIC & GOTHIC ── */
     blake: {
-      key: ‘blake’, name: ‘William Blake’, short: ‘Blake’, bodyClass: ‘blake’,
-      storageKey: ‘enlit_blake_best’, storageTot: ‘enlit_blake_best_total’,
-      footerQuote: ‘"Tyger Tyger, burning bright / In the forests of the night."’,
-      footerCite: ‘— William Blake, Songs of Experience’
+      key: 'blake', name: 'William Blake', short: 'Blake', bodyClass: 'blake',
+      storageKey: 'enlit_blake_best', storageTot: 'enlit_blake_best_total',
+      footerQuote: '"Tyger Tyger, burning bright / In the forests of the night."',
+      footerCite: '— William Blake, Songs of Experience'
     },
     wordsworth: {
-      key: ‘wordsworth’, name: ‘William Wordsworth’, short: ‘Wordsworth’, bodyClass: ‘wordsworth’,
-      storageKey: ‘enlit_wordsworth_best’, storageTot: ‘enlit_wordsworth_best_total’,
-      footerQuote: ‘"Poetry is the spontaneous overflow of powerful feelings."’,
-      footerCite: ‘— William Wordsworth, Preface to Lyrical Ballads’
+      key: 'wordsworth', name: 'William Wordsworth', short: 'Wordsworth', bodyClass: 'wordsworth',
+      storageKey: 'enlit_wordsworth_best', storageTot: 'enlit_wordsworth_best_total',
+      footerQuote: '"Poetry is the spontaneous overflow of powerful feelings."',
+      footerCite: '— William Wordsworth, Preface to Lyrical Ballads'
     },
     byron: {
-      key: ‘byron’, name: ‘Lord Byron’, short: ‘Byron’, bodyClass: ‘byron’,
-      storageKey: ‘enlit_byron_best’, storageTot: ‘enlit_byron_best_total’,
-      footerQuote: ‘"She walks in beauty, like the night / Of cloudless climes and starry skies."’,
-      footerCite: ‘— Lord Byron, She Walks in Beauty’
+      key: 'byron', name: 'Lord Byron', short: 'Byron', bodyClass: 'byron',
+      storageKey: 'enlit_byron_best', storageTot: 'enlit_byron_best_total',
+      footerQuote: '"She walks in beauty, like the night / Of cloudless climes and starry skies."',
+      footerCite: '— Lord Byron, She Walks in Beauty'
     },
     shelley: {
-      key: ‘shelley’, name: ‘Mary Shelley’, short: ‘Mary Shelley’, bodyClass: ‘shelley’,
-      storageKey: ‘enlit_shelley_best’, storageTot: ‘enlit_shelley_best_total’,
-      footerQuote: ‘"Beware; for I am fearless, and therefore powerful."’,
-      footerCite: ‘— Mary Shelley, Frankenstein’
+      key: 'shelley', name: 'Mary Shelley', short: 'Mary Shelley', bodyClass: 'shelley',
+      storageKey: 'enlit_shelley_best', storageTot: 'enlit_shelley_best_total',
+      footerQuote: '"Beware; for I am fearless, and therefore powerful."',
+      footerCite: '— Mary Shelley, Frankenstein'
     },
     shakespeare: {
-      key: ‘shakespeare’, name: ‘William Shakespeare’, short: ‘Shakespeare’, bodyClass: ‘shakespeare’,
-      storageKey: ‘enlit_shakespeare_best’, storageTot: ‘enlit_shakespeare_best_total’,
-      footerQuote: ‘"To be, or not to be, that is the question."’,
-      footerCite: ‘— William Shakespeare, Hamlet, Act III’
+      key: 'shakespeare', name: 'William Shakespeare', short: 'Shakespeare', bodyClass: 'shakespeare',
+      storageKey: 'enlit_shakespeare_best', storageTot: 'enlit_shakespeare_best_total',
+      footerQuote: '"To be, or not to be, that is the question."',
+      footerCite: '— William Shakespeare, Hamlet, Act III'
     },
     /* ── VICTORIAN ── */
     dickens: {
-      key: ‘dickens’, name: ‘Charles Dickens’, short: ‘Dickens’, bodyClass: ‘dickens’,
-      storageKey: ‘enlit_dickens_best’, storageTot: ‘enlit_dickens_best_total’,
-      footerQuote: ‘"It was the best of times, it was the worst of times."’,
-      footerCite: ‘— Charles Dickens, A Tale of Two Cities’
+      key: 'dickens', name: 'Charles Dickens', short: 'Dickens', bodyClass: 'dickens',
+      storageKey: 'enlit_dickens_best', storageTot: 'enlit_dickens_best_total',
+      footerQuote: '"It was the best of times, it was the worst of times."',
+      footerCite: '— Charles Dickens, A Tale of Two Cities'
     },
     wilde: {
-      key: ‘wilde’, name: ‘Oscar Wilde’, short: ‘Wilde’, bodyClass: ‘wilde’,
-      storageKey: ‘enlit_wilde_best’, storageTot: ‘enlit_wilde_best_total’,
-      footerQuote: ‘"The only way to get rid of a temptation is to yield to it."’,
-      footerCite: ‘— Oscar Wilde, The Picture of Dorian Gray’
+      key: 'wilde', name: 'Oscar Wilde', short: 'Wilde', bodyClass: 'wilde',
+      storageKey: 'enlit_wilde_best', storageTot: 'enlit_wilde_best_total',
+      footerQuote: '"The only way to get rid of a temptation is to yield to it."',
+      footerCite: '— Oscar Wilde, The Picture of Dorian Gray'
     },
     /* ── MODERNISM ── */
     woolf: {
-      key: ‘woolf’, name: ‘Virginia Woolf’, short: ‘Woolf’, bodyClass: ‘woolf’,
-      storageKey: ‘enlit_woolf_best’, storageTot: ‘enlit_woolf_best_total’,
-      footerQuote: ‘"A woman must have money and a room of her own if she is to write fiction."’,
-      footerCite: ‘— Virginia Woolf, A Room of One\’s Own’
+      key: 'woolf', name: 'Virginia Woolf', short: 'Woolf', bodyClass: 'woolf',
+      storageKey: 'enlit_woolf_best', storageTot: 'enlit_woolf_best_total',
+      footerQuote: '"A woman must have money and a room of her own if she is to write fiction."',
+      footerCite: '— Virginia Woolf, A Room of One\'s Own'
     },
     joyce: {
-      key: ‘joyce’, name: ‘James Joyce’, short: ‘Joyce’, bodyClass: ‘joyce’,
-      storageKey: ‘enlit_joyce_best’, storageTot: ‘enlit_joyce_best_total’,
-      footerQuote: ‘"His soul swooned slowly as he heard the snow falling faintly through the universe."’,
-      footerCite: ‘— James Joyce, The Dead’
+      key: 'joyce', name: 'James Joyce', short: 'Joyce', bodyClass: 'joyce',
+      storageKey: 'enlit_joyce_best', storageTot: 'enlit_joyce_best_total',
+      footerQuote: '"His soul swooned slowly as he heard the snow falling faintly through the universe."',
+      footerCite: '— James Joyce, The Dead'
     },
     eliot: {
-      key: ‘eliot’, name: ‘T.S. Eliot’, short: ‘T.S. Eliot’, bodyClass: ‘eliot’,
-      storageKey: ‘enlit_eliot_best’, storageTot: ‘enlit_eliot_best_total’,
-      footerQuote: ‘"April is the cruellest month, breeding / Lilacs out of the dead land."’,
-      footerCite: ‘— T.S. Eliot, The Waste Land’
+      key: 'eliot', name: 'T.S. Eliot', short: 'T.S. Eliot', bodyClass: 'eliot',
+      storageKey: 'enlit_eliot_best', storageTot: 'enlit_eliot_best_total',
+      footerQuote: '"April is the cruellest month, breeding / Lilacs out of the dead land."',
+      footerCite: '— T.S. Eliot, The Waste Land'
     },
     /* ── POST-WAR ── */
     orwell: {
-      key: ‘orwell’, name: ‘George Orwell’, short: ‘Orwell’, bodyClass: ‘orwell’,
-      storageKey: ‘enlit_orwell_best’, storageTot: ‘enlit_orwell_best_total’,
-      footerQuote: ‘"Big Brother is watching you."’,
-      footerCite: ‘— George Orwell, Nineteen Eighty-Four’
+      key: 'orwell', name: 'George Orwell', short: 'Orwell', bodyClass: 'orwell',
+      storageKey: 'enlit_orwell_best', storageTot: 'enlit_orwell_best_total',
+      footerQuote: '"Big Brother is watching you."',
+      footerCite: '— George Orwell, Nineteen Eighty-Four'
     },
     golding: {
-      key: ‘golding’, name: ‘William Golding’, short: ‘Golding’, bodyClass: ‘golding’,
-      storageKey: ‘enlit_golding_best’, storageTot: ‘enlit_golding_best_total’,
-      footerQuote: ‘"Maybe there is a beast… maybe it\’s only us."’,
-      footerCite: ‘— William Golding, Lord of the Flies’
+      key: 'golding', name: 'William Golding', short: 'Golding', bodyClass: 'golding',
+      storageKey: 'enlit_golding_best', storageTot: 'enlit_golding_best_total',
+      footerQuote: '"Maybe there is a beast… maybe it\'s only us."',
+      footerCite: '— William Golding, Lord of the Flies'
     },
     beckett: {
-      key: ‘beckett’, name: ‘Samuel Beckett’, short: ‘Beckett’, bodyClass: ‘beckett’,
-      storageKey: ‘enlit_beckett_best’, storageTot: ‘enlit_beckett_best_total’,
-      footerQuote: ‘"Nothing to be done."’,
-      footerCite: ‘— Samuel Beckett, Waiting for Godot’
+      key: 'beckett', name: 'Samuel Beckett', short: 'Beckett', bodyClass: 'beckett',
+      storageKey: 'enlit_beckett_best', storageTot: 'enlit_beckett_best_total',
+      footerQuote: '"Nothing to be done."',
+      footerCite: '— Samuel Beckett, Waiting for Godot'
     },
     /* ── LITERARY MOVEMENTS ── */
     romanticism: {
-      key: ‘romanticism’, name: ‘Romanticism’, short: ‘Romanticism’, bodyClass: ‘wordsworth’,
-      storageKey: ‘enlit_romanticism_best’, storageTot: ‘enlit_romanticism_best_total’,
-      footerQuote: ‘"What is now proved was once only imagined."’,
-      footerCite: ‘— William Blake, The Marriage of Heaven and Hell’
+      key: 'romanticism', name: 'Romanticism', short: 'Romanticism', bodyClass: 'wordsworth',
+      storageKey: 'enlit_romanticism_best', storageTot: 'enlit_romanticism_best_total',
+      footerQuote: '"What is now proved was once only imagined."',
+      footerCite: '— William Blake, The Marriage of Heaven and Hell'
     },
     victorianism: {
-      key: ‘victorianism’, name: ‘Victorian Age’, short: ‘Victorianism’, bodyClass: ‘dickens’,
-      storageKey: ‘enlit_victorianism_best’, storageTot: ‘enlit_victorianism_best_total’,
-      footerQuote: ‘"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."’,
-      footerCite: ‘— Jane Austen, Pride and Prejudice’
+      key: 'victorianism', name: 'Victorian Age', short: 'Victorianism', bodyClass: 'dickens',
+      storageKey: 'enlit_victorianism_best', storageTot: 'enlit_victorianism_best_total',
+      footerQuote: '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
+      footerCite: '— Jane Austen, Pride and Prejudice'
     },
     modernism: {
-      key: ‘modernism’, name: ‘Modernism’, short: ‘Modernism’, bodyClass: ‘woolf’,
-      storageKey: ‘enlit_modernism_best’, storageTot: ‘enlit_modernism_best_total’,
-      footerQuote: ‘"I have measured out my life with coffee spoons."’,
-      footerCite: ‘— T.S. Eliot, The Love Song of J. Alfred Prufrock’
+      key: 'modernism', name: 'Modernism', short: 'Modernism', bodyClass: 'woolf',
+      storageKey: 'enlit_modernism_best', storageTot: 'enlit_modernism_best_total',
+      footerQuote: '"I have measured out my life with coffee spoons."',
+      footerCite: '— T.S. Eliot, The Love Song of J. Alfred Prufrock'
     },
     dystopia: {
-      key: ‘dystopia’, name: ‘Dystopian Fiction’, short: ‘Dystopia’, bodyClass: ‘orwell’,
-      storageKey: ‘enlit_dystopia_best’, storageTot: ‘enlit_dystopia_best_total’,
-      footerQuote: ‘"War is peace. Freedom is slavery. Ignorance is strength."’,
-      footerCite: ‘— George Orwell, Nineteen Eighty-Four’
+      key: 'dystopia', name: 'Dystopian Fiction', short: 'Dystopia', bodyClass: 'orwell',
+      storageKey: 'enlit_dystopia_best', storageTot: 'enlit_dystopia_best_total',
+      footerQuote: '"War is peace. Freedom is slavery. Ignorance is strength."',
+      footerCite: '— George Orwell, Nineteen Eighty-Four'
     },
     gothicnovel: {
-      key: ‘gothicnovel’, name: ‘Gothic Novel’, short: ‘Gothic’, bodyClass: ‘shelley’,
-      storageKey: ‘enlit_gothic_best’, storageTot: ‘enlit_gothic_best_total’,
-      footerQuote: ‘"You have created a monster, and it will destroy you."’,
-      footerCite: ‘— Mary Shelley, Frankenstein’
+      key: 'gothicnovel', name: 'Gothic Novel', short: 'Gothic', bodyClass: 'shelley',
+      storageKey: 'enlit_gothic_best', storageTot: 'enlit_gothic_best_total',
+      footerQuote: '"You have created a monster, and it will destroy you."',
+      footerCite: '— Mary Shelley, Frankenstein'
     },
     /* ── 20th CENTURY ── */
     tolkien: {
-      key: ‘tolkien’, name: ‘J.R.R. Tolkien’, short: ‘Tolkien’, bodyClass: ‘tolkien’,
-      storageKey: ‘enlit_tolkien_best’, storageTot: ‘enlit_tolkien_best_total’,
-      footerQuote: ‘"Not all those who wander are lost."’,
-      footerCite: ‘— J.R.R. Tolkien, The Fellowship of the Ring’
+      key: 'tolkien', name: 'J.R.R. Tolkien', short: 'Tolkien', bodyClass: 'tolkien',
+      storageKey: 'enlit_tolkien_best', storageTot: 'enlit_tolkien_best_total',
+      footerQuote: '"Not all those who wander are lost."',
+      footerCite: '— J.R.R. Tolkien, The Fellowship of the Ring'
     },
     /* ── TECH & DIGITAL ENGLISH TOPICS ── */
-    hardware:      { key:’hardware’,      name:’Computer Hardware’,     short:’Hardware’,      bodyClass:’topic-tech’, storageKey:’tech_hardware_best’,  storageTot:’tech_hardware_best_total’,  footerQuote:’"Any sufficiently advanced technology is indistinguishable from magic."’, footerCite:’— Arthur C. Clarke’ },
-    os:            { key:’os’,            name:’Operating Systems’,     short:’OS’,            bodyClass:’topic-tech’, storageKey:’tech_os_best’,        storageTot:’tech_os_best_total’,        footerQuote:’"Software is eating the world."’, footerCite:’— Marc Andreessen’ },
-    networks:      { key:’networks’,      name:’Computer Networks’,     short:’Networks’,      bodyClass:’topic-tech’, storageKey:’tech_networks_best’,  storageTot:’tech_networks_best_total’,  footerQuote:’"The Internet is the world\’s largest library."’, footerCite:’— Anonymous’ },
-    cybersecurity: { key:’cybersecurity’, name:’Cybersecurity’,         short:’Security’,      bodyClass:’topic-tech’, storageKey:’tech_cyber_best’,     storageTot:’tech_cyber_best_total’,     footerQuote:’"Security is a process, not a product."’, footerCite:’— Bruce Schneier’ },
-    internet:      { key:’internet’,      name:’Internet & Web’,        short:’Web’,           bodyClass:’topic-tech’, storageKey:’tech_internet_best’,  storageTot:’tech_internet_best_total’,  footerQuote:’"The web is more a social creation than a technical one."’, footerCite:’— Tim Berners-Lee’ },
-    privacy:       { key:’privacy’,       name:’Privacy & GDPR’,        short:’Privacy’,       bodyClass:’topic-tech’, storageKey:’tech_privacy_best’,   storageTot:’tech_privacy_best_total’,   footerQuote:’"Privacy is not something I am merely entitled to, it is an absolute prerequisite."’, footerCite:’— Marlon Brando’ },
-    ai:            { key:’ai’,            name:’AI & Machine Learning’, short:’AI & ML’,       bodyClass:’topic-tech’, storageKey:’tech_ai_best’,        storageTot:’tech_ai_best_total’,        footerQuote:’"The question is not whether machines can think, but whether men do."’, footerCite:’— B.F. Skinner’ },
-    cloud:         { key:’cloud’,         name:’Cloud Computing’,       short:’Cloud’,         bodyClass:’topic-tech’, storageKey:’tech_cloud_best’,     storageTot:’tech_cloud_best_total’,     footerQuote:’"The cloud is just someone else\’s computer."’, footerCite:’— Anonymous’ },
-    emerging:      { key:’emerging’,      name:’Emerging Technologies’, short:’Emerging Tech’, bodyClass:’topic-tech’, storageKey:’tech_emerging_best’,  storageTot:’tech_emerging_best_total’,  footerQuote:’"The future is already here — it\’s just not evenly distributed."’, footerCite:’— William Gibson’ },
-    employment:    { key:’employment’,    name:’Employment in Tech’,    short:’Employment’,    bodyClass:’topic-tech’, storageKey:’tech_employ_best’,    storageTot:’tech_employ_best_total’,    footerQuote:’"Choose a job you love and you will never have to work a day in your life."’, footerCite:’— Confucius’ }
+    hardware:      { key:'hardware',      name:'Computer Hardware',     short:'Hardware',      bodyClass:'topic-tech', storageKey:'tech_hardware_best',  storageTot:'tech_hardware_best_total',  footerQuote:'"Any sufficiently advanced technology is indistinguishable from magic."', footerCite:'— Arthur C. Clarke' },
+    os:            { key:'os',            name:'Operating Systems',     short:'OS',            bodyClass:'topic-tech', storageKey:'tech_os_best',        storageTot:'tech_os_best_total',        footerQuote:'"Software is eating the world."', footerCite:'— Marc Andreessen' },
+    networks:      { key:'networks',      name:'Computer Networks',     short:'Networks',      bodyClass:'topic-tech', storageKey:'tech_networks_best',  storageTot:'tech_networks_best_total',  footerQuote:'"The Internet is the world\'s largest library."', footerCite:'— Anonymous' },
+    cybersecurity: { key:'cybersecurity', name:'Cybersecurity',         short:'Security',      bodyClass:'topic-tech', storageKey:'tech_cyber_best',     storageTot:'tech_cyber_best_total',     footerQuote:'"Security is a process, not a product."', footerCite:'— Bruce Schneier' },
+    internet:      { key:'internet',      name:'Internet & Web',        short:'Web',           bodyClass:'topic-tech', storageKey:'tech_internet_best',  storageTot:'tech_internet_best_total',  footerQuote:'"The web is more a social creation than a technical one."', footerCite:'— Tim Berners-Lee' },
+    privacy:       { key:'privacy',       name:'Privacy & GDPR',        short:'Privacy',       bodyClass:'topic-tech', storageKey:'tech_privacy_best',   storageTot:'tech_privacy_best_total',   footerQuote:'"Privacy is not something I am merely entitled to, it is an absolute prerequisite."', footerCite:'— Marlon Brando' },
+    ai:            { key:'ai',            name:'AI & Machine Learning', short:'AI & ML',       bodyClass:'topic-tech', storageKey:'tech_ai_best',        storageTot:'tech_ai_best_total',        footerQuote:'"The question is not whether machines can think, but whether men do."', footerCite:'— B.F. Skinner' },
+    cloud:         { key:'cloud',         name:'Cloud Computing',       short:'Cloud',         bodyClass:'topic-tech', storageKey:'tech_cloud_best',     storageTot:'tech_cloud_best_total',     footerQuote:'"The cloud is just someone else\'s computer."', footerCite:'— Anonymous' },
+    emerging:      { key:'emerging',      name:'Emerging Technologies', short:'Emerging Tech', bodyClass:'topic-tech', storageKey:'tech_emerging_best',  storageTot:'tech_emerging_best_total',  footerQuote:'"The future is already here — it\'s just not evenly distributed."', footerCite:'— William Gibson' },
+    employment:    { key:'employment',    name:'Employment in Tech',    short:'Employment',    bodyClass:'topic-tech', storageKey:'tech_employ_best',    storageTot:'tech_employ_best_total',    footerQuote:'"Choose a job you love and you will never have to work a day in your life."', footerCite:'— Confucius' }
   };
 
   /* ────────────────────────  STATO  ─────────────────────────────────── */
