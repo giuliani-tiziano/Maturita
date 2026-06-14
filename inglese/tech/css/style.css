@@ -3972,6 +3972,44 @@ input:focus, select:focus, textarea:focus, .open-ta:focus { border-color: var(--
 
 .hero-banner { background: var(--grad-hero); }
 
+/* ══ DARK MODE ══ */
+[data-theme="dark"] {
+  --beige-light:  #0F3A28;
+  --beige-mid:    #0A2A1C;
+  --beige-dark:   #071F16;
+  --color-primary: #4ECB8E;
+  --color-light:   #8EE0B6;
+  --color-deep:    #ddf5e8;
+  --bordeaux-mid:  var(--color-primary);
+  --bordeaux-deep: var(--color-deep);
+  --bordeaux-light: var(--color-light);
+}
+[data-theme="dark"] .topbar--split { background: #071F16 !important; }
+[data-theme="dark"] .topbar-brand-block { background: #071F16 !important; }
+[data-theme="dark"] body                { background: #0F3A28; }
+[data-theme="dark"] .page-main          { background: #0A2A1C; }
+[data-theme="dark"] .page-sidebar       { background: #071F16; }
+[data-theme="dark"] .nav                { background: #0A2A1C !important; }
+[data-theme="dark"] .section            { background: #0F3A28; }
+[data-theme="dark"] .hero-banner        { background: #0A2A1C !important; }
+[data-theme="dark"] .box-concetto,
+[data-theme="dark"] .box-frase {
+  background: #0A2A1C;
+  border-color: rgba(255,255,255,.15);
+  color: #e8f5ec;
+}
+[data-theme="dark"] .box-concetto h4  { color: #8EE0B6; }
+[data-theme="dark"] .box-frase        { color: rgba(232,245,236,.75); }
+[data-theme="dark"] table th { background: #071F16 !important; color: #8EE0B6 !important; }
+[data-theme="dark"] table td { background: #0A2A1C !important; color: #e8f5ec !important; }
+[data-theme="dark"] .author-card { background: #071F16 !important; border-color: rgba(78,203,142,.2) !important; }
+@media (max-width: 768px) {
+  [data-theme="dark"] .topbar-nav.topbar-links { background: #071F16; }
+  [data-theme="dark"] .topbar-links .topbar-link { color: rgba(255,255,255,.88); border-bottom-color: rgba(255,255,255,.12); }
+  [data-theme="dark"] .topbar-links .topbar-link.active { color: #fff; }
+  [data-theme="dark"] .topbar-links .topbar-link.cta { color: #fff; background: rgba(255,255,255,.18); }
+}
+
 /* ── Author card initial ── */
 .author-card-initial {
   background: transparent !important;
@@ -3984,7 +4022,7 @@ input:focus, select:focus, textarea:focus, .open-ta:focus { border-color: var(--
 [data-theme="dark"] .fc-back { background: #071F16 !important; }
 [data-theme="dark"] .fc-back-text,
 [data-theme="dark"] .fc-back * { color: #e8f5ec !important; }
-[data-theme="dark"] .fc-front { background: #0F3A28 !important; border-color: rgba(42,122,74,.25) !important; }
+[data-theme="dark"] .fc-front { background: #0A2A1C !important; border-color: rgba(78,203,142,.25) !important; }
 [data-theme="dark"] .fc-front-text { color: #e8f5ec !important; }
 
 /* ── MAP mobile hint ── */
@@ -4025,32 +4063,3 @@ input:focus, select:focus, textarea:focus, .open-ta:focus { border-color: var(--
 .key-vocab dt { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1rem; color: var(--color-deep); margin-top: .5rem; }
 .key-vocab dd { font-size: .9rem; color: var(--ink-soft); margin: .1rem 0 .4rem 1rem; }
 [data-theme="dark"] .key-vocab { background: rgba(42,122,74,.06); border-color: rgba(42,122,74,.2); border-left-color: var(--color-primary); }
-
-/* ── Topic cards ── */
-.topic-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.2rem;
-  margin: 1.5rem 0;
-}
-.topic-card {
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  padding: 1.4rem 1.5rem 1.2rem;
-  text-decoration: none;
-  color: var(--ink);
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-  transition: transform .15s, box-shadow .15s, border-color .15s;
-}
-.topic-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-primary);
-}
-.topic-num { font-family: var(--sans); font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--color-primary); font-weight: 500; }
-.topic-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
-.topic-desc { font-family: var(--sans); font-size: .85rem; color: var(--ink-muted); line-height: 1.6; }
-.topic-cta { font-family: var(--sans); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--color-primary); margin-top: .4rem; }

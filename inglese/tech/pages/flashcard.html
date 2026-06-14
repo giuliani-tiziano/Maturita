@@ -239,12 +239,14 @@
   <div class="fc-player">
     <div class="fc-player-head">
       <div id="fc-author-label">Topic</div>
-      <div id="fc-counter">1 / 8</div>
-      <button class="fc-close" onclick="closeFlashcards()" aria-label="Close">×</button>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <span id="fc-counter">1 / 8</span>
+        <button class="fc-close" id="fc-close" aria-label="Close">×</button>
+      </div>
     </div>
     <div class="fc-prog"><div id="fc-prog-fill"></div></div>
     <div class="fc-card-scene">
-      <div id="fc-card" onclick="flipCard()" role="button" tabindex="0" aria-label="Flip card">
+      <div id="fc-card">
         <div class="fc-face fc-front">
           <div class="fc-front-text" id="fc-front-text">Term</div>
           <div class="fc-face-hint">tap to flip</div>
@@ -256,11 +258,10 @@
       </div>
     </div>
     <div class="fc-controls">
-      <button class="fc-btn" onclick="prevCard()" id="fc-prev" aria-label="Previous card">← Prev</button>
-      <button class="fc-btn primary" onclick="flipCard()">Flip</button>
-      <button class="fc-btn" onclick="nextCard()" id="fc-next" aria-label="Next card">Next →</button>
-      <button class="fc-btn" id="fc-shuffle" onclick="toggleShuffle()">Shuffle</button>
-      <button class="fc-btn" onclick="restartDeck()">Restart</button>
+      <button class="fc-btn" id="fc-prev">← Prev</button>
+      <button class="fc-btn primary" id="fc-next">Next →</button>
+      <button class="fc-btn" id="fc-shuffle">Shuffle</button>
+      <button class="fc-btn" id="fc-restart">↺ Restart</button>
     </div>
   </div>
 </div>

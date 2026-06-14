@@ -169,3 +169,27 @@ window.QUIZ_DATA.tolkien = [
   { type:'open', q:"Explain Tolkien's concept of the 'eucatastrophe' and give an example from The Lord of the Rings.", modelAnswer:"Tolkien coined 'eucatastrophe' in On Fairy-Stories to describe the sudden joyful turn in a fairy tale that does not deny sorrow but pierces through it. An example is the destruction of the Ring at Mount Doom — at the last moment, when all hope is lost, Gollum bites off Frodo's finger and falls into the fire, unintentionally completing the quest. Tolkien connected this to the Christian concept of the Resurrection as the ultimate eucatastrophe.", keywords:["eucatastrophe","On Fairy-Stories","Mount Doom","Gollum","joy","sorrow","fairy tale"] },
   { type:'open', q:"How does Tolkien use the contrast between the Shire and Mordor to comment on industrialisation?", modelAnswer:"The Shire represents pre-industrial rural England — green, peaceful, communal — while Mordor is a landscape of volcanic devastation, machinery and slavery. Saruman's destruction of the Shire represents industry invading even the last safe haven. Tolkien, shaped by WWI devastation and nostalgia for rural England, uses this contrast to critique the dehumanising effects of unchecked industrial progress.", keywords:["Shire","Mordor","industry","nature","Saruman","WWI","rural England","contrast"] }
 ];
+
+/* ══ WILLIAM BLAKE ══ */
+window.QUIZ_DATA.blake = [];
+
+/* ══ WILLIAM WORDSWORTH ══ */
+window.QUIZ_DATA.wordsworth = [];
+
+/* ══ LORD BYRON ══ */
+window.QUIZ_DATA.byron = [];
+
+/* ══ WILLIAM SHAKESPEARE ══ */
+window.QUIZ_DATA.shakespeare = [];
+
+/* ══ CHARLES DICKENS ══ */
+window.QUIZ_DATA.dickens = [];
+
+/* ══ JAMES JOYCE ══ */
+window.QUIZ_DATA.joyce = [];
+
+/* ══ T.S. ELIOT ══ */
+window.QUIZ_DATA.eliot = [];
+
+/* ══ SAMUEL BECKETT ══ */
+window.QUIZ_DATA.beckett = [];
